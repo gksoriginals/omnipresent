@@ -56,3 +56,44 @@ The opening, manual cues and automatic proposals now pass `server/presentation/a
 `server/presentation/live-session.ts` owns resumable resources and idempotent disposal: controller, canvas session, presenter, speech worker, audience attachments and reconnect expiry. Its lifecycle distinguishes loaded, preparing, ready and disposed. The WebSocket connection borrows these resources; replacing it cancels expiry, while final expiry or stop releases them once. Wire messages and saved story formats are unchanged. Speech transport and command routing still live in `server/index.ts`; frontend pause/microphone state is not yet unified into this lifecycle.
 
 These are incremental implementations of stages 1 and 2 of the domain review. Stable component identities, narrower audience contracts and shared preparation commands remain separate work. The software audit verifies model-free authorization, cleanup, reconnect and privacy regressions; it does not establish a latency gain or general speech acceptance.
+
+
+### Final authorization for every entry path
+
+```mermaid
+flowchart TD
+  Opening[Opening composition] --> Authority[Host authorization at commit boundary]
+  Cue[Manual cue over prepared representations] --> Authority
+  Audio[Local STT partials and final events] --> Assembly[Revision-aware temporal assembly]
+  Assembly --> Decision[Evidence eligibility, hybrid selection and synthesis]
+  Decision --> Proposal[Validated presenter proposal]
+  Proposal --> Authority
+  Authority --> Checks{Evidence, review policy, scope and layout valid?}
+  Checks -->|Yes and changed| Canvas[Commit audience canvas]
+  Checks -->|Yes and unchanged| Retain[Retain canvas without duplicate commit]
+  Checks -->|No| Feedback[Hold and send feedback to Prepare]
+  Feedback --> Standby[Fact-free standby for a blocked opening]
+```
+
+Partials remain display-only. The controller rejects cancelled or stale work before authorization. Presenter validation and the independent host commit check are separate boundaries; redundant checks within the controller were removed. Neither models nor renderer adapters can authorize evidence.
+
+### Resumable presentation ownership
+
+```mermaid
+flowchart TD
+  Socket[Presenter WebSocket attachment] --> Owner[LivePresentationSession resource owner]
+  Owner --> Controller[Adaptive controller and transcript assembly]
+  Owner --> Presenter[Decision pipeline and owned model resources]
+  Owner --> Stage[Canvas state and cancellation]
+  Owner --> Speech[Speech worker resource]
+  Owner --> Audience[Read-only audience attachments]
+  Socket -->|Disconnect| Grace[30-second reconnect grace]
+  Grace -->|Reconnect| Socket
+  Grace -->|Expiry| Dispose[Idempotent disposal]
+  Stop[Explicit stop] --> Dispose
+  Dispose --> Owner
+```
+
+The owner tracks loaded, preparing, ready and disposed states. Socket replacement retains the existing resources and cancels expiry. Disposal cancels decisions, releases the presenter and speech worker, and notifies audiences. Transport callbacks and frontend microphone/pause coordination remain outside this ownership extraction.
+
+Latest cleanup software evidence: [RUN-20261019-runtime-cleanup-audit-v1](../validation/runs/RUN-20261019-runtime-cleanup-audit-v1/run.json), with 167 passing tests and a successful production build. This is distinct from the small authored audio replay and does not establish general microphone acceptance.

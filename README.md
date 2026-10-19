@@ -50,7 +50,13 @@ The conversation shown is an authored demonstration. [Screenshot details](docs/i
 | **Multiple projects** | Keep separate preparation chats and saved stories. |
 | **Local-first runtime** | Local speech recognition and presentation selection; no paid decision-model API required for the normal live path. |
 
-**Early prototype.** Preparation and visual composition work, but spontaneous-speech understanding remains experimental. Some supported explanations are still rejected when speech is split or misrecognized. [Known limitations and test results](docs/research/preference-quality.md).
+**Early prototype.** Preparation and visual composition work, but spontaneous-speech understanding remains experimental. Some supported explanations are still rejected when speech is split or misrecognized. [Speech assembly findings and remaining limits](docs/research/speech-assembly.md).
+
+## How it works
+
+Prepare a story with the interview and storytelling agents, then let the canvas follow your explanation. Local speech recognition assembles completed speech before the presenter selects and composes relevant prepared content. The host checks supporting evidence before showing any proposed view; missing evidence keeps the current canvas and sends a request back to Prepare.
+
+[Architecture diagrams and runtime boundaries](docs/architecture/current.md) · [Speech assembly findings](docs/research/speech-assembly.md)
 
 ## Get started
 

@@ -12,6 +12,9 @@
 
 ## Latest findings
 
+- [Speech assembly ablation](research/speech-assembly.md): temporal assembly, removed signal index and remaining acceptance limits.
+- [Domain architecture review](architecture/domain-review-20261019.md): recommendations with explicit implementation and cleanup follow-ups.
+
 - [Distinct preference quality, small models, INT8 and actual audio failures](research/preference-quality.md).
 - [Local-only selection and optional classifier lifecycle](architecture/local-selection.md).
 - [Validation register](validation/test-register.md), [catalog](validation/catalog.json), and [evidence rules](validation/README.md).
