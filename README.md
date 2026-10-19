@@ -1,43 +1,45 @@
 # Omnipresent
 
-A local-first presentation canvas that prepares a story with you and composes supported visuals as you speak.
+**Prepare your story through conversation. Present it on a canvas that follows your explanation.**
 
-**Early research prototype.** Prepare and Canvas are working development surfaces, but spontaneous-speech acceptance is not solved. The latest real audio test held a supported explanation because STT split it and the bounded interpreter rejected the fragments. We publish failures alongside successes; see [results](docs/research/preference-quality.md) and the [validation register](docs/validation/test-register.md).
+Omnipresent helps you turn an idea, your notes and supporting materials into a visual presentation. You talk with an interview agent about your audience and what you want to communicate. A storyteller then helps shape the flow, and you refine it through chat.
 
-## How it works
+When you present, Omnipresent uses your speech and the prepared story to decide which text, charts, diagrams and images to show together. The aim is to let you concentrate on explaining your ideas while the canvas brings up the right visual support.
 
-```mermaid
-flowchart LR
-  Interview[Interview agent and materials] --> Story[Storyteller and prepared assets]
-  Story --> Review[Review and save]
-  Review --> Library[Evidence-scoped component library]
-  Speech[Local streaming speech recognition] --> Intent[Bounded request interpretation]
-  Library --> Gate[Host evidence eligibility]
-  Intent --> Gate
-  Gate --> Select[Local hybrid retrieval]
-  Select --> Compose[Deterministic multi-component composition]
-  Compose --> Validate[Final evidence and epoch validation]
-  Validate --> Canvas[Audience canvas]
-  Gate -->|Missing evidence| Feedback[Retain canvas and ask in Prepare]
-  Feedback --> Interview
-```
+For example, a teacher preparing a short lesson on solar energy can bring a spreadsheet, shape a story about generation and storage, then explain it with a canvas that combines the relevant charts and illustrations.
 
-“Host” means Omnipresent's application code. Models cannot approve evidence, bypass eligibility, or commit a stale result. A story is a narrative prior and preparation view, not a fixed slide sequence.
+**Status: early prototype, developed in public.** You can prepare and review stories, save separate projects, and try the presentation canvas. Natural-speech understanding still needs work; see [what works today and what needs improvement](#what-works-today).
 
-## Current defaults
+## From an idea to a presentation
 
-| Role | Default |
-| --- | --- |
-| Interview and storytelling | Local OpenAI-compatible endpoint; `qwen3.5:4b` via Ollama |
-| Speech recognition | Local Moonshine Small Streaming, English |
-| Retrieval | BM25 plus pinned EmbeddingGemma 2 text embeddings, reciprocal-rank fusion and exact vector caching |
-| Live asset selection | Host eligibility plus local hybrid ranking; no billed decision model |
-| Composition | Validated deterministic synthesis, up to four supported components |
-| Preference models | GLiNER and MiniLM are opt-in experiments; neither passed the promotion gate |
+1. **Talk it through.** Describe your topic, audience and goal. Add documents, images, spreadsheets or notes in the same conversation.
+2. **Shape the story.** Review the suggested flow beside your chat. Ask for changes, review the supporting materials, and save the story when you are ready.
+3. **Start presenting.** Choose a saved story from Canvas and start. Omnipresent uses the prepared content to compose visuals as you speak. When it cannot support a request, it keeps the current canvas and asks for more context in Prepare.
 
-Defaults live in [runtime configuration](server/config/defaults.ts), [retrieval model pin](runtime/retrieval-model.json) and the [speech worker](runtime/worker.py). Hosted comparison profiles require explicit selection and your own `OPENROUTER_API_KEY`. There is no automatic paid fallback or credential discovery in another application's files.
+### Prepare and refine your story
 
-## Development setup
+Keep the conversation and story side by side, with materials attached inside the chat.
+
+![Omnipresent Prepare: a presentation conversation beside a story preview with a chart and illustration](docs/images/prepare-story.png)
+
+### Present with visual support
+
+The canvas can bring a statement, an illustration and multiple charts together for the current explanation.
+
+![Omnipresent presentation canvas showing a solar-energy explanation with two charts, a statement and an illustration](docs/images/live-presentation.png)
+
+*Screenshots from the running app using a public solar-energy teaching example with synthetic data. The Prepare conversation is an authored demonstration; the presentation screenshot was captured during the actual local spoken replay. [Capture details](docs/images/README.md).*
+
+## What works today
+
+- Separate preparation chats for multiple presentations, with saved stories in Canvas.
+- Material uploads, conversational story editing, and prepared charts and diagrams.
+- A presentation canvas that combines supported components and retains the current view when evidence is missing.
+- Local speech recognition, retrieval and presentation selection. The normal live path does not require a paid decision-model API.
+
+The live experience remains experimental. In the latest dedicated audio check, speech recognition split a supported explanation into fragments and the presenter held the canvas. The pictured replay demonstrates an example that composes successfully; it does not establish reliable handling of spontaneous speech. [Read the tests and known limitations](docs/research/preference-quality.md).
+
+## Try it locally
 
 Requirements: Node.js **22.12+**, npm, [uv](https://docs.astral.sh/uv/), Python **3.12** managed by uv, and a local model server for preparation. Development has been exercised on macOS/Apple Silicon; CI checks portable software behavior on Linux. Other platforms' model runtimes remain unverified.
 
@@ -68,7 +70,11 @@ The UI can start without model environments; preparation, retrieval and voice fe
 
 Configuration, optional keys, loading precedence and ignored files: [environment setup](docs/configuration.md).
 
-## Validate without models
+## For developers
+
+The product uses TypeScript/React, a Node coordinator and isolated Python workers. Preparation defaults to local Qwen, speech recognition to Moonshine, and retrieval to BM25 plus EmbeddingGemma. Application code checks evidence and validates a composition before changing the canvas. Experimental preference models are opt-in; there is no automatic paid fallback.
+
+See the [current architecture and model defaults](docs/architecture/current.md), [configuration guide](docs/configuration.md), and [documentation index](docs/README.md) for technical details.
 
 ```sh
 npm test
@@ -76,16 +82,16 @@ npm run build
 npm run validate:evidence
 ```
 
-These checks do not require API keys, GPU, model downloads or paid inference. Model/audio benchmarks are separate, explicit commands; [testing guidance](docs/testing.md) explains their prerequisites, budgets and scope. A passing software suite does not turn a failed audio acceptance case into a pass.
+Core software checks need no model credentials or weight downloads. The optional extraction test needs its Python environment; CI installs it. Model, audio and browser experiments are separate: [testing guidance](docs/testing.md).
 
-## Contribute and follow the work
+## Build with us
 
-Start with [CONTRIBUTING](CONTRIBUTING.md), [architecture](docs/architecture/current.md), [roadmap](ROADMAP.md), [product requirements](docs/PRD.md), and [known limitations](docs/research/preference-quality.md). The [documentation index](docs/README.md) distinguishes current guidance from historical experiments.
+We are continuing development in public. The next priority is helping supported natural speech reach the right presentation decision consistently. We welcome reproducible bug reports, usability feedback and focused contributions.
 
-Report reproducible bugs and propose experiments through GitHub issues. Report vulnerabilities privately through [SECURITY](SECURITY.md). Community participation follows our [code of conduct](CODE_OF_CONDUCT.md). There is no stable public API or compatibility guarantee yet.
+Start with [CONTRIBUTING](CONTRIBUTING.md), the [roadmap](ROADMAP.md), [product requirements](docs/PRD.md), and the [test and experiment register](docs/validation/test-register.md). Report vulnerabilities privately through [SECURITY](SECURITY.md). Community participation follows our [code of conduct](CODE_OF_CONDUCT.md).
 
-No model weights, Python environments, credentials, personal presentation uploads or build outputs are distributed in this repository. Committed validation fixtures include authored synthetic stories, public-source evidence excerpts and synthetic Piper speech; see [third-party notices](THIRD_PARTY_NOTICES.md).
+No model weights, environments, credentials or personal presentation uploads are distributed in this repository. Dependencies, models and public research fixtures retain their [upstream terms](THIRD_PARTY_NOTICES.md).
 
 ## License
 
-Original Omnipresent source is licensed under [Apache-2.0](LICENSE). Dependencies, models and fixtures retain their [upstream terms](THIRD_PARTY_NOTICES.md).
+Original Omnipresent source is licensed under [Apache-2.0](LICENSE).
