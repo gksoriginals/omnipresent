@@ -44,3 +44,11 @@ There is no stable release, npm publication, binary bundle, hosted service, tele
 ## License decision
 
 The project owner selected Apache-2.0 on 19 October 2026. LICENSE and npm package metadata now record that decision. The earlier pre-publication checkpoint above remains a historical record.
+
+## Public publication verified
+
+The repository is public at https://github.com/gksoriginals/omnipresent under Apache-2.0. Initial licensed commit `c6c7862422aa1c6298a19bc1211b8901364a747b` matched remote main. [The first GitHub CI run](https://github.com/gksoriginals/omnipresent/actions/runs/39228380521) completed successfully, including Linux document extraction, tests/build, evidence/publication checks, Python syntax and npm audit.
+
+Private vulnerability reporting, dependency security alerts/updates, secret scanning and push protection were enabled and read back through the GitHub API. No model or inference credentials were configured in GitHub Actions.
+
+Local environment setup is documented in `docs/configuration.md`. `npm run setup:env` creates the ignored `.env` without overwriting an existing one; the root dev command loads it before launching child workers. The local file uses safe defaults and blank optional keys. Git ignore checks confirmed environment files, registry credentials, environments and output/model/material paths remain untracked. Public source includes only `.env.example`.

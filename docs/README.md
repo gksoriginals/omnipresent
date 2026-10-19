@@ -6,6 +6,7 @@
 - [Current architecture](architecture/current.md): implemented boundaries and model decisions.
 - [Product requirements](PRD.md): experience and product intent.
 - [Roadmap](../ROADMAP.md): next bounded work.
+- [Environment configuration](configuration.md): `.env` setup, keys, precedence and ignored files.
 - [Testing](testing.md): software versus model/audio/browser evidence.
 
 ## Latest findings
