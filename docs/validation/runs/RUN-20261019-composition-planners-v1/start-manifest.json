@@ -1,0 +1,92 @@
+{
+  "id": "RUN-20261019-composition-planners-v1",
+  "startedAt": "2026-10-19T06:02:40.486Z",
+  "sourceFiles": [
+    {
+      "path": "scripts/composition-replay.ts",
+      "sha256": "5d83981f236fcf638dd4c863c6ac72ce7434053a280654dde7309c094a755502"
+    },
+    {
+      "path": "tests/fixtures/planner-context.ts",
+      "sha256": "22465e127339e432629b23fed2f108c422be141d64dc8f9c01c9e7e695fbd45c"
+    },
+    {
+      "path": "server/presentation/composition.ts",
+      "sha256": "81918f3f69163d5237211a98dfeee19f50bb0b805b0572a2c7051f343d01742e"
+    },
+    {
+      "path": "server/presentation/catalog.ts",
+      "sha256": "286c18a5f5a84c9ad7bbb9d0961da23225b70ed2856d14ed345c2ea2e81a0a42"
+    },
+    {
+      "path": "server/presentation/prepare-evidence.ts",
+      "sha256": "f796b1e0eb5ff4ceafbc54572314b193ff2b9d101a459f36194fe7e2e1599592"
+    },
+    {
+      "path": "server/presentation/request-frame.ts",
+      "sha256": "641cd6c08bab833b40f8ae317442d0db6d26e92d5e4b3e82f9914e7d2d2bb577"
+    },
+    {
+      "path": "server/controllers/evidence-contract.ts",
+      "sha256": "dfe7f810119dc915b57b62e153f707b89f1432f986df431971bdd908e7b345dd"
+    },
+    {
+      "path": "server/controllers/hybrid-components.ts",
+      "sha256": "649f4312a26d9862aad0e058367625f6fd0cdeec6c098daa9ce027c3cbb39e84"
+    },
+    {
+      "path": "server/controllers/semantic-retrieval.ts",
+      "sha256": "bbb0140b7edb3f36b138439b25f1c2673a34063cabe7e9411cb46a314f1f09dd"
+    },
+    {
+      "path": "server/controllers/library-search.ts",
+      "sha256": "05032576f35f30e7f8f292339c1bbc0eb8a0cf46ea514eacee034c08c2fd7aa9"
+    },
+    {
+      "path": "server/controllers/library-policy.ts",
+      "sha256": "b19281c9c41839d3283b9fff6379429cf3463253ca671f63442d1f87f1c745a2"
+    },
+    {
+      "path": "server/controllers/retrieval.ts",
+      "sha256": "6b572e816577acebfbcd089a919a27d792dce04e95c8f779c0a88abba5e9465c"
+    },
+    {
+      "path": "server/experiments/replay.ts",
+      "sha256": "b3c0e4811b43e1f24be67544d145482fcfa4e13dc4b6090680550adc06c27e51"
+    },
+    {
+      "path": "server/experiments/trace.ts",
+      "sha256": "c94643ec67f3a1e71eea69b1b061025e68a3c407a1a38ab81d3bc72aca4db246"
+    },
+    {
+      "path": "server/experiments/file-trace.ts",
+      "sha256": "3ec3c818b8fd2d85ae8b38e70b5eec217dffc8d377f8af9f71cc16f4b6e94175"
+    },
+    {
+      "path": "shared/preparation.ts",
+      "sha256": "d419b834fac59b5e73110dc9f0aba995241b5f874a97baeb38426589814cfd04"
+    },
+    {
+      "path": "shared/evidence.ts",
+      "sha256": "517e90ade1b825d080a224a230c7bf50b99d3815c248920a0cc36d06cd49fe62"
+    },
+    {
+      "path": "shared/adaptive.ts",
+      "sha256": "388f8842387547ae5595aec6ae819b91d56c11e0631f70981a36e886021e6f8a"
+    },
+    {
+      "path": "shared/visuals.ts",
+      "sha256": "c744c6a0b88bccd86518772c390fdc64d9bffcfab859a67f5a1024890af37aaf"
+    },
+    {
+      "path": "package.json",
+      "sha256": "3ea9299b1919515ba2d5666c8b53b59c0900c9bedbb75995ff428fac39ba929b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "dc4aaeb499174d437404c1affbaecbf9c1fad0e6dc4a87e18397dfd42d333a8e"
+    }
+  ],
+  "inputHash": "7e3cfbd3346ae44d7d8955ed2ac839786e6d6fb2aa9b0277d5b8ab4b85f4c72c",
+  "node": "v22.22.1"
+}

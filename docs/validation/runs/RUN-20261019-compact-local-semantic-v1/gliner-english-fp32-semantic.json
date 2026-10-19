@@ -1,0 +1,2143 @@
+{
+  "model": "fastino/GLiNER2.5-Decide",
+  "revision": "9d1bfb848cd16d93ee56ccbc59cd92bf0f284d90",
+  "precision": "fp32",
+  "loadMs": 7266.564334044233,
+  "parameterBytes": 1945776212,
+  "parameters": 486444053,
+  "weightsFileBytes": 1945828140,
+  "firstForward": {
+    "choice": "panels",
+    "raw": {
+      "action": {
+        "label": "panels",
+        "confidence": 0.37680134177207947
+      }
+    },
+    "elapsedMs": 499.28145902231336,
+    "optionOrder": [
+      "panels",
+      "storage",
+      "curve"
+    ],
+    "labelOrder": [
+      "panels",
+      "storage",
+      "curve",
+      "hold",
+      "context"
+    ]
+  },
+  "rows": [
+    {
+      "id": "s1",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "exact",
+      "choice": "panels",
+      "raw": {
+        "action": {
+          "label": "panels",
+          "confidence": 0.37680134177207947
+        }
+      },
+      "elapsedMs": 188.149958034046,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s2",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "paraphrase",
+      "choice": "curve",
+      "raw": {
+        "action": {
+          "label": "curve",
+          "confidence": 0.29992035031318665
+        }
+      },
+      "elapsedMs": 155.746792035643,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "s3",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "exact",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.5922372937202454
+        }
+      },
+      "elapsedMs": 188.62650002120063,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s4",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "paraphrase",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.5048606395721436
+        }
+      },
+      "elapsedMs": 205.03604196710512,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s5",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "curve",
+      "slice": "scope",
+      "choice": "curve",
+      "raw": {
+        "action": {
+          "label": "curve",
+          "confidence": 0.6352916359901428
+        }
+      },
+      "elapsedMs": 175.75879202922806,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s6",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "correction",
+      "choice": "curve",
+      "raw": {
+        "action": {
+          "label": "curve",
+          "confidence": 0.29306963086128235
+        }
+      },
+      "elapsedMs": 211.72866696724668,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "w1",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "evaporation",
+      "slice": "exact",
+      "choice": "evaporation",
+      "raw": {
+        "action": {
+          "label": "evaporation",
+          "confidence": 0.31333494186401367
+        }
+      },
+      "elapsedMs": 169.88129197852686,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w2",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "condensation",
+      "slice": "paraphrase",
+      "choice": "condensation",
+      "raw": {
+        "action": {
+          "label": "condensation",
+          "confidence": 0.36656561493873596
+        }
+      },
+      "elapsedMs": 156.90391696989536,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w3",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "rainfall",
+      "slice": "scope",
+      "choice": "rainfall",
+      "raw": {
+        "action": {
+          "label": "rainfall",
+          "confidence": 0.7458335161209106
+        }
+      },
+      "elapsedMs": 156.9510829867795,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e1",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "north25",
+      "slice": "date",
+      "choice": "north25",
+      "raw": {
+        "action": {
+          "label": "north25",
+          "confidence": 0.3444124758243561
+        }
+      },
+      "elapsedMs": 157.75304101407528,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "north25",
+        "north24",
+        "south25",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e2",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "north24",
+      "slice": "date",
+      "choice": "north24",
+      "raw": {
+        "action": {
+          "label": "north24",
+          "confidence": 0.29926052689552307
+        }
+      },
+      "elapsedMs": 159.44049996323884,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "north25",
+        "north24",
+        "south25",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e3",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "south25",
+      "slice": "correction",
+      "choice": "south25",
+      "raw": {
+        "action": {
+          "label": "south25",
+          "confidence": 0.48842063546180725
+        }
+      },
+      "elapsedMs": 173.53774997172877,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "north25",
+        "north24",
+        "south25",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h1",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "incidental",
+      "choice": "curve",
+      "raw": {
+        "action": {
+          "label": "curve",
+          "confidence": 0.38878104090690613
+        }
+      },
+      "elapsedMs": 153.88087497558445,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h2",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "retention",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.6492022275924683
+        }
+      },
+      "elapsedMs": 155.1425420329906,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h3",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "negation",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.34258705377578735
+        }
+      },
+      "elapsedMs": 156.53783397283405,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h4",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "quotation",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.5096061825752258
+        }
+      },
+      "elapsedMs": 156.48908400908113,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h5",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "hypothetical",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.36828911304473877
+        }
+      },
+      "elapsedMs": 156.95754199987277,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h6",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "ambiguous",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.4475274682044983
+        }
+      },
+      "elapsedMs": 158.51429203758016,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "north25",
+        "north24",
+        "south25",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "m1",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "missing-claim",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.3002128303050995
+        }
+      },
+      "elapsedMs": 160.00754199922085,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m2",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "audit",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.3260873854160309
+        }
+      },
+      "elapsedMs": 156.24212502734736,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m3",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "date",
+      "choice": "rainfall",
+      "raw": {
+        "action": {
+          "label": "rainfall",
+          "confidence": 0.7604333758354187
+        }
+      },
+      "elapsedMs": 160.41900002164766,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m4",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "entity",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.3384881317615509
+        }
+      },
+      "elapsedMs": 158.53362501366064,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "north25",
+        "north24",
+        "south25",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m5",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "provenance",
+      "choice": "north25",
+      "raw": {
+        "action": {
+          "label": "north25",
+          "confidence": 0.28329136967658997
+        }
+      },
+      "elapsedMs": 157.9507919959724,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "north25",
+        "north24",
+        "south25",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m6",
+      "pass": 0,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "extra-obligation",
+      "choice": "curve",
+      "raw": {
+        "action": {
+          "label": "curve",
+          "confidence": 0.3090897500514984
+        }
+      },
+      "elapsedMs": 158.49245799472556,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "panels",
+        "storage",
+        "curve",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "s1",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "exact",
+      "choice": "panels",
+      "raw": {
+        "action": {
+          "label": "panels",
+          "confidence": 0.4964834451675415
+        }
+      },
+      "elapsedMs": 156.2016669777222,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s2",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "paraphrase",
+      "choice": "panels",
+      "raw": {
+        "action": {
+          "label": "panels",
+          "confidence": 0.3669191300868988
+        }
+      },
+      "elapsedMs": 154.16562504833564,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s3",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "exact",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.652154266834259
+        }
+      },
+      "elapsedMs": 156.9268750026822,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s4",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "paraphrase",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.49884894490242004
+        }
+      },
+      "elapsedMs": 156.41770896036178,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s5",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "curve",
+      "slice": "scope",
+      "choice": "curve",
+      "raw": {
+        "action": {
+          "label": "curve",
+          "confidence": 0.5996657013893127
+        }
+      },
+      "elapsedMs": 155.83450003759935,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s6",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "correction",
+      "choice": "panels",
+      "raw": {
+        "action": {
+          "label": "panels",
+          "confidence": 0.3306063413619995
+        }
+      },
+      "elapsedMs": 156.80720895761624,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w1",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "evaporation",
+      "slice": "exact",
+      "choice": "evaporation",
+      "raw": {
+        "action": {
+          "label": "evaporation",
+          "confidence": 0.5211121439933777
+        }
+      },
+      "elapsedMs": 156.44312498625368,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "rainfall",
+        "evaporation",
+        "hold",
+        "context",
+        "condensation"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w2",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "condensation",
+      "slice": "paraphrase",
+      "choice": "condensation",
+      "raw": {
+        "action": {
+          "label": "condensation",
+          "confidence": 0.4865000247955322
+        }
+      },
+      "elapsedMs": 154.07795802457258,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "rainfall",
+        "evaporation",
+        "hold",
+        "context",
+        "condensation"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w3",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "rainfall",
+      "slice": "scope",
+      "choice": "rainfall",
+      "raw": {
+        "action": {
+          "label": "rainfall",
+          "confidence": 0.699789822101593
+        }
+      },
+      "elapsedMs": 155.51637497264892,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "rainfall",
+        "evaporation",
+        "hold",
+        "context",
+        "condensation"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e1",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "north25",
+      "slice": "date",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.28258413076400757
+        }
+      },
+      "elapsedMs": 159.18545797467232,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "south25",
+        "north25",
+        "hold",
+        "context",
+        "north24"
+      ],
+      "correct": false
+    },
+    {
+      "id": "e2",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "north24",
+      "slice": "date",
+      "choice": "north24",
+      "raw": {
+        "action": {
+          "label": "north24",
+          "confidence": 0.32385584712028503
+        }
+      },
+      "elapsedMs": 157.44783298578113,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "south25",
+        "north25",
+        "hold",
+        "context",
+        "north24"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e3",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "south25",
+      "slice": "correction",
+      "choice": "south25",
+      "raw": {
+        "action": {
+          "label": "south25",
+          "confidence": 0.7303168773651123
+        }
+      },
+      "elapsedMs": 167.60670900112018,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "south25",
+        "north25",
+        "hold",
+        "context",
+        "north24"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h1",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "incidental",
+      "choice": "curve",
+      "raw": {
+        "action": {
+          "label": "curve",
+          "confidence": 0.37185826897621155
+        }
+      },
+      "elapsedMs": 155.35291598644108,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h2",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "retention",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.7944992184638977
+        }
+      },
+      "elapsedMs": 155.5551670026034,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "rainfall",
+        "evaporation",
+        "hold",
+        "context",
+        "condensation"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h3",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "negation",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.39710333943367004
+        }
+      },
+      "elapsedMs": 154.22245801892132,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h4",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "quotation",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.48473048210144043
+        }
+      },
+      "elapsedMs": 158.50416698958725,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "rainfall",
+        "evaporation",
+        "hold",
+        "context",
+        "condensation"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h5",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "hypothetical",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.4349895417690277
+        }
+      },
+      "elapsedMs": 156.00774995982647,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h6",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "ambiguous",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.45709681510925293
+        }
+      },
+      "elapsedMs": 155.6467919726856,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "south25",
+        "north25",
+        "hold",
+        "context",
+        "north24"
+      ],
+      "correct": true
+    },
+    {
+      "id": "m1",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "missing-claim",
+      "choice": "curve",
+      "raw": {
+        "action": {
+          "label": "curve",
+          "confidence": 0.29092270135879517
+        }
+      },
+      "elapsedMs": 156.76325000822544,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m2",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "audit",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.3737923800945282
+        }
+      },
+      "elapsedMs": 156.3789999927394,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m3",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "date",
+      "choice": "rainfall",
+      "raw": {
+        "action": {
+          "label": "rainfall",
+          "confidence": 0.7565262317657471
+        }
+      },
+      "elapsedMs": 154.7550830291584,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "rainfall",
+        "evaporation",
+        "hold",
+        "context",
+        "condensation"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m4",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "entity",
+      "choice": "south25",
+      "raw": {
+        "action": {
+          "label": "south25",
+          "confidence": 0.3631676137447357
+        }
+      },
+      "elapsedMs": 159.4619580428116,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "south25",
+        "north25",
+        "hold",
+        "context",
+        "north24"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m5",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "provenance",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.24971571564674377
+        }
+      },
+      "elapsedMs": 159.22512498218566,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "south25",
+        "north25",
+        "hold",
+        "context",
+        "north24"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m6",
+      "pass": 1,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "extra-obligation",
+      "choice": "panels",
+      "raw": {
+        "action": {
+          "label": "panels",
+          "confidence": 0.38264426589012146
+        }
+      },
+      "elapsedMs": 155.2566250320524,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "curve",
+        "panels",
+        "hold",
+        "context",
+        "storage"
+      ],
+      "correct": false
+    },
+    {
+      "id": "s1",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "exact",
+      "choice": "panels",
+      "raw": {
+        "action": {
+          "label": "panels",
+          "confidence": 0.4530595541000366
+        }
+      },
+      "elapsedMs": 156.38579102233052,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s2",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "paraphrase",
+      "choice": "panels",
+      "raw": {
+        "action": {
+          "label": "panels",
+          "confidence": 0.2627028822898865
+        }
+      },
+      "elapsedMs": 156.7866670084186,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s3",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "exact",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.7059580683708191
+        }
+      },
+      "elapsedMs": 154.68766598496586,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s4",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "paraphrase",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.6913414001464844
+        }
+      },
+      "elapsedMs": 155.6577499723062,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s5",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "curve",
+      "slice": "scope",
+      "choice": "curve",
+      "raw": {
+        "action": {
+          "label": "curve",
+          "confidence": 0.6591793894767761
+        }
+      },
+      "elapsedMs": 157.53983304603025,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s6",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "correction",
+      "choice": "panels",
+      "raw": {
+        "action": {
+          "label": "panels",
+          "confidence": 0.28081467747688293
+        }
+      },
+      "elapsedMs": 155.69400001550093,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w1",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "evaporation",
+      "slice": "exact",
+      "choice": "evaporation",
+      "raw": {
+        "action": {
+          "label": "evaporation",
+          "confidence": 0.5566970705986023
+        }
+      },
+      "elapsedMs": 157.35191700514406,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "condensation",
+        "hold",
+        "context",
+        "rainfall",
+        "evaporation"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w2",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "condensation",
+      "slice": "paraphrase",
+      "choice": "condensation",
+      "raw": {
+        "action": {
+          "label": "condensation",
+          "confidence": 0.5376880764961243
+        }
+      },
+      "elapsedMs": 156.48766700178385,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "condensation",
+        "hold",
+        "context",
+        "rainfall",
+        "evaporation"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w3",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "rainfall",
+      "slice": "scope",
+      "choice": "rainfall",
+      "raw": {
+        "action": {
+          "label": "rainfall",
+          "confidence": 0.766044557094574
+        }
+      },
+      "elapsedMs": 156.6354170208797,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "condensation",
+        "hold",
+        "context",
+        "rainfall",
+        "evaporation"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e1",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "north25",
+      "slice": "date",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.2876757085323334
+        }
+      },
+      "elapsedMs": 157.68641600152478,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "north24",
+        "hold",
+        "context",
+        "south25",
+        "north25"
+      ],
+      "correct": false
+    },
+    {
+      "id": "e2",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "north24",
+      "slice": "date",
+      "choice": "north24",
+      "raw": {
+        "action": {
+          "label": "north24",
+          "confidence": 0.40626752376556396
+        }
+      },
+      "elapsedMs": 158.98300003027543,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "north24",
+        "hold",
+        "context",
+        "south25",
+        "north25"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e3",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "positive",
+      "expected": "south25",
+      "slice": "correction",
+      "choice": "south25",
+      "raw": {
+        "action": {
+          "label": "south25",
+          "confidence": 0.7598880529403687
+        }
+      },
+      "elapsedMs": 166.84512502979487,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "north24",
+        "hold",
+        "context",
+        "south25",
+        "north25"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h1",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "incidental",
+      "choice": "curve",
+      "raw": {
+        "action": {
+          "label": "curve",
+          "confidence": 0.3061600923538208
+        }
+      },
+      "elapsedMs": 152.99620799487457,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h2",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "retention",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.7770493030548096
+        }
+      },
+      "elapsedMs": 154.61670904187486,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "condensation",
+        "hold",
+        "context",
+        "rainfall",
+        "evaporation"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h3",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "negation",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.3724230229854584
+        }
+      },
+      "elapsedMs": 155.41879198281094,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h4",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "quotation",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.5537142157554626
+        }
+      },
+      "elapsedMs": 156.86116699362174,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "condensation",
+        "hold",
+        "context",
+        "rainfall",
+        "evaporation"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h5",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "hypothetical",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.4035666882991791
+        }
+      },
+      "elapsedMs": 158.74070901190862,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h6",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "ambiguous",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.45518985390663147
+        }
+      },
+      "elapsedMs": 158.71500002685934,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "north24",
+        "hold",
+        "context",
+        "south25",
+        "north25"
+      ],
+      "correct": true
+    },
+    {
+      "id": "m1",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "missing-claim",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.30210408568382263
+        }
+      },
+      "elapsedMs": 155.54487495683134,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m2",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "audit",
+      "choice": "storage",
+      "raw": {
+        "action": {
+          "label": "storage",
+          "confidence": 0.44748029112815857
+        }
+      },
+      "elapsedMs": 154.83700000913814,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m3",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "date",
+      "choice": "rainfall",
+      "raw": {
+        "action": {
+          "label": "rainfall",
+          "confidence": 0.7905300855636597
+        }
+      },
+      "elapsedMs": 156.1451670131646,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "condensation",
+        "hold",
+        "context",
+        "rainfall",
+        "evaporation"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m4",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "entity",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.3095792233943939
+        }
+      },
+      "elapsedMs": 162.74170798715204,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "north24",
+        "hold",
+        "context",
+        "south25",
+        "north25"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m5",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "provenance",
+      "choice": "hold",
+      "raw": {
+        "action": {
+          "label": "hold",
+          "confidence": 0.25840747356414795
+        }
+      },
+      "elapsedMs": 159.62200000649318,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "north24",
+        "hold",
+        "context",
+        "south25",
+        "north25"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m6",
+      "pass": 2,
+      "model": "gliner-english-fp32-semantic",
+      "category": "missing",
+      "expected": "context",
+      "slice": "extra-obligation",
+      "choice": "panels",
+      "raw": {
+        "action": {
+          "label": "panels",
+          "confidence": 0.3824276924133301
+        }
+      },
+      "elapsedMs": 158.27562502818182,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "storage",
+        "hold",
+        "context",
+        "curve",
+        "panels"
+      ],
+      "correct": false
+    }
+  ],
+  "profile": "gliner-english-fp32-semantic",
+  "codec": "semantic",
+  "inputHash": "d6b96e767b21b09b89e36077bcea5b7777a3a4cb950d859db849b904a7d7eac6",
+  "peakRssBytes": 2707750912,
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.12.7 (main, Oct 16 2024, 07:12:08) [Clang 18.1.8 ]",
+  "threads": 4,
+  "scope": "Local CPU selection screen only; excludes retrieval, host guards, STT and paint.",
+  "summary": {
+    "total": 72,
+    "correct": 43,
+    "errors": 0,
+    "positiveCorrect": 32,
+    "positiveTotal": 36,
+    "negativeCorrect": 11,
+    "negativeTotal": 36,
+    "medianMs": 156.80720895761624,
+    "p95Ms": 188.149958034046,
+    "orderStableCases": 15
+  },
+  "eligibleForPrecisionExperiment": false,
+  "productionAcceptance": false
+}

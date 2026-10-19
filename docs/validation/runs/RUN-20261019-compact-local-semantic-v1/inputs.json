@@ -1,0 +1,566 @@
+{
+  "version": 1,
+  "assets": {
+    "solar": [
+      {
+        "id": "panels",
+        "title": "Solar conversion",
+        "text": "Photovoltaic cells convert sunlight into electricity.",
+        "family": "statement",
+        "entity": "solar",
+        "year": 2026,
+        "status": "illustrative",
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "entity": "solar",
+          "timeframe": null,
+          "unit": null,
+          "provenance": "illustrative",
+          "verification": "unknown",
+          "independentReview": "pending",
+          "sources": [
+            {
+              "id": "source-panels",
+              "uri": "fixture://panels",
+              "summary": "Photovoltaic cells convert sunlight into electricity.",
+              "sha256": "34aaaf9568466f42a529e13b962e6ff28bb06fcb4f4ce3ad234d20631d61c728"
+            }
+          ],
+          "claims": [
+            {
+              "id": "panels",
+              "aliases": [
+                "Solar conversion",
+                "Photovoltaic cells convert sunlight into electricity."
+              ],
+              "sourceIds": [
+                "source-panels"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "storage",
+        "title": "Battery storage",
+        "text": "Batteries store surplus electricity for use after sunset.",
+        "family": "statement",
+        "entity": "solar",
+        "year": 2026,
+        "status": "illustrative",
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "entity": "solar",
+          "timeframe": null,
+          "unit": null,
+          "provenance": "illustrative",
+          "verification": "unknown",
+          "independentReview": "pending",
+          "sources": [
+            {
+              "id": "source-storage",
+              "uri": "fixture://storage",
+              "summary": "Batteries store surplus electricity for use after sunset.",
+              "sha256": "b684f40a875a02f8f2048494fff17459ee9a8a695d0813ab681c3e0b07507610"
+            }
+          ],
+          "claims": [
+            {
+              "id": "storage",
+              "aliases": [
+                "Battery storage",
+                "Batteries store surplus electricity for use after sunset."
+              ],
+              "sourceIds": [
+                "source-storage"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "curve",
+        "title": "Generation curve",
+        "text": "Illustrative daily output: morning 10, noon 20, evening 5 Wh.",
+        "family": "chart",
+        "entity": "solar",
+        "year": 2025,
+        "status": "illustrative",
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "entity": "solar",
+          "timeframe": "2025",
+          "unit": "Wh",
+          "provenance": "illustrative",
+          "verification": "unknown",
+          "independentReview": "pending",
+          "sources": [
+            {
+              "id": "source-curve",
+              "uri": "fixture://curve",
+              "summary": "Illustrative daily output: morning 10, noon 20, evening 5 Wh.",
+              "sha256": "8b72b5a16a93f983341403992c7a8d4c96532f2a15bfcb8ed80dfed767e7acbb"
+            }
+          ],
+          "claims": [
+            {
+              "id": "curve",
+              "aliases": [
+                "Generation curve",
+                "Illustrative daily output: morning 10, noon 20, evening 5 Wh."
+              ],
+              "sourceIds": [
+                "source-curve"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "water": [
+      {
+        "id": "evaporation",
+        "title": "Evaporation",
+        "text": "Liquid water changes to water vapor.",
+        "family": "diagram",
+        "entity": "water",
+        "year": 2026,
+        "status": "illustrative",
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "entity": "water",
+          "timeframe": null,
+          "unit": null,
+          "provenance": "illustrative",
+          "verification": "unknown",
+          "independentReview": "pending",
+          "sources": [
+            {
+              "id": "source-evaporation",
+              "uri": "fixture://evaporation",
+              "summary": "Liquid water changes to water vapor.",
+              "sha256": "c1fd45293e3b5cedbc661909636b7ea9caea7c2de001a846e89095fa1310cddc"
+            }
+          ],
+          "claims": [
+            {
+              "id": "evaporation",
+              "aliases": [
+                "Evaporation",
+                "Liquid water changes to water vapor."
+              ],
+              "sourceIds": [
+                "source-evaporation"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "condensation",
+        "title": "Condensation",
+        "text": "Water vapor cools and forms liquid droplets.",
+        "family": "diagram",
+        "entity": "water",
+        "year": 2026,
+        "status": "illustrative",
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "entity": "water",
+          "timeframe": null,
+          "unit": null,
+          "provenance": "illustrative",
+          "verification": "unknown",
+          "independentReview": "pending",
+          "sources": [
+            {
+              "id": "source-condensation",
+              "uri": "fixture://condensation",
+              "summary": "Water vapor cools and forms liquid droplets.",
+              "sha256": "e93143dfcce60df0f2e47990530a2c73b657e15296313f8441ac0c5567157633"
+            }
+          ],
+          "claims": [
+            {
+              "id": "condensation",
+              "aliases": [
+                "Condensation",
+                "Water vapor cools and forms liquid droplets."
+              ],
+              "sourceIds": [
+                "source-condensation"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "rainfall",
+        "title": "Rainfall totals",
+        "text": "Illustrative rainfall: May 20 and June 40 mm.",
+        "family": "chart",
+        "entity": "water",
+        "year": 2025,
+        "status": "illustrative",
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "entity": "water",
+          "timeframe": "2025",
+          "unit": "mm",
+          "provenance": "illustrative",
+          "verification": "unknown",
+          "independentReview": "pending",
+          "sources": [
+            {
+              "id": "source-rainfall",
+              "uri": "fixture://rainfall",
+              "summary": "Illustrative rainfall: May 20 and June 40 mm.",
+              "sha256": "c561247ba119c18d176eefb370a54052e1eb71d85f475e79fa8a94e0351fc099"
+            }
+          ],
+          "claims": [
+            {
+              "id": "rainfall",
+              "aliases": [
+                "Rainfall totals",
+                "Illustrative rainfall: May 20 and June 40 mm."
+              ],
+              "sourceIds": [
+                "source-rainfall"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "energy": [
+      {
+        "id": "north25",
+        "title": "North demand 2025",
+        "text": "Illustrative North energy demand is 40 kWh.",
+        "family": "chart",
+        "entity": "North",
+        "year": 2025,
+        "status": "illustrative",
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "entity": "North",
+          "timeframe": "2025",
+          "unit": "kWh",
+          "provenance": "illustrative",
+          "verification": "unknown",
+          "independentReview": "pending",
+          "sources": [
+            {
+              "id": "source-north25",
+              "uri": "fixture://north25",
+              "summary": "Illustrative North energy demand is 40 kWh.",
+              "sha256": "1b102b2a7b6cd24b021e70b3e31a10ecf6cc5143563202697ac3135cf6a00252"
+            }
+          ],
+          "claims": [
+            {
+              "id": "north25",
+              "aliases": [
+                "North demand 2025",
+                "Illustrative North energy demand is 40 kWh."
+              ],
+              "sourceIds": [
+                "source-north25"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "north24",
+        "title": "North demand 2024",
+        "text": "Illustrative North energy demand is 30 kWh.",
+        "family": "chart",
+        "entity": "North",
+        "year": 2024,
+        "status": "illustrative",
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "entity": "North",
+          "timeframe": "2024",
+          "unit": "kWh",
+          "provenance": "illustrative",
+          "verification": "unknown",
+          "independentReview": "pending",
+          "sources": [
+            {
+              "id": "source-north24",
+              "uri": "fixture://north24",
+              "summary": "Illustrative North energy demand is 30 kWh.",
+              "sha256": "6bb2a920279c5fb889511ea3a6a4e54a689eda9069d5cc272a3272a3e867f81a"
+            }
+          ],
+          "claims": [
+            {
+              "id": "north24",
+              "aliases": [
+                "North demand 2024",
+                "Illustrative North energy demand is 30 kWh."
+              ],
+              "sourceIds": [
+                "source-north24"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "south25",
+        "title": "South demand 2025",
+        "text": "Illustrative South energy demand is 90 kWh.",
+        "family": "chart",
+        "entity": "South",
+        "year": 2025,
+        "status": "illustrative",
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "entity": "South",
+          "timeframe": "2025",
+          "unit": "kWh",
+          "provenance": "illustrative",
+          "verification": "unknown",
+          "independentReview": "pending",
+          "sources": [
+            {
+              "id": "source-south25",
+              "uri": "fixture://south25",
+              "summary": "Illustrative South energy demand is 90 kWh.",
+              "sha256": "c2da8c5d22e9e89b8ee6bf0277e784d416b9e1e7ef1461767911836b81e92856"
+            }
+          ],
+          "claims": [
+            {
+              "id": "south25",
+              "aliases": [
+                "South demand 2025",
+                "Illustrative South energy demand is 90 kWh."
+              ],
+              "sourceIds": [
+                "source-south25"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "s1",
+      "story": "solar",
+      "speech": "Photovoltaic cells convert sunlight into electricity.",
+      "expected": "panels",
+      "slice": "exact",
+      "category": "positive"
+    },
+    {
+      "id": "s2",
+      "story": "solar",
+      "speech": "Explain how sunshine becomes electrical power.",
+      "expected": "panels",
+      "slice": "paraphrase",
+      "category": "positive"
+    },
+    {
+      "id": "s3",
+      "story": "solar",
+      "speech": "Batteries store surplus electricity for use after sunset.",
+      "expected": "storage",
+      "slice": "exact",
+      "category": "positive"
+    },
+    {
+      "id": "s4",
+      "story": "solar",
+      "speech": "What keeps our lights powered after sundown?",
+      "expected": "storage",
+      "slice": "paraphrase",
+      "category": "positive"
+    },
+    {
+      "id": "s5",
+      "story": "solar",
+      "speech": "Show the illustrative generation curve for 2025 in Wh.",
+      "expected": "curve",
+      "slice": "scope",
+      "category": "positive"
+    },
+    {
+      "id": "s6",
+      "story": "solar",
+      "speech": "Instead of battery storage, explain solar conversion.",
+      "expected": "panels",
+      "slice": "correction",
+      "category": "positive"
+    },
+    {
+      "id": "w1",
+      "story": "water",
+      "speech": "Liquid water changes to water vapor.",
+      "expected": "evaporation",
+      "slice": "exact",
+      "category": "positive"
+    },
+    {
+      "id": "w2",
+      "story": "water",
+      "speech": "Now explain how water vapor becomes liquid droplets.",
+      "expected": "condensation",
+      "slice": "paraphrase",
+      "category": "positive"
+    },
+    {
+      "id": "w3",
+      "story": "water",
+      "speech": "Show illustrative rainfall totals for 2025 in mm.",
+      "expected": "rainfall",
+      "slice": "scope",
+      "category": "positive"
+    },
+    {
+      "id": "e1",
+      "story": "energy",
+      "speech": "Show illustrative North demand 2025 in kWh.",
+      "expected": "north25",
+      "slice": "date",
+      "category": "positive"
+    },
+    {
+      "id": "e2",
+      "story": "energy",
+      "speech": "Use illustrative North demand 2024 in kWh.",
+      "expected": "north24",
+      "slice": "date",
+      "category": "positive"
+    },
+    {
+      "id": "e3",
+      "story": "energy",
+      "speech": "Instead of North, show illustrative South demand 2025 in kWh.",
+      "expected": "south25",
+      "slice": "correction",
+      "category": "positive"
+    },
+    {
+      "id": "h1",
+      "story": "solar",
+      "speech": "Checking the microphone.",
+      "expected": "hold",
+      "slice": "incidental",
+      "category": "hold"
+    },
+    {
+      "id": "h2",
+      "story": "water",
+      "speech": "Keep the current visual.",
+      "expected": "hold",
+      "slice": "retention",
+      "category": "hold"
+    },
+    {
+      "id": "h3",
+      "story": "solar",
+      "speech": "Do not show battery storage.",
+      "expected": "hold",
+      "slice": "negation",
+      "category": "hold"
+    },
+    {
+      "id": "h4",
+      "story": "water",
+      "speech": "Someone said \"show evaporation\", but that is only a quotation.",
+      "expected": "hold",
+      "slice": "quotation",
+      "category": "hold"
+    },
+    {
+      "id": "h5",
+      "story": "solar",
+      "speech": "Suppose we showed battery storage; I am not asking you to show it now.",
+      "expected": "hold",
+      "slice": "hypothetical",
+      "category": "hold"
+    },
+    {
+      "id": "h6",
+      "story": "energy",
+      "speech": "Show that one again.",
+      "expected": "hold",
+      "slice": "ambiguous",
+      "category": "hold"
+    },
+    {
+      "id": "m1",
+      "story": "solar",
+      "speech": "What is the installation cost in dollars?",
+      "expected": "context",
+      "slice": "missing-claim",
+      "category": "missing"
+    },
+    {
+      "id": "m2",
+      "story": "solar",
+      "speech": "Show audited battery lifetime measurements.",
+      "expected": "context",
+      "slice": "audit",
+      "category": "missing"
+    },
+    {
+      "id": "m3",
+      "story": "water",
+      "speech": "Show rainfall totals for 2024.",
+      "expected": "context",
+      "slice": "date",
+      "category": "missing"
+    },
+    {
+      "id": "m4",
+      "story": "energy",
+      "speech": "Show West demand 2025 in kWh.",
+      "expected": "context",
+      "slice": "entity",
+      "category": "missing"
+    },
+    {
+      "id": "m5",
+      "story": "energy",
+      "speech": "Show actual North demand 2025 in kWh.",
+      "expected": "context",
+      "slice": "provenance",
+      "category": "missing"
+    },
+    {
+      "id": "m6",
+      "story": "solar",
+      "speech": "Explain solar conversion and its installation cost.",
+      "expected": "context",
+      "slice": "extra-obligation",
+      "category": "missing"
+    }
+  ],
+  "passes": 3,
+  "precisionScreen": {
+    "minPositiveAccuracy": 0.8,
+    "minNegativeAccuracy": 0.75,
+    "minOverallAccuracy": 0.8,
+    "note": "Gate for further precision experiments only; not production acceptance. No thresholds are tuned from model results."
+  },
+  "prompt": "Choose the prepared content requested now. Hold for no change, negation, quotation or ambiguity. Context if the requested evidence is unavailable.",
+  "hold": "Keep current content; no change requested.",
+  "context": "The requested evidence is unavailable."
+}

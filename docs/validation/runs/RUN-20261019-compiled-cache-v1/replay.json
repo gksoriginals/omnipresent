@@ -1,0 +1,1707 @@
+{
+  "id": "RUN-20261019-compiled-cache-v1",
+  "sourceFiles": [
+    {
+      "path": "server/agents/adaptive.ts",
+      "sha256": "e5f86355c263b488eacede3a81e7f2e29081e6d4d2751845d69dd0a0e05711c0"
+    },
+    {
+      "path": "server/agents/model.ts",
+      "sha256": "1c5068749fb67022c177ee7584f0855304e3de9404e9001b7fc42109d9307d2e"
+    },
+    {
+      "path": "server/agents/preparation.ts",
+      "sha256": "db7bb2e47de56770f74ed5b5f515dd65298e7efd82d2f4e54180d6cda3873a1f"
+    },
+    {
+      "path": "server/agents/system-one.ts",
+      "sha256": "4f61952a0251ae88bf2f1466a610a22fca9d5b0e623e1eae5c68415a519bf154"
+    },
+    {
+      "path": "server/controllers/candidates.ts",
+      "sha256": "dac057323574104af8e5d16b4565c581b643b633c0e7fbec37614e79d4e552bd"
+    },
+    {
+      "path": "server/controllers/component-forecast.ts",
+      "sha256": "bb34b03c7cb7355c084db2f5a0c122b78551a680873a03fba5c7cdbabb6f518d"
+    },
+    {
+      "path": "server/controllers/evidence-contract.ts",
+      "sha256": "57c3701e2e6487c76d32303b3da2e414700a53f32b483bca459cb96176a492e6"
+    },
+    {
+      "path": "server/controllers/hybrid-components.ts",
+      "sha256": "649f4312a26d9862aad0e058367625f6fd0cdeec6c098daa9ce027c3cbb39e84"
+    },
+    {
+      "path": "server/controllers/library-grounding.ts",
+      "sha256": "276bc0ebcc0895e5d173bd9fe2a7e89e25cad5b1e4fc5d6ed84dc9817a6ef06f"
+    },
+    {
+      "path": "server/controllers/library-policy.ts",
+      "sha256": "6f50020f694936fb5de97137328fbc82235461ba45a28d9b0ee597b3d57f5ddc"
+    },
+    {
+      "path": "server/controllers/library-search.ts",
+      "sha256": "05032576f35f30e7f8f292339c1bbc0eb8a0cf46ea514eacee034c08c2fd7aa9"
+    },
+    {
+      "path": "server/controllers/presentation-policy.ts",
+      "sha256": "f2fd740508e72568b6af39538ce2e4eff177aae607d64332a06dd5364671e5d0"
+    },
+    {
+      "path": "server/controllers/retrieval.ts",
+      "sha256": "6b572e816577acebfbcd089a919a27d792dce04e95c8f779c0a88abba5e9465c"
+    },
+    {
+      "path": "server/controllers/semantic-retrieval.ts",
+      "sha256": "bbb0140b7edb3f36b138439b25f1c2673a34063cabe7e9411cb46a314f1f09dd"
+    },
+    {
+      "path": "server/controllers/shortlisted-decision.ts",
+      "sha256": "5c8a0768acf4aec9cd5a4af4d8c3ff4df4c2e16e3e31235af004a62c007b9283"
+    },
+    {
+      "path": "server/experiments/file-trace.ts",
+      "sha256": "3ec3c818b8fd2d85ae8b38e70b5eec217dffc8d377f8af9f71cc16f4b6e94175"
+    },
+    {
+      "path": "server/experiments/replay.ts",
+      "sha256": "b3c0e4811b43e1f24be67544d145482fcfa4e13dc4b6090680550adc06c27e51"
+    },
+    {
+      "path": "server/experiments/trace.ts",
+      "sha256": "c94643ec67f3a1e71eea69b1b061025e68a3c407a1a38ab81d3bc72aca4db246"
+    },
+    {
+      "path": "server/index.ts",
+      "sha256": "8a892b98814077f316d16367d964f91d42e52c600ee90e5583f63ee79d5475ac"
+    },
+    {
+      "path": "server/materials.ts",
+      "sha256": "3d49614e84ce1c583fa29dd54d1c2cc0a1e1c5c141e78d596b582096bbea79d0"
+    },
+    {
+      "path": "server/models/cached-embeddings.ts",
+      "sha256": "4697462ed9dab031603a87bd4102a1077d8a8bb3fb7e872e865cfd3a4c9b067d"
+    },
+    {
+      "path": "server/models/decision-transport.ts",
+      "sha256": "ff61368247538e26a9111230be9633de33d2e861d88b2cdc80b484c733676e5c"
+    },
+    {
+      "path": "server/models/decisions.ts",
+      "sha256": "3f6a534a922033da92ee2398f3aaff820943dcb817f7f6abeadd2306d5374d4c"
+    },
+    {
+      "path": "server/models/embeddings.ts",
+      "sha256": "d8f7a5c4b678225cd89be56461c4dd3471bf27fcbbbd0b3a9b784bcae94437dd"
+    },
+    {
+      "path": "server/models/language.ts",
+      "sha256": "619bdce23d4cfbd3dadc16668d3bc3aaf7fd0158ff4c5db55c132a7783be20c2"
+    },
+    {
+      "path": "server/models/speech.ts",
+      "sha256": "75c14c3cdd0a9bb8012bba6b6cac3e35bb21d5907fd51083a742986335a45870"
+    },
+    {
+      "path": "server/presentation/baseline.ts",
+      "sha256": "57afc9c3cef847fd429af6edfff7318cee72b8a272b63f5426fd4d05662b373e"
+    },
+    {
+      "path": "server/presentation/catalog.ts",
+      "sha256": "a442d02c52fd4e436e6f9b5e1d56c7f6053a5e14a4e5c0948e1f03f46d7fe10d"
+    },
+    {
+      "path": "server/presentation/component-evidence.ts",
+      "sha256": "39621b12424d07a0d2b11c75f693bd46903a4ba00d07c1e96f6e5c2038d9c6e7"
+    },
+    {
+      "path": "server/presentation/composition.ts",
+      "sha256": "c7b1ca7098a4ec20b4fcab2e7b7a3184a9a856600290c943c0e4ab23a0ea5664"
+    },
+    {
+      "path": "server/presentation/immutable.ts",
+      "sha256": "a629cebb6cf054fec990a6e8d235823f78b6f36cff1aaa18eb8911ce296a1c59"
+    },
+    {
+      "path": "server/presentation/prepare-evidence.ts",
+      "sha256": "e4028c5c08bd8901ff2583adbe2983b6ff89886fb8325e2be7eec7f20bbfbeb6"
+    },
+    {
+      "path": "server/presentation/prepared.ts",
+      "sha256": "7f6c2fe447d391b4e557aaae1fd0ce53e3aa9ab9b02e1095dd834abc7d9b39ba"
+    },
+    {
+      "path": "server/presentation/request-frame.ts",
+      "sha256": "641cd6c08bab833b40f8ae317442d0db6d26e92d5e4b3e82f9914e7d2d2bb577"
+    },
+    {
+      "path": "server/presentation/synthesis.ts",
+      "sha256": "ccdd3888d5677312b939c042ccd5bdb5e722491324797102df4144e3aa276eef"
+    },
+    {
+      "path": "server/session.ts",
+      "sha256": "241f0efcbb978e30b2ff59b4a056ffeb6552f112e6669099ac83d7168fecfee3"
+    },
+    {
+      "path": "shared/adaptive.ts",
+      "sha256": "388f8842387547ae5595aec6ae819b91d56c11e0631f70981a36e886021e6f8a"
+    },
+    {
+      "path": "shared/component-evidence.ts",
+      "sha256": "4fc40675cf49672273f6865e1169b3a05e9ea1d047bca38cdaee373f5c1ad31b"
+    },
+    {
+      "path": "shared/evidence.ts",
+      "sha256": "517e90ade1b825d080a224a230c7bf50b99d3815c248920a0cc36d06cd49fe62"
+    },
+    {
+      "path": "shared/preparation.ts",
+      "sha256": "d5ad093e3db5dca8304eced75a23697f29c225b101e8e658c832f5cd3df03318"
+    },
+    {
+      "path": "shared/visuals.ts",
+      "sha256": "c744c6a0b88bccd86518772c390fdc64d9bffcfab859a67f5a1024890af37aaf"
+    },
+    {
+      "path": "shared/workspace.ts",
+      "sha256": "f5b7fac6ff199bc9fe7716daceae619819b035111cd67fc998d7aa43a1d699a9"
+    },
+    {
+      "path": "scripts/optimization-replay.ts",
+      "sha256": "9012b911c036afc45aa42d7f6cb6584cb200ffbdb5042dd8519500f3813fffdc"
+    },
+    {
+      "path": "runtime/retrieval-model.json",
+      "sha256": "d13e58d2e3c51df87eb02de94031ddcf12a90bc18050cf5ca3fe94b6b3fd76b6"
+    },
+    {
+      "path": "package.json",
+      "sha256": "3ea9299b1919515ba2d5666c8b53b59c0900c9bedbb75995ff428fac39ba929b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "dc4aaeb499174d437404c1affbaecbf9c1fad0e6dc4a87e18397dfd42d333a8e"
+    }
+  ],
+  "inputHash": "4f7f2346e33997121257946bb440a97c454b57abb9e651a7849a741b76784216",
+  "priorSource": "RUN-20261019-full-spoken-demo/source-snapshot",
+  "parity": true,
+  "summary": [
+    {
+      "arm": "prior",
+      "turns": 36,
+      "errors": 0,
+      "medianMs": 0.688707999999906,
+      "p95Ms": 112.09458300000006,
+      "startupMs": [
+        0.002041999999988775,
+        0.000875000000178261,
+        0.0003329999999550637
+      ],
+      "totalSessionMsByPass": [
+        430.4840419999998,
+        380.7342070000004,
+        404.5576209999997
+      ],
+      "counters": [
+        {
+          "pass": 0,
+          "arm": "prior",
+          "documentTexts": 21,
+          "queryTexts": 3,
+          "calls": 3
+        },
+        {
+          "pass": 1,
+          "arm": "prior",
+          "documentTexts": 21,
+          "queryTexts": 3,
+          "calls": 3
+        },
+        {
+          "pass": 2,
+          "arm": "prior",
+          "documentTexts": 21,
+          "queryTexts": 3,
+          "calls": 3
+        }
+      ]
+    },
+    {
+      "arm": "optimized",
+      "turns": 36,
+      "errors": 0,
+      "medianMs": 0.3196249999999736,
+      "p95Ms": 27.40341699999999,
+      "startupMs": [
+        263.251667,
+        103.05650000000003,
+        120.965375
+      ],
+      "totalSessionMsByPass": [
+        323.4268769999999,
+        157.4554159999999,
+        173.4054570000003
+      ],
+      "counters": [
+        {
+          "pass": 0,
+          "arm": "optimized",
+          "documentTexts": 7,
+          "queryTexts": 2,
+          "calls": 3
+        },
+        {
+          "pass": 1,
+          "arm": "optimized",
+          "documentTexts": 7,
+          "queryTexts": 2,
+          "calls": 3
+        },
+        {
+          "pass": 2,
+          "arm": "optimized",
+          "documentTexts": 7,
+          "queryTexts": 2,
+          "calls": 3
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 0,
+      "speech": "Daily curve",
+      "elapsedMs": 116.37508400000002,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 0,
+      "speech": "Daily curve",
+      "elapsedMs": 0.9220420000000331,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 1,
+      "speech": "Solar panels turn sunlight into electricity.",
+      "elapsedMs": 0.12762500000008004,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 1,
+      "speech": "Solar panels turn sunlight into electricity.",
+      "elapsedMs": 0.6437919999999622,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 2,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 50.500125000000025,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 2,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 28.377624999999966,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 3,
+      "speech": "Storage reserves",
+      "elapsedMs": 0.260791999999924,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 3,
+      "speech": "Storage reserves",
+      "elapsedMs": 0.688707999999906,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 4,
+      "speech": "Batteries store electricity for later use.",
+      "elapsedMs": 100.39045799999997,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": true
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 4,
+      "speech": "Batteries store electricity for later use.",
+      "elapsedMs": 0.7681249999999409,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": true
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 5,
+      "speech": "explain Batteries store electricity for later use",
+      "elapsedMs": 27.40341699999999,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 5,
+      "speech": "explain Batteries store electricity for later use",
+      "elapsedMs": 27.246624999999995,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 6,
+      "speech": "Checking the microphone",
+      "elapsedMs": 0.05208300000003874,
+      "action": "hold",
+      "path": "guard",
+      "composition": null,
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 6,
+      "speech": "Checking the microphone",
+      "elapsedMs": 0.028125000000045475,
+      "action": "hold",
+      "path": "guard",
+      "composition": null,
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 7,
+      "speech": "Show the payback period",
+      "elapsedMs": 0.08799999999996544,
+      "action": "context",
+      "path": "guard",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 7,
+      "speech": "Show the payback period",
+      "elapsedMs": 0.09245899999996254,
+      "action": "context",
+      "path": "guard",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 8,
+      "speech": "Daily curve",
+      "elapsedMs": 0.6269580000000587,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 8,
+      "speech": "Daily curve",
+      "elapsedMs": 0.27575000000001637,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 9,
+      "speech": "Storage reserves",
+      "elapsedMs": 0.8367919999999458,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": true
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 9,
+      "speech": "Storage reserves",
+      "elapsedMs": 104.23120800000004,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": true
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 10,
+      "speech": "Daily curve",
+      "elapsedMs": 0.5181249999999409,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 10,
+      "speech": "Daily curve",
+      "elapsedMs": 0.3196249999999736,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "index": 11,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 0.7672919999999976,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 0,
+      "arm": "prior",
+      "index": 11,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 29.116374999999948,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 0,
+      "speech": "Daily curve",
+      "elapsedMs": 0.29362500000002,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 0,
+      "speech": "Daily curve",
+      "elapsedMs": 100.60062500000004,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 1,
+      "speech": "Solar panels turn sunlight into electricity.",
+      "elapsedMs": 0.3073749999998654,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 1,
+      "speech": "Solar panels turn sunlight into electricity.",
+      "elapsedMs": 0.10249999999996362,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 2,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 27.33962499999984,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 2,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 26.522333000000117,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 3,
+      "speech": "Storage reserves",
+      "elapsedMs": 0.5044170000001031,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 3,
+      "speech": "Storage reserves",
+      "elapsedMs": 0.20983400000000074,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 4,
+      "speech": "Batteries store electricity for later use.",
+      "elapsedMs": 0.6243329999999787,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": true
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 4,
+      "speech": "Batteries store electricity for later use.",
+      "elapsedMs": 96.97775000000001,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": true
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 5,
+      "speech": "explain Batteries store electricity for later use",
+      "elapsedMs": 24.989541000000145,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 5,
+      "speech": "explain Batteries store electricity for later use",
+      "elapsedMs": 24.26870800000006,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 6,
+      "speech": "Checking the microphone",
+      "elapsedMs": 0.024582999999893218,
+      "action": "hold",
+      "path": "guard",
+      "composition": null,
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 6,
+      "speech": "Checking the microphone",
+      "elapsedMs": 0.03749999999990905,
+      "action": "hold",
+      "path": "guard",
+      "composition": null,
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 7,
+      "speech": "Show the payback period",
+      "elapsedMs": 0.0758330000001024,
+      "action": "context",
+      "path": "guard",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 7,
+      "speech": "Show the payback period",
+      "elapsedMs": 0.02712500000006912,
+      "action": "context",
+      "path": "guard",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 8,
+      "speech": "Daily curve",
+      "elapsedMs": 0.1490409999998974,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 8,
+      "speech": "Daily curve",
+      "elapsedMs": 0.45325000000002547,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 9,
+      "speech": "Storage reserves",
+      "elapsedMs": 95.97916599999985,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": true
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 9,
+      "speech": "Storage reserves",
+      "elapsedMs": 0.7036250000001019,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": true
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 10,
+      "speech": "Daily curve",
+      "elapsedMs": 0.17012499999987085,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 10,
+      "speech": "Daily curve",
+      "elapsedMs": 0.5411249999999654,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "index": 11,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 33.74441700000011,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "index": 11,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 0.4857920000001741,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 0,
+      "speech": "Daily curve",
+      "elapsedMs": 110.80491600000005,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 0,
+      "speech": "Daily curve",
+      "elapsedMs": 0.34254200000009405,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 1,
+      "speech": "Solar panels turn sunlight into electricity.",
+      "elapsedMs": 0.09666700000002493,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 1,
+      "speech": "Solar panels turn sunlight into electricity.",
+      "elapsedMs": 0.33266600000001745,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 2,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 26.489291999999978,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 2,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 24.865375000000085,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 3,
+      "speech": "Storage reserves",
+      "elapsedMs": 0.6742500000000291,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 3,
+      "speech": "Storage reserves",
+      "elapsedMs": 0.5521669999998267,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 4,
+      "speech": "Batteries store electricity for later use.",
+      "elapsedMs": 95.16329100000007,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": true
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 4,
+      "speech": "Batteries store electricity for later use.",
+      "elapsedMs": 0.5732080000000224,
+      "action": "context",
+      "path": "cue",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": true
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 5,
+      "speech": "explain Batteries store electricity for later use",
+      "elapsedMs": 24.208415999999943,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 5,
+      "speech": "explain Batteries store electricity for later use",
+      "elapsedMs": 26.075708000000077,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 6,
+      "speech": "Checking the microphone",
+      "elapsedMs": 0.044332999999824096,
+      "action": "hold",
+      "path": "guard",
+      "composition": null,
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 6,
+      "speech": "Checking the microphone",
+      "elapsedMs": 0.024916000000075655,
+      "action": "hold",
+      "path": "guard",
+      "composition": null,
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 7,
+      "speech": "Show the payback period",
+      "elapsedMs": 0.034374999999954525,
+      "action": "context",
+      "path": "guard",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 7,
+      "speech": "Show the payback period",
+      "elapsedMs": 0.06320800000003146,
+      "action": "context",
+      "path": "guard",
+      "composition": null,
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 8,
+      "speech": "Daily curve",
+      "elapsedMs": 0.4875409999999647,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 8,
+      "speech": "Daily curve",
+      "elapsedMs": 0.1671249999999418,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 9,
+      "speech": "Storage reserves",
+      "elapsedMs": 0.7384580000000369,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": true
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 9,
+      "speech": "Storage reserves",
+      "elapsedMs": 112.09458300000006,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 2,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": true
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 10,
+      "speech": "Daily curve",
+      "elapsedMs": 0.5287499999999454,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 10,
+      "speech": "Daily curve",
+      "elapsedMs": 0.22920799999997143,
+      "action": "show",
+      "path": "cue",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 1,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "index": 11,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 0.48554200000012315,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "index": 11,
+      "speech": "explain Solar panels turn sunlight into electricity",
+      "elapsedMs": 31.920832999999902,
+      "action": "show",
+      "path": "grounded",
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "question": null,
+      "refresh": false
+    }
+  ],
+  "initialization": [
+    {
+      "pass": 0,
+      "arm": "prior",
+      "elapsedMs": 0.002041999999988775
+    },
+    {
+      "pass": 0,
+      "arm": "optimized",
+      "elapsedMs": 263.251667
+    },
+    {
+      "pass": 1,
+      "arm": "optimized",
+      "elapsedMs": 103.05650000000003
+    },
+    {
+      "pass": 1,
+      "arm": "prior",
+      "elapsedMs": 0.000875000000178261
+    },
+    {
+      "pass": 2,
+      "arm": "prior",
+      "elapsedMs": 0.0003329999999550637
+    },
+    {
+      "pass": 2,
+      "arm": "optimized",
+      "elapsedMs": 120.965375
+    }
+  ],
+  "limitations": [
+    "Real local EmbeddingGemma; deterministic selection stub, no hosted cost or quality claim.",
+    "One reviewed synthetic demo story, 12 requests repeated 3 times; not a large-library or independent holdout acceptance.",
+    "Two metadata refreshes per session include index rebuild; source/content withdrawal, changed documents and cancellation are regression tests.",
+    "Transcript-final decision timing includes final validation and scheduled refresh; excludes STT, media and paint. Startup plus all turns also reported."
+  ],
+  "productionAcceptance": false
+}

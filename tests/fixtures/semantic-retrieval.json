@@ -1,0 +1,436 @@
+{
+  "version": 1,
+  "scope": "Synthetic developer-authored dataset frozen before first retrieval/selection execution. 12 calibration cases and 24 evaluation cases across three projects. Evaluation split is not independently labelled and is not an untouched third-party holdout. Text only, no real uploads.",
+  "projects": {
+    "solar": {
+      "revision": 1,
+      "beats": [
+        {
+          "title": "Sunlight conversion",
+          "audienceText": "Photovoltaic panels convert sunlight into electrical power. Solar cells generate electricity during daylight."
+        },
+        {
+          "title": "Daily generation pattern",
+          "audienceText": "Illustrative energy chart: morning 10 Wh, noon 20 Wh, evening 5 Wh. These values are synthetic, not school measurements."
+        },
+        {
+          "title": "Battery storage",
+          "audienceText": "Rechargeable batteries save surplus electricity for use after sunset. Stored energy powers devices at night."
+        },
+        {
+          "title": "Grid connection",
+          "audienceText": "The inverter supplies alternating current to building circuits. Excess solar electricity can be exported to the utility grid."
+        },
+        {
+          "title": "Panel maintenance",
+          "audienceText": "Clean dust from panels and inspect wiring periodically. Shade and debris reduce energy generation."
+        },
+        {
+          "title": "Roof survey",
+          "audienceText": "A structural survey checks roof strength, orientation and available area before installation. No pricing data is available."
+        }
+      ]
+    },
+    "education": {
+      "revision": 1,
+      "beats": [
+        {
+          "title": "Curriculum planning",
+          "audienceText": "A syllabus sequences learning objectives, lessons and prerequisite concepts for a course."
+        },
+        {
+          "title": "Formative assessment",
+          "audienceText": "Low stakes quizzes and classroom feedback reveal misconceptions while learning is in progress."
+        },
+        {
+          "title": "Retrieval practice",
+          "audienceText": "Students recall information from memory without looking at notes. Repeated recall strengthens long term retention."
+        },
+        {
+          "title": "Peer instruction",
+          "audienceText": "Learners first answer a conceptual question individually, discuss reasoning with classmates, then vote again."
+        },
+        {
+          "title": "Project assessment",
+          "audienceText": "A rubric scores the final group project using criteria for evidence, reasoning and communication."
+        },
+        {
+          "title": "Accessible teaching",
+          "audienceText": "Provide captions, readable text, keyboard access and alternative formats so diverse learners can participate."
+        }
+      ]
+    },
+    "software": {
+      "revision": 1,
+      "beats": [
+        {
+          "title": "Response caching",
+          "audienceText": "Reuse stored responses for identical requests until their version or freshness expires. Invalidation prevents stale answers."
+        },
+        {
+          "title": "Request queue",
+          "audienceText": "Bound pending jobs and apply backpressure when workers are busy. Drop stale work to avoid an ever growing backlog."
+        },
+        {
+          "title": "Authentication",
+          "audienceText": "Verify the identity of a signed in user with credentials and a session token."
+        },
+        {
+          "title": "Authorization",
+          "audienceText": "Check permissions before a user reads another project. Authentication alone does not grant resource access."
+        },
+        {
+          "title": "Incident recovery",
+          "audienceText": "Restore a known working release, inspect failure logs and verify health after a deployment regression."
+        },
+        {
+          "title": "Database backup",
+          "audienceText": "Create regular recoverable data snapshots and test restoration. Backups protect against accidental deletion."
+        }
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "dev-solar-literal",
+      "project": "solar",
+      "split": "dev",
+      "speech": "Panels turn sunlight into electricity.",
+      "expectedBeats": [
+        0
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "dev-solar-storage",
+      "project": "solar",
+      "split": "dev",
+      "speech": "We keep excess power until the sun has gone down.",
+      "expectedBeats": [
+        2
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "dev-solar-chart",
+      "project": "solar",
+      "split": "dev",
+      "speech": "This is an illustrative morning noon evening chart, not real school observations.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "dev-solar-none",
+      "project": "solar",
+      "split": "dev",
+      "speech": "The cafeteria serves pasta today.",
+      "expectedBeats": [],
+      "expectedAction": "hold"
+    },
+    {
+      "id": "dev-edu-feedback",
+      "project": "education",
+      "split": "dev",
+      "speech": "Use little quizzes during a lesson to find misconceptions.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "dev-edu-recall",
+      "project": "education",
+      "split": "dev",
+      "speech": "Recall facts without opening your notes.",
+      "expectedBeats": [
+        2
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "dev-edu-none",
+      "project": "education",
+      "split": "dev",
+      "speech": "Can somebody close that window?",
+      "expectedBeats": [],
+      "expectedAction": "hold"
+    },
+    {
+      "id": "dev-edu-missing",
+      "project": "education",
+      "split": "dev",
+      "speech": "Show actual exam scores for this class; none have been supplied.",
+      "expectedBeats": [],
+      "expectedAction": "request-context"
+    },
+    {
+      "id": "dev-sw-cache",
+      "project": "software",
+      "split": "dev",
+      "speech": "Reuse the saved response until its version changes.",
+      "expectedBeats": [
+        0
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "dev-sw-queue",
+      "project": "software",
+      "split": "dev",
+      "speech": "Slow the producers down when every worker is busy.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "dev-sw-none",
+      "project": "software",
+      "split": "dev",
+      "speech": "I will order coffee after lunch.",
+      "expectedBeats": [],
+      "expectedAction": "hold"
+    },
+    {
+      "id": "dev-sw-missing",
+      "project": "software",
+      "split": "dev",
+      "speech": "What was our actual outage duration? We have no incident measurements.",
+      "expectedBeats": [],
+      "expectedAction": "request-context"
+    },
+    {
+      "id": "solar-paraphrase",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Keep the surplus until darkness falls.",
+      "expectedBeats": [
+        2
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "solar-negation",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Not the panels converting sunlight. I mean the battery that supplies devices after sunset.",
+      "expectedBeats": [
+        2
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "solar-comparison",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Contrast making electricity in photovoltaic cells with saving it in batteries for later.",
+      "expectedBeats": [
+        0,
+        2
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "solar-numbers",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "The synthetic plot peaks at twenty watt hours at midday.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "solar-grid",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Unused power travels back to the utility after conversion to alternating current.",
+      "expectedBeats": [
+        3
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "solar-maintain",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Accumulated dust and a shaded surface lower output, so inspect and clean them.",
+      "expectedBeats": [
+        4
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "solar-cost",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Show the actual installation cost for our school. We have no price data.",
+      "expectedBeats": [],
+      "expectedAction": "request-context"
+    },
+    {
+      "id": "solar-offtopic",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "I left my jacket in the bus.",
+      "expectedBeats": [],
+      "expectedAction": "hold"
+    },
+    {
+      "id": "edu-paraphrase",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Ask everyone to bring an idea back from memory, rather than reread the page.",
+      "expectedBeats": [
+        2
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "edu-negation",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Not the final project rubric. I want the quick feedback checks used while a lesson is happening.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "edu-comparison",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Compare feedback quizzes during learning with the rubric used to judge the finished group project.",
+      "expectedBeats": [
+        1,
+        4
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "edu-peers",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Vote alone, debate with your neighbour, and vote a second time.",
+      "expectedBeats": [
+        3
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "edu-access",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Learners need subtitles and an alternative to using a mouse.",
+      "expectedBeats": [
+        5
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "edu-plan",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Sequence the objectives and their prerequisites before arranging lessons.",
+      "expectedBeats": [
+        0
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "edu-missing",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "What percentage of this class passed? No class results were uploaded.",
+      "expectedBeats": [],
+      "expectedAction": "request-context"
+    },
+    {
+      "id": "edu-offtopic",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "The parking lot is full and it is raining.",
+      "expectedBeats": [],
+      "expectedAction": "hold"
+    },
+    {
+      "id": "sw-paraphrase",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "Do not recompute an identical answer while the saved copy is fresh.",
+      "expectedBeats": [
+        0
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "sw-negation",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "Not signing in. The question is whether this signed in user is allowed to read another project.",
+      "expectedBeats": [
+        3
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "sw-comparison",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "Compare verifying who somebody is with checking what they are allowed to access.",
+      "expectedBeats": [
+        2,
+        3
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "sw-backpressure",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "There is too much incoming work: cap the waiting jobs and slow senders.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "sw-rollback",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "A bad release just broke health checks; return to the known working deployment.",
+      "expectedBeats": [
+        4
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "sw-restore",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "Recover accidentally deleted records from a previously tested snapshot.",
+      "expectedBeats": [
+        5
+      ],
+      "expectedAction": "show"
+    },
+    {
+      "id": "sw-missing",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "Display our actual 99th percentile response time. We have no latency samples.",
+      "expectedBeats": [],
+      "expectedAction": "request-context"
+    },
+    {
+      "id": "sw-offtopic",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "The train leaves from platform nine.",
+      "expectedBeats": [],
+      "expectedAction": "hold"
+    }
+  ]
+}

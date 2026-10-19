@@ -1,0 +1,69 @@
+W1017 20:51:47.699000 68931 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/413 [00:00<?, ?it/s]Loading weights:   0%|          | 1/413 [00:00<00:47,  8.71it/s]Loading weights: 100%|██████████| 413/413 [00:00<00:00, 3488.85it/s]
+Traceback (most recent call last):
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/util/environment.py", line 36, in suggest_extra_on_exception
+    yield
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/base/modules/transformer.py", line 869, in __init__
+    self.processor = AutoProcessor.from_pretrained(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/transformers/models/auto/processing_auto.py", line 346, in from_pretrained
+    return processor_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/transformers/processing_utils.py", line 1754, in from_pretrained
+    args = cls._get_arguments_from_pretrained(pretrained_model_name_or_path, processor_dict, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/transformers/processing_utils.py", line 1894, in _get_arguments_from_pretrained
+    sub_processor = auto_processor_class.from_pretrained(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/transformers/models/auto/video_processing_auto.py", line 433, in from_pretrained
+    return video_processor_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 2424, in __getattribute__
+    requires_backends(cls, cls._backends)
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 2410, in requires_backends
+    raise ImportError("".join(failed))
+ImportError: 
+EmbeddingGemma2VideoProcessor requires the Torchvision library but it was not found in your environment. Check out the instructions on the
+installation page: https://pytorch.org/get-started/locally/ and follow the ones that match your environment.
+Please note that you may need to restart your runtime after installation.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/runtime/retrieval_server.py", line 14, in <module>
+    model=SentenceTransformer(settings['model'],revision=settings['revision'],device='cpu',
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/util/decorators.py", line 46, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/sentence_transformer/model.py", line 194, in __init__
+    super().__init__(
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 236, in __init__
+    modules, self.module_kwargs = self._load_modules(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 1081, in _load_modules
+    return self._load_config_modules(model_name_or_path, **load_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/base/model.py", line 1298, in _load_config_modules
+    module = module_class.load(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/base/modules/transformer.py", line 2635, in load
+    return cls(model_name_or_path=model_name_or_path, **init_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/util/decorators.py", line 92, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/base/modules/transformer.py", line 868, in __init__
+    with suggest_extra_on_exception():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gopikrishnansasikumar/.local/share/uv/python/cpython-3.12.7-macos-aarch64-none/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Users/gopikrishnansasikumar/projects/omnipresent/output/retrieval-venv/lib/python3.12/site-packages/sentence_transformers/util/environment.py", line 41, in suggest_extra_on_exception
+    raise type(e)(f"{str(e).strip()}\n\nTo install the required dependencies, run:\n{hint}") from e
+ImportError: EmbeddingGemma2VideoProcessor requires the Torchvision library but it was not found in your environment. Check out the instructions on the
+installation page: https://pytorch.org/get-started/locally/ and follow the ones that match your environment.
+Please note that you may need to restart your runtime after installation.
+
+To install the required dependencies, run:
+pip install -U "sentence-transformers[image]"

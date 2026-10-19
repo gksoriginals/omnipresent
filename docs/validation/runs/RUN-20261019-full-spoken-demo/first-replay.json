@@ -1,0 +1,508 @@
+[
+  {
+    "type": "stage",
+    "stage": {
+      "text": "Sunlight becomes electricity",
+      "composition": {
+        "title": "Sunlight becomes electricity",
+        "body": "Solar panels turn sunlight into electricity.",
+        "beat": 0,
+        "flowRevision": 5,
+        "adaptive": {
+          "layout": "focus",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "statement",
+              "beat": 0,
+              "emphasis": "normal",
+              "reveal": null
+            }
+          ]
+        }
+      },
+      "source": "agent",
+      "revision": 1,
+      "committedAt": 1792394170256
+    },
+    "dispatchMs": 0.24374999999417923,
+    "at": 1792394170266
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090460",
+    "text": "So.",
+    "final": false,
+    "at": 1792394171342
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090460",
+    "text": "Solar panels.",
+    "final": false,
+    "at": 1792394171853
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090460",
+    "text": "Solar panels turn",
+    "final": false,
+    "at": 1792394172341
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090460",
+    "text": "Solar panels turn sometime.",
+    "final": false,
+    "at": 1792394172830
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090460",
+    "text": "Solar panels turned some white.",
+    "final": false,
+    "at": 1792394173462
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090460",
+    "text": "Solar panels turned some white.",
+    "final": true,
+    "at": 1792394173464
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090461",
+    "text": "",
+    "final": false,
+    "at": 1792394173541
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090461",
+    "text": "Into everything.",
+    "final": false,
+    "at": 1792394173802
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090461",
+    "text": "Into electricity.",
+    "final": false,
+    "at": 1792394174325
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090461",
+    "text": "Into electricity.",
+    "final": true,
+    "at": 1792394174781
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 2177.8482080000103,
+    "changed": false,
+    "held": true,
+    "composition": {
+      "layout": "focus",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "statement",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "8a7549ac-54cf-4ce9-8228-0e77abfc670b",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "guard",
+      "action": "hold",
+      "operation": "retain",
+      "revision": "71d4500f1130162cb61d4dcbe97a566609e90421fe0bfc653e35bf879e388622"
+    },
+    "at": 1792394175646
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 0.3459580000053393,
+    "changed": false,
+    "held": true,
+    "composition": {
+      "layout": "focus",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "statement",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "27339194-fbdd-46fd-8c98-c6b11c0f34f1",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "guard",
+      "action": "hold",
+      "operation": "retain",
+      "revision": "71d4500f1130162cb61d4dcbe97a566609e90421fe0bfc653e35bf879e388622"
+    },
+    "at": 1792394175651
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090462",
+    "text": "That is",
+    "final": false,
+    "at": 1792394177806
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090462",
+    "text": "Batteries",
+    "final": false,
+    "at": 1792394178335
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090462",
+    "text": "Batteries store electricity",
+    "final": false,
+    "at": 1792394178809
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090462",
+    "text": "Batteries store electricity to",
+    "final": false,
+    "at": 1792394179284
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090462",
+    "text": "Batteries store electricity for later delivery",
+    "final": false,
+    "at": 1792394179832
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090462",
+    "text": "Batteries store electricity for later use",
+    "final": false,
+    "at": 1792394180326
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090462",
+    "text": "Batteries store electricity for later use",
+    "final": true,
+    "at": 1792394180803
+  },
+  {
+    "type": "stage",
+    "stage": {
+      "text": "Stored energy",
+      "composition": {
+        "title": "Stored energy",
+        "body": "Batteries store electricity for later use.",
+        "beat": 2,
+        "flowRevision": 5,
+        "adaptive": {
+          "layout": "focus",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "statement",
+              "beat": 2,
+              "emphasis": "strong",
+              "reveal": null
+            }
+          ]
+        }
+      },
+      "source": "agent",
+      "revision": 2,
+      "committedAt": 1792394180805
+    },
+    "dispatchMs": 0.016457999998237938,
+    "at": 1792394180807
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 2.4512499999982538,
+    "changed": true,
+    "held": false,
+    "composition": {
+      "layout": "focus",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "statement",
+          "beat": 2,
+          "emphasis": "strong",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "0a6e0a5e-955f-4fcf-8e8e-a0c45901c0a0",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "cue",
+      "action": "show",
+      "operation": "replace",
+      "revision": "71d4500f1130162cb61d4dcbe97a566609e90421fe0bfc653e35bf879e388622"
+    },
+    "at": 1792394180807
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090463",
+    "text": "So",
+    "final": false,
+    "at": 1792394183835
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090463",
+    "text": "Solar panels",
+    "final": false,
+    "at": 1792394184318
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090463",
+    "text": "Solar panels turn red.",
+    "final": false,
+    "at": 1792394184845
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090463",
+    "text": "Solar panels turn some light.",
+    "final": false,
+    "at": 1792394185335
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090463",
+    "text": "Solar panels turn sunlight.",
+    "final": false,
+    "at": 1792394185840
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090463",
+    "text": "Solar panels turn sunlight.",
+    "final": true,
+    "at": 1792394185843
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090464",
+    "text": "And",
+    "final": false,
+    "at": 1792394185846
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 0.8312500000029104,
+    "changed": false,
+    "held": true,
+    "composition": {
+      "layout": "focus",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "statement",
+          "beat": 2,
+          "emphasis": "strong",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "2759eeda-bc1e-4d12-a35f-8b88f75df379",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "guard",
+      "action": "hold",
+      "operation": "retain",
+      "revision": "71d4500f1130162cb61d4dcbe97a566609e90421fe0bfc653e35bf879e388622"
+    },
+    "at": 1792394185846
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090464",
+    "text": "Into electrification.",
+    "final": false,
+    "at": 1792394186331
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090464",
+    "text": "Into electricity",
+    "final": false,
+    "at": 1792394186812
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090464",
+    "text": "Into electricity",
+    "final": true,
+    "at": 1792394186814
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 0.47708399999828544,
+    "changed": false,
+    "held": true,
+    "composition": {
+      "layout": "focus",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "statement",
+          "beat": 2,
+          "emphasis": "strong",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "9506b048-8fa9-4800-ad23-10dd373b73de",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "guard",
+      "action": "hold",
+      "operation": "retain",
+      "revision": "71d4500f1130162cb61d4dcbe97a566609e90421fe0bfc653e35bf879e388622"
+    },
+    "at": 1792394186816
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090465",
+    "text": "Checking the",
+    "final": false,
+    "at": 1792394190332
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090465",
+    "text": "Checking the microphone",
+    "final": false,
+    "at": 1792394190802
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090465",
+    "text": "Checking the microphone",
+    "final": true,
+    "at": 1792394191286
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 0.3297080000047572,
+    "changed": false,
+    "held": true,
+    "composition": {
+      "layout": "focus",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "statement",
+          "beat": 2,
+          "emphasis": "strong",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "d81c307b-bd4f-4156-808a-9facf81bdb5d",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "guard",
+      "action": "hold",
+      "operation": "retain",
+      "revision": "71d4500f1130162cb61d4dcbe97a566609e90421fe0bfc653e35bf879e388622"
+    },
+    "at": 1792394191291
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090466",
+    "text": "😊",
+    "final": false,
+    "at": 1792394194325
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090466",
+    "text": "Show warrior",
+    "final": false,
+    "at": 1792394194829
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090466",
+    "text": "She'll worry.",
+    "final": false,
+    "at": 1792394195324
+  },
+  {
+    "type": "transcript",
+    "segmentId": "11389039389749090466",
+    "text": "She'll worry.",
+    "final": true,
+    "at": 1792394195328
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 0.49779200000921264,
+    "changed": false,
+    "held": true,
+    "composition": {
+      "layout": "focus",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "statement",
+          "beat": 2,
+          "emphasis": "strong",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "c8de8859-86d5-43c7-a8bb-a920781d2ef6",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "guard",
+      "action": "hold",
+      "operation": "retain",
+      "revision": "71d4500f1130162cb61d4dcbe97a566609e90421fe0bfc653e35bf879e388622"
+    },
+    "at": 1792394195332
+  }
+]

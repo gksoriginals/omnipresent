@@ -1,0 +1,378 @@
+{
+  "scope": "Actual loopback WebSocket readiness/stop/commit integration; text input, no audio or hosted selection",
+  "completed": {
+    "cancel": false,
+    "readinessMs": 108.431167,
+    "inferenceMs": 3.105959000000439,
+    "blocks": 4,
+    "events": [
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792395683549
+        },
+        "paused": false
+      },
+      {
+        "type": "worker_status",
+        "status": "unloaded"
+      },
+      {
+        "type": "presentation_loaded",
+        "title": "Solar Generation and Storage",
+        "baseline": "evidence-v1",
+        "decision": "clef-omni"
+      },
+      {
+        "type": "presentation_status",
+        "status": "preparing"
+      },
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792395683549
+        },
+        "paused": false
+      },
+      {
+        "type": "stage",
+        "stage": {
+          "text": "Sunlight becomes electricity",
+          "composition": {
+            "title": "Sunlight becomes electricity",
+            "body": "Solar panels turn sunlight into electricity.",
+            "beat": 0,
+            "flowRevision": 5,
+            "adaptive": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 0,
+                  "emphasis": "normal",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          "source": "agent",
+          "revision": 1,
+          "committedAt": 1792395683561
+        },
+        "dispatchMs": 0.016708000002836343
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "refresh",
+        "phase": "start",
+        "atMs": 22616.026583,
+        "revision": "92b9c90d179baa31f3ecbfd3cc6cb2f74784353376bf98ab5a83d41d7c238c63",
+        "requestId": "53a8a952-8baa-49da-b9ac-01b9544bdc23"
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "refresh",
+        "phase": "complete",
+        "atMs": 22716.436542,
+        "elapsedMs": 100.40995900000053,
+        "revision": "92b9c90d179baa31f3ecbfd3cc6cb2f74784353376bf98ab5a83d41d7c238c63",
+        "requestId": "53a8a952-8baa-49da-b9ac-01b9544bdc23"
+      },
+      {
+        "type": "presentation_ready",
+        "requestId": "ready-probe"
+      },
+      {
+        "type": "presentation_status",
+        "status": "composing"
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "eligibility",
+        "phase": "start",
+        "atMs": 22724.053,
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19",
+        "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85"
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "eligibility",
+        "phase": "complete",
+        "atMs": 22724.195208,
+        "elapsedMs": 0.14220800000111922,
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19",
+        "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85"
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "final-evidence",
+        "phase": "start",
+        "atMs": 22724.216125,
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19",
+        "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85"
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "final-evidence",
+        "phase": "complete",
+        "atMs": 22724.256542,
+        "elapsedMs": 0.04041700000016135,
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19",
+        "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85"
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "decision",
+        "phase": "complete",
+        "atMs": 22724.274042,
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19",
+        "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85",
+        "details": {
+          "action": "show",
+          "path": "cue",
+          "operation": "replace",
+          "selected": "chart:1"
+        }
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "composition-plan",
+        "phase": "start",
+        "atMs": 22724.296625,
+        "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "composition-plan",
+        "phase": "complete",
+        "atMs": 22725.623208,
+        "elapsedMs": 1.3265830000018468,
+        "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "composition-validation",
+        "phase": "start",
+        "atMs": 22725.647542,
+        "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "composition-validation",
+        "phase": "complete",
+        "atMs": 22725.723417,
+        "elapsedMs": 0.0758750000022701,
+        "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      {
+        "type": "stage",
+        "stage": {
+          "text": "Daily pattern",
+          "composition": {
+            "title": "Daily pattern",
+            "body": "The daily pattern peaks at noon.",
+            "beat": 1,
+            "flowRevision": 5,
+            "adaptive": {
+              "layout": "sequence",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "visual",
+                  "beat": 1,
+                  "emphasis": "strong",
+                  "reveal": null
+                },
+                {
+                  "id": "secondary",
+                  "kind": "statement",
+                  "beat": 0,
+                  "emphasis": "normal",
+                  "reveal": null
+                },
+                {
+                  "id": "detail",
+                  "kind": "image",
+                  "beat": 0,
+                  "emphasis": "normal",
+                  "reveal": null
+                },
+                {
+                  "id": "context",
+                  "kind": "visual",
+                  "beat": 0,
+                  "emphasis": "normal",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          "source": "agent",
+          "revision": 2,
+          "committedAt": 1792395683672
+        },
+        "dispatchMs": 0.0038750000021536835
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "commit",
+        "phase": "complete",
+        "atMs": 22725.774042,
+        "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19",
+        "details": {
+          "changed": true
+        }
+      },
+      {
+        "type": "direction_completed",
+        "engine": "adaptive",
+        "inferenceMs": 3.105959000000439,
+        "changed": true,
+        "held": false,
+        "composition": {
+          "layout": "sequence",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "visual",
+              "beat": 1,
+              "emphasis": "strong",
+              "reveal": null
+            },
+            {
+              "id": "secondary",
+              "kind": "statement",
+              "beat": 0,
+              "emphasis": "normal",
+              "reveal": null
+            },
+            {
+              "id": "detail",
+              "kind": "image",
+              "beat": 0,
+              "emphasis": "normal",
+              "reveal": null
+            },
+            {
+              "id": "context",
+              "kind": "visual",
+              "beat": 0,
+              "emphasis": "normal",
+              "reveal": null
+            }
+          ]
+        },
+        "decision": {
+          "requestId": "02d3fa6d-cb05-4f62-9b33-9bd3f1c7eb85",
+          "planner": "synthesis",
+          "baseline": "evidence-v1",
+          "model": "clef-omni",
+          "path": "cue",
+          "action": "show",
+          "operation": "replace",
+          "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+        }
+      },
+      {
+        "type": "presentation_status",
+        "status": "ready"
+      }
+    ]
+  },
+  "cancelled": {
+    "cancel": true,
+    "events": [
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792395683682
+        },
+        "paused": false
+      },
+      {
+        "type": "worker_status",
+        "status": "unloaded"
+      },
+      {
+        "type": "presentation_loaded",
+        "title": "Solar Generation and Storage",
+        "baseline": "evidence-v1",
+        "decision": "clef-omni"
+      },
+      {
+        "type": "presentation_status",
+        "status": "preparing"
+      },
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792395683682
+        },
+        "paused": false
+      },
+      {
+        "type": "stage",
+        "stage": {
+          "text": "Sunlight becomes electricity",
+          "composition": {
+            "title": "Sunlight becomes electricity",
+            "body": "Solar panels turn sunlight into electricity.",
+            "beat": 0,
+            "flowRevision": 5,
+            "adaptive": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 0,
+                  "emphasis": "normal",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          "source": "agent",
+          "revision": 1,
+          "committedAt": 1792395683693
+        },
+        "dispatchMs": 0.0034999999988940544
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "refresh",
+        "phase": "start",
+        "atMs": 22747.313583,
+        "revision": "92b9c90d179baa31f3ecbfd3cc6cb2f74784353376bf98ab5a83d41d7c238c63",
+        "requestId": "586cd725-c269-4d36-9963-0f6c7ce924a7"
+      },
+      {
+        "type": "presentation_trace",
+        "stage": "refresh",
+        "phase": "error",
+        "atMs": 22748.73375,
+        "elapsedMs": 1.4201670000002196,
+        "revision": "92b9c90d179baa31f3ecbfd3cc6cb2f74784353376bf98ab5a83d41d7c238c63",
+        "requestId": "586cd725-c269-4d36-9963-0f6c7ce924a7"
+      }
+    ]
+  }
+}

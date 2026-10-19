@@ -1,0 +1,30 @@
+{
+  "recordedAt": "2026-10-17T15:32:51.896473+00:00",
+  "scope": "Primary model-repository metadata, not proof that a hosted API serves this exact checkpoint or of local execution.",
+  "models": [
+    {
+      "id": "Cloudflare/clef",
+      "source": "https://huggingface.co/api/models/Cloudflare/clef",
+      "revision": "0b331204bb13fbd2ca93a64df1956f5b55478ce5",
+      "license": "apache-2.0",
+      "baseModel": "Qwen/Qwen3.8-27B",
+      "gated": false
+    },
+    {
+      "id": "Cloudflare/clef-flash",
+      "source": "https://huggingface.co/api/models/Cloudflare/clef-flash",
+      "revision": "8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3",
+      "license": "apache-2.0",
+      "baseModel": "Qwen/Qwen3.5-9B",
+      "gated": false
+    },
+    {
+      "id": "Cloudflare/clef-omni",
+      "source": "https://huggingface.co/api/models/Cloudflare/clef-omni",
+      "revision": "0db1cd2607d76a7bdb2a382f659e7b313079f84b",
+      "license": "apache-2.0",
+      "baseModel": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "gated": false
+    }
+  ]
+}

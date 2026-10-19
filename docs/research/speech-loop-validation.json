@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-10-16T05:34:40.700Z",
+  "scope": "Local macOS synthesized WAV replay at realtime rate through websocket, actual Moonshine STT and Qwen director. Fixture story; no physical microphone or interview/story generation in this probe.",
+  "model": "qwen3.5:4b",
+  "results": [
+    {
+      "id": "storage",
+      "suppliedText": "Batteries store solar energy for later use after sunset.",
+      "finalTranscript": "Butter East or solar energy for later use after sunset.",
+      "expectedBeat": 1,
+      "selectedBeat": 1,
+      "finalToDirectionMs": 1791.886457999999,
+      "inferenceMs": 1791.6142499999996,
+      "audioStartToDirectionMs": 6110.318707999999,
+      "cacheHit": false,
+      "paused": false
+    },
+    {
+      "id": "off-topic",
+      "suppliedText": "My favorite lunch is pasta with tomatoes.",
+      "finalTranscript": "My favorite lunch is pasta with tomatoes.",
+      "expectedBeat": 1,
+      "selectedBeat": 1,
+      "finalToDirectionMs": 1591.9547920000005,
+      "inferenceMs": 1591.8617080000004,
+      "audioStartToDirectionMs": 4920.982083999999,
+      "cacheHit": false,
+      "paused": false
+    },
+    {
+      "id": "off-topic-repeat",
+      "suppliedText": "My favorite lunch is pasta with tomatoes.",
+      "finalTranscript": "My favorite lunch is pasta with tomatoes.",
+      "expectedBeat": 1,
+      "selectedBeat": 1,
+      "finalToDirectionMs": 0.10120900000038091,
+      "inferenceMs": 0,
+      "audioStartToDirectionMs": 3330.1250419999997,
+      "cacheHit": true,
+      "paused": false
+    },
+    {
+      "id": "paused",
+      "suppliedText": "Solar panels convert sunlight into electricity.",
+      "finalTranscript": "Solar panels convert sunlight into electricity.",
+      "expectedBeat": 1,
+      "selectedBeat": 1,
+      "finalToDirectionMs": null,
+      "inferenceMs": null,
+      "audioStartToDirectionMs": null,
+      "cacheHit": false,
+      "paused": true
+    },
+    {
+      "id": "generation",
+      "suppliedText": "Solar panels convert sunlight into electricity.",
+      "finalTranscript": "Solar panels convert sunlight into electricity.",
+      "expectedBeat": 0,
+      "selectedBeat": 0,
+      "finalToDirectionMs": 1887.257625000002,
+      "inferenceMs": 1886.905917,
+      "audioStartToDirectionMs": 5269.70825,
+      "cacheHit": false,
+      "paused": false
+    }
+  ],
+  "rttP95Ms": 0.7863330000000133,
+  "partials": 32,
+  "errors": []
+}

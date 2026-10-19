@@ -1,0 +1,16 @@
+node_modules/
+.venv/
+dist/
+.env
+.env.*
+!.env.example
+__pycache__/
+output/
+.playwright-cli/
+.DS_Store
+.codex-artifacts/
+.coverage/
+coverage/
+*.pyc
+*.log
+!docs/validation/runs/**/*.log

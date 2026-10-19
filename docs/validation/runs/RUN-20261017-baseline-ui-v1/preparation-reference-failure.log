@@ -1,0 +1,7 @@
+{"type":"agent_status","status":"idle"}
+{"type":"agent_status","status":"working","role":"storyteller"}
+{"type":"agent_activity","role":"storyteller","label":"Preparing diagram"}
+{"type":"agent_activity","role":"storyteller","label":"Drafting presentation flow"}
+{"type":"agent_error","message":"Flow references an unknown artifact","role":"storyteller"}
+{"type":"agent_status","status":"idle","role":"storyteller"}
+BEATS undefined

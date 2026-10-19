@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "retrievedOn": "2026-10-17",
+  "snapshotKind": "Curated paraphrases checked against the linked page; hashes cover these summaries, not full remote HTML",
+  "sources": [
+    {"id":"eia-pv","uri":"https://www.eia.gov/energyexplained/solar/photovoltaics-and-electricity.php","summary":"Photovoltaic cells turn sunlight into electricity. Connected cells form panels, and panels form arrays. PV output is direct current; inverters convert it to alternating current. Batteries charged by PV can supply electricity after sunshine ends."},
+    {"id":"usgs-water","uri":"https://www.usgs.gov/water-science-school/water-cycle","summary":"The water cycle describes water storage and movement. Water is stored in the atmosphere, at the surface and underground. Condensation and precipitation move water between stores. Human activity affects storage, movement and water quality."}
+  ]
+}

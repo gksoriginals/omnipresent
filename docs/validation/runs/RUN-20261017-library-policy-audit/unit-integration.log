@@ -1,0 +1,398 @@
+
+> omnipresent@0.0.1 test
+> tsx --test tests/*.test.ts tests/*.test.tsx
+
+TAP version 13
+# Subtest: adaptive composition rejects unknown assets and duplicate slots
+ok 1 - adaptive composition rejects unknown assets and duplicate slots
+  ---
+  duration_ms: 6.495333
+  type: 'test'
+  ...
+# Subtest: director combines multiple grounded narrative points instead of advancing a slide
+ok 2 - director combines multiple grounded narrative points instead of advancing a slide
+  ---
+  duration_ms: 74.425166
+  type: 'test'
+  ...
+# Subtest: invalid composition preserves last valid audience canvas
+ok 3 - invalid composition preserves last valid audience canvas
+  ---
+  duration_ms: 13.365458
+  type: 'test'
+  ...
+# Subtest: hold and cancellation never commit a stale composition
+ok 4 - hold and cancellation never commit a stale composition
+  ---
+  duration_ms: 11.114125
+  type: 'test'
+  ...
+# Subtest: paused adaptive presentations do not infer or update
+ok 5 - paused adaptive presentations do not infer or update
+  ---
+  duration_ms: 0.395042
+  type: 'test'
+  ...
+# Subtest: explicit missing-content questions leave the audience canvas unchanged and return to preparation
+ok 6 - explicit missing-content questions leave the audience canvas unchanged and return to preparation
+  ---
+  duration_ms: 12.377791
+  type: 'test'
+  ...
+# Subtest: a System One director composes through host validation without invoking the chat model
+ok 7 - a System One director composes through host validation without invoking the chat model
+  ---
+  duration_ms: 0.234791
+  type: 'test'
+  ...
+# Subtest: real SDK interviewer tool loop gathers a brief without producing a story
+ok 8 - real SDK interviewer tool loop gathers a brief without producing a story
+  ---
+  duration_ms: 93.847292
+  type: 'test'
+  ...
+# Subtest: storyteller returns a structured flow, correction invalidates review
+ok 9 - storyteller returns a structured flow, correction invalidates review
+  ---
+  duration_ms: 23.094625
+  type: 'test'
+  ...
+# Subtest: missing context travels back to interviewer without autonomous runaway loops
+ok 10 - missing context travels back to interviewer without autonomous runaway loops
+  ---
+  duration_ms: 16.228625
+  type: 'test'
+  ...
+# Subtest: unknown artifact references reject the entire draft
+ok 11 - unknown artifact references reject the entire draft
+  ---
+  duration_ms: 7.0115
+  type: 'test'
+  ...
+# Subtest: cancelled old response cannot overwrite a newer presenter correction
+ok 12 - cancelled old response cannot overwrite a newer presenter correction
+  ---
+  duration_ms: 5.21475
+  type: 'test'
+  ...
+# Subtest: finishing the interview hands a committed brief to the separate storyteller
+ok 13 - finishing the interview hands a committed brief to the separate storyteller
+  ---
+  duration_ms: 32.498625
+  type: 'test'
+  ...
+# Subtest: incomplete interview does not launch a storyteller
+ok 14 - incomplete interview does not launch a storyteller
+  ---
+  duration_ms: 7.837
+  type: 'test'
+  ...
+# Subtest: seeded event stress preserves grounding, dwell, lifecycle and epoch guards across all strategies
+ok 15 - seeded event stress preserves grounding, dwell, lifecycle and epoch guards across all strategies
+  ---
+  duration_ms: 63.823666
+  type: 'test'
+  ...
+# Subtest: confirmation cannot survive an unrelated or invalid observation
+ok 16 - confirmation cannot survive an unrelated or invalid observation
+  ---
+  duration_ms: 0.265416
+  type: 'test'
+  ...
+# Subtest: temporal controllers satisfy every fixed replay including interruptions, comparisons and stale inputs
+ok 17 - temporal controllers satisfy every fixed replay including interruptions, comparisons and stale inputs
+  ---
+  duration_ms: 5.7045
+  type: 'test'
+  ...
+# Subtest: priority rules baseline exposes one-window noise rather than silently granting confirmation memory
+ok 18 - priority rules baseline exposes one-window noise rather than silently granting confirmation memory
+  ---
+  duration_ms: 0.08175
+  type: 'test'
+  ...
+# Subtest: all strategies reject malformed confidence and preserve immutable prepared state
+ok 19 - all strategies reject malformed confidence and preserve immutable prepared state
+  ---
+  duration_ms: 0.17175
+  type: 'test'
+  ...
+# Subtest: prepared shortlist is bounded, grounded, revision-scoped and excludes private notes
+ok 20 - prepared shortlist is bounded, grounded, revision-scoped and excludes private notes
+  ---
+  duration_ms: 1.141167
+  type: 'test'
+  ...
+# Subtest: lexical retrieval regression retains paraphrase and missing-evidence failures as explicit gaps
+ok 21 - lexical retrieval regression retains paraphrase and missing-evidence failures as explicit gaps
+  ---
+  duration_ms: 0.082834
+  type: 'test'
+  ...
+# Subtest: scope cues abstain on ambiguity, negation and corrections
+ok 22 - scope cues abstain on ambiguity, negation and corrections
+  ---
+  duration_ms: 0.753917
+  type: 'test'
+  ...
+# Subtest: library index preserves semantic-only candidates and stable ties
+ok 23 - library index preserves semantic-only candidates and stable ties
+  ---
+  duration_ms: 3.267875
+  type: 'test'
+  ...
+# Subtest: local upload extraction handles PDF, Office and images; rejects unsupported files and origins
+ok 24 - local upload extraction handles PDF, Office and images; rejects unsupported files and origins
+  ---
+  duration_ms: 2036.119375
+  type: 'test'
+  ...
+# Subtest: hybrid component facets restrict both lexical and vector scoring to prepared families
+ok 25 - hybrid component facets restrict both lexical and vector scoring to prepared families
+  ---
+  duration_ms: 5.819667
+  type: 'test'
+  ...
+# Subtest: hybrid search rejects cross-project, changed source and embedding-space cache reuse
+ok 26 - hybrid search rejects cross-project, changed source and embedding-space cache reuse
+  ---
+  duration_ms: 1.268
+  type: 'test'
+  ...
+# Subtest: forecast context excludes future speech and private notes and invalidates on epoch, revision and expiry
+ok 27 - forecast context excludes future speech and private notes and invalidates on epoch, revision and expiry
+  ---
+  duration_ms: 1.001417
+  type: 'test'
+  ...
+# Subtest: malformed family distributions fail closed and retrieval never creates unsupported component references
+ok 28 - malformed family distributions fail closed and retrieval never creates unsupported component references
+  ---
+  duration_ms: 0.251417
+  type: 'test'
+  ...
+# Subtest: review gate and actual SDK direction commit an approved scene
+ok 29 - review gate and actual SDK direction commit an approved scene
+  ---
+  duration_ms: 76.462458
+  type: 'test'
+  ...
+# Subtest: context feedback holds the scene and returns to preparation
+ok 30 - context feedback holds the scene and returns to preparation
+  ---
+  duration_ms: 13.954833
+  type: 'test'
+  ...
+# Subtest: invalid directions never change the canvas
+ok 31 - invalid directions never change the canvas
+  ---
+  duration_ms: 7.437958
+  type: 'test'
+  ...
+# Subtest: pause cancels inference, drops queued speech, resume requires new input
+ok 32 - pause cancels inference, drops queued speech, resume requires new input
+  ---
+  duration_ms: 109.701125
+  type: 'test'
+  ...
+# Subtest: active story is isolated from subsequent preparation edits
+ok 33 - active story is isolated from subsequent preparation edits
+  ---
+  duration_ms: 9.097125
+  type: 'test'
+  ...
+# Subtest: legacy stories never expose speaker notes as audience copy
+ok 34 - legacy stories never expose speaker notes as audience copy
+  ---
+  duration_ms: 0.225625
+  type: 'test'
+  ...
+# Subtest: repeated speech uses context-scoped cache and a new story clears it
+ok 35 - repeated speech uses context-scoped cache and a new story clears it
+  ---
+  duration_ms: 9.522084
+  type: 'test'
+  ...
+# Subtest: both real renderer packages display equivalent grounded content
+ok 36 - both real renderer packages display equivalent grounded content
+  ---
+  duration_ms: 20.522625
+  type: 'test'
+  ...
+# Subtest: OpenUI accepts split compositions and numeric reveal boundaries
+ok 37 - OpenUI accepts split compositions and numeric reveal boundaries
+  ---
+  duration_ms: 1.093666
+  type: 'test'
+  ...
+# Subtest: semantic index ranks normalized vectors and scopes exact query cache to prepared project content
+ok 38 - semantic index ranks normalized vectors and scopes exact query cache to prepared project content
+  ---
+  duration_ms: 2.96725
+  type: 'test'
+  ...
+# Subtest: semantic index rejects malformed vectors and cancelled query never enters cache
+ok 39 - semantic index rejects malformed vectors and cancelled query never enters cache
+  ---
+  duration_ms: 3.895125
+  type: 'test'
+  ...
+# Subtest: bounded selection exposes only prepared choices and separates hold from missing context
+ok 40 - bounded selection exposes only prepared choices and separates hold from missing context
+  ---
+  duration_ms: 3.872083
+  type: 'test'
+  ...
+# Subtest: choice menu cannot invent references and fusion ranks deterministically without treating scores as confidence
+ok 41 - choice menu cannot invent references and fusion ranks deterministically without treating scores as confidence
+  ---
+  duration_ms: 0.223167
+  type: 'test'
+  ...
+# Subtest: a story edit during embedding rejects the result without caching it
+ok 42 - a story edit during embedding rejects the result without caching it
+  ---
+  duration_ms: 0.243417
+  type: 'test'
+  ...
+# Subtest: semantic query cache evicts old entries instead of growing without bound
+ok 43 - semantic query cache evicts old entries instead of growing without bound
+  ---
+  duration_ms: 1.365625
+  type: 'test'
+  ...
+# Subtest: local transport isolates sessions, rejects bad messages and foreign origins
+ok 44 - local transport isolates sessions, rejects bad messages and foreign origins
+  ---
+  duration_ms: 398.504417
+  type: 'test'
+  ...
+# Subtest: new intent prevents a delayed old intent overwriting the canvas
+ok 45 - new intent prevents a delayed old intent overwriting the canvas
+  ---
+  duration_ms: 61.8505
+  type: 'test'
+  ...
+# Subtest: pause invalidates pending work and resume does not replay a backlog
+ok 46 - pause invalidates pending work and resume does not replay a backlog
+  ---
+  duration_ms: 40.016708
+  type: 'test'
+  ...
+# Subtest: cancel prevents a pending commit
+ok 47 - cancel prevents a pending commit
+  ---
+  duration_ms: 40.89725
+  type: 'test'
+  ...
+# Subtest: decision request shares topic descriptions without private notes
+ok 48 - decision request shares topic descriptions without private notes
+  ---
+  duration_ms: 0.819333
+  type: 'test'
+  ...
+# Subtest: typed decisions produce grounded multi-topic composition
+ok 49 - typed decisions produce grounded multi-topic composition
+  ---
+  duration_ms: 2.2265
+  type: 'test'
+  ...
+# Subtest: hold never constructs a composition and invalid choices/probabilities fail closed
+ok 50 - hold never constructs a composition and invalid choices/probabilities fail closed
+  ---
+  duration_ms: 0.510917
+  type: 'test'
+  ...
+# Subtest: Cloudflare variants use the existing authenticated decision endpoint without changing typed requests
+ok 51 - Cloudflare variants use the existing authenticated decision endpoint without changing typed requests
+  ---
+  duration_ms: 20.189291
+  type: 'test'
+  ...
+# Subtest: unsupported decision providers fail before any transport call
+ok 52 - unsupported decision providers fail before any transport call
+  ---
+  duration_ms: 3.335084
+  type: 'test'
+  ...
+# Subtest: diagram tool prepares a reusable visual; malformed edges are rejected
+ok 53 - diagram tool prepares a reusable visual; malformed edges are rejected
+  ---
+  duration_ms: 64.420834
+  type: 'test'
+  ...
+# Subtest: chart tool requires known source labels and numbers
+ok 54 - chart tool requires known source labels and numbers
+  ---
+  duration_ms: 30.173834
+  type: 'test'
+  ...
+# Subtest: flow references must point to existing prepared visuals
+ok 55 - flow references must point to existing prepared visuals
+  ---
+  duration_ms: 0.216791
+  type: 'test'
+  ...
+# Subtest: legacy draft and all saved snapshots migrate without modifying legacy keys
+ok 56 - legacy draft and all saved snapshots migrate without modifying legacy keys
+  ---
+  duration_ms: 2.782625
+  type: 'test'
+  ...
+# Subtest: project chats, materials and composer drafts remain isolated across serialization
+ok 57 - project chats, materials and composer drafts remain isolated across serialization
+  ---
+  duration_ms: 0.749458
+  type: 'test'
+  ...
+# Subtest: repeated identical saves update one immutable project-linked snapshot
+ok 58 - repeated identical saves update one immutable project-linked snapshot
+  ---
+  duration_ms: 0.281584
+  type: 'test'
+  ...
+# Subtest: unreadable project data is preserved instead of replaced by an empty workspace
+ok 59 - unreadable project data is preserved instead of replaced by an empty workspace
+  ---
+  duration_ms: 0.370208
+  type: 'test'
+  ...
+# Subtest: presentation context requests return only to the originating project
+ok 60 - presentation context requests return only to the originating project
+  ---
+  duration_ms: 0.084125
+  type: 'test'
+  ...
+# Subtest: saving updates a stable story id and retains changed snapshots
+ok 61 - saving updates a stable story id and retains changed snapshots
+  ---
+  duration_ms: 0.112416
+  type: 'test'
+  ...
+# Subtest: story removal preserves chat and can be restored after reload
+ok 62 - story removal preserves chat and can be restored after reload
+  ---
+  duration_ms: 0.800541
+  type: 'test'
+  ...
+# Subtest: removing active and last sessions preserves stories and valid active project
+ok 63 - removing active and last sessions preserves stories and valid active project
+  ---
+  duration_ms: 0.319292
+  type: 'test'
+  ...
+# Subtest: restoring a removed story preserves its replacement in history
+ok 64 - restoring a removed story preserves its replacement in history
+  ---
+  duration_ms: 0.35325
+  type: 'test'
+  ...
+1..64
+# tests 64
+# suites 0
+# pass 64
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2252.29325

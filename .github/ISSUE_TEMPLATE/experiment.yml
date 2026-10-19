@@ -1,0 +1,20 @@
+name: Proposal or experiment
+description: Propose a product change or a measurable research comparison.
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Problem and hypothesis
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Proposed change or comparison
+      description: Include alternatives, inputs, expected outcomes and evidence boundaries where applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: tradeoffs
+    attributes:
+      label: Quality, latency, resource and evidence tradeoffs

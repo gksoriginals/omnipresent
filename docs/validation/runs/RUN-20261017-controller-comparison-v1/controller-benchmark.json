@@ -1,0 +1,3427 @@
+{
+  "id": "RUN-20261017-controller-comparison-v1",
+  "startedAt": "2026-10-17T15:12:31.755Z",
+  "finishedAt": "2026-10-17T15:12:31.843Z",
+  "scope": "Developer-authored synthetic regression scenarios; labels fixed before first benchmark. Not independent or untouched holdout data. Candidate scores are injected test inputs, not calibrated model probabilities.",
+  "design": {
+    "gates": {
+      "temporalPolicyMismatch": 0,
+      "invalidCommits": 0,
+      "deterministicDisagreements": 0
+    },
+    "policyConfig": {
+      "minimumScore": 0.6,
+      "immediateScore": 0.9,
+      "margin": 0.15,
+      "dwellMs": 800,
+      "confirmationMs": 1200,
+      "maxCandidates": 3
+    },
+    "fixtureVersion": 1,
+    "holdout": false,
+    "modelCalls": 0,
+    "externalCostUSD": 0,
+    "ordering": "rules, FSM, behaviour tree, hybrid; sequential on same process/machine; timings exploratory only",
+    "limitations": [
+      "Policies share candidate validation and score thresholds; the rules baseline lacks temporal confirmation by design. This is a feature comparison, not evidence that rules cannot express memory.",
+      "FSM, stateful BT and hybrid intentionally express the same temporal contract. Equal correctness is expected, not evidence of independent implementation correctness.",
+      "Injected candidate scores are not calibrated retrieval or model confidence. Lexical retrieval evaluated separately.",
+      "No STT, browser, audio, model selection or production integration; no new independent holdout."
+    ]
+  },
+  "environment": {
+    "node": "v22.22.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu": "Apple M5",
+    "memoryBytes": 17179869184
+  },
+  "sourceFiles": [
+    {
+      "path": "server/controllers/presentation-policy.ts",
+      "sha256": "f2fd740508e72568b6af39538ce2e4eff177aae607d64332a06dd5364671e5d0"
+    },
+    {
+      "path": "server/controllers/candidates.ts",
+      "sha256": "7d02173e26bcf332a0b947551d3f4fa267a5f31905a0193abdbbc5d802bc819b"
+    },
+    {
+      "path": "scripts/controller-fixtures.ts",
+      "sha256": "303347b8e214b43faa06df6793462a176ac6f989392d6b28cedd0fe643c4fb49"
+    },
+    {
+      "path": "scripts/controller-benchmark.ts",
+      "sha256": "5358070619ab56f81be7c1a806669b5c2f80ee15b84d2a4603dbba9c1c750737"
+    },
+    {
+      "path": "tests/fixtures/controller-replays.json",
+      "sha256": "85a6a4fff60d8381688aefb43d7d35e57e26ca72050d016a9e82f50d36dc7cf8"
+    },
+    {
+      "path": "tests/controllers.test.ts",
+      "sha256": "3fd01b24798012ee8a0ebee54bee344f9fe73f5028a455f29b7a321ac605aea8"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "dc4aaeb499174d437404c1affbaecbf9c1fad0e6dc4a87e18397dfd42d333a8e"
+    }
+  ],
+  "controllers": [
+    {
+      "strategy": "rules",
+      "scenarios": [
+        {
+          "id": "late-topic-start",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.18504099999999823
+            }
+          ]
+        },
+        {
+          "id": "uncertain-switch",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "commit:1",
+              "correct": false,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.018124999999997726
+            },
+            {
+              "at": 400,
+              "expected": "commit:1",
+              "actual": "hold",
+              "correct": false,
+              "reason": "unchanged",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.05679200000000151
+            }
+          ]
+        },
+        {
+          "id": "one-window-noise",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "commit:1",
+              "correct": false,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.019874999999998977
+            },
+            {
+              "at": 400,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0031659999999931188
+            },
+            {
+              "at": 900,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.013084000000006313
+            }
+          ]
+        },
+        {
+          "id": "oscillation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "commit:1",
+              "correct": false,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.02504199999999912
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "minimum-dwell",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0108330000000052
+            },
+            {
+              "at": 600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "unchanged",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.04116599999998982
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "commit:2",
+              "correct": false,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.04637499999999761
+            }
+          ]
+        },
+        {
+          "id": "dwell-before-switch",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.05066600000000676
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "minimum-dwell",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.009208999999998468
+            },
+            {
+              "at": 900,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.007499999999993179
+            }
+          ]
+        },
+        {
+          "id": "current-topic",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "unchanged",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.004666999999997756
+            }
+          ]
+        },
+        {
+          "id": "ambiguous-margin",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.014583000000001789
+            }
+          ]
+        },
+        {
+          "id": "low-confidence",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.003500000000002501
+            }
+          ]
+        },
+        {
+          "id": "off-topic",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0028750000000030695
+            }
+          ]
+        },
+        {
+          "id": "missing-content-deduplication",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "request-context",
+              "actual": "request-context",
+              "correct": true,
+              "reason": "missing-evidence",
+              "trace": [],
+              "elapsedMs": 0.0027079999999983784
+            },
+            {
+              "at": 500,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "context-already-requested",
+              "trace": [],
+              "elapsedMs": 0.0006249999999994316
+            },
+            {
+              "at": 1000,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.007584000000008473
+            },
+            {
+              "at": 2000,
+              "expected": "request-context",
+              "actual": "request-context",
+              "correct": true,
+              "reason": "missing-evidence",
+              "trace": [],
+              "elapsedMs": 0.0007080000000030395
+            }
+          ]
+        },
+        {
+          "id": "pause-resume-stale",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.003917000000001281
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.0030409999999960746
+            },
+            {
+              "at": 600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "running",
+              "trace": [],
+              "elapsedMs": 0.001082999999994172
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stale-context",
+              "trace": [],
+              "elapsedMs": 0.0007080000000030395
+            },
+            {
+              "at": 1200,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.006375000000005571
+            }
+          ]
+        },
+        {
+          "id": "stop-is-terminal",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.0006670000000070786
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.0003750000000053433
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.0006249999999994316
+            }
+          ]
+        },
+        {
+          "id": "out-of-order-clock",
+          "steps": [
+            {
+              "at": 1000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.00679200000000435
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "out-of-order-time",
+              "trace": [],
+              "elapsedMs": 0.0006669999999928677
+            }
+          ]
+        },
+        {
+          "id": "duplicate-sequence",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.00795799999998792
+            },
+            {
+              "at": 1000,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "duplicate-or-out-of-order",
+              "trace": [],
+              "elapsedMs": 0.0008749999999935199
+            }
+          ]
+        },
+        {
+          "id": "wrong-revision",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stale-context",
+              "trace": [],
+              "elapsedMs": 0.0015410000000031232
+            }
+          ]
+        },
+        {
+          "id": "expired-confirmation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "commit:1",
+              "correct": false,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.004792000000009011
+            },
+            {
+              "at": 1600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "unchanged",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0032910000000043738
+            },
+            {
+              "at": 2000,
+              "expected": "commit:1",
+              "actual": "hold",
+              "correct": false,
+              "reason": "unchanged",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.003208999999998241
+            }
+          ]
+        },
+        {
+          "id": "pause-clears-confirmation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "commit:1",
+              "correct": false,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.004582999999996673
+            },
+            {
+              "at": 200,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.0005409999999983484
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "running",
+              "trace": [],
+              "elapsedMs": 0.0004160000000013042
+            },
+            {
+              "at": 500,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "unchanged",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.003249999999994202
+            },
+            {
+              "at": 800,
+              "expected": "commit:1",
+              "actual": "hold",
+              "correct": false,
+              "reason": "unchanged",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0029580000000066775
+            }
+          ]
+        },
+        {
+          "id": "comparison-and-return",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:0,2",
+              "actual": "commit:0,2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.008916999999996733
+            },
+            {
+              "at": 1000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.004791000000011536
+            },
+            {
+              "at": 2000,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "rules:eligible"
+              ],
+              "elapsedMs": 0.004458999999997104
+            }
+          ]
+        },
+        {
+          "id": "invalid-reference",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.013416999999989798
+            }
+          ]
+        },
+        {
+          "id": "duplicate-shortlist",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.00925000000000864
+            }
+          ]
+        },
+        {
+          "id": "unbounded-shortlist",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.004333000000002585
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "scenarios": 21,
+        "decisions": 48,
+        "correct": 39,
+        "mismatches": 9,
+        "falseChanges": 6,
+        "missedChanges": 3,
+        "invalidCommits": 0,
+        "deterministicDisagreements": 0,
+        "latency": {
+          "scope": "100 repeated warmed complete replay-suite batches, includes controller construction/cloning/validation and fixture conversion; no retrieval/model/STT/network. Not independent examples or user-visible latency.",
+          "batchMedianMs": 0.19966700000000515,
+          "batchP95Ms": 0.34099999999997976,
+          "amortizedDecisionMedianMs": 0.004159729166666774,
+          "samplesMs": [
+            0.3960830000000044,
+            0.3505830000000003,
+            0.3201660000000004,
+            0.3535830000000004,
+            0.260666999999998,
+            0.2592920000000021,
+            0.2582079999999962,
+            0.2591249999999974,
+            0.40520899999999926,
+            0.25150000000000716,
+            0.25483400000000245,
+            0.23612500000000125,
+            0.2350410000000096,
+            0.2348750000000024,
+            0.23316700000000878,
+            0.23179199999999867,
+            0.2375420000000048,
+            0.2923749999999927,
+            0.2775829999999928,
+            0.28470799999999485,
+            0.29879099999999426,
+            0.29562500000000114,
+            0.25583299999999554,
+            0.2636660000000006,
+            0.2564580000000092,
+            0.25891699999999673,
+            0.2694590000000119,
+            0.2843340000000012,
+            0.4335000000000093,
+            0.32337499999999864,
+            0.33508299999999736,
+            0.24687500000001705,
+            0.22158300000000963,
+            0.23341699999997445,
+            0.25629200000000196,
+            0.2399159999999938,
+            0.26841699999999946,
+            0.2132090000000062,
+            0.20937499999999432,
+            0.19966700000000515,
+            0.19054199999999355,
+            0.18983299999999304,
+            0.190291000000002,
+            0.1889579999999853,
+            0.20945800000001213,
+            0.22387500000002092,
+            0.2208750000000066,
+            0.21216699999999378,
+            0.20245800000000713,
+            0.2037909999999954,
+            0.21250000000000568,
+            0.34099999999997976,
+            0.1925420000000031,
+            0.18575000000001296,
+            0.18483299999999758,
+            0.19354200000000787,
+            0.1865410000000054,
+            0.17041699999998627,
+            0.18637499999999818,
+            0.1804170000000056,
+            0.184708999999998,
+            0.18020799999999326,
+            0.19158299999998007,
+            0.198332999999991,
+            0.19045800000000668,
+            0.17658299999999372,
+            0.17787500000000023,
+            0.17845800000000622,
+            0.24516599999998334,
+            0.3093340000000069,
+            0.18329099999999698,
+            0.1767499999999984,
+            0.17679100000000858,
+            0.195083000000011,
+            0.19712499999999977,
+            0.16116700000000606,
+            0.16070799999999963,
+            0.2487080000000219,
+            0.18812500000001364,
+            0.16945899999998915,
+            0.17737499999998363,
+            0.16416599999999448,
+            0.1613749999999925,
+            0.1611249999999984,
+            0.16245900000001257,
+            0.16100000000000136,
+            0.1912499999999966,
+            0.18087500000001455,
+            0.16787500000000932,
+            0.17041699999998627,
+            0.15929199999999355,
+            0.1669159999999863,
+            0.17495800000000372,
+            0.1855419999999981,
+            0.17312499999999886,
+            0.17395799999999895,
+            0.17229199999999878,
+            0.17374999999998408,
+            0.1736669999999947,
+            0.17337499999999295
+          ]
+        }
+      }
+    },
+    {
+      "strategy": "fsm",
+      "scenarios": [
+        {
+          "id": "late-topic-start",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.004416999999989457
+            }
+          ]
+        },
+        {
+          "id": "uncertain-switch",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.01875000000001137
+            },
+            {
+              "at": 400,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.00433400000000006
+            }
+          ]
+        },
+        {
+          "id": "one-window-noise",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.002375000000000682
+            },
+            {
+              "at": 400,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0005829999999775737
+            },
+            {
+              "at": 900,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0028750000000172804
+            }
+          ]
+        },
+        {
+          "id": "oscillation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.002167000000014241
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.0019170000000201526
+            },
+            {
+              "at": 600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.0017919999999946867
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.0017919999999946867
+            }
+          ]
+        },
+        {
+          "id": "dwell-before-switch",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.002833999999978687
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "minimum-dwell",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0018340000000023338
+            },
+            {
+              "at": 900,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0027079999999841675
+            }
+          ]
+        },
+        {
+          "id": "current-topic",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "unchanged",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.001458000000013726
+            }
+          ]
+        },
+        {
+          "id": "ambiguous-margin",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.002207999999995991
+            }
+          ]
+        },
+        {
+          "id": "low-confidence",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.001167000000009466
+            }
+          ]
+        },
+        {
+          "id": "off-topic",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0009580000000255495
+            }
+          ]
+        },
+        {
+          "id": "missing-content-deduplication",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "request-context",
+              "actual": "request-context",
+              "correct": true,
+              "reason": "missing-evidence",
+              "trace": [],
+              "elapsedMs": 0.00045800000000895125
+            },
+            {
+              "at": 500,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "context-already-requested",
+              "trace": [],
+              "elapsedMs": 0.00037500000001955414
+            },
+            {
+              "at": 1000,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0028749999999888587
+            },
+            {
+              "at": 2000,
+              "expected": "request-context",
+              "actual": "request-context",
+              "correct": true,
+              "reason": "missing-evidence",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            }
+          ]
+        },
+        {
+          "id": "pause-resume-stale",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            },
+            {
+              "at": 600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "running",
+              "trace": [],
+              "elapsedMs": 0.0004590000000064265
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stale-context",
+              "trace": [],
+              "elapsedMs": 0.0003329999999834854
+            },
+            {
+              "at": 1200,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0027499999999918145
+            }
+          ]
+        },
+        {
+          "id": "stop-is-terminal",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.00033400000000938235
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.0003330000000119071
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            }
+          ]
+        },
+        {
+          "id": "out-of-order-clock",
+          "steps": [
+            {
+              "at": 1000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0027499999999918145
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "out-of-order-time",
+              "trace": [],
+              "elapsedMs": 0.0003329999999834854
+            }
+          ]
+        },
+        {
+          "id": "duplicate-sequence",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.002625000000023192
+            },
+            {
+              "at": 1000,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "duplicate-or-out-of-order",
+              "trace": [],
+              "elapsedMs": 0.00045799999998052954
+            }
+          ]
+        },
+        {
+          "id": "wrong-revision",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stale-context",
+              "trace": [],
+              "elapsedMs": 0.00041699999999877946
+            }
+          ]
+        },
+        {
+          "id": "expired-confirmation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.002125000000006594
+            },
+            {
+              "at": 1600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.0019170000000201526
+            },
+            {
+              "at": 2000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.0028749999999888587
+            }
+          ]
+        },
+        {
+          "id": "pause-clears-confirmation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0019169999999917309
+            },
+            {
+              "at": 200,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.0002920000000017353
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "running",
+              "trace": [],
+              "elapsedMs": 0.00033400000000938235
+            },
+            {
+              "at": 500,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0017500000000154614
+            },
+            {
+              "at": 800,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.0031660000000215405
+            }
+          ]
+        },
+        {
+          "id": "comparison-and-return",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:0,2",
+              "actual": "commit:0,2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0037499999999965894
+            },
+            {
+              "at": 1000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0027499999999918145
+            },
+            {
+              "at": 2000,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0026249999999947704
+            }
+          ]
+        },
+        {
+          "id": "invalid-reference",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.0059169999999824086
+            }
+          ]
+        },
+        {
+          "id": "duplicate-shortlist",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.00462500000000432
+            }
+          ]
+        },
+        {
+          "id": "unbounded-shortlist",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.003540999999984251
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "scenarios": 21,
+        "decisions": 48,
+        "correct": 48,
+        "mismatches": 0,
+        "falseChanges": 0,
+        "missedChanges": 0,
+        "invalidCommits": 0,
+        "deterministicDisagreements": 0,
+        "latency": {
+          "scope": "100 repeated warmed complete replay-suite batches, includes controller construction/cloning/validation and fixture conversion; no retrieval/model/STT/network. Not independent examples or user-visible latency.",
+          "batchMedianMs": 0.16395800000000804,
+          "batchP95Ms": 0.2045829999999853,
+          "amortizedDecisionMedianMs": 0.003415791666666834,
+          "samplesMs": [
+            0.17454100000000494,
+            0.17441700000000537,
+            0.20791599999998311,
+            0.1930420000000197,
+            0.17154100000001904,
+            0.17437499999999773,
+            0.17825000000001978,
+            0.16029199999999832,
+            0.16395800000000804,
+            0.16541600000002177,
+            0.15879200000000537,
+            0.15545900000000756,
+            0.15683400000000347,
+            0.15666699999999878,
+            0.15695800000000304,
+            0.15595799999999826,
+            0.1564999999999941,
+            0.1554999999999893,
+            0.15670900000000643,
+            0.23749999999998295,
+            0.2045829999999853,
+            0.18475000000000819,
+            0.17754199999998832,
+            0.16729200000000333,
+            0.16749999999998977,
+            0.18441699999999628,
+            0.17020899999999983,
+            0.1685420000000022,
+            0.16695899999999142,
+            0.1665840000000003,
+            0.16774999999998386,
+            0.16575000000000273,
+            0.17908400000001734,
+            0.1661670000000015,
+            0.17183399999998983,
+            0.17804200000000492,
+            0.166499999999985,
+            0.1657499999999743,
+            0.16591700000000742,
+            0.16520899999997596,
+            0.1650419999999997,
+            0.1682079999999928,
+            0.1695840000000146,
+            0.16716699999997786,
+            0.1665830000000028,
+            0.16566700000001333,
+            0.2344590000000153,
+            0.16683399999999438,
+            0.16737499999999272,
+            0.17045799999999645,
+            0.27837500000001114,
+            0.18924999999998704,
+            0.15787499999999,
+            0.17587499999999068,
+            0.15124999999997613,
+            0.15033400000001507,
+            0.15020900000001802,
+            0.14945900000000734,
+            0.15262500000000045,
+            0.1495830000000069,
+            0.14945800000000986,
+            0.14987500000000864,
+            0.1566660000000013,
+            0.16225000000000023,
+            0.15000000000000568,
+            0.1487499999999784,
+            0.1520840000000021,
+            0.15016699999998195,
+            0.16983300000001122,
+            0.1615409999999997,
+            0.15287499999999454,
+            0.1532500000000141,
+            0.16116700000000606,
+            0.2943329999999946,
+            0.16425000000000978,
+            0.15529099999997698,
+            0.1506249999999909,
+            0.150416000000007,
+            0.14991699999998787,
+            0.1500419999999849,
+            0.14949999999998909,
+            0.15004200000001333,
+            0.15149999999999864,
+            0.14912499999999795,
+            0.14987499999998022,
+            0.15083400000000324,
+            0.1733340000000112,
+            0.16987499999999045,
+            0.14987499999998022,
+            0.16295800000000327,
+            0.17795799999998962,
+            0.1506249999999909,
+            0.16558299999999804,
+            0.1499170000000163,
+            0.14929200000000264,
+            0.15633300000001782,
+            0.15262500000000045,
+            0.17062500000000114,
+            0.163250000000005,
+            0.16275000000001683
+          ]
+        }
+      }
+    },
+    {
+      "strategy": "behaviour-tree",
+      "scenarios": [
+        {
+          "id": "late-topic-start",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.04879200000002015
+            }
+          ]
+        },
+        {
+          "id": "uncertain-switch",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.026499999999998636
+            },
+            {
+              "at": 400,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.0081249999999784
+            }
+          ]
+        },
+        {
+          "id": "one-window-noise",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.003291999999987638
+            },
+            {
+              "at": 400,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0005840000000034706
+            },
+            {
+              "at": 900,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.003584000000017795
+            }
+          ]
+        },
+        {
+          "id": "oscillation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.0027919999999994616
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.0030000000000143245
+            },
+            {
+              "at": 600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.008333000000021684
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.048750000000012506
+            }
+          ]
+        },
+        {
+          "id": "dwell-before-switch",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.003957999999983031
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "minimum-dwell",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0016669999999976426
+            },
+            {
+              "at": 900,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0038340000000118835
+            }
+          ]
+        },
+        {
+          "id": "current-topic",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "unchanged",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0015839999999798238
+            }
+          ]
+        },
+        {
+          "id": "ambiguous-margin",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.002125000000006594
+            }
+          ]
+        },
+        {
+          "id": "low-confidence",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.001125000000001819
+            }
+          ]
+        },
+        {
+          "id": "off-topic",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0006249999999852207
+            }
+          ]
+        },
+        {
+          "id": "missing-content-deduplication",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "request-context",
+              "actual": "request-context",
+              "correct": true,
+              "reason": "missing-evidence",
+              "trace": [],
+              "elapsedMs": 0.0005419999999958236
+            },
+            {
+              "at": 500,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "context-already-requested",
+              "trace": [],
+              "elapsedMs": 0.00037500000001955414
+            },
+            {
+              "at": 1000,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0041250000000161435
+            },
+            {
+              "at": 2000,
+              "expected": "request-context",
+              "actual": "request-context",
+              "correct": true,
+              "reason": "missing-evidence",
+              "trace": [],
+              "elapsedMs": 0.00041699999999877946
+            }
+          ]
+        },
+        {
+          "id": "pause-resume-stale",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.00041699999999877946
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            },
+            {
+              "at": 600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "running",
+              "trace": [],
+              "elapsedMs": 0.00033400000000938235
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stale-context",
+              "trace": [],
+              "elapsedMs": 0.0003329999999834854
+            },
+            {
+              "at": 1200,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.003375000000005457
+            }
+          ]
+        },
+        {
+          "id": "stop-is-terminal",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.0004160000000013042
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.0002920000000017353
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.00033400000000938235
+            }
+          ]
+        },
+        {
+          "id": "out-of-order-clock",
+          "steps": [
+            {
+              "at": 1000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.003166999999990594
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "out-of-order-time",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            }
+          ]
+        },
+        {
+          "id": "duplicate-sequence",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0030830000000037217
+            },
+            {
+              "at": 1000,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "duplicate-or-out-of-order",
+              "trace": [],
+              "elapsedMs": 0.00041699999999877946
+            }
+          ]
+        },
+        {
+          "id": "wrong-revision",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stale-context",
+              "trace": [],
+              "elapsedMs": 0.00041700000002720117
+            }
+          ]
+        },
+        {
+          "id": "expired-confirmation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.003249999999979991
+            },
+            {
+              "at": 1600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.003916999999972859
+            },
+            {
+              "at": 2000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.0050420000000030996
+            }
+          ]
+        },
+        {
+          "id": "pause-clears-confirmation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.009084000000001424
+            },
+            {
+              "at": 200,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "running",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            },
+            {
+              "at": 500,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.0027500000000202363
+            },
+            {
+              "at": 800,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation"
+              ],
+              "elapsedMs": 0.0036670000000071923
+            }
+          ]
+        },
+        {
+          "id": "comparison-and-return",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:0,2",
+              "actual": "commit:0,2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.009457999999995081
+            },
+            {
+              "at": 1000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.00333299999999781
+            },
+            {
+              "at": 2000,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.003249999999979991
+            }
+          ]
+        },
+        {
+          "id": "invalid-reference",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.007833000000005086
+            }
+          ]
+        },
+        {
+          "id": "duplicate-shortlist",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.005792000000013786
+            }
+          ]
+        },
+        {
+          "id": "unbounded-shortlist",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.004500000000007276
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "scenarios": 21,
+        "decisions": 48,
+        "correct": 48,
+        "mismatches": 0,
+        "falseChanges": 0,
+        "missedChanges": 0,
+        "invalidCommits": 0,
+        "deterministicDisagreements": 0,
+        "latency": {
+          "scope": "100 repeated warmed complete replay-suite batches, includes controller construction/cloning/validation and fixture conversion; no retrieval/model/STT/network. Not independent examples or user-visible latency.",
+          "batchMedianMs": 0.1627499999999884,
+          "batchP95Ms": 0.19845900000001393,
+          "amortizedDecisionMedianMs": 0.0033906249999997584,
+          "samplesMs": [
+            0.1656669999999849,
+            0.16533300000000395,
+            0.16533300000000395,
+            0.16458300000002168,
+            0.16470800000001873,
+            0.17516600000001858,
+            0.16370800000001395,
+            0.16516699999999673,
+            0.1655420000000163,
+            0.19845900000001393,
+            0.161042000000009,
+            0.1634999999999991,
+            0.24966599999999062,
+            0.16862500000002,
+            0.16491600000000517,
+            0.1717079999999953,
+            0.16850000000002296,
+            0.17637500000000728,
+            0.1605000000000132,
+            0.16075000000000728,
+            0.16045900000000302,
+            0.15987499999999955,
+            0.1661670000000015,
+            0.17158399999999574,
+            0.16012499999999363,
+            0.1618750000000091,
+            0.15958300000002623,
+            0.1590840000000071,
+            0.15962500000000546,
+            0.15945800000000077,
+            0.15974999999997408,
+            0.1597500000000025,
+            0.16120800000001623,
+            0.15945800000000077,
+            0.17437499999999773,
+            0.18020799999999326,
+            0.19908300000000168,
+            0.2868749999999807,
+            0.1904999999999859,
+            0.16100000000000136,
+            0.16024999999999068,
+            0.16024999999999068,
+            0.1599159999999813,
+            0.16020800000001145,
+            0.16004200000000424,
+            0.16045800000000554,
+            0.1604159999999979,
+            0.16141600000000267,
+            0.1667500000000075,
+            0.15925000000001432,
+            0.15900000000002024,
+            0.15804100000002563,
+            0.15908300000000963,
+            0.15937499999998295,
+            0.17158299999999826,
+            0.15954099999999016,
+            0.15887499999999477,
+            0.15970799999999485,
+            0.15929099999999607,
+            0.15829199999998878,
+            0.1590839999999787,
+            0.20045899999999506,
+            0.1599999999999966,
+            0.1612079999999878,
+            0.15995799999998894,
+            0.16124999999999545,
+            0.16262500000001978,
+            0.16970800000001418,
+            0.16179199999999128,
+            0.15887499999999477,
+            0.18074999999998909,
+            0.17224999999999113,
+            0.15879199999997695,
+            0.16695799999999394,
+            0.16249999999999432,
+            0.161042000000009,
+            0.1865410000000054,
+            0.16245900000001257,
+            0.16262500000001978,
+            0.16933300000002305,
+            0.16133300000001327,
+            0.1627499999999884,
+            0.1683749999999975,
+            0.16612499999999386,
+            0.1783749999999884,
+            0.18958299999999895,
+            0.21949999999998226,
+            0.1768329999999878,
+            0.17695800000001327,
+            0.15908300000000963,
+            0.16891599999999585,
+            0.1668329999999969,
+            0.1629999999999825,
+            0.16925000000000523,
+            0.18370900000002166,
+            0.18133400000002098,
+            0.17500000000001137,
+            0.1824579999999969,
+            0.18412500000002296,
+            0.17070800000001896
+          ]
+        }
+      }
+    },
+    {
+      "strategy": "hybrid",
+      "scenarios": [
+        {
+          "id": "late-topic-start",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0034169999999846823
+            }
+          ]
+        },
+        {
+          "id": "uncertain-switch",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.003999999999990678
+            },
+            {
+              "at": 400,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.0036659999999812953
+            }
+          ]
+        },
+        {
+          "id": "one-window-noise",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.002167000000014241
+            },
+            {
+              "at": 400,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0005420000000242453
+            },
+            {
+              "at": 900,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0029159999999990305
+            }
+          ]
+        },
+        {
+          "id": "oscillation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.001999999999981128
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.0020000000000095497
+            },
+            {
+              "at": 600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.0018750000000125056
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.001833999999973912
+            }
+          ]
+        },
+        {
+          "id": "dwell-before-switch",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0029580000000066775
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "minimum-dwell",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0014170000000035543
+            },
+            {
+              "at": 900,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0029159999999990305
+            }
+          ]
+        },
+        {
+          "id": "current-topic",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "unchanged",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0013749999999959073
+            }
+          ]
+        },
+        {
+          "id": "ambiguous-margin",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0017919999999946867
+            }
+          ]
+        },
+        {
+          "id": "low-confidence",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0010839999999916472
+            }
+          ]
+        },
+        {
+          "id": "off-topic",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "no-confident-candidate",
+              "trace": [
+                "guard:grounded-bounded-candidates"
+              ],
+              "elapsedMs": 0.0005409999999983484
+            }
+          ]
+        },
+        {
+          "id": "missing-content-deduplication",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "request-context",
+              "actual": "request-context",
+              "correct": true,
+              "reason": "missing-evidence",
+              "trace": [],
+              "elapsedMs": 0.0004590000000064265
+            },
+            {
+              "at": 500,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "context-already-requested",
+              "trace": [],
+              "elapsedMs": 0.00033399999998096064
+            },
+            {
+              "at": 1000,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0029590000000041528
+            },
+            {
+              "at": 2000,
+              "expected": "request-context",
+              "actual": "request-context",
+              "correct": true,
+              "reason": "missing-evidence",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            }
+          ]
+        },
+        {
+          "id": "pause-resume-stale",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            },
+            {
+              "at": 600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "running",
+              "trace": [],
+              "elapsedMs": 0.0002920000000017353
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stale-context",
+              "trace": [],
+              "elapsedMs": 0.0002910000000042601
+            },
+            {
+              "at": 1200,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0031250000000113687
+            }
+          ]
+        },
+        {
+          "id": "stop-is-terminal",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.0002920000000017353
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stopped",
+              "trace": [],
+              "elapsedMs": 0.0003330000000119071
+            }
+          ]
+        },
+        {
+          "id": "out-of-order-clock",
+          "steps": [
+            {
+              "at": 1000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0029580000000066775
+            },
+            {
+              "at": 900,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "out-of-order-time",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            }
+          ]
+        },
+        {
+          "id": "duplicate-sequence",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.003124999999982947
+            },
+            {
+              "at": 1000,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "duplicate-or-out-of-order",
+              "trace": [],
+              "elapsedMs": 0.00041699999999877946
+            }
+          ]
+        },
+        {
+          "id": "wrong-revision",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "stale-context",
+              "trace": [],
+              "elapsedMs": 0.0003749999999911324
+            }
+          ]
+        },
+        {
+          "id": "expired-confirmation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.00995800000001168
+            },
+            {
+              "at": 1600,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.0026249999999947704
+            },
+            {
+              "at": 2000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.004583999999994148
+            }
+          ]
+        },
+        {
+          "id": "pause-clears-confirmation",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.002124999999978172
+            },
+            {
+              "at": 200,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "paused",
+              "trace": [],
+              "elapsedMs": 0.0002920000000017353
+            },
+            {
+              "at": 300,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "running",
+              "trace": [],
+              "elapsedMs": 0.00033399999998096064
+            },
+            {
+              "at": 500,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "await-confirmation",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:stable"
+              ],
+              "elapsedMs": 0.0019580000000019027
+            },
+            {
+              "at": 800,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate",
+                "bt:confirmation",
+                "fsm:confirming"
+              ],
+              "elapsedMs": 0.003415999999987207
+            }
+          ]
+        },
+        {
+          "id": "comparison-and-return",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "commit:0,2",
+              "actual": "commit:0,2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0041250000000161435
+            },
+            {
+              "at": 1000,
+              "expected": "commit:1",
+              "actual": "commit:1",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.0030420000000219716
+            },
+            {
+              "at": 2000,
+              "expected": "commit:2",
+              "actual": "commit:2",
+              "correct": true,
+              "reason": "selected",
+              "trace": [
+                "guard:grounded-bounded-candidates",
+                "bt:immediate"
+              ],
+              "elapsedMs": 0.002957999999978256
+            }
+          ]
+        },
+        {
+          "id": "invalid-reference",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.005750000000006139
+            }
+          ]
+        },
+        {
+          "id": "duplicate-shortlist",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.0049579999999878055
+            }
+          ]
+        },
+        {
+          "id": "unbounded-shortlist",
+          "steps": [
+            {
+              "at": 0,
+              "expected": "hold",
+              "actual": "hold",
+              "correct": true,
+              "reason": "invalid-candidates",
+              "trace": [],
+              "elapsedMs": 0.004208000000005541
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "scenarios": 21,
+        "decisions": 48,
+        "correct": 48,
+        "mismatches": 0,
+        "falseChanges": 0,
+        "missedChanges": 0,
+        "invalidCommits": 0,
+        "deterministicDisagreements": 0,
+        "latency": {
+          "scope": "100 repeated warmed complete replay-suite batches, includes controller construction/cloning/validation and fixture conversion; no retrieval/model/STT/network. Not independent examples or user-visible latency.",
+          "batchMedianMs": 0.14862500000000978,
+          "batchP95Ms": 0.20120799999997985,
+          "amortizedDecisionMedianMs": 0.0030963541666668704,
+          "samplesMs": [
+            0.17616599999999494,
+            0.17420900000001893,
+            0.18729200000001356,
+            0.20416599999998652,
+            0.16612499999999386,
+            0.16329099999998675,
+            0.16754099999999994,
+            0.16395800000000804,
+            0.16508299999998144,
+            0.16845800000001532,
+            0.16483300000001577,
+            0.16433299999999917,
+            0.20616700000002197,
+            0.15149999999999864,
+            0.1548750000000041,
+            0.15516599999997993,
+            0.15091699999999264,
+            0.15049999999999386,
+            0.1542090000000087,
+            0.19054199999999355,
+            0.17395799999999895,
+            0.17204100000000722,
+            0.16612499999999386,
+            0.15883300000001555,
+            0.24583300000000463,
+            0.14554099999998016,
+            0.145417000000009,
+            0.14562500000002387,
+            0.145417000000009,
+            0.14479199999999537,
+            0.14562500000002387,
+            0.14570799999998485,
+            0.1464159999999879,
+            0.1448750000000132,
+            0.14404100000001563,
+            0.1593329999999753,
+            0.16408300000000509,
+            0.1668329999999969,
+            0.164874999999995,
+            0.14933300000001282,
+            0.16133299999998485,
+            0.14783299999999144,
+            0.17145800000000122,
+            0.14537500000000136,
+            0.1443749999999966,
+            0.14383400000002666,
+            0.14579200000000014,
+            0.1431660000000079,
+            0.1433330000000126,
+            0.20120799999997985,
+            0.14337500000002024,
+            0.14391700000001606,
+            0.1432500000000232,
+            0.15133300000002237,
+            0.14862500000000978,
+            0.16424999999998136,
+            0.14329200000000242,
+            0.1454999999999984,
+            0.14595900000000483,
+            0.14358400000000415,
+            0.14358400000000415,
+            0.16604200000000446,
+            0.14420800000002032,
+            0.14383300000000077,
+            0.1490000000000009,
+            0.1451669999999865,
+            0.14516599999998903,
+            0.15337500000001114,
+            0.14708300000000918,
+            0.14474999999998772,
+            0.14329200000000242,
+            0.14958299999997848,
+            0.14416600000001267,
+            0.1673330000000135,
+            0.30170799999999076,
+            0.1726250000000107,
+            0.2065420000000131,
+            0.16108399999998824,
+            0.14712500000001683,
+            0.1529159999999763,
+            0.1441250000000025,
+            0.1420829999999853,
+            0.14262500000000955,
+            0.14229100000000017,
+            0.141666999999984,
+            0.14537500000000136,
+            0.14245800000000486,
+            0.14599999999998658,
+            0.1529170000000022,
+            0.1490000000000009,
+            0.14050000000000296,
+            0.13974999999999227,
+            0.1407079999999894,
+            0.14012500000001182,
+            0.140041999999994,
+            0.15345800000000054,
+            0.15220800000000168,
+            0.14083299999998644,
+            0.14204200000000355,
+            0.18170799999998621
+          ]
+        }
+      }
+    }
+  ],
+  "retrieval": {
+    "cases": [
+      {
+        "id": "literal-generation",
+        "speech": "Panels convert sunlight into electricity.",
+        "expectedBeats": [
+          0
+        ],
+        "actualBeats": [
+          0,
+          2
+        ],
+        "hits": 1,
+        "expectedCount": 1,
+        "retrievedCount": 2,
+        "exact": false,
+        "candidates": [
+          {
+            "id": "topic-0",
+            "score": 0.95,
+            "composition": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 0,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          {
+            "id": "topic-2",
+            "score": 0.6,
+            "composition": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 2,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          }
+        ],
+        "firstPolicyAction": "hold",
+        "firstPolicyReason": "unchanged",
+        "elapsedMs": 0.11591699999999605
+      },
+      {
+        "id": "literal-storage",
+        "speech": "Battery storage saves electricity for night.",
+        "expectedBeats": [
+          2
+        ],
+        "actualBeats": [
+          0,
+          2
+        ],
+        "hits": 1,
+        "expectedCount": 1,
+        "retrievedCount": 2,
+        "exact": false,
+        "candidates": [
+          {
+            "id": "topic-2",
+            "score": 0.95,
+            "composition": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 2,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          {
+            "id": "topic-0",
+            "score": 0.6,
+            "composition": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 0,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          }
+        ],
+        "firstPolicyAction": "commit",
+        "firstPolicyReason": "selected",
+        "elapsedMs": 0.03300000000001546
+      },
+      {
+        "id": "literal-chart",
+        "speech": "Daily production chart morning noon evening energy.",
+        "expectedBeats": [
+          1
+        ],
+        "actualBeats": [
+          1
+        ],
+        "hits": 1,
+        "expectedCount": 1,
+        "retrievedCount": 1,
+        "exact": true,
+        "candidates": [
+          {
+            "id": "topic-1",
+            "score": 0.95,
+            "composition": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 1,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          }
+        ],
+        "firstPolicyAction": "commit",
+        "firstPolicyReason": "selected",
+        "elapsedMs": 0.007374999999996135
+      },
+      {
+        "id": "literal-comparison",
+        "speech": "Compare panels sunlight conversion with battery storage night.",
+        "expectedBeats": [
+          0,
+          2
+        ],
+        "actualBeats": [
+          0,
+          2
+        ],
+        "hits": 2,
+        "expectedCount": 2,
+        "retrievedCount": 2,
+        "exact": true,
+        "candidates": [
+          {
+            "id": "compare-2-0",
+            "score": 0.85,
+            "composition": {
+              "layout": "split",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 2,
+                  "emphasis": "strong",
+                  "reveal": null
+                },
+                {
+                  "id": "secondary",
+                  "kind": "statement",
+                  "beat": 0,
+                  "emphasis": "normal",
+                  "reveal": null
+                }
+              ]
+            }
+          }
+        ],
+        "firstPolicyAction": "hold",
+        "firstPolicyReason": "await-confirmation",
+        "elapsedMs": 0.010249999999984993
+      },
+      {
+        "id": "irrelevant",
+        "speech": "Pasta tomatoes lunch notebook kitchen.",
+        "expectedBeats": [],
+        "actualBeats": [],
+        "hits": 0,
+        "expectedCount": 0,
+        "retrievedCount": 0,
+        "exact": true,
+        "candidates": [],
+        "firstPolicyAction": "hold",
+        "firstPolicyReason": "no-confident-candidate",
+        "elapsedMs": 0.0027920000000278833
+      },
+      {
+        "id": "paraphrase-gap",
+        "speech": "Keep the surplus until darkness falls.",
+        "expectedBeats": [
+          2
+        ],
+        "actualBeats": [],
+        "hits": 0,
+        "expectedCount": 1,
+        "retrievedCount": 0,
+        "exact": false,
+        "candidates": [],
+        "firstPolicyAction": "hold",
+        "firstPolicyReason": "no-confident-candidate",
+        "elapsedMs": 0.0027919999999994616
+      },
+      {
+        "id": "negation-gap",
+        "speech": "Not panels converting sunlight. Battery storage at night.",
+        "expectedBeats": [
+          2
+        ],
+        "actualBeats": [
+          0,
+          2
+        ],
+        "hits": 1,
+        "expectedCount": 1,
+        "retrievedCount": 2,
+        "exact": false,
+        "candidates": [
+          {
+            "id": "topic-2",
+            "score": 0.8,
+            "composition": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 2,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          {
+            "id": "topic-0",
+            "score": 0.7,
+            "composition": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 0,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          }
+        ],
+        "firstPolicyAction": "hold",
+        "firstPolicyReason": "no-confident-candidate",
+        "elapsedMs": 0.007833000000005086
+      },
+      {
+        "id": "unavailable-cost-gap",
+        "speech": "What is the installation cost of panels? No cost data is supplied.",
+        "expectedBeats": [],
+        "actualBeats": [
+          0
+        ],
+        "hits": 0,
+        "expectedCount": 0,
+        "retrievedCount": 1,
+        "exact": false,
+        "candidates": [
+          {
+            "id": "topic-0",
+            "score": 0.6,
+            "composition": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 0,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          }
+        ],
+        "firstPolicyAction": "hold",
+        "firstPolicyReason": "unchanged",
+        "elapsedMs": 0.0061249999999972715
+      },
+      {
+        "id": "other-domain",
+        "speech": "Students compare learning outcomes using assessment feedback.",
+        "domain": "education",
+        "expectedBeats": [
+          1
+        ],
+        "actualBeats": [
+          1
+        ],
+        "hits": 1,
+        "expectedCount": 1,
+        "retrievedCount": 1,
+        "exact": true,
+        "candidates": [
+          {
+            "id": "topic-1",
+            "score": 0.95,
+            "composition": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 1,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          }
+        ],
+        "firstPolicyAction": "commit",
+        "firstPolicyReason": "selected",
+        "elapsedMs": 0.04154100000002359
+      }
+    ],
+    "summary": {
+      "cases": 9,
+      "exactSets": 4,
+      "microRecall": 0.875,
+      "microPrecision": 0.6363636363636364,
+      "hits": 7,
+      "expectedTopics": 8,
+      "retrievedTopics": 11
+    }
+  },
+  "passed": true
+}

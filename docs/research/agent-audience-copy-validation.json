@@ -1,0 +1,136 @@
+{
+  "realtimeMs": 2886.202624999998,
+  "stage": {
+    "text": "Battery Storage",
+    "composition": {
+      "title": "Battery Storage",
+      "body": "Batteries provide a practical method to store that electricity for use at night or during cloudy days.",
+      "beat": 2,
+      "flowRevision": 3
+    },
+    "source": "agent",
+    "revision": 2,
+    "committedAt": 1792125694544
+  },
+  "recordedAt": "2026-10-16T04:41:34.544Z",
+  "scope": "Actual local model, not mock",
+  "configuration": {
+    "baseURL": "http://127.0.0.1:11434/v1",
+    "model": "qwen3.5:4b",
+    "local": true
+  },
+  "interviewMs": 9827.266041,
+  "storyMs": 27790.676792,
+  "state": {
+    "revision": 3,
+    "brief": {
+      "topic": "Solar generation and storage",
+      "audience": "Teachers",
+      "goal": "Help teachers explain the relationship between solar generation and batteries",
+      "durationMinutes": 10,
+      "keyPoints": [
+        "Solar panels convert sunlight into electricity",
+        "Batteries store energy for later use",
+        "Understanding the flow of solar power"
+      ],
+      "constraints": [
+        "No fabricated statistics",
+        "Conceptual focus only"
+      ],
+      "openQuestions": [
+        "What specific misconceptions about solar and batteries should we avoid?"
+      ]
+    },
+    "flow": {
+      "title": "The Solar-Energy Flow: Generation Meets Storage",
+      "summary": "This three-beat flow explains the core concept for teachers: solar panels generate electricity from sunlight, while batteries act as storage to power devices later. The narrative moves simply from source to capture to retention.",
+      "beats": [
+        {
+          "title": "Solar Generation",
+          "audienceText": "Sunlight is pure energy that can be captured by solar panels.",
+          "speakerNotes": "Begin with the concept of sunlight as a raw resource, then introduce solar panels as the mechanism that converts this light into usable electricity.",
+          "visualDirection": "An animation showing sunlight rays hitting photovoltaic cells and transforming into flowing electrons.",
+          "artifactIds": [
+            "379c7d2b-145d-4d2a-b488-d3d653bcb933"
+          ]
+        },
+        {
+          "title": "Energy Capture",
+          "audienceText": "Once energy is captured as electricity, it requires a way to move power from where it is made to where it is needed.",
+          "speakerNotes": "Explain that the electricity generated at a specific moment may not be needed there immediately. Introduce the need to transport that electricity to different locations.",
+          "visualDirection": "A stylized road or pathway leading away from a solar panel array, representing the movement of electricity.",
+          "artifactIds": [
+            "379c7d2b-145d-4d2a-b488-d3d653bcb933"
+          ]
+        },
+        {
+          "title": "Battery Storage",
+          "audienceText": "Batteries provide a practical method to store that electricity for use at night or during cloudy days.",
+          "speakerNotes": "Conclude by connecting the concept of stored energy to batteries. Explain how they act as 'containers' that keep the electrical power safe until it can be used later.",
+          "visualDirection": "A simple, clear graphic of a battery being filled with an electric symbol and then releasing it to light up a nearby device.",
+          "artifactIds": [
+            "379c7d2b-145d-4d2a-b488-d3d653bcb933"
+          ]
+        }
+      ],
+      "openQuestions": [
+        "Are there specific visual metaphors teachers prefer for describing electricity flow and battery storage concepts without getting into technical details?"
+      ]
+    },
+    "flowBasedOnRevision": 3,
+    "approvedRevision": 3,
+    "artifacts": [
+      {
+        "id": "379c7d2b-145d-4d2a-b488-d3d653bcb933",
+        "name": "solar-notes.md",
+        "content": "# Solar energy\nSolar panels convert sunlight to electricity. Batteries store energy for later use. This is conceptual material, not measured project performance."
+      }
+    ],
+    "messages": {
+      "interview": [
+        {
+          "role": "user",
+          "content": "Prepare a 10-minute conceptual presentation for teachers explaining solar generation and batteries. Goal: help them teach the relationship. Key points: generation and storage. Constraints: no fabricated statistics. I have supplied all context needed for this draft. Use updateBrief now; list any remaining questions as open questions, then briefly confirm the brief."
+        },
+        {
+          "role": "assistant",
+          "content": "The brief is saved: a 10-minute presentation on solar generation and battery storage for teachers, avoiding fabricated statistics. I\u2019ve recorded open questions to clarify common misconceptions you\u2019d like to address\u2014please let me know if you have any corrections or additions."
+        }
+      ],
+      "storyteller": [
+        {
+          "role": "user",
+          "content": "Create a concise three-beat presentation flow from the current brief. Read the provided material, use proposeFlow with exact artifact IDs, and briefly explain your proposal."
+        },
+        {
+          "role": "assistant",
+          "content": "I have proposed a concise three-beat presentation flow titled \"The Solar-Energy Flow: Generation Meets Storage.\" \n\n**Proposal Summary:**\nThis flow uses the provided `solar-notes.md` artifact to guide teachers through three distinct concepts: solar generation, energy capture/transport, and battery storage. It avoids fabrication by sticking strictly to the source material's conceptual framework.\n\n**Key Features of the Flow:**\n*   **Beat 1 (Solar Generation):** Defines sunlight as raw energy and introduces solar panels as the converter. Visuals show photons hitting cells creating electrons.\n*   **Beat 2 (Energy Capture):** Explains the need to move electricity from where it is made to where it is needed. Visuals depict a \"road\" carrying electricity away from panels.\n*   **Beat 3 (Battery Storage):** Concludes with batteries as practical storage containers for later use. Visuals show a battery being filled with electrical power and releasing it to a device like a lamp.\n\n**Open Question:**\nThe flow includes one open question seeking teacher-preferred visual metaphors for electricity and storage, which may help refine future versions without altering the core story arc. The current proposal uses simple, conceptual graphics to ensure clarity for the target audience of teachers."
+        }
+      ]
+    },
+    "events": [
+      {
+        "id": "f33bb603-67fe-4c88-aa20-5c9611075488",
+        "from": "interview",
+        "to": "storyteller",
+        "kind": "brief.updated",
+        "summary": "Interview brief updated; prior flow needs review.",
+        "revision": 2
+      },
+      {
+        "id": "87c1034b-0aac-4438-beda-8b866a1b8a16",
+        "from": "storyteller",
+        "to": "presenter",
+        "kind": "flow.proposed",
+        "summary": "Storyteller proposed a flow for review.",
+        "revision": 3
+      }
+    ]
+  },
+  "errors": [],
+  "limitations": [
+    "One scripted local-model trial using typed speech input, not microphone capture.",
+    "Story approved programmatically for handoff; no human editorial review measured.",
+    "Audience text required for each generated beat; factual and editorial quality still require review."
+  ]
+}

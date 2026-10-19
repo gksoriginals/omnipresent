@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-16",
+  "scope": "Browser-local project/session and story library implementation",
+  "automated": {
+    "tests": 27,
+    "passed": 27,
+    "skipped": 0,
+    "build": "TypeScript and Vite pass"
+  },
+  "browser": {
+    "projectCountBeforeStoryFixtures": 2,
+    "separateUnsentDrafts": true,
+    "pdfAttachmentIsolation": true,
+    "reloadPersistence": true,
+    "actualLocalModelInterviewTurn": true,
+    "gallerySnapshots": "Explicitly seeded solar and ocean snapshots, plus one saved through UI",
+    "saveCreatesCardAndSurvivesReload": true,
+    "selectedStoryStartsIndependentlyOfOpenProject": true,
+    "capture": "Synthetic silent browser MediaStream with actual AudioWorklet and speech startup; no physical microphone",
+    "mobileWidth": 390,
+    "horizontalGalleryOverflow": false
+  },
+  "limits": [
+    "Browser-local only; no account or cross-device storage",
+    "No multi-tab conflict resolution",
+    "Browser quota still limits capacity",
+    "No project deletion/rename management added"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "Source snapshot captured immediately after connectivity execution; files were not edited between execution and capture. The source payload and raw responses are in connectivity.json.",
+  "sourceFiles": [
+    {
+      "path": "scripts/clef-connectivity-probe.ts",
+      "sha256": "f4c7b54f0f73907c32b60dbf0e8e95dee0f2ac2a6003998bc28d42cc6c372ab7"
+    },
+    {
+      "path": "server/agents/system-one.ts",
+      "sha256": "3b667090dc66ac0ef57a94df6d1a4195d0cc3cd88c80f5087986a9473c388b49"
+    }
+  ]
+}

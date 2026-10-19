@@ -1,0 +1,1026 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "solar",
+      "assets": [
+        {
+          "id": "solar-trend",
+          "title": "solar output: change over time",
+          "text": "Line plot connects observations in time order, highlighting rises, falls and the peak. Synthetic solar output teaching example: Morning 10, noon 20, evening 5 Wh. Sunlight reaches a panel, cells convert light, a battery stores electricity. All views explain the same declared example.",
+          "entity": "solar-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "chart",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "solar-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "3af01ad0c01fb1790de4814588679375b07c2a8bb5896b22e2a69e787686d07d",
+                "summary": "Synthetic solar output teaching example: Morning 10, noon 20, evening 5 Wh. Sunlight reaches a panel, cells convert light, a battery stores electricity. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "solar",
+                "aliases": [
+                  "solar output"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "solar-comparison",
+          "title": "solar output: compare categories",
+          "text": "Bar plot places categories beside each other to compare magnitudes and identify the largest and smallest. Synthetic solar output teaching example: Morning 10, noon 20, evening 5 Wh. Sunlight reaches a panel, cells convert light, a battery stores electricity. All views explain the same declared example.",
+          "entity": "solar-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "chart",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "solar-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "3af01ad0c01fb1790de4814588679375b07c2a8bb5896b22e2a69e787686d07d",
+                "summary": "Synthetic solar output teaching example: Morning 10, noon 20, evening 5 Wh. Sunlight reaches a panel, cells convert light, a battery stores electricity. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "solar",
+                "aliases": [
+                  "solar output"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "solar-process",
+          "title": "solar output: how the process works",
+          "text": "Flow diagram follows sequential stages with arrows and explains what happens before and after each step. Synthetic solar output teaching example: Morning 10, noon 20, evening 5 Wh. Sunlight reaches a panel, cells convert light, a battery stores electricity. All views explain the same declared example.",
+          "entity": "solar-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "diagram",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "solar-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "3af01ad0c01fb1790de4814588679375b07c2a8bb5896b22e2a69e787686d07d",
+                "summary": "Synthetic solar output teaching example: Morning 10, noon 20, evening 5 Wh. Sunlight reaches a panel, cells convert light, a battery stores electricity. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "solar",
+                "aliases": [
+                  "solar output"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "solar-overview",
+          "title": "solar output: main takeaway",
+          "text": "One short sentence gives a simple high-level explanation for newcomers without detailed numbers or steps. Synthetic solar output teaching example: Morning 10, noon 20, evening 5 Wh. Sunlight reaches a panel, cells convert light, a battery stores electricity. All views explain the same declared example.",
+          "entity": "solar-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "statement",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "solar-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "3af01ad0c01fb1790de4814588679375b07c2a8bb5896b22e2a69e787686d07d",
+                "summary": "Synthetic solar output teaching example: Morning 10, noon 20, evening 5 Wh. Sunlight reaches a panel, cells convert light, a battery stores electricity. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "solar",
+                "aliases": [
+                  "solar output"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "solar-illustration",
+          "title": "solar output: visual setting",
+          "text": "Illustrated scene shows the objects and setting so the audience can picture the situation rather than examine a graph. Synthetic solar output teaching example: Morning 10, noon 20, evening 5 Wh. Sunlight reaches a panel, cells convert light, a battery stores electricity. All views explain the same declared example.",
+          "entity": "solar-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "image",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "solar-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "3af01ad0c01fb1790de4814588679375b07c2a8bb5896b22e2a69e787686d07d",
+                "summary": "Synthetic solar output teaching example: Morning 10, noon 20, evening 5 Wh. Sunlight reaches a panel, cells convert light, a battery stores electricity. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "solar",
+                "aliases": [
+                  "solar output"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "intent": {
+        "mode": "present",
+        "reason": "declared-role-only-test",
+        "claims": [
+          "solar"
+        ],
+        "entities": [
+          "solar-demo"
+        ],
+        "years": [],
+        "family": null,
+        "provenance": "illustrative",
+        "audited": false,
+        "unit": null,
+        "unknown": []
+      },
+      "cases": [
+        {
+          "id": "solar-0",
+          "speech": "For solar output, help people see how the values rise and fall as time passes, especially where they peak.",
+          "expected": "solar-trend"
+        },
+        {
+          "id": "solar-1",
+          "speech": "For solar output, I want the audience to compare the sizes of the categories beside one another and spot the biggest.",
+          "expected": "solar-comparison"
+        },
+        {
+          "id": "solar-2",
+          "speech": "For solar output, walk through what happens first, what follows, and how the final stage is reached.",
+          "expected": "solar-process"
+        },
+        {
+          "id": "solar-3",
+          "speech": "For solar output, introduce just the main idea in a short sentence so newcomers do not get lost in details.",
+          "expected": "solar-overview"
+        },
+        {
+          "id": "solar-4",
+          "speech": "For solar output, help the audience picture the objects in the scene and their surroundings.",
+          "expected": "solar-illustration"
+        },
+        {
+          "id": "solar-5",
+          "speech": "The point about solar output is the trajectory: it climbs, reaches a high point, then drops again.",
+          "expected": "solar-trend"
+        },
+        {
+          "id": "solar-6",
+          "speech": "With solar output, the audience needs the causal chain, from the starting input through to the final result.",
+          "expected": "solar-process"
+        },
+        {
+          "id": "solar-7",
+          "speech": "The question about solar output is which category is greater, not the path through time.",
+          "expected": "solar-comparison"
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "assets": [
+        {
+          "id": "water-trend",
+          "title": "water use: change over time",
+          "text": "Line plot connects observations in time order, highlighting rises, falls and the peak. Synthetic water use teaching example: Monday 10, Tuesday 20, Wednesday 5 litres. Rain enters a tank, a filter removes debris, a pump supplies water. All views explain the same declared example.",
+          "entity": "water-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "chart",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "water-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "77705c68066a0afecee5c2150b2f2255b2ad436a316f3a89ecf168de81fa0769",
+                "summary": "Synthetic water use teaching example: Monday 10, Tuesday 20, Wednesday 5 litres. Rain enters a tank, a filter removes debris, a pump supplies water. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "water",
+                "aliases": [
+                  "water use"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "water-comparison",
+          "title": "water use: compare categories",
+          "text": "Bar plot places categories beside each other to compare magnitudes and identify the largest and smallest. Synthetic water use teaching example: Monday 10, Tuesday 20, Wednesday 5 litres. Rain enters a tank, a filter removes debris, a pump supplies water. All views explain the same declared example.",
+          "entity": "water-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "chart",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "water-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "77705c68066a0afecee5c2150b2f2255b2ad436a316f3a89ecf168de81fa0769",
+                "summary": "Synthetic water use teaching example: Monday 10, Tuesday 20, Wednesday 5 litres. Rain enters a tank, a filter removes debris, a pump supplies water. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "water",
+                "aliases": [
+                  "water use"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "water-process",
+          "title": "water use: how the process works",
+          "text": "Flow diagram follows sequential stages with arrows and explains what happens before and after each step. Synthetic water use teaching example: Monday 10, Tuesday 20, Wednesday 5 litres. Rain enters a tank, a filter removes debris, a pump supplies water. All views explain the same declared example.",
+          "entity": "water-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "diagram",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "water-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "77705c68066a0afecee5c2150b2f2255b2ad436a316f3a89ecf168de81fa0769",
+                "summary": "Synthetic water use teaching example: Monday 10, Tuesday 20, Wednesday 5 litres. Rain enters a tank, a filter removes debris, a pump supplies water. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "water",
+                "aliases": [
+                  "water use"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "water-overview",
+          "title": "water use: main takeaway",
+          "text": "One short sentence gives a simple high-level explanation for newcomers without detailed numbers or steps. Synthetic water use teaching example: Monday 10, Tuesday 20, Wednesday 5 litres. Rain enters a tank, a filter removes debris, a pump supplies water. All views explain the same declared example.",
+          "entity": "water-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "statement",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "water-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "77705c68066a0afecee5c2150b2f2255b2ad436a316f3a89ecf168de81fa0769",
+                "summary": "Synthetic water use teaching example: Monday 10, Tuesday 20, Wednesday 5 litres. Rain enters a tank, a filter removes debris, a pump supplies water. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "water",
+                "aliases": [
+                  "water use"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "water-illustration",
+          "title": "water use: visual setting",
+          "text": "Illustrated scene shows the objects and setting so the audience can picture the situation rather than examine a graph. Synthetic water use teaching example: Monday 10, Tuesday 20, Wednesday 5 litres. Rain enters a tank, a filter removes debris, a pump supplies water. All views explain the same declared example.",
+          "entity": "water-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "image",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "water-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "77705c68066a0afecee5c2150b2f2255b2ad436a316f3a89ecf168de81fa0769",
+                "summary": "Synthetic water use teaching example: Monday 10, Tuesday 20, Wednesday 5 litres. Rain enters a tank, a filter removes debris, a pump supplies water. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "water",
+                "aliases": [
+                  "water use"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "intent": {
+        "mode": "present",
+        "reason": "declared-role-only-test",
+        "claims": [
+          "water"
+        ],
+        "entities": [
+          "water-demo"
+        ],
+        "years": [],
+        "family": null,
+        "provenance": "illustrative",
+        "audited": false,
+        "unit": null,
+        "unknown": []
+      },
+      "cases": [
+        {
+          "id": "water-0",
+          "speech": "For water use, help people see how the values rise and fall as time passes, especially where they peak.",
+          "expected": "water-trend"
+        },
+        {
+          "id": "water-1",
+          "speech": "For water use, I want the audience to compare the sizes of the categories beside one another and spot the biggest.",
+          "expected": "water-comparison"
+        },
+        {
+          "id": "water-2",
+          "speech": "For water use, walk through what happens first, what follows, and how the final stage is reached.",
+          "expected": "water-process"
+        },
+        {
+          "id": "water-3",
+          "speech": "For water use, introduce just the main idea in a short sentence so newcomers do not get lost in details.",
+          "expected": "water-overview"
+        },
+        {
+          "id": "water-4",
+          "speech": "For water use, help the audience picture the objects in the scene and their surroundings.",
+          "expected": "water-illustration"
+        },
+        {
+          "id": "water-5",
+          "speech": "The point about water use is the trajectory: it climbs, reaches a high point, then drops again.",
+          "expected": "water-trend"
+        },
+        {
+          "id": "water-6",
+          "speech": "With water use, the audience needs the causal chain, from the starting input through to the final result.",
+          "expected": "water-process"
+        },
+        {
+          "id": "water-7",
+          "speech": "The question about water use is which category is greater, not the path through time.",
+          "expected": "water-comparison"
+        }
+      ]
+    },
+    {
+      "id": "visitors",
+      "assets": [
+        {
+          "id": "visitors-trend",
+          "title": "museum visits: change over time",
+          "text": "Line plot connects observations in time order, highlighting rises, falls and the peak. Synthetic museum visits teaching example: Morning 10, afternoon 20, evening 5 visitors. Guests book a ticket, enter the gallery, and leave feedback. All views explain the same declared example.",
+          "entity": "museum-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "chart",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "museum-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "152cce7baa65e0f22996e62c882b52dac12d8843fccf0f191f55f1fd5d2d93e1",
+                "summary": "Synthetic museum visits teaching example: Morning 10, afternoon 20, evening 5 visitors. Guests book a ticket, enter the gallery, and leave feedback. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "visitors",
+                "aliases": [
+                  "museum visits"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "visitors-comparison",
+          "title": "museum visits: compare categories",
+          "text": "Bar plot places categories beside each other to compare magnitudes and identify the largest and smallest. Synthetic museum visits teaching example: Morning 10, afternoon 20, evening 5 visitors. Guests book a ticket, enter the gallery, and leave feedback. All views explain the same declared example.",
+          "entity": "museum-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "chart",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "museum-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "152cce7baa65e0f22996e62c882b52dac12d8843fccf0f191f55f1fd5d2d93e1",
+                "summary": "Synthetic museum visits teaching example: Morning 10, afternoon 20, evening 5 visitors. Guests book a ticket, enter the gallery, and leave feedback. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "visitors",
+                "aliases": [
+                  "museum visits"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "visitors-process",
+          "title": "museum visits: how the process works",
+          "text": "Flow diagram follows sequential stages with arrows and explains what happens before and after each step. Synthetic museum visits teaching example: Morning 10, afternoon 20, evening 5 visitors. Guests book a ticket, enter the gallery, and leave feedback. All views explain the same declared example.",
+          "entity": "museum-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "diagram",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "museum-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "152cce7baa65e0f22996e62c882b52dac12d8843fccf0f191f55f1fd5d2d93e1",
+                "summary": "Synthetic museum visits teaching example: Morning 10, afternoon 20, evening 5 visitors. Guests book a ticket, enter the gallery, and leave feedback. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "visitors",
+                "aliases": [
+                  "museum visits"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "visitors-overview",
+          "title": "museum visits: main takeaway",
+          "text": "One short sentence gives a simple high-level explanation for newcomers without detailed numbers or steps. Synthetic museum visits teaching example: Morning 10, afternoon 20, evening 5 visitors. Guests book a ticket, enter the gallery, and leave feedback. All views explain the same declared example.",
+          "entity": "museum-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "statement",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "museum-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "152cce7baa65e0f22996e62c882b52dac12d8843fccf0f191f55f1fd5d2d93e1",
+                "summary": "Synthetic museum visits teaching example: Morning 10, afternoon 20, evening 5 visitors. Guests book a ticket, enter the gallery, and leave feedback. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "visitors",
+                "aliases": [
+                  "museum visits"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "visitors-illustration",
+          "title": "museum visits: visual setting",
+          "text": "Illustrated scene shows the objects and setting so the audience can picture the situation rather than examine a graph. Synthetic museum visits teaching example: Morning 10, afternoon 20, evening 5 visitors. Guests book a ticket, enter the gallery, and leave feedback. All views explain the same declared example.",
+          "entity": "museum-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "image",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "museum-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "152cce7baa65e0f22996e62c882b52dac12d8843fccf0f191f55f1fd5d2d93e1",
+                "summary": "Synthetic museum visits teaching example: Morning 10, afternoon 20, evening 5 visitors. Guests book a ticket, enter the gallery, and leave feedback. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "visitors",
+                "aliases": [
+                  "museum visits"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "intent": {
+        "mode": "present",
+        "reason": "declared-role-only-test",
+        "claims": [
+          "visitors"
+        ],
+        "entities": [
+          "museum-demo"
+        ],
+        "years": [],
+        "family": null,
+        "provenance": "illustrative",
+        "audited": false,
+        "unit": null,
+        "unknown": []
+      },
+      "cases": [
+        {
+          "id": "visitors-0",
+          "speech": "For museum visits, help people see how the values rise and fall as time passes, especially where they peak.",
+          "expected": "visitors-trend"
+        },
+        {
+          "id": "visitors-1",
+          "speech": "For museum visits, I want the audience to compare the sizes of the categories beside one another and spot the biggest.",
+          "expected": "visitors-comparison"
+        },
+        {
+          "id": "visitors-2",
+          "speech": "For museum visits, walk through what happens first, what follows, and how the final stage is reached.",
+          "expected": "visitors-process"
+        },
+        {
+          "id": "visitors-3",
+          "speech": "For museum visits, introduce just the main idea in a short sentence so newcomers do not get lost in details.",
+          "expected": "visitors-overview"
+        },
+        {
+          "id": "visitors-4",
+          "speech": "For museum visits, help the audience picture the objects in the scene and their surroundings.",
+          "expected": "visitors-illustration"
+        },
+        {
+          "id": "visitors-5",
+          "speech": "The point about museum visits is the trajectory: it climbs, reaches a high point, then drops again.",
+          "expected": "visitors-trend"
+        },
+        {
+          "id": "visitors-6",
+          "speech": "With museum visits, the audience needs the causal chain, from the starting input through to the final result.",
+          "expected": "visitors-process"
+        },
+        {
+          "id": "visitors-7",
+          "speech": "The question about museum visits is which category is greater, not the path through time.",
+          "expected": "visitors-comparison"
+        }
+      ]
+    },
+    {
+      "id": "seedlings",
+      "assets": [
+        {
+          "id": "seedlings-trend",
+          "title": "seedling growth: change over time",
+          "text": "Line plot connects observations in time order, highlighting rises, falls and the peak. Synthetic seedling growth teaching example: Week one 10, week two 20, week three 5 cm. A seed absorbs water, roots emerge, and leaves unfold. All views explain the same declared example.",
+          "entity": "garden-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "chart",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "garden-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "53ccaab829f586877475a3f8a44641ba5d612bf2051a188c2fb9f6b5eecb5728",
+                "summary": "Synthetic seedling growth teaching example: Week one 10, week two 20, week three 5 cm. A seed absorbs water, roots emerge, and leaves unfold. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "seedlings",
+                "aliases": [
+                  "seedling growth"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "seedlings-comparison",
+          "title": "seedling growth: compare categories",
+          "text": "Bar plot places categories beside each other to compare magnitudes and identify the largest and smallest. Synthetic seedling growth teaching example: Week one 10, week two 20, week three 5 cm. A seed absorbs water, roots emerge, and leaves unfold. All views explain the same declared example.",
+          "entity": "garden-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "chart",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "garden-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "53ccaab829f586877475a3f8a44641ba5d612bf2051a188c2fb9f6b5eecb5728",
+                "summary": "Synthetic seedling growth teaching example: Week one 10, week two 20, week three 5 cm. A seed absorbs water, roots emerge, and leaves unfold. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "seedlings",
+                "aliases": [
+                  "seedling growth"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "seedlings-process",
+          "title": "seedling growth: how the process works",
+          "text": "Flow diagram follows sequential stages with arrows and explains what happens before and after each step. Synthetic seedling growth teaching example: Week one 10, week two 20, week three 5 cm. A seed absorbs water, roots emerge, and leaves unfold. All views explain the same declared example.",
+          "entity": "garden-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "diagram",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "garden-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "53ccaab829f586877475a3f8a44641ba5d612bf2051a188c2fb9f6b5eecb5728",
+                "summary": "Synthetic seedling growth teaching example: Week one 10, week two 20, week three 5 cm. A seed absorbs water, roots emerge, and leaves unfold. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "seedlings",
+                "aliases": [
+                  "seedling growth"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "seedlings-overview",
+          "title": "seedling growth: main takeaway",
+          "text": "One short sentence gives a simple high-level explanation for newcomers without detailed numbers or steps. Synthetic seedling growth teaching example: Week one 10, week two 20, week three 5 cm. A seed absorbs water, roots emerge, and leaves unfold. All views explain the same declared example.",
+          "entity": "garden-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "statement",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "garden-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "53ccaab829f586877475a3f8a44641ba5d612bf2051a188c2fb9f6b5eecb5728",
+                "summary": "Synthetic seedling growth teaching example: Week one 10, week two 20, week three 5 cm. A seed absorbs water, roots emerge, and leaves unfold. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "seedlings",
+                "aliases": [
+                  "seedling growth"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "seedlings-illustration",
+          "title": "seedling growth: visual setting",
+          "text": "Illustrated scene shows the objects and setting so the audience can picture the situation rather than examine a graph. Synthetic seedling growth teaching example: Week one 10, week two 20, week three 5 cm. A seed absorbs water, roots emerge, and leaves unfold. All views explain the same declared example.",
+          "entity": "garden-demo",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "image",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "garden-demo",
+            "timeframe": null,
+            "unit": null,
+            "independentReview": "pending",
+            "sources": [
+              {
+                "id": "synthetic",
+                "uri": "fixture://preference-quality-v1",
+                "sha256": "53ccaab829f586877475a3f8a44641ba5d612bf2051a188c2fb9f6b5eecb5728",
+                "summary": "Synthetic seedling growth teaching example: Week one 10, week two 20, week three 5 cm. A seed absorbs water, roots emerge, and leaves unfold. All views explain the same declared example."
+              }
+            ],
+            "claims": [
+              {
+                "id": "seedlings",
+                "aliases": [
+                  "seedling growth"
+                ],
+                "sourceIds": [
+                  "synthetic"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "intent": {
+        "mode": "present",
+        "reason": "declared-role-only-test",
+        "claims": [
+          "seedlings"
+        ],
+        "entities": [
+          "garden-demo"
+        ],
+        "years": [],
+        "family": null,
+        "provenance": "illustrative",
+        "audited": false,
+        "unit": null,
+        "unknown": []
+      },
+      "cases": [
+        {
+          "id": "seedlings-0",
+          "speech": "For seedling growth, help people see how the values rise and fall as time passes, especially where they peak.",
+          "expected": "seedlings-trend"
+        },
+        {
+          "id": "seedlings-1",
+          "speech": "For seedling growth, I want the audience to compare the sizes of the categories beside one another and spot the biggest.",
+          "expected": "seedlings-comparison"
+        },
+        {
+          "id": "seedlings-2",
+          "speech": "For seedling growth, walk through what happens first, what follows, and how the final stage is reached.",
+          "expected": "seedlings-process"
+        },
+        {
+          "id": "seedlings-3",
+          "speech": "For seedling growth, introduce just the main idea in a short sentence so newcomers do not get lost in details.",
+          "expected": "seedlings-overview"
+        },
+        {
+          "id": "seedlings-4",
+          "speech": "For seedling growth, help the audience picture the objects in the scene and their surroundings.",
+          "expected": "seedlings-illustration"
+        },
+        {
+          "id": "seedlings-5",
+          "speech": "The point about seedling growth is the trajectory: it climbs, reaches a high point, then drops again.",
+          "expected": "seedlings-trend"
+        },
+        {
+          "id": "seedlings-6",
+          "speech": "With seedling growth, the audience needs the causal chain, from the starting input through to the final result.",
+          "expected": "seedlings-process"
+        },
+        {
+          "id": "seedlings-7",
+          "speech": "The question about seedling growth is which category is greater, not the path through time.",
+          "expected": "seedlings-comparison"
+        }
+      ]
+    }
+  ],
+  "passes": 3,
+  "budgetMs": 300,
+  "promotionGate": {
+    "minAccuracy": 0.9,
+    "minGainOverHybrid": 0.05,
+    "maxWarmP95Ms": 150,
+    "maxFallbackRate": 0.01
+  },
+  "scope": "32 authored preference requests, exact single expected asset, three rotated option orders. Role-only oracle intent; actual host interpretation measured separately. Development set, not independent acceptance."
+}

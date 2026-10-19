@@ -1,0 +1,122 @@
+{
+  "recordedAt": "2026-10-17T14:44:04.257Z",
+  "scope": "Small native-format generation smoke test; two requests each, sequential, not a statistical benchmark. Both formats validate component contracts and domain references.",
+  "results": [
+    {
+      "engine": "openui",
+      "request": "Focus on battery storage after sunset.",
+      "ms": 2788.870625,
+      "usage": {
+        "inputTokens": 784,
+        "inputTokenDetails": {
+          "noCacheTokens": 784,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 68,
+        "outputTokenDetails": {
+          "textTokens": 68,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 852,
+        "raw": {
+          "prompt_tokens": 784,
+          "completion_tokens": 68,
+          "total_tokens": 852,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "valid": false,
+      "error": "Unknown prepared image",
+      "output": "root = PresentationCanvas(\"focus\", [\n  PresentationBlock(\"primary\", \"statement\", 0, \"normal\", 0),\n  PresentationBlock(\"secondary\", \"visual\", 1, \"strong\", 1),\n  PresentationBlock(\"detail\", \"image\", 2, \"normal\", 2)\n])"
+    },
+    {
+      "engine": "openui",
+      "request": "Compare panels generating electricity with batteries storing electricity; show both together.",
+      "ms": 6564.553249999999,
+      "usage": {
+        "inputTokens": 790,
+        "inputTokenDetails": {
+          "noCacheTokens": 518,
+          "cacheReadTokens": 272
+        },
+        "outputTokens": 218,
+        "outputTokenDetails": {
+          "textTokens": 218,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1008,
+        "raw": {
+          "prompt_tokens": 790,
+          "completion_tokens": 218,
+          "total_tokens": 1008,
+          "prompt_tokens_details": {
+            "cached_tokens": 272
+          }
+        }
+      },
+      "valid": false,
+      "error": "[\n  {\n    \"origin\": \"number\",\n    \"code\": \"too_big\",\n    \"maximum\": 12,\n    \"inclusive\": true,\n    \"path\": [\n      \"blocks\",\n      0,\n      \"reveal\"\n    ],\n    \"message\": \"Too big: expected number to be <=12\"\n  },\n  {\n    \"origin\": \"number\",\n    \"code\": \"too_big\",\n    \"maximum\": 12,\n    \"inclusive\": true,\n    \"path\": [\n      \"blocks\",\n      1,\n      \"reveal\"\n    ],\n    \"message\": \"Too big: expected number to be <=12\"\n  },\n  {\n    \"origin\": \"number\",\n    \"code\": \"too_big\",\n    \"maximum\": 12,\n    \"inclusive\": true,\n    \"path\": [\n      \"blocks\",\n      2,\n      \"reveal\"\n    ],\n    \"message\": \"Too big: expected number to be <=12\"\n  }\n]",
+      "output": "root = PresentationCanvas(\"split\", [\n  PresentationBlock(\"primary\", \"visual\", 0, \"normal\", 100),\n  PresentationBlock(\"secondary\", \"statement\", 1, \"strong\", 50),\n  PresentationBlock(\"detail\", \"image\", 2, \"normal\", 30)\n])\n\npanels = [\n  {title: \"How Panels Work\", audienceText: \"Solar panels use photovoltaic cells to directly convert sunlight into usable electricity.\", hasVisual: true},\n  {title: \"Daily Energy Production Pattern\", audienceText: \"Energy production peaks around noon at 20Wh and is lower in the morning and evening.\", hasVisual: true},\n  {title: \"Storage After Sunset\", audienceText: \"Batteries store excess daytime energy for use after sunset to power devices at night.\", hasVisual: true}\n]\n\nvisuals = [\n  Image(\"panels-generating-electricity\"),\n  Image(\"batteries-storing-electricity\")\n]"
+    },
+    {
+      "engine": "json-render",
+      "request": "Focus on battery storage after sunset.",
+      "ms": 4276.363583,
+      "usage": {
+        "inputTokens": 294,
+        "inputTokenDetails": {
+          "noCacheTokens": 294,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 148,
+        "outputTokenDetails": {
+          "textTokens": 148,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 442,
+        "raw": {
+          "prompt_tokens": 294,
+          "completion_tokens": 148,
+          "total_tokens": 442,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "valid": false,
+      "error": "Cannot read properties of undefined (reading '#<Object>')",
+      "output": "{\n  \"root\": {\n    \"type\": \"PresentationCanvas\",\n    \"props\": {\n      \"layout\": \"focus\"\n    },\n    \"children\": [\n      \"primary\"\n    ]\n  },\n  \"primary\": {\n    \"type\": \"PresentationBlock\",\n    \"props\": {\n      \"id\": \"primary\",\n      \"kind\": \"visual\",\n      \"beat\": 2,\n      \"emphasis\": \"strong\",\n      \"reveal\": 0\n    },\n    \"children\": [\n      \"Batteries store excess daytime energy for use after sunset to power devices at night.\"\n    ]\n  }\n}"
+    },
+    {
+      "engine": "json-render",
+      "request": "Compare panels generating electricity with batteries storing electricity; show both together.",
+      "ms": 5752.193916,
+      "usage": {
+        "inputTokens": 300,
+        "inputTokenDetails": {
+          "noCacheTokens": 300,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 202,
+        "outputTokenDetails": {
+          "textTokens": 202,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 502,
+        "raw": {
+          "prompt_tokens": 300,
+          "completion_tokens": 202,
+          "total_tokens": 502,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "valid": false,
+      "error": "Cannot read properties of undefined (reading '#<Object>')",
+      "output": "{\n  \"root\": {\n    \"type\": \"PresentationCanvas\",\n    \"props\": {\n      \"layout\": \"split\"\n    },\n    \"children\": [\n      \"primary\",\n      \"secondary\"\n    ]\n  },\n  \"primary\": {\n    \"type\": \"PresentationBlock\",\n    \"props\": {\n      \"id\": \"primary\",\n      \"kind\": \"visual\",\n      \"beat\": 0,\n      \"emphasis\": \"strong\",\n      \"reveal\": 0\n    },\n    \"children\": []\n  },\n  \"secondary\": {\n    \"type\": \"PresentationBlock\",\n    \"props\": {\n      \"id\": \"secondary\",\n      \"kind\": \"visual\",\n      \"beat\": 1,\n      \"emphasis\": \"strong\",\n      \"reveal\": 0\n    },\n    \"children\": []\n  }\n}"
+    }
+  ]
+}

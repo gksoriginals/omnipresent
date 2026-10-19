@@ -1,0 +1,109 @@
+[
+  {
+    "model": "convaiinnovations/laya",
+    "source": "https://huggingface.co/api/models/convaiinnovations/laya?blobs=true",
+    "revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+    "license": "apache-2.0",
+    "safetensors": {
+      "parameters": {
+        "F32": 3,
+        "F16": 421293827
+      },
+      "total": 421293830
+    },
+    "weights": [
+      {
+        "file": "model.safetensors",
+        "bytes": 842609210
+      }
+    ]
+  },
+  {
+    "model": "convaiinnovations/laya-multilingual",
+    "source": "https://huggingface.co/api/models/convaiinnovations/laya-multilingual?blobs=true",
+    "revision": "1720e3e3357cfe1e281542e223f8273b0890ca34",
+    "license": "apache-2.0",
+    "safetensors": {
+      "parameters": {
+        "F32": 3,
+        "F16": 321908995
+      },
+      "total": 321908998
+    },
+    "weights": [
+      {
+        "file": "model.safetensors",
+        "bytes": 643835514
+      }
+    ]
+  },
+  {
+    "model": "fastino/GLiNER2.5-Decide",
+    "source": "https://huggingface.co/api/models/fastino/GLiNER2.5-Decide?blobs=true",
+    "revision": "9d1bfb848cd16d93ee56ccbc59cd92bf0f284d90",
+    "license": "apache-2.0",
+    "safetensors": {
+      "parameters": {
+        "F32": 486444053
+      },
+      "total": 486444053
+    },
+    "weights": [
+      {
+        "file": "model.safetensors",
+        "bytes": 1945828140
+      }
+    ]
+  },
+  {
+    "model": "fastino/GLiNER2.5-multi-Decide",
+    "source": "https://huggingface.co/api/models/fastino/GLiNER2.5-multi-Decide?blobs=true",
+    "revision": "e173bca1f0c4217d7a55b3b0c705d5ece8a0218d",
+    "license": "apache-2.0",
+    "safetensors": {
+      "parameters": {
+        "F32": 287355159
+      },
+      "total": 287355159
+    },
+    "weights": [
+      {
+        "file": "model.safetensors",
+        "bytes": 1149461028
+      }
+    ]
+  },
+  {
+    "model": "LiquidAI/d1-omni-600M-GGUF",
+    "source": "https://huggingface.co/api/models/LiquidAI/d1-omni-600M-GGUF?blobs=true",
+    "revision": "8eb2d2a1c5404bba8a34a88bd8e159c242197d51",
+    "license": "other",
+    "safetensors": null,
+    "weights": [
+      {
+        "file": "d1-omni-600M-BF16.gguf",
+        "bytes": 764049056
+      },
+      {
+        "file": "d1-omni-600M-F16.gguf",
+        "bytes": 764049056
+      },
+      {
+        "file": "d1-omni-600M-Q8_0.gguf",
+        "bytes": 407207584
+      },
+      {
+        "file": "mmproj-d1-omni-600M-BF16.gguf",
+        "bytes": 442441792
+      },
+      {
+        "file": "mmproj-d1-omni-600M-F16.gguf",
+        "bytes": 441262144
+      },
+      {
+        "file": "mmproj-d1-omni-600M-Q8_0.gguf",
+        "bytes": 262791232
+      }
+    ]
+  }
+]

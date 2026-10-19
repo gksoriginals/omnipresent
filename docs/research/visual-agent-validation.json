@@ -1,0 +1,148 @@
+{
+  "recordedAt": "2026-10-16T05:32:52.066Z",
+  "scope": "Actual local model visual-tool trial with synthetic CSV and fixture brief",
+  "model": {
+    "baseURL": "http://127.0.0.1:11434/v1",
+    "model": "qwen3.5:4b",
+    "local": true
+  },
+  "elapsedMs": 34691.103083999995,
+  "state": {
+    "revision": 2,
+    "brief": {
+      "topic": "Solar energy",
+      "audience": "Teachers",
+      "goal": "Explain generation, storage, and the supplied example data",
+      "durationMinutes": 5,
+      "keyPoints": [
+        "Generation",
+        "Storage",
+        "Example data"
+      ],
+      "constraints": [
+        "Values are synthetic examples, not measured performance"
+      ],
+      "openQuestions": []
+    },
+    "flow": {
+      "title": "Solar Energy: From Sun to Storage",
+      "summary": "This 5-minute overview for teachers explains how solar energy is generated, stored, and its daily variation using a synthetic example dataset.",
+      "beats": [
+        {
+          "title": "How Solar Energy Works",
+          "audienceText": "Solar energy starts when sunlight passes through solar panels to generate electricity.",
+          "speakerNotes": "Explain that solar panels convert photons from the sun into electricity through the photovoltaic effect, which then charges batteries for later use.",
+          "visualDirection": "Show the diagram of Sun powering Panels which charge Battery",
+          "visualId": "c3bd741a-fe37-4b12-a0c7-2751fe311ce8",
+          "artifactIds": [
+            "11810933-be11-4aab-b936-19a3e2ddea30"
+          ]
+        },
+        {
+          "title": "Daily Energy Production",
+          "audienceText": "Solar production varies during the day, peaking at noon.",
+          "speakerNotes": "Highlight the synthetic example values showing energy generation is highest at noon when sunlight is strongest, and lowest in the morning/evening.",
+          "visualDirection": "Refer to the line chart showing Morning=10Wh, Noon=20Wh, Evening=5Wh",
+          "visualId": "0b73e212-66ff-4aaf-9db8-a093b8f3dcca",
+          "imageArtifactId": "",
+          "artifactIds": [
+            "11810933-be11-4aab-b936-19a3e2ddea30"
+          ]
+        },
+        {
+          "title": "Why Storage Matters",
+          "audienceText": "Storage makes solar energy available when sunlight is unavailable.",
+          "speakerNotes": "Conclude that energy storage enables solar power to be used even when the sun isn't shining, making renewable energy viable for daily use.",
+          "visualDirection": "Reiterate the diagram flow with emphasis on Battery as the final step",
+          "visualId": "c3bd741a-fe37-4b12-a0c7-2751fe311ce8",
+          "imageArtifactId": "",
+          "artifactIds": [
+            "11810933-be11-4aab-b936-19a3e2ddea30"
+          ]
+        }
+      ],
+      "openQuestions": []
+    },
+    "flowBasedOnRevision": 2,
+    "approvedRevision": null,
+    "artifacts": [
+      {
+        "id": "11810933-be11-4aab-b936-19a3e2ddea30",
+        "name": "example.csv",
+        "content": "Period,Energy\nMorning,10\nNoon,20\nEvening,5\nSynthetic example values in watt hours."
+      }
+    ],
+    "messages": {
+      "interview": [],
+      "storyteller": [
+        {
+          "role": "user",
+          "content": "Create a three-beat story with audience text. Read example.csv. Call createDiagram for Sun → Panels → Battery, and createChart for Morning 10, Noon 20, Evening 5 Wh, labeled synthetic example. Then call proposeFlow linking both returned visualIds to relevant beats. End with a brief confirmation."
+        },
+        {
+          "role": "assistant",
+          "content": "I have created a three-beat presentation flow titled \"Solar Energy: From Sun to Storage\" for teachers. \n\n**Visuals Generated:**\n- **Diagram** (`c3bd741a-fe37-4b12-a0c7-2751fe311ce8`): illustrates the process Sun → Panels → Battery.\n- **Chart** (`0b73e212-66ff-4aaf-9db8-a093b8f3dcca`): displays synthetic data points for Morning (10Wh), Noon (20Wh), and Evening (5Wh).\n\n**Flow Summary:**\n1.  **Beat 1 (\"How Solar Energy Works\"):** Defines the generation process using the provided diagram, showing how sunlight charges batteries via panels.\n2.  **Beat 2 (\"Daily Energy Production\"):** Analyzes the variation in energy generation over a day using the line chart, highlighting peak noon production.\n3.  **Beat 3 (\"Why Storage Matters\"):** Explains the necessity of battery storage for uninterrupted renewable power, referencing the diagram's final step.\n\nThe brief and synthetic data constraints have been respected throughout. No further context is required."
+        }
+      ]
+    },
+    "events": [
+      {
+        "id": "9addfae5-71f9-4489-beea-694823d1fdf2",
+        "from": "storyteller",
+        "to": "presenter",
+        "kind": "flow.proposed",
+        "summary": "Storyteller proposed a flow for review.",
+        "revision": 2
+      }
+    ],
+    "visuals": [
+      {
+        "id": "c3bd741a-fe37-4b12-a0c7-2751fe311ce8",
+        "spec": {
+          "kind": "diagram",
+          "title": "Solar Energy Generation Process",
+          "nodes": [
+            "Sun",
+            "Panels",
+            "Battery"
+          ],
+          "edges": [
+            {
+              "from": 0,
+              "to": 1
+            },
+            {
+              "from": 1,
+              "to": 2
+            }
+          ]
+        }
+      },
+      {
+        "id": "0b73e212-66ff-4aaf-9db8-a093b8f3dcca",
+        "spec": {
+          "kind": "chart",
+          "title": "Solar Energy Generation by Time",
+          "chartType": "line",
+          "unit": "Wh",
+          "sourceArtifactId": "11810933-be11-4aab-b936-19a3e2ddea30",
+          "data": [
+            {
+              "label": "Morning",
+              "value": 10
+            },
+            {
+              "label": "Noon",
+              "value": 20
+            },
+            {
+              "label": "Evening",
+              "value": 5
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "errors": []
+}

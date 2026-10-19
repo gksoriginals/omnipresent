@@ -1,0 +1,41 @@
+{
+  "startedAt": "2026-10-17T15:24:54.118Z",
+  "sourceFiles": [
+    {
+      "path": "scripts/retrieval-benchmark.ts",
+      "sha256": "f4e8ec94e6edf792e721000e704bed1bd01864ca6b7f201b07defa795ebbd4b8"
+    },
+    {
+      "path": "server/controllers/semantic-retrieval.ts",
+      "sha256": "bbb0140b7edb3f36b138439b25f1c2673a34063cabe7e9411cb46a314f1f09dd"
+    },
+    {
+      "path": "server/controllers/shortlisted-decision.ts",
+      "sha256": "a95af2782fb71e09d4a17bd308dcfbd9b71ade2143555905b0e34d71e8ed2691"
+    },
+    {
+      "path": "runtime/retrieval_server.py",
+      "sha256": "04b5ae648e51416a65822e24cfda09ac7080c99d59e0fbbba27e4d4530e61e0b"
+    },
+    {
+      "path": "runtime/retrieval-model.json",
+      "sha256": "d13e58d2e3c51df87eb02de94031ddcf12a90bc18050cf5ca3fe94b6b3fd76b6"
+    },
+    {
+      "path": "runtime/retrieval-requirements.lock",
+      "sha256": "fe77a7ddf097ba1e6ff98fb3efc607cd56c6c48c80066579ceb72d6f6a639a79"
+    },
+    {
+      "path": "tests/fixtures/semantic-retrieval.json",
+      "sha256": "189beef3c23788e232bda8694880d3173cf9db118841431e20b07080ffe4e9fc"
+    },
+    {
+      "path": "tests/semantic-retrieval.test.ts",
+      "sha256": "190ba7168b5a368360772300b60f9da2b319e764d93a717795bb025cb9a7abf5"
+    },
+    {
+      "path": "server/agents/system-one.ts",
+      "sha256": "397536a37fd953e95093507456cc6485acebe1ae8c04ca6357bddf063146ab4a"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+
+> omnipresent@0.0.1 build
+> tsc --noEmit && vite build
+
+tests/agents.test.ts(162,27): error TS2339: Property 'proposeFlow' does not exist on type '{ updateBrief: ({ deferLoading?: boolean | undefined; title?: string | undefined; providerOptions?: SharedV4ProviderOptions | undefined; metadata?: JSONObject | undefined; ... 6 more ...; toModelOutput?: ((options: { ...; }) => PromiseLike<...> | ToolResultOutput) | undefined; } & { ...; } & { ...; } & { ...; } & { ...'.
+  Property 'proposeFlow' does not exist on type '{ updateBrief: ({ deferLoading?: boolean | undefined; title?: string | undefined; providerOptions?: SharedV4ProviderOptions | undefined; metadata?: JSONObject | undefined; ... 6 more ...; toModelOutput?: ((options: { ...; }) => PromiseLike<...> | ToolResultOutput) | undefined; } & { ...; } & { ...; } & { ...; } & { ...'.

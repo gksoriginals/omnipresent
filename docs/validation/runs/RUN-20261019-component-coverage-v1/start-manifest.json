@@ -1,0 +1,100 @@
+{
+  "id": "RUN-20261019-component-coverage-v1",
+  "startedAt": "2026-10-19T06:51:04.275Z",
+  "sourceFiles": [
+    {
+      "path": "scripts/component-coverage-replay.ts",
+      "sha256": "c70539feea02c1e5df630bf2b63d4b743cf5bde2f2935aefcf52a14dd0dd7cce"
+    },
+    {
+      "path": "tests/fixtures/planner-context.ts",
+      "sha256": "270ea9e20032b9c15793b8ee119e3d0801d1b4e35c2c4a84b246488287736005"
+    },
+    {
+      "path": "server/presentation/component-evidence.ts",
+      "sha256": "e29b83927a2e9289a3510ceb3e48e7a98b75bdeccb91579eb3bc745033519bf5"
+    },
+    {
+      "path": "shared/component-evidence.ts",
+      "sha256": "68b606a110223111b8e3ddf0917c8156a24b532fd8ed6653307b458c868ddf79"
+    },
+    {
+      "path": "server/presentation/composition.ts",
+      "sha256": "2c212b592399d5e319f1168275cc41565954d4f65bcefe79c1575c1f4c11d6bc"
+    },
+    {
+      "path": "server/presentation/catalog.ts",
+      "sha256": "a442d02c52fd4e436e6f9b5e1d56c7f6053a5e14a4e5c0948e1f03f46d7fe10d"
+    },
+    {
+      "path": "server/presentation/prepare-evidence.ts",
+      "sha256": "a70f96dfcb3e5f6a4e38a664dd95fdc231af53e226ecf6d0cc31cf0fb70a9705"
+    },
+    {
+      "path": "server/presentation/request-frame.ts",
+      "sha256": "641cd6c08bab833b40f8ae317442d0db6d26e92d5e4b3e82f9914e7d2d2bb577"
+    },
+    {
+      "path": "server/controllers/evidence-contract.ts",
+      "sha256": "dfe7f810119dc915b57b62e153f707b89f1432f986df431971bdd908e7b345dd"
+    },
+    {
+      "path": "server/controllers/hybrid-components.ts",
+      "sha256": "649f4312a26d9862aad0e058367625f6fd0cdeec6c098daa9ce027c3cbb39e84"
+    },
+    {
+      "path": "server/controllers/semantic-retrieval.ts",
+      "sha256": "bbb0140b7edb3f36b138439b25f1c2673a34063cabe7e9411cb46a314f1f09dd"
+    },
+    {
+      "path": "server/controllers/library-search.ts",
+      "sha256": "05032576f35f30e7f8f292339c1bbc0eb8a0cf46ea514eacee034c08c2fd7aa9"
+    },
+    {
+      "path": "server/controllers/library-policy.ts",
+      "sha256": "b19281c9c41839d3283b9fff6379429cf3463253ca671f63442d1f87f1c745a2"
+    },
+    {
+      "path": "server/controllers/retrieval.ts",
+      "sha256": "6b572e816577acebfbcd089a919a27d792dce04e95c8f779c0a88abba5e9465c"
+    },
+    {
+      "path": "server/experiments/replay.ts",
+      "sha256": "b3c0e4811b43e1f24be67544d145482fcfa4e13dc4b6090680550adc06c27e51"
+    },
+    {
+      "path": "server/experiments/trace.ts",
+      "sha256": "c94643ec67f3a1e71eea69b1b061025e68a3c407a1a38ab81d3bc72aca4db246"
+    },
+    {
+      "path": "server/experiments/file-trace.ts",
+      "sha256": "3ec3c818b8fd2d85ae8b38e70b5eec217dffc8d377f8af9f71cc16f4b6e94175"
+    },
+    {
+      "path": "shared/preparation.ts",
+      "sha256": "d5ad093e3db5dca8304eced75a23697f29c225b101e8e658c832f5cd3df03318"
+    },
+    {
+      "path": "shared/evidence.ts",
+      "sha256": "517e90ade1b825d080a224a230c7bf50b99d3815c248920a0cc36d06cd49fe62"
+    },
+    {
+      "path": "shared/adaptive.ts",
+      "sha256": "388f8842387547ae5595aec6ae819b91d56c11e0631f70981a36e886021e6f8a"
+    },
+    {
+      "path": "shared/visuals.ts",
+      "sha256": "c744c6a0b88bccd86518772c390fdc64d9bffcfab859a67f5a1024890af37aaf"
+    },
+    {
+      "path": "package.json",
+      "sha256": "3ea9299b1919515ba2d5666c8b53b59c0900c9bedbb75995ff428fac39ba929b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "dc4aaeb499174d437404c1affbaecbf9c1fad0e6dc4a87e18397dfd42d333a8e"
+    }
+  ],
+  "inputHash": "0c0b10e60c669ed1e0d8fdec93d997faa7090dc1f637c6882d97aef9f496c96e",
+  "node": "v22.22.1"
+}

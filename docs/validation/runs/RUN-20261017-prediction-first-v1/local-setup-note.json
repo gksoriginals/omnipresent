@@ -1,0 +1,19 @@
+{
+  "recordedAt": "2026-10-17T15:53:47.583030+00:00",
+  "scope": "Retrospective setup/cancellation note, not a local model benchmark.",
+  "localClefWeightsDownloaded": false,
+  "inspectedOfficialModel": "Cloudflare/clef-flash",
+  "officialBackboneBytesFromIndex": 18819627488,
+  "localHardwareMemoryBytes": 17179869184,
+  "consideredConversion": "mlx-community/clef-flash-4bit",
+  "conversionRevision": "b5adbe2c3a95200d4bf04a0727c8ec457157d5e1",
+  "action": "User preferred OpenRouter if local model adds storage. Temporary dependency environment and inspection directory were removed; shared package caches were not purged.",
+  "removedPaths": [
+    "output/clef-venv",
+    "output/clef-inspect"
+  ],
+  "retainedResearchOnlySources": [
+    "https://huggingface.co/Cloudflare/clef-flash",
+    "https://huggingface.co/mlx-community/clef-flash-4bit"
+  ]
+}

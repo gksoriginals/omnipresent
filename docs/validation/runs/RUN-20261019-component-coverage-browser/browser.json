@@ -1,0 +1,267 @@
+{
+  "recordedAt": "2026-10-19T06:57:54.253071+00:00",
+  "scope": "Synthetic component coverage disclosure, layout and persistence; no physical microphone or model invocation.",
+  "sourceFiles": [
+    {
+      "path": "app/src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "app/src/hooks/usePresentation.ts",
+      "sha256": "7c49cdc3f682a6846967e0a228f583b5783b68034db7564673a18b630b6938fa"
+    },
+    {
+      "path": "app/src/services/workspace-store.ts",
+      "sha256": "4714e1f089735a0148c397ffe2c589203428ec80ddeb44263ffebbc1c40d9458"
+    },
+    {
+      "path": "app/src/services/session-client.ts",
+      "sha256": "fe70fc619e336b316b6511f5ff5f88480aec5d82c1e10085c97468c6740a0a26"
+    },
+    {
+      "path": "app/src/services/audio-capture.ts",
+      "sha256": "8c3f9c8294f9a5e2cf533a83e61ecd50dca11dc0288aa10f930c48b8d530eb73"
+    },
+    {
+      "path": "app/src/ReplayTrial.tsx",
+      "sha256": "aecdd980c23674fe25ad32bc394df43d910c47f88e2a08334eb9b6b104d682c6"
+    },
+    {
+      "path": "app/src/TrialPreparation.tsx",
+      "sha256": "12ae2afdfa21a1ad88402688ca88ed715bcab49a05e298b354d59a5383cd37d9"
+    },
+    {
+      "path": "app/src/App.tsx",
+      "sha256": "5d211daf09c5f82f08aa6d46a629cb86e7f3ea578be9da8669edf5ad656f18ea"
+    },
+    {
+      "path": "app/src/MessageText.tsx",
+      "sha256": "fe423c0f8b6a83cc36bae150ef7dedbb71e2a04733695e2875d206eb640ca135"
+    },
+    {
+      "path": "app/src/main.tsx",
+      "sha256": "127bac48c8d6e89c1ca547140c573cc4a79872f840c48342985349b7e9bc1bce"
+    },
+    {
+      "path": "app/src/StoryLibrary.tsx",
+      "sha256": "b11f8ce4c899c253ad78d9f6842ad5306dbb993591ee65050eba9a110fd275c9"
+    },
+    {
+      "path": "app/src/Icon.tsx",
+      "sha256": "95fa89b7b6e0b374ee3cfb659181f1a383779d38adc13780aebbe6dd333be329"
+    },
+    {
+      "path": "app/src/PresentationRoom.tsx",
+      "sha256": "db48be853f016be4598096ef0ddf3d84206f2412df6ae62183bc422fe48a1e1c"
+    },
+    {
+      "path": "app/src/Chart.tsx",
+      "sha256": "54d2d56df7343e9f60feb149c891552793e9f1bf40644c524346e0eb7df1a8eb"
+    },
+    {
+      "path": "app/src/AdaptiveCanvas.tsx",
+      "sha256": "5488acf8b7498d336e8c1a16058e87b6b3e02e1ae3419c112bfcd30a90df2c34"
+    },
+    {
+      "path": "app/src/Visual.tsx",
+      "sha256": "61fa355c8bb82b83acbc8ed0a77bf52224539b45cfd83041ea295c81b605f354"
+    },
+    {
+      "path": "app/src/Preparation.tsx",
+      "sha256": "a8109456cb8ed31ad6dcf639ed2ea178c44fda577eaedead3c495002b978cece"
+    },
+    {
+      "path": "app/src/renderers/json-render.tsx",
+      "sha256": "95b18fcc8b7b0cb6e56fdf84bf4fee4a806070103ff914e488ba8093c8ffea8c"
+    },
+    {
+      "path": "app/src/renderers/PresentationBlock.tsx",
+      "sha256": "88b85b68de9c1a927b8442afeb3079220083e82aebc9ed05aa9ca228a2235388"
+    },
+    {
+      "path": "app/src/renderers/openui.tsx",
+      "sha256": "e13fca2955da7db9ee889d7d720b6e583dc0f8d211e1d4922d64e36cc1ff00c4"
+    },
+    {
+      "path": "shared/preparation.ts",
+      "sha256": "d5ad093e3db5dca8304eced75a23697f29c225b101e8e658c832f5cd3df03318"
+    },
+    {
+      "path": "shared/evidence.ts",
+      "sha256": "517e90ade1b825d080a224a230c7bf50b99d3815c248920a0cc36d06cd49fe62"
+    },
+    {
+      "path": "shared/visuals.ts",
+      "sha256": "c744c6a0b88bccd86518772c390fdc64d9bffcfab859a67f5a1024890af37aaf"
+    },
+    {
+      "path": "shared/workspace.ts",
+      "sha256": "f5b7fac6ff199bc9fe7716daceae619819b035111cd67fc998d7aa43a1d699a9"
+    },
+    {
+      "path": "shared/adaptive.ts",
+      "sha256": "388f8842387547ae5595aec6ae819b91d56c11e0631f70981a36e886021e6f8a"
+    },
+    {
+      "path": "shared/component-evidence.ts",
+      "sha256": "68b606a110223111b8e3ddf0917c8156a24b532fd8ed6653307b458c868ddf79"
+    },
+    {
+      "path": "server/presentation/composition.ts",
+      "sha256": "3d58e2f6e1059ba2da556760a6bc0111e21458678e9ad86f3081b35fcec5d5c8"
+    },
+    {
+      "path": "server/presentation/request-frame.ts",
+      "sha256": "641cd6c08bab833b40f8ae317442d0db6d26e92d5e4b3e82f9914e7d2d2bb577"
+    },
+    {
+      "path": "server/presentation/component-evidence.ts",
+      "sha256": "e29b83927a2e9289a3510ceb3e48e7a98b75bdeccb91579eb3bc745033519bf5"
+    },
+    {
+      "path": "server/presentation/prepare-evidence.ts",
+      "sha256": "dcdcee3435704151bc0e9b42e5095e7c4b410a0155d52d6dbf9d578a53e63c5e"
+    },
+    {
+      "path": "server/presentation/baseline.ts",
+      "sha256": "5633b3bc612937c40324471c3ed5d66cdb9eddd6737f1bb31588708e93cf0834"
+    },
+    {
+      "path": "server/presentation/catalog.ts",
+      "sha256": "a442d02c52fd4e436e6f9b5e1d56c7f6053a5e14a4e5c0948e1f03f46d7fe10d"
+    },
+    {
+      "path": "server/agents/preparation.ts",
+      "sha256": "52cc9653bbf30eb04153940b71482f0948a818b9fe235c8ef578a24ba61f71f7"
+    },
+    {
+      "path": "scripts/frontend-modularity-probe.ts",
+      "sha256": "bd10d1a3486d6f616f8013a0a4a7b49f9762a7c49ff4d2e5e0909520d32cb6e3"
+    }
+  ],
+  "checks": {
+    "checks": [
+      {
+        "width": 1440,
+        "scroll": 1440,
+        "height": 950,
+        "documentHeight": 950,
+        "chat": {
+          "x": 246,
+          "y": 155.796875,
+          "width": 567,
+          "height": 635.203125,
+          "top": 155.796875,
+          "right": 813,
+          "bottom": 791,
+          "left": 246
+        },
+        "story": {
+          "x": 843,
+          "y": 92,
+          "width": 567,
+          "height": 838,
+          "top": 92,
+          "right": 1410,
+          "bottom": 930,
+          "left": 843
+        },
+        "input": {
+          "x": 259,
+          "y": 816,
+          "width": 541,
+          "height": 52,
+          "top": 816,
+          "right": 800,
+          "bottom": 868,
+          "left": 259
+        }
+      },
+      {
+        "width": 900,
+        "scroll": 900,
+        "height": 950,
+        "documentHeight": 950,
+        "chat": {
+          "x": 200,
+          "y": 151.796875,
+          "width": 330,
+          "height": 639.203125,
+          "top": 151.796875,
+          "right": 530,
+          "bottom": 791,
+          "left": 200
+        },
+        "story": {
+          "x": 550,
+          "y": 88,
+          "width": 330,
+          "height": 842,
+          "top": 88,
+          "right": 880,
+          "bottom": 930,
+          "left": 550
+        },
+        "input": {
+          "x": 213,
+          "y": 816,
+          "width": 304,
+          "height": 52,
+          "top": 816,
+          "right": 517,
+          "bottom": 868,
+          "left": 213
+        }
+      },
+      {
+        "width": 600,
+        "scroll": 600,
+        "height": 950,
+        "documentHeight": 950,
+        "chat": {
+          "x": 12,
+          "y": 178,
+          "width": 282,
+          "height": 631,
+          "top": 178,
+          "right": 294,
+          "bottom": 809,
+          "left": 12
+        },
+        "story": {
+          "x": 306,
+          "y": 133,
+          "width": 282,
+          "height": 805,
+          "top": 133,
+          "right": 588,
+          "bottom": 938,
+          "left": 306
+        },
+        "input": {
+          "x": 21,
+          "y": 830,
+          "width": 264,
+          "height": 52,
+          "top": 830,
+          "right": 285,
+          "bottom": 882,
+          "left": 21
+        }
+      }
+    ],
+    "persistence": true,
+    "sessionSwitch": true,
+    "sidebarPersistence": true,
+    "library": true,
+    "ready": true,
+    "independentScroll": true,
+    "componentCoverageReview": true,
+    "physicalMicrophone": false
+  },
+  "limitations": [
+    "Initial browser attempts failed on a fixture visual UUID, then test-browser connection saturation. Probe/schema validation and cleanup corrected; failures retained.",
+    "Two initial agent draft equality assertions expected only beat metadata and were updated to account for new host-owned component metadata.",
+    "Coverage approval is not independent semantic verification."
+  ]
+}

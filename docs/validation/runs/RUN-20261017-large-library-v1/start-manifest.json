@@ -1,0 +1,35 @@
+{
+  "id": "RUN-20261017-large-library-v1",
+  "startedAt": "2026-10-17T16:45:54.654Z",
+  "sourceFiles": [
+    {
+      "path": "scripts/large-library-benchmark.ts",
+      "sha256": "190eab8d6eb1ad09762e60fa86a6c591225d4fd8cd4b226c348e162d5b7d7e72"
+    },
+    {
+      "path": "scripts/large-library-fixture.ts",
+      "sha256": "c074a580e3157105010cfd385f10bbf19a09578cfc533d66e353db4bc4d3e28d"
+    },
+    {
+      "path": "server/controllers/library-search.ts",
+      "sha256": "b8e46fcf8d40c9f9d167800cb88da1dd2d1752a07d0a685aefb7f2bdc8c88a12"
+    },
+    {
+      "path": "server/controllers/semantic-retrieval.ts",
+      "sha256": "bbb0140b7edb3f36b138439b25f1c2673a34063cabe7e9411cb46a314f1f09dd"
+    },
+    {
+      "path": "server/agents/system-one.ts",
+      "sha256": "3b667090dc66ac0ef57a94df6d1a4195d0cc3cd88c80f5087986a9473c388b49"
+    },
+    {
+      "path": "tests/library-search.test.ts",
+      "sha256": "95ae687ad90c5b0e24acf02bcb07ac2baac30e21d372a7fa72ed8ad98c9571f3"
+    },
+    {
+      "path": "runtime/retrieval-model.json",
+      "sha256": "d13e58d2e3c51df87eb02de94031ddcf12a90bc18050cf5ca3fe94b6b3fd76b6"
+    }
+  ],
+  "protocol": "large-library-v1; 3 repeated counterbalanced passes; identical grounding; 432 constructed assets; exact correctness, zero unsupported-show tolerance, both median and p95 lower in every pass required for latency gate; all arm refresh/query/fallback/grounding costs included; no human holdout or render latency claim"
+}

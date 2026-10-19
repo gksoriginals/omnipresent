@@ -1,0 +1,53 @@
+{
+  "startedAt": "2026-10-17T16:51:21.454Z",
+  "sourceFiles": [
+    {
+      "path": "scripts/cue-policy-benchmark.ts",
+      "sha256": "548e3c0e29d2d7e19fb4c9642491c1c2a930cacb22edad14ddb088b62fe542e3"
+    },
+    {
+      "path": "scripts/cue-policy-fixture.ts",
+      "sha256": "9539e2c345d133783591d27b968e3721f011482d8955bafd44dac40f8dcc4d8d"
+    },
+    {
+      "path": "scripts/large-library-fixture.ts",
+      "sha256": "c074a580e3157105010cfd385f10bbf19a09578cfc533d66e353db4bc4d3e28d"
+    },
+    {
+      "path": "server/controllers/library-policy.ts",
+      "sha256": "af182682454a88cb794335ecb5ece8060d06259e9158c12653fcc50f21bae5bf"
+    },
+    {
+      "path": "server/controllers/library-grounding.ts",
+      "sha256": "2da7936d10bc83fc1a273d7ed7eadd420892f68a0b2a0a7ba9b813484e42b4ad"
+    },
+    {
+      "path": "server/controllers/library-search.ts",
+      "sha256": "b8e46fcf8d40c9f9d167800cb88da1dd2d1752a07d0a685aefb7f2bdc8c88a12"
+    },
+    {
+      "path": "server/controllers/semantic-retrieval.ts",
+      "sha256": "bbb0140b7edb3f36b138439b25f1c2673a34063cabe7e9411cb46a314f1f09dd"
+    },
+    {
+      "path": "server/agents/system-one.ts",
+      "sha256": "3b667090dc66ac0ef57a94df6d1a4195d0cc3cd88c80f5087986a9473c388b49"
+    },
+    {
+      "path": "tests/library-policy.test.ts",
+      "sha256": "34c5fc445703d045210633fee02dcd813de2ed70d5c90f1ee6d077abcace9aef"
+    },
+    {
+      "path": "runtime/retrieval-model.json",
+      "sha256": "d13e58d2e3c51df87eb02de94031ddcf12a90bc18050cf5ca3fe94b6b3fd76b6"
+    },
+    {
+      "path": "docs/research/cue_policy_protocol.md",
+      "sha256": "c58db62eecfa98673c7730a26a171599556de26bab51240b54757d2852c4290c"
+    }
+  ],
+  "passes": 3,
+  "cases": 23,
+  "capCalls": 220,
+  "capUSD": 0.1
+}

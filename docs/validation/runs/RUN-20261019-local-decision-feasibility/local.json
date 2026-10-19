@@ -1,0 +1,602 @@
+{
+  "id": "RUN-20261019-local-decision-feasibility",
+  "recordedAt": "2026-10-19T07:43:36.475Z",
+  "sourceFiles": [
+    {
+      "path": "scripts/local-decision-feasibility.ts",
+      "sha256": "18a2782dceb64547c997037c07f679e0d733334f5a10037b6bcee9f636a4d895"
+    },
+    {
+      "path": "runtime/decision_server.py",
+      "sha256": "d75fc75a1ec3075a0a8cbb2e8b4172105f1b12887a74032936a6a8c5b066d38f"
+    },
+    {
+      "path": "runtime/decision-requirements.lock",
+      "sha256": "0d3240ea7daee8cb0f60b7cc7d305ad4f377f3451585cb91e3f699db24aa4d50"
+    },
+    {
+      "path": "server/controllers/library-grounding.ts",
+      "sha256": "276bc0ebcc0895e5d173bd9fe2a7e89e25cad5b1e4fc5d6ed84dc9817a6ef06f"
+    }
+  ],
+  "fixtureHash": "53fb5c679a8e8b05d8a65444441931d1f07580b37ff82232a6d3013b44cba77f",
+  "summary": [
+    {
+      "format": "current",
+      "attempts": 12,
+      "valid": 0,
+      "correct": 0,
+      "medianMs": 1.6826249999994616,
+      "p95Ms": 63.155167000000006
+    },
+    {
+      "format": "compact",
+      "attempts": 12,
+      "valid": 12,
+      "correct": 4,
+      "medianMs": 173.94391600000017,
+      "p95Ms": 4389.316625
+    }
+  ],
+  "rows": [
+    {
+      "pass": 0,
+      "index": 0,
+      "format": "current",
+      "speech": "Solar panels turn sunlight into electricity.",
+      "expected": "option_0",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 63.155167000000006
+    },
+    {
+      "pass": 0,
+      "index": 0,
+      "format": "compact",
+      "speech": "Solar panels turn sunlight into electricity.",
+      "expected": "option_0",
+      "choice": "option_0",
+      "correct": true,
+      "elapsedMs": 4389.316625,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.5674,
+              "option_1": 0.1333,
+              "option_2": 0.1431,
+              "hold": 0.0797,
+              "context": 0.0765
+            },
+            "confidence": 0.213,
+            "answer_confidence": 0.5674,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 281,
+          "output_tokens": 0
+        },
+        "computeMs": 4385.109250026289
+      }
+    },
+    {
+      "pass": 0,
+      "index": 1,
+      "format": "compact",
+      "speech": "Batteries store electricity for later use.",
+      "expected": "option_1",
+      "choice": "option_0",
+      "correct": false,
+      "elapsedMs": 419.3296250000003,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.3865,
+              "option_1": 0.251,
+              "option_2": 0.2004,
+              "hold": 0.0901,
+              "context": 0.0721
+            },
+            "confidence": 0.1035,
+            "answer_confidence": 0.3865,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 282,
+          "output_tokens": 0
+        },
+        "computeMs": 410.7259580050595
+      }
+    },
+    {
+      "pass": 0,
+      "index": 1,
+      "format": "current",
+      "speech": "Batteries store electricity for later use.",
+      "expected": "option_1",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 5.982500000000073
+    },
+    {
+      "pass": 0,
+      "index": 2,
+      "format": "current",
+      "speech": "Show the daily generation curve.",
+      "expected": "option_2",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 1.9366659999996045
+    },
+    {
+      "pass": 0,
+      "index": 2,
+      "format": "compact",
+      "speech": "Show the daily generation curve.",
+      "expected": "option_2",
+      "choice": "option_2",
+      "correct": true,
+      "elapsedMs": 228.701959,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_0": 0.2564,
+              "option_1": 0.1444,
+              "option_2": 0.443,
+              "hold": 0.0867,
+              "context": 0.0695
+            },
+            "confidence": 0.1386,
+            "answer_confidence": 0.443,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 279,
+          "output_tokens": 0
+        },
+        "computeMs": 227.19012503512204
+      }
+    },
+    {
+      "pass": 0,
+      "index": 3,
+      "format": "compact",
+      "speech": "Checking the microphone.",
+      "expected": "hold",
+      "choice": "option_0",
+      "correct": false,
+      "elapsedMs": 174.90170800000033,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.4806,
+              "option_1": 0.1452,
+              "option_2": 0.2154,
+              "hold": 0.0935,
+              "context": 0.0653
+            },
+            "confidence": 0.1532,
+            "answer_confidence": 0.4806,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 278,
+          "output_tokens": 0
+        },
+        "computeMs": 173.22024999884889
+      }
+    },
+    {
+      "pass": 0,
+      "index": 3,
+      "format": "current",
+      "speech": "Checking the microphone.",
+      "expected": "hold",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 1.7915000000002692
+    },
+    {
+      "pass": 0,
+      "index": 4,
+      "format": "current",
+      "speech": "What is the installation cost?",
+      "expected": "context",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 4.895958000000064
+    },
+    {
+      "pass": 0,
+      "index": 4,
+      "format": "compact",
+      "speech": "What is the installation cost?",
+      "expected": "context",
+      "choice": "option_0",
+      "correct": false,
+      "elapsedMs": 172.59362500000043,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.4226,
+              "option_1": 0.1663,
+              "option_2": 0.242,
+              "hold": 0.0993,
+              "context": 0.0698
+            },
+            "confidence": 0.1172,
+            "answer_confidence": 0.4226,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 279,
+          "output_tokens": 0
+        },
+        "computeMs": 171.33849998936057
+      }
+    },
+    {
+      "pass": 0,
+      "index": 5,
+      "format": "compact",
+      "speech": "Do not show battery storage.",
+      "expected": "hold",
+      "choice": "option_0",
+      "correct": false,
+      "elapsedMs": 177.90899999999965,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.4048,
+              "option_1": 0.1875,
+              "option_2": 0.2523,
+              "hold": 0.0872,
+              "context": 0.0682
+            },
+            "confidence": 0.1157,
+            "answer_confidence": 0.4048,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 279,
+          "output_tokens": 0
+        },
+        "computeMs": 176.62012501386926
+      }
+    },
+    {
+      "pass": 0,
+      "index": 5,
+      "format": "current",
+      "speech": "Do not show battery storage.",
+      "expected": "hold",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 1.6644579999992857
+    },
+    {
+      "pass": 1,
+      "index": 0,
+      "format": "compact",
+      "speech": "Solar panels turn sunlight into electricity.",
+      "expected": "option_0",
+      "choice": "option_0",
+      "correct": true,
+      "elapsedMs": 173.94391600000017,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.5674,
+              "option_1": 0.1333,
+              "option_2": 0.1431,
+              "hold": 0.0797,
+              "context": 0.0765
+            },
+            "confidence": 0.213,
+            "answer_confidence": 0.5674,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 281,
+          "output_tokens": 0
+        },
+        "computeMs": 172.84424998797476
+      }
+    },
+    {
+      "pass": 1,
+      "index": 0,
+      "format": "current",
+      "speech": "Solar panels turn sunlight into electricity.",
+      "expected": "option_0",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 1.690417000000707
+    },
+    {
+      "pass": 1,
+      "index": 1,
+      "format": "current",
+      "speech": "Batteries store electricity for later use.",
+      "expected": "option_1",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 1.2726659999998446
+    },
+    {
+      "pass": 1,
+      "index": 1,
+      "format": "compact",
+      "speech": "Batteries store electricity for later use.",
+      "expected": "option_1",
+      "choice": "option_0",
+      "correct": false,
+      "elapsedMs": 174.68087500000001,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.3865,
+              "option_1": 0.251,
+              "option_2": 0.2004,
+              "hold": 0.0901,
+              "context": 0.0721
+            },
+            "confidence": 0.1035,
+            "answer_confidence": 0.3865,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 282,
+          "output_tokens": 0
+        },
+        "computeMs": 170.92858295654878
+      }
+    },
+    {
+      "pass": 1,
+      "index": 2,
+      "format": "compact",
+      "speech": "Show the daily generation curve.",
+      "expected": "option_2",
+      "choice": "option_2",
+      "correct": true,
+      "elapsedMs": 171.36004199999934,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_0": 0.2564,
+              "option_1": 0.1444,
+              "option_2": 0.443,
+              "hold": 0.0867,
+              "context": 0.0695
+            },
+            "confidence": 0.1386,
+            "answer_confidence": 0.443,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 279,
+          "output_tokens": 0
+        },
+        "computeMs": 170.18083395669237
+      }
+    },
+    {
+      "pass": 1,
+      "index": 2,
+      "format": "current",
+      "speech": "Show the daily generation curve.",
+      "expected": "option_2",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 1.6826249999994616
+    },
+    {
+      "pass": 1,
+      "index": 3,
+      "format": "current",
+      "speech": "Checking the microphone.",
+      "expected": "hold",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 1.3319999999994252
+    },
+    {
+      "pass": 1,
+      "index": 3,
+      "format": "compact",
+      "speech": "Checking the microphone.",
+      "expected": "hold",
+      "choice": "option_0",
+      "correct": false,
+      "elapsedMs": 170.33116699999937,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.4806,
+              "option_1": 0.1452,
+              "option_2": 0.2154,
+              "hold": 0.0935,
+              "context": 0.0653
+            },
+            "confidence": 0.1532,
+            "answer_confidence": 0.4806,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 278,
+          "output_tokens": 0
+        },
+        "computeMs": 169.38741697231308
+      }
+    },
+    {
+      "pass": 1,
+      "index": 4,
+      "format": "compact",
+      "speech": "What is the installation cost?",
+      "expected": "context",
+      "choice": "option_0",
+      "correct": false,
+      "elapsedMs": 172.73441599999933,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.4226,
+              "option_1": 0.1663,
+              "option_2": 0.242,
+              "hold": 0.0993,
+              "context": 0.0698
+            },
+            "confidence": 0.1172,
+            "answer_confidence": 0.4226,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 279,
+          "output_tokens": 0
+        },
+        "computeMs": 171.6043340275064
+      }
+    },
+    {
+      "pass": 1,
+      "index": 4,
+      "format": "current",
+      "speech": "What is the installation cost?",
+      "expected": "context",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 1.4876249999997526
+    },
+    {
+      "pass": 1,
+      "index": 5,
+      "format": "current",
+      "speech": "Do not show battery storage.",
+      "expected": "hold",
+      "error": "Error: HTTP 400: {\"detail\":\"Decision exceeds the pinned Laya context; shorten the request instead of silently truncating it\"}",
+      "correct": false,
+      "elapsedMs": 1.2118749999999636
+    },
+    {
+      "pass": 1,
+      "index": 5,
+      "format": "compact",
+      "speech": "Do not show battery storage.",
+      "expected": "hold",
+      "choice": "option_0",
+      "correct": false,
+      "elapsedMs": 173.15212500000052,
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.4048,
+              "option_1": 0.1875,
+              "option_2": 0.2523,
+              "hold": 0.0872,
+              "context": 0.0682
+            },
+            "confidence": 0.1157,
+            "answer_confidence": 0.4048,
+            "action": {
+              "act_probability": 1
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 279,
+          "output_tokens": 0
+        },
+        "computeMs": 172.2106250235811
+      }
+    }
+  ],
+  "productionAcceptance": false,
+  "limitations": [
+    "Six authored cases repeated twice, one synthetic story; not independent selection-quality acceptance.",
+    "Current uses full host-generated grounding payload; compact is a different prompt and payload, so latency differences are not a model comparison.",
+    "Direct local model only; does not apply the live evidence gate, retrieval or final composition guard. Errors remain in denominator.",
+    "No quantization, hosted requests, additional weight downloads, STT or UI replay."
+  ]
+}

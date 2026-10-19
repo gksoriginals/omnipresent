@@ -1,0 +1,36 @@
+import {comparisonDecisionModel} from '../server/models/decisions.js';
+import {mkdir,writeFile,readFile,appendFile} from "node:fs/promises";
+import {createHash} from "node:crypto";
+import os from "node:os";
+import {largeLibrary} from "./large-library-fixture.js";
+import {cueBundles,policyCases} from "./cue-policy-fixture.js";
+import {LibraryPolicy} from "../server/controllers/library-policy.js";
+import {groundLibrary} from "../server/controllers/library-grounding.js";
+import {httpEmbedder,type Embedder} from "../server/controllers/semantic-retrieval.js";
+const id=process.argv[2];if(!id||!/^[-\w]+$/.test(id))throw Error("Unique run ID required");const directory=`docs/validation/runs/${id}`;await mkdir(directory,{recursive:false});
+const startedAt=new Date().toISOString();const sources=["scripts/cue-policy-benchmark.ts","scripts/cue-policy-fixture.ts","scripts/large-library-fixture.ts","server/controllers/library-policy.ts","server/controllers/library-grounding.ts","server/controllers/library-search.ts","server/controllers/semantic-retrieval.ts","server/agents/system-one.ts","tests/library-policy.test.ts","runtime/retrieval-model.json","docs/research/cue_policy_protocol.md"];
+const sourceFiles=[];for(const path of sources){const bytes=await readFile(path),target=`${directory}/source-snapshot/${path}`;await mkdir(target.slice(0,target.lastIndexOf('/')),{recursive:true});await writeFile(target,bytes);sourceFiles.push({path,sha256:createHash("sha256").update(bytes).digest("hex")});}
+await writeFile(`${directory}/inputs.json`,JSON.stringify({assets:largeLibrary(),bundles:cueBundles(largeLibrary()),cases:policyCases},null,2));await writeFile(`${directory}/start-manifest.json`,JSON.stringify({startedAt,sourceFiles,passes:3,cases:policyCases.length,capCalls:220,capUSD:.10},null,2));
+const settings=JSON.parse(await readFile("runtime/retrieval-model.json","utf8"));let calls=0,cost=0,unknownCost=false;const rows:any[]=[];const initialIndexing:any[]=[];
+for(let pass=0;pass<3;pass++){
+ const stats:Record<string,{calls:number;fallbacks:number;modelMs:number;embedded:number;queries:number}>={};const policies:Record<string,LibraryPolicy>={};
+ for(const arm of ["full","cue"]){stats[arm]={calls:0,fallbacks:0,modelMs:0,embedded:0,queries:0};const s=stats[arm],underlying=httpEmbedder(settings),cache=new Map<string,number[]>();
+  const embedder:Embedder={space:underlying.space,async encode(texts,kind,signal){if(kind==="query"){s.queries++;return underlying.encode(texts,kind,signal);}const missing=[...new Set(texts.filter(t=>!cache.has(t)))];if(missing.length){const vectors=await underlying.encode(missing,kind,signal);s.embedded+=missing.length;missing.forEach((text,i)=>cache.set(text,vectors[i]));}return texts.map(t=>[...cache.get(t)!]);}};
+  policies[arm]=new LibraryPolicy(embedder,async(speech,ranked,signal)=>{let localCalls=0;return groundLibrary(speech,ranked,signal,async trace=>{s.modelMs+=trace.elapsedMs;if(!Number.isFinite(trace.cost)||trace.cost<0){unknownCost=true;}else cost+=trace.cost;await appendFile(`${directory}/model-requests.jsonl`,JSON.stringify({pass,arm,...trace})+"\n");},()=>{if(unknownCost||calls>=220||cost>=.10)throw Error("Hosted budget/incomplete cost stop");if(localCalls++)s.fallbacks++;calls++;s.calls++;},comparisonDecisionModel("clef-omni"));});
+  const start=performance.now();await policies[arm].refresh(largeLibrary(),cueBundles(largeLibrary()),AbortSignal.timeout(180000));initialIndexing.push({pass,arm,elapsedMs:performance.now()-start,embedded:s.embedded});
+ }
+ for(let n=0;n<policyCases.length;n++)for(const arm of ((pass+n)%2?["cue","full"]:["full","cue"])){
+  const c=policyCases[n],s=stats[arm],before={...s};const start=performance.now();let refreshMs=0;const row:any={pass,arm,case:c.id,expected:c.expected,expectedAction:c.action};
+  try{
+   if(n%8===0){const assets=largeLibrary();assets[0].text+=` Source revision ${pass}-${n}: reviewed wording updated.`;const t=performance.now();await policies[arm].refresh(assets,cueBundles(assets),AbortSignal.timeout(180000));refreshMs=performance.now()-t;}
+   const result=await policies[arm].decide(c.speech,AbortSignal.timeout(45000),arm==="cue");Object.assign(row,result,{valid:true,correct:result.action===c.action&&result.selected===c.expected});
+  }catch(e){Object.assign(row,{valid:false,correct:false,error:String(e)});}
+  Object.assign(row,{elapsedMs:performance.now()-start,refreshMs,groundingCalls:s.calls-before.calls,fallbacks:s.fallbacks-before.fallbacks,modelMs:s.modelMs-before.modelMs,embeddedDocuments:s.embedded-before.embedded,queryEncodes:s.queries-before.queries});rows.push(row);await appendFile(`${directory}/steps.jsonl`,JSON.stringify(row)+"\n");console.log(pass,c.id,arm,row.correct,row.path,Math.round(row.elapsedMs),"calls",row.groundingCalls);
+ }
+}
+const q=(v:number[],p:number)=>[...v].sort((a,b)=>a-b)[Math.ceil(v.length*p)-1]??null;
+const summary=Array.from({length:3},(_,pass)=>({pass,arms:["full","cue"].map(arm=>{const r=rows.filter(x=>x.pass===pass&&x.arm===arm);return {arm,total:r.length,valid:r.filter(x=>x.valid).length,correct:r.filter(x=>x.correct).length,positiveCorrect:r.filter(x=>x.expected&&x.correct).length,negativeCorrect:r.filter(x=>!x.expected&&x.correct).length,unsupportedShows:r.filter(x=>x.action==="show"&&x.selected!==x.expected).length,cueDecisions:r.filter(x=>x.path==="cue").length,retains:r.filter(x=>x.operation==="retain").length,medianMs:q(r.map(x=>x.elapsedMs),.5),p95Ms:q(r.map(x=>x.elapsedMs),.95),refreshes:r.filter(x=>x.refreshMs>0).length,changedDocuments:r.reduce((n,x)=>n+x.embeddedDocuments,0),groundingCalls:r.reduce((n,x)=>n+x.groundingCalls,0),fallbacks:r.reduce((n,x)=>n+x.fallbacks,0)};})}));
+const qualityPreserved=rows.filter(r=>r.arm==="full").every(full=>{const cue=rows.find(r=>r.pass===full.pass&&r.case===full.case&&r.arm==="cue");return cue?.valid&&(!full.correct||cue.correct);})&&rows.every(r=>r.valid);
+const absoluteEvidenceQuality=rows.filter(r=>r.arm==="cue"&&!r.expected).every(r=>r.valid&&r.correct)&&rows.filter(r=>r.arm==="cue").every(r=>!(r.action==="show"&&r.selected!==r.expected));
+const repeatableLatency=summary.every(p=>p.arms[1].medianMs!<p.arms[0].medianMs!&&p.arms[1].p95Ms!<p.arms[0].p95Ms!);
+await writeFile(`${directory}/cue-policy.json`,JSON.stringify({id,startedAt,finishedAt:new Date().toISOString(),sourceFiles,environment:{node:process.version,cpu:os.cpus()[0]?.model},initialIndexing,calls,cost,summary,gates:{qualityPreserved,absoluteEvidenceQuality,repeatableLatency,developmentAcceptance:qualityPreserved&&absoluteEvidenceQuality&&repeatableLatency,productionAcceptance:false},limitations:["Constructed development library; no independent source-backed corpus or natural-speech holdout","Fast paths require exact prepared whole-utterance cues; no claim of general intent understanding","Three repeats of 23 cases are not 69 independent quality samples","Content changes append reviewed wording to one asset per refresh; evidence withdrawal is separately unit-tested","Sequential offline text decisions exclude STT, real media loading and visible paint","Final deterministic reference checks apply to cue and grounded paths; only fallback uses hosted semantic grounding"],rows},null,2));console.log(JSON.stringify({summary,calls,cost,qualityPreserved,repeatableLatency},null,2));

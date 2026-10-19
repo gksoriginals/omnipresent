@@ -1,0 +1,267 @@
+{
+  "revision": 0,
+  "brief": null,
+  "flow": {
+    "title": "Solar and water",
+    "summary": "Public-source concept presentation",
+    "openQuestions": [],
+    "beats": [
+      {
+        "title": "Photovoltaic conversion",
+        "audienceText": "Photovoltaic cells convert sunlight to electricity.",
+        "speakerNotes": "Private speaking notes",
+        "visualDirection": "statement",
+        "artifactIds": [],
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "provenance": "source-backed",
+          "verification": "unknown",
+          "entity": "EIA",
+          "timeframe": null,
+          "unit": null,
+          "sources": [
+            {
+              "id": "eia-pv",
+              "uri": "https://www.eia.gov/energyexplained/solar/photovoltaics-and-electricity.php",
+              "summary": "Photovoltaic cells turn sunlight into electricity. Connected cells form panels, and panels form arrays. PV output is direct current; inverters convert it to alternating current. Batteries charged by PV can supply electricity after sunshine ends.",
+              "sha256": "fcc2e61296b6b8e2ea732e60e92ddbbae4be366df526b227fe2f1b700f1fef28"
+            }
+          ],
+          "claims": [
+            {
+              "id": "pv-conversion",
+              "aliases": [
+                "photovoltaic conversion",
+                "photovoltaic cells convert sunlight to electricity"
+              ],
+              "sourceIds": [
+                "eia-pv"
+              ]
+            }
+          ],
+          "independentReview": "pending"
+        },
+        "cueAliases": [
+          "photovoltaic conversion",
+          "photovoltaic cells convert sunlight to electricity"
+        ]
+      },
+      {
+        "title": "Cells, panels and arrays",
+        "audienceText": "Cells connect into panels; panels connect into arrays.",
+        "speakerNotes": "Private speaking notes",
+        "visualDirection": "statement",
+        "artifactIds": [],
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "provenance": "source-backed",
+          "verification": "unknown",
+          "entity": "EIA",
+          "timeframe": null,
+          "unit": null,
+          "sources": [
+            {
+              "id": "eia-pv",
+              "uri": "https://www.eia.gov/energyexplained/solar/photovoltaics-and-electricity.php",
+              "summary": "Photovoltaic cells turn sunlight into electricity. Connected cells form panels, and panels form arrays. PV output is direct current; inverters convert it to alternating current. Batteries charged by PV can supply electricity after sunshine ends.",
+              "sha256": "fcc2e61296b6b8e2ea732e60e92ddbbae4be366df526b227fe2f1b700f1fef28"
+            }
+          ],
+          "claims": [
+            {
+              "id": "pv-assembly",
+              "aliases": [
+                "cells panels and arrays",
+                "cells connect into panels",
+                "panels connect into arrays"
+              ],
+              "sourceIds": [
+                "eia-pv"
+              ]
+            }
+          ],
+          "independentReview": "pending"
+        },
+        "cueAliases": [
+          "cells panels and arrays",
+          "cells connect into panels",
+          "panels connect into arrays"
+        ]
+      },
+      {
+        "title": "Direct and alternating current",
+        "audienceText": "PV output is direct current; an inverter converts it to alternating current.",
+        "speakerNotes": "Private speaking notes",
+        "visualDirection": "statement",
+        "artifactIds": [],
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "provenance": "source-backed",
+          "verification": "unknown",
+          "entity": "EIA",
+          "timeframe": null,
+          "unit": null,
+          "sources": [
+            {
+              "id": "eia-pv",
+              "uri": "https://www.eia.gov/energyexplained/solar/photovoltaics-and-electricity.php",
+              "summary": "Photovoltaic cells turn sunlight into electricity. Connected cells form panels, and panels form arrays. PV output is direct current; inverters convert it to alternating current. Batteries charged by PV can supply electricity after sunshine ends.",
+              "sha256": "fcc2e61296b6b8e2ea732e60e92ddbbae4be366df526b227fe2f1b700f1fef28"
+            }
+          ],
+          "claims": [
+            {
+              "id": "pv-current",
+              "aliases": [
+                "direct and alternating current",
+                "an inverter converts direct current to alternating current"
+              ],
+              "sourceIds": [
+                "eia-pv"
+              ]
+            }
+          ],
+          "independentReview": "pending"
+        },
+        "cueAliases": [
+          "direct and alternating current",
+          "an inverter converts direct current to alternating current"
+        ]
+      },
+      {
+        "title": "Stored solar electricity",
+        "audienceText": "A charged battery can supply electricity when the sun is not shining.",
+        "speakerNotes": "Private speaking notes",
+        "visualDirection": "statement",
+        "artifactIds": [],
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "provenance": "source-backed",
+          "verification": "unknown",
+          "entity": "EIA",
+          "timeframe": null,
+          "unit": null,
+          "sources": [
+            {
+              "id": "eia-pv",
+              "uri": "https://www.eia.gov/energyexplained/solar/photovoltaics-and-electricity.php",
+              "summary": "Photovoltaic cells turn sunlight into electricity. Connected cells form panels, and panels form arrays. PV output is direct current; inverters convert it to alternating current. Batteries charged by PV can supply electricity after sunshine ends.",
+              "sha256": "fcc2e61296b6b8e2ea732e60e92ddbbae4be366df526b227fe2f1b700f1fef28"
+            }
+          ],
+          "claims": [
+            {
+              "id": "pv-storage",
+              "aliases": [
+                "stored solar electricity",
+                "a charged battery can supply electricity after sunset"
+              ],
+              "sourceIds": [
+                "eia-pv"
+              ]
+            }
+          ],
+          "independentReview": "pending"
+        },
+        "cueAliases": [
+          "stored solar electricity",
+          "a charged battery can supply electricity after sunset"
+        ]
+      },
+      {
+        "title": "Water storage",
+        "audienceText": "Water is stored in the atmosphere, on the surface and underground.",
+        "speakerNotes": "Private speaking notes",
+        "visualDirection": "statement",
+        "artifactIds": [],
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "provenance": "source-backed",
+          "verification": "unknown",
+          "entity": "USGS",
+          "timeframe": null,
+          "unit": null,
+          "sources": [
+            {
+              "id": "usgs-water",
+              "uri": "https://www.usgs.gov/water-science-school/water-cycle",
+              "summary": "The water cycle describes water storage and movement. Water is stored in the atmosphere, at the surface and underground. Condensation and precipitation move water between stores. Human activity affects storage, movement and water quality.",
+              "sha256": "f3c18c70db97cbfe69ea176b8965aa430c7e5f517b2f062fa22709547b1050f4"
+            }
+          ],
+          "claims": [
+            {
+              "id": "water-storage",
+              "aliases": [
+                "water storage",
+                "water is stored in the atmosphere on the surface and underground"
+              ],
+              "sourceIds": [
+                "usgs-water"
+              ]
+            }
+          ],
+          "independentReview": "pending"
+        },
+        "cueAliases": [
+          "water storage",
+          "water is stored in the atmosphere on the surface and underground"
+        ]
+      },
+      {
+        "title": "Water movement",
+        "audienceText": "Condensation and precipitation move water between stores.",
+        "speakerNotes": "Private speaking notes",
+        "visualDirection": "statement",
+        "artifactIds": [],
+        "evidence": {
+          "version": 1,
+          "approved": true,
+          "provenance": "source-backed",
+          "verification": "unknown",
+          "entity": "USGS",
+          "timeframe": null,
+          "unit": null,
+          "sources": [
+            {
+              "id": "usgs-water",
+              "uri": "https://www.usgs.gov/water-science-school/water-cycle",
+              "summary": "The water cycle describes water storage and movement. Water is stored in the atmosphere, at the surface and underground. Condensation and precipitation move water between stores. Human activity affects storage, movement and water quality.",
+              "sha256": "f3c18c70db97cbfe69ea176b8965aa430c7e5f517b2f062fa22709547b1050f4"
+            }
+          ],
+          "claims": [
+            {
+              "id": "water-movement",
+              "aliases": [
+                "water movement",
+                "condensation and precipitation move water between stores"
+              ],
+              "sourceIds": [
+                "usgs-water"
+              ]
+            }
+          ],
+          "independentReview": "pending"
+        },
+        "cueAliases": [
+          "water movement",
+          "condensation and precipitation move water between stores"
+        ]
+      }
+    ]
+  },
+  "flowBasedOnRevision": 0,
+  "approvedRevision": 0,
+  "artifacts": [],
+  "messages": {
+    "interview": [],
+    "storyteller": []
+  },
+  "events": []
+}

@@ -1,0 +1,406 @@
+{
+  "recordedAt": "2026-10-19T07:23:24.931357+00:00",
+  "scope": "Fresh actual local interviewer/storyteller with disclosed presenter review; Chrome audible Piper PCM to Moonshine STT to synthesis.",
+  "sourceFiles": [
+    {
+      "path": "app/src/ReplayTrial.tsx",
+      "sha256": "aecdd980c23674fe25ad32bc394df43d910c47f88e2a08334eb9b6b104d682c6"
+    },
+    {
+      "path": "app/src/TrialPreparation.tsx",
+      "sha256": "12ae2afdfa21a1ad88402688ca88ed715bcab49a05e298b354d59a5383cd37d9"
+    },
+    {
+      "path": "app/src/App.tsx",
+      "sha256": "5d211daf09c5f82f08aa6d46a629cb86e7f3ea578be9da8669edf5ad656f18ea"
+    },
+    {
+      "path": "app/src/MessageText.tsx",
+      "sha256": "fe423c0f8b6a83cc36bae150ef7dedbb71e2a04733695e2875d206eb640ca135"
+    },
+    {
+      "path": "app/src/main.tsx",
+      "sha256": "127bac48c8d6e89c1ca547140c573cc4a79872f840c48342985349b7e9bc1bce"
+    },
+    {
+      "path": "app/src/StoryLibrary.tsx",
+      "sha256": "b11f8ce4c899c253ad78d9f6842ad5306dbb993591ee65050eba9a110fd275c9"
+    },
+    {
+      "path": "app/src/Icon.tsx",
+      "sha256": "95fa89b7b6e0b374ee3cfb659181f1a383779d38adc13780aebbe6dd333be329"
+    },
+    {
+      "path": "app/src/PresentationRoom.tsx",
+      "sha256": "db48be853f016be4598096ef0ddf3d84206f2412df6ae62183bc422fe48a1e1c"
+    },
+    {
+      "path": "app/src/Chart.tsx",
+      "sha256": "54d2d56df7343e9f60feb149c891552793e9f1bf40644c524346e0eb7df1a8eb"
+    },
+    {
+      "path": "app/src/AdaptiveCanvas.tsx",
+      "sha256": "5488acf8b7498d336e8c1a16058e87b6b3e02e1ae3419c112bfcd30a90df2c34"
+    },
+    {
+      "path": "app/src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "app/src/style.css",
+      "sha256": "3e7bf1e604a48645f71ec43cf16a88fd12b01554b7ae0b0aeb348f1e1b05bccc"
+    },
+    {
+      "path": "app/src/Visual.tsx",
+      "sha256": "61fa355c8bb82b83acbc8ed0a77bf52224539b45cfd83041ea295c81b605f354"
+    },
+    {
+      "path": "app/src/Preparation.tsx",
+      "sha256": "a8109456cb8ed31ad6dcf639ed2ea178c44fda577eaedead3c495002b978cece"
+    },
+    {
+      "path": "app/src/renderers/json-render.tsx",
+      "sha256": "95b18fcc8b7b0cb6e56fdf84bf4fee4a806070103ff914e488ba8093c8ffea8c"
+    },
+    {
+      "path": "app/src/renderers/PresentationBlock.tsx",
+      "sha256": "6ed6f8f05fc40f5f60b888f95ac1eba9d0a6937f2f4ff96230e788ea4ee991ec"
+    },
+    {
+      "path": "app/src/renderers/openui.tsx",
+      "sha256": "e13fca2955da7db9ee889d7d720b6e583dc0f8d211e1d4922d64e36cc1ff00c4"
+    },
+    {
+      "path": "app/src/hooks/usePresentation.ts",
+      "sha256": "7c49cdc3f682a6846967e0a228f583b5783b68034db7564673a18b630b6938fa"
+    },
+    {
+      "path": "app/src/services/workspace-store.ts",
+      "sha256": "4714e1f089735a0148c397ffe2c589203428ec80ddeb44263ffebbc1c40d9458"
+    },
+    {
+      "path": "app/src/services/session-client.ts",
+      "sha256": "fe70fc619e336b316b6511f5ff5f88480aec5d82c1e10085c97468c6740a0a26"
+    },
+    {
+      "path": "app/src/services/audio-capture.ts",
+      "sha256": "8c3f9c8294f9a5e2cf533a83e61ecd50dca11dc0288aa10f930c48b8d530eb73"
+    },
+    {
+      "path": "server/session.ts",
+      "sha256": "241f0efcbb978e30b2ff59b4a056ffeb6552f112e6669099ac83d7168fecfee3"
+    },
+    {
+      "path": "server/materials.ts",
+      "sha256": "3d49614e84ce1c583fa29dd54d1c2cc0a1e1c5c141e78d596b582096bbea79d0"
+    },
+    {
+      "path": "server/index.ts",
+      "sha256": "e924b4d0a165bd3b9c7d96ea590de125f147001865e80e6715a02c11d0bb8a74"
+    },
+    {
+      "path": "server/experiments/file-trace.ts",
+      "sha256": "3ec3c818b8fd2d85ae8b38e70b5eec217dffc8d377f8af9f71cc16f4b6e94175"
+    },
+    {
+      "path": "server/experiments/replay.ts",
+      "sha256": "b3c0e4811b43e1f24be67544d145482fcfa4e13dc4b6090680550adc06c27e51"
+    },
+    {
+      "path": "server/experiments/trace.ts",
+      "sha256": "c94643ec67f3a1e71eea69b1b061025e68a3c407a1a38ab81d3bc72aca4db246"
+    },
+    {
+      "path": "server/agents/preparation.ts",
+      "sha256": "db7bb2e47de56770f74ed5b5f515dd65298e7efd82d2f4e54180d6cda3873a1f"
+    },
+    {
+      "path": "server/agents/system-one.ts",
+      "sha256": "4f61952a0251ae88bf2f1466a610a22fca9d5b0e623e1eae5c68415a519bf154"
+    },
+    {
+      "path": "server/agents/adaptive.ts",
+      "sha256": "4b49ebccedc602033018df08e6bd12cabc5973a5cb9f79095dc546c54a71df50"
+    },
+    {
+      "path": "server/agents/model.ts",
+      "sha256": "1c5068749fb67022c177ee7584f0855304e3de9404e9001b7fc42109d9307d2e"
+    },
+    {
+      "path": "server/models/speech.ts",
+      "sha256": "75c14c3cdd0a9bb8012bba6b6cac3e35bb21d5907fd51083a742986335a45870"
+    },
+    {
+      "path": "server/models/language.ts",
+      "sha256": "619bdce23d4cfbd3dadc16668d3bc3aaf7fd0158ff4c5db55c132a7783be20c2"
+    },
+    {
+      "path": "server/models/embeddings.ts",
+      "sha256": "d8f7a5c4b678225cd89be56461c4dd3471bf27fcbbbd0b3a9b784bcae94437dd"
+    },
+    {
+      "path": "server/models/decisions.ts",
+      "sha256": "3f6a534a922033da92ee2398f3aaff820943dcb817f7f6abeadd2306d5374d4c"
+    },
+    {
+      "path": "server/models/decision-transport.ts",
+      "sha256": "ff61368247538e26a9111230be9633de33d2e861d88b2cdc80b484c733676e5c"
+    },
+    {
+      "path": "server/controllers/library-search.ts",
+      "sha256": "05032576f35f30e7f8f292339c1bbc0eb8a0cf46ea514eacee034c08c2fd7aa9"
+    },
+    {
+      "path": "server/controllers/candidates.ts",
+      "sha256": "dac057323574104af8e5d16b4565c581b643b633c0e7fbec37614e79d4e552bd"
+    },
+    {
+      "path": "server/controllers/semantic-retrieval.ts",
+      "sha256": "bbb0140b7edb3f36b138439b25f1c2673a34063cabe7e9411cb46a314f1f09dd"
+    },
+    {
+      "path": "server/controllers/shortlisted-decision.ts",
+      "sha256": "5c8a0768acf4aec9cd5a4af4d8c3ff4df4c2e16e3e31235af004a62c007b9283"
+    },
+    {
+      "path": "server/controllers/component-forecast.ts",
+      "sha256": "bb34b03c7cb7355c084db2f5a0c122b78551a680873a03fba5c7cdbabb6f518d"
+    },
+    {
+      "path": "server/controllers/retrieval.ts",
+      "sha256": "6b572e816577acebfbcd089a919a27d792dce04e95c8f779c0a88abba5e9465c"
+    },
+    {
+      "path": "server/controllers/evidence-contract.ts",
+      "sha256": "dfe7f810119dc915b57b62e153f707b89f1432f986df431971bdd908e7b345dd"
+    },
+    {
+      "path": "server/controllers/presentation-policy.ts",
+      "sha256": "f2fd740508e72568b6af39538ce2e4eff177aae607d64332a06dd5364671e5d0"
+    },
+    {
+      "path": "server/controllers/library-policy.ts",
+      "sha256": "b19281c9c41839d3283b9fff6379429cf3463253ca671f63442d1f87f1c745a2"
+    },
+    {
+      "path": "server/controllers/library-grounding.ts",
+      "sha256": "276bc0ebcc0895e5d173bd9fe2a7e89e25cad5b1e4fc5d6ed84dc9817a6ef06f"
+    },
+    {
+      "path": "server/controllers/hybrid-components.ts",
+      "sha256": "649f4312a26d9862aad0e058367625f6fd0cdeec6c098daa9ce027c3cbb39e84"
+    },
+    {
+      "path": "server/presentation/synthesis.ts",
+      "sha256": "ccdd3888d5677312b939c042ccd5bdb5e722491324797102df4144e3aa276eef"
+    },
+    {
+      "path": "server/presentation/composition.ts",
+      "sha256": "c7b1ca7098a4ec20b4fcab2e7b7a3184a9a856600290c943c0e4ab23a0ea5664"
+    },
+    {
+      "path": "server/presentation/request-frame.ts",
+      "sha256": "641cd6c08bab833b40f8ae317442d0db6d26e92d5e4b3e82f9914e7d2d2bb577"
+    },
+    {
+      "path": "server/presentation/component-evidence.ts",
+      "sha256": "89b1561d78b9fa9285c08ba045b8ad22219ce83c7bb6afa624b028afdf6086fb"
+    },
+    {
+      "path": "server/presentation/prepare-evidence.ts",
+      "sha256": "e4028c5c08bd8901ff2583adbe2983b6ff89886fb8325e2be7eec7f20bbfbeb6"
+    },
+    {
+      "path": "server/presentation/baseline.ts",
+      "sha256": "deb763b2a26469cc444e984ab4a7961ff4b8621089ed7c730978e76eaa95ef92"
+    },
+    {
+      "path": "server/presentation/catalog.ts",
+      "sha256": "a442d02c52fd4e436e6f9b5e1d56c7f6053a5e14a4e5c0948e1f03f46d7fe10d"
+    },
+    {
+      "path": "shared/preparation.ts",
+      "sha256": "d5ad093e3db5dca8304eced75a23697f29c225b101e8e658c832f5cd3df03318"
+    },
+    {
+      "path": "shared/evidence.ts",
+      "sha256": "517e90ade1b825d080a224a230c7bf50b99d3815c248920a0cc36d06cd49fe62"
+    },
+    {
+      "path": "shared/visuals.ts",
+      "sha256": "c744c6a0b88bccd86518772c390fdc64d9bffcfab859a67f5a1024890af37aaf"
+    },
+    {
+      "path": "shared/workspace.ts",
+      "sha256": "f5b7fac6ff199bc9fe7716daceae619819b035111cd67fc998d7aa43a1d699a9"
+    },
+    {
+      "path": "shared/adaptive.ts",
+      "sha256": "388f8842387547ae5595aec6ae819b91d56c11e0631f70981a36e886021e6f8a"
+    },
+    {
+      "path": "shared/component-evidence.ts",
+      "sha256": "4fc40675cf49672273f6865e1169b3a05e9ea1d047bca38cdaee373f5c1ad31b"
+    },
+    {
+      "path": "scripts/prepare-full-demo.ts",
+      "sha256": "4bf0176ff46da82417319da808ec047faaa388bf41b35fde2335b46195a173dd"
+    },
+    {
+      "path": "scripts/review-full-demo.ts",
+      "sha256": "9a2f021ca12ed265a140d85043c43cffa1094c5df269c5b560e5687f619dd594"
+    },
+    {
+      "path": "scripts/synthesize-trial.py",
+      "sha256": "9c4eb44b801f2c38a6d222753f4840cd3cfc9eae1c8f36246eb985793c2d3586"
+    },
+    {
+      "path": "runtime/worker.py",
+      "sha256": "f5f19bc83c83bb1cbe6199a67c215414be2d776abad89fe0118da120ef5ad6c1"
+    },
+    {
+      "path": "runtime/tts-model.json",
+      "sha256": "941707751ad94ad5f328bd4fed86bb3f2e35d3725c9b004a79087adc7cea2487"
+    },
+    {
+      "path": "runtime/tts-requirements.lock",
+      "sha256": "a0476167148fda736cd609e43ec4048ee7217918da56092af89d0eb79f76eaaf"
+    },
+    {
+      "path": "runtime/retrieval-model.json",
+      "sha256": "d13e58d2e3c51df87eb02de94031ddcf12a90bc18050cf5ca3fe94b6b3fd76b6"
+    },
+    {
+      "path": "package.json",
+      "sha256": "3ea9299b1919515ba2d5666c8b53b59c0900c9bedbb75995ff428fac39ba929b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "dc4aaeb499174d437404c1affbaecbf9c1fad0e6dc4a87e18397dfd42d333a8e"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/preparation.json",
+      "sha256": "0bddfa26a59b778a57d29c1c40fc3a660cab41150adf8e3c0dec9b493f8b14de",
+      "bytes": 70211
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/chrome-rich-complete.png",
+      "sha256": "52b01f6d657ac7a27bc65b8a043ac5c60c98c399eb0138a86274f6b9dc1f29fa",
+      "bytes": 69987
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/interview.json",
+      "sha256": "aeb577be396ff5da028fb74706dd78eeaa24bbca5fc5a0e844f1b0eccebb06bd",
+      "bytes": 37298
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/storage-first-replay.json",
+      "sha256": "406f76c0d72c7916a8619cc54bdda7c4370063f82628dc286fa8ab6ae8ce06a8",
+      "bytes": 15115
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/chrome-generation-complete.png",
+      "sha256": "79cb29866f4f9d0a395c68186d16c624e09b40ea39f739eba974f92d85f19c38",
+      "bytes": 69972
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/detour-and-return.wav",
+      "sha256": "4afd7867c3e2943ed7524760e99b6a8ec15b02f2fae79efb6f80f8cbd743e730",
+      "bytes": 526706
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/second-replay.json",
+      "sha256": "1c8c476508d64f3828a19d00c381bf840be7816e695453688679c986b25c40b1",
+      "bytes": 14972
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/generation-first-replay.json",
+      "sha256": "7a83e379326f00d1faeaa626e774f217c312061c385dbc0ebcc48f31b625bc0f",
+      "bytes": 17128
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/manifest.json",
+      "sha256": "53fb5c679a8e8b05d8a65444441931d1f07580b37ff82232a6d3013b44cba77f",
+      "bytes": 132163
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/coverage-correction.json",
+      "sha256": "fded79250d5754a2c7cb8d4460c679999df25696c36efd51956278c6cec1f640",
+      "bytes": 5279414
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/generation-first.wav",
+      "sha256": "3414b8c90a6bdd9a841402bda63d487074d0ca41d7dc18edf69e03060226dfa5",
+      "bytes": 921554
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/chrome-storage-complete.png",
+      "sha256": "5ffbf7cc6b26dfa39d7b3dfd37f75e7d3610ddb7b00eb3193242ecf14e196ea0",
+      "bytes": 58364
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/presenter-review.log",
+      "sha256": "f8b8bfd80b2ff651967e322a69c721c78829b422f9a5c0a0891dd7dc39527dba",
+      "bytes": 2118
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/storage-first.wav",
+      "sha256": "56e3189b62393bfe4342a14a1e628dbd9ea28e9f311f11b3ce28596a9d3b7ba0",
+      "bytes": 808094
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/first-replay.json",
+      "sha256": "a12e608b43e0f28db431e0c29231e566d3258d5558f22b381d2c4b23099289b3",
+      "bytes": 11869
+    }
+  ],
+  "summary": {
+    "generation-first": {
+      "transitions": [
+        4,
+        2,
+        4
+      ],
+      "decisions": 7,
+      "changes": 4,
+      "finalTranscripts": [
+        "daily curve.",
+        "Solar panels turn sunlight.",
+        "Into electricity",
+        "Storage reserves",
+        "Batteries store electricity for later use",
+        "Daily curve",
+        "Checking the microphone"
+      ],
+      "groundedModelPaths": 0
+    },
+    "storage-first": {
+      "transitions": [
+        2,
+        4,
+        2
+      ],
+      "decisions": 6,
+      "changes": 4,
+      "finalTranscripts": [
+        "Storage reserves",
+        "Batteries store electricity for later use.",
+        "Daily curve",
+        "Solar panels turn sunlight.",
+        "Into electricity",
+        "Storage reserves"
+      ],
+      "groundedModelPaths": 0
+    }
+  },
+  "limitations": [
+    "Generated flow omitted visual/image bindings and misdeclared storage coverage; agent correction failed. Explicit presenter edit and approval supplied correct references/coverage.",
+    "First failed replay and later STT errors retained. Prepared heading changed from Morning output to Daily curve after misrecognition; this is a tuned synthetic demo, not independent speech acceptance.",
+    "The generation sentence still fragments and holds the canvas. No physical microphone or room-acoustics test.",
+    "Source snapshots identify final working files; new preparation missing-reference guard was added after the demonstrated initial agent failure.",
+    "No S1 inference on successful replay paths: choices used guarded cues and holds. Local LLM was used for preparation."
+  ],
+  "productionAcceptance": false
+}

@@ -1,0 +1,340 @@
+{
+  "recordedAt": "2026-10-17T15:33:48.385Z",
+  "scope": "Derived paired comparison; reuses original cases, not independent new trials. Requests match retained earlier Jev inputs, excluding the transport model selector.",
+  "sources": [
+    {
+      "path": "docs/validation/runs/RUN-20261017-semantic-selection-v1/retrieval-selection.json",
+      "sha256": "be827659d15d5d2c125370a8cb5c5e2128a6aef791c2f7d1382a1abc226de572"
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261017-semantic-selection-raw-v2/retrieval-selection.json",
+      "sha256": "679a8806c1adbb718112f85b587e16b53147d7499221f6760719c41b80a7fc5b"
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261017-clef-comparison-v1/retrieval-selection.json",
+      "sha256": "cd829eeb9db89689df94a189529daac3aefd9b7465c482194934f74b4f0b5165"
+    },
+    {
+      "path": "docs/validation/runs/RUN-20261017-clef-omni-jev-reference/retrieval-selection.json",
+      "sha256": "76b9cc774b7c5650bf303f6d01a4dab536d80b625450315d313b5afecec1f7cd"
+    }
+  ],
+  "matchedRequests": 192,
+  "qualityCostUSD": 0.004152883,
+  "connectivityCostUSD": 0.000061959,
+  "totalRecordedCostUSD": 0.004214842,
+  "arms": [
+    {
+      "provider": "clef",
+      "method": "semantic",
+      "cases": 24,
+      "attempts": 24,
+      "skipped": 0,
+      "valid": 24,
+      "correct": 21,
+      "candidateCovered": 22,
+      "wrongShows": 0,
+      "missedContext": 0,
+      "latency": {
+        "scope": "All attempted requests including errors; sequential, one attempt per case; no STT/render/dwell.",
+        "medianMs": 648.3119159999987,
+        "p95Ms": 1129.6351669999995
+      },
+      "run": "RUN-20261017-clef-comparison-v1",
+      "spentUSD": 0.00044627999999999996,
+      "models": [
+        "cloudflare/clef"
+      ],
+      "failures": [
+        {
+          "id": "edu-paraphrase",
+          "expectedAction": "show",
+          "actualAction": "request-context",
+          "expectedBeats": [
+            2
+          ],
+          "actualBeats": []
+        },
+        {
+          "id": "edu-peers",
+          "expectedAction": "show",
+          "actualAction": "request-context",
+          "expectedBeats": [
+            3
+          ],
+          "actualBeats": []
+        },
+        {
+          "id": "sw-offtopic",
+          "expectedAction": "hold",
+          "actualAction": "request-context",
+          "expectedBeats": [],
+          "actualBeats": []
+        }
+      ]
+    },
+    {
+      "provider": "clef",
+      "method": "semantic-raw",
+      "cases": 24,
+      "attempts": 24,
+      "skipped": 0,
+      "valid": 24,
+      "correct": 24,
+      "candidateCovered": 24,
+      "wrongShows": 0,
+      "missedContext": 0,
+      "latency": {
+        "scope": "All attempted requests including errors; sequential, one attempt per case; no STT/render/dwell.",
+        "medianMs": 605.0112079999999,
+        "p95Ms": 858.5394589999996
+      },
+      "run": "RUN-20261017-clef-comparison-v1",
+      "spentUSD": 0.000363474,
+      "models": [
+        "cloudflare/clef"
+      ],
+      "failures": []
+    },
+    {
+      "provider": "clef-flash",
+      "method": "semantic",
+      "cases": 24,
+      "attempts": 24,
+      "skipped": 0,
+      "valid": 24,
+      "correct": 20,
+      "candidateCovered": 22,
+      "wrongShows": 0,
+      "missedContext": 0,
+      "latency": {
+        "scope": "All attempted requests including errors; sequential, one attempt per case; no STT/render/dwell.",
+        "medianMs": 554.1939999999959,
+        "p95Ms": 1065.6429579999967
+      },
+      "run": "RUN-20261017-clef-comparison-v1",
+      "spentUSD": 0.000169994,
+      "models": [
+        "cloudflare/clef-flash"
+      ],
+      "failures": [
+        {
+          "id": "edu-paraphrase",
+          "expectedAction": "show",
+          "actualAction": "request-context",
+          "expectedBeats": [
+            2
+          ],
+          "actualBeats": []
+        },
+        {
+          "id": "edu-peers",
+          "expectedAction": "show",
+          "actualAction": "hold",
+          "expectedBeats": [
+            3
+          ],
+          "actualBeats": []
+        },
+        {
+          "id": "edu-offtopic",
+          "expectedAction": "hold",
+          "actualAction": "request-context",
+          "expectedBeats": [],
+          "actualBeats": []
+        },
+        {
+          "id": "sw-offtopic",
+          "expectedAction": "hold",
+          "actualAction": "request-context",
+          "expectedBeats": [],
+          "actualBeats": []
+        }
+      ]
+    },
+    {
+      "provider": "clef-flash",
+      "method": "semantic-raw",
+      "cases": 24,
+      "attempts": 24,
+      "skipped": 0,
+      "valid": 24,
+      "correct": 24,
+      "candidateCovered": 24,
+      "wrongShows": 0,
+      "missedContext": 0,
+      "latency": {
+        "scope": "All attempted requests including errors; sequential, one attempt per case; no STT/render/dwell.",
+        "medianMs": 543.0512920000037,
+        "p95Ms": 1031.8917920000022
+      },
+      "run": "RUN-20261017-clef-comparison-v1",
+      "spentUSD": 0.00019825099999999998,
+      "models": [
+        "cloudflare/clef-flash"
+      ],
+      "failures": []
+    },
+    {
+      "provider": "clef-omni",
+      "method": "semantic",
+      "cases": 24,
+      "attempts": 24,
+      "skipped": 0,
+      "valid": 24,
+      "correct": 21,
+      "candidateCovered": 22,
+      "wrongShows": 0,
+      "missedContext": 0,
+      "latency": {
+        "scope": "All attempted requests including errors; sequential, one attempt per case; no STT/render/dwell.",
+        "medianMs": 379.872292,
+        "p95Ms": 722.4232920000004
+      },
+      "run": "RUN-20261017-clef-omni-jev-reference",
+      "spentUSD": 0.00093885,
+      "models": [
+        "cloudflare/clef-omni-20261009"
+      ],
+      "failures": [
+        {
+          "id": "edu-paraphrase",
+          "expectedAction": "show",
+          "actualAction": "hold",
+          "expectedBeats": [
+            2
+          ],
+          "actualBeats": []
+        },
+        {
+          "id": "edu-peers",
+          "expectedAction": "show",
+          "actualAction": "hold",
+          "expectedBeats": [
+            3
+          ],
+          "actualBeats": []
+        },
+        {
+          "id": "sw-offtopic",
+          "expectedAction": "hold",
+          "actualAction": "request-context",
+          "expectedBeats": [],
+          "actualBeats": []
+        }
+      ]
+    },
+    {
+      "provider": "clef-omni",
+      "method": "semantic-raw",
+      "cases": 24,
+      "attempts": 24,
+      "skipped": 0,
+      "valid": 24,
+      "correct": 24,
+      "candidateCovered": 24,
+      "wrongShows": 0,
+      "missedContext": 0,
+      "latency": {
+        "scope": "All attempted requests including errors; sequential, one attempt per case; no STT/render/dwell.",
+        "medianMs": 383.25237500000003,
+        "p95Ms": 583.5864170000004
+      },
+      "run": "RUN-20261017-clef-omni-jev-reference",
+      "spentUSD": 0.0010773,
+      "models": [
+        "cloudflare/clef-omni-20261009"
+      ],
+      "failures": []
+    },
+    {
+      "provider": "jev",
+      "method": "semantic",
+      "cases": 24,
+      "attempts": 24,
+      "skipped": 0,
+      "valid": 24,
+      "correct": 22,
+      "candidateCovered": 22,
+      "wrongShows": 0,
+      "missedContext": 0,
+      "latency": {
+        "scope": "All attempted requests including errors; sequential, one attempt per case; no STT/render/dwell.",
+        "medianMs": 433.52079100000265,
+        "p95Ms": 490.8248749999984
+      },
+      "run": "RUN-20261017-clef-omni-jev-reference",
+      "spentUSD": 0.00045952199999999997,
+      "models": [
+        "typesafe/jev-1.14-20261014"
+      ],
+      "failures": [
+        {
+          "id": "edu-paraphrase",
+          "expectedAction": "show",
+          "actualAction": "hold",
+          "expectedBeats": [
+            2
+          ],
+          "actualBeats": []
+        },
+        {
+          "id": "edu-peers",
+          "expectedAction": "show",
+          "actualAction": "hold",
+          "expectedBeats": [
+            3
+          ],
+          "actualBeats": []
+        }
+      ]
+    },
+    {
+      "provider": "jev",
+      "method": "semantic-raw",
+      "cases": 24,
+      "attempts": 24,
+      "skipped": 0,
+      "valid": 24,
+      "correct": 21,
+      "candidateCovered": 24,
+      "wrongShows": 1,
+      "missedContext": 3,
+      "latency": {
+        "scope": "All attempted requests including errors; sequential, one attempt per case; no STT/render/dwell.",
+        "medianMs": 431.122000000003,
+        "p95Ms": 518.7517920000028
+      },
+      "run": "RUN-20261017-clef-omni-jev-reference",
+      "spentUSD": 0.000499212,
+      "models": [
+        "typesafe/jev-1.14-20261014"
+      ],
+      "failures": [
+        {
+          "id": "solar-cost",
+          "expectedAction": "request-context",
+          "actualAction": "show",
+          "expectedBeats": [],
+          "actualBeats": [
+            5
+          ]
+        },
+        {
+          "id": "edu-missing",
+          "expectedAction": "request-context",
+          "actualAction": "hold",
+          "expectedBeats": [],
+          "actualBeats": []
+        },
+        {
+          "id": "sw-missing",
+          "expectedAction": "request-context",
+          "actualAction": "hold",
+          "expectedBeats": [],
+          "actualBeats": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "flow": [
+    {
+      "title": "Sunlight becomes electricity",
+      "coverage": {
+        "visual": [
+          "beat:0"
+        ],
+        "image": [
+          "beat:0"
+        ]
+      }
+    },
+    {
+      "title": "Daily pattern",
+      "coverage": {
+        "statement": [],
+        "visual": [
+          "beat:0"
+        ]
+      }
+    },
+    {
+      "title": "Stored energy",
+      "coverage": {
+        "visual": [
+          "beat:2"
+        ]
+      }
+    }
+  ],
+  "visuals": [
+    {
+      "id": "90fd97d4-629f-4fd8-aaaf-bb8a7dad476f",
+      "spec": {
+        "kind": "chart",
+        "title": "Morning output",
+        "chartType": "bar",
+        "unit": "GenerationWh",
+        "sourceArtifactId": "073f49c6-23e0-405c-b323-8fb9c1e4ec06",
+        "data": [
+          {
+            "label": "Morning",
+            "value": 10
+          },
+          {
+            "label": "Noon",
+            "value": 20
+          },
+          {
+            "label": "Evening",
+            "value": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "e9d40a81-fbe9-4330-a0b6-2ff6f0b2f023",
+      "spec": {
+        "kind": "chart",
+        "title": "Daily curve",
+        "chartType": "line",
+        "unit": "GenerationWh",
+        "sourceArtifactId": "073f49c6-23e0-405c-b323-8fb9c1e4ec06",
+        "data": [
+          {
+            "label": "Morning",
+            "value": 10
+          },
+          {
+            "label": "Noon",
+            "value": 20
+          },
+          {
+            "label": "Evening",
+            "value": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "f3175972-6b9c-470b-a016-0b27ce099c96",
+      "spec": {
+        "kind": "chart",
+        "title": "Storage reserves",
+        "chartType": "bar",
+        "unit": "StoredWh",
+        "sourceArtifactId": "073f49c6-23e0-405c-b323-8fb9c1e4ec06",
+        "data": [
+          {
+            "label": "Morning",
+            "value": 5
+          },
+          {
+            "label": "Noon",
+            "value": 10
+          },
+          {
+            "label": "Evening",
+            "value": 15
+          }
+        ]
+      }
+    }
+  ]
+}

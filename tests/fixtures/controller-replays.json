@@ -1,0 +1,38 @@
+{
+ "version": 1,
+ "scope": "Developer-authored synthetic regression scenarios; labels fixed before first benchmark. Not independent or untouched holdout data. Candidate scores are injected test inputs, not calibrated model probabilities.",
+ "scenarios": [
+  {"id":"late-topic-start","steps":[{"at":0,"topics":[[2,0.95]],"expect":"commit:2"}]},
+  {"id":"uncertain-switch","steps":[{"at":0,"topics":[[1,0.7]],"expect":"hold"},{"at":400,"topics":[[1,0.7]],"expect":"commit:1"}]},
+  {"id":"one-window-noise","steps":[{"at":0,"topics":[[1,0.7]],"expect":"hold"},{"at":400,"topics":[],"expect":"hold"},{"at":900,"topics":[[2,0.95]],"expect":"commit:2"}]},
+  {"id":"oscillation","steps":[{"at":0,"topics":[[1,0.7]],"expect":"hold"},{"at":300,"topics":[[2,0.7]],"expect":"hold"},{"at":600,"topics":[[1,0.7]],"expect":"hold"},{"at":900,"topics":[[2,0.7]],"expect":"hold"}]},
+  {"id":"dwell-before-switch","steps":[{"at":0,"topics":[[1,0.95]],"expect":"commit:1"},{"at":300,"topics":[[2,0.95]],"expect":"hold"},{"at":900,"topics":[[2,0.95]],"expect":"commit:2"}]},
+  {"id":"current-topic","steps":[{"at":0,"topics":[[0,0.95]],"expect":"hold"}]},
+  {"id":"ambiguous-margin","steps":[{"at":0,"topics":[[1,0.85],[2,0.8]],"expect":"hold"}]},
+  {"id":"low-confidence","steps":[{"at":0,"topics":[[1,0.4]],"expect":"hold"}]},
+  {"id":"off-topic","steps":[{"at":0,"topics":[],"expect":"hold"}]},
+  {"id":"missing-content-deduplication","steps":[{"at":0,"missingEvidence":true,"topics":[[1,0.95]],"expect":"request-context"},{"at":500,"missingEvidence":true,"topics":[],"expect":"hold"},{"at":1000,"topics":[[2,0.95]],"expect":"commit:2"},{"at":2000,"missingEvidence":true,"topics":[],"expect":"request-context"}]},
+  {"id":"pause-resume-stale","steps":[{"at":0,"type":"pause","expect":"hold"},{"at":300,"topics":[[1,0.95]],"epoch":1,"expect":"hold"},{"at":600,"type":"resume","expect":"hold"},{"at":900,"topics":[[2,0.95]],"epoch":0,"expect":"hold"},{"at":1200,"topics":[[2,0.95]],"epoch":2,"expect":"commit:2"}]},
+  {"id":"stop-is-terminal","steps":[{"at":0,"type":"stop","expect":"hold"},{"at":300,"type":"resume","expect":"hold"},{"at":900,"topics":[[2,0.95]],"epoch":1,"expect":"hold"}]},
+  {"id":"out-of-order-clock","steps":[{"at":1000,"topics":[[1,0.95]],"expect":"commit:1"},{"at":900,"topics":[[2,0.95]],"expect":"hold"}]},
+  {"id":"duplicate-sequence","steps":[{"at":0,"sequence":5,"topics":[[1,0.95]],"expect":"commit:1"},{"at":1000,"sequence":5,"topics":[[2,0.95]],"expect":"hold"}]},
+  {"id":"wrong-revision","steps":[{"at":0,"revision":99,"topics":[[2,0.95]],"expect":"hold"}]},
+  {"id":"expired-confirmation","steps":[{"at":0,"topics":[[1,0.7]],"expect":"hold"},{"at":1600,"topics":[[1,0.7]],"expect":"hold"},{"at":2000,"topics":[[1,0.7]],"expect":"commit:1"}]},
+  {"id":"pause-clears-confirmation","steps":[{"at":0,"topics":[[1,0.7]],"expect":"hold"},{"at":200,"type":"pause","expect":"hold"},{"at":300,"type":"resume","expect":"hold"},{"at":500,"topics":[[1,0.7]],"epoch":2,"expect":"hold"},{"at":800,"topics":[[1,0.7]],"epoch":2,"expect":"commit:1"}]},
+  {"id":"comparison-and-return","steps":[{"at":0,"comparison":[0,2],"expect":"commit:0,2"},{"at":1000,"topics":[[1,0.95]],"expect":"commit:1"},{"at":2000,"topics":[[2,0.95]],"expect":"commit:2"}]},
+  {"id":"invalid-reference","steps":[{"at":0,"topics":[[11,0.95]],"expect":"hold"}]},
+  {"id":"duplicate-shortlist","steps":[{"at":0,"topics":[[1,0.95],[1,0.8]],"expect":"hold"}]},
+  {"id":"unbounded-shortlist","steps":[{"at":0,"topics":[[0,0.95],[1,0.7],[2,0.65],[3,0.6]],"expect":"hold"}]}
+ ],
+ "retrieval": [
+  {"id":"literal-generation","speech":"Panels convert sunlight into electricity.","expectedBeats":[0]},
+  {"id":"literal-storage","speech":"Battery storage saves electricity for night.","expectedBeats":[2]},
+  {"id":"literal-chart","speech":"Daily production chart morning noon evening energy.","expectedBeats":[1]},
+  {"id":"literal-comparison","speech":"Compare panels sunlight conversion with battery storage night.","expectedBeats":[0,2]},
+  {"id":"irrelevant","speech":"Pasta tomatoes lunch notebook kitchen.","expectedBeats":[]},
+  {"id":"paraphrase-gap","speech":"Keep the surplus until darkness falls.","expectedBeats":[2]},
+  {"id":"negation-gap","speech":"Not panels converting sunlight. Battery storage at night.","expectedBeats":[2]},
+  {"id":"unavailable-cost-gap","speech":"What is the installation cost of panels? No cost data is supplied.","expectedBeats":[]},
+  {"id":"other-domain","speech":"Students compare learning outcomes using assessment feedback.","domain":"education","expectedBeats":[1]}
+ ]
+}

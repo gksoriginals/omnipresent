@@ -1,0 +1,279 @@
+{
+  "id": "RUN-20261017-baseline-live-v1",
+  "startedAt": "2026-10-17T17:18:49.402Z",
+  "finishedAt": "2026-10-17T17:18:51.012Z",
+  "scope": "Actual websocket coordinator, local EmbeddingGemma and hosted Clef-omni; scripted public-source text, no STT/microphone/browser paint",
+  "outcomes": [
+    {
+      "speech": "Now explain how condensation and precipitation move water between stores with the actual USGS statement.",
+      "action": "show",
+      "beat": 5,
+      "inferenceMs": 1445.8947919999991,
+      "path": "grounded"
+    },
+    {
+      "speech": "Show the audited EIA photovoltaic conversion statement.",
+      "action": "context",
+      "beat": 5,
+      "inferenceMs": 1.3077919999996084,
+      "path": "guard"
+    },
+    {
+      "speech": "The note says \"show the actual EIA photovoltaic conversion statement\" but we are checking the microphone.",
+      "action": "hold",
+      "beat": 5,
+      "inferenceMs": 0.10724999999365536,
+      "path": "guard"
+    }
+  ],
+  "events": [
+    {
+      "type": "snapshot",
+      "stage": {
+        "text": "",
+        "revision": 0,
+        "source": "manual",
+        "committedAt": 1792257529402
+      },
+      "paused": false,
+      "at": 1792257529403
+    },
+    {
+      "type": "worker_status",
+      "status": "unloaded",
+      "at": 1792257529403
+    },
+    {
+      "type": "presentation_loaded",
+      "title": "Solar and water",
+      "baseline": "evidence-v1",
+      "decision": "clef-omni",
+      "at": 1792257529405
+    },
+    {
+      "type": "snapshot",
+      "stage": {
+        "text": "",
+        "revision": 0,
+        "source": "manual",
+        "committedAt": 1792257529402
+      },
+      "paused": false,
+      "at": 1792257529431
+    },
+    {
+      "type": "stage",
+      "stage": {
+        "text": "Photovoltaic conversion",
+        "composition": {
+          "title": "Photovoltaic conversion",
+          "body": "Photovoltaic cells convert sunlight to electricity.",
+          "beat": 0,
+          "flowRevision": 0,
+          "adaptive": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          }
+        },
+        "source": "agent",
+        "revision": 1,
+        "committedAt": 1792257529431
+      },
+      "dispatchMs": 0.019707999999809545,
+      "at": 1792257529431
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "at": 1792257529459
+    },
+    {
+      "type": "metrics",
+      "serverRssMb": 80.5,
+      "eventLoopP95Ms": 12.066815,
+      "at": 1792257530403
+    },
+    {
+      "type": "stage",
+      "stage": {
+        "text": "Water movement",
+        "composition": {
+          "title": "Water movement",
+          "body": "Condensation and precipitation move water between stores.",
+          "beat": 5,
+          "flowRevision": 0,
+          "adaptive": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 5,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          }
+        },
+        "source": "agent",
+        "revision": 2,
+        "committedAt": 1792257530904
+      },
+      "dispatchMs": 0.013374999994994141,
+      "at": 1792257530905
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 1445.8947919999991,
+      "changed": true,
+      "held": false,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 5,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "baseline": "evidence-v1",
+        "model": "clef-omni",
+        "path": "grounded",
+        "action": "show",
+        "operation": "replace",
+        "revision": "412428b6321d4a4e6a365d5805825d9370186e8f733453d0bd1005c34f9b3fac"
+      },
+      "at": 1792257530905
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "at": 1792257530905
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "at": 1792257530931
+    },
+    {
+      "type": "presentation_feedback",
+      "projectId": "public-demo",
+      "storyId": "source-story",
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "at": 1792257530932
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 1.3077919999996084,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 5,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "baseline": "evidence-v1",
+        "model": "clef-omni",
+        "path": "guard",
+        "action": "context",
+        "operation": "retain",
+        "revision": "412428b6321d4a4e6a365d5805825d9370186e8f733453d0bd1005c34f9b3fac"
+      },
+      "at": 1792257530932
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "at": 1792257530932
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "at": 1792257530959
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.10724999999365536,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 5,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "baseline": "evidence-v1",
+        "model": "clef-omni",
+        "path": "guard",
+        "action": "hold",
+        "operation": "retain",
+        "revision": "412428b6321d4a4e6a365d5805825d9370186e8f733453d0bd1005c34f9b3fac"
+      },
+      "at": 1792257530959
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "at": 1792257530959
+    },
+    {
+      "type": "snapshot",
+      "stage": {
+        "text": "Water movement",
+        "composition": {
+          "title": "Water movement",
+          "body": "Condensation and precipitation move water between stores.",
+          "beat": 5,
+          "flowRevision": 0,
+          "adaptive": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 5,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          }
+        },
+        "source": "agent",
+        "revision": 2,
+        "committedAt": 1792257530904
+      },
+      "paused": true,
+      "at": 1792257530984
+    }
+  ]
+}

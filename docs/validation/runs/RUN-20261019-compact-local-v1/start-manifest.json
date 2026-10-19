@@ -1,0 +1,27 @@
+{
+  "id": "RUN-20261019-compact-local-v1",
+  "startedAt": "2026-10-19T07:56:09.084Z",
+  "inputHash": "d6b96e767b21b09b89e36077bcea5b7777a3a4cb950d859db849b904a7d7eac6",
+  "sourceFiles": [
+    {
+      "path": "scripts/compact-local-fixture.ts",
+      "sha256": "776399e9588933d5aea7c2706f396e05bb70cee13958c9e8c9f98d82cb530dda"
+    },
+    {
+      "path": "scripts/prepare-compact-local.ts",
+      "sha256": "b1110e5e6d18766aa7fd6a57b7a7211a50949440c0da66b29aefcc942718efdd"
+    },
+    {
+      "path": "runtime/compact_local_benchmark.py",
+      "sha256": "f814f0c39100b1727224ff4bb648ca32f6b9966878fc9d05bfeaa41b3b4d58d2"
+    },
+    {
+      "path": "runtime/classifier-requirements.lock",
+      "sha256": "cea2a7436f9fba8c9db86f9e9c2e662a061ffeea7e9d3b8fc7a9fdd6d7aeebd4"
+    }
+  ],
+  "modelRevisions": {
+    "gliner-multi": "e173bca1f0c4217d7a55b3b0c705d5ece8a0218d",
+    "gliner-english": "9d1bfb848cd16d93ee56ccbc59cd92bf0f284d90"
+  }
+}

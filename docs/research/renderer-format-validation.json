@@ -1,0 +1,122 @@
+{
+  "recordedAt": "2026-10-17T14:44:56.633Z",
+  "scope": "Small native-format generation smoke test; two requests each, sequential, not a statistical benchmark. Both formats validate component contracts and domain references.",
+  "results": [
+    {
+      "engine": "openui",
+      "request": "Focus on battery storage after sunset.",
+      "ms": 2238.002125,
+      "usage": {
+        "inputTokens": 855,
+        "inputTokenDetails": {
+          "noCacheTokens": 577,
+          "cacheReadTokens": 278
+        },
+        "outputTokens": 56,
+        "outputTokenDetails": {
+          "textTokens": 56,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 911,
+        "raw": {
+          "prompt_tokens": 855,
+          "completion_tokens": 56,
+          "total_tokens": 911,
+          "prompt_tokens_details": {
+            "cached_tokens": 278
+          }
+        }
+      },
+      "valid": false,
+      "error": "{\"incomplete\":false,\"unresolved\":[],\"orphaned\":[],\"statementCount\":1,\"errors\":[{\"code\":\"type-mismatch\",\"component\":\"PresentationBlock\",\"path\":\"/id\",\"message\":\"field \\\"/id\\\" expects one of [\\\"primary\\\", \\\"secondary\\\", \\\"detail\\\", \\\"context\\\"] but got 0\",\"statementId\":\"root\"},{\"code\":\"type-mismatch\",\"component\":\"PresentationBlock\",\"path\":\"/kind\",\"message\":\"field \\\"/kind\\\" expects one of [\\\"statement\\\", \\\"visual\\\", \\\"image\\\"] but got \\\"primary\\\"\",\"statementId\":\"root\"},{\"code\":\"type-mismatch\",\"component\":\"PresentationBlock\",\"path\":\"/beat\",\"message\":\"field \\\"/beat\\\" expects number but got string\",\"statementId\":\"root\"},{\"code\":\"type-mismatch\",\"component\":\"PresentationBlock\",\"path\":\"/emphasis\",\"message\":\"field \\\"/emphasis\\\" expects one of [\\\"normal\\\", \\\"strong\\\"] but got 12\",\"statementId\":\"root\"},{\"code\":\"type-mismatch\",\"component\":\"PresentationBlock\",\"path\":\"/reveal\",\"message\":\"field \\\"/reveal\\\" expects number but got string\",\"statementId\":\"root\"},{\"code\":\"excess-args\",\"component\":\"PresentationBlock\",\"path\":\"\",\"message\":\"PresentationBlock takes 5 arg(s), got 6 (1 excess dropped)\",\"statementId\":\"root\"},{\"code\":\"type-mismatch\",\"component\":\"PresentationBlock\",\"path\":\"/id\",\"message\":\"field \\\"/id\\\" expects one of [\\\"primary\\\", \\\"secondary\\\", \\\"detail\\\", \\\"context\\\"] but got 2\",\"statementId\":\"root\"},{\"code\":\"type-mismatch\",\"component\":\"PresentationBlock\",\"path\":\"/kind\",\"message\":\"field \\\"/kind\\\" expects one of [\\\"statement\\\", \\\"visual\\\", \\\"image\\\"] but got \\\"secondary\\\"\",\"statementId\":\"root\"},{\"code\":\"type-mismatch\",\"component\":\"PresentationBlock\",\"path\":\"/beat\",\"message\":\"field \\\"/beat\\\" expects number but got string\",\"statementId\":\"root\"},{\"code\":\"type-mismatch\",\"component\":\"PresentationBlock\",\"path\":\"/emphasis\",\"message\":\"field \\\"/emphasis\\\" expects one of [\\\"normal\\\", \\\"strong\\\"] but got 8\",\"statementId\":\"root\"},{\"code\":\"type-mismatch\",\"component\":\"PresentationBlock\",\"path\":\"/reveal\",\"message\":\"field \\\"/reveal\\\" expects number but got string\",\"statementId\":\"root\"},{\"code\":\"excess-args\",\"component\":\"PresentationBlock\",\"path\":\"\",\"message\":\"PresentationBlock takes 5 arg(s), got 6 (1 excess dropped)\",\"statementId\":\"root\"}]}",
+      "output": "root = PresentationCanvas(\"focus\", [\n  PresentationBlock(0, \"primary\", \"statement\", 12, \"normal\", 0),\n  PresentationBlock(2, \"secondary\", \"visual\", 8, \"strong\", 4)\n])"
+    },
+    {
+      "engine": "openui",
+      "request": "Compare panels generating electricity with batteries storing electricity; show both together.",
+      "ms": 7599.007333,
+      "usage": {
+        "inputTokens": 861,
+        "inputTokenDetails": {
+          "noCacheTokens": 518,
+          "cacheReadTokens": 343
+        },
+        "outputTokens": 253,
+        "outputTokenDetails": {
+          "textTokens": 253,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1114,
+        "raw": {
+          "prompt_tokens": 861,
+          "completion_tokens": 253,
+          "total_tokens": 1114,
+          "prompt_tokens_details": {
+            "cached_tokens": 343
+          }
+        }
+      },
+      "valid": false,
+      "error": "{\"incomplete\":false,\"unresolved\":[],\"orphaned\":[\"PanelBlock\"],\"statementCount\":2,\"errors\":[{\"code\":\"unknown-component\",\"component\":\"PanelBlock\",\"path\":\"\",\"message\":\"Unknown component \\\"PanelBlock\\\" — not found in catalog or builtins. Available components: PresentationCanvas, PresentationBlock\",\"statementId\":\"root\"},{\"code\":\"unknown-component\",\"component\":\"PanelBlock\",\"path\":\"\",\"message\":\"Unknown component \\\"PanelBlock\\\" — not found in catalog or builtins. Available components: PresentationCanvas, PresentationBlock\",\"statementId\":\"root\"}]}",
+      "output": "root = PresentationCanvas(\"split\", [\n  PanelBlock(id: \"primary\", kind: \"visual\", beat: 0, emphasis: \"strong\", reveal: 12),\n  PanelBlock(id: \"secondary\", kind: \"statement\", beat: 1, emphasis: \"normal\", reveal: 6)\n])\n\nPanelBlock = (id, kind, beat, emphasis, reveal) ->\n  if kind == \"visual\" then\n    PresentationCanvas(\"sequence\", [\n      TextBlock(title: \"Solar Panels Generating Electricity\", audienceText: \"Photovoltaic cells convert sunlight directly into electricity.\", hasVisual: true),\n      TextBlock(title: \"Batteries Storing Energy\", audienceText: \"Store excess daytime energy for use after sunset.\", hasVisual: false)\n    ])\n  else\n    PresentationCanvas(\"sequence\", [\n      TextBlock(title: id, audienceText: \"Energy production peaks around noon at 20Wh and is lower in the morning and evening.\", hasVisual: true),\n      TextBlock(title: id, audienceText: \"Batteries store excess daytime energy for use after sunset to power devices at night.\", hasVisual: false)\n    ])"
+    },
+    {
+      "engine": "json-render",
+      "request": "Focus on battery storage after sunset.",
+      "ms": 3859.2081660000003,
+      "usage": {
+        "inputTokens": 365,
+        "inputTokenDetails": {
+          "noCacheTokens": 365,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 125,
+        "outputTokenDetails": {
+          "textTokens": 125,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 490,
+        "raw": {
+          "prompt_tokens": 365,
+          "completion_tokens": 125,
+          "total_tokens": 490,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "valid": false,
+      "error": "Cannot read properties of undefined (reading '#<Object>')",
+      "output": "{\n  \"root\": {\n    \"type\": \"PresentationCanvas\",\n    \"props\": {\n      \"layout\": \"focus\"\n    },\n    \"children\": [\n      \"primary\"\n    ]\n  },\n  \"primary\": {\n    \"type\": \"PresentationBlock\",\n    \"props\": {\n      \"id\": \"primary\",\n      \"kind\": \"statement\",\n      \"beat\": 2,\n      \"emphasis\": \"normal\",\n      \"reveal\": 0\n    },\n    \"children\": []\n  }\n}"
+    },
+    {
+      "engine": "json-render",
+      "request": "Compare panels generating electricity with batteries storing electricity; show both together.",
+      "ms": 5630.465874999998,
+      "usage": {
+        "inputTokens": 371,
+        "inputTokenDetails": {
+          "noCacheTokens": 371,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 202,
+        "outputTokenDetails": {
+          "textTokens": 202,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 573,
+        "raw": {
+          "prompt_tokens": 371,
+          "completion_tokens": 202,
+          "total_tokens": 573,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "valid": false,
+      "error": "Cannot read properties of undefined (reading '#<Object>')",
+      "output": "{\n  \"root\": {\n    \"type\": \"PresentationCanvas\",\n    \"props\": {\n      \"layout\": \"split\"\n    },\n    \"children\": [\n      \"primary\",\n      \"secondary\"\n    ]\n  },\n  \"primary\": {\n    \"type\": \"PresentationBlock\",\n    \"props\": {\n      \"id\": \"primary\",\n      \"kind\": \"visual\",\n      \"beat\": 0,\n      \"emphasis\": \"strong\",\n      \"reveal\": 0\n    },\n    \"children\": []\n  },\n  \"secondary\": {\n    \"type\": \"PresentationBlock\",\n    \"props\": {\n      \"id\": \"secondary\",\n      \"kind\": \"visual\",\n      \"beat\": 2,\n      \"emphasis\": \"strong\",\n      \"reveal\": 0\n    },\n    \"children\": []\n  }\n}"
+    }
+  ]
+}

@@ -1,0 +1,1588 @@
+{
+  "id": "RUN-20261019-preference-int8-v1",
+  "inputHash": "94db90807fb3c40625167df523ce2e528cbd04da9485e2ee5935ea7b83e51e11",
+  "sourceFiles": [
+    {
+      "path": "scripts/preference-precision-replay.ts",
+      "sha256": "f833370f415f7e689d4ca77832e39d2bfb3ac186bfac58cb51047b7be05b291a"
+    },
+    {
+      "path": "runtime/preference_worker.py",
+      "sha256": "083420085cd264e592c23ed7baf1ea275dd05d1bc11ca90b15a0419f936afb5e"
+    },
+    {
+      "path": "server/models/local-preference.ts",
+      "sha256": "d5e1c009d853b0a6a2bc82d2aaeffcff85435bfdb68069effb38a89b2d770059"
+    },
+    {
+      "path": "server/presentation/selection.ts",
+      "sha256": "37fa0a19a6894776881ce8e69bee9ebd77411a6991d765152960137a181910b0"
+    },
+    {
+      "path": "runtime/classifier-requirements.lock",
+      "sha256": "cea2a7436f9fba8c9db86f9e9c2e662a061ffeea7e9d3b8fc7a9fdd6d7aeebd4"
+    }
+  ],
+  "parent": "docs/validation/runs/RUN-20261019-preference-quality-v1",
+  "scope": "INT8 diagnostic on frozen narrow preference set; rotated eligible menu only, excludes retrieval, STT and paint. Distinct from earlier failed full-action precision gate.",
+  "precision": "PyTorch dynamic INT8 Linear / qnnpack; embeddings and other operations may remain FP32",
+  "stats": {
+    "calls": 192,
+    "computeMs": 165200.44104696717,
+    "loadMs": 8146.330957999453
+  },
+  "resources": {
+    "parameters": 138028032,
+    "weightsBytes": 1945828140,
+    "peakRssBytes": 4360863744
+  },
+  "summary": {
+    "total": 96,
+    "correct": 24,
+    "fallbacks": 96,
+    "rawCorrect": 89,
+    "rawTotal": 96,
+    "medianMs": 301.4017920000042,
+    "p95Ms": 301.74887500000114
+  },
+  "rows": [
+    {
+      "id": "solar-0",
+      "pass": 0,
+      "selected": "solar-trend",
+      "expected": "solar-trend",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 307.7338749999999
+    },
+    {
+      "id": "solar-1",
+      "pass": 0,
+      "selected": "solar-trend",
+      "expected": "solar-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.5205420000002
+    },
+    {
+      "id": "solar-2",
+      "pass": 0,
+      "selected": "solar-trend",
+      "expected": "solar-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.5149999999994
+    },
+    {
+      "id": "solar-3",
+      "pass": 0,
+      "selected": "solar-trend",
+      "expected": "solar-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.71900000000096
+    },
+    {
+      "id": "solar-4",
+      "pass": 0,
+      "selected": "solar-trend",
+      "expected": "solar-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.74887500000114
+    },
+    {
+      "id": "solar-5",
+      "pass": 0,
+      "selected": "solar-trend",
+      "expected": "solar-trend",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.4805840000008
+    },
+    {
+      "id": "solar-6",
+      "pass": 0,
+      "selected": "solar-trend",
+      "expected": "solar-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.7783750000017
+    },
+    {
+      "id": "solar-7",
+      "pass": 0,
+      "selected": "solar-trend",
+      "expected": "solar-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.69416699999783
+    },
+    {
+      "id": "water-0",
+      "pass": 0,
+      "selected": "water-trend",
+      "expected": "water-trend",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.85004200000185
+    },
+    {
+      "id": "water-1",
+      "pass": 0,
+      "selected": "water-trend",
+      "expected": "water-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 299.65166600000157
+    },
+    {
+      "id": "water-2",
+      "pass": 0,
+      "selected": "water-trend",
+      "expected": "water-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.67062499999884
+    },
+    {
+      "id": "water-3",
+      "pass": 0,
+      "selected": "water-trend",
+      "expected": "water-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.2419169999994
+    },
+    {
+      "id": "water-4",
+      "pass": 0,
+      "selected": "water-trend",
+      "expected": "water-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.5918329999986
+    },
+    {
+      "id": "water-5",
+      "pass": 0,
+      "selected": "water-trend",
+      "expected": "water-trend",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 300.5209160000013
+    },
+    {
+      "id": "water-6",
+      "pass": 0,
+      "selected": "water-trend",
+      "expected": "water-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.33000000000175
+    },
+    {
+      "id": "water-7",
+      "pass": 0,
+      "selected": "water-trend",
+      "expected": "water-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.5909580000007
+    },
+    {
+      "id": "visitors-0",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "expected": "visitors-trend",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.35891699999775
+    },
+    {
+      "id": "visitors-1",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "expected": "visitors-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.59029100000043
+    },
+    {
+      "id": "visitors-2",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "expected": "visitors-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.08925000000454
+    },
+    {
+      "id": "visitors-3",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "expected": "visitors-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.51137500000186
+    },
+    {
+      "id": "visitors-4",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "expected": "visitors-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 302.71679199999926
+    },
+    {
+      "id": "visitors-5",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "expected": "visitors-trend",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 300.8398329999982
+    },
+    {
+      "id": "visitors-6",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "expected": "visitors-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.52679100000387
+    },
+    {
+      "id": "visitors-7",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "expected": "visitors-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.7039999999979
+    },
+    {
+      "id": "seedlings-0",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "expected": "seedlings-trend",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.54987500000425
+    },
+    {
+      "id": "seedlings-1",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "expected": "seedlings-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.31900000000314
+    },
+    {
+      "id": "seedlings-2",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "expected": "seedlings-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.41991699999926
+    },
+    {
+      "id": "seedlings-3",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "expected": "seedlings-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.43883300000016
+    },
+    {
+      "id": "seedlings-4",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "expected": "seedlings-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.3331249999974
+    },
+    {
+      "id": "seedlings-5",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "expected": "seedlings-trend",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.3225420000017
+    },
+    {
+      "id": "seedlings-6",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "expected": "seedlings-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4082500000004
+    },
+    {
+      "id": "seedlings-7",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "expected": "seedlings-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.3602499999979
+    },
+    {
+      "id": "solar-0",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "expected": "solar-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4017920000042
+    },
+    {
+      "id": "solar-1",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "expected": "solar-comparison",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.4178329999995
+    },
+    {
+      "id": "solar-2",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "expected": "solar-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.47479100000055
+    },
+    {
+      "id": "solar-3",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "expected": "solar-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.5082090000069
+    },
+    {
+      "id": "solar-4",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "expected": "solar-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 299.63341699999
+    },
+    {
+      "id": "solar-5",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "expected": "solar-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.35787499998696
+    },
+    {
+      "id": "solar-6",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "expected": "solar-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.3851250000007
+    },
+    {
+      "id": "solar-7",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "expected": "solar-comparison",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.30766599999333
+    },
+    {
+      "id": "water-0",
+      "pass": 1,
+      "selected": "water-comparison",
+      "expected": "water-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.47645800000464
+    },
+    {
+      "id": "water-1",
+      "pass": 1,
+      "selected": "water-comparison",
+      "expected": "water-comparison",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.3133749999979
+    },
+    {
+      "id": "water-2",
+      "pass": 1,
+      "selected": "water-comparison",
+      "expected": "water-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4524999999994
+    },
+    {
+      "id": "water-3",
+      "pass": 1,
+      "selected": "water-comparison",
+      "expected": "water-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.36558300000615
+    },
+    {
+      "id": "water-4",
+      "pass": 1,
+      "selected": "water-comparison",
+      "expected": "water-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.5626249999914
+    },
+    {
+      "id": "water-5",
+      "pass": 1,
+      "selected": "water-comparison",
+      "expected": "water-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.3722090000083
+    },
+    {
+      "id": "water-6",
+      "pass": 1,
+      "selected": "water-comparison",
+      "expected": "water-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.3656659999979
+    },
+    {
+      "id": "water-7",
+      "pass": 1,
+      "selected": "water-comparison",
+      "expected": "water-comparison",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.3029580000002
+    },
+    {
+      "id": "visitors-0",
+      "pass": 1,
+      "selected": "visitors-comparison",
+      "expected": "visitors-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.43404200000805
+    },
+    {
+      "id": "visitors-1",
+      "pass": 1,
+      "selected": "visitors-comparison",
+      "expected": "visitors-comparison",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.33695799999987
+    },
+    {
+      "id": "visitors-2",
+      "pass": 1,
+      "selected": "visitors-comparison",
+      "expected": "visitors-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.17583300000115
+    },
+    {
+      "id": "visitors-3",
+      "pass": 1,
+      "selected": "visitors-comparison",
+      "expected": "visitors-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.489625000002
+    },
+    {
+      "id": "visitors-4",
+      "pass": 1,
+      "selected": "visitors-comparison",
+      "expected": "visitors-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4592080000002
+    },
+    {
+      "id": "visitors-5",
+      "pass": 1,
+      "selected": "visitors-comparison",
+      "expected": "visitors-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.44966700000805
+    },
+    {
+      "id": "visitors-6",
+      "pass": 1,
+      "selected": "visitors-comparison",
+      "expected": "visitors-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 299.59845900000073
+    },
+    {
+      "id": "visitors-7",
+      "pass": 1,
+      "selected": "visitors-comparison",
+      "expected": "visitors-comparison",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 300.98675000001094
+    },
+    {
+      "id": "seedlings-0",
+      "pass": 1,
+      "selected": "seedlings-comparison",
+      "expected": "seedlings-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.5407500000001
+    },
+    {
+      "id": "seedlings-1",
+      "pass": 1,
+      "selected": "seedlings-comparison",
+      "expected": "seedlings-comparison",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.5139169999893
+    },
+    {
+      "id": "seedlings-2",
+      "pass": 1,
+      "selected": "seedlings-comparison",
+      "expected": "seedlings-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4854580000101
+    },
+    {
+      "id": "seedlings-3",
+      "pass": 1,
+      "selected": "seedlings-comparison",
+      "expected": "seedlings-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.4894159999967
+    },
+    {
+      "id": "seedlings-4",
+      "pass": 1,
+      "selected": "seedlings-comparison",
+      "expected": "seedlings-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4498750000057
+    },
+    {
+      "id": "seedlings-5",
+      "pass": 1,
+      "selected": "seedlings-comparison",
+      "expected": "seedlings-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.9942080000037
+    },
+    {
+      "id": "seedlings-6",
+      "pass": 1,
+      "selected": "seedlings-comparison",
+      "expected": "seedlings-process",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.8853339999914
+    },
+    {
+      "id": "seedlings-7",
+      "pass": 1,
+      "selected": "seedlings-comparison",
+      "expected": "seedlings-comparison",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 299.6285840000055
+    },
+    {
+      "id": "solar-0",
+      "pass": 2,
+      "selected": "solar-process",
+      "expected": "solar-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.37354099999357
+    },
+    {
+      "id": "solar-1",
+      "pass": 2,
+      "selected": "solar-process",
+      "expected": "solar-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.042082999993
+    },
+    {
+      "id": "solar-2",
+      "pass": 2,
+      "selected": "solar-process",
+      "expected": "solar-process",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.36091699999815
+    },
+    {
+      "id": "solar-3",
+      "pass": 2,
+      "selected": "solar-process",
+      "expected": "solar-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4063749999914
+    },
+    {
+      "id": "solar-4",
+      "pass": 2,
+      "selected": "solar-process",
+      "expected": "solar-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4372089999961
+    },
+    {
+      "id": "solar-5",
+      "pass": 2,
+      "selected": "solar-process",
+      "expected": "solar-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4003329999978
+    },
+    {
+      "id": "solar-6",
+      "pass": 2,
+      "selected": "solar-process",
+      "expected": "solar-process",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.4765419999894
+    },
+    {
+      "id": "solar-7",
+      "pass": 2,
+      "selected": "solar-process",
+      "expected": "solar-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.2222910000128
+    },
+    {
+      "id": "water-0",
+      "pass": 2,
+      "selected": "water-process",
+      "expected": "water-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.5637910000223
+    },
+    {
+      "id": "water-1",
+      "pass": 2,
+      "selected": "water-process",
+      "expected": "water-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.69491700001527
+    },
+    {
+      "id": "water-2",
+      "pass": 2,
+      "selected": "water-process",
+      "expected": "water-process",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 300.4930409999797
+    },
+    {
+      "id": "water-3",
+      "pass": 2,
+      "selected": "water-process",
+      "expected": "water-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.5769169999985
+    },
+    {
+      "id": "water-4",
+      "pass": 2,
+      "selected": "water-process",
+      "expected": "water-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4209170000104
+    },
+    {
+      "id": "water-5",
+      "pass": 2,
+      "selected": "water-process",
+      "expected": "water-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.47737500001676
+    },
+    {
+      "id": "water-6",
+      "pass": 2,
+      "selected": "water-process",
+      "expected": "water-process",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.4910830000008
+    },
+    {
+      "id": "water-7",
+      "pass": 2,
+      "selected": "water-process",
+      "expected": "water-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.51612499999464
+    },
+    {
+      "id": "visitors-0",
+      "pass": 2,
+      "selected": "visitors-process",
+      "expected": "visitors-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.3884169999801
+    },
+    {
+      "id": "visitors-1",
+      "pass": 2,
+      "selected": "visitors-process",
+      "expected": "visitors-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4829580000078
+    },
+    {
+      "id": "visitors-2",
+      "pass": 2,
+      "selected": "visitors-process",
+      "expected": "visitors-process",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.4584999999788
+    },
+    {
+      "id": "visitors-3",
+      "pass": 2,
+      "selected": "visitors-process",
+      "expected": "visitors-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.44912500001374
+    },
+    {
+      "id": "visitors-4",
+      "pass": 2,
+      "selected": "visitors-process",
+      "expected": "visitors-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4594159999979
+    },
+    {
+      "id": "visitors-5",
+      "pass": 2,
+      "selected": "visitors-process",
+      "expected": "visitors-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.5105840000033
+    },
+    {
+      "id": "visitors-6",
+      "pass": 2,
+      "selected": "visitors-process",
+      "expected": "visitors-process",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 300.60599999999977
+    },
+    {
+      "id": "visitors-7",
+      "pass": 2,
+      "selected": "visitors-process",
+      "expected": "visitors-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4546670000127
+    },
+    {
+      "id": "seedlings-0",
+      "pass": 2,
+      "selected": "seedlings-process",
+      "expected": "seedlings-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.41774999999325
+    },
+    {
+      "id": "seedlings-1",
+      "pass": 2,
+      "selected": "seedlings-process",
+      "expected": "seedlings-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.7707920000248
+    },
+    {
+      "id": "seedlings-2",
+      "pass": 2,
+      "selected": "seedlings-process",
+      "expected": "seedlings-process",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 300.45295800000895
+    },
+    {
+      "id": "seedlings-3",
+      "pass": 2,
+      "selected": "seedlings-process",
+      "expected": "seedlings-overview",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.47737499998766
+    },
+    {
+      "id": "seedlings-4",
+      "pass": 2,
+      "selected": "seedlings-process",
+      "expected": "seedlings-illustration",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.4314160000067
+    },
+    {
+      "id": "seedlings-5",
+      "pass": 2,
+      "selected": "seedlings-process",
+      "expected": "seedlings-trend",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 301.31700000001
+    },
+    {
+      "id": "seedlings-6",
+      "pass": 2,
+      "selected": "seedlings-process",
+      "expected": "seedlings-process",
+      "correct": true,
+      "fallback": true,
+      "elapsedMs": 301.4985839999863
+    },
+    {
+      "id": "seedlings-7",
+      "pass": 2,
+      "selected": "seedlings-process",
+      "expected": "seedlings-comparison",
+      "correct": false,
+      "fallback": true,
+      "elapsedMs": 300.64729200000875
+    }
+  ],
+  "raw": [
+    {
+      "id": "solar-0",
+      "pass": 0,
+      "selected": "solar-trend",
+      "correct": true,
+      "elapsedMs": 1584.1429580000004
+    },
+    {
+      "id": "solar-1",
+      "pass": 0,
+      "selected": "solar-comparison",
+      "correct": true,
+      "elapsedMs": 1327.6311249999999
+    },
+    {
+      "id": "solar-2",
+      "pass": 0,
+      "selected": "solar-process",
+      "correct": true,
+      "elapsedMs": 1342.952874999999
+    },
+    {
+      "id": "solar-3",
+      "pass": 0,
+      "selected": "solar-overview",
+      "correct": true,
+      "elapsedMs": 1348.7194579999996
+    },
+    {
+      "id": "solar-4",
+      "pass": 0,
+      "selected": "solar-illustration",
+      "correct": true,
+      "elapsedMs": 1313.7760420000013
+    },
+    {
+      "id": "solar-5",
+      "pass": 0,
+      "selected": "solar-trend",
+      "correct": true,
+      "elapsedMs": 1342.9251250000016
+    },
+    {
+      "id": "solar-6",
+      "pass": 0,
+      "selected": "solar-trend",
+      "correct": false,
+      "elapsedMs": 1401.117291999999
+    },
+    {
+      "id": "solar-7",
+      "pass": 0,
+      "selected": "solar-comparison",
+      "correct": true,
+      "elapsedMs": 1310.5694169999988
+    },
+    {
+      "id": "water-0",
+      "pass": 0,
+      "selected": "water-trend",
+      "correct": true,
+      "elapsedMs": 1358.8632089999992
+    },
+    {
+      "id": "water-1",
+      "pass": 0,
+      "selected": "water-comparison",
+      "correct": true,
+      "elapsedMs": 1477.6104579999992
+    },
+    {
+      "id": "water-2",
+      "pass": 0,
+      "selected": "water-process",
+      "correct": true,
+      "elapsedMs": 1362.1757499999985
+    },
+    {
+      "id": "water-3",
+      "pass": 0,
+      "selected": "water-overview",
+      "correct": true,
+      "elapsedMs": 1388.1280420000003
+    },
+    {
+      "id": "water-4",
+      "pass": 0,
+      "selected": "water-illustration",
+      "correct": true,
+      "elapsedMs": 1374.9938330000004
+    },
+    {
+      "id": "water-5",
+      "pass": 0,
+      "selected": "water-trend",
+      "correct": true,
+      "elapsedMs": 1394.0229999999974
+    },
+    {
+      "id": "water-6",
+      "pass": 0,
+      "selected": "water-process",
+      "correct": true,
+      "elapsedMs": 1381.6453749999964
+    },
+    {
+      "id": "water-7",
+      "pass": 0,
+      "selected": "water-comparison",
+      "correct": true,
+      "elapsedMs": 1385.223708999998
+    },
+    {
+      "id": "visitors-0",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "correct": true,
+      "elapsedMs": 1396.304250000001
+    },
+    {
+      "id": "visitors-1",
+      "pass": 0,
+      "selected": "visitors-comparison",
+      "correct": true,
+      "elapsedMs": 1367.3162080000038
+    },
+    {
+      "id": "visitors-2",
+      "pass": 0,
+      "selected": "visitors-process",
+      "correct": true,
+      "elapsedMs": 1374.0839170000036
+    },
+    {
+      "id": "visitors-3",
+      "pass": 0,
+      "selected": "visitors-overview",
+      "correct": true,
+      "elapsedMs": 1387.474666000002
+    },
+    {
+      "id": "visitors-4",
+      "pass": 0,
+      "selected": "visitors-illustration",
+      "correct": true,
+      "elapsedMs": 1513.3599170000016
+    },
+    {
+      "id": "visitors-5",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "correct": true,
+      "elapsedMs": 1395.4571670000005
+    },
+    {
+      "id": "visitors-6",
+      "pass": 0,
+      "selected": "visitors-trend",
+      "correct": false,
+      "elapsedMs": 1388.8083330000009
+    },
+    {
+      "id": "visitors-7",
+      "pass": 0,
+      "selected": "visitors-comparison",
+      "correct": true,
+      "elapsedMs": 1387.252250000005
+    },
+    {
+      "id": "seedlings-0",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "correct": true,
+      "elapsedMs": 1500.8901669999977
+    },
+    {
+      "id": "seedlings-1",
+      "pass": 0,
+      "selected": "seedlings-comparison",
+      "correct": true,
+      "elapsedMs": 1568.3975419999988
+    },
+    {
+      "id": "seedlings-2",
+      "pass": 0,
+      "selected": "seedlings-process",
+      "correct": true,
+      "elapsedMs": 1467.892749999999
+    },
+    {
+      "id": "seedlings-3",
+      "pass": 0,
+      "selected": "seedlings-overview",
+      "correct": true,
+      "elapsedMs": 1485.8681250000009
+    },
+    {
+      "id": "seedlings-4",
+      "pass": 0,
+      "selected": "seedlings-illustration",
+      "correct": true,
+      "elapsedMs": 1427.7157920000027
+    },
+    {
+      "id": "seedlings-5",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "correct": true,
+      "elapsedMs": 1493.2507499999992
+    },
+    {
+      "id": "seedlings-6",
+      "pass": 0,
+      "selected": "seedlings-trend",
+      "correct": false,
+      "elapsedMs": 1526.8113329999978
+    },
+    {
+      "id": "seedlings-7",
+      "pass": 0,
+      "selected": "seedlings-comparison",
+      "correct": true,
+      "elapsedMs": 1576.9729579999985
+    },
+    {
+      "id": "solar-0",
+      "pass": 1,
+      "selected": "solar-trend",
+      "correct": true,
+      "elapsedMs": 1501.7512920000008
+    },
+    {
+      "id": "solar-1",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "correct": true,
+      "elapsedMs": 1421.6412920000002
+    },
+    {
+      "id": "solar-2",
+      "pass": 1,
+      "selected": "solar-process",
+      "correct": true,
+      "elapsedMs": 1424.7034580000036
+    },
+    {
+      "id": "solar-3",
+      "pass": 1,
+      "selected": "solar-overview",
+      "correct": true,
+      "elapsedMs": 1451.1410000000033
+    },
+    {
+      "id": "solar-4",
+      "pass": 1,
+      "selected": "solar-illustration",
+      "correct": true,
+      "elapsedMs": 1556.4407090000022
+    },
+    {
+      "id": "solar-5",
+      "pass": 1,
+      "selected": "solar-trend",
+      "correct": true,
+      "elapsedMs": 1556.5536670000001
+    },
+    {
+      "id": "solar-6",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "correct": false,
+      "elapsedMs": 1432.6907500000088
+    },
+    {
+      "id": "solar-7",
+      "pass": 1,
+      "selected": "solar-comparison",
+      "correct": true,
+      "elapsedMs": 1394.0798329999961
+    },
+    {
+      "id": "water-0",
+      "pass": 1,
+      "selected": "water-trend",
+      "correct": true,
+      "elapsedMs": 1442.8610000000044
+    },
+    {
+      "id": "water-1",
+      "pass": 1,
+      "selected": "water-comparison",
+      "correct": true,
+      "elapsedMs": 1465.3344590000052
+    },
+    {
+      "id": "water-2",
+      "pass": 1,
+      "selected": "water-process",
+      "correct": true,
+      "elapsedMs": 1407.4714169999934
+    },
+    {
+      "id": "water-3",
+      "pass": 1,
+      "selected": "water-overview",
+      "correct": true,
+      "elapsedMs": 1520.5155419999937
+    },
+    {
+      "id": "water-4",
+      "pass": 1,
+      "selected": "water-illustration",
+      "correct": true,
+      "elapsedMs": 1407.2670839999919
+    },
+    {
+      "id": "water-5",
+      "pass": 1,
+      "selected": "water-trend",
+      "correct": true,
+      "elapsedMs": 1423.3502080000035
+    },
+    {
+      "id": "water-6",
+      "pass": 1,
+      "selected": "water-trend",
+      "correct": false,
+      "elapsedMs": 1438.299583999993
+    },
+    {
+      "id": "water-7",
+      "pass": 1,
+      "selected": "water-comparison",
+      "correct": true,
+      "elapsedMs": 1413.4227919999976
+    },
+    {
+      "id": "visitors-0",
+      "pass": 1,
+      "selected": "visitors-trend",
+      "correct": true,
+      "elapsedMs": 1377.106667
+    },
+    {
+      "id": "visitors-1",
+      "pass": 1,
+      "selected": "visitors-comparison",
+      "correct": true,
+      "elapsedMs": 1374.995041999995
+    },
+    {
+      "id": "visitors-2",
+      "pass": 1,
+      "selected": "visitors-process",
+      "correct": true,
+      "elapsedMs": 1366.5623339999875
+    },
+    {
+      "id": "visitors-3",
+      "pass": 1,
+      "selected": "visitors-overview",
+      "correct": true,
+      "elapsedMs": 1371.411791999999
+    },
+    {
+      "id": "visitors-4",
+      "pass": 1,
+      "selected": "visitors-illustration",
+      "correct": true,
+      "elapsedMs": 1357.729124999998
+    },
+    {
+      "id": "visitors-5",
+      "pass": 1,
+      "selected": "visitors-trend",
+      "correct": true,
+      "elapsedMs": 1357.5640839999978
+    },
+    {
+      "id": "visitors-6",
+      "pass": 1,
+      "selected": "visitors-trend",
+      "correct": false,
+      "elapsedMs": 1363.0375000000058
+    },
+    {
+      "id": "visitors-7",
+      "pass": 1,
+      "selected": "visitors-comparison",
+      "correct": true,
+      "elapsedMs": 1354.805124999999
+    },
+    {
+      "id": "seedlings-0",
+      "pass": 1,
+      "selected": "seedlings-trend",
+      "correct": true,
+      "elapsedMs": 1409.467875000002
+    },
+    {
+      "id": "seedlings-1",
+      "pass": 1,
+      "selected": "seedlings-comparison",
+      "correct": true,
+      "elapsedMs": 1417.4145830000052
+    },
+    {
+      "id": "seedlings-2",
+      "pass": 1,
+      "selected": "seedlings-process",
+      "correct": true,
+      "elapsedMs": 1380.1327500000043
+    },
+    {
+      "id": "seedlings-3",
+      "pass": 1,
+      "selected": "seedlings-overview",
+      "correct": true,
+      "elapsedMs": 1412.4072500000038
+    },
+    {
+      "id": "seedlings-4",
+      "pass": 1,
+      "selected": "seedlings-illustration",
+      "correct": true,
+      "elapsedMs": 1595.913041000007
+    },
+    {
+      "id": "seedlings-5",
+      "pass": 1,
+      "selected": "seedlings-trend",
+      "correct": true,
+      "elapsedMs": 2634.069208000001
+    },
+    {
+      "id": "seedlings-6",
+      "pass": 1,
+      "selected": "seedlings-trend",
+      "correct": false,
+      "elapsedMs": 1383.7365830000053
+    },
+    {
+      "id": "seedlings-7",
+      "pass": 1,
+      "selected": "seedlings-comparison",
+      "correct": true,
+      "elapsedMs": 1373.6276249999937
+    },
+    {
+      "id": "solar-0",
+      "pass": 2,
+      "selected": "solar-trend",
+      "correct": true,
+      "elapsedMs": 1366.8069169999944
+    },
+    {
+      "id": "solar-1",
+      "pass": 2,
+      "selected": "solar-comparison",
+      "correct": true,
+      "elapsedMs": 1398.5570000000007
+    },
+    {
+      "id": "solar-2",
+      "pass": 2,
+      "selected": "solar-process",
+      "correct": true,
+      "elapsedMs": 1371.3705000000045
+    },
+    {
+      "id": "solar-3",
+      "pass": 2,
+      "selected": "solar-overview",
+      "correct": true,
+      "elapsedMs": 1388.315499999997
+    },
+    {
+      "id": "solar-4",
+      "pass": 2,
+      "selected": "solar-illustration",
+      "correct": true,
+      "elapsedMs": 1353.8144170000014
+    },
+    {
+      "id": "solar-5",
+      "pass": 2,
+      "selected": "solar-trend",
+      "correct": true,
+      "elapsedMs": 1466.422916999989
+    },
+    {
+      "id": "solar-6",
+      "pass": 2,
+      "selected": "solar-process",
+      "correct": true,
+      "elapsedMs": 1373.5448749999923
+    },
+    {
+      "id": "solar-7",
+      "pass": 2,
+      "selected": "solar-comparison",
+      "correct": true,
+      "elapsedMs": 1362.2304160000058
+    },
+    {
+      "id": "water-0",
+      "pass": 2,
+      "selected": "water-trend",
+      "correct": true,
+      "elapsedMs": 1399.6252920000115
+    },
+    {
+      "id": "water-1",
+      "pass": 2,
+      "selected": "water-comparison",
+      "correct": true,
+      "elapsedMs": 1411.1252499999828
+    },
+    {
+      "id": "water-2",
+      "pass": 2,
+      "selected": "water-process",
+      "correct": true,
+      "elapsedMs": 1376.4832089999982
+    },
+    {
+      "id": "water-3",
+      "pass": 2,
+      "selected": "water-overview",
+      "correct": true,
+      "elapsedMs": 1397.4647920000134
+    },
+    {
+      "id": "water-4",
+      "pass": 2,
+      "selected": "water-illustration",
+      "correct": true,
+      "elapsedMs": 1376.2992919999815
+    },
+    {
+      "id": "water-5",
+      "pass": 2,
+      "selected": "water-trend",
+      "correct": true,
+      "elapsedMs": 1370.5630830000155
+    },
+    {
+      "id": "water-6",
+      "pass": 2,
+      "selected": "water-process",
+      "correct": true,
+      "elapsedMs": 1518.2637499999837
+    },
+    {
+      "id": "water-7",
+      "pass": 2,
+      "selected": "water-comparison",
+      "correct": true,
+      "elapsedMs": 1403.9201670000039
+    },
+    {
+      "id": "visitors-0",
+      "pass": 2,
+      "selected": "visitors-trend",
+      "correct": true,
+      "elapsedMs": 1349.8349999999919
+    },
+    {
+      "id": "visitors-1",
+      "pass": 2,
+      "selected": "visitors-comparison",
+      "correct": true,
+      "elapsedMs": 1366.9072499999893
+    },
+    {
+      "id": "visitors-2",
+      "pass": 2,
+      "selected": "visitors-process",
+      "correct": true,
+      "elapsedMs": 1351.7173330000078
+    },
+    {
+      "id": "visitors-3",
+      "pass": 2,
+      "selected": "visitors-overview",
+      "correct": true,
+      "elapsedMs": 1348.221125000011
+    },
+    {
+      "id": "visitors-4",
+      "pass": 2,
+      "selected": "visitors-illustration",
+      "correct": true,
+      "elapsedMs": 1339.4644580000022
+    },
+    {
+      "id": "visitors-5",
+      "pass": 2,
+      "selected": "visitors-trend",
+      "correct": true,
+      "elapsedMs": 1355.980916999979
+    },
+    {
+      "id": "visitors-6",
+      "pass": 2,
+      "selected": "visitors-process",
+      "correct": true,
+      "elapsedMs": 1347.983500000002
+    },
+    {
+      "id": "visitors-7",
+      "pass": 2,
+      "selected": "visitors-comparison",
+      "correct": true,
+      "elapsedMs": 1343.5692909999925
+    },
+    {
+      "id": "seedlings-0",
+      "pass": 2,
+      "selected": "seedlings-trend",
+      "correct": true,
+      "elapsedMs": 1422.6820830000215
+    },
+    {
+      "id": "seedlings-1",
+      "pass": 2,
+      "selected": "seedlings-comparison",
+      "correct": true,
+      "elapsedMs": 1425.5308749999967
+    },
+    {
+      "id": "seedlings-2",
+      "pass": 2,
+      "selected": "seedlings-process",
+      "correct": true,
+      "elapsedMs": 1377.9507080000185
+    },
+    {
+      "id": "seedlings-3",
+      "pass": 2,
+      "selected": "seedlings-overview",
+      "correct": true,
+      "elapsedMs": 1394.2696249999863
+    },
+    {
+      "id": "seedlings-4",
+      "pass": 2,
+      "selected": "seedlings-illustration",
+      "correct": true,
+      "elapsedMs": 1372.724957999977
+    },
+    {
+      "id": "seedlings-5",
+      "pass": 2,
+      "selected": "seedlings-trend",
+      "correct": true,
+      "elapsedMs": 1369.624582999997
+    },
+    {
+      "id": "seedlings-6",
+      "pass": 2,
+      "selected": "seedlings-process",
+      "correct": true,
+      "elapsedMs": 1369.0521670000162
+    },
+    {
+      "id": "seedlings-7",
+      "pass": 2,
+      "selected": "seedlings-comparison",
+      "correct": true,
+      "elapsedMs": 1376.317417000013
+    }
+  ]
+}

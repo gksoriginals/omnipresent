@@ -1,0 +1,3025 @@
+{
+  "startedAt": "2026-10-17T15:23:04.958Z",
+  "fixtureScope": "Synthetic developer-authored dataset frozen before first retrieval/selection execution. 12 calibration cases and 24 evaluation cases across three projects. Evaluation split is not independently labelled and is not an untouched third-party holdout. Text only, no real uploads.",
+  "health": {
+    "model": "google/embeddinggemma-2",
+    "revision": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+    "device": "cpu",
+    "dtype": "float32",
+    "threads": 4,
+    "dimensions": 768,
+    "encoders": "text only; vision_config=null, audio_config=null",
+    "queryPrompt": "task: search result | query: ",
+    "documentPrompt": "title: {title} | text: {text}",
+    "source": "https://ai.google.dev/gemma/docs/embeddinggemma/inference-embeddinggemma-with-sentence-transformers",
+    "loadedMs": 4316.221874963958,
+    "parameters": 271002624,
+    "rssHighWaterBytes": 2361606144
+  },
+  "indexing": [
+    {
+      "project": "solar",
+      "documents": 6,
+      "elapsedMs": 172.17849999999999
+    },
+    {
+      "project": "education",
+      "documents": 6,
+      "elapsedMs": 86.74512500000003
+    },
+    {
+      "project": "software",
+      "documents": 6,
+      "elapsedMs": 88.80266599999999
+    }
+  ],
+  "threshold": 0.7,
+  "calibration": [
+    {
+      "threshold": 0.7,
+      "balancedAccuracy": 1,
+      "tpr": 1,
+      "tnr": 1
+    },
+    {
+      "threshold": 0.725,
+      "balancedAccuracy": 0.9285714285714286,
+      "tpr": 0.8571428571428571,
+      "tnr": 1
+    },
+    {
+      "threshold": 0.625,
+      "balancedAccuracy": 0.9,
+      "tpr": 1,
+      "tnr": 0.8
+    },
+    {
+      "threshold": 0.65,
+      "balancedAccuracy": 0.9,
+      "tpr": 1,
+      "tnr": 0.8
+    },
+    {
+      "threshold": 0.675,
+      "balancedAccuracy": 0.9,
+      "tpr": 1,
+      "tnr": 0.8
+    },
+    {
+      "threshold": 0.75,
+      "balancedAccuracy": 0.7857142857142857,
+      "tpr": 0.5714285714285714,
+      "tnr": 1
+    },
+    {
+      "threshold": 0.775,
+      "balancedAccuracy": 0.7142857142857143,
+      "tpr": 0.42857142857142855,
+      "tnr": 1
+    },
+    {
+      "threshold": 0.8,
+      "balancedAccuracy": 0.7142857142857143,
+      "tpr": 0.42857142857142855,
+      "tnr": 1
+    },
+    {
+      "threshold": 0.6,
+      "balancedAccuracy": 0.7,
+      "tpr": 1,
+      "tnr": 0.4
+    },
+    {
+      "threshold": 0.825,
+      "balancedAccuracy": 0.5714285714285714,
+      "tpr": 0.14285714285714285,
+      "tnr": 1
+    },
+    {
+      "threshold": 0.85,
+      "balancedAccuracy": 0.5714285714285714,
+      "tpr": 0.14285714285714285,
+      "tnr": 1
+    },
+    {
+      "threshold": 0,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.025,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.05,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.075,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.1,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.125,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.15,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.175,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.2,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.225,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.25,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.275,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.3,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.325,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.35,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.375,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.4,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.425,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.45,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.475,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.5,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.525,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.55,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.575,
+      "balancedAccuracy": 0.5,
+      "tpr": 1,
+      "tnr": 0
+    },
+    {
+      "threshold": 0.875,
+      "balancedAccuracy": 0.5,
+      "tpr": 0,
+      "tnr": 1
+    },
+    {
+      "threshold": 0.9,
+      "balancedAccuracy": 0.5,
+      "tpr": 0,
+      "tnr": 1
+    },
+    {
+      "threshold": 0.925,
+      "balancedAccuracy": 0.5,
+      "tpr": 0,
+      "tnr": 1
+    },
+    {
+      "threshold": 0.95,
+      "balancedAccuracy": 0.5,
+      "tpr": 0,
+      "tnr": 1
+    },
+    {
+      "threshold": 0.975,
+      "balancedAccuracy": 0.5,
+      "tpr": 0,
+      "tnr": 1
+    },
+    {
+      "threshold": 1,
+      "balancedAccuracy": 0.5,
+      "tpr": 0,
+      "tnr": 1
+    }
+  ],
+  "rankings": [
+    {
+      "id": "dev-solar-literal",
+      "project": "solar",
+      "split": "dev",
+      "speech": "Panels turn sunlight into electricity.",
+      "expectedBeats": [
+        0
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 0,
+          "score": 0.8598835427248742
+        },
+        {
+          "beat": 4,
+          "score": 0.7699099632411466
+        },
+        {
+          "beat": 3,
+          "score": 0.7186868301788535
+        },
+        {
+          "beat": 1,
+          "score": 0.6773463780254905
+        },
+        {
+          "beat": 2,
+          "score": 0.666168737739092
+        },
+        {
+          "beat": 5,
+          "score": 0.5814667214918897
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 0,
+          "score": 5.2930421500120115
+        },
+        {
+          "beat": 4,
+          "score": 1.0703516139048084
+        },
+        {
+          "beat": 3,
+          "score": 0.6998049443006492
+        },
+        {
+          "beat": 2,
+          "score": 0.6802045983503199
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 0,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 4,
+          "score": 0.03225806451612903
+        },
+        {
+          "beat": 3,
+          "score": 0.031746031746031744
+        },
+        {
+          "beat": 2,
+          "score": 0.031009615384615385
+        },
+        {
+          "beat": 1,
+          "score": 0.015625
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 29.68941700000005,
+      "lexicalMs": 0.43966599999998834,
+      "fusionMs": 0.03845800000010513,
+      "exactCacheMs": 0.10733300000003965,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-solar-storage",
+      "project": "solar",
+      "split": "dev",
+      "speech": "We keep excess power until the sun has gone down.",
+      "expectedBeats": [
+        2
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 2,
+          "score": 0.7693126381783919
+        },
+        {
+          "beat": 3,
+          "score": 0.7301562977696515
+        },
+        {
+          "beat": 0,
+          "score": 0.7095940967797104
+        },
+        {
+          "beat": 1,
+          "score": 0.7051299149506908
+        },
+        {
+          "beat": 4,
+          "score": 0.7046441984690115
+        },
+        {
+          "beat": 5,
+          "score": 0.5814089028321759
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 3,
+          "score": 1.5552412046275377
+        },
+        {
+          "beat": 0,
+          "score": 1.5116815443319533
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 3,
+          "score": 0.03252247488101534
+        },
+        {
+          "beat": 0,
+          "score": 0.03200204813108039
+        },
+        {
+          "beat": 2,
+          "score": 0.01639344262295082
+        },
+        {
+          "beat": 1,
+          "score": 0.015625
+        },
+        {
+          "beat": 4,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 28.99633300000005,
+      "lexicalMs": 0.03787499999998545,
+      "fusionMs": 0.011083000000098764,
+      "exactCacheMs": 0.0736660000000029,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-solar-chart",
+      "project": "solar",
+      "split": "dev",
+      "speech": "This is an illustrative morning noon evening chart, not real school observations.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 1,
+          "score": 0.8100307959464568
+        },
+        {
+          "beat": 0,
+          "score": 0.5930381976674295
+        },
+        {
+          "beat": 4,
+          "score": 0.577436289441666
+        },
+        {
+          "beat": 2,
+          "score": 0.5752787615636066
+        },
+        {
+          "beat": 5,
+          "score": 0.5723441020457513
+        },
+        {
+          "beat": 3,
+          "score": 0.561081027771438
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 1,
+          "score": 9.331447227765226
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 1,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 0,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 4,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 2,
+          "score": 0.015625
+        },
+        {
+          "beat": 5,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 3,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 30.099249999999984,
+      "lexicalMs": 0.03233299999999417,
+      "fusionMs": 0.006540999999970154,
+      "exactCacheMs": 0.16300000000001091,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-solar-none",
+      "project": "solar",
+      "split": "dev",
+      "speech": "The cafeteria serves pasta today.",
+      "expectedBeats": [],
+      "expectedAction": "hold",
+      "semantic": [
+        {
+          "beat": 1,
+          "score": 0.6135317148628479
+        },
+        {
+          "beat": 4,
+          "score": 0.5833759351024941
+        },
+        {
+          "beat": 0,
+          "score": 0.5718826011158072
+        },
+        {
+          "beat": 3,
+          "score": 0.5569887499518029
+        },
+        {
+          "beat": 2,
+          "score": 0.5332410192023557
+        },
+        {
+          "beat": 5,
+          "score": 0.5267420441895853
+        }
+      ],
+      "lexical": [],
+      "hybrid": [
+        {
+          "beat": 1,
+          "score": 0.01639344262295082
+        },
+        {
+          "beat": 4,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 0,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 3,
+          "score": 0.015625
+        },
+        {
+          "beat": 2,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 29.378957999999898,
+      "lexicalMs": 0.023791999999957625,
+      "fusionMs": 0.006540999999970154,
+      "exactCacheMs": 0.06795899999997346,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-edu-feedback",
+      "project": "education",
+      "split": "dev",
+      "speech": "Use little quizzes during a lesson to find misconceptions.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 1,
+          "score": 0.7452234765471393
+        },
+        {
+          "beat": 3,
+          "score": 0.6791099876681184
+        },
+        {
+          "beat": 5,
+          "score": 0.6255736060778654
+        },
+        {
+          "beat": 2,
+          "score": 0.6136867983340377
+        },
+        {
+          "beat": 0,
+          "score": 0.605611348139785
+        },
+        {
+          "beat": 4,
+          "score": 0.5986625357418611
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 1,
+          "score": 3.1486847291731452
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 1,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 3,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 5,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 2,
+          "score": 0.015625
+        },
+        {
+          "beat": 0,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 4,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 29.25541700000008,
+      "lexicalMs": 0.03291699999999764,
+      "fusionMs": 0.004332999999974163,
+      "exactCacheMs": 0.06679199999996399,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-edu-recall",
+      "project": "education",
+      "split": "dev",
+      "speech": "Recall facts without opening your notes.",
+      "expectedBeats": [
+        2
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 2,
+          "score": 0.735324505148437
+        },
+        {
+          "beat": 1,
+          "score": 0.6458819169983102
+        },
+        {
+          "beat": 3,
+          "score": 0.6229590273037661
+        },
+        {
+          "beat": 5,
+          "score": 0.596690472400409
+        },
+        {
+          "beat": 4,
+          "score": 0.5768766751720443
+        },
+        {
+          "beat": 0,
+          "score": 0.5623180101201136
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 2,
+          "score": 4.878767484881379
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 2,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 1,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 3,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 5,
+          "score": 0.015625
+        },
+        {
+          "beat": 4,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 0,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 23.575541000000044,
+      "lexicalMs": 0.03429100000005292,
+      "fusionMs": 0.009416000000101121,
+      "exactCacheMs": 0.04895800000008421,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-edu-none",
+      "project": "education",
+      "split": "dev",
+      "speech": "Can somebody close that window?",
+      "expectedBeats": [],
+      "expectedAction": "hold",
+      "semantic": [
+        {
+          "beat": 5,
+          "score": 0.586945071805345
+        },
+        {
+          "beat": 3,
+          "score": 0.575403018710387
+        },
+        {
+          "beat": 4,
+          "score": 0.5701663428273333
+        },
+        {
+          "beat": 1,
+          "score": 0.5247217829310661
+        },
+        {
+          "beat": 2,
+          "score": 0.5232583356125537
+        },
+        {
+          "beat": 0,
+          "score": 0.4860115763272605
+        }
+      ],
+      "lexical": [],
+      "hybrid": [
+        {
+          "beat": 5,
+          "score": 0.01639344262295082
+        },
+        {
+          "beat": 3,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 4,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 1,
+          "score": 0.015625
+        },
+        {
+          "beat": 2,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 0,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 23.72408400000006,
+      "lexicalMs": 0.022458000000028733,
+      "fusionMs": 0.006540999999970154,
+      "exactCacheMs": 0.04912500000000364,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-edu-missing",
+      "project": "education",
+      "split": "dev",
+      "speech": "Show actual exam scores for this class; none have been supplied.",
+      "expectedBeats": [],
+      "expectedAction": "request-context",
+      "semantic": [
+        {
+          "beat": 1,
+          "score": 0.6912186334828582
+        },
+        {
+          "beat": 3,
+          "score": 0.6129598623078757
+        },
+        {
+          "beat": 4,
+          "score": 0.6094586212181173
+        },
+        {
+          "beat": 2,
+          "score": 0.606917170009881
+        },
+        {
+          "beat": 0,
+          "score": 0.5734903728652085
+        },
+        {
+          "beat": 5,
+          "score": 0.5702143777172836
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 4,
+          "score": 1.5743423645865726
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 4,
+          "score": 0.032266458495966696
+        },
+        {
+          "beat": 1,
+          "score": 0.01639344262295082
+        },
+        {
+          "beat": 3,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 2,
+          "score": 0.015625
+        },
+        {
+          "beat": 0,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 25.620874999999955,
+      "lexicalMs": 0.02379200000007131,
+      "fusionMs": 0.0034160000000156288,
+      "exactCacheMs": 0.04995799999994688,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-sw-cache",
+      "project": "software",
+      "split": "dev",
+      "speech": "Reuse the saved response until its version changes.",
+      "expectedBeats": [
+        0
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 0,
+          "score": 0.8186883549252475
+        },
+        {
+          "beat": 5,
+          "score": 0.6855111935138686
+        },
+        {
+          "beat": 1,
+          "score": 0.6440038444934413
+        },
+        {
+          "beat": 4,
+          "score": 0.6431234325118991
+        },
+        {
+          "beat": 2,
+          "score": 0.6394235735154694
+        },
+        {
+          "beat": 3,
+          "score": 0.5856509180152775
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 0,
+          "score": 5.790741420009251
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 0,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 5,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 1,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 4,
+          "score": 0.015625
+        },
+        {
+          "beat": 2,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 3,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 23.834874999999897,
+      "lexicalMs": 0.024583000000006905,
+      "fusionMs": 0.0031669999999621723,
+      "exactCacheMs": 0.050791000000003805,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-sw-queue",
+      "project": "software",
+      "split": "dev",
+      "speech": "Slow the producers down when every worker is busy.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 1,
+          "score": 0.7113065749085271
+        },
+        {
+          "beat": 4,
+          "score": 0.5992272869109204
+        },
+        {
+          "beat": 0,
+          "score": 0.5809376709477861
+        },
+        {
+          "beat": 5,
+          "score": 0.5767376320910061
+        },
+        {
+          "beat": 3,
+          "score": 0.5613831397832598
+        },
+        {
+          "beat": 2,
+          "score": 0.5584245580712944
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 1,
+          "score": 2.8170782621627386
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 1,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 4,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 0,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 5,
+          "score": 0.015625
+        },
+        {
+          "beat": 3,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 2,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 23.735750000000053,
+      "lexicalMs": 0.021791000000007443,
+      "fusionMs": 0.003666999999950349,
+      "exactCacheMs": 0.04837499999996453,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-sw-none",
+      "project": "software",
+      "split": "dev",
+      "speech": "I will order coffee after lunch.",
+      "expectedBeats": [],
+      "expectedAction": "hold",
+      "semantic": [
+        {
+          "beat": 1,
+          "score": 0.5915408881676194
+        },
+        {
+          "beat": 5,
+          "score": 0.5848531034452528
+        },
+        {
+          "beat": 0,
+          "score": 0.5735344118032848
+        },
+        {
+          "beat": 4,
+          "score": 0.5582452494975584
+        },
+        {
+          "beat": 2,
+          "score": 0.556810207226182
+        },
+        {
+          "beat": 3,
+          "score": 0.5483653079695391
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 4,
+          "score": 1.532889724670024
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 4,
+          "score": 0.032018442622950824
+        },
+        {
+          "beat": 1,
+          "score": 0.01639344262295082
+        },
+        {
+          "beat": 5,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 0,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 2,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 3,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 22.557707999999934,
+      "lexicalMs": 0.022459000000026208,
+      "fusionMs": 0.0037920000000895016,
+      "exactCacheMs": 0.056958000000008724,
+      "cacheHit": true
+    },
+    {
+      "id": "dev-sw-missing",
+      "project": "software",
+      "split": "dev",
+      "speech": "What was our actual outage duration? We have no incident measurements.",
+      "expectedBeats": [],
+      "expectedAction": "request-context",
+      "semantic": [
+        {
+          "beat": 4,
+          "score": 0.6070243477311079
+        },
+        {
+          "beat": 5,
+          "score": 0.5584053860084789
+        },
+        {
+          "beat": 1,
+          "score": 0.5510396972375751
+        },
+        {
+          "beat": 2,
+          "score": 0.54766163494349
+        },
+        {
+          "beat": 3,
+          "score": 0.5414917417624497
+        },
+        {
+          "beat": 0,
+          "score": 0.5371335797476507
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 4,
+          "score": 1.532889724670024
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 4,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 5,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 1,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 2,
+          "score": 0.015625
+        },
+        {
+          "beat": 3,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 0,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 25.198957999999948,
+      "lexicalMs": 0.023124999999936335,
+      "fusionMs": 0.003375000000005457,
+      "exactCacheMs": 0.057833999999957086,
+      "cacheHit": true
+    },
+    {
+      "id": "solar-paraphrase",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Keep the surplus until darkness falls.",
+      "expectedBeats": [
+        2
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 2,
+          "score": 0.7386666191615657
+        },
+        {
+          "beat": 4,
+          "score": 0.6790036176783687
+        },
+        {
+          "beat": 3,
+          "score": 0.6593358759943244
+        },
+        {
+          "beat": 0,
+          "score": 0.6389234511421982
+        },
+        {
+          "beat": 1,
+          "score": 0.6039071196307142
+        },
+        {
+          "beat": 5,
+          "score": 0.5803113693524283
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 2,
+          "score": 1.5116815443319533
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 2,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 4,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 3,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 0,
+          "score": 0.015625
+        },
+        {
+          "beat": 1,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 23.057999999999993,
+      "lexicalMs": 0.022041999999942163,
+      "fusionMs": 0.00437499999998181,
+      "exactCacheMs": 0.05658300000004601,
+      "cacheHit": true
+    },
+    {
+      "id": "solar-negation",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Not the panels converting sunlight. I mean the battery that supplies devices after sunset.",
+      "expectedBeats": [
+        2
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 0,
+          "score": 0.7849469614615106
+        },
+        {
+          "beat": 2,
+          "score": 0.7717203539077484
+        },
+        {
+          "beat": 3,
+          "score": 0.728424023885553
+        },
+        {
+          "beat": 4,
+          "score": 0.7079887896073686
+        },
+        {
+          "beat": 1,
+          "score": 0.6903245051368382
+        },
+        {
+          "beat": 5,
+          "score": 0.6097781604640047
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 2,
+          "score": 6.046726177327813
+        },
+        {
+          "beat": 0,
+          "score": 3.101156007329738
+        },
+        {
+          "beat": 3,
+          "score": 1.5552412046275377
+        },
+        {
+          "beat": 4,
+          "score": 1.0703516139048084
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 0,
+          "score": 0.03252247488101534
+        },
+        {
+          "beat": 2,
+          "score": 0.03252247488101534
+        },
+        {
+          "beat": 3,
+          "score": 0.031746031746031744
+        },
+        {
+          "beat": 4,
+          "score": 0.03125
+        },
+        {
+          "beat": 1,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 25.002875000000017,
+      "lexicalMs": 0.030624999999986358,
+      "fusionMs": 0.003708999999957996,
+      "exactCacheMs": 0.05104099999994105,
+      "cacheHit": true
+    },
+    {
+      "id": "solar-comparison",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Contrast making electricity in photovoltaic cells with saving it in batteries for later.",
+      "expectedBeats": [
+        0,
+        2
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 0,
+          "score": 0.7386742495789338
+        },
+        {
+          "beat": 2,
+          "score": 0.7119273119114785
+        },
+        {
+          "beat": 3,
+          "score": 0.6972760971577623
+        },
+        {
+          "beat": 4,
+          "score": 0.6532547799799746
+        },
+        {
+          "beat": 1,
+          "score": 0.6310382773389424
+        },
+        {
+          "beat": 5,
+          "score": 0.5387991626912183
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 0,
+          "score": 3.7035676870142265
+        },
+        {
+          "beat": 2,
+          "score": 2.1918861426822733
+        },
+        {
+          "beat": 3,
+          "score": 0.6998049443006492
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 0,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 2,
+          "score": 0.03225806451612903
+        },
+        {
+          "beat": 3,
+          "score": 0.031746031746031744
+        },
+        {
+          "beat": 4,
+          "score": 0.015625
+        },
+        {
+          "beat": 1,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 24.40537500000005,
+      "lexicalMs": 0.02862500000003365,
+      "fusionMs": 0.0030419999999367064,
+      "exactCacheMs": 0.0532500000000482,
+      "cacheHit": true
+    },
+    {
+      "id": "solar-numbers",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "The synthetic plot peaks at twenty watt hours at midday.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 1,
+          "score": 0.7614353624144665
+        },
+        {
+          "beat": 0,
+          "score": 0.6227547640966067
+        },
+        {
+          "beat": 2,
+          "score": 0.5839687887453124
+        },
+        {
+          "beat": 4,
+          "score": 0.5839503198255823
+        },
+        {
+          "beat": 3,
+          "score": 0.5747777244297472
+        },
+        {
+          "beat": 5,
+          "score": 0.5403858571515645
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 1,
+          "score": 1.5552412046275377
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 1,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 0,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 2,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 4,
+          "score": 0.015625
+        },
+        {
+          "beat": 3,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 25.74324999999999,
+      "lexicalMs": 0.031458000000043285,
+      "fusionMs": 0.0049159999999801585,
+      "exactCacheMs": 0.10649999999998272,
+      "cacheHit": true
+    },
+    {
+      "id": "solar-grid",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Unused power travels back to the utility after conversion to alternating current.",
+      "expectedBeats": [
+        3
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 3,
+          "score": 0.7652277819857058
+        },
+        {
+          "beat": 0,
+          "score": 0.676223584653892
+        },
+        {
+          "beat": 4,
+          "score": 0.6471998692608929
+        },
+        {
+          "beat": 2,
+          "score": 0.6413629701265838
+        },
+        {
+          "beat": 1,
+          "score": 0.6287318041656306
+        },
+        {
+          "beat": 5,
+          "score": 0.5431030042595776
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 3,
+          "score": 4.665723613882613
+        },
+        {
+          "beat": 0,
+          "score": 3.0233630886639067
+        },
+        {
+          "beat": 2,
+          "score": 1.5116815443319533
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 3,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 0,
+          "score": 0.03225806451612903
+        },
+        {
+          "beat": 2,
+          "score": 0.03149801587301587
+        },
+        {
+          "beat": 4,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 1,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 30.211250000000064,
+      "lexicalMs": 0.03133300000001782,
+      "fusionMs": 0.003249999999979991,
+      "exactCacheMs": 0.07112500000005184,
+      "cacheHit": true
+    },
+    {
+      "id": "solar-maintain",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Accumulated dust and a shaded surface lower output, so inspect and clean them.",
+      "expectedBeats": [
+        4
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 4,
+          "score": 0.7665452341031062
+        },
+        {
+          "beat": 0,
+          "score": 0.6440163374365742
+        },
+        {
+          "beat": 3,
+          "score": 0.6388391016523084
+        },
+        {
+          "beat": 5,
+          "score": 0.6325780478615761
+        },
+        {
+          "beat": 1,
+          "score": 0.6251334339314903
+        },
+        {
+          "beat": 2,
+          "score": 0.5727642023198175
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 4,
+          "score": 4.804157171657152
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 4,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 0,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 3,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 5,
+          "score": 0.015625
+        },
+        {
+          "beat": 1,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 2,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 28.646082999999976,
+      "lexicalMs": 0.02512500000000273,
+      "fusionMs": 0.003207999999972344,
+      "exactCacheMs": 0.04416600000001836,
+      "cacheHit": true
+    },
+    {
+      "id": "solar-cost",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "Show the actual installation cost for our school. We have no price data.",
+      "expectedBeats": [],
+      "expectedAction": "request-context",
+      "semantic": [
+        {
+          "beat": 5,
+          "score": 0.6735267827742322
+        },
+        {
+          "beat": 1,
+          "score": 0.6584274324957075
+        },
+        {
+          "beat": 3,
+          "score": 0.5972092500113592
+        },
+        {
+          "beat": 4,
+          "score": 0.5928432718734782
+        },
+        {
+          "beat": 0,
+          "score": 0.5907179907277075
+        },
+        {
+          "beat": 2,
+          "score": 0.5585357616573314
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 5,
+          "score": 3.0233630886639067
+        },
+        {
+          "beat": 1,
+          "score": 1.5552412046275377
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 5,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 1,
+          "score": 0.03225806451612903
+        },
+        {
+          "beat": 3,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 4,
+          "score": 0.015625
+        },
+        {
+          "beat": 0,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 2,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 28.721459000000095,
+      "lexicalMs": 0.03641600000014478,
+      "fusionMs": 0.004750000000058208,
+      "exactCacheMs": 0.0576659999999265,
+      "cacheHit": true
+    },
+    {
+      "id": "solar-offtopic",
+      "project": "solar",
+      "split": "evaluation",
+      "speech": "I left my jacket in the bus.",
+      "expectedBeats": [],
+      "expectedAction": "hold",
+      "semantic": [
+        {
+          "beat": 4,
+          "score": 0.6003219855410722
+        },
+        {
+          "beat": 3,
+          "score": 0.573474090868453
+        },
+        {
+          "beat": 2,
+          "score": 0.5681626182492364
+        },
+        {
+          "beat": 1,
+          "score": 0.5596312411323608
+        },
+        {
+          "beat": 0,
+          "score": 0.5482749794116897
+        },
+        {
+          "beat": 5,
+          "score": 0.5159889984372664
+        }
+      ],
+      "lexical": [],
+      "hybrid": [
+        {
+          "beat": 4,
+          "score": 0.01639344262295082
+        },
+        {
+          "beat": 3,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 2,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 1,
+          "score": 0.015625
+        },
+        {
+          "beat": 0,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 27.549624999999878,
+      "lexicalMs": 0.024208999999927983,
+      "fusionMs": 0.004209000000173546,
+      "exactCacheMs": 0.05141700000012861,
+      "cacheHit": true
+    },
+    {
+      "id": "edu-paraphrase",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Ask everyone to bring an idea back from memory, rather than reread the page.",
+      "expectedBeats": [
+        2
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 2,
+          "score": 0.6737497542091765
+        },
+        {
+          "beat": 3,
+          "score": 0.6484933066927195
+        },
+        {
+          "beat": 5,
+          "score": 0.5966865194843489
+        },
+        {
+          "beat": 0,
+          "score": 0.5722019925763668
+        },
+        {
+          "beat": 4,
+          "score": 0.5669098797416144
+        },
+        {
+          "beat": 1,
+          "score": 0.5543671060000792
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 2,
+          "score": 1.4324939424158136
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 2,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 3,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 5,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 0,
+          "score": 0.015625
+        },
+        {
+          "beat": 4,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 1,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 28.32487500000002,
+      "lexicalMs": 0.02229099999999562,
+      "fusionMs": 0.0026669999999739957,
+      "exactCacheMs": 0.04254199999991215,
+      "cacheHit": true
+    },
+    {
+      "id": "edu-negation",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Not the final project rubric. I want the quick feedback checks used while a lesson is happening.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 4,
+          "score": 0.7245367082161114
+        },
+        {
+          "beat": 1,
+          "score": 0.6862345143889051
+        },
+        {
+          "beat": 5,
+          "score": 0.6625770958556039
+        },
+        {
+          "beat": 3,
+          "score": 0.6621499054742653
+        },
+        {
+          "beat": 2,
+          "score": 0.6335770623695999
+        },
+        {
+          "beat": 0,
+          "score": 0.6263598350741709
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 4,
+          "score": 5.298621380645293
+        },
+        {
+          "beat": 1,
+          "score": 3.1486847291731452
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 4,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 1,
+          "score": 0.03225806451612903
+        },
+        {
+          "beat": 5,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 3,
+          "score": 0.015625
+        },
+        {
+          "beat": 2,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 0,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 28.91991699999994,
+      "lexicalMs": 0.03741600000012113,
+      "fusionMs": 0.00454200000012861,
+      "exactCacheMs": 0.059249999999792635,
+      "cacheHit": true
+    },
+    {
+      "id": "edu-comparison",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Compare feedback quizzes during learning with the rubric used to judge the finished group project.",
+      "expectedBeats": [
+        1,
+        4
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 4,
+          "score": 0.7643410049765127
+        },
+        {
+          "beat": 1,
+          "score": 0.6580367119505878
+        },
+        {
+          "beat": 3,
+          "score": 0.6189152293323469
+        },
+        {
+          "beat": 2,
+          "score": 0.5920935525050655
+        },
+        {
+          "beat": 0,
+          "score": 0.5705702144832061
+        },
+        {
+          "beat": 5,
+          "score": 0.5537056315574971
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 4,
+          "score": 5.298621380645293
+        },
+        {
+          "beat": 1,
+          "score": 4.200960808346065
+        },
+        {
+          "beat": 0,
+          "score": 1.1266516135647229
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 4,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 1,
+          "score": 0.03225806451612903
+        },
+        {
+          "beat": 0,
+          "score": 0.03125763125763126
+        },
+        {
+          "beat": 3,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 2,
+          "score": 0.015625
+        },
+        {
+          "beat": 5,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 28.63149999999996,
+      "lexicalMs": 0.026333000000022366,
+      "fusionMs": 0.0034160000000156288,
+      "exactCacheMs": 0.05012499999997999,
+      "cacheHit": true
+    },
+    {
+      "id": "edu-peers",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Vote alone, debate with your neighbour, and vote a second time.",
+      "expectedBeats": [
+        3
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 3,
+          "score": 0.6848422449229916
+        },
+        {
+          "beat": 4,
+          "score": 0.5702173149634904
+        },
+        {
+          "beat": 5,
+          "score": 0.563005847229761
+        },
+        {
+          "beat": 2,
+          "score": 0.5314370988676157
+        },
+        {
+          "beat": 1,
+          "score": 0.5228677321254219
+        },
+        {
+          "beat": 0,
+          "score": 0.4967474762766224
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 3,
+          "score": 1.476848686045661
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 3,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 4,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 5,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 2,
+          "score": 0.015625
+        },
+        {
+          "beat": 1,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 0,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 29.04770799999983,
+      "lexicalMs": 0.03449999999997999,
+      "fusionMs": 0.004624999999805368,
+      "exactCacheMs": 0.0576250000001437,
+      "cacheHit": true
+    },
+    {
+      "id": "edu-access",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Learners need subtitles and an alternative to using a mouse.",
+      "expectedBeats": [
+        5
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 5,
+          "score": 0.7378473674251657
+        },
+        {
+          "beat": 3,
+          "score": 0.6449069896494039
+        },
+        {
+          "beat": 1,
+          "score": 0.6304544321026763
+        },
+        {
+          "beat": 2,
+          "score": 0.6253700556927817
+        },
+        {
+          "beat": 4,
+          "score": 0.5920711891346995
+        },
+        {
+          "beat": 0,
+          "score": 0.5893107822321267
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 5,
+          "score": 2.5426909905269404
+        },
+        {
+          "beat": 4,
+          "score": 1.5743423645865726
+        },
+        {
+          "beat": 3,
+          "score": 0.9871121935360646
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 5,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 3,
+          "score": 0.03200204813108039
+        },
+        {
+          "beat": 4,
+          "score": 0.0315136476426799
+        },
+        {
+          "beat": 1,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 2,
+          "score": 0.015625
+        },
+        {
+          "beat": 0,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 26.54983399999992,
+      "lexicalMs": 0.02041600000006838,
+      "fusionMs": 0.0028340000001207954,
+      "exactCacheMs": 0.044957999999951426,
+      "cacheHit": true
+    },
+    {
+      "id": "edu-plan",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "Sequence the objectives and their prerequisites before arranging lessons.",
+      "expectedBeats": [
+        0
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 0,
+          "score": 0.7295365322160663
+        },
+        {
+          "beat": 3,
+          "score": 0.6614035830496776
+        },
+        {
+          "beat": 5,
+          "score": 0.657841977171694
+        },
+        {
+          "beat": 4,
+          "score": 0.6068119658488289
+        },
+        {
+          "beat": 2,
+          "score": 0.5929251622394535
+        },
+        {
+          "beat": 1,
+          "score": 0.5863414671592438
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 0,
+          "score": 3.371235744062347
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 0,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 3,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 5,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 4,
+          "score": 0.015625
+        },
+        {
+          "beat": 2,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 1,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 25.384291000000076,
+      "lexicalMs": 0.020083999999997104,
+      "fusionMs": 0.0029580000000350992,
+      "exactCacheMs": 0.04966699999999946,
+      "cacheHit": true
+    },
+    {
+      "id": "edu-missing",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "What percentage of this class passed? No class results were uploaded.",
+      "expectedBeats": [],
+      "expectedAction": "request-context",
+      "semantic": [
+        {
+          "beat": 1,
+          "score": 0.6503545811307921
+        },
+        {
+          "beat": 4,
+          "score": 0.6192458976452432
+        },
+        {
+          "beat": 3,
+          "score": 0.6038545832754958
+        },
+        {
+          "beat": 2,
+          "score": 0.6021251295872697
+        },
+        {
+          "beat": 5,
+          "score": 0.5789002075010758
+        },
+        {
+          "beat": 0,
+          "score": 0.5563371153151826
+        }
+      ],
+      "lexical": [],
+      "hybrid": [
+        {
+          "beat": 1,
+          "score": 0.01639344262295082
+        },
+        {
+          "beat": 4,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 3,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 2,
+          "score": 0.015625
+        },
+        {
+          "beat": 5,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 0,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 26.543583000000126,
+      "lexicalMs": 0.03700000000003456,
+      "fusionMs": 0.004290999999966516,
+      "exactCacheMs": 0.0542920000000322,
+      "cacheHit": true
+    },
+    {
+      "id": "edu-offtopic",
+      "project": "education",
+      "split": "evaluation",
+      "speech": "The parking lot is full and it is raining.",
+      "expectedBeats": [],
+      "expectedAction": "hold",
+      "semantic": [
+        {
+          "beat": 1,
+          "score": 0.560897900203466
+        },
+        {
+          "beat": 2,
+          "score": 0.5607738292694924
+        },
+        {
+          "beat": 3,
+          "score": 0.5591268587237271
+        },
+        {
+          "beat": 4,
+          "score": 0.5491821621308829
+        },
+        {
+          "beat": 5,
+          "score": 0.5389310228549132
+        },
+        {
+          "beat": 0,
+          "score": 0.52109296733561
+        }
+      ],
+      "lexical": [],
+      "hybrid": [
+        {
+          "beat": 1,
+          "score": 0.01639344262295082
+        },
+        {
+          "beat": 2,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 3,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 4,
+          "score": 0.015625
+        },
+        {
+          "beat": 5,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 0,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 25.52345799999989,
+      "lexicalMs": 0.017875000000003638,
+      "fusionMs": 0.003249999999979991,
+      "exactCacheMs": 0.05170800000018971,
+      "cacheHit": true
+    },
+    {
+      "id": "sw-paraphrase",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "Do not recompute an identical answer while the saved copy is fresh.",
+      "expectedBeats": [
+        0
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 0,
+          "score": 0.7827715973697286
+        },
+        {
+          "beat": 5,
+          "score": 0.6726031451772869
+        },
+        {
+          "beat": 1,
+          "score": 0.6333107595354948
+        },
+        {
+          "beat": 2,
+          "score": 0.6280323377365948
+        },
+        {
+          "beat": 3,
+          "score": 0.6040964525029711
+        },
+        {
+          "beat": 4,
+          "score": 0.5841014156128551
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 0,
+          "score": 1.4476853550023128
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 0,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 5,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 1,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 2,
+          "score": 0.015625
+        },
+        {
+          "beat": 3,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 4,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 27.034583999999995,
+      "lexicalMs": 0.021208999999998923,
+      "fusionMs": 0.0032089999999698193,
+      "exactCacheMs": 0.0496659999998883,
+      "cacheHit": true
+    },
+    {
+      "id": "sw-negation",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "Not signing in. The question is whether this signed in user is allowed to read another project.",
+      "expectedBeats": [
+        3
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 3,
+          "score": 0.8117484398295872
+        },
+        {
+          "beat": 2,
+          "score": 0.6435562465249831
+        },
+        {
+          "beat": 4,
+          "score": 0.5847846351449815
+        },
+        {
+          "beat": 0,
+          "score": 0.5611700602014574
+        },
+        {
+          "beat": 5,
+          "score": 0.5561725651335171
+        },
+        {
+          "beat": 1,
+          "score": 0.5526263741279162
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 3,
+          "score": 4.0903489620227695
+        },
+        {
+          "beat": 2,
+          "score": 3.105848908366836
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 3,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 2,
+          "score": 0.03225806451612903
+        },
+        {
+          "beat": 4,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 0,
+          "score": 0.015625
+        },
+        {
+          "beat": 5,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 1,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 26.95141600000011,
+      "lexicalMs": 0.023708000000169704,
+      "fusionMs": 0.0027919999999994616,
+      "exactCacheMs": 0.04354200000011588,
+      "cacheHit": true
+    },
+    {
+      "id": "sw-comparison",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "Compare verifying who somebody is with checking what they are allowed to access.",
+      "expectedBeats": [
+        2,
+        3
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 3,
+          "score": 0.7689370086662836
+        },
+        {
+          "beat": 2,
+          "score": 0.713400013707035
+        },
+        {
+          "beat": 5,
+          "score": 0.6059179195197061
+        },
+        {
+          "beat": 0,
+          "score": 0.5929075138360019
+        },
+        {
+          "beat": 4,
+          "score": 0.5928493176393238
+        },
+        {
+          "beat": 1,
+          "score": 0.5362268642250105
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 3,
+          "score": 1.532889724670024
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 3,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 2,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 5,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 0,
+          "score": 0.015625
+        },
+        {
+          "beat": 4,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 1,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 27.474208999999973,
+      "lexicalMs": 0.027957999999898675,
+      "fusionMs": 0.0033330000001114968,
+      "exactCacheMs": 0.046959000000015294,
+      "cacheHit": true
+    },
+    {
+      "id": "sw-backpressure",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "There is too much incoming work: cap the waiting jobs and slow senders.",
+      "expectedBeats": [
+        1
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 1,
+          "score": 0.7127129065708956
+        },
+        {
+          "beat": 0,
+          "score": 0.5963248853835337
+        },
+        {
+          "beat": 4,
+          "score": 0.5899554599580064
+        },
+        {
+          "beat": 5,
+          "score": 0.5445465265330797
+        },
+        {
+          "beat": 3,
+          "score": 0.5420788042062443
+        },
+        {
+          "beat": 2,
+          "score": 0.5266146751072582
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 1,
+          "score": 2.8170782621627386
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 1,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 0,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 4,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 5,
+          "score": 0.015625
+        },
+        {
+          "beat": 3,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 2,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 26.368332999999893,
+      "lexicalMs": 0.02595900000005713,
+      "fusionMs": 0.003499999999803549,
+      "exactCacheMs": 0.04941600000006474,
+      "cacheHit": true
+    },
+    {
+      "id": "sw-rollback",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "A bad release just broke health checks; return to the known working deployment.",
+      "expectedBeats": [
+        4
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 4,
+          "score": 0.8438675757191867
+        },
+        {
+          "beat": 1,
+          "score": 0.6220224809636604
+        },
+        {
+          "beat": 5,
+          "score": 0.6207986842182038
+        },
+        {
+          "beat": 3,
+          "score": 0.6053197176421836
+        },
+        {
+          "beat": 2,
+          "score": 0.5888707930721763
+        },
+        {
+          "beat": 0,
+          "score": 0.5827370708162842
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 4,
+          "score": 7.66444862335012
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 4,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 1,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 5,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 3,
+          "score": 0.015625
+        },
+        {
+          "beat": 2,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 0,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 26.920957999999928,
+      "lexicalMs": 0.02437499999996362,
+      "fusionMs": 0.0028340000001207954,
+      "exactCacheMs": 0.04591600000003382,
+      "cacheHit": true
+    },
+    {
+      "id": "sw-restore",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "Recover accidentally deleted records from a previously tested snapshot.",
+      "expectedBeats": [
+        5
+      ],
+      "expectedAction": "show",
+      "semantic": [
+        {
+          "beat": 5,
+          "score": 0.7511705144442841
+        },
+        {
+          "beat": 4,
+          "score": 0.7163062598814167
+        },
+        {
+          "beat": 0,
+          "score": 0.6079125578814472
+        },
+        {
+          "beat": 1,
+          "score": 0.5720708785402114
+        },
+        {
+          "beat": 2,
+          "score": 0.5563365337729712
+        },
+        {
+          "beat": 3,
+          "score": 0.5394494473942661
+        }
+      ],
+      "lexical": [],
+      "hybrid": [
+        {
+          "beat": 5,
+          "score": 0.01639344262295082
+        },
+        {
+          "beat": 4,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 0,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 1,
+          "score": 0.015625
+        },
+        {
+          "beat": 2,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 3,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 25.841583000000128,
+      "lexicalMs": 0.02341599999999744,
+      "fusionMs": 0.0038749999998799467,
+      "exactCacheMs": 0.05337499999995998,
+      "cacheHit": true
+    },
+    {
+      "id": "sw-missing",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "Display our actual 99th percentile response time. We have no latency samples.",
+      "expectedBeats": [],
+      "expectedAction": "request-context",
+      "semantic": [
+        {
+          "beat": 0,
+          "score": 0.6100062334793268
+        },
+        {
+          "beat": 1,
+          "score": 0.5956355743404639
+        },
+        {
+          "beat": 5,
+          "score": 0.5924565479203616
+        },
+        {
+          "beat": 4,
+          "score": 0.5791533085020839
+        },
+        {
+          "beat": 2,
+          "score": 0.5517046856008697
+        },
+        {
+          "beat": 3,
+          "score": 0.5008388015136487
+        }
+      ],
+      "lexical": [
+        {
+          "beat": 0,
+          "score": 1.4476853550023128
+        }
+      ],
+      "hybrid": [
+        {
+          "beat": 0,
+          "score": 0.03278688524590164
+        },
+        {
+          "beat": 1,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 5,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 4,
+          "score": 0.015625
+        },
+        {
+          "beat": 2,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 3,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 27.019708000000037,
+      "lexicalMs": 0.022041000000172062,
+      "fusionMs": 0.0027500000001055014,
+      "exactCacheMs": 0.04920900000001893,
+      "cacheHit": true
+    },
+    {
+      "id": "sw-offtopic",
+      "project": "software",
+      "split": "evaluation",
+      "speech": "The train leaves from platform nine.",
+      "expectedBeats": [],
+      "expectedAction": "hold",
+      "semantic": [
+        {
+          "beat": 4,
+          "score": 0.5832545543806172
+        },
+        {
+          "beat": 1,
+          "score": 0.5698785211273155
+        },
+        {
+          "beat": 2,
+          "score": 0.5620628567103045
+        },
+        {
+          "beat": 3,
+          "score": 0.5417361814675485
+        },
+        {
+          "beat": 5,
+          "score": 0.5316495505400467
+        },
+        {
+          "beat": 0,
+          "score": 0.5109755102351147
+        }
+      ],
+      "lexical": [],
+      "hybrid": [
+        {
+          "beat": 4,
+          "score": 0.01639344262295082
+        },
+        {
+          "beat": 1,
+          "score": 0.016129032258064516
+        },
+        {
+          "beat": 2,
+          "score": 0.015873015873015872
+        },
+        {
+          "beat": 3,
+          "score": 0.015625
+        },
+        {
+          "beat": 5,
+          "score": 0.015384615384615385
+        },
+        {
+          "beat": 0,
+          "score": 0.015151515151515152
+        }
+      ],
+      "queryMs": 24.874041000000034,
+      "lexicalMs": 0.01650000000017826,
+      "fusionMs": 0.0029170000000249274,
+      "exactCacheMs": 0.04383299999994961,
+      "cacheHit": true
+    }
+  ],
+  "retrievalSummary": {
+    "lexical": {
+      "rawTop2": {
+        "cases": 24,
+        "exactSets": 15,
+        "found": 19,
+        "required": 21,
+        "retrievedCount": 27,
+        "microRecall": 0.9047619047619048,
+        "microPrecision": 0.7037037037037037,
+        "fullyCoveredPositiveQueries": 16,
+        "positiveQueries": 18,
+        "correctEmptyQueries": 4,
+        "negativeQueries": 6,
+        "mrr": 0.9166666666666666
+      },
+      "gatedTop2": {
+        "cases": 24,
+        "exactSets": 15,
+        "found": 19,
+        "required": 21,
+        "retrievedCount": 27,
+        "microRecall": 0.9047619047619048,
+        "microPrecision": 0.7037037037037037,
+        "fullyCoveredPositiveQueries": 16,
+        "positiveQueries": 18,
+        "correctEmptyQueries": 4,
+        "negativeQueries": 6,
+        "mrr": 0.9166666666666666
+      }
+    },
+    "semantic": {
+      "rawTop2": {
+        "cases": 24,
+        "exactSets": 3,
+        "found": 21,
+        "required": 21,
+        "retrievedCount": 48,
+        "microRecall": 1,
+        "microPrecision": 0.4375,
+        "fullyCoveredPositiveQueries": 18,
+        "positiveQueries": 18,
+        "correctEmptyQueries": 0,
+        "negativeQueries": 6,
+        "mrr": 0.9444444444444444
+      },
+      "gatedTop2": {
+        "cases": 24,
+        "exactSets": 9,
+        "found": 19,
+        "required": 21,
+        "retrievedCount": 32,
+        "microRecall": 0.9047619047619048,
+        "microPrecision": 0.59375,
+        "fullyCoveredPositiveQueries": 16,
+        "positiveQueries": 18,
+        "correctEmptyQueries": 6,
+        "negativeQueries": 6,
+        "mrr": 0.9444444444444444
+      }
+    },
+    "hybrid": {
+      "rawTop2": {
+        "cases": 24,
+        "exactSets": 3,
+        "found": 21,
+        "required": 21,
+        "retrievedCount": 48,
+        "microRecall": 1,
+        "microPrecision": 0.4375,
+        "fullyCoveredPositiveQueries": 18,
+        "positiveQueries": 18,
+        "correctEmptyQueries": 0,
+        "negativeQueries": 6,
+        "mrr": 0.9444444444444444
+      },
+      "gatedTop2": {
+        "cases": 24,
+        "exactSets": 9,
+        "found": 19,
+        "required": 21,
+        "retrievedCount": 32,
+        "microRecall": 0.9047619047619048,
+        "microPrecision": 0.59375,
+        "fullyCoveredPositiveQueries": 16,
+        "positiveQueries": 18,
+        "correctEmptyQueries": 6,
+        "negativeQueries": 6,
+        "mrr": 0.9444444444444444
+      }
+    }
+  }
+}

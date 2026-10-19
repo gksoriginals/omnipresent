@@ -1,0 +1,649 @@
+[
+  {
+    "type": "stage",
+    "stage": {
+      "text": "Sunlight becomes electricity",
+      "composition": {
+        "title": "Sunlight becomes electricity",
+        "body": "Solar panels turn sunlight into electricity.",
+        "beat": 0,
+        "flowRevision": 5,
+        "adaptive": {
+          "layout": "focus",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "statement",
+              "beat": 0,
+              "emphasis": "normal",
+              "reveal": null
+            }
+          ]
+        }
+      },
+      "source": "agent",
+      "revision": 1,
+      "committedAt": 1792394462627
+    },
+    "dispatchMs": 0.0032919999794103205,
+    "at": 1792394462628
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265004",
+    "text": "",
+    "final": false,
+    "at": 1792394463074
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265004",
+    "text": "Storage",
+    "final": false,
+    "at": 1792394463589
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265004",
+    "text": "Storage reserve",
+    "final": false,
+    "at": 1792394464086
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265004",
+    "text": "Storage reserves",
+    "final": false,
+    "at": 1792394464594
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265004",
+    "text": "Storage reserves",
+    "final": true,
+    "at": 1792394464597
+  },
+  {
+    "type": "stage",
+    "stage": {
+      "text": "Stored energy",
+      "composition": {
+        "title": "Stored energy",
+        "body": "Batteries store electricity for later use.",
+        "beat": 2,
+        "flowRevision": 5,
+        "adaptive": {
+          "layout": "split",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "visual",
+              "beat": 2,
+              "emphasis": "strong",
+              "reveal": null
+            },
+            {
+              "id": "secondary",
+              "kind": "statement",
+              "beat": 2,
+              "emphasis": "normal",
+              "reveal": null
+            }
+          ]
+        }
+      },
+      "source": "agent",
+      "revision": 2,
+      "committedAt": 1792394464776
+    },
+    "dispatchMs": 0.00229199999012053,
+    "at": 1792394464777
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 181.92604200000642,
+    "changed": true,
+    "held": false,
+    "composition": {
+      "layout": "split",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "visual",
+          "beat": 2,
+          "emphasis": "strong",
+          "reveal": null
+        },
+        {
+          "id": "secondary",
+          "kind": "statement",
+          "beat": 2,
+          "emphasis": "normal",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "0b09a0d4-f161-45bc-80f8-4242ae00a80d",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "cue",
+      "action": "show",
+      "operation": "replace",
+      "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+    },
+    "at": 1792394464784
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265005",
+    "text": "Okay.",
+    "final": false,
+    "at": 1792394467599
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265005",
+    "text": "Batteries",
+    "final": false,
+    "at": 1792394468122
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265005",
+    "text": "Batteries store up",
+    "final": false,
+    "at": 1792394468614
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265005",
+    "text": "Batteries store electricity",
+    "final": false,
+    "at": 1792394469116
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265005",
+    "text": "Batteries store electricity for money",
+    "final": false,
+    "at": 1792394469608
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265005",
+    "text": "Batteries store electricity for later use.",
+    "final": false,
+    "at": 1792394470126
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265005",
+    "text": "Batteries store electricity for later use.",
+    "final": true,
+    "at": 1792394470597
+  },
+  {
+    "type": "stage",
+    "stage": {
+      "text": "Stored energy",
+      "composition": {
+        "title": "Stored energy",
+        "body": "Batteries store electricity for later use.",
+        "beat": 2,
+        "flowRevision": 5,
+        "adaptive": {
+          "layout": "split",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "statement",
+              "beat": 2,
+              "emphasis": "strong",
+              "reveal": null
+            },
+            {
+              "id": "secondary",
+              "kind": "visual",
+              "beat": 2,
+              "emphasis": "normal",
+              "reveal": null
+            }
+          ]
+        }
+      },
+      "source": "agent",
+      "revision": 3,
+      "committedAt": 1792394470599
+    },
+    "dispatchMs": 0.003166999958921224,
+    "at": 1792394470603
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 1.84416700003203,
+    "changed": true,
+    "held": false,
+    "composition": {
+      "layout": "split",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "statement",
+          "beat": 2,
+          "emphasis": "strong",
+          "reveal": null
+        },
+        {
+          "id": "secondary",
+          "kind": "visual",
+          "beat": 2,
+          "emphasis": "normal",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "7b9f6987-7dc5-4783-a453-7201a6045c73",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "cue",
+      "action": "show",
+      "operation": "replace",
+      "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+    },
+    "at": 1792394470603
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265006",
+    "text": "Thank you.",
+    "final": false,
+    "at": 1792394473602
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265006",
+    "text": "Daily curve",
+    "final": false,
+    "at": 1792394474103
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265006",
+    "text": "Daily curve",
+    "final": true,
+    "at": 1792394474581
+  },
+  {
+    "type": "stage",
+    "stage": {
+      "text": "Daily pattern",
+      "composition": {
+        "title": "Daily pattern",
+        "body": "The daily pattern peaks at noon.",
+        "beat": 1,
+        "flowRevision": 5,
+        "adaptive": {
+          "layout": "sequence",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "visual",
+              "beat": 1,
+              "emphasis": "strong",
+              "reveal": null
+            },
+            {
+              "id": "secondary",
+              "kind": "image",
+              "beat": 0,
+              "emphasis": "normal",
+              "reveal": null
+            },
+            {
+              "id": "detail",
+              "kind": "statement",
+              "beat": 0,
+              "emphasis": "normal",
+              "reveal": null
+            },
+            {
+              "id": "context",
+              "kind": "visual",
+              "beat": 0,
+              "emphasis": "normal",
+              "reveal": null
+            }
+          ]
+        }
+      },
+      "source": "agent",
+      "revision": 4,
+      "committedAt": 1792394474583
+    },
+    "dispatchMs": 0.002999999967869371,
+    "at": 1792394474588
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 1.9777500000200234,
+    "changed": true,
+    "held": false,
+    "composition": {
+      "layout": "sequence",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "visual",
+          "beat": 1,
+          "emphasis": "strong",
+          "reveal": null
+        },
+        {
+          "id": "secondary",
+          "kind": "image",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        },
+        {
+          "id": "detail",
+          "kind": "statement",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        },
+        {
+          "id": "context",
+          "kind": "visual",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "3ccc0f76-8394-4f78-9195-aedef36e2e23",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "cue",
+      "action": "show",
+      "operation": "replace",
+      "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+    },
+    "at": 1792394474588
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265007",
+    "text": "So",
+    "final": false,
+    "at": 1792394477586
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265007",
+    "text": "Solar panels",
+    "final": false,
+    "at": 1792394478108
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265007",
+    "text": "Solar panels turn together.",
+    "final": false,
+    "at": 1792394478605
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265007",
+    "text": "Solar panels turn sunlight.",
+    "final": false,
+    "at": 1792394479120
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265007",
+    "text": "Solar panels turn sunlight.",
+    "final": true,
+    "at": 1792394479621
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 0.2789999999804422,
+    "changed": false,
+    "held": true,
+    "composition": {
+      "layout": "sequence",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "visual",
+          "beat": 1,
+          "emphasis": "strong",
+          "reveal": null
+        },
+        {
+          "id": "secondary",
+          "kind": "image",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        },
+        {
+          "id": "detail",
+          "kind": "statement",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        },
+        {
+          "id": "context",
+          "kind": "visual",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "79df6686-290e-4181-9980-3eadf2ea1d95",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "guard",
+      "action": "hold",
+      "operation": "retain",
+      "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+    },
+    "at": 1792394479630
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265008",
+    "text": "Okay.",
+    "final": false,
+    "at": 1792394479630
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265008",
+    "text": "It took lecture.",
+    "final": false,
+    "at": 1792394480112
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265008",
+    "text": "Into electricity",
+    "final": false,
+    "at": 1792394480613
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265008",
+    "text": "Into electricity",
+    "final": true,
+    "at": 1792394480623
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 0.26379200001247227,
+    "changed": false,
+    "held": true,
+    "composition": {
+      "layout": "sequence",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "visual",
+          "beat": 1,
+          "emphasis": "strong",
+          "reveal": null
+        },
+        {
+          "id": "secondary",
+          "kind": "image",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        },
+        {
+          "id": "detail",
+          "kind": "statement",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        },
+        {
+          "id": "context",
+          "kind": "visual",
+          "beat": 0,
+          "emphasis": "normal",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "f05f1d22-b09f-4c79-9101-652a2ebe22a2",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "guard",
+      "action": "hold",
+      "operation": "retain",
+      "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+    },
+    "at": 1792394480631
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265009",
+    "text": "Story",
+    "final": false,
+    "at": 1792394484097
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265009",
+    "text": "Storage risks",
+    "final": false,
+    "at": 1792394484617
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265009",
+    "text": "Storage reserves",
+    "final": false,
+    "at": 1792394485109
+  },
+  {
+    "type": "transcript",
+    "segmentId": "16258973309051265009",
+    "text": "Storage reserves",
+    "final": true,
+    "at": 1792394485116
+  },
+  {
+    "type": "stage",
+    "stage": {
+      "text": "Stored energy",
+      "composition": {
+        "title": "Stored energy",
+        "body": "Batteries store electricity for later use.",
+        "beat": 2,
+        "flowRevision": 5,
+        "adaptive": {
+          "layout": "split",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "visual",
+              "beat": 2,
+              "emphasis": "strong",
+              "reveal": null
+            },
+            {
+              "id": "secondary",
+              "kind": "statement",
+              "beat": 2,
+              "emphasis": "normal",
+              "reveal": null
+            }
+          ]
+        }
+      },
+      "source": "agent",
+      "revision": 5,
+      "committedAt": 1792394485110
+    },
+    "dispatchMs": 0.002957999997306615,
+    "at": 1792394485124
+  },
+  {
+    "type": "direction_completed",
+    "engine": "adaptive",
+    "inferenceMs": 1.4334159999853,
+    "changed": true,
+    "held": false,
+    "composition": {
+      "layout": "split",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "visual",
+          "beat": 2,
+          "emphasis": "strong",
+          "reveal": null
+        },
+        {
+          "id": "secondary",
+          "kind": "statement",
+          "beat": 2,
+          "emphasis": "normal",
+          "reveal": null
+        }
+      ]
+    },
+    "decision": {
+      "requestId": "9c3ead40-2aff-45cb-9802-676ff6232bda",
+      "planner": "synthesis",
+      "baseline": "evidence-v1",
+      "model": "clef-omni",
+      "path": "cue",
+      "action": "show",
+      "operation": "replace",
+      "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+    },
+    "at": 1792394485124
+  }
+]

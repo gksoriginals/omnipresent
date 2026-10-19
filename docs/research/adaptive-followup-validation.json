@@ -1,0 +1,4694 @@
+{
+  "recordedAt": "2026-10-17",
+  "scope": "Actual browser replay: fresh local-model interview/storyteller, Piper PCM streamed to Moonshine STT and adaptive Qwen director. Same preparation across three narrations; two rendering libraries. Small exploratory sample, not a benchmark or physical-microphone test. Inference latency excludes speech duration, endpointing, rendering and queue time. Baseline uses earlier preparation and prompt; cannot isolate prompt effect causally.",
+  "summary": [
+    {
+      "variant": "generation-first",
+      "renderer": "openui",
+      "completed": true,
+      "decisions": 8,
+      "changes": 5,
+      "holds": 0,
+      "errors": [],
+      "inferenceP50Ms": 3331.9192080000066,
+      "inferenceP95Ms": 4079.1062920000113,
+      "layouts": [
+        "focus",
+        "sequence",
+        "split"
+      ],
+      "firstDecisionBeats": [
+        0
+      ]
+    },
+    {
+      "variant": "storage-first",
+      "renderer": "json-render",
+      "completed": true,
+      "decisions": 8,
+      "changes": 4,
+      "holds": 0,
+      "errors": [
+        "Composition failed; holding canvas"
+      ],
+      "inferenceP50Ms": 3314.042583000002,
+      "inferenceP95Ms": 3539.329625000013,
+      "layouts": [
+        "focus",
+        "split",
+        "sequence"
+      ],
+      "firstDecisionBeats": [
+        2
+      ]
+    },
+    {
+      "variant": "detour-and-return",
+      "renderer": "openui",
+      "completed": true,
+      "decisions": 6,
+      "changes": 5,
+      "holds": 0,
+      "errors": [],
+      "inferenceP50Ms": 3285.731958999997,
+      "inferenceP95Ms": 3429.2742920000164,
+      "layouts": [
+        "focus",
+        "sequence",
+        "split"
+      ],
+      "firstDecisionBeats": [
+        1
+      ]
+    }
+  ],
+  "preparation": {
+    "state": {
+      "revision": 3,
+      "brief": {
+        "topic": "Solar Energy Basics",
+        "audience": "Teachers",
+        "goal": "Explain solar panels, daily energy patterns, and battery storage using the provided synthetic example",
+        "durationMinutes": 5,
+        "keyPoints": [
+          "Solar panels convert sunlight into electricity",
+          "Daily energy pattern: Morning (10 Wh), Noon (20 Wh), Evening (5 Wh)",
+          "Batteries store electricity for use after sunset"
+        ],
+        "constraints": [
+          "Use only the provided synthetic example from solar-facts.csv",
+          "No invented measurements or data"
+        ],
+        "openQuestions": [
+          "What specific teaching objectives should be emphasized?",
+          "Are there any particular misconceptions about solar energy we should address?"
+        ]
+      },
+      "flow": {
+        "title": "Solar Energy Basics",
+        "summary": "An introduction to solar energy, explaining how panels convert sunlight into electricity, the daily energy pattern throughout the day, and how batteries store energy for use after sunset.",
+        "beats": [
+          {
+            "title": "How Panels Work",
+            "audienceText": "Solar panels convert sunlight directly into electricity.",
+            "speakerNotes": "Explain that solar panels contain photovoltaic cells that absorb photons from sunlight and convert them into electrical energy.",
+            "visualDirection": "Show the flow diagram illustrating how Sun energy moves through Panels to generate electricity stored in Battery.",
+            "visualId": "83a58975-1923-484b-acd1-73dc4d74e42b",
+            "artifactIds": [
+              "999f7045-9823-4fb6-8441-82ae30b21f06"
+            ]
+          },
+          {
+            "title": "Daily Energy Pattern",
+            "audienceText": "Energy production peaks at noon, with lower output in the morning and evening.",
+            "speakerNotes": "Point to the bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels. Emphasize that this is a synthetic teaching example.",
+            "visualDirection": "Display the bar chart of daily energy production to illustrate the pattern throughout the day.",
+            "visualId": "72a58adc-f802-4753-b026-b0993ee27067",
+            "artifactIds": [
+              "999f7045-9823-4fb6-8441-82ae30b21f06"
+            ]
+          },
+          {
+            "title": "Storage After Sunset",
+            "audienceText": "Batteries store excess electricity for use when the sun is not shining.",
+            "speakerNotes": "Refer back to the flow diagram, highlighting how energy stored in the Battery can be used after sunset. Explain that this storage capability is crucial for consistent power supply.",
+            "visualDirection": "Use the flow diagram again to show how Panels generate energy that gets stored in Battery for later use.",
+            "visualId": "83a58975-1923-484b-acd1-73dc4d74e42b",
+            "artifactIds": [
+              "999f7045-9823-4fb6-8441-82ae30b21f06"
+            ]
+          }
+        ],
+        "openQuestions": [
+          "What specific teaching objectives should be emphasized?",
+          "Are there any particular misconceptions about solar energy we should address?"
+        ]
+      },
+      "flowBasedOnRevision": 3,
+      "approvedRevision": 3,
+      "artifacts": [
+        {
+          "id": "999f7045-9823-4fb6-8441-82ae30b21f06",
+          "name": "solar-facts.csv",
+          "content": "Time,EnergyWh\nMorning,10\nNoon,20\nEvening,5\nSynthetic teaching example, not measured performance. Panels convert sunlight into electricity. Batteries store electricity for use after sunset. Process: Sun, Panels, Battery."
+        }
+      ],
+      "messages": {
+        "interview": [
+          {
+            "role": "user",
+            "content": "I am teaching solar energy to teachers for five minutes. Explain panels, the daily energy pattern, and battery storage. Use the uploaded synthetic example; no invented measurements. We have all the context. Call updateBrief with these points now and briefly confirm."
+          },
+          {
+            "role": "assistant",
+            "content": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like to clarify before we proceed."
+          }
+        ],
+        "storyteller": [
+          {
+            "role": "user",
+            "content": "Read the uploaded material. Call createDiagram with Sun \u2192 Panels \u2192 Battery and createChart for Morning 10, Noon 20, Evening 5 Wh, labelled synthetic teaching data, linked to the uploaded artifact. Then proposeFlow with exactly three beats: How panels work (linked to the diagram); Daily energy pattern (linked to the chart); Storage after sunset (linked to the diagram). Provide concise audienceText on each beat and use the returned visual IDs. End with a short confirmation."
+          },
+          {
+            "role": "assistant",
+            "content": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs for both the diagram and chart."
+          }
+        ]
+      },
+      "events": [
+        {
+          "id": "aef640cb-4d5e-40e3-bdb5-e9fef6a358d0",
+          "from": "interview",
+          "to": "storyteller",
+          "kind": "brief.updated",
+          "summary": "Interview brief updated; prior flow needs review.",
+          "revision": 2
+        },
+        {
+          "id": "a99307a8-1768-4fb3-b7b4-af0af94678c4",
+          "from": "storyteller",
+          "to": "presenter",
+          "kind": "flow.proposed",
+          "summary": "Storyteller proposed a flow for review.",
+          "revision": 3
+        }
+      ],
+      "visuals": [
+        {
+          "id": "83a58975-1923-484b-acd1-73dc4d74e42b",
+          "spec": {
+            "kind": "diagram",
+            "title": "Solar Energy Flow",
+            "nodes": [
+              "Sun",
+              "Panels",
+              "Battery"
+            ],
+            "edges": [
+              {
+                "from": 0,
+                "to": 1
+              },
+              {
+                "from": 1,
+                "to": 2
+              }
+            ]
+          }
+        },
+        {
+          "id": "72a58adc-f802-4753-b026-b0993ee27067",
+          "spec": {
+            "kind": "chart",
+            "title": "Daily Energy Pattern",
+            "chartType": "bar",
+            "unit": "Wh",
+            "sourceArtifactId": "999f7045-9823-4fb6-8441-82ae30b21f06",
+            "data": [
+              {
+                "label": "Morning",
+                "value": 10
+              },
+              {
+                "label": "Noon",
+                "value": 20
+              },
+              {
+                "label": "Evening",
+                "value": 5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "events": [
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792247954606
+        },
+        "paused": false
+      },
+      {
+        "type": "worker_status",
+        "status": "unloaded"
+      },
+      {
+        "type": "presentation_status",
+        "status": "stopped",
+        "revision": 0,
+        "beat": 0
+      },
+      {
+        "type": "agent_status",
+        "status": "idle"
+      },
+      {
+        "type": "preparation",
+        "state": {
+          "revision": 0,
+          "brief": null,
+          "flow": null,
+          "flowBasedOnRevision": null,
+          "approvedRevision": null,
+          "artifacts": [],
+          "messages": {
+            "interview": [],
+            "storyteller": []
+          },
+          "events": []
+        }
+      },
+      {
+        "type": "agent_config",
+        "model": "qwen3.5:4b",
+        "local": true
+      },
+      {
+        "type": "agent_status",
+        "status": "idle"
+      },
+      {
+        "type": "preparation",
+        "state": {
+          "revision": 1,
+          "brief": null,
+          "flow": null,
+          "flowBasedOnRevision": null,
+          "approvedRevision": null,
+          "artifacts": [
+            {
+              "id": "999f7045-9823-4fb6-8441-82ae30b21f06",
+              "name": "solar-facts.csv",
+              "content": "Time,EnergyWh\nMorning,10\nNoon,20\nEvening,5\nSynthetic teaching example, not measured performance. Panels convert sunlight into electricity. Batteries store electricity for use after sunset. Process: Sun, Panels, Battery."
+            }
+          ],
+          "messages": {
+            "interview": [],
+            "storyteller": []
+          },
+          "events": []
+        }
+      },
+      {
+        "type": "agent_status",
+        "status": "idle"
+      },
+      {
+        "type": "agent_status",
+        "status": "working",
+        "role": "interview"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 69.59375,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 69.640625,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_activity",
+        "role": "interview",
+        "label": "Reading material"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 78.953125,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 78.96875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 78.96875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 78.96875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 79.125,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_activity",
+        "role": "interview",
+        "label": "Updating presentation brief"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 93.15625,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated."
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic,"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience,"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal,"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration,"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points,"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data."
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.453125,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like to"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like to clarify"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like to clarify before"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like to clarify before we"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like to clarify before we proceed"
+      },
+      {
+        "type": "agent_delta",
+        "role": "interview",
+        "text": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like to clarify before we proceed."
+      },
+      {
+        "type": "preparation",
+        "state": {
+          "revision": 2,
+          "brief": {
+            "topic": "Solar Energy Basics",
+            "audience": "Teachers",
+            "goal": "Explain solar panels, daily energy patterns, and battery storage using the provided synthetic example",
+            "durationMinutes": 5,
+            "keyPoints": [
+              "Solar panels convert sunlight into electricity",
+              "Daily energy pattern: Morning (10 Wh), Noon (20 Wh), Evening (5 Wh)",
+              "Batteries store electricity for use after sunset"
+            ],
+            "constraints": [
+              "Use only the provided synthetic example from solar-facts.csv",
+              "No invented measurements or data"
+            ],
+            "openQuestions": [
+              "What specific teaching objectives should be emphasized?",
+              "Are there any particular misconceptions about solar energy we should address?"
+            ]
+          },
+          "flow": null,
+          "flowBasedOnRevision": null,
+          "approvedRevision": null,
+          "artifacts": [
+            {
+              "id": "999f7045-9823-4fb6-8441-82ae30b21f06",
+              "name": "solar-facts.csv",
+              "content": "Time,EnergyWh\nMorning,10\nNoon,20\nEvening,5\nSynthetic teaching example, not measured performance. Panels convert sunlight into electricity. Batteries store electricity for use after sunset. Process: Sun, Panels, Battery."
+            }
+          ],
+          "messages": {
+            "interview": [
+              {
+                "role": "user",
+                "content": "I am teaching solar energy to teachers for five minutes. Explain panels, the daily energy pattern, and battery storage. Use the uploaded synthetic example; no invented measurements. We have all the context. Call updateBrief with these points now and briefly confirm."
+              },
+              {
+                "role": "assistant",
+                "content": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like to clarify before we proceed."
+              }
+            ],
+            "storyteller": []
+          },
+          "events": [
+            {
+              "id": "aef640cb-4d5e-40e3-bdb5-e9fef6a358d0",
+              "from": "interview",
+              "to": "storyteller",
+              "kind": "brief.updated",
+              "summary": "Interview brief updated; prior flow needs review.",
+              "revision": 2
+            }
+          ]
+        }
+      },
+      {
+        "type": "agent_status",
+        "status": "idle",
+        "role": "interview"
+      },
+      {
+        "type": "agent_status",
+        "status": "idle"
+      },
+      {
+        "type": "agent_status",
+        "status": "working",
+        "role": "storyteller"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.546875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.578125,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.578125,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_activity",
+        "role": "storyteller",
+        "label": "Reading material"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.78125,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.796875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.796875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.8125,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.84375,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.84375,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_activity",
+        "role": "storyteller",
+        "label": "Preparing diagram"
+      },
+      {
+        "type": "agent_activity",
+        "role": "storyteller",
+        "label": "Preparing chart"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.890625,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.890625,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.890625,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.921875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.921875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.921875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.921875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 95.953125,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 73.40625,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 73.546875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 73.5625,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 73.421875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 69.546875,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 69.5625,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 69.578125,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 69.578125,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 69.59375,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_activity",
+        "role": "storyteller",
+        "label": "Drafting presentation flow"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 74.34375,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1."
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**:"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram ("
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery)"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity."
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 75.15625,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2."
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**:"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning ("
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (1"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh),"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon ("
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (2"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh),"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening ("
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh)"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 76.09375,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data."
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3."
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**:"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Re"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable."
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded"
+      },
+      {
+        "type": "metrics",
+        "serverRssMb": 76.140625,
+        "eventLoopP95Ms": 11.067391
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `s"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-f"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv`"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs for"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs for both"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs for both the"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs for both the diagram"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs for both the diagram and"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs for both the diagram and chart"
+      },
+      {
+        "type": "agent_delta",
+        "role": "storyteller",
+        "text": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs for both the diagram and chart."
+      },
+      {
+        "type": "preparation",
+        "state": {
+          "revision": 3,
+          "brief": {
+            "topic": "Solar Energy Basics",
+            "audience": "Teachers",
+            "goal": "Explain solar panels, daily energy patterns, and battery storage using the provided synthetic example",
+            "durationMinutes": 5,
+            "keyPoints": [
+              "Solar panels convert sunlight into electricity",
+              "Daily energy pattern: Morning (10 Wh), Noon (20 Wh), Evening (5 Wh)",
+              "Batteries store electricity for use after sunset"
+            ],
+            "constraints": [
+              "Use only the provided synthetic example from solar-facts.csv",
+              "No invented measurements or data"
+            ],
+            "openQuestions": [
+              "What specific teaching objectives should be emphasized?",
+              "Are there any particular misconceptions about solar energy we should address?"
+            ]
+          },
+          "flow": {
+            "title": "Solar Energy Basics",
+            "summary": "An introduction to solar energy, explaining how panels convert sunlight into electricity, the daily energy pattern throughout the day, and how batteries store energy for use after sunset.",
+            "beats": [
+              {
+                "title": "How Panels Work",
+                "audienceText": "Solar panels convert sunlight directly into electricity.",
+                "speakerNotes": "Explain that solar panels contain photovoltaic cells that absorb photons from sunlight and convert them into electrical energy.",
+                "visualDirection": "Show the flow diagram illustrating how Sun energy moves through Panels to generate electricity stored in Battery.",
+                "visualId": "83a58975-1923-484b-acd1-73dc4d74e42b",
+                "artifactIds": [
+                  "999f7045-9823-4fb6-8441-82ae30b21f06"
+                ]
+              },
+              {
+                "title": "Daily Energy Pattern",
+                "audienceText": "Energy production peaks at noon, with lower output in the morning and evening.",
+                "speakerNotes": "Point to the bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels. Emphasize that this is a synthetic teaching example.",
+                "visualDirection": "Display the bar chart of daily energy production to illustrate the pattern throughout the day.",
+                "visualId": "72a58adc-f802-4753-b026-b0993ee27067",
+                "artifactIds": [
+                  "999f7045-9823-4fb6-8441-82ae30b21f06"
+                ]
+              },
+              {
+                "title": "Storage After Sunset",
+                "audienceText": "Batteries store excess electricity for use when the sun is not shining.",
+                "speakerNotes": "Refer back to the flow diagram, highlighting how energy stored in the Battery can be used after sunset. Explain that this storage capability is crucial for consistent power supply.",
+                "visualDirection": "Use the flow diagram again to show how Panels generate energy that gets stored in Battery for later use.",
+                "visualId": "83a58975-1923-484b-acd1-73dc4d74e42b",
+                "artifactIds": [
+                  "999f7045-9823-4fb6-8441-82ae30b21f06"
+                ]
+              }
+            ],
+            "openQuestions": [
+              "What specific teaching objectives should be emphasized?",
+              "Are there any particular misconceptions about solar energy we should address?"
+            ]
+          },
+          "flowBasedOnRevision": 3,
+          "approvedRevision": null,
+          "artifacts": [
+            {
+              "id": "999f7045-9823-4fb6-8441-82ae30b21f06",
+              "name": "solar-facts.csv",
+              "content": "Time,EnergyWh\nMorning,10\nNoon,20\nEvening,5\nSynthetic teaching example, not measured performance. Panels convert sunlight into electricity. Batteries store electricity for use after sunset. Process: Sun, Panels, Battery."
+            }
+          ],
+          "messages": {
+            "interview": [
+              {
+                "role": "user",
+                "content": "I am teaching solar energy to teachers for five minutes. Explain panels, the daily energy pattern, and battery storage. Use the uploaded synthetic example; no invented measurements. We have all the context. Call updateBrief with these points now and briefly confirm."
+              },
+              {
+                "role": "assistant",
+                "content": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like to clarify before we proceed."
+              }
+            ],
+            "storyteller": [
+              {
+                "role": "user",
+                "content": "Read the uploaded material. Call createDiagram with Sun \u2192 Panels \u2192 Battery and createChart for Morning 10, Noon 20, Evening 5 Wh, labelled synthetic teaching data, linked to the uploaded artifact. Then proposeFlow with exactly three beats: How panels work (linked to the diagram); Daily energy pattern (linked to the chart); Storage after sunset (linked to the diagram). Provide concise audienceText on each beat and use the returned visual IDs. End with a short confirmation."
+              },
+              {
+                "role": "assistant",
+                "content": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs for both the diagram and chart."
+              }
+            ]
+          },
+          "events": [
+            {
+              "id": "aef640cb-4d5e-40e3-bdb5-e9fef6a358d0",
+              "from": "interview",
+              "to": "storyteller",
+              "kind": "brief.updated",
+              "summary": "Interview brief updated; prior flow needs review.",
+              "revision": 2
+            },
+            {
+              "id": "a99307a8-1768-4fb3-b7b4-af0af94678c4",
+              "from": "storyteller",
+              "to": "presenter",
+              "kind": "flow.proposed",
+              "summary": "Storyteller proposed a flow for review.",
+              "revision": 3
+            }
+          ],
+          "visuals": [
+            {
+              "id": "83a58975-1923-484b-acd1-73dc4d74e42b",
+              "spec": {
+                "kind": "diagram",
+                "title": "Solar Energy Flow",
+                "nodes": [
+                  "Sun",
+                  "Panels",
+                  "Battery"
+                ],
+                "edges": [
+                  {
+                    "from": 0,
+                    "to": 1
+                  },
+                  {
+                    "from": 1,
+                    "to": 2
+                  }
+                ]
+              }
+            },
+            {
+              "id": "72a58adc-f802-4753-b026-b0993ee27067",
+              "spec": {
+                "kind": "chart",
+                "title": "Daily Energy Pattern",
+                "chartType": "bar",
+                "unit": "Wh",
+                "sourceArtifactId": "999f7045-9823-4fb6-8441-82ae30b21f06",
+                "data": [
+                  {
+                    "label": "Morning",
+                    "value": 10
+                  },
+                  {
+                    "label": "Noon",
+                    "value": 20
+                  },
+                  {
+                    "label": "Evening",
+                    "value": 5
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "agent_status",
+        "status": "idle",
+        "role": "storyteller"
+      },
+      {
+        "type": "agent_status",
+        "status": "idle"
+      },
+      {
+        "type": "preparation",
+        "state": {
+          "revision": 3,
+          "brief": {
+            "topic": "Solar Energy Basics",
+            "audience": "Teachers",
+            "goal": "Explain solar panels, daily energy patterns, and battery storage using the provided synthetic example",
+            "durationMinutes": 5,
+            "keyPoints": [
+              "Solar panels convert sunlight into electricity",
+              "Daily energy pattern: Morning (10 Wh), Noon (20 Wh), Evening (5 Wh)",
+              "Batteries store electricity for use after sunset"
+            ],
+            "constraints": [
+              "Use only the provided synthetic example from solar-facts.csv",
+              "No invented measurements or data"
+            ],
+            "openQuestions": [
+              "What specific teaching objectives should be emphasized?",
+              "Are there any particular misconceptions about solar energy we should address?"
+            ]
+          },
+          "flow": {
+            "title": "Solar Energy Basics",
+            "summary": "An introduction to solar energy, explaining how panels convert sunlight into electricity, the daily energy pattern throughout the day, and how batteries store energy for use after sunset.",
+            "beats": [
+              {
+                "title": "How Panels Work",
+                "audienceText": "Solar panels convert sunlight directly into electricity.",
+                "speakerNotes": "Explain that solar panels contain photovoltaic cells that absorb photons from sunlight and convert them into electrical energy.",
+                "visualDirection": "Show the flow diagram illustrating how Sun energy moves through Panels to generate electricity stored in Battery.",
+                "visualId": "83a58975-1923-484b-acd1-73dc4d74e42b",
+                "artifactIds": [
+                  "999f7045-9823-4fb6-8441-82ae30b21f06"
+                ]
+              },
+              {
+                "title": "Daily Energy Pattern",
+                "audienceText": "Energy production peaks at noon, with lower output in the morning and evening.",
+                "speakerNotes": "Point to the bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels. Emphasize that this is a synthetic teaching example.",
+                "visualDirection": "Display the bar chart of daily energy production to illustrate the pattern throughout the day.",
+                "visualId": "72a58adc-f802-4753-b026-b0993ee27067",
+                "artifactIds": [
+                  "999f7045-9823-4fb6-8441-82ae30b21f06"
+                ]
+              },
+              {
+                "title": "Storage After Sunset",
+                "audienceText": "Batteries store excess electricity for use when the sun is not shining.",
+                "speakerNotes": "Refer back to the flow diagram, highlighting how energy stored in the Battery can be used after sunset. Explain that this storage capability is crucial for consistent power supply.",
+                "visualDirection": "Use the flow diagram again to show how Panels generate energy that gets stored in Battery for later use.",
+                "visualId": "83a58975-1923-484b-acd1-73dc4d74e42b",
+                "artifactIds": [
+                  "999f7045-9823-4fb6-8441-82ae30b21f06"
+                ]
+              }
+            ],
+            "openQuestions": [
+              "What specific teaching objectives should be emphasized?",
+              "Are there any particular misconceptions about solar energy we should address?"
+            ]
+          },
+          "flowBasedOnRevision": 3,
+          "approvedRevision": 3,
+          "artifacts": [
+            {
+              "id": "999f7045-9823-4fb6-8441-82ae30b21f06",
+              "name": "solar-facts.csv",
+              "content": "Time,EnergyWh\nMorning,10\nNoon,20\nEvening,5\nSynthetic teaching example, not measured performance. Panels convert sunlight into electricity. Batteries store electricity for use after sunset. Process: Sun, Panels, Battery."
+            }
+          ],
+          "messages": {
+            "interview": [
+              {
+                "role": "user",
+                "content": "I am teaching solar energy to teachers for five minutes. Explain panels, the daily energy pattern, and battery storage. Use the uploaded synthetic example; no invented measurements. We have all the context. Call updateBrief with these points now and briefly confirm."
+              },
+              {
+                "role": "assistant",
+                "content": "Brief updated. I've recorded the topic, audience, goal, duration, key points, and constraints based on your request and the uploaded data. The open questions capture any missing details you'd like to clarify before we proceed."
+              }
+            ],
+            "storyteller": [
+              {
+                "role": "user",
+                "content": "Read the uploaded material. Call createDiagram with Sun \u2192 Panels \u2192 Battery and createChart for Morning 10, Noon 20, Evening 5 Wh, labelled synthetic teaching data, linked to the uploaded artifact. Then proposeFlow with exactly three beats: How panels work (linked to the diagram); Daily energy pattern (linked to the chart); Storage after sunset (linked to the diagram). Provide concise audienceText on each beat and use the returned visual IDs. End with a short confirmation."
+              },
+              {
+                "role": "assistant",
+                "content": "The presentation flow has been successfully proposed with three beats:\n\n1.  **How Panels Work**: Uses the flow diagram (Sun \u2192 Panels \u2192 Battery) to explain the conversion of sunlight into electricity.\n2.  **Daily Energy Pattern**: Displays a bar chart showing Morning (10 Wh), Noon (20 Wh), and Evening (5 Wh) energy levels from the synthetic data.\n3.  **Storage After Sunset**: Reuses the flow diagram to illustrate how batteries store energy for use when sunlight is unavailable.\n\nThe flow is grounded in the provided `solar-facts.csv` artifact and uses the generated visual IDs for both the diagram and chart."
+              }
+            ]
+          },
+          "events": [
+            {
+              "id": "aef640cb-4d5e-40e3-bdb5-e9fef6a358d0",
+              "from": "interview",
+              "to": "storyteller",
+              "kind": "brief.updated",
+              "summary": "Interview brief updated; prior flow needs review.",
+              "revision": 2
+            },
+            {
+              "id": "a99307a8-1768-4fb3-b7b4-af0af94678c4",
+              "from": "storyteller",
+              "to": "presenter",
+              "kind": "flow.proposed",
+              "summary": "Storyteller proposed a flow for review.",
+              "revision": 3
+            }
+          ],
+          "visuals": [
+            {
+              "id": "83a58975-1923-484b-acd1-73dc4d74e42b",
+              "spec": {
+                "kind": "diagram",
+                "title": "Solar Energy Flow",
+                "nodes": [
+                  "Sun",
+                  "Panels",
+                  "Battery"
+                ],
+                "edges": [
+                  {
+                    "from": 0,
+                    "to": 1
+                  },
+                  {
+                    "from": 1,
+                    "to": 2
+                  }
+                ]
+              }
+            },
+            {
+              "id": "72a58adc-f802-4753-b026-b0993ee27067",
+              "spec": {
+                "kind": "chart",
+                "title": "Daily Energy Pattern",
+                "chartType": "bar",
+                "unit": "Wh",
+                "sourceArtifactId": "999f7045-9823-4fb6-8441-82ae30b21f06",
+                "data": [
+                  {
+                    "label": "Morning",
+                    "value": 10
+                  },
+                  {
+                    "label": "Noon",
+                    "value": 20
+                  },
+                  {
+                    "label": "Evening",
+                    "value": 5
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "runs": [
+    {
+      "variant": "generation-first",
+      "engine": "openui",
+      "status": "Replay complete",
+      "events": [
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792248013111
+          },
+          "dispatchMs": 0.03312500000174623,
+          "at": 1792248013111
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683693",
+          "text": "",
+          "final": false,
+          "at": 1792248013963
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683693",
+          "text": "Solar panels.",
+          "final": false,
+          "at": 1792248014560
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683693",
+          "text": "Solar panels turn",
+          "final": false,
+          "at": 1792248015003
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683693",
+          "text": "Solar panels turn sometime.",
+          "final": false,
+          "at": 1792248015491
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683693",
+          "text": "Solar panels turn sunlight.",
+          "final": false,
+          "at": 1792248016025
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683693",
+          "text": "Solar panels turn sunlight.",
+          "final": true,
+          "at": 1792248016026
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Yeah.",
+          "final": false,
+          "at": 1792248016028
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into the",
+          "final": false,
+          "at": 1792248016484
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity",
+          "final": false,
+          "at": 1792248016993
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first",
+          "final": false,
+          "at": 1792248017485
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first step",
+          "final": false,
+          "at": 1792248017978
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight green",
+          "final": false,
+          "at": 1792248018510
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the sky",
+          "final": false,
+          "at": 1792248019019
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3335.0183749999997,
+          "changed": false,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248019361
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels",
+          "final": false,
+          "at": 1792248019514
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels let us find",
+          "final": false,
+          "at": 1792248020011
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels let us focus on the",
+          "final": false,
+          "at": 1792248020516
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels let us focus on the panels",
+          "final": false,
+          "at": 1792248021001
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels let us focus on the panels converging",
+          "final": false,
+          "at": 1792248021504
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels let us focus on the panels converting to",
+          "final": false,
+          "at": 1792248022017
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels let us focus on the panels converting that lighting",
+          "final": false,
+          "at": 1792248022527
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels let us focus on the panels converting that light into a light",
+          "final": false,
+          "at": 1792248023026
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels let us focus on the panels converting that light into electricity",
+          "final": false,
+          "at": 1792248023520
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels let us focus on the panels converting that light into electrical energy",
+          "final": false,
+          "at": 1792248024026
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683694",
+          "text": "Into electricity first sunlight reaches the panels let us focus on the panels converting that light into electrical energy",
+          "final": true,
+          "at": 1792248024478
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2594.007124999989,
+          "changed": false,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248027073
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The day",
+          "final": false,
+          "at": 1792248027484
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The Daily Answer",
+          "final": false,
+          "at": 1792248027990
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The Daily Energy platform.",
+          "final": false,
+          "at": 1792248028510
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The Daily Energy pattern changes.",
+          "final": false,
+          "at": 1792248029005
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes.",
+          "final": false,
+          "at": 1792248029531
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes. Our second step is to",
+          "final": false,
+          "at": 1792248030019
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes our synthetic heat",
+          "final": false,
+          "at": 1792248030526
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes our synthetic teaching and learning",
+          "final": false,
+          "at": 1792248031024
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes our synthetic teaching example for",
+          "final": false,
+          "at": 1792248031512
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes. Our synthetic teaching example produces a",
+          "final": false,
+          "at": 1792248032049
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes. Our synthetic teaching example produces 10 more",
+          "final": false,
+          "at": 1792248032528
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes. Our synthetic teaching example produces 10 what hours?",
+          "final": false,
+          "at": 1792248033026
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes. Our synthetic teaching example produces 10 watt-hours in the morning.",
+          "final": false,
+          "at": 1792248033598
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes. Our synthetic teaching example produces 10 watt hours in the morning.",
+          "final": false,
+          "at": 1792248034048
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683695",
+          "text": "The daily energy pattern changes. Our synthetic teaching example produces 10 watt hours in the morning.",
+          "final": true,
+          "at": 1792248034049
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty.",
+          "final": false,
+          "at": 1792248034493
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty at noon.",
+          "final": false,
+          "at": 1792248035009
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty at noon,",
+          "final": false,
+          "at": 1792248035484
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty at noon and five in.",
+          "final": false,
+          "at": 1792248036022
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty at noon and five in the evening.",
+          "final": false,
+          "at": 1792248036518
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792248036622
+          },
+          "dispatchMs": 0.004417000003741123,
+          "at": 1792248036622
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2573.684957999998,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248036624
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty at noon and five in the evening, noon.",
+          "final": false,
+          "at": 1792248037022
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty at noon and five in the evening, noon is the home.",
+          "final": false,
+          "at": 1792248037539
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty at noon and five in the evening, noon is the highest point.",
+          "final": false,
+          "at": 1792248038015
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty at noon and five in the evening, noon is the highest point on this shore.",
+          "final": false,
+          "at": 1792248038538
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty at noon and five in the evening, noon is the highest point on this chart.",
+          "final": false,
+          "at": 1792248039022
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683696",
+          "text": "Twenty at noon and five in the evening, noon is the highest point on this chart.",
+          "final": true,
+          "at": 1792248039023
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 3,
+            "committedAt": 1792248041564
+          },
+          "dispatchMs": 0.0105829999956768,
+          "at": 1792248041565
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2542.189957999988,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248041567
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "you",
+          "final": false,
+          "at": 1792248041972
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect",
+          "final": false,
+          "at": 1792248042500
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect jimmy",
+          "final": false,
+          "at": 1792248043000
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation.",
+          "final": false,
+          "at": 1792248043537
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage.",
+          "final": false,
+          "at": 1792248044012
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage panels with the",
+          "final": false,
+          "at": 1792248045023
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Paddles make electricity.",
+          "final": false,
+          "at": 1792248045559
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Paddles make electricity for the",
+          "final": false,
+          "at": 1792248046041
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Paddles make electricity while some lights are on.",
+          "final": false,
+          "at": 1792248046552
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Paddles make electricity while sunlight is available.",
+          "final": false,
+          "at": 1792248047047
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Paddles make electricity while sunlight is available and available.",
+          "final": false,
+          "at": 1792248048031
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Panels make electricity while sunlight is available and a battery.",
+          "final": false,
+          "at": 1792248048616
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Panels make electricity while sunlight is available and a battery stores it.",
+          "final": false,
+          "at": 1792248049044
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Panels make electricity while sunlight is available and a battery stores it for later.",
+          "final": false,
+          "at": 1792248049543
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Panels make electricity while sunlight is available and a battery stores it for later. Show the relation and storage.",
+          "final": false,
+          "at": 1792248050539
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Panels make electricity while sunlight is available and a battery stores it for later. Show the relationship between the two.",
+          "final": false,
+          "at": 1792248051054
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Panels make electricity while sunlight is available and a battery stores it for later. Show the relationship between the panels.",
+          "final": false,
+          "at": 1792248051563
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683697",
+          "text": "Now connect generation and storage. Panels make electricity while sunlight is available and a battery stores it for later. Show the relationship between the panels.",
+          "final": true,
+          "at": 1792248051563
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683698",
+          "text": "Okay.",
+          "final": false,
+          "at": 1792248051564
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683698",
+          "text": "Panels and select the",
+          "final": false,
+          "at": 1792248052020
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683698",
+          "text": "Panels and storage",
+          "final": false,
+          "at": 1792248052505
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683698",
+          "text": "Panels and storage together.",
+          "final": false,
+          "at": 1792248052997
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683698",
+          "text": "Panels and storage together.",
+          "final": true,
+          "at": 1792248052997
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "sequence",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "secondary",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "normal",
+                    "reveal": null
+                  },
+                  {
+                    "id": "detail",
+                    "kind": "statement",
+                    "beat": 2,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 4,
+            "committedAt": 1792248055641
+          },
+          "dispatchMs": 0.012832999986130744,
+          "at": 1792248055642
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 4079.1062920000113,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              },
+              {
+                "id": "detail",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248055651
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683699",
+          "text": "you",
+          "final": false,
+          "at": 1792248056030
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683699",
+          "text": "After",
+          "final": false,
+          "at": 1792248056507
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683699",
+          "text": "After sunset",
+          "final": false,
+          "at": 1792248057004
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683699",
+          "text": "After sunset",
+          "final": true,
+          "at": 1792248057504
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "",
+          "final": false,
+          "at": 1792248057507
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "Here is no.",
+          "final": false,
+          "at": 1792248057990
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight.",
+          "final": false,
+          "at": 1792248058538
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight, the bedside.",
+          "final": false,
+          "at": 1792248059034
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "split",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "secondary",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 5,
+            "committedAt": 1792248059082
+          },
+          "dispatchMs": 0.004167000006418675,
+          "at": 1792248059083
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3440.726542000004,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248059086
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight, the battery supplies",
+          "final": false,
+          "at": 1792248059523
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight. The battery supplies and the battery supplies",
+          "final": false,
+          "at": 1792248060067
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight. The battery supplies energy supply.",
+          "final": false,
+          "at": 1792248060551
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight. The battery supplies energy stored earlier.",
+          "final": false,
+          "at": 1792248061047
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight. The battery supplies energy stored earlier. Let us",
+          "final": false,
+          "at": 1792248061551
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight. The battery supplies energy stored earlier. Let us focus on the",
+          "final": false,
+          "at": 1792248062035
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Storage After Sunset",
+            "composition": {
+              "title": "Storage After Sunset",
+              "body": "Batteries store excess electricity for use when the sun is not shining.",
+              "beat": 2,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "split",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 2,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "secondary",
+                    "kind": "visual",
+                    "beat": 2,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 6,
+            "committedAt": 1792248062414
+          },
+          "dispatchMs": 0.012083000008715317,
+          "at": 1792248062415
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3331.9192080000066,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 2,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248062424
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight. The battery supplies energy stored earlier. Let us focus on storage.",
+          "final": false,
+          "at": 1792248062561
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight. The battery supplies energy stored earlier. Let us focus on storage after this.",
+          "final": false,
+          "at": 1792248063036
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight. The battery supplies energy stored earlier. Let us focus on storage after sunset.",
+          "final": false,
+          "at": 1792248063546
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4366246625525683700",
+          "text": "There is no sunlight. The battery supplies energy stored earlier. Let us focus on storage after sunset.",
+          "final": true,
+          "at": 1792248064008
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3306.918749999997,
+          "changed": false,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 2,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248067316
+        }
+      ]
+    },
+    {
+      "variant": "storage-first",
+      "engine": "json-render",
+      "status": "Replay complete",
+      "events": [
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792248068963
+          },
+          "dispatchMs": 0.006416999996872619,
+          "at": 1792248068963
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Eh?",
+          "final": false,
+          "at": 1792248069680
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine.",
+          "final": false,
+          "at": 1792248070156
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after",
+          "final": false,
+          "at": 1792248070677
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset.",
+          "final": false,
+          "at": 1792248071176
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We sit",
+          "final": false,
+          "at": 1792248071670
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need to be careful.",
+          "final": false,
+          "at": 1792248072212
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity.",
+          "final": false,
+          "at": 1792248072694
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the",
+          "final": false,
+          "at": 1792248073694
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery.",
+          "final": false,
+          "at": 1792248074185
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage.",
+          "final": false,
+          "at": 1792248075194
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes everyone happy.",
+          "final": false,
+          "at": 1792248075716
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy.",
+          "final": false,
+          "at": 1792248076212
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available.",
+          "final": false,
+          "at": 1792248076710
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunset.",
+          "final": false,
+          "at": 1792248077236
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is available.",
+          "final": false,
+          "at": 1792248077716
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is gone.",
+          "final": false,
+          "at": 1792248078212
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074652",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is gone.",
+          "final": true,
+          "at": 1792248078213
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Storage After Sunset",
+            "composition": {
+              "title": "Storage After Sunset",
+              "body": "Batteries store excess electricity for use when the sun is not shining.",
+              "beat": 2,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 2,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792248080702
+          },
+          "dispatchMs": 0.004665999993449077,
+          "at": 1792248080702
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2489.950208000024,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248080704
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074653",
+          "text": "you",
+          "final": false,
+          "at": 1792248081223
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074653",
+          "text": "We're did this",
+          "final": false,
+          "at": 1792248081672
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074653",
+          "text": "We did the stored electricity",
+          "final": false,
+          "at": 1792248082178
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074653",
+          "text": "We did distort electricity",
+          "final": false,
+          "at": 1792248082685
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074653",
+          "text": "Where did the stored electricity come from for",
+          "final": false,
+          "at": 1792248083210
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074653",
+          "text": "Where did the stored electricity come from compare",
+          "final": false,
+          "at": 1792248083695
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074653",
+          "text": "Where did the stored electricity come from compare the panels",
+          "final": false,
+          "at": 1792248084196
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074653",
+          "text": "Where did the stored electricity come from? Compare the panels.",
+          "final": false,
+          "at": 1792248084750
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074653",
+          "text": "Where did the stored electricity come from? Compare the panels.",
+          "final": true,
+          "at": 1792248084751
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Yeah.",
+          "final": false,
+          "at": 1792248084754
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generate",
+          "final": false,
+          "at": 1792248085174
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generating electricity.",
+          "final": false,
+          "at": 1792248085696
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generating electricity with the",
+          "final": false,
+          "at": 1792248086189
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generating electricity with the battery",
+          "final": false,
+          "at": 1792248086676
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generating electricity with the battery seated",
+          "final": false,
+          "at": 1792248087186
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generating electricity with the battery saving it.",
+          "final": false,
+          "at": 1792248087719
+        },
+        {
+          "type": "agent_error",
+          "message": "Composition failed; holding canvas",
+          "at": 1792248088007
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generating electricity with the battery saving it these are cute",
+          "final": false,
+          "at": 1792248088210
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generating electricity with the battery saving it. These are connected by",
+          "final": false,
+          "at": 1792248088717
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generating electricity with the battery saving it. These are connected but differently.",
+          "final": false,
+          "at": 1792248089229
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generating electricity with the battery saving it. These are connected but different jobs.",
+          "final": false,
+          "at": 1792248089713
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074654",
+          "text": "Generating electricity with the battery saving it. These are connected but different jobs.",
+          "final": true,
+          "at": 1792248090188
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look.",
+          "final": false,
+          "at": 1792248093181
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "split",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "secondary",
+                    "kind": "visual",
+                    "beat": 2,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 3,
+            "committedAt": 1792248093482
+          },
+          "dispatchMs": 0.019957999989856035,
+          "at": 1792248093483
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3295.489124999993,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 2,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248093488
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look at the data.",
+          "final": false,
+          "at": 1792248093714
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look at the daily energy.",
+          "final": false,
+          "at": 1792248094206
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look at the daily energy chart.",
+          "final": false,
+          "at": 1792248094687
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look at the daily energy chart, the synthetic energy chart.",
+          "final": false,
+          "at": 1792248095727
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look at the daily energy chart. The synthetic example",
+          "final": false,
+          "at": 1792248096226
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look at the daily energy chart. The synthetic example as 20 degrees Celsius.",
+          "final": false,
+          "at": 1792248096737
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours.",
+          "final": false,
+          "at": 1792248097251
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt-hours at noon.",
+          "final": false,
+          "at": 1792248097742
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours at noon.",
+          "final": false,
+          "at": 1792248098230
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074655",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours at noon.",
+          "final": true,
+          "at": 1792248098231
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074656",
+          "text": "10.",
+          "final": false,
+          "at": 1792248098672
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074656",
+          "text": "10 in the morning.",
+          "final": false,
+          "at": 1792248099185
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074656",
+          "text": "Ten in the morning.",
+          "final": false,
+          "at": 1792248099737
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074656",
+          "text": "Ten in the morning.",
+          "final": true,
+          "at": 1792248099737
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074657",
+          "text": "Okay.",
+          "final": false,
+          "at": 1792248099738
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074657",
+          "text": "And five,",
+          "final": false,
+          "at": 1792248100191
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074657",
+          "text": "And five in the evening.",
+          "final": false,
+          "at": 1792248100707
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074657",
+          "text": "And five in the evening, noon and.",
+          "final": false,
+          "at": 1792248101227
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074657",
+          "text": "And five in the evening noon is high.",
+          "final": false,
+          "at": 1792248101716
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "split",
+                "blocks": [
+                  {
+                    "id": "secondary",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "normal",
+                    "reveal": null
+                  },
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 4,
+            "committedAt": 1792248101718
+          },
+          "dispatchMs": 0.00620800000615418,
+          "at": 1792248101718
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3488.366249999992,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              },
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248101721
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074657",
+          "text": "And five in the evening, noon is highest.",
+          "final": false,
+          "at": 1792248102232
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074657",
+          "text": "And five in the evening, noon is highest.",
+          "final": true,
+          "at": 1792248102233
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3539.329625000013,
+          "changed": false,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              },
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248105259
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074658",
+          "text": "Repeat.",
+          "final": false,
+          "at": 1792248105280
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074658",
+          "text": "Return to the bathroom.",
+          "final": false,
+          "at": 1792248105714
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074658",
+          "text": "Return to the process tab",
+          "final": false,
+          "at": 1792248106210
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074658",
+          "text": "Return to the process diagram",
+          "final": false,
+          "at": 1792248106690
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074658",
+          "text": "Return to the process diagram.",
+          "final": false,
+          "at": 1792248107197
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074658",
+          "text": "Return to the process diagram. Start with the same diagram.",
+          "final": false,
+          "at": 1792248107744
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074658",
+          "text": "Return to the process diagram. Start with the sum of 1.",
+          "final": false,
+          "at": 1792248108248
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3481.184416999982,
+          "changed": false,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              },
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248108739
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074658",
+          "text": "Return to the process diagram. Start with the sum alone.",
+          "final": false,
+          "at": 1792248108757
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074658",
+          "text": "Return to the process diagram. Start with the sum alone.",
+          "final": true,
+          "at": 1792248108758
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074659",
+          "text": "Okay.",
+          "final": false,
+          "at": 1792248108759
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074659",
+          "text": "Then review.",
+          "final": false,
+          "at": 1792248109205
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074659",
+          "text": "Then reveal the pattern.",
+          "final": false,
+          "at": 1792248109729
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074659",
+          "text": "Then reveal the panels.",
+          "final": false,
+          "at": 1792248110210
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074659",
+          "text": "Then reveal the panels. Finally, cut the panels.",
+          "final": false,
+          "at": 1792248110740
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074659",
+          "text": "Then reveal the panels. Finally, connect the panel.",
+          "final": false,
+          "at": 1792248111237
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "sequence",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "visual",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  },
+                  {
+                    "id": "secondary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 5,
+            "committedAt": 1792248111544
+          },
+          "dispatchMs": 0.0062089999846648425,
+          "at": 1792248111545
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2787.904582999996,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248111555
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074659",
+          "text": "Then reveal the panels. Finally, connect the panels to the panel.",
+          "final": false,
+          "at": 1792248111745
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074659",
+          "text": "Then reveal the panels. Finally, connect the panels to the battery.",
+          "final": false,
+          "at": 1792248112235
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074659",
+          "text": "Then reveal the panels. Finally connect the panels to the battery",
+          "final": false,
+          "at": 1792248112766
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074659",
+          "text": "Then reveal the panels. Finally connect the panels to the battery",
+          "final": true,
+          "at": 1792248112766
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074660",
+          "text": "",
+          "final": false,
+          "at": 1792248112768
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074660",
+          "text": "Showing the",
+          "final": false,
+          "at": 1792248113188
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074660",
+          "text": "Showing the full process",
+          "final": false,
+          "at": 1792248113689
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074660",
+          "text": "Showing the full process.",
+          "final": false,
+          "at": 1792248114170
+        },
+        {
+          "type": "transcript",
+          "segmentId": "4395449873356074660",
+          "text": "Showing the full process.",
+          "final": true,
+          "at": 1792248114171
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3314.042583000002,
+          "changed": false,
+          "held": false,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248116081
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3304.0217080000148,
+          "changed": false,
+          "held": false,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248119385
+        }
+      ]
+    },
+    {
+      "variant": "detour-and-return",
+      "engine": "openui",
+      "status": "Replay complete",
+      "events": [
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792248134679
+          },
+          "dispatchMs": 0.005582999991020188,
+          "at": 1792248134679
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look.",
+          "final": false,
+          "at": 1792248135534
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the day.",
+          "final": false,
+          "at": 1792248136046
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the daily energy.",
+          "final": false,
+          "at": 1792248136546
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the daily energy pattern.",
+          "final": false,
+          "at": 1792248137045
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the daily energy packing news.",
+          "final": false,
+          "at": 1792248137562
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the daily energy packing. Noon is the 12th.",
+          "final": false,
+          "at": 1792248138099
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the daily energy packing. Noon is the highest point.",
+          "final": false,
+          "at": 1792248138607
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the daily energy pattern. Noon is the highest point in hours.",
+          "final": false,
+          "at": 1792248139112
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the daily energy pattern. Noon is the highest point in our synthetic energy.",
+          "final": false,
+          "at": 1792248139585
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the daily energy pattern. Noon is the highest point in our synthetic exam.",
+          "final": false,
+          "at": 1792248140074
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the daily energy pattern. Noon is the highest point in our synthetic example.",
+          "final": false,
+          "at": 1792248140569
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532967",
+          "text": "Look at the daily energy pattern. Noon is the highest point in our synthetic example.",
+          "final": true,
+          "at": 1792248140570
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532968",
+          "text": "Followed by.",
+          "final": false,
+          "at": 1792248141046
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532968",
+          "text": "Followed by morning.",
+          "final": false,
+          "at": 1792248141554
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532968",
+          "text": "Followed by morning, and.",
+          "final": false,
+          "at": 1792248142057
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532968",
+          "text": "Followed by morning, and then,",
+          "final": false,
+          "at": 1792248142553
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532968",
+          "text": "Followed by morning and then evening.",
+          "final": false,
+          "at": 1792248143075
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532968",
+          "text": "Followed by morning and then evening.",
+          "final": true,
+          "at": 1792248143076
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792248143139
+          },
+          "dispatchMs": 0.001791000016964972,
+          "at": 1792248143139
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2569.75091599999,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248143144
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "you",
+          "final": false,
+          "at": 1792248146034
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "sequence",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "secondary",
+                    "kind": "visual",
+                    "beat": 2,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 3,
+            "committedAt": 1792248146427
+          },
+          "dispatchMs": 0.0027920000138692558,
+          "at": 1792248146427
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3288.0242089999956,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 2,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248146432
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Heat better.",
+          "final": false,
+          "at": 1792248146549
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in place.",
+          "final": false,
+          "at": 1792248147071
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view.",
+          "final": false,
+          "at": 1792248147550
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I like scrolling.",
+          "final": false,
+          "at": 1792248148070
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain.",
+          "final": false,
+          "at": 1792248148562
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain these numbers.",
+          "final": false,
+          "at": 1792248149059
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain these numbers are in the description.",
+          "final": false,
+          "at": 1792248149589
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain. These numbers are teaching in the",
+          "final": false,
+          "at": 1792248150095
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain. These numbers are a teaching example.",
+          "final": false,
+          "at": 1792248150580
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain. These numbers are a teaching example. Not a",
+          "final": false,
+          "at": 1792248151056
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain. These numbers are a teaching example, not measurements.",
+          "final": false,
+          "at": 1792248151570
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain. These numbers are a teaching example, not measurements from a real",
+          "final": false,
+          "at": 1792248152081
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain. These numbers are a teaching example, not measurements from a real instrument.",
+          "final": false,
+          "at": 1792248152556
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain. These numbers are a teaching example, not measurements from a real installation.",
+          "final": false,
+          "at": 1792248153077
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532969",
+          "text": "Keep that chart in view while I explain. These numbers are a teaching example, not measurements from a real installation.",
+          "final": true,
+          "at": 1792248153079
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 4,
+            "committedAt": 1792248155885
+          },
+          "dispatchMs": 0.005875000002561137,
+          "at": 1792248155886
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2808.4361659999995,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248155890
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "you",
+          "final": false,
+          "at": 1792248156031
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite.",
+          "final": false,
+          "at": 1792248156532
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite luncheon.",
+          "final": false,
+          "at": 1792248157064
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pasture.",
+          "final": false,
+          "at": 1792248157572
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pasture with turmeric",
+          "final": false,
+          "at": 1792248158074
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pastor with tomato",
+          "final": false,
+          "at": 1792248158577
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pasta with tomatoes. I love it.",
+          "final": false,
+          "at": 1792248159107
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pasta with tomatoes. I left my notes.",
+          "final": false,
+          "at": 1792248159583
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pasta with tomatoes. I left my notebook and then I went to the",
+          "final": false,
+          "at": 1792248160110
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pasta with tomatoes. I left my notebook in the kitchen.",
+          "final": false,
+          "at": 1792248160586
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pasta with tomatoes. I left my notebook in the kitchen. Anyway,",
+          "final": false,
+          "at": 1792248161066
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pasta with tomatoes. I left my notebook in the kitchen. Anyway, let's go.",
+          "final": false,
+          "at": 1792248161581
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pasta with tomatoes. I left my notebook in the kitchen. Anyway, let us return to the kitchen.",
+          "final": false,
+          "at": 1792248162205
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pastor with tomatoes. I left my notebook in the kitchen. Anyway, let us return to the present.",
+          "final": false,
+          "at": 1792248162690
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pastor with tomatoes. I left my notebook in the kitchen. Anyway, let us return to the presentation.",
+          "final": false,
+          "at": 1792248163084
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532970",
+          "text": "My favorite lunch is pastor with tomatoes. I left my notebook in the kitchen. Anyway, let us return to the presentation.",
+          "final": true,
+          "at": 1792248163613
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2561.9551669999782,
+          "changed": false,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248166175
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can't.",
+          "final": false,
+          "at": 1792248166553
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain",
+          "final": false,
+          "at": 1792248167050
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole thing",
+          "final": false,
+          "at": 1792248167547
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relation to the",
+          "final": false,
+          "at": 1792248168065
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now.",
+          "final": false,
+          "at": 1792248168567
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now. Cut the daily notes.",
+          "final": false,
+          "at": 1792248169580
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now. Put the daily energy back on.",
+          "final": false,
+          "at": 1792248170111
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now. Put the daily energy pattern.",
+          "final": false,
+          "at": 1792248170575
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now. Put the daily energy pattern beside it.",
+          "final": false,
+          "at": 1792248171077
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now. Put the daily energy pattern beside the story of the",
+          "final": false,
+          "at": 1792248171591
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now. Put the daily energy pattern beside the storage experience.",
+          "final": false,
+          "at": 1792248172090
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now. Put the daily energy pattern beside the storage explanation.",
+          "final": false,
+          "at": 1792248172561
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now. Put the daily energy pattern beside the storage explanation. Solar energy.",
+          "final": false,
+          "at": 1792248173064
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now. Put the daily energy pattern beside the storage explanation. Solar electricity.",
+          "final": false,
+          "at": 1792248173576
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532971",
+          "text": "We can explain the whole relationship now. Put the daily energy pattern beside the storage explanation. Solar electricity.",
+          "final": true,
+          "at": 1792248174065
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532972",
+          "text": "Is",
+          "final": false,
+          "at": 1792248174539
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532972",
+          "text": "Is produced",
+          "final": false,
+          "at": 1792248175050
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532972",
+          "text": "Is produced during day",
+          "final": false,
+          "at": 1792248175559
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532972",
+          "text": "Is produced during daylight",
+          "final": false,
+          "at": 1792248176061
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532972",
+          "text": "Is produced during daylight while back",
+          "final": false,
+          "at": 1792248176561
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532972",
+          "text": "Is produced during daylight while batteries",
+          "final": false,
+          "at": 1792248177081
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "split",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "secondary",
+                    "kind": "visual",
+                    "beat": 2,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 5,
+            "committedAt": 1792248177350
+          },
+          "dispatchMs": 0.001500000013038516,
+          "at": 1792248177350
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3285.731958999997,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 2,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248177355
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532972",
+          "text": "Is produced during daylight while batteries make it available",
+          "final": false,
+          "at": 1792248177571
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532972",
+          "text": "Is produced during daylight while batteries make it available to the",
+          "final": false,
+          "at": 1792248178078
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532972",
+          "text": "Is produced during daylight while batteries make it available after sunset",
+          "final": false,
+          "at": 1792248178586
+        },
+        {
+          "type": "transcript",
+          "segmentId": "5903384715587532972",
+          "text": "Is produced during daylight while batteries make it available after sunset",
+          "final": true,
+          "at": 1792248179035
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "sequence",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "visual",
+                    "beat": 0,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "secondary",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 6,
+            "committedAt": 1792248182464
+          },
+          "dispatchMs": 0.0021249999990686774,
+          "at": 1792248182464
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 3429.2742920000164,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 0,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "at": 1792248182480
+        }
+      ]
+    }
+  ]
+}

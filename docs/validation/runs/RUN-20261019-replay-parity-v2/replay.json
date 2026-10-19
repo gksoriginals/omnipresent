@@ -1,0 +1,6433 @@
+{
+  "id": "RUN-20261019-replay-parity-v2",
+  "startedAt": "2026-10-19T05:47:31.495Z",
+  "finishedAt": "2026-10-19T05:47:32.391Z",
+  "sourceFiles": [
+    {
+      "path": "server/controllers/candidates.ts",
+      "sha256": "dac057323574104af8e5d16b4565c581b643b633c0e7fbec37614e79d4e552bd"
+    },
+    {
+      "path": "server/controllers/component-forecast.ts",
+      "sha256": "bb34b03c7cb7355c084db2f5a0c122b78551a680873a03fba5c7cdbabb6f518d"
+    },
+    {
+      "path": "server/controllers/evidence-contract.ts",
+      "sha256": "dfe7f810119dc915b57b62e153f707b89f1432f986df431971bdd908e7b345dd"
+    },
+    {
+      "path": "server/controllers/hybrid-components.ts",
+      "sha256": "649f4312a26d9862aad0e058367625f6fd0cdeec6c098daa9ce027c3cbb39e84"
+    },
+    {
+      "path": "server/controllers/library-grounding.ts",
+      "sha256": "276bc0ebcc0895e5d173bd9fe2a7e89e25cad5b1e4fc5d6ed84dc9817a6ef06f"
+    },
+    {
+      "path": "server/controllers/library-policy.ts",
+      "sha256": "40c7f9746fe79886b8b4ccac8f8fc25a318efcaba86a411ba848a25ab72deb3d"
+    },
+    {
+      "path": "server/controllers/library-search.ts",
+      "sha256": "05032576f35f30e7f8f292339c1bbc0eb8a0cf46ea514eacee034c08c2fd7aa9"
+    },
+    {
+      "path": "server/controllers/presentation-policy.ts",
+      "sha256": "f2fd740508e72568b6af39538ce2e4eff177aae607d64332a06dd5364671e5d0"
+    },
+    {
+      "path": "server/controllers/retrieval.ts",
+      "sha256": "6b572e816577acebfbcd089a919a27d792dce04e95c8f779c0a88abba5e9465c"
+    },
+    {
+      "path": "server/controllers/semantic-retrieval.ts",
+      "sha256": "bbb0140b7edb3f36b138439b25f1c2673a34063cabe7e9411cb46a314f1f09dd"
+    },
+    {
+      "path": "server/controllers/shortlisted-decision.ts",
+      "sha256": "5c8a0768acf4aec9cd5a4af4d8c3ff4df4c2e16e3e31235af004a62c007b9283"
+    },
+    {
+      "path": "server/experiments/file-trace.ts",
+      "sha256": "3ec3c818b8fd2d85ae8b38e70b5eec217dffc8d377f8af9f71cc16f4b6e94175"
+    },
+    {
+      "path": "server/experiments/replay.ts",
+      "sha256": "7a23916a0599d49aa93e0c339da51b09db623dd2283a63a9d1d1acc6f428736f"
+    },
+    {
+      "path": "server/experiments/trace.ts",
+      "sha256": "c94643ec67f3a1e71eea69b1b061025e68a3c407a1a38ab81d3bc72aca4db246"
+    },
+    {
+      "path": "shared/adaptive.ts",
+      "sha256": "388f8842387547ae5595aec6ae819b91d56c11e0631f70981a36e886021e6f8a"
+    },
+    {
+      "path": "shared/evidence.ts",
+      "sha256": "517e90ade1b825d080a224a230c7bf50b99d3815c248920a0cc36d06cd49fe62"
+    },
+    {
+      "path": "shared/preparation.ts",
+      "sha256": "d419b834fac59b5e73110dc9f0aba995241b5f874a97baeb38426589814cfd04"
+    },
+    {
+      "path": "shared/visuals.ts",
+      "sha256": "c744c6a0b88bccd86518772c390fdc64d9bffcfab859a67f5a1024890af37aaf"
+    },
+    {
+      "path": "shared/workspace.ts",
+      "sha256": "de27f530bb8e35fdf6d99a34203c810e29da239c3f79045b221949601392fe7e"
+    },
+    {
+      "path": "scripts/replay-baseline.ts",
+      "sha256": "4335c85deca56efca3095c85eb2624774bd2745649138e30688213f42c79ce0f"
+    },
+    {
+      "path": "scripts/evidence-fixtures.ts",
+      "sha256": "bcb6608f92675f63c78499e3c186549ebcbb96da7155dd8e2bbf05b83c20809b"
+    },
+    {
+      "path": "scripts/source-backed-evidence-fixture.ts",
+      "sha256": "47f9ef0c43438ee88a13c1d5b9918bebe1812f2cbb4735e62997f6481ecc6c5a"
+    },
+    {
+      "path": "scripts/cue-policy-fixture.ts",
+      "sha256": "9539e2c345d133783591d27b968e3721f011482d8955bafd44dac40f8dcc4d8d"
+    },
+    {
+      "path": "scripts/large-library-fixture.ts",
+      "sha256": "c074a580e3157105010cfd385f10bbf19a09578cfc533d66e353db4bc4d3e28d"
+    },
+    {
+      "path": "tests/fixtures/evidence-source-snapshots.json",
+      "sha256": "c5535868b4fed19a4c01e006101d98f2041cf454433efa85c944acdae9b1a6fa"
+    },
+    {
+      "path": "package.json",
+      "sha256": "3ea9299b1919515ba2d5666c8b53b59c0900c9bedbb75995ff428fac39ba929b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "dc4aaeb499174d437404c1affbaecbf9c1fad0e6dc4a87e18397dfd42d333a8e"
+    }
+  ],
+  "inputHash": "4bc76eb9f25af124f4491756e6edd23edecc5250060b4086dc6faba42e5ec69a",
+  "profile": "deterministic-plumbing-parity",
+  "rows": [
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "positive-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 88.29445899999999,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "refresh": 0.23608300000000781,
+        "eligibility": 14.976916000000017,
+        "final-evidence": 5.8101660000000095,
+        "turn": 88.23912499999997
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "positive-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 16.104041999999993,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "refresh": 0.35725000000002183,
+        "eligibility": 2.2821250000000077,
+        "final-evidence": 2.7845839999999953,
+        "turn": 16.049082999999996
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "positive-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.500333000000012,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 2.0190830000000233,
+        "final-evidence": 2.1219580000000065,
+        "turn": 4.418666999999971
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "positive-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 7.684000000000026,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 3.8604159999999865,
+        "final-evidence": 3.386000000000024,
+        "turn": 7.619041999999979
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "positive-cost",
+      "expected": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.7027909999999906,
+      "result": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.3393750000000182,
+        "final-evidence": 1.0356670000000463,
+        "turn": 2.649500000000046
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "positive-cost",
+      "expected": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.607749999999953,
+      "result": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.3079589999999826,
+        "final-evidence": 1.078875000000039,
+        "turn": 2.566082999999992
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "positive-reliability",
+      "expected": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.15300000000002,
+      "result": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.6745000000000232,
+        "final-evidence": 1.1788329999999974,
+        "turn": 3.057834000000014
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "positive-reliability",
+      "expected": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.616457999999966,
+      "result": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.2572910000000093,
+        "final-evidence": 1.1227910000000065,
+        "turn": 2.5673340000000167
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "positive-water",
+      "expected": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.7995839999999816,
+      "result": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.6096670000000017,
+        "final-evidence": 0.9472499999999968,
+        "turn": 2.7677909999999883
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "positive-water",
+      "expected": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.4670409999999947,
+      "result": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.2575420000000008,
+        "final-evidence": 1.0326670000000036,
+        "turn": 2.4387080000000196
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "positive-learning",
+      "expected": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.832499999999982,
+      "result": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.3092079999999555,
+        "final-evidence": 1.3372909999999933,
+        "turn": 2.796291999999994
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "positive-learning",
+      "expected": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.458833000000027,
+      "result": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.3288749999999823,
+        "final-evidence": 0.9587920000000167,
+        "turn": 2.42679099999998
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "positive-queue",
+      "expected": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.674082999999996,
+      "result": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.362292000000025,
+        "final-evidence": 1.1185419999999908,
+        "turn": 2.6409999999999627
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "positive-queue",
+      "expected": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.7640420000000177,
+      "result": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.6778749999999718,
+        "final-evidence": 0.9252920000000131,
+        "turn": 2.7336250000000177
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "positive-emissions",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.4377079999999864,
+      "result": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.3460410000000138,
+        "final-evidence": 0.9194170000000099,
+        "turn": 2.4105409999999665
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "positive-emissions",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.2312089999999785,
+      "result": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "81df5ef99949138e40dec532e960157660bd2edf38ff9942120d201ceccd23c5"
+      },
+      "stageMs": {
+        "eligibility": 1.7027079999999728,
+        "final-evidence": 1.3297089999999798,
+        "turn": 3.1990000000000123
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "paraphrase-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 14.524291000000005,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "refresh": 0.10695799999996325,
+        "eligibility": 1.146665999999982,
+        "retrieval": 1.6601670000000013,
+        "grounding": 2.597082999999998,
+        "final-evidence": 1.6905420000000504,
+        "turn": 14.489292000000034
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "paraphrase-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 14.689042000000029,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "refresh": 0.15708300000000008,
+        "eligibility": 1.9209999999999923,
+        "retrieval": 0.7540830000000369,
+        "grounding": 1.6879580000000374,
+        "final-evidence": 2.1592500000000427,
+        "turn": 14.652792000000034
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "illustrative",
+      "expected": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.070958000000019,
+      "result": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 2.011459000000002,
+        "final-evidence": 1.8457089999999994,
+        "turn": 4.014625000000024
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "illustrative",
+      "expected": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 6.668542000000002,
+      "result": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 5.375042000000008,
+        "final-evidence": 1.0289170000000354,
+        "turn": 6.630625000000009
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "missing-year",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.3040000000000305,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 1.0977079999999546,
+        "final-evidence": 0.02679200000000037,
+        "turn": 1.2665419999999585
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "missing-year",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.1294169999999895,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 0.9418749999999818,
+        "final-evidence": 0.022999999999967713,
+        "turn": 1.0929160000000024
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "missing-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0989999999999895,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 0.8920420000000036,
+        "final-evidence": 0.025208000000020547,
+        "turn": 1.0448329999999828
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "missing-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.2352500000000077,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 0.9679169999999999,
+        "final-evidence": 0.08875000000000455,
+        "turn": 1.2119169999999713
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "missing-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.5149169999999685,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 1.3830829999999992,
+        "final-evidence": 0.020040999999991982,
+        "turn": 1.4936670000000163
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "missing-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.035459000000003,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 0.8936659999999961,
+        "final-evidence": 0.018624999999985903,
+        "turn": 1.012666999999965
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "negation",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1479580000000169,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 0.025500000000022283,
+        "final-evidence": 0.01904100000001563,
+        "turn": 0.12691699999999173
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "negation",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.13874999999995907,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 0.021583000000021002,
+        "final-evidence": 0.018499999999960437,
+        "turn": 0.11929199999997309
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "correction",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.067583999999954,
+      "result": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 1.566915999999992,
+        "retrieval": 0.3068749999999909,
+        "grounding": 1.0511250000000132,
+        "final-evidence": 0.9252920000000131,
+        "turn": 4.044040999999993
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "correction",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.1650000000000205,
+      "result": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 1.6971250000000282,
+        "retrieval": 0.3084169999999631,
+        "grounding": 0.994624999999985,
+        "final-evidence": 0.9345000000000141,
+        "turn": 4.1380419999999845
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "missing-private",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.1038329999999519,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 0.8467499999999859,
+        "final-evidence": 0.042124999999998636,
+        "turn": 1.0728330000000028
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "missing-private",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.9477079999999773,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "f472df450e40001abb4dea54163734b24923f70bf0cd26e73199cac218a12676"
+      },
+      "stageMs": {
+        "eligibility": 0.7749160000000188,
+        "final-evidence": 0.04066700000004175,
+        "turn": 0.9240419999999858
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "repeated-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 10.57933300000002,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "refresh": 0.2310000000000514,
+        "eligibility": 1.446708000000001,
+        "final-evidence": 0.9456250000000068,
+        "turn": 10.553083000000015
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "repeated-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 10.123125000000016,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "refresh": 0.13549999999997908,
+        "eligibility": 1.062250000000006,
+        "final-evidence": 0.9549580000000333,
+        "turn": 10.093999999999994
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "repeated-solar-again",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.94579200000004,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "retain",
+        "path": "cue",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 1.7696249999999623,
+        "final-evidence": 0.9944580000000087,
+        "turn": 2.9098749999999995
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "repeated-solar-again",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.3224579999999833,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "retain",
+        "path": "cue",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 1.1563340000000153,
+        "final-evidence": 0.9933749999999577,
+        "turn": 2.2738749999999754
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "quoted",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.19004200000000537,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 0.025999999999953616,
+        "final-evidence": 0.021791000000007443,
+        "turn": 0.15970800000002328
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "quoted",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1830410000000029,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 0.023834000000022115,
+        "final-evidence": 0.021500000000003183,
+        "turn": 0.15679099999999835
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "extra-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0968750000000114,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 0.9578750000000014,
+        "final-evidence": 0.02199999999999136,
+        "turn": 1.0742500000000064
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "extra-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.6553329999999846,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 1.4992920000000254,
+        "final-evidence": 0.027458000000024185,
+        "turn": 1.6304160000000252
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "wrong-status",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.5617920000000254,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 1.4075000000000273,
+        "final-evidence": 0.021667000000036296,
+        "turn": 1.540625000000034
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "wrong-status",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.6314160000000015,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 1.478125000000034,
+        "final-evidence": 0.022291999999993095,
+        "turn": 1.606833999999992
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "ambiguous-year",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.030417,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 0.8813330000000406,
+        "final-evidence": 0.02033300000005056,
+        "turn": 1.0031250000000114
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "ambiguous-year",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.3874999999999886,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 1.242999999999995,
+        "final-evidence": 0.022540999999989708,
+        "turn": 1.3653750000000286
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "keep",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.15883400000001302,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 0.0222079999999778,
+        "final-evidence": 0.018541000000027452,
+        "turn": 0.13570900000001984
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "keep",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.15799999999995862,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 0.02404100000001108,
+        "final-evidence": 0.02041700000000901,
+        "turn": 0.13491600000003245
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.8956249999999955,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 1.519708000000037,
+        "retrieval": 0.2002909999999929,
+        "grounding": 1.0315410000000043,
+        "final-evidence": 0.9025839999999903,
+        "turn": 3.8624169999999935
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "source-pv-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.243625000000009,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "8a1ddba94dbac06a25a82a2e97b6ea0a3303b619122eb3801f91207a0438d3f4"
+      },
+      "stageMs": {
+        "eligibility": 1.5201250000000073,
+        "retrieval": 0.19658400000002985,
+        "grounding": 1.3875419999999963,
+        "final-evidence": 0.8759169999999585,
+        "turn": 4.19441599999999
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "source-pv-assembly",
+      "expected": {
+        "action": "show",
+        "selected": "pv-assembly"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 11.332084000000009,
+      "result": {
+        "action": "show",
+        "selected": "pv-assembly",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "refresh": 0.100166999999999,
+        "eligibility": 2.0427499999999554,
+        "retrieval": 0.21825000000001182,
+        "grounding": 1.0347909999999843,
+        "final-evidence": 0.9399159999999824,
+        "turn": 11.304042000000038
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-assembly",
+      "expected": {
+        "action": "show",
+        "selected": "pv-assembly"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 16.482250000000022,
+      "result": {
+        "action": "show",
+        "selected": "pv-assembly",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "refresh": 1.4525830000000042,
+        "eligibility": 1.7237499999999955,
+        "retrieval": 0.33312499999999545,
+        "grounding": 1.112957999999992,
+        "final-evidence": 2.7217079999999783,
+        "turn": 16.449375000000032
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-current",
+      "expected": {
+        "action": "show",
+        "selected": "pv-current"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.9430830000000014,
+      "result": {
+        "action": "show",
+        "selected": "pv-current",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.4141670000000204,
+        "retrieval": 0.29820899999998574,
+        "grounding": 1.0860420000000204,
+        "final-evidence": 0.9137079999999855,
+        "turn": 3.9081669999999917
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "source-pv-current",
+      "expected": {
+        "action": "show",
+        "selected": "pv-current"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.338374999999985,
+      "result": {
+        "action": "show",
+        "selected": "pv-current",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 2.08304099999998,
+        "retrieval": 0.20987500000001091,
+        "grounding": 0.9236670000000231,
+        "final-evidence": 0.8811670000000049,
+        "turn": 4.304082999999991
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "source-pv-storage",
+      "expected": {
+        "action": "show",
+        "selected": "pv-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.569500000000005,
+      "result": {
+        "action": "show",
+        "selected": "pv-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.3198750000000246,
+        "retrieval": 0.1822080000000028,
+        "grounding": 0.9638749999999732,
+        "final-evidence": 0.8702920000000063,
+        "turn": 3.537040999999988
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-storage",
+      "expected": {
+        "action": "show",
+        "selected": "pv-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.875833,
+      "result": {
+        "action": "show",
+        "selected": "pv-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.6372499999999945,
+        "retrieval": 0.193916999999999,
+        "grounding": 0.9362500000000296,
+        "final-evidence": 0.9171249999999986,
+        "turn": 3.8497919999999795
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "source-water-storage",
+      "expected": {
+        "action": "show",
+        "selected": "water-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.926207999999974,
+      "result": {
+        "action": "show",
+        "selected": "water-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.314707999999996,
+        "retrieval": 0.17516599999999016,
+        "grounding": 1.263417000000004,
+        "final-evidence": 0.9665830000000142,
+        "turn": 3.9000420000000418
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "source-water-storage",
+      "expected": {
+        "action": "show",
+        "selected": "water-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.63408400000003,
+      "result": {
+        "action": "show",
+        "selected": "water-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.3893340000000194,
+        "retrieval": 0.18408399999998437,
+        "grounding": 0.9232079999999883,
+        "final-evidence": 0.8877919999999904,
+        "turn": 3.607208000000014
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "source-water-movement",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.999416999999994,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.6735419999999976,
+        "retrieval": 0.18070899999997891,
+        "grounding": 0.9216659999999592,
+        "final-evidence": 0.9896659999999997,
+        "turn": 3.9718330000000037
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "source-water-movement",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.8855419999999867,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.3337920000000167,
+        "retrieval": 0.17708399999997937,
+        "grounding": 0.9154169999999908,
+        "final-evidence": 1.2438339999999926,
+        "turn": 3.856208000000038
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "spoken-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.64795799999996,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.3476249999999936,
+        "retrieval": 0.19249999999999545,
+        "grounding": 0.9851249999999823,
+        "final-evidence": 0.9223749999999882,
+        "turn": 3.625499999999988
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "spoken-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.9172080000000165,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.378750000000025,
+        "retrieval": 0.1892920000000231,
+        "grounding": 1.2491249999999923,
+        "final-evidence": 0.927791999999954,
+        "turn": 3.8958749999999895
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "spoken-water",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.5710000000000264,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.3579159999999888,
+        "retrieval": 0.20304199999998218,
+        "grounding": 0.9295830000000365,
+        "final-evidence": 0.9147079999999619,
+        "turn": 3.5477500000000077
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "spoken-water",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.899291000000005,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 1.6897500000000036,
+        "retrieval": 0.18837500000000773,
+        "grounding": 0.9071250000000077,
+        "final-evidence": 0.9190419999999904,
+        "turn": 3.872833999999955
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "unsupported-roi",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0716249999999832,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 0.8970829999999523,
+        "final-evidence": 0.022041999999999007,
+        "turn": 1.041249999999991
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "unsupported-roi",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.047583999999972,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "4ef8c2b1889bd504106ad0d7424a548a43e326b7ec5e8e2fefd1017b5a7dfcf5"
+      },
+      "stageMs": {
+        "eligibility": 0.8873330000000124,
+        "final-evidence": 0.02529200000003584,
+        "turn": 1.0198750000000132
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "unsupported-audit",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 8.838125000000048,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "590096672345d00c3ba8e7da15263bef9f8068f26b1025817bbb2dc9c9679a19"
+      },
+      "stageMs": {
+        "refresh": 0.11362500000001319,
+        "eligibility": 1.4141250000000127,
+        "final-evidence": 0.02633400000001984,
+        "turn": 8.811458000000016
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "unsupported-audit",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 9.191916000000049,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "590096672345d00c3ba8e7da15263bef9f8068f26b1025817bbb2dc9c9679a19"
+      },
+      "stageMs": {
+        "refresh": 0.08291599999995469,
+        "eligibility": 1.4592079999999896,
+        "final-evidence": 0.09304200000008223,
+        "turn": 9.135874999999942
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "quoted-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.18475000000000819,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "590096672345d00c3ba8e7da15263bef9f8068f26b1025817bbb2dc9c9679a19"
+      },
+      "stageMs": {
+        "eligibility": 0.0222079999999778,
+        "final-evidence": 0.02687500000001819,
+        "turn": 0.1537909999999556
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "quoted-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1508330000000342,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "590096672345d00c3ba8e7da15263bef9f8068f26b1025817bbb2dc9c9679a19"
+      },
+      "stageMs": {
+        "eligibility": 0.01608400000009169,
+        "final-evidence": 0.018584000000032574,
+        "turn": 0.12491699999998218
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "wrong-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 5.707458999999972,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "590096672345d00c3ba8e7da15263bef9f8068f26b1025817bbb2dc9c9679a19"
+      },
+      "stageMs": {
+        "eligibility": 5.51887499999998,
+        "final-evidence": 0.02545800000007148,
+        "turn": 5.679834000000028
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "wrong-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.434708999999998,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "590096672345d00c3ba8e7da15263bef9f8068f26b1025817bbb2dc9c9679a19"
+      },
+      "stageMs": {
+        "eligibility": 3.230666999999926,
+        "final-evidence": 0.02883299999996325,
+        "turn": 3.4067079999999805
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "hypothetical-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.21458399999994526,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "590096672345d00c3ba8e7da15263bef9f8068f26b1025817bbb2dc9c9679a19"
+      },
+      "stageMs": {
+        "eligibility": 0.027417000000014013,
+        "final-evidence": 0.020958000000064203,
+        "turn": 0.17554200000006404
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "hypothetical-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.18041700000003402,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "590096672345d00c3ba8e7da15263bef9f8068f26b1025817bbb2dc9c9679a19"
+      },
+      "stageMs": {
+        "eligibility": 0.02762499999994361,
+        "final-evidence": 0.023500000000012733,
+        "turn": 0.15487500000006094
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "default",
+      "caseId": "source-conjunction",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.5310829999999669,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "590096672345d00c3ba8e7da15263bef9f8068f26b1025817bbb2dc9c9679a19"
+      },
+      "stageMs": {
+        "eligibility": 1.3615409999999883,
+        "final-evidence": 0.02641700000003766,
+        "turn": 1.5058749999999463
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "caseId": "source-conjunction",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.4896669999999403,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "590096672345d00c3ba8e7da15263bef9f8068f26b1025817bbb2dc9c9679a19"
+      },
+      "stageMs": {
+        "eligibility": 1.336500000000001,
+        "final-evidence": 0.026416999999923974,
+        "turn": 1.4633750000000418
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "positive-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 10.568333000000052,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "refresh": 0.09654199999999946,
+        "eligibility": 1.0350419999999758,
+        "final-evidence": 1.9436669999998912,
+        "turn": 10.541666000000077
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "positive-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 9.546291999999994,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "refresh": 0.06216699999993125,
+        "eligibility": 1.000750000000039,
+        "final-evidence": 1.7368329999999332,
+        "turn": 9.515625
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "positive-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.9184159999999792,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 0.9165000000000418,
+        "final-evidence": 0.8661250000000109,
+        "turn": 1.8933749999999918
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "positive-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.7880409999999074,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.0759160000000065,
+        "final-evidence": 1.5744590000000471,
+        "turn": 2.762833999999998
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "positive-cost",
+      "expected": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.073541999999975,
+      "result": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.0526250000000346,
+        "final-evidence": 0.8962080000000014,
+        "turn": 2.049709000000007
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "positive-cost",
+      "expected": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.115083000000027,
+      "result": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.0682920000000422,
+        "final-evidence": 0.9041250000000218,
+        "turn": 2.0903339999999844
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "positive-reliability",
+      "expected": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.4078340000000935,
+      "result": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.1046250000000555,
+        "final-evidence": 1.163167000000044,
+        "turn": 2.383958000000007
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "positive-reliability",
+      "expected": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.199792000000002,
+      "result": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.144125000000031,
+        "final-evidence": 0.9136249999999109,
+        "turn": 2.161375000000021
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "positive-water",
+      "expected": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.2065000000000055,
+      "result": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.15887500000008,
+        "final-evidence": 0.9191670000000158,
+        "turn": 2.182875000000081
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "positive-water",
+      "expected": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.570957999999905,
+      "result": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.4990419999999176,
+        "final-evidence": 0.9067079999999805,
+        "turn": 2.547584000000029
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "positive-learning",
+      "expected": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.2910000000000537,
+      "result": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.235125000000039,
+        "final-evidence": 0.9029590000000098,
+        "turn": 2.2609169999999494
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "positive-learning",
+      "expected": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.5582500000000437,
+      "result": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.2552500000000464,
+        "final-evidence": 1.1758330000000115,
+        "turn": 2.537207999999964
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "positive-queue",
+      "expected": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.3525419999999713,
+      "result": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.2765419999999494,
+        "final-evidence": 0.9249589999999444,
+        "turn": 2.328708000000006
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "positive-queue",
+      "expected": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.349166999999966,
+      "result": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.2907500000000027,
+        "final-evidence": 0.9251659999999902,
+        "turn": 2.3266660000000456
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "positive-emissions",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.678292000000056,
+      "result": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.599375000000009,
+        "final-evidence": 0.9249580000000606,
+        "turn": 2.655124999999998
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "positive-emissions",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.4342080000000124,
+      "result": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "3631d857814110bf4e39c27c63229cf3cc99e4c765632694bbb3fb474ef32238"
+      },
+      "stageMs": {
+        "eligibility": 1.359083000000055,
+        "final-evidence": 0.9382089999999152,
+        "turn": 2.412249999999972
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "paraphrase-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 11.578875000000039,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "refresh": 0.07629199999996672,
+        "eligibility": 1.0416249999999536,
+        "retrieval": 0.6879159999999729,
+        "grounding": 1.0249160000000757,
+        "final-evidence": 1.5379580000000033,
+        "turn": 11.553125000000023
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "paraphrase-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 11.034832999999935,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "refresh": 0.0572500000000673,
+        "eligibility": 1.0516249999999445,
+        "retrieval": 1.2048340000000053,
+        "grounding": 0.9738330000000133,
+        "final-evidence": 0.9854579999999942,
+        "turn": 11.00320899999997
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "illustrative",
+      "expected": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.27150000000006,
+      "result": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 1.1943340000000262,
+        "final-evidence": 0.9287499999999227,
+        "turn": 2.2366250000000036
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "illustrative",
+      "expected": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.9188749999999573,
+      "result": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 1.8334999999999582,
+        "final-evidence": 0.9244169999999485,
+        "turn": 2.886082999999985
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "missing-year",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0561670000000731,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 0.8951670000000149,
+        "final-evidence": 0.026375000000030013,
+        "turn": 1.0293750000000728
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "missing-year",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.1122500000000173,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 0.9266250000000582,
+        "final-evidence": 0.02379200000007131,
+        "turn": 1.0850829999999405
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "missing-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0597080000000005,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 0.8972079999999778,
+        "final-evidence": 0.029541999999992186,
+        "turn": 1.0327920000000859
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "missing-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.6502080000000205,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 1.4710000000000036,
+        "final-evidence": 0.028583000000026004,
+        "turn": 1.6209590000000844
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "missing-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0235830000000306,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 0.8522080000000187,
+        "final-evidence": 0.025374999999939973,
+        "turn": 0.9972500000000082
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "missing-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.9860840000000053,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 0.8460000000000036,
+        "final-evidence": 0.0246670000000222,
+        "turn": 0.9607500000000755
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "negation",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.17891599999995833,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 0.023833000000081483,
+        "final-evidence": 0.021832999999901403,
+        "turn": 0.15383300000007694
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "negation",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.16000000000008185,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 0.023458000000005086,
+        "final-evidence": 0.024957999999969616,
+        "turn": 0.13591599999995196
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "correction",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.598707999999988,
+      "result": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 1.2932089999999334,
+        "retrieval": 0.23366600000008475,
+        "grounding": 0.9557499999999663,
+        "final-evidence": 0.9202089999999998,
+        "turn": 3.5769579999999905
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "correction",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.7608340000000453,
+      "result": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 1.5474159999999983,
+        "retrieval": 0.22191699999996217,
+        "grounding": 0.8908330000000433,
+        "final-evidence": 0.8891670000000431,
+        "turn": 3.7372500000000173
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "missing-private",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.8197499999999991,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 0.669208000000026,
+        "final-evidence": 0.025749999999902684,
+        "turn": 0.7967920000000959
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "missing-private",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.8172080000000506,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "1aa0686c6035c6350189b4ff5ffa3bc8fb011d2d5726436ae5db180d8f396a04"
+      },
+      "stageMs": {
+        "eligibility": 0.6667500000000928,
+        "final-evidence": 0.026041999999961263,
+        "turn": 0.7818749999999
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "repeated-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 9.160083999999983,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "refresh": 0.0714580000000069,
+        "eligibility": 0.9835829999999532,
+        "final-evidence": 0.9529169999999567,
+        "turn": 9.136750000000006
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "repeated-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 10.26604199999997,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "refresh": 0.08895800000004783,
+        "eligibility": 0.98337499999991,
+        "final-evidence": 1.8139589999999544,
+        "turn": 10.233249999999998
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "repeated-solar-again",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.92025000000001,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "retain",
+        "path": "cue",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 0.9229589999999916,
+        "final-evidence": 0.8695830000000342,
+        "turn": 1.8912090000000035
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "repeated-solar-again",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.9480839999999944,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "retain",
+        "path": "cue",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 0.9277909999999565,
+        "final-evidence": 0.8899160000000848,
+        "turn": 1.922125000000051
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "quoted",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1683339999999589,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 0.025624999999990905,
+        "final-evidence": 0.019416999999975815,
+        "turn": 0.1362500000000182
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "quoted",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.15812499999992724,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 0.021333000000026914,
+        "final-evidence": 0.025208000000020547,
+        "turn": 0.1359579999999596
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "extra-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.688291999999933,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 1.5227499999999736,
+        "final-evidence": 0.027417000000014013,
+        "turn": 1.6609999999999445
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "extra-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0447500000000218,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 0.9086250000000291,
+        "final-evidence": 0.023667000000045846,
+        "turn": 1.0230000000000246
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "wrong-status",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.4869999999999663,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 1.3273340000000644,
+        "final-evidence": 0.03774999999995998,
+        "turn": 1.4653749999999945
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "wrong-status",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.460374999999999,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 1.33949999999993,
+        "final-evidence": 0.0206670000000031,
+        "turn": 1.4410420000000386
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "ambiguous-year",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.003832999999986,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 0.8732500000000982,
+        "final-evidence": 0.018958999999995285,
+        "turn": 0.9825830000000906
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "ambiguous-year",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.3614169999999604,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 1.1727919999999585,
+        "final-evidence": 0.03387499999996635,
+        "turn": 1.3309580000000096
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "keep",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.172458000000006,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 0.025624999999990905,
+        "final-evidence": 0.02179200000000492,
+        "turn": 0.1470839999999498
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "keep",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.18833300000005693,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 0.043874999999957254,
+        "final-evidence": 0.02979199999992943,
+        "turn": 0.16475000000002638
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.559041000000093,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 1.2959579999999278,
+        "retrieval": 0.1814160000000129,
+        "grounding": 0.9939580000000205,
+        "final-evidence": 0.8984169999999949,
+        "turn": 3.534167000000025
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "source-pv-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.744625000000042,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "218863aa274ed04c7e37540c42ccf722f800ebdadf9d403b76053553594c3364"
+      },
+      "stageMs": {
+        "eligibility": 1.561125000000061,
+        "retrieval": 0.17745800000000145,
+        "grounding": 0.9482910000000402,
+        "final-evidence": 0.8729580000000396,
+        "turn": 3.7161669999999276
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "source-pv-assembly",
+      "expected": {
+        "action": "show",
+        "selected": "pv-assembly"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 10.844125000000076,
+      "result": {
+        "action": "show",
+        "selected": "pv-assembly",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "refresh": 0.06633299999998599,
+        "eligibility": 1.9492089999999962,
+        "retrieval": 0.17245900000000347,
+        "grounding": 0.9290000000000873,
+        "final-evidence": 0.8703339999999571,
+        "turn": 10.822709000000032
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-assembly",
+      "expected": {
+        "action": "show",
+        "selected": "pv-assembly"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 11.767375000000015,
+      "result": {
+        "action": "show",
+        "selected": "pv-assembly",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "refresh": 0.07312500000000455,
+        "eligibility": 1.405540999999971,
+        "retrieval": 0.23495900000000347,
+        "grounding": 1.0319589999999152,
+        "final-evidence": 1.5292080000000396,
+        "turn": 11.739625000000046
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-current",
+      "expected": {
+        "action": "show",
+        "selected": "pv-current"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.5118340000000217,
+      "result": {
+        "action": "show",
+        "selected": "pv-current",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.2882080000000542,
+        "retrieval": 0.186458000000016,
+        "grounding": 0.9095829999999978,
+        "final-evidence": 0.9154999999999518,
+        "turn": 3.4831249999999727
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "source-pv-current",
+      "expected": {
+        "action": "show",
+        "selected": "pv-current"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.185083999999961,
+      "result": {
+        "action": "show",
+        "selected": "pv-current",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.9806249999999181,
+        "retrieval": 0.1697079999999005,
+        "grounding": 0.9348750000000337,
+        "final-evidence": 0.8943749999999682,
+        "turn": 4.158792000000062
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "source-pv-storage",
+      "expected": {
+        "action": "show",
+        "selected": "pv-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.8383329999999205,
+      "result": {
+        "action": "show",
+        "selected": "pv-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.319582999999966,
+        "retrieval": 0.17000000000007276,
+        "grounding": 0.952707999999916,
+        "final-evidence": 1.1649159999999483,
+        "turn": 3.8099999999999454
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-storage",
+      "expected": {
+        "action": "show",
+        "selected": "pv-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.7427089999999907,
+      "result": {
+        "action": "show",
+        "selected": "pv-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.3034169999999676,
+        "retrieval": 0.1941669999999931,
+        "grounding": 1.0386249999999109,
+        "final-evidence": 0.9646659999999656,
+        "turn": 3.7180000000000746
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "source-water-storage",
+      "expected": {
+        "action": "show",
+        "selected": "water-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.7975000000000136,
+      "result": {
+        "action": "show",
+        "selected": "water-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.6068750000000591,
+        "retrieval": 0.18145900000001802,
+        "grounding": 0.9226669999999331,
+        "final-evidence": 0.8819580000000542,
+        "turn": 3.7568750000000364
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "source-water-storage",
+      "expected": {
+        "action": "show",
+        "selected": "water-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.5074580000000424,
+      "result": {
+        "action": "show",
+        "selected": "water-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.349416999999903,
+        "retrieval": 0.18141700000001038,
+        "grounding": 0.9079169999999976,
+        "final-evidence": 0.8824169999999185,
+        "turn": 3.4825000000000728
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "source-water-movement",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.9200000000000728,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.6302499999999327,
+        "retrieval": 0.17670799999996234,
+        "grounding": 0.9168750000000045,
+        "final-evidence": 1.0006670000000213,
+        "turn": 3.897624999999948
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "source-water-movement",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.824457999999936,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.3451670000000604,
+        "retrieval": 0.15670799999998053,
+        "grounding": 1.2431249999999636,
+        "final-evidence": 0.880457999999976,
+        "turn": 3.7959999999999354
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "spoken-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.623124999999959,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.3653329999999642,
+        "retrieval": 0.18758300000001782,
+        "grounding": 0.9751250000000482,
+        "final-evidence": 0.9099159999999529,
+        "turn": 3.59704099999999
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "spoken-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.8775000000000546,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.6637080000000424,
+        "retrieval": 0.19083399999999529,
+        "grounding": 0.9459170000000086,
+        "final-evidence": 0.8836249999999382,
+        "turn": 3.8567090000000235
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "spoken-water",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.8714169999999513,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.321916999999985,
+        "retrieval": 0.1829169999999749,
+        "grounding": 0.9364160000000084,
+        "final-evidence": 1.2398749999999836,
+        "turn": 3.8476670000000013
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "spoken-water",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.602041999999983,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.3812920000000304,
+        "retrieval": 0.186333999999988,
+        "grounding": 0.9335829999999987,
+        "final-evidence": 0.9200829999999769,
+        "turn": 3.567124999999919
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "unsupported-roi",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.025333000000046,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 0.8857909999999265,
+        "final-evidence": 0.02633400000001984,
+        "turn": 1.0026670000000877
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "unsupported-roi",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.3577920000000177,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "e4a66c46ed5f9d9f0ac0403c8ac2c529f115d71801c6470031cae7c96988bfd1"
+      },
+      "stageMs": {
+        "eligibility": 1.228584000000069,
+        "final-evidence": 0.01954200000000128,
+        "turn": 1.337291999999934
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "unsupported-audit",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 8.28270800000007,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "fbb80862cecbef511301476fbaace6ab3ad3e4ea6d05b015ea389c7aa3fb0e2a"
+      },
+      "stageMs": {
+        "refresh": 0.0599170000000413,
+        "eligibility": 1.4077920000000859,
+        "final-evidence": 0.024792000000047665,
+        "turn": 8.251875000000041
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "unsupported-audit",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 9.869207999999958,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "fbb80862cecbef511301476fbaace6ab3ad3e4ea6d05b015ea389c7aa3fb0e2a"
+      },
+      "stageMs": {
+        "refresh": 0.08962500000006912,
+        "eligibility": 2.413249999999948,
+        "final-evidence": 0.02779200000009041,
+        "turn": 9.818291999999929
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "quoted-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1638750000000755,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "fbb80862cecbef511301476fbaace6ab3ad3e4ea6d05b015ea389c7aa3fb0e2a"
+      },
+      "stageMs": {
+        "eligibility": 0.02183300000001509,
+        "final-evidence": 0.018333000000097854,
+        "turn": 0.13754199999993943
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "quoted-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1466249999999718,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "fbb80862cecbef511301476fbaace6ab3ad3e4ea6d05b015ea389c7aa3fb0e2a"
+      },
+      "stageMs": {
+        "eligibility": 0.01737500000001546,
+        "final-evidence": 0.01904100000001563,
+        "turn": 0.12008300000002237
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "wrong-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.4861250000000155,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "fbb80862cecbef511301476fbaace6ab3ad3e4ea6d05b015ea389c7aa3fb0e2a"
+      },
+      "stageMs": {
+        "eligibility": 1.360582999999906,
+        "final-evidence": 0.018625000000042746,
+        "turn": 1.4660000000000082
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "wrong-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.494833999999969,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "fbb80862cecbef511301476fbaace6ab3ad3e4ea6d05b015ea389c7aa3fb0e2a"
+      },
+      "stageMs": {
+        "eligibility": 1.3752079999999296,
+        "final-evidence": 0.01758299999994506,
+        "turn": 1.4728750000000446
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "hypothetical-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.16816700000003948,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "fbb80862cecbef511301476fbaace6ab3ad3e4ea6d05b015ea389c7aa3fb0e2a"
+      },
+      "stageMs": {
+        "eligibility": 0.023042000000032203,
+        "final-evidence": 0.03270799999995688,
+        "turn": 0.14445899999998346
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "hypothetical-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.14933300000006966,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "fbb80862cecbef511301476fbaace6ab3ad3e4ea6d05b015ea389c7aa3fb0e2a"
+      },
+      "stageMs": {
+        "eligibility": 0.01929199999995035,
+        "final-evidence": 0.0194170000000895,
+        "turn": 0.12725000000000364
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "caseId": "source-conjunction",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.5,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "fbb80862cecbef511301476fbaace6ab3ad3e4ea6d05b015ea389c7aa3fb0e2a"
+      },
+      "stageMs": {
+        "eligibility": 1.3656250000000227,
+        "final-evidence": 0.024249999999938154,
+        "turn": 1.4808329999999614
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "caseId": "source-conjunction",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.359499999999912,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "fbb80862cecbef511301476fbaace6ab3ad3e4ea6d05b015ea389c7aa3fb0e2a"
+      },
+      "stageMs": {
+        "eligibility": 2.1931670000000167,
+        "final-evidence": 0.023458000000005086,
+        "turn": 2.337374999999952
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "positive-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 10.155291000000034,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "refresh": 0.1279580000000351,
+        "eligibility": 1.049666000000002,
+        "final-evidence": 0.9081249999999272,
+        "turn": 10.129374999999982
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "positive-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 9.896250000000009,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "refresh": 0.10391700000002402,
+        "eligibility": 1.066583000000037,
+        "final-evidence": 0.9662499999999454,
+        "turn": 9.862875000000031
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "positive-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.822125000000028,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.1031249999999773,
+        "final-evidence": 0.8853749999999536,
+        "turn": 2.7859170000000404
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "positive-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.9977909999998928,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 0.9879589999999325,
+        "final-evidence": 0.8622090000000071,
+        "turn": 1.954499999999939
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "positive-cost",
+      "expected": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.825749999999971,
+      "result": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.0541670000000067,
+        "final-evidence": 1.5480000000000018,
+        "turn": 2.785582999999974
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "positive-cost",
+      "expected": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.2897080000000187,
+      "result": {
+        "action": "show",
+        "selected": "cost/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.1316249999999854,
+        "final-evidence": 0.9810830000000124,
+        "turn": 2.264666000000034
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "positive-reliability",
+      "expected": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.164292000000046,
+      "result": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.1171659999999974,
+        "final-evidence": 0.916582999999946,
+        "turn": 2.140041999999994
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "positive-reliability",
+      "expected": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.5489590000000817,
+      "result": {
+        "action": "show",
+        "selected": "reliability/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.155416999999943,
+        "final-evidence": 1.2521249999999782,
+        "turn": 2.5257500000000164
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "positive-water",
+      "expected": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.2471249999999827,
+      "result": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.1603749999999309,
+        "final-evidence": 0.9490000000000691,
+        "turn": 2.2202909999999747
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "positive-water",
+      "expected": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.288415999999984,
+      "result": {
+        "action": "show",
+        "selected": "water/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.2364580000000842,
+        "final-evidence": 0.914000000000101,
+        "turn": 2.263125000000059
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "positive-learning",
+      "expected": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.651124999999979,
+      "result": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.536375000000021,
+        "final-evidence": 0.9390829999999823,
+        "turn": 2.625791999999933
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "positive-learning",
+      "expected": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.1882080000000315,
+      "result": {
+        "action": "show",
+        "selected": "learning/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.1698749999999336,
+        "final-evidence": 0.8877919999999904,
+        "turn": 2.165124999999989
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "positive-queue",
+      "expected": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.6527909999999792,
+      "result": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.3804999999999836,
+        "final-evidence": 1.2422919999999067,
+        "turn": 3.555250000000001
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "positive-queue",
+      "expected": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.3590829999999414,
+      "result": {
+        "action": "show",
+        "selected": "queue/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.2617500000000064,
+        "final-evidence": 0.8920830000000706,
+        "turn": 2.332499999999982
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "positive-emissions",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.320541999999932,
+      "result": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.2812079999999924,
+        "final-evidence": 0.9060829999999669,
+        "turn": 2.298999999999978
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "positive-emissions",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.8462910000000647,
+      "result": {
+        "action": "show",
+        "selected": "emissions/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "58b11d3fc085546ecdda692038b307ec77556b6097ade17b996bf8330db6457a"
+      },
+      "stageMs": {
+        "eligibility": 1.785209000000009,
+        "final-evidence": 0.90625,
+        "turn": 2.824124999999981
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "paraphrase-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 11.045041999999967,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "refresh": 0.12129199999992579,
+        "eligibility": 1.6827499999999418,
+        "retrieval": 0.23424999999997453,
+        "grounding": 0.9554160000000138,
+        "final-evidence": 0.9458329999999933,
+        "turn": 11.021333000000027
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "paraphrase-storage",
+      "expected": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 11.521166999999991,
+      "result": {
+        "action": "show",
+        "selected": "storage/Harbor School/2024/actual/diagram",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "refresh": 0.11424999999996999,
+        "eligibility": 1.0620830000000296,
+        "retrieval": 0.28175000000010186,
+        "grounding": 1.0441250000000082,
+        "final-evidence": 0.9771250000000009,
+        "turn": 11.490083000000027
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "illustrative",
+      "expected": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.949333000000024,
+      "result": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 1.9284999999999854,
+        "final-evidence": 0.8517910000000484,
+        "turn": 2.9231660000000375
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "illustrative",
+      "expected": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.188374999999951,
+      "result": {
+        "action": "show",
+        "selected": "water/Cedar Campus/2023/illustrative/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 1.1596250000000055,
+        "final-evidence": 0.8824580000000424,
+        "turn": 2.144916999999964
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "missing-year",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.6645000000000891,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 1.5066249999999854,
+        "final-evidence": 0.023874999999975444,
+        "turn": 1.6421669999999722
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "missing-year",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0280409999999165,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 0.8951660000000174,
+        "final-evidence": 0.02254100000004655,
+        "turn": 1.006666999999993
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "missing-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.1159999999999854,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 0.8992920000000595,
+        "final-evidence": 0.022124999999959982,
+        "turn": 1.0802909999999883
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "missing-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.08562500000005,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 0.9385410000001002,
+        "final-evidence": 0.02250000000003638,
+        "turn": 1.0618329999999787
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "missing-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0664580000000115,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 0.9119580000000269,
+        "final-evidence": 0.021875000000022737,
+        "turn": 1.0449169999999413
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "missing-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.3568329999999378,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 0.9338749999999436,
+        "final-evidence": 0.03645800000003874,
+        "turn": 1.3230409999999893
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "negation",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.123625000000061,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 0.6274579999999332,
+        "final-evidence": 0.06912499999998545,
+        "turn": 1.0960830000000215
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "negation",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1580420000000231,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 0.02437499999996362,
+        "final-evidence": 0.019667000000026746,
+        "turn": 0.13437499999997726
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "correction",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.75466700000004,
+      "result": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 1.8524170000000595,
+        "retrieval": 0.2930829999999105,
+        "grounding": 1.327666000000022,
+        "final-evidence": 0.9509590000000117,
+        "turn": 4.731792000000041
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "correction",
+      "expected": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.125499999999988,
+      "result": {
+        "action": "show",
+        "selected": "emissions/River Hospital/2024/actual/chart",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 1.419832999999926,
+        "retrieval": 0.22737500000005184,
+        "grounding": 0.9908750000000737,
+        "final-evidence": 1.2844579999999723,
+        "turn": 4.096290999999951
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "missing-private",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.8162919999999758,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 0.6632920000000695,
+        "final-evidence": 0.021999999999934516,
+        "turn": 0.7898330000000442
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "missing-private",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.9591249999999718,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "b699be684ae1ccf7c17eb26bd9e2189c5bacb8ccf95222c70fdd231bbbab1bed"
+      },
+      "stageMs": {
+        "eligibility": 0.761792000000014,
+        "final-evidence": 0.026915999999914675,
+        "turn": 0.9317909999999756
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "repeated-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 9.685917000000018,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "refresh": 0.07245899999998073,
+        "eligibility": 1.6087499999999864,
+        "final-evidence": 1.1001659999999447,
+        "turn": 9.660291999999913
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "repeated-solar",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 11.018042000000037,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "replace",
+        "path": "cue",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "refresh": 0.1417909999998983,
+        "eligibility": 1.195333000000005,
+        "final-evidence": 1.0100419999999986,
+        "turn": 10.982709
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "repeated-solar-again",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.9184999999999945,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "retain",
+        "path": "cue",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 1.0117079999999987,
+        "final-evidence": 1.7679170000000113,
+        "turn": 2.890875000000051
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "repeated-solar-again",
+      "expected": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 2.1617919999999913,
+      "result": {
+        "action": "show",
+        "selected": "solar/Harbor School/2025/actual/chart",
+        "operation": "retain",
+        "path": "cue",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 1.017084000000068,
+        "final-evidence": 1.0081669999999576,
+        "turn": 2.136416000000054
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "quoted",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.17095800000004147,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 0.021250000000009095,
+        "final-evidence": 0.03729099999998198,
+        "turn": 0.14754199999993034
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "quoted",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.14350000000001728,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 0.02075000000002092,
+        "final-evidence": 0.019290999999952874,
+        "turn": 0.123958000000016
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "extra-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.109666999999945,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 0.9704160000000002,
+        "final-evidence": 0.02133400000002439,
+        "turn": 1.0876670000000104
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "extra-fact",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0505829999999605,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 0.9183329999999614,
+        "final-evidence": 0.021624999999971806,
+        "turn": 1.028874999999971
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "wrong-status",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.9395419999999604,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 1.7964170000000195,
+        "final-evidence": 0.02183300000001509,
+        "turn": 1.9177089999999453
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "wrong-status",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.520750000000021,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 1.3795839999999089,
+        "final-evidence": 0.02179200000000492,
+        "turn": 1.5004169999999704
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "ambiguous-year",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.007249999999999,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 0.8842089999999416,
+        "final-evidence": 0.02212500000007367,
+        "turn": 0.9870830000000979
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "ambiguous-year",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0774999999999864,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 0.9192500000000337,
+        "final-evidence": 0.022666999999955806,
+        "turn": 1.0558750000000146
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "keep",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1474590000000262,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 0.022249999999985448,
+        "final-evidence": 0.018332999999984168,
+        "turn": 0.12541600000008657
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "keep",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1510000000000673,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 0.020875000000046384,
+        "final-evidence": 0.018167000000062217,
+        "turn": 0.1307080000000269
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.9772499999999127,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 1.3089169999999513,
+        "retrieval": 0.1890410000000884,
+        "grounding": 1.3972089999999753,
+        "final-evidence": 0.90462500000001,
+        "turn": 3.9539160000000493
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "source-pv-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.5896660000000793,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "583d06b83b24339d72f5042b0d7f90dff269ea6d1bb7ed07bdfb2383000cb4f5"
+      },
+      "stageMs": {
+        "eligibility": 1.3245419999999513,
+        "retrieval": 0.1795839999999771,
+        "grounding": 0.9599580000000287,
+        "final-evidence": 0.9081659999999374,
+        "turn": 3.5627080000000433
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "source-pv-assembly",
+      "expected": {
+        "action": "show",
+        "selected": "pv-assembly"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 11.536415999999917,
+      "result": {
+        "action": "show",
+        "selected": "pv-assembly",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "refresh": 0.09487500000000182,
+        "eligibility": 1.4584580000000642,
+        "retrieval": 0.246167000000014,
+        "grounding": 0.9690830000000688,
+        "final-evidence": 1.5372920000000931,
+        "turn": 11.511665999999991
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-assembly",
+      "expected": {
+        "action": "show",
+        "selected": "pv-assembly"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 11.361292000000049,
+      "result": {
+        "action": "show",
+        "selected": "pv-assembly",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "refresh": 0.06408299999998235,
+        "eligibility": 2.5080410000000484,
+        "retrieval": 0.16724999999996726,
+        "grounding": 0.9609169999999949,
+        "final-evidence": 0.8977080000000797,
+        "turn": 11.332250000000045
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-current",
+      "expected": {
+        "action": "show",
+        "selected": "pv-current"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.235416999999984,
+      "result": {
+        "action": "show",
+        "selected": "pv-current",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 2.049666000000002,
+        "retrieval": 0.17700000000002092,
+        "grounding": 0.9236250000000155,
+        "final-evidence": 0.8772920000000113,
+        "turn": 4.206082999999921
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "source-pv-current",
+      "expected": {
+        "action": "show",
+        "selected": "pv-current"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.7595420000000104,
+      "result": {
+        "action": "show",
+        "selected": "pv-current",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.4788749999999027,
+        "retrieval": 0.18212500000004184,
+        "grounding": 0.9523339999999507,
+        "final-evidence": 0.9292920000000322,
+        "turn": 3.7304579999999987
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "source-pv-storage",
+      "expected": {
+        "action": "show",
+        "selected": "pv-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.260415999999964,
+      "result": {
+        "action": "show",
+        "selected": "pv-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.6871249999999236,
+        "retrieval": 0.25879199999997127,
+        "grounding": 1.0131249999999454,
+        "final-evidence": 0.9682500000000118,
+        "turn": 4.231708000000026
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "source-pv-storage",
+      "expected": {
+        "action": "show",
+        "selected": "pv-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 4.14325000000008,
+      "result": {
+        "action": "show",
+        "selected": "pv-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.3947919999999385,
+        "retrieval": 0.1804579999999305,
+        "grounding": 1.4111659999999802,
+        "final-evidence": 0.9264160000000174,
+        "turn": 4.116666000000009
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "source-water-storage",
+      "expected": {
+        "action": "show",
+        "selected": "water-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.54037500000004,
+      "result": {
+        "action": "show",
+        "selected": "water-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.378417000000013,
+        "retrieval": 0.18066699999997127,
+        "grounding": 0.9127909999999702,
+        "final-evidence": 0.8913750000000391,
+        "turn": 3.51400000000001
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "source-water-storage",
+      "expected": {
+        "action": "show",
+        "selected": "water-storage"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.8002500000000055,
+      "result": {
+        "action": "show",
+        "selected": "water-storage",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.684541999999965,
+        "retrieval": 0.20141699999999219,
+        "grounding": 0.8660830000000033,
+        "final-evidence": 0.8661250000000109,
+        "turn": 3.7757500000000164
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "source-water-movement",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.792459000000008,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.3134999999999764,
+        "retrieval": 0.16808400000002166,
+        "grounding": 0.8985409999999092,
+        "final-evidence": 1.2157909999999674,
+        "turn": 3.761250000000018
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "source-water-movement",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.3993750000000773,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.278417000000104,
+        "retrieval": 0.16770900000005895,
+        "grounding": 0.895040999999992,
+        "final-evidence": 0.8749589999999898,
+        "turn": 3.3745830000000296
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "spoken-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.836125000000038,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.32487500000002,
+        "retrieval": 0.1924579999999878,
+        "grounding": 1.2217920000000504,
+        "final-evidence": 0.8905000000000882,
+        "turn": 3.8128340000000662
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "spoken-conversion",
+      "expected": {
+        "action": "show",
+        "selected": "pv-conversion"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.566832999999974,
+      "result": {
+        "action": "show",
+        "selected": "pv-conversion",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.3527500000000146,
+        "retrieval": 0.18595799999991414,
+        "grounding": 0.9363329999999905,
+        "final-evidence": 0.914583000000107,
+        "turn": 3.544458000000077
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "spoken-water",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.8482500000000073,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.661292000000003,
+        "retrieval": 0.1882500000000391,
+        "grounding": 0.9168339999999944,
+        "final-evidence": 0.8849999999999909,
+        "turn": 3.8224170000000868
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "spoken-water",
+      "expected": {
+        "action": "show",
+        "selected": "water-movement"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 3.9064579999999296,
+      "result": {
+        "action": "show",
+        "selected": "water-movement",
+        "operation": "replace",
+        "path": "grounded",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 1.375,
+        "retrieval": 0.18370899999990797,
+        "grounding": 1.2713750000000346,
+        "final-evidence": 0.8783329999999978,
+        "turn": 3.8828750000000127
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "unsupported-roi",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.0237920000000713,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 0.8695000000000164,
+        "final-evidence": 0.03662499999995816,
+        "turn": 0.9996669999999312
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "unsupported-roi",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.9909169999999676,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "retain",
+        "path": "guard",
+        "revision": "0d717f9e3dc211b825eab797026df76f10e2ea748f58c3412be89cad549585a3"
+      },
+      "stageMs": {
+        "eligibility": 0.8509999999999991,
+        "final-evidence": 0.02508299999999508,
+        "turn": 0.9683749999999236
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "unsupported-audit",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 8.905209000000013,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "63fc73664ce4b895796878ae7d242b867431493778b61d0ce1b8c8b4fae448c8"
+      },
+      "stageMs": {
+        "refresh": 0.08016600000007656,
+        "eligibility": 1.4085420000000113,
+        "final-evidence": 0.04091700000003584,
+        "turn": 8.881209000000013
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "unsupported-audit",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 11.528124999999932,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "63fc73664ce4b895796878ae7d242b867431493778b61d0ce1b8c8b4fae448c8"
+      },
+      "stageMs": {
+        "refresh": 0.11820899999997891,
+        "eligibility": 3.0967079999998077,
+        "final-evidence": 0.03145900000004076,
+        "turn": 11.4978329999999
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "quoted-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.18520799999987503,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "63fc73664ce4b895796878ae7d242b867431493778b61d0ce1b8c8b4fae448c8"
+      },
+      "stageMs": {
+        "eligibility": 0.02175000000011096,
+        "final-evidence": 0.04062500000009095,
+        "turn": 0.15887499999985266
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "quoted-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.14354200000002493,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "63fc73664ce4b895796878ae7d242b867431493778b61d0ce1b8c8b4fae448c8"
+      },
+      "stageMs": {
+        "eligibility": 0.017250000000103682,
+        "final-evidence": 0.019000000000005457,
+        "turn": 0.12175000000002001
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "wrong-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.529709000000139,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "63fc73664ce4b895796878ae7d242b867431493778b61d0ce1b8c8b4fae448c8"
+      },
+      "stageMs": {
+        "eligibility": 1.3815409999999702,
+        "final-evidence": 0.019583000000011452,
+        "turn": 1.5012500000000273
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "wrong-entity",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.4698329999998805,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "63fc73664ce4b895796878ae7d242b867431493778b61d0ce1b8c8b4fae448c8"
+      },
+      "stageMs": {
+        "eligibility": 1.3328750000000582,
+        "final-evidence": 0.02341599999999744,
+        "turn": 1.4477500000000418
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "hypothetical-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.16362499999991087,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "63fc73664ce4b895796878ae7d242b867431493778b61d0ce1b8c8b4fae448c8"
+      },
+      "stageMs": {
+        "eligibility": 0.021541999999953987,
+        "final-evidence": 0.018915999999990163,
+        "turn": 0.12216600000010658
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "hypothetical-source",
+      "expected": {
+        "action": "hold",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1478749999998854,
+      "result": {
+        "action": "hold",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "63fc73664ce4b895796878ae7d242b867431493778b61d0ce1b8c8b4fae448c8"
+      },
+      "stageMs": {
+        "eligibility": 0.021999999999934516,
+        "final-evidence": 0.020082999999885942,
+        "turn": 0.12645800000018426
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "caseId": "source-conjunction",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.4505000000001473,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "63fc73664ce4b895796878ae7d242b867431493778b61d0ce1b8c8b4fae448c8"
+      },
+      "stageMs": {
+        "eligibility": 1.3197090000001026,
+        "final-evidence": 0.02295800000001691,
+        "turn": 1.4293749999999363
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "caseId": "source-conjunction",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 1.925666000000092,
+      "result": {
+        "action": "context",
+        "selected": null,
+        "operation": "none",
+        "path": "guard",
+        "revision": "63fc73664ce4b895796878ae7d242b867431493778b61d0ce1b8c8b4fae448c8"
+      },
+      "stageMs": {
+        "eligibility": 1.762625000000071,
+        "final-evidence": 0.023667000000159533,
+        "turn": 1.9037080000000515
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    }
+  ],
+  "initialization": [
+    {
+      "pass": 0,
+      "arm": "default",
+      "elapsedMs": 9.501749999999987
+    },
+    {
+      "pass": 0,
+      "arm": "injected-hybrid",
+      "elapsedMs": 8.120166000000012
+    },
+    {
+      "pass": 1,
+      "arm": "default",
+      "elapsedMs": 7.2818340000000035
+    },
+    {
+      "pass": 1,
+      "arm": "injected-hybrid",
+      "elapsedMs": 5.84699999999998
+    },
+    {
+      "pass": 2,
+      "arm": "default",
+      "elapsedMs": 5.713334000000032
+    },
+    {
+      "pass": 2,
+      "arm": "injected-hybrid",
+      "elapsedMs": 6.502250000000004
+    }
+  ],
+  "summary": [
+    {
+      "arm": "default",
+      "total": 111,
+      "correct": 111,
+      "failures": 0,
+      "positiveCorrect": 63,
+      "negativeCorrect": 48,
+      "unsupportedShows": 0,
+      "refreshes": 15,
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "medianMs": 2.4342080000000124,
+      "p95Ms": 11.045041999999967
+    },
+    {
+      "arm": "injected-hybrid",
+      "total": 111,
+      "correct": 111,
+      "failures": 0,
+      "positiveCorrect": 63,
+      "negativeCorrect": 48,
+      "unsupportedShows": 0,
+      "refreshes": 15,
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "medianMs": 2.4078340000000935,
+      "p95Ms": 11.521166999999991
+    }
+  ],
+  "passes": [
+    {
+      "pass": 0,
+      "arms": [
+        {
+          "arm": "default",
+          "total": 37,
+          "correct": 37,
+          "failures": 0,
+          "positiveCorrect": 21,
+          "negativeCorrect": 16,
+          "unsupportedShows": 0,
+          "refreshes": 5,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 2.7027909999999906,
+          "p95Ms": 14.524291000000005
+        },
+        {
+          "arm": "injected-hybrid",
+          "total": 37,
+          "correct": 37,
+          "failures": 0,
+          "positiveCorrect": 21,
+          "negativeCorrect": 16,
+          "unsupportedShows": 0,
+          "refreshes": 5,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 2.832499999999982,
+          "p95Ms": 16.104041999999993
+        }
+      ]
+    },
+    {
+      "pass": 1,
+      "arms": [
+        {
+          "arm": "default",
+          "total": 37,
+          "correct": 37,
+          "failures": 0,
+          "positiveCorrect": 21,
+          "negativeCorrect": 16,
+          "unsupportedShows": 0,
+          "refreshes": 5,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 2.2065000000000055,
+          "p95Ms": 10.844125000000076
+        },
+        {
+          "arm": "injected-hybrid",
+          "total": 37,
+          "correct": 37,
+          "failures": 0,
+          "positiveCorrect": 21,
+          "negativeCorrect": 16,
+          "unsupportedShows": 0,
+          "refreshes": 5,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 2.2910000000000537,
+          "p95Ms": 11.034832999999935
+        }
+      ]
+    },
+    {
+      "pass": 2,
+      "arms": [
+        {
+          "arm": "default",
+          "total": 37,
+          "correct": 37,
+          "failures": 0,
+          "positiveCorrect": 21,
+          "negativeCorrect": 16,
+          "unsupportedShows": 0,
+          "refreshes": 5,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 2.188374999999951,
+          "p95Ms": 11.045041999999967
+        },
+        {
+          "arm": "injected-hybrid",
+          "total": 37,
+          "correct": 37,
+          "failures": 0,
+          "positiveCorrect": 21,
+          "negativeCorrect": 16,
+          "unsupportedShows": 0,
+          "refreshes": 5,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 2.320541999999932,
+          "p95Ms": 11.521166999999991
+        }
+      ]
+    }
+  ],
+  "parity": true,
+  "limitations": [
+    "Synthetic embeddings and a deterministic evidence-derived grounder test plumbing parity only; these quality labels are not independent model validation.",
+    "Offline text path includes scheduled refreshes, retrieval and final guards; excludes STT, real model inference, media and browser paint.",
+    "Timing is diagnostic, not a latency improvement claim. Raw provider logging is absent because no provider is called."
+  ],
+  "productionAcceptance": false
+}

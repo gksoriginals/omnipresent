@@ -1,0 +1,136 @@
+{
+  "realtimeMs": 2568.439707999998,
+  "stage": {
+    "text": "Batteries: Storing Energy for Later",
+    "composition": {
+      "title": "Batteries: Storing Energy for Later",
+      "body": "Explain that this electricity is only available when the sun shines. Batteries serve as the 'battery' that stores excess energy generated during the day for use at night or during cloudy weather.",
+      "beat": 1,
+      "flowRevision": 3
+    },
+    "source": "agent",
+    "revision": 2,
+    "committedAt": 1792125240148
+  },
+  "recordedAt": "2026-10-16T04:34:00.151Z",
+  "scope": "Actual local model, not mock",
+  "configuration": {
+    "baseURL": "http://127.0.0.1:11434/v1",
+    "model": "qwen3.5:4b",
+    "local": true
+  },
+  "interviewMs": 13408.27475,
+  "storyMs": 21962.235875000006,
+  "state": {
+    "revision": 3,
+    "brief": {
+      "topic": "Solar generation and battery storage",
+      "audience": "Teachers",
+      "goal": "Help teachers explain the relationship between solar generation and batteries",
+      "durationMinutes": 10,
+      "keyPoints": [
+        "Solar panels convert sunlight to electricity",
+        "Batteries store energy for later use",
+        "The interrelationship between generation and storage"
+      ],
+      "constraints": [
+        "No fabricated statistics"
+      ],
+      "openQuestions": [
+        "Any specific teaching concepts or misconceptions teachers expect to address?",
+        "Are there particular grade levels or subjects this is intended for?",
+        "Do you have specific examples or diagrams that should be included?"
+      ]
+    },
+    "flow": {
+      "title": "Solar Generation and Battery Storage: A Teacher's Guide",
+      "summary": "A concise 10-minute presentation to help teachers explain how solar panels convert sunlight into electricity and how batteries store that energy for later use, clarifying the interrelationship between generation and storage.",
+      "beats": [
+        {
+          "title": "Solar Panels: Turning Sunlight into Electricity",
+          "speakerNotes": "Introduce the core concept: solar panels act like converters, turning sunlight into electricity. Visualize this as a sun shining onto dark panels to spark energy.",
+          "visualDirection": "Show sunlight rays converging on a set of solar panels with small animated sparks of electricity appearing at the array",
+          "artifactIds": [
+            "041c8f4b-d8ed-4c4c-838e-7c20c2ca1746"
+          ]
+        },
+        {
+          "title": "Batteries: Storing Energy for Later",
+          "speakerNotes": "Explain that this electricity is only available when the sun shines. Batteries serve as the 'battery' that stores excess energy generated during the day for use at night or during cloudy weather.",
+          "visualDirection": "An animation where a battery fills up with energy bubbles during the day (sunny icon) and then is used to power lights//devices at night",
+          "artifactIds": [
+            "041c8f4b-d8ed-4c4c-838e-7c20c2ca1746"
+          ]
+        },
+        {
+          "title": "The Power of Partnership",
+          "speakerNotes": "Conclude by emphasizing the partnership: solar generation without storage is limited to daylight hours, while storage without generation offers no power source. Together, they create a sustainable energy loop.",
+          "visualDirection": "A simple two-step loop graphic showing Sun > Solar Panels > Electricity > Battery > Devices at night",
+          "artifactIds": [
+            "041c8f4b-d8ed-4c4c-838e-7c20c2ca1746"
+          ]
+        }
+      ],
+      "openQuestions": [
+        "Are there specific age groups this teaching is targeted for?",
+        "Do we need to show or mention any real-world examples of solar and battery setups?"
+      ]
+    },
+    "flowBasedOnRevision": 3,
+    "approvedRevision": 3,
+    "artifacts": [
+      {
+        "id": "041c8f4b-d8ed-4c4c-838e-7c20c2ca1746",
+        "name": "solar-notes.md",
+        "content": "# Solar energy\nSolar panels convert sunlight to electricity. Batteries store energy for later use. This is conceptual material, not measured project performance."
+      }
+    ],
+    "messages": {
+      "interview": [
+        {
+          "role": "user",
+          "content": "Prepare a 10-minute conceptual presentation for teachers explaining solar generation and batteries. Goal: help them teach the relationship. Key points: generation and storage. Constraints: no fabricated statistics. I have supplied all context needed for this draft. Use updateBrief now; list any remaining questions as open questions, then briefly confirm the brief."
+        },
+        {
+          "role": "assistant",
+          "content": "The brief has been saved. I have used the supplied context and constraints. The remaining open questions are:\n1. Any specific teaching concepts or misconceptions teachers expect to address?\n2. Are there particular grade levels or subjects this is intended for?\n3. Do you have specific examples or diagrams that should be included?"
+        }
+      ],
+      "storyteller": [
+        {
+          "role": "user",
+          "content": "Create a concise three-beat presentation flow from the current brief. Read the provided material, use proposeFlow with exact artifact IDs, and briefly explain your proposal."
+        },
+        {
+          "role": "assistant",
+          "content": "**Proposal Summary:**\n\nThis three-beat flow simplifies the core relationship between generation and storage for a teacher audience:\n1.  **Beat 1:** Defines solar panels as conversion devices (Sun \\u2192 Electricity).\n2.  **Beat 2:** Defines batteries as storage mechanisms (Daytime excess energy saved for night use).\n3.  **Beat 3:** Synthesizes the dependency, illustrating how both functions are required for a complete system.\n\nThe flow uses the single available artifact (`solar-notes.md`) to guide the explanation, adding visual directions to clarify concepts since textual descriptions alone may lack impact.\n\n**Missing Context:**\nQuestions regarding target grade levels and specific examples/diagrams will help refine future iterations of this presentation."
+        }
+      ]
+    },
+    "events": [
+      {
+        "id": "01eb4505-c544-4d3a-a69e-dda0a4b21f29",
+        "from": "interview",
+        "to": "storyteller",
+        "kind": "brief.updated",
+        "summary": "Interview brief updated; prior flow needs review.",
+        "revision": 2
+      },
+      {
+        "id": "345137d5-43ee-43f7-ad21-24d143c4b0ad",
+        "from": "storyteller",
+        "to": "presenter",
+        "kind": "flow.proposed",
+        "summary": "Storyteller proposed a flow for review.",
+        "revision": 3
+      }
+    ]
+  },
+  "errors": [],
+  "limitations": [
+    "Single scripted local-model trial; not a quality benchmark.",
+    "Rehearsal phrase supplied as text; no microphone or STT latency included.",
+    "Probe programmatically approves the story to exercise handoff; no human editorial approval was measured.",
+    "Generated text needs editorial review; visual directions were not rendered."
+  ]
+}

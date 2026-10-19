@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-16",
+  "scope": "First preparation slice; SDK and browser behavior, not live-model generation",
+  "framework": {"ai": "7.0.142", "openaiCompatible": "3.0.70", "zod": "4.6.7"},
+  "buildAndTypecheck": "passed",
+  "tests": {"passed": 9, "agentModel": "explicit AI SDK MockLanguageModelV4", "networkInference": false},
+  "browser": {
+    "fixture": "tests/fixtures/preparation.json",
+    "storyRendering": true,
+    "flowReview": true,
+    "briefEditing": true,
+    "browserPersistenceAfterReload": true,
+    "briefChangeInvalidatesReview": true,
+    "mobileHorizontalOverflow": false,
+    "actualLocalProviderErrorVisible": "model 'qwen3.5:4b' not found",
+    "failedRequestRetainedInComposer": true
+  },
+  "liveProvider": {
+    "userChoice": "local endpoint",
+    "server": "Ollama 0.34.0",
+    "model": "qwen3.5:4b",
+    "generation": "not validated",
+    "blocker": "Model download repeatedly failed with EOF/interrupted transfer; no cached model available"
+  },
+  "livekit": {"documentationReviewed": true, "installed": false, "decision": "Optional media/session experiment; not required for current preparation slice"},
+  "pending": ["actual local model interview/story trial", "realtime presentation agent", "autonomous continuous coordination", "generative UI renderer comparison", "web/media artifact generation"]
+}

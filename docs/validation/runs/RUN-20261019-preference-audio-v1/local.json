@@ -1,0 +1,2684 @@
+{
+  "id": "RUN-20261019-preference-audio-v1",
+  "inputHash": "c38afb96cad5f3c17b210327c88e1c98ee5d562d0f3c9ac3a3d517c3c5a97136",
+  "sourceFiles": [
+    {
+      "path": "scripts/preference-audio-loop.ts",
+      "sha256": "b13a0a8e5bcc6a08ef5449db998e3299e7413400233f046958b44e629711dc79"
+    },
+    {
+      "path": "scripts/synthesize-preference-audio.py",
+      "sha256": "3d44ba87f0c6c7ffd6f7b6261f4b0d3cf4af9bbbe9b76fc0236d4bd7154530b7"
+    },
+    {
+      "path": "runtime/worker.py",
+      "sha256": "f5f19bc83c83bb1cbe6199a67c215414be2d776abad89fe0118da120ef5ad6c1"
+    },
+    {
+      "path": "runtime/requirements.lock",
+      "sha256": "be3b0e9c8d64d8099d114081c2e13986a3a94d198005c286021f3608f6abab37"
+    },
+    {
+      "path": "runtime/tts-model.json",
+      "sha256": "941707751ad94ad5f328bd4fed86bb3f2e35d3725c9b004a79087adc7cea2487"
+    },
+    {
+      "path": "runtime/preference_worker.py",
+      "sha256": "a0d6c8a349559ff8ecd53524712d00bff34ff2477a93c176cb9f8cb8ea7cbfe4"
+    },
+    {
+      "path": "runtime/reranker_preference_worker.py",
+      "sha256": "b8e0b4cdca9d3dd2ca622db2fdc78990a6127c9a7a12181c766faaac02262111"
+    },
+    {
+      "path": "runtime/preference-reranker-model.json",
+      "sha256": "fef7d08e2c486bb253ae77aafde652dda85376939bf9a77292f72e9ed21f0c4e"
+    },
+    {
+      "path": "server/presentation/baseline.ts",
+      "sha256": "7a04d7d8adf95b0bb2ca11d9bd9345822c0097b4d165a229808bff1fb38c3ba7"
+    },
+    {
+      "path": "server/presentation/selection.ts",
+      "sha256": "37fa0a19a6894776881ce8e69bee9ebd77411a6991d765152960137a181910b0"
+    },
+    {
+      "path": "server/presentation/request-frame.ts",
+      "sha256": "641cd6c08bab833b40f8ae317442d0db6d26e92d5e4b3e82f9914e7d2d2bb577"
+    },
+    {
+      "path": "server/presentation/composition.ts",
+      "sha256": "c7b1ca7098a4ec20b4fcab2e7b7a3184a9a856600290c943c0e4ab23a0ea5664"
+    },
+    {
+      "path": "server/models/local-preference.ts",
+      "sha256": "187892da8ef8ac84aa17113fa044a4ff5ae6c32d721257863dfc98e99a30691d"
+    },
+    {
+      "path": "server/agents/adaptive.ts",
+      "sha256": "71da49afae2d2ddbeca29b37bc64df8ac12112b04262fc609e9d84ce97ece84f"
+    },
+    {
+      "path": "server/session.ts",
+      "sha256": "241f0efcbb978e30b2ff59b4a056ffeb6552f112e6669099ac83d7168fecfee3"
+    }
+  ],
+  "scope": "Actual paced Piper PCM, Moonshine streaming STT, presenter and AdaptiveController commit; excludes browser rendering and microphone capture.",
+  "resources": [
+    {
+      "arm": "stt",
+      "readyMs": 318.263333
+    },
+    {
+      "arm": "hybrid",
+      "readyMs": 203.600792
+    },
+    {
+      "arm": "gliner",
+      "readyMs": 7982.339457999999
+    },
+    {
+      "arm": "gliner",
+      "stats": {
+        "calls": 0,
+        "computeMs": 0,
+        "loadMs": 7764.747416949831
+      },
+      "resources": {
+        "parameters": 486444053,
+        "weightsBytes": 1945828140,
+        "peakRssBytes": 3525951488
+      }
+    },
+    {
+      "arm": "minilm",
+      "readyMs": 2059.797083000005
+    },
+    {
+      "arm": "minilm",
+      "stats": {
+        "calls": 0,
+        "computeMs": 0,
+        "loadMs": 1821.3154160184786
+      },
+      "resources": {
+        "parameters": 22713601,
+        "weightsBytes": 90870598,
+        "peakRssBytes": 346750976
+      }
+    }
+  ],
+  "rows": [
+    {
+      "arm": "hybrid",
+      "id": "explain",
+      "expected": "show",
+      "actual": "context",
+      "correct": false,
+      "transcript": "Explain solar panels turned sunlight.",
+      "generatedAudioEndToFinalMs": -1050.6782500000004,
+      "finalToDirectionMs": 1.7992920000001504,
+      "inferenceMs": 1.6655840000003082,
+      "held": true,
+      "unchanged": true,
+      "blocks": 1,
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ]
+    },
+    {
+      "arm": "hybrid",
+      "id": "missing",
+      "expected": "context",
+      "actual": "context",
+      "correct": true,
+      "transcript": "Show the installation cost.",
+      "generatedAudioEndToFinalMs": 227.41354200000023,
+      "finalToDirectionMs": 0.3135419999998703,
+      "inferenceMs": 0.2875830000011774,
+      "held": true,
+      "unchanged": true,
+      "blocks": 1,
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ]
+    },
+    {
+      "arm": "hybrid",
+      "id": "retain",
+      "expected": "hold",
+      "actual": "hold",
+      "correct": true,
+      "transcript": "Keep this visual.",
+      "generatedAudioEndToFinalMs": 319.17425000000003,
+      "finalToDirectionMs": 0.2897499999999127,
+      "inferenceMs": 0.2400420000012673,
+      "held": true,
+      "unchanged": true,
+      "blocks": 1,
+      "feedback": []
+    },
+    {
+      "arm": "gliner",
+      "id": "explain",
+      "expected": "show",
+      "actual": "context",
+      "correct": false,
+      "transcript": "Explain solar panels turned sunlight.",
+      "generatedAudioEndToFinalMs": -1040.8445420000025,
+      "finalToDirectionMs": 0.6522079999995185,
+      "inferenceMs": 0.6264999999984866,
+      "held": true,
+      "unchanged": true,
+      "blocks": 1,
+      "preference": {
+        "choices": 0,
+        "fallbacks": 0
+      },
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ]
+    },
+    {
+      "arm": "gliner",
+      "id": "missing",
+      "expected": "context",
+      "actual": "context",
+      "correct": true,
+      "transcript": "Show the installation cost.",
+      "generatedAudioEndToFinalMs": 239.986834000003,
+      "finalToDirectionMs": 0.22366599999804748,
+      "inferenceMs": 0.2031669999996666,
+      "held": true,
+      "unchanged": true,
+      "blocks": 1,
+      "preference": {
+        "choices": 0,
+        "fallbacks": 0
+      },
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ]
+    },
+    {
+      "arm": "gliner",
+      "id": "retain",
+      "expected": "hold",
+      "actual": "hold",
+      "correct": true,
+      "transcript": "Keep this visual.",
+      "generatedAudioEndToFinalMs": 317.53120800000033,
+      "finalToDirectionMs": 0.17595900000014808,
+      "inferenceMs": 0.15208300000085728,
+      "held": true,
+      "unchanged": true,
+      "blocks": 1,
+      "preference": {
+        "choices": 0,
+        "fallbacks": 0
+      },
+      "feedback": []
+    },
+    {
+      "arm": "minilm",
+      "id": "explain",
+      "expected": "show",
+      "actual": "context",
+      "correct": false,
+      "transcript": "Explain solar panels turned sunlight.",
+      "generatedAudioEndToFinalMs": -1042.4825829999972,
+      "finalToDirectionMs": 0.5989580000023125,
+      "inferenceMs": 0.5747499999997672,
+      "held": true,
+      "unchanged": true,
+      "blocks": 1,
+      "preference": {
+        "choices": 0,
+        "fallbacks": 0
+      },
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ]
+    },
+    {
+      "arm": "minilm",
+      "id": "missing",
+      "expected": "context",
+      "actual": "context",
+      "correct": true,
+      "transcript": "Show the installation cost.",
+      "generatedAudioEndToFinalMs": 221.87183299999742,
+      "finalToDirectionMs": 0.1663330000010319,
+      "inferenceMs": 0.14624999999796273,
+      "held": true,
+      "unchanged": true,
+      "blocks": 1,
+      "preference": {
+        "choices": 0,
+        "fallbacks": 0
+      },
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ]
+    },
+    {
+      "arm": "minilm",
+      "id": "retain",
+      "expected": "hold",
+      "actual": "hold",
+      "correct": true,
+      "transcript": "Keep this visual.",
+      "generatedAudioEndToFinalMs": 300.0027919999993,
+      "finalToDirectionMs": 0.2097079999948619,
+      "inferenceMs": 0.1832090000025346,
+      "held": true,
+      "unchanged": true,
+      "blocks": 1,
+      "preference": {
+        "choices": 0,
+        "fallbacks": 0
+      },
+      "feedback": []
+    }
+  ],
+  "events": [
+    {
+      "type": "worker_status",
+      "status": "loading",
+      "at": 146.765209
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "loadMs": 296.8155420385301,
+      "at": 443.473875
+    },
+    {
+      "type": "snapshot",
+      "stage": {
+        "text": "",
+        "revision": 0,
+        "source": "manual",
+        "committedAt": 1792398712540
+      },
+      "paused": false,
+      "arm": "hybrid",
+      "at": 452.220667
+    },
+    {
+      "type": "stage",
+      "stage": {
+        "text": "Sunlight becomes electricity",
+        "composition": {
+          "title": "Sunlight becomes electricity",
+          "body": "Solar panels turn sunlight into electricity.",
+          "beat": 0,
+          "flowRevision": 5,
+          "adaptive": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          }
+        },
+        "source": "agent",
+        "revision": 1,
+        "committedAt": 1792398712541
+      },
+      "dispatchMs": 0.014791999999999916,
+      "arm": "hybrid",
+      "at": 452.265459
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 655.972667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 0,
+      "processingMs": 0.22962503135204315,
+      "at": 698.481084
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104194",
+      "text": "Okay.",
+      "final": false,
+      "at": 980.971334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 62.879875011276454,
+      "at": 981.020334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 0.5152079975232482,
+      "at": 1167.861667
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104194",
+      "text": "Explain.",
+      "final": false,
+      "at": 1476.779
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 58.76270798034966,
+      "at": 1476.947584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 2.119000011589378,
+      "at": 1670.77125
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104194",
+      "text": "Explain solar panels.",
+      "final": false,
+      "at": 2003.105542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 84.56770895281807,
+      "at": 2003.30175
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 2.4939579889178276,
+      "at": 2170.3875
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104194",
+      "text": "Explain solar panels to the Earth.",
+      "final": false,
+      "at": 2504.324834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 86.06241695815697,
+      "at": 2504.421792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 3.8425829843617976,
+      "at": 2671.627167
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104194",
+      "text": "Explain solar panels turned sunlight",
+      "final": false,
+      "at": 3006.059667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 87.73087500594556,
+      "at": 3006.156709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 4.484332981519401,
+      "at": 3172.217042
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104194",
+      "text": "Explain solar panels turned sunlight.",
+      "final": false,
+      "at": 3528.986084
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104194",
+      "text": "Explain solar panels turned sunlight.",
+      "final": true,
+      "at": 3528.99225
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "hybrid",
+      "at": 3529.127334
+    },
+    {
+      "type": "feedback",
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "arm": "hybrid",
+      "at": 3530.781209
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 1.6655840000003082,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "b421ed15-32f9-4491-b64e-1ade5fa86dd5",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-hybrid",
+        "selection": "local-hybrid",
+        "path": "guard",
+        "action": "context",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "hybrid",
+      "at": 3530.791542
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "hybrid",
+      "at": 3530.837125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 111.10770900268108,
+      "at": 3530.868875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 3.758332983125001,
+      "at": 3672.00175
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104195",
+      "text": "Into the",
+      "final": false,
+      "at": 3985.149084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 66.52275001397356,
+      "at": 3985.332459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 6.756416987627745,
+      "at": 4174.606292
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104195",
+      "text": "Into the electricity",
+      "final": false,
+      "at": 4480.071834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 61.988792032934725,
+      "at": 4480.306042
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 7.997374981641769,
+      "at": 4676.409667
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104195",
+      "text": "Into the electricity",
+      "final": true,
+      "at": 4969.146709
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "hybrid",
+      "at": 4969.178625
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.47624999999970896,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "e9e903d1-97ce-4e75-afb2-175874f6d9de",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-hybrid",
+        "selection": "local-hybrid",
+        "path": "guard",
+        "action": "hold",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "hybrid",
+      "at": 4969.652959
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "hybrid",
+      "at": 4969.659584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 50.255041976924986,
+      "at": 4969.744667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 11.1589590087533,
+      "at": 5179.848542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 10.049458011053503,
+      "at": 5428.589875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 11.03945798240602,
+      "at": 5679.556125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 21,
+      "processingMs": 13.8258749502711,
+      "at": 5933.425417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 22,
+      "processingMs": 10.198040981777012,
+      "at": 6178.111834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 23,
+      "processingMs": 14.043583010789007,
+      "at": 6432.189542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 24,
+      "processingMs": 10.120999999344349,
+      "at": 6677.676
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 25,
+      "processingMs": 14.684499998111278,
+      "at": 6933.392125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 26,
+      "processingMs": 10.204542020801455,
+      "at": 7178.438834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 27,
+      "processingMs": 0.4171659820713103,
+      "at": 7418.505542
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 7428.02975
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 7429.269042
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 0,
+      "processingMs": 0.4045420209877193,
+      "at": 7440.968792
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104196",
+      "text": "It's-",
+      "final": false,
+      "at": 7748.87325
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 57.1975419879891,
+      "at": 7748.921834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 0.46933296835049987,
+      "at": 7941.702292
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104196",
+      "text": "show the",
+      "final": false,
+      "at": 8243.251917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 51.08304199529812,
+      "at": 8243.323459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 2.2829590016044676,
+      "at": 8444.169209
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104196",
+      "text": "Show the installation.",
+      "final": false,
+      "at": 8769.62475
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 78.88216600986198,
+      "at": 8769.80725
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 1.4909589663147926,
+      "at": 8942.794
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104196",
+      "text": "Show the installation cost.",
+      "final": false,
+      "at": 9251.410334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 59.13962499471381,
+      "at": 9251.465417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 2.855750033631921,
+      "at": 9444.832667
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104196",
+      "text": "Show the installation cost.",
+      "final": true,
+      "at": 9734.306542
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "hybrid",
+      "at": 9734.338042
+    },
+    {
+      "type": "feedback",
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "arm": "hybrid",
+      "at": 9734.615042
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.2875830000011774,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "11953ef0-d50a-413c-b30d-95d1becc394f",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-hybrid",
+        "selection": "local-hybrid",
+        "path": "guard",
+        "action": "context",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "hybrid",
+      "at": 9734.620084
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "hybrid",
+      "at": 9734.626042
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 43.11725002480671,
+      "at": 9734.642
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 3.2375410082750022,
+      "at": 9945.072834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 8.487084007356316,
+      "at": 10199.241792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 4.5566249755211174,
+      "at": 10445.572709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 10.978917009197176,
+      "at": 10702.430125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 5.513375042937696,
+      "at": 10947.7775
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 11.67187502142042,
+      "at": 11202.45525
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 6.739042000845075,
+      "at": 11446.996792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 3.239624958951026,
+      "at": 11693.54675
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 1.5446670004166663,
+      "at": 11943.383917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 3.476541955024004,
+      "at": 12194.128209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 0.08479203097522259,
+      "at": 12440.450875
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 12442.17325
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 12451.483667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 0,
+      "processingMs": 0.19175000488758087,
+      "at": 12462.859334
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104197",
+      "text": "Keep",
+      "final": false,
+      "at": 12738.031209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 24.924667028244585,
+      "at": 12738.077167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 0.5150829674676061,
+      "at": 12962.847209
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104197",
+      "text": "Keep this video",
+      "final": false,
+      "at": 13253.9575
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 39.834875031374395,
+      "at": 13254.032792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 0.774625048507005,
+      "at": 13464.183959
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104197",
+      "text": "Keep this visual.",
+      "final": false,
+      "at": 13780.139
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104197",
+      "text": "Keep this visual.",
+      "final": true,
+      "at": 13780.1415
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "hybrid",
+      "at": 13780.198709
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.2400420000012673,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "67a9230e-618d-473e-a491-9bd460aca791",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-hybrid",
+        "selection": "local-hybrid",
+        "path": "guard",
+        "action": "hold",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "hybrid",
+      "at": 13780.43125
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "hybrid",
+      "at": 13780.438375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 66.24916702276096,
+      "at": 13780.466167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 6.908249983098358,
+      "at": 13970.253334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 9.951666987035424,
+      "at": 14223.021375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 4.704624996520579,
+      "at": 14467.728209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 9.431457961909473,
+      "at": 14723.009625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 6.133167014922947,
+      "at": 14969.833375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 9.764083952177316,
+      "at": 15223.651334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 3.726749971974641,
+      "at": 15468.266959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 8.578832959756255,
+      "at": 15722.563167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 5.292334011755884,
+      "at": 15968.847625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 1.5516250277869403,
+      "at": 16216.284042
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 16224.642542
+    },
+    {
+      "type": "snapshot",
+      "stage": {
+        "text": "",
+        "revision": 0,
+        "source": "manual",
+        "committedAt": 1792398728315
+      },
+      "paused": false,
+      "arm": "gliner",
+      "at": 16226.180875
+    },
+    {
+      "type": "stage",
+      "stage": {
+        "text": "Sunlight becomes electricity",
+        "composition": {
+          "title": "Sunlight becomes electricity",
+          "body": "Solar panels turn sunlight into electricity.",
+          "beat": 0,
+          "flowRevision": 5,
+          "adaptive": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          }
+        },
+        "source": "agent",
+        "revision": 1,
+        "committedAt": 1792398728315
+      },
+      "dispatchMs": 0.006291000001510838,
+      "arm": "gliner",
+      "at": 16226.198334
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 24211.743875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 0,
+      "processingMs": 0.2720000338740647,
+      "at": 24223.45675
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104198",
+      "text": "Okay.",
+      "final": false,
+      "at": 24562.633125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 89.29762500338256,
+      "at": 24562.687209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 1.2912499951198697,
+      "at": 24724.569292
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104198",
+      "text": "Explain.",
+      "final": false,
+      "at": 25051.190459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 77.8857910190709,
+      "at": 25051.238459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 2.3532500490546227,
+      "at": 25225.948375
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104198",
+      "text": "Explain solar panels.",
+      "final": false,
+      "at": 25556.216542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 81.8260419764556,
+      "at": 25556.273667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 2.7752500027418137,
+      "at": 25726.562167
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104198",
+      "text": "Explain solar panels to the Earth.",
+      "final": false,
+      "at": 26071.205417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 97.35666599590331,
+      "at": 26071.2805
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 2.837790991179645,
+      "at": 26226.5385
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104198",
+      "text": "Explain solar panels turned sunlight",
+      "final": false,
+      "at": 26547.159959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 73.32266599405557,
+      "at": 26547.261917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 3.5956670180894434,
+      "at": 26727.395084
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104198",
+      "text": "Explain solar panels turned sunlight.",
+      "final": false,
+      "at": 27094.549292
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104198",
+      "text": "Explain solar panels turned sunlight.",
+      "final": true,
+      "at": 27094.551042
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "gliner",
+      "at": 27094.5875
+    },
+    {
+      "type": "feedback",
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "arm": "gliner",
+      "at": 27095.195042
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.6264999999984866,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "44c91c56-2001-49ef-91ed-f456775a6172",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-preference:gliner",
+        "selection": "local-preference:gliner",
+        "preference": {
+          "choices": 0,
+          "fallbacks": 0
+        },
+        "path": "guard",
+        "action": "context",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "gliner",
+      "at": 27095.20325
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "gliner",
+      "at": 27095.208625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 120.73754199082032,
+      "at": 27095.304125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 3.1367919873446226,
+      "at": 27226.848792
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104199",
+      "text": "Into the",
+      "final": false,
+      "at": 27566.492625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 92.41674997610971,
+      "at": 27566.597542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 5.0236249808222055,
+      "at": 27728.333959
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104199",
+      "text": "Into the electricity",
+      "final": false,
+      "at": 28047.625792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 74.86670796060935,
+      "at": 28047.799209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 8.304124989081174,
+      "at": 28232.781834
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104199",
+      "text": "Into the electricity",
+      "final": true,
+      "at": 28523.8345
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "gliner",
+      "at": 28523.880584
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.5621670000000449,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "117aa95d-81d4-4907-9665-361392ef52a6",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-preference:gliner",
+        "selection": "local-preference:gliner",
+        "preference": {
+          "choices": 0,
+          "fallbacks": 0
+        },
+        "path": "guard",
+        "action": "hold",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "gliner",
+      "at": 28524.439625
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "gliner",
+      "at": 28524.446125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 49.66716602211818,
+      "at": 28524.460917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 10.84191701374948,
+      "at": 28735.209709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 15.446625009644777,
+      "at": 28988.682125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 9.669375023804605,
+      "at": 29234.115167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 21,
+      "processingMs": 12.217291980050504,
+      "at": 29486.000834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 22,
+      "processingMs": 10.749500012025237,
+      "at": 29734.484917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 23,
+      "processingMs": 14.546000049449503,
+      "at": 29988.755334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 24,
+      "processingMs": 17.241124995052814,
+      "at": 30241.856209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 25,
+      "processingMs": 15.543749963399023,
+      "at": 30490.283959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 26,
+      "processingMs": 8.394667005632073,
+      "at": 30732.367375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 27,
+      "processingMs": 0.9895420516841114,
+      "at": 30975.255625
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 30987.776417
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 30999.186959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 0,
+      "processingMs": 0.6373749929480255,
+      "at": 31010.294959
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104200",
+      "text": "It's-",
+      "final": false,
+      "at": 31325.059
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 64.91999997524545,
+      "at": 31325.1055
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 1.4462500112131238,
+      "at": 31511.100417
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104200",
+      "text": "show the",
+      "final": false,
+      "at": 31829.3555
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 69.73262497922406,
+      "at": 31829.397917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 4.151750006712973,
+      "at": 32014.713084
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104200",
+      "text": "Show the installation.",
+      "final": false,
+      "at": 32332.963417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 71.80212502134964,
+      "at": 32333.011667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 2.6530420291237533,
+      "at": 32514.246417
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104200",
+      "text": "Show the installation cost.",
+      "final": false,
+      "at": 32852.187
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 91.27329202601686,
+      "at": 32852.271167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 1.217625045683235,
+      "at": 33010.315959
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104200",
+      "text": "Show the installation cost.",
+      "final": true,
+      "at": 33315.893959
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "gliner",
+      "at": 33315.922334
+    },
+    {
+      "type": "feedback",
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "arm": "gliner",
+      "at": 33316.11425
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.2031669999996666,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "58e965de-f33e-489e-af26-2a475d6d6964",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-preference:gliner",
+        "selection": "local-preference:gliner",
+        "preference": {
+          "choices": 0,
+          "fallbacks": 0
+        },
+        "path": "guard",
+        "action": "context",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "gliner",
+      "at": 33316.117625
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "gliner",
+      "at": 33316.122709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 56.18929100455716,
+      "at": 33316.138292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 3.612667031120509,
+      "at": 33513.343584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 11.593999981414527,
+      "at": 33771.849209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 5.7652920368127525,
+      "at": 34020.560084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 3.3957079867832363,
+      "at": 34263.215625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 3.177375008817762,
+      "at": 34512.837917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 9.928875020705163,
+      "at": 34770.475709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 4.533290979452431,
+      "at": 35015.609834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 18.893208005465567,
+      "at": 35279.188584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 6.554124993272126,
+      "at": 35516.759292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 9.697625006083399,
+      "at": 35769.529292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 0.46433298848569393,
+      "at": 36010.560334
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 36018.809167
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 36021.28175
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 0,
+      "processingMs": 1.279124990105629,
+      "at": 36033.36525
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104201",
+      "text": "Keep",
+      "final": false,
+      "at": 36326.75325
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 45.73504196014255,
+      "at": 36326.812459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 3.176041995175183,
+      "at": 36535.907959
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104201",
+      "text": "Keep this video",
+      "final": false,
+      "at": 36845.992584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 62.29733303189278,
+      "at": 36846.040709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 1.0089169954881072,
+      "at": 37033.426834
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104201",
+      "text": "Keep this visual.",
+      "final": false,
+      "at": 37347.485209
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104201",
+      "text": "Keep this visual.",
+      "final": true,
+      "at": 37347.48775
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "gliner",
+      "at": 37347.513375
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.15208300000085728,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "cac5859e-873f-4973-b44e-080c8f98b4d6",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-preference:gliner",
+        "selection": "local-preference:gliner",
+        "preference": {
+          "choices": 0,
+          "fallbacks": 0
+        },
+        "path": "guard",
+        "action": "hold",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "gliner",
+      "at": 37347.663709
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "gliner",
+      "at": 37347.67725
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 64.60237497230992,
+      "at": 37347.701417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 2.0461250096559525,
+      "at": 37533.435334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 6.773458037059754,
+      "at": 37789.831542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 4.873875004705042,
+      "at": 38037.720917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 8.563292038161308,
+      "at": 38292.176125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 5.441000044811517,
+      "at": 38538.6105
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 8.38741596089676,
+      "at": 38790.300125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 4.526666016317904,
+      "at": 39036.501875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 9.081792028155178,
+      "at": 39291.385709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 5.522709048818797,
+      "at": 39537.846542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 1.4797080075368285,
+      "at": 39784.266209
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 39791.24075
+    },
+    {
+      "type": "snapshot",
+      "stage": {
+        "text": "",
+        "revision": 0,
+        "source": "manual",
+        "committedAt": 1792398751885
+      },
+      "paused": false,
+      "arm": "minilm",
+      "at": 39796.787459
+    },
+    {
+      "type": "stage",
+      "stage": {
+        "text": "Sunlight becomes electricity",
+        "composition": {
+          "title": "Sunlight becomes electricity",
+          "body": "Solar panels turn sunlight into electricity.",
+          "beat": 0,
+          "flowRevision": 5,
+          "adaptive": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          }
+        },
+        "source": "agent",
+        "revision": 1,
+        "committedAt": 1792398751885
+      },
+      "dispatchMs": 0.007541999999375548,
+      "arm": "minilm",
+      "at": 39796.807667
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 41856.487292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 0,
+      "processingMs": 0.20370801212266088,
+      "at": 41867.867792
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104202",
+      "text": "Okay.",
+      "final": false,
+      "at": 42160.814792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 43.13083301531151,
+      "at": 42160.86275
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 3.8625840097665787,
+      "at": 42373.765125
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104202",
+      "text": "Explain.",
+      "final": false,
+      "at": 42679.042917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 59.7572079859674,
+      "at": 42679.092375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 2.3334999568760395,
+      "at": 42870.960417
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104202",
+      "text": "Explain solar panels.",
+      "final": false,
+      "at": 43199.961834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 80.33429097849876,
+      "at": 43200.038417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 2.352333045564592,
+      "at": 43370.292125
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104202",
+      "text": "Explain solar panels to the Earth.",
+      "final": false,
+      "at": 43704.364459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 86.46279200911522,
+      "at": 43704.458875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 4.0269999881275,
+      "at": 43871.4745
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104202",
+      "text": "Explain solar panels turned sunlight",
+      "final": false,
+      "at": 44197.492042
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 78.61641596537083,
+      "at": 44197.620334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 3.7281670374795794,
+      "at": 44371.906625
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104202",
+      "text": "Explain solar panels turned sunlight.",
+      "final": false,
+      "at": 44737.60675
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104202",
+      "text": "Explain solar panels turned sunlight.",
+      "final": true,
+      "at": 44737.609334
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "minilm",
+      "at": 44737.636042
+    },
+    {
+      "type": "feedback",
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "arm": "minilm",
+      "at": 44738.200292
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.5747499999997672,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "3f2e904a-9f2a-462f-b7a4-23cbb5e03b06",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-preference:minilm",
+        "selection": "local-preference:minilm",
+        "preference": {
+          "choices": 0,
+          "fallbacks": 0
+        },
+        "path": "guard",
+        "action": "context",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "minilm",
+      "at": 44738.208292
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "minilm",
+      "at": 44738.212875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 119.09145797835663,
+      "at": 44738.239625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 1.6574579640291631,
+      "at": 44870.13675
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104203",
+      "text": "Into the",
+      "final": false,
+      "at": 45186.197375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 67.47133401222527,
+      "at": 45186.387459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 6.917666993103921,
+      "at": 45374.678417
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104203",
+      "text": "Into the electricity",
+      "final": false,
+      "at": 45684.808417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 66.60645798547193,
+      "at": 45685.010875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 6.499458046164364,
+      "at": 45875.534125
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104203",
+      "text": "Into the electricity",
+      "final": true,
+      "at": 46168.207
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "minilm",
+      "at": 46168.230209
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.19125000000349246,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "4963bdd0-71aa-484c-a064-9c7490393d55",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-preference:minilm",
+        "selection": "local-preference:minilm",
+        "preference": {
+          "choices": 0,
+          "fallbacks": 0
+        },
+        "path": "guard",
+        "action": "hold",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "minilm",
+      "at": 46168.420042
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "minilm",
+      "at": 46168.423417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 50.13079202035442,
+      "at": 46168.477334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 12.784624996129423,
+      "at": 46382.171542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 13.488625001627952,
+      "at": 46631.616167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 10.05929202074185,
+      "at": 46878.338667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 21,
+      "processingMs": 15.649500011932105,
+      "at": 47133.930584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 22,
+      "processingMs": 10.449583001900464,
+      "at": 47379.293209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 23,
+      "processingMs": 14.150000002700835,
+      "at": 47632.850584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 24,
+      "processingMs": 11.349124950356781,
+      "at": 47881.09025
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 25,
+      "processingMs": 13.107499980833381,
+      "at": 48130.919625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 26,
+      "processingMs": 10.847041034139693,
+      "at": 48380.540542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 27,
+      "processingMs": 0.9831659845076501,
+      "at": 48620.437042
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 48633.536667
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 48641.035959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 0,
+      "processingMs": 0.639582984149456,
+      "at": 48651.736875
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104204",
+      "text": "It's-",
+      "final": false,
+      "at": 48959.879167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 59.07979200128466,
+      "at": 48959.932209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 1.6615829663351178,
+      "at": 49154.3455
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104204",
+      "text": "show the",
+      "final": false,
+      "at": 49466.951417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 65.05516701145098,
+      "at": 49467.032417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 4.086666973307729,
+      "at": 49656.040125
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104204",
+      "text": "Show the installation.",
+      "final": false,
+      "at": 49982.238417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 80.78133303206414,
+      "at": 49982.31475
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 3.194292017724365,
+      "at": 50155.00175
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104204",
+      "text": "Show the installation cost.",
+      "final": false,
+      "at": 50470.666167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 69.22937498893589,
+      "at": 50470.770209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 4.901124979369342,
+      "at": 50657.103209
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104204",
+      "text": "Show the installation cost.",
+      "final": true,
+      "at": 50939.270042
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "minilm",
+      "at": 50939.292125
+    },
+    {
+      "type": "feedback",
+      "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+      "arm": "minilm",
+      "at": 50939.433334
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.14624999999796273,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "28268aee-a713-4a1e-90a9-5ca6c01c0a8b",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-preference:minilm",
+        "selection": "local-preference:minilm",
+        "preference": {
+          "choices": 0,
+          "fallbacks": 0
+        },
+        "path": "guard",
+        "action": "context",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "minilm",
+      "at": 50939.436375
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "minilm",
+      "at": 50939.4395
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 37.954125029500574,
+      "at": 50939.453917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 1.4763330109417439,
+      "at": 51153.178834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 3.354041022248566,
+      "at": 51404.797
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 1.6265829908661544,
+      "at": 51653.688584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 3.2607910106889904,
+      "at": 51904.20225
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 1.5345829888246953,
+      "at": 52152.995125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 3.3001250121742487,
+      "at": 52405.559875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 1.4729580143466592,
+      "at": 52653.315834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 3.230665985029191,
+      "at": 52904.847125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 1.4520840486511588,
+      "at": 53153.616625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 3.36041598347947,
+      "at": 53405.287459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 0.06654096068814397,
+      "at": 53651.589209
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 53653.204
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 53662.550167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 0,
+      "processingMs": 0.18749997252598405,
+      "at": 53673.620917
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104205",
+      "text": "Keep",
+      "final": false,
+      "at": 53949.349584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 25.49854200333357,
+      "at": 53949.399834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 0.46670797746628523,
+      "at": 54173.496167
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104205",
+      "text": "Keep this video",
+      "final": false,
+      "at": 54460.480834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 36.77874995628372,
+      "at": 54460.541167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 0.7662080461159348,
+      "at": 54674.205125
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104205",
+      "text": "Keep this visual.",
+      "final": false,
+      "at": 54971.76325
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14327911081848104205",
+      "text": "Keep this visual.",
+      "final": true,
+      "at": 54971.766042
+    },
+    {
+      "type": "presentation_status",
+      "status": "composing",
+      "arm": "minilm",
+      "at": 54971.794584
+    },
+    {
+      "type": "direction_completed",
+      "engine": "adaptive",
+      "inferenceMs": 0.1832090000025346,
+      "changed": false,
+      "held": true,
+      "composition": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "statement",
+            "beat": 0,
+            "emphasis": "normal",
+            "reveal": null
+          }
+        ]
+      },
+      "decision": {
+        "requestId": "c29e195b-a878-4bfe-a01b-2210d9fdeb0b",
+        "planner": "synthesis",
+        "baseline": "evidence-v1",
+        "model": "local-preference:minilm",
+        "selection": "local-preference:minilm",
+        "preference": {
+          "choices": 0,
+          "fallbacks": 0
+        },
+        "path": "guard",
+        "action": "hold",
+        "operation": "retain",
+        "revision": "dbe3c4371e253711cb5cb34c5d51cb1d046f2d96c099389695ec42a32a1a7c19"
+      },
+      "arm": "minilm",
+      "at": 54971.97575
+    },
+    {
+      "type": "presentation_status",
+      "status": "ready",
+      "arm": "minilm",
+      "at": 54971.980917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 47.384875011630356,
+      "at": 54972.010625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 0.91645895736292,
+      "at": 55173.661709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 2.7439999976195395,
+      "at": 55426.660917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 0.9678330388851464,
+      "at": 55674.874959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 2.7668330003507435,
+      "at": 55926.893792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 0.9543750202283263,
+      "at": 56175.095042
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 2.668250002898276,
+      "at": 56427.032834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 1.0573749896138906,
+      "at": 56675.3445
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 3.143541980534792,
+      "at": 56926.816292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 0.9668749989941716,
+      "at": 57174.838667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 0.20574999507516623,
+      "at": 57424.351375
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 57426.7985
+    }
+  ],
+  "limitations": [
+    "Three authored TTS utterances, one pass per arm; not representative preference-quality acceptance.",
+    "Final-to-direction includes host processing, not browser paint.",
+    "Audio timing is relative to generated PCM end, which may contain voice trailing silence.",
+    "Earlier preference-quality test uses oracle intent; this loop uses the real request interpreter."
+  ]
+}

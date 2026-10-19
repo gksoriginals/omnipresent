@@ -1,0 +1,13 @@
+{
+  "english": {
+    "revision": "9d1bfb848cd16d93ee56ccbc59cd92bf0f284d90",
+    "initialAttempt": "Xet reconstruction failed after about seven minutes; no usable checkpoint returned",
+    "retry": "HF_HUB_DISABLE_XET=1 HTTP transport completed in about four minutes",
+    "status": "downloaded and native inference executed"
+  },
+  "multilingual": {
+    "revision": "e173bca1f0c4217d7a55b3b0c705d5ece8a0218d",
+    "status": "downloaded and native inference executed"
+  },
+  "note": "Download failures are not quality failures. Signed CDN URLs are omitted."
+}

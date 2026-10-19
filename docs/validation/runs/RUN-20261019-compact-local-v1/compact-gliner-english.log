@@ -1,0 +1,11 @@
+W1019 13:32:19.182000 31153 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+[transformers] You are using a model of type `gliner2` to instantiate a model of type `extractor`. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+[transformers] You are using a model of type `gliner2` to instantiate a model of type ``. This may be expected if you are loading a checkpoint that shares a subset of the architecture (e.g., loading a `sam2_video` checkpoint into `Sam2Model`), but is otherwise not supported and can yield errors. Please verify that the checkpoint is compatible with the model you are instantiating.
+/Users/gopikrishnansasikumar/projects/omnipresent/output/classifier-venv/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+{"stage": "loaded", "model": "gliner-english-fp32", "loadMs": 6595.163916004822, "parameters": 486444053, "parameterBytes": 1945776212}
+{"stage": "first-forward", "model": "gliner-english-fp32", "elapsedMs": 411.82970895897597}
+{"stage": "pass", "model": "gliner-english-fp32", "pass": 0, "correct": 15, "total": 24}
+{"stage": "pass", "model": "gliner-english-fp32", "pass": 1, "correct": 30, "total": 48}
+{"stage": "pass", "model": "gliner-english-fp32", "pass": 2, "correct": 44, "total": 72}
+{"profile": "gliner-english-fp32", "summary": {"total": 72, "correct": 44, "errors": 0, "positiveCorrect": 35, "positiveTotal": 36, "negativeCorrect": 9, "negativeTotal": 36, "medianMs": 169.5205420255661, "p95Ms": 228.25537499738857, "orderStableCases": 22}, "eligibleForPrecisionExperiment": false}

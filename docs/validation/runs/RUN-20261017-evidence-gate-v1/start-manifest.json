@@ -1,0 +1,73 @@
+{
+  "startedAt": "2026-10-17T16:59:44.041Z",
+  "sourceFiles": [
+    {
+      "path": "scripts/evidence-gate-benchmark.ts",
+      "sha256": "9b156edb1ae36905e9edfdb7e5f0f870269f891b40f26bc88cc88b0f61bb4393"
+    },
+    {
+      "path": "scripts/evidence-fixtures.ts",
+      "sha256": "bcb6608f92675f63c78499e3c186549ebcbb96da7155dd8e2bbf05b83c20809b"
+    },
+    {
+      "path": "scripts/source-backed-evidence-fixture.ts",
+      "sha256": "47f9ef0c43438ee88a13c1d5b9918bebe1812f2cbb4735e62997f6481ecc6c5a"
+    },
+    {
+      "path": "tests/fixtures/evidence-source-snapshots.json",
+      "sha256": "c5535868b4fed19a4c01e006101d98f2041cf454433efa85c944acdae9b1a6fa"
+    },
+    {
+      "path": "server/controllers/evidence-contract.ts",
+      "sha256": "02430000a84b6cb36b3d3b6113baaa4a6827d53fe2ba27bc1e8b427b3fa1b42a"
+    },
+    {
+      "path": "tests/evidence-contract.test.ts",
+      "sha256": "9093e275e18337bd69369dbfe27a2f486de896da41002e17e5178b6ae0c5e8fc"
+    },
+    {
+      "path": "scripts/cue-policy-fixture.ts",
+      "sha256": "9539e2c345d133783591d27b968e3721f011482d8955bafd44dac40f8dcc4d8d"
+    },
+    {
+      "path": "scripts/large-library-fixture.ts",
+      "sha256": "c074a580e3157105010cfd385f10bbf19a09578cfc533d66e353db4bc4d3e28d"
+    },
+    {
+      "path": "server/controllers/library-policy.ts",
+      "sha256": "856d1a879b4694f3b6a004683d41e5b421dfd5852c2e06eaf596364248f07c9b"
+    },
+    {
+      "path": "server/controllers/library-grounding.ts",
+      "sha256": "2da7936d10bc83fc1a273d7ed7eadd420892f68a0b2a0a7ba9b813484e42b4ad"
+    },
+    {
+      "path": "server/controllers/library-search.ts",
+      "sha256": "b8e46fcf8d40c9f9d167800cb88da1dd2d1752a07d0a685aefb7f2bdc8c88a12"
+    },
+    {
+      "path": "server/controllers/semantic-retrieval.ts",
+      "sha256": "bbb0140b7edb3f36b138439b25f1c2673a34063cabe7e9411cb46a314f1f09dd"
+    },
+    {
+      "path": "server/agents/system-one.ts",
+      "sha256": "3b667090dc66ac0ef57a94df6d1a4195d0cc3cd88c80f5087986a9473c388b49"
+    },
+    {
+      "path": "tests/library-policy.test.ts",
+      "sha256": "44aafd014209a7a57f2cc1148047b5723421d1cde4c9c258ec9d7fb6936dd130"
+    },
+    {
+      "path": "runtime/retrieval-model.json",
+      "sha256": "d13e58d2e3c51df87eb02de94031ddcf12a90bc18050cf5ca3fe94b6b3fd76b6"
+    },
+    {
+      "path": "docs/research/evidence_gate_protocol.md",
+      "sha256": "6c3c9ae21ce5934977d495ed83ff446ecdfbca289837df8a72b366d15e376ca5"
+    }
+  ],
+  "passes": 3,
+  "cases": 37,
+  "capCalls": 220,
+  "capUSD": 0.1
+}

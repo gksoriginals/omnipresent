@@ -1,0 +1,300 @@
+TAP version 13
+# Subtest: real SDK interviewer tool loop gathers a brief without producing a story
+ok 1 - real SDK interviewer tool loop gathers a brief without producing a story
+  ---
+  duration_ms: 40.410292
+  type: 'test'
+  ...
+# Subtest: storyteller returns a structured flow, correction invalidates review
+not ok 2 - storyteller returns a structured flow, correction invalidates review
+  ---
+  duration_ms: 5.7105
+  type: 'test'
+  location: '/Users/gopikrishnansasikumar/projects/omnipresent/tests/agents.test.ts:80:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      {
+        beats: [
+          {
+            artifactIds: [],
+    +       componentEvidence: {
+    +         statement: {
+    +           contentHash: '81114a677cc3b735c0d12aa819ed7feaf18128215d32550d6ed30512f66ecafe',
+    +           evidence: {
+    +             approved: false,
+    +             claims: [
+    +               {
+    +                 aliases: [
+    +                   'Capture sunlight'
+    +                 ],
+    +                 id: 'beat-0',
+    +                 sourceIds: [
+    +                   'component-statement-0'
+    +                 ]
+    +               }
+    +             ],
+    +             entity: 'From sunlight to storage',
+    +             independentReview: 'pending',
+    +             provenance: 'illustrative',
+    +             sources: [
+    +               {
+    +                 id: 'component-statement-0',
+    +                 sha256: 'da02538af202d730d560afdbbffa7c3796cf647ca46712578bae0e083dfd52ea',
+    +                 summary: 'Capture sunlight',
+    +                 uri: 'prepared://component/statement/0'
+    +               }
+    +             ],
+    +             timeframe: null,
+    +             unit: null,
+    +             verification: 'unknown',
+    +             version: 1
+    +           }
+    +         }
+    +       },
+            speakerNotes: 'Introduce panels',
+            title: 'Capture sunlight',
+            visualDirection: 'Diagram of a panel'
+          }
+        ],
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    title: 'From sunlight to storage'
+    summary: 'A simple explanation'
+    beats:
+      0:
+        title: 'Capture sunlight'
+        speakerNotes: 'Introduce panels'
+        visualDirection: 'Diagram of a panel'
+        artifactIds:
+    openQuestions:
+  actual:
+    title: 'From sunlight to storage'
+    summary: 'A simple explanation'
+    beats:
+      0:
+        title: 'Capture sunlight'
+        speakerNotes: 'Introduce panels'
+        visualDirection: 'Diagram of a panel'
+        artifactIds:
+        componentEvidence:
+          statement:
+            contentHash: '81114a677cc3b735c0d12aa819ed7feaf18128215d32550d6ed30512f66ecafe'
+            evidence:
+              version: 1
+              approved: false
+              provenance: 'illustrative'
+              verification: 'unknown'
+              entity: 'From sunlight to storage'
+              timeframe: ~
+              unit: ~
+              sources:
+                0:
+                  id: 'component-statement-0'
+                  uri: 'prepared://component/statement/0'
+                  summary: 'Capture sunlight'
+                  sha256: 'da02538af202d730d560afdbbffa7c3796cf647ca46712578bae0e083dfd52ea'
+              claims:
+                0:
+                  id: 'beat-0'
+                  aliases:
+                    0: 'Capture sunlight'
+                  sourceIds:
+                    0: 'component-statement-0'
+              independentReview: 'pending'
+    openQuestions:
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/gopikrishnansasikumar/projects/omnipresent/tests/agents.test.ts:89:10)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: missing context travels back to interviewer without autonomous runaway loops
+ok 3 - missing context travels back to interviewer without autonomous runaway loops
+  ---
+  duration_ms: 3.967875
+  type: 'test'
+  ...
+# Subtest: unknown artifact references reject the entire draft
+ok 4 - unknown artifact references reject the entire draft
+  ---
+  duration_ms: 3.10775
+  type: 'test'
+  ...
+# Subtest: cancelled old response cannot overwrite a newer presenter correction
+ok 5 - cancelled old response cannot overwrite a newer presenter correction
+  ---
+  duration_ms: 1.115166
+  type: 'test'
+  ...
+# Subtest: finishing the interview hands a committed brief to the separate storyteller
+not ok 6 - finishing the interview hands a committed brief to the separate storyteller
+  ---
+  duration_ms: 14.2185
+  type: 'test'
+  location: '/Users/gopikrishnansasikumar/projects/omnipresent/tests/agents.test.ts:144:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      {
+        beats: [
+          {
+            artifactIds: [],
+    +       componentEvidence: {
+    +         statement: {
+    +           contentHash: '81114a677cc3b735c0d12aa819ed7feaf18128215d32550d6ed30512f66ecafe',
+    +           evidence: {
+    +             approved: false,
+    +             claims: [
+    +               {
+    +                 aliases: [
+    +                   'Capture sunlight'
+    +                 ],
+    +                 id: 'beat-0',
+    +                 sourceIds: [
+    +                   'component-statement-0'
+    +                 ]
+    +               }
+    +             ],
+    +             entity: 'From sunlight to storage',
+    +             independentReview: 'pending',
+    +             provenance: 'illustrative',
+    +             sources: [
+    +               {
+    +                 id: 'component-statement-0',
+    +                 sha256: 'da02538af202d730d560afdbbffa7c3796cf647ca46712578bae0e083dfd52ea',
+    +                 summary: 'Capture sunlight',
+    +                 uri: 'prepared://component/statement/0'
+    +               }
+    +             ],
+    +             timeframe: null,
+    +             unit: null,
+    +             verification: 'unknown',
+    +             version: 1
+    +           }
+    +         }
+    +       },
+            speakerNotes: 'Introduce panels',
+            title: 'Capture sunlight',
+            visualDirection: 'Diagram of a panel'
+          }
+        ],
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    title: 'From sunlight to storage'
+    summary: 'A simple explanation'
+    beats:
+      0:
+        title: 'Capture sunlight'
+        speakerNotes: 'Introduce panels'
+        visualDirection: 'Diagram of a panel'
+        artifactIds:
+    openQuestions:
+  actual:
+    title: 'From sunlight to storage'
+    summary: 'A simple explanation'
+    beats:
+      0:
+        title: 'Capture sunlight'
+        speakerNotes: 'Introduce panels'
+        visualDirection: 'Diagram of a panel'
+        artifactIds:
+        componentEvidence:
+          statement:
+            contentHash: '81114a677cc3b735c0d12aa819ed7feaf18128215d32550d6ed30512f66ecafe'
+            evidence:
+              version: 1
+              approved: false
+              provenance: 'illustrative'
+              verification: 'unknown'
+              entity: 'From sunlight to storage'
+              timeframe: ~
+              unit: ~
+              sources:
+                0:
+                  id: 'component-statement-0'
+                  uri: 'prepared://component/statement/0'
+                  summary: 'Capture sunlight'
+                  sha256: 'da02538af202d730d560afdbbffa7c3796cf647ca46712578bae0e083dfd52ea'
+              claims:
+                0:
+                  id: 'beat-0'
+                  aliases:
+                    0: 'Capture sunlight'
+                  sourceIds:
+                    0: 'component-statement-0'
+              independentReview: 'pending'
+    openQuestions:
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/Users/gopikrishnansasikumar/projects/omnipresent/tests/agents.test.ts:148:49)
+    process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: incomplete interview does not launch a storyteller
+ok 7 - incomplete interview does not launch a storyteller
+  ---
+  duration_ms: 5.367875
+  type: 'test'
+  ...
+# Subtest: preparation with no materials exposes no readArtifact tool
+ok 8 - preparation with no materials exposes no readArtifact tool
+  ---
+  duration_ms: 0.245875
+  type: 'test'
+  ...
+# Subtest: storyteller tool schema excludes host-owned evidence contracts
+ok 9 - storyteller tool schema excludes host-owned evidence contracts
+  ---
+  duration_ms: 0.204292
+  type: 'test'
+  ...
+# Subtest: baseline defaults to Clef-omni and useful tested decision models remain selectable
+ok 10 - baseline defaults to Clef-omni and useful tested decision models remain selectable
+  ---
+  duration_ms: 0.36975
+  type: 'test'
+  ...
+# Subtest: catalog rejects legacy stories and does not silently invent contracts
+ok 11 - catalog rejects legacy stories and does not silently invent contracts
+  ---
+  duration_ms: 2.117292
+  type: 'test'
+  ...
+# Subtest: default pipeline selects grounded prepared content without a model on exact supported cues
+ok 12 - default pipeline selects grounded prepared content without a model on exact supported cues
+  ---
+  duration_ms: 3.987
+  type: 'test'
+  ...
+# Subtest: new stories record explicit evidence status and speaker notes are excluded
+ok 13 - new stories record explicit evidence status and speaker notes are excluded
+  ---
+  duration_ms: 0.18825
+  type: 'test'
+  ...
+# Subtest: baseline trace metadata correlates final validation and decisions without transcripts
+ok 14 - baseline trace metadata correlates final validation and decisions without transcripts
+  ---
+  duration_ms: 1.243958
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 12
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 340.675417

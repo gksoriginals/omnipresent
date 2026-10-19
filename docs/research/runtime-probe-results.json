@@ -1,0 +1,65 @@
+{
+  "recordedAt": "2026-10-15T19:26:31.662Z",
+  "scope": "Actual Moonshine Small Streaming; realtime WAV replay, no live human microphone or LLM",
+  "audioSeconds": 44.374125,
+  "replayElapsedMs": 44627.409208000005,
+  "loadMs": 336.79670898709446,
+  "syntheticLoadCancelMs": 11.286082999999962,
+  "rttMs": {
+    "count": 964,
+    "p50": 0.23174999999991996,
+    "p95": 0.6677500000000691,
+    "max": 4.25
+  },
+  "audioProcessingMs": {
+    "p50": 38.534583000000566,
+    "p95": 129.64362499769777,
+    "max": 153.97466701688245
+  },
+  "transcript": {
+    "partialCount": 73,
+    "finalCount": 13
+  },
+  "metrics": [
+    {
+      "type": "metrics",
+      "serverRssMb": 37.90625,
+      "eventLoopP95Ms": 11.272191
+    },
+    {
+      "type": "metrics",
+      "serverRssMb": 38.625,
+      "eventLoopP95Ms": 11.272191
+    },
+    {
+      "type": "metrics",
+      "serverRssMb": 38.640625,
+      "eventLoopP95Ms": 11.272191
+    },
+    {
+      "type": "metrics",
+      "serverRssMb": 39,
+      "eventLoopP95Ms": 11.272191
+    }
+  ],
+  "checks": {
+    "staleUpdate": true,
+    "pause": true,
+    "cancel": true,
+    "partialTranscript": true,
+    "finalTranscript": true
+  },
+  "fixture": {
+    "url": "https://raw.githubusercontent.com/moonshine-ai/moonshine/main/test-assets/two_cities_16k.wav",
+    "sha256": "14a5a09479cab470db7de4fd16c0e18a8a88c03cc6d92a09a658e857ee1f73a5"
+  },
+  "hardware": {
+    "chip": "Apple M5",
+    "memoryGb": 16
+  },
+  "versions": {
+    "node": "22.22.1",
+    "python": "3.12.7",
+    "moonshineVoice": "0.1.5"
+  }
+}

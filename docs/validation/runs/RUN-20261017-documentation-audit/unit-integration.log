@@ -1,0 +1,272 @@
+
+> omnipresent@0.0.1 test
+> tsx --test tests/*.test.ts tests/*.test.tsx
+
+TAP version 13
+# Subtest: adaptive composition rejects unknown assets and duplicate slots
+ok 1 - adaptive composition rejects unknown assets and duplicate slots
+  ---
+  duration_ms: 1.87375
+  type: 'test'
+  ...
+# Subtest: director combines multiple grounded narrative points instead of advancing a slide
+ok 2 - director combines multiple grounded narrative points instead of advancing a slide
+  ---
+  duration_ms: 62.138333
+  type: 'test'
+  ...
+# Subtest: invalid composition preserves last valid audience canvas
+ok 3 - invalid composition preserves last valid audience canvas
+  ---
+  duration_ms: 11.235709
+  type: 'test'
+  ...
+# Subtest: hold and cancellation never commit a stale composition
+ok 4 - hold and cancellation never commit a stale composition
+  ---
+  duration_ms: 10.618917
+  type: 'test'
+  ...
+# Subtest: paused adaptive presentations do not infer or update
+ok 5 - paused adaptive presentations do not infer or update
+  ---
+  duration_ms: 0.161167
+  type: 'test'
+  ...
+# Subtest: explicit missing-content questions leave the audience canvas unchanged and return to preparation
+ok 6 - explicit missing-content questions leave the audience canvas unchanged and return to preparation
+  ---
+  duration_ms: 5.890708
+  type: 'test'
+  ...
+# Subtest: a System One director composes through host validation without invoking the chat model
+ok 7 - a System One director composes through host validation without invoking the chat model
+  ---
+  duration_ms: 0.477375
+  type: 'test'
+  ...
+# Subtest: real SDK interviewer tool loop gathers a brief without producing a story
+ok 8 - real SDK interviewer tool loop gathers a brief without producing a story
+  ---
+  duration_ms: 90.800417
+  type: 'test'
+  ...
+# Subtest: storyteller returns a structured flow, correction invalidates review
+ok 9 - storyteller returns a structured flow, correction invalidates review
+  ---
+  duration_ms: 13.001417
+  type: 'test'
+  ...
+# Subtest: missing context travels back to interviewer without autonomous runaway loops
+ok 10 - missing context travels back to interviewer without autonomous runaway loops
+  ---
+  duration_ms: 11.986916
+  type: 'test'
+  ...
+# Subtest: unknown artifact references reject the entire draft
+ok 11 - unknown artifact references reject the entire draft
+  ---
+  duration_ms: 8.303584
+  type: 'test'
+  ...
+# Subtest: cancelled old response cannot overwrite a newer presenter correction
+ok 12 - cancelled old response cannot overwrite a newer presenter correction
+  ---
+  duration_ms: 2.596792
+  type: 'test'
+  ...
+# Subtest: finishing the interview hands a committed brief to the separate storyteller
+ok 13 - finishing the interview hands a committed brief to the separate storyteller
+  ---
+  duration_ms: 27.603667
+  type: 'test'
+  ...
+# Subtest: incomplete interview does not launch a storyteller
+ok 14 - incomplete interview does not launch a storyteller
+  ---
+  duration_ms: 8.154125
+  type: 'test'
+  ...
+# Subtest: local upload extraction handles PDF, Office and images; rejects unsupported files and origins
+ok 15 - local upload extraction handles PDF, Office and images; rejects unsupported files and origins
+  ---
+  duration_ms: 2142.29825
+  type: 'test'
+  ...
+# Subtest: review gate and actual SDK direction commit an approved scene
+ok 16 - review gate and actual SDK direction commit an approved scene
+  ---
+  duration_ms: 67.474042
+  type: 'test'
+  ...
+# Subtest: context feedback holds the scene and returns to preparation
+ok 17 - context feedback holds the scene and returns to preparation
+  ---
+  duration_ms: 9.485125
+  type: 'test'
+  ...
+# Subtest: invalid directions never change the canvas
+ok 18 - invalid directions never change the canvas
+  ---
+  duration_ms: 6.004
+  type: 'test'
+  ...
+# Subtest: pause cancels inference, drops queued speech, resume requires new input
+ok 19 - pause cancels inference, drops queued speech, resume requires new input
+  ---
+  duration_ms: 111.497125
+  type: 'test'
+  ...
+# Subtest: active story is isolated from subsequent preparation edits
+ok 20 - active story is isolated from subsequent preparation edits
+  ---
+  duration_ms: 5.501583
+  type: 'test'
+  ...
+# Subtest: legacy stories never expose speaker notes as audience copy
+ok 21 - legacy stories never expose speaker notes as audience copy
+  ---
+  duration_ms: 0.346375
+  type: 'test'
+  ...
+# Subtest: repeated speech uses context-scoped cache and a new story clears it
+ok 22 - repeated speech uses context-scoped cache and a new story clears it
+  ---
+  duration_ms: 12.026542
+  type: 'test'
+  ...
+# Subtest: both real renderer packages display equivalent grounded content
+ok 23 - both real renderer packages display equivalent grounded content
+  ---
+  duration_ms: 16.10075
+  type: 'test'
+  ...
+# Subtest: OpenUI accepts split compositions and numeric reveal boundaries
+ok 24 - OpenUI accepts split compositions and numeric reveal boundaries
+  ---
+  duration_ms: 1.419958
+  type: 'test'
+  ...
+# Subtest: local transport isolates sessions, rejects bad messages and foreign origins
+ok 25 - local transport isolates sessions, rejects bad messages and foreign origins
+  ---
+  duration_ms: 478.6725
+  type: 'test'
+  ...
+# Subtest: new intent prevents a delayed old intent overwriting the canvas
+ok 26 - new intent prevents a delayed old intent overwriting the canvas
+  ---
+  duration_ms: 62.01275
+  type: 'test'
+  ...
+# Subtest: pause invalidates pending work and resume does not replay a backlog
+ok 27 - pause invalidates pending work and resume does not replay a backlog
+  ---
+  duration_ms: 40.546959
+  type: 'test'
+  ...
+# Subtest: cancel prevents a pending commit
+ok 28 - cancel prevents a pending commit
+  ---
+  duration_ms: 40.1645
+  type: 'test'
+  ...
+# Subtest: decision request shares topic descriptions without private notes
+ok 29 - decision request shares topic descriptions without private notes
+  ---
+  duration_ms: 0.430375
+  type: 'test'
+  ...
+# Subtest: typed decisions produce grounded multi-topic composition
+ok 30 - typed decisions produce grounded multi-topic composition
+  ---
+  duration_ms: 1.64625
+  type: 'test'
+  ...
+# Subtest: hold never constructs a composition and invalid choices/probabilities fail closed
+ok 31 - hold never constructs a composition and invalid choices/probabilities fail closed
+  ---
+  duration_ms: 0.368167
+  type: 'test'
+  ...
+# Subtest: diagram tool prepares a reusable visual; malformed edges are rejected
+ok 32 - diagram tool prepares a reusable visual; malformed edges are rejected
+  ---
+  duration_ms: 96.484625
+  type: 'test'
+  ...
+# Subtest: chart tool requires known source labels and numbers
+ok 33 - chart tool requires known source labels and numbers
+  ---
+  duration_ms: 32.626792
+  type: 'test'
+  ...
+# Subtest: flow references must point to existing prepared visuals
+ok 34 - flow references must point to existing prepared visuals
+  ---
+  duration_ms: 0.411
+  type: 'test'
+  ...
+# Subtest: legacy draft and all saved snapshots migrate without modifying legacy keys
+ok 35 - legacy draft and all saved snapshots migrate without modifying legacy keys
+  ---
+  duration_ms: 3.047333
+  type: 'test'
+  ...
+# Subtest: project chats, materials and composer drafts remain isolated across serialization
+ok 36 - project chats, materials and composer drafts remain isolated across serialization
+  ---
+  duration_ms: 1.261958
+  type: 'test'
+  ...
+# Subtest: repeated identical saves update one immutable project-linked snapshot
+ok 37 - repeated identical saves update one immutable project-linked snapshot
+  ---
+  duration_ms: 0.771375
+  type: 'test'
+  ...
+# Subtest: unreadable project data is preserved instead of replaced by an empty workspace
+ok 38 - unreadable project data is preserved instead of replaced by an empty workspace
+  ---
+  duration_ms: 0.187958
+  type: 'test'
+  ...
+# Subtest: presentation context requests return only to the originating project
+ok 39 - presentation context requests return only to the originating project
+  ---
+  duration_ms: 0.095542
+  type: 'test'
+  ...
+# Subtest: saving updates a stable story id and retains changed snapshots
+ok 40 - saving updates a stable story id and retains changed snapshots
+  ---
+  duration_ms: 0.121542
+  type: 'test'
+  ...
+# Subtest: story removal preserves chat and can be restored after reload
+ok 41 - story removal preserves chat and can be restored after reload
+  ---
+  duration_ms: 0.3415
+  type: 'test'
+  ...
+# Subtest: removing active and last sessions preserves stories and valid active project
+ok 42 - removing active and last sessions preserves stories and valid active project
+  ---
+  duration_ms: 0.087666
+  type: 'test'
+  ...
+# Subtest: restoring a removed story preserves its replacement in history
+ok 43 - restoring a removed story preserves its replacement in history
+  ---
+  duration_ms: 0.155917
+  type: 'test'
+  ...
+1..43
+# tests 43
+# suites 0
+# pass 43
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2337.588625

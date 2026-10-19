@@ -1,0 +1,857 @@
+{
+  "cases": [
+    {
+      "id": "four",
+      "speech": "Morning output",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": true
+    },
+    {
+      "id": "three",
+      "speech": "Morning output",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": false
+    },
+    {
+      "id": "two",
+      "speech": "Morning output",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": false
+    },
+    {
+      "id": "focus",
+      "speech": "Morning output",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": false
+    },
+    {
+      "id": "explicit-form",
+      "speech": "Show actual Solar energy example Morning output chart",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": true
+    },
+    {
+      "id": "duplicate-visual",
+      "speech": "Morning output",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": false
+    },
+    {
+      "id": "wrong-entity",
+      "speech": "Morning output",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": false
+    },
+    {
+      "id": "wrong-time",
+      "speech": "Morning output",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": false
+    },
+    {
+      "id": "wrong-unit",
+      "speech": "Morning output",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": true
+    },
+    {
+      "id": "source-withdrawn",
+      "speech": "Morning output",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "refresh": false
+    },
+    {
+      "id": "unknown-claim",
+      "speech": "Show warranty",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "refresh": false
+    },
+    {
+      "id": "rejected-primary",
+      "speech": "Morning output",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "refresh": false
+    },
+    {
+      "id": "overlong-text",
+      "speech": "Morning output",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": true
+    },
+    {
+      "id": "stable-slots",
+      "speech": "Morning output",
+      "expected": {
+        "action": "show",
+        "selected": "chart:0"
+      },
+      "refresh": false
+    },
+    {
+      "id": "primary-switch",
+      "speech": "Daily curve",
+      "expected": {
+        "action": "show",
+        "selected": "chart:1"
+      },
+      "refresh": false
+    }
+  ],
+  "counts": {
+    "four": 4,
+    "three": 3,
+    "two": 2,
+    "focus": 1,
+    "explicit-form": 1,
+    "duplicate-visual": 3,
+    "wrong-entity": 3,
+    "wrong-time": 3,
+    "wrong-unit": 3,
+    "source-withdrawn": 0,
+    "unknown-claim": 0,
+    "rejected-primary": 0,
+    "overlong-text": 3,
+    "stable-slots": 4,
+    "primary-switch": 4
+  },
+  "context": {
+    "state": {
+      "revision": 0,
+      "brief": null,
+      "flow": {
+        "title": "Solar energy example",
+        "summary": "A synthetic demonstration, not measured generation.",
+        "beats": [
+          {
+            "title": "Sunlight becomes electricity",
+            "audienceText": "Panels turn sunlight into electricity. This synthetic example peaks at noon.",
+            "speakerNotes": "PRIVATE",
+            "visualDirection": "chart and illustration",
+            "visualId": "00000000-0000-4000-8000-000000000012",
+            "imageArtifactId": "00000000-0000-4000-8000-000000000011",
+            "artifactIds": [
+              "00000000-0000-4000-8000-000000000010",
+              "00000000-0000-4000-8000-000000000011"
+            ],
+            "evidence": {
+              "version": 1,
+              "approved": true,
+              "provenance": "source-backed",
+              "verification": "unknown",
+              "entity": "Solar energy example",
+              "timeframe": null,
+              "unit": "Wh",
+              "sources": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000010",
+                  "uri": "artifact://00000000-0000-4000-8000-000000000010",
+                  "sha256": "6263e92b34dff26aca2e244dd80d41f186db0a4029124bba7e01fd683565ec18",
+                  "summary": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000011",
+                  "uri": "artifact://00000000-0000-4000-8000-000000000011",
+                  "sha256": "47d894cd01ecefda10648644ce5afec575a500f5cf23f2efdda6fc1c8baf3d1c",
+                  "summary": "Synthetic illustration of sunlight reaching panels, not a photograph of an actual installation."
+                }
+              ],
+              "claims": [
+                {
+                  "id": "beat-0",
+                  "aliases": [
+                    "Sunlight becomes electricity",
+                    "Panels turn sunlight into electricity. This synthetic example peaks at noon."
+                  ],
+                  "sourceIds": [
+                    "00000000-0000-4000-8000-000000000010",
+                    "00000000-0000-4000-8000-000000000011"
+                  ]
+                }
+              ],
+              "independentReview": "pending"
+            },
+            "componentClaims": {
+              "visual": [
+                "beat"
+              ],
+              "image": [
+                "beat"
+              ]
+            },
+            "componentEvidence": {
+              "statement": {
+                "contentHash": "e8612654742f8eb2631552297d10c5afc7c17694a11618f1550a2a759b585b8d",
+                "evidence": {
+                  "version": 1,
+                  "approved": true,
+                  "provenance": "source-backed",
+                  "verification": "unknown",
+                  "entity": "Solar energy example",
+                  "timeframe": null,
+                  "unit": null,
+                  "sources": [
+                    {
+                      "id": "00000000-0000-4000-8000-000000000010",
+                      "uri": "artifact://00000000-0000-4000-8000-000000000010",
+                      "sha256": "6263e92b34dff26aca2e244dd80d41f186db0a4029124bba7e01fd683565ec18",
+                      "summary": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+                    },
+                    {
+                      "id": "00000000-0000-4000-8000-000000000011",
+                      "uri": "artifact://00000000-0000-4000-8000-000000000011",
+                      "sha256": "47d894cd01ecefda10648644ce5afec575a500f5cf23f2efdda6fc1c8baf3d1c",
+                      "summary": "Synthetic illustration of sunlight reaching panels, not a photograph of an actual installation."
+                    }
+                  ],
+                  "claims": [
+                    {
+                      "id": "beat-0",
+                      "aliases": [
+                        "Sunlight becomes electricity",
+                        "Panels turn sunlight into electricity. This synthetic example peaks at noon."
+                      ],
+                      "sourceIds": [
+                        "00000000-0000-4000-8000-000000000010",
+                        "00000000-0000-4000-8000-000000000011"
+                      ]
+                    }
+                  ],
+                  "independentReview": "pending"
+                }
+              },
+              "visual": {
+                "contentHash": "a13689e73fb5afc843772a0726980fd3a912a228098c4d8183be375cc264f178",
+                "evidence": {
+                  "version": 1,
+                  "approved": true,
+                  "provenance": "source-backed",
+                  "verification": "unknown",
+                  "entity": "Solar energy example",
+                  "timeframe": null,
+                  "unit": "Wh",
+                  "sources": [
+                    {
+                      "id": "00000000-0000-4000-8000-000000000010",
+                      "uri": "artifact://00000000-0000-4000-8000-000000000010",
+                      "sha256": "6263e92b34dff26aca2e244dd80d41f186db0a4029124bba7e01fd683565ec18",
+                      "summary": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+                    }
+                  ],
+                  "claims": [
+                    {
+                      "id": "beat-0",
+                      "aliases": [
+                        "Sunlight becomes electricity",
+                        "Panels turn sunlight into electricity. This synthetic example peaks at noon.",
+                        "Morning output"
+                      ],
+                      "sourceIds": [
+                        "00000000-0000-4000-8000-000000000010"
+                      ]
+                    }
+                  ],
+                  "independentReview": "pending"
+                }
+              },
+              "image": {
+                "contentHash": "50845d13a756573ca7c6ac9aa92ce81a95e2fe0c7d647803dc475032806d956a",
+                "evidence": {
+                  "version": 1,
+                  "approved": true,
+                  "provenance": "source-backed",
+                  "verification": "unknown",
+                  "entity": "Solar energy example",
+                  "timeframe": null,
+                  "unit": null,
+                  "sources": [
+                    {
+                      "id": "00000000-0000-4000-8000-000000000011",
+                      "uri": "artifact://00000000-0000-4000-8000-000000000011",
+                      "sha256": "47d894cd01ecefda10648644ce5afec575a500f5cf23f2efdda6fc1c8baf3d1c",
+                      "summary": "Synthetic illustration of sunlight reaching panels, not a photograph of an actual installation."
+                    }
+                  ],
+                  "claims": [
+                    {
+                      "id": "beat-0",
+                      "aliases": [
+                        "Sunlight becomes electricity",
+                        "Panels turn sunlight into electricity. This synthetic example peaks at noon.",
+                        "Synthetic solar panel illustration"
+                      ],
+                      "sourceIds": [
+                        "00000000-0000-4000-8000-000000000011"
+                      ]
+                    }
+                  ],
+                  "independentReview": "pending"
+                }
+              }
+            }
+          },
+          {
+            "title": "A second view of the same example",
+            "audienceText": "Use a curve to see the daily pattern.",
+            "speakerNotes": "PRIVATE",
+            "visualDirection": "line chart",
+            "visualId": "00000000-0000-4000-8000-000000000013",
+            "artifactIds": [
+              "00000000-0000-4000-8000-000000000010"
+            ],
+            "evidence": {
+              "version": 1,
+              "approved": true,
+              "provenance": "source-backed",
+              "verification": "unknown",
+              "entity": "Solar energy example",
+              "timeframe": null,
+              "unit": "Wh",
+              "sources": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000010",
+                  "uri": "artifact://00000000-0000-4000-8000-000000000010",
+                  "sha256": "6263e92b34dff26aca2e244dd80d41f186db0a4029124bba7e01fd683565ec18",
+                  "summary": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+                }
+              ],
+              "claims": [
+                {
+                  "id": "beat-1",
+                  "aliases": [
+                    "A second view of the same example",
+                    "Use a curve to see the daily pattern."
+                  ],
+                  "sourceIds": [
+                    "00000000-0000-4000-8000-000000000010"
+                  ]
+                }
+              ],
+              "independentReview": "pending"
+            },
+            "componentClaims": {
+              "statement": [],
+              "visual": [
+                "beat:0"
+              ]
+            },
+            "componentEvidence": {
+              "statement": {
+                "contentHash": "0fed2cecd6b54301d9eb3eb9ac339aea6dc93897eb81e3c46c5e4abe0d2f0cf5",
+                "evidence": {
+                  "version": 1,
+                  "approved": true,
+                  "provenance": "source-backed",
+                  "verification": "unknown",
+                  "entity": "Solar energy example",
+                  "timeframe": null,
+                  "unit": null,
+                  "sources": [
+                    {
+                      "id": "00000000-0000-4000-8000-000000000010",
+                      "uri": "artifact://00000000-0000-4000-8000-000000000010",
+                      "sha256": "6263e92b34dff26aca2e244dd80d41f186db0a4029124bba7e01fd683565ec18",
+                      "summary": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+                    }
+                  ],
+                  "claims": [
+                    {
+                      "id": "component-statement-1",
+                      "aliases": [
+                        "A second view of the same example"
+                      ],
+                      "sourceIds": [
+                        "00000000-0000-4000-8000-000000000010"
+                      ]
+                    }
+                  ],
+                  "independentReview": "pending"
+                }
+              },
+              "visual": {
+                "contentHash": "6cef54d6d9c8071b11f1f8383bef3e1343a5601888dc81f69a8e8956c380ef9f",
+                "evidence": {
+                  "version": 1,
+                  "approved": true,
+                  "provenance": "source-backed",
+                  "verification": "unknown",
+                  "entity": "Solar energy example",
+                  "timeframe": null,
+                  "unit": "Wh",
+                  "sources": [
+                    {
+                      "id": "00000000-0000-4000-8000-000000000010",
+                      "uri": "artifact://00000000-0000-4000-8000-000000000010",
+                      "sha256": "6263e92b34dff26aca2e244dd80d41f186db0a4029124bba7e01fd683565ec18",
+                      "summary": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+                    }
+                  ],
+                  "claims": [
+                    {
+                      "id": "beat-0",
+                      "aliases": [
+                        "Sunlight becomes electricity",
+                        "Panels turn sunlight into electricity. This synthetic example peaks at noon.",
+                        "Daily curve"
+                      ],
+                      "sourceIds": [
+                        "00000000-0000-4000-8000-000000000010"
+                      ]
+                    }
+                  ],
+                  "independentReview": "pending"
+                }
+              }
+            }
+          }
+        ],
+        "openQuestions": []
+      },
+      "flowBasedOnRevision": 0,
+      "approvedRevision": 0,
+      "visuals": [
+        {
+          "id": "00000000-0000-4000-8000-000000000012",
+          "spec": {
+            "kind": "chart",
+            "title": "Morning output",
+            "chartType": "bar",
+            "unit": "Wh",
+            "sourceArtifactId": "00000000-0000-4000-8000-000000000010",
+            "data": [
+              {
+                "label": "Morning",
+                "value": 10
+              },
+              {
+                "label": "Noon",
+                "value": 20
+              },
+              {
+                "label": "Evening",
+                "value": 5
+              }
+            ]
+          }
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000013",
+          "spec": {
+            "kind": "chart",
+            "title": "Daily curve",
+            "chartType": "line",
+            "unit": "Wh",
+            "sourceArtifactId": "00000000-0000-4000-8000-000000000010",
+            "data": [
+              {
+                "label": "Morning",
+                "value": 10
+              },
+              {
+                "label": "Noon",
+                "value": 20
+              },
+              {
+                "label": "Evening",
+                "value": 5
+              }
+            ]
+          }
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "00000000-0000-4000-8000-000000000010",
+          "name": "synthetic-energy.csv",
+          "content": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000011",
+          "name": "synthetic-panel.png",
+          "content": "Synthetic illustration of sunlight reaching panels, not a photograph of an actual installation.",
+          "media": {
+            "url": "/api/materials/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.png",
+            "alt": "Synthetic solar panel illustration"
+          }
+        }
+      ],
+      "messages": {
+        "interview": [],
+        "storyteller": []
+      },
+      "events": []
+    },
+    "catalog": {
+      "assets": [
+        {
+          "id": "statement:0",
+          "title": "Sunlight becomes electricity",
+          "text": "Panels turn sunlight into electricity. This synthetic example peaks at noon.",
+          "entity": "Solar energy example",
+          "year": 2026,
+          "status": "actual",
+          "family": "statement",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "source-backed",
+            "verification": "unknown",
+            "entity": "Solar energy example",
+            "timeframe": null,
+            "unit": null,
+            "sources": [
+              {
+                "id": "00000000-0000-4000-8000-000000000010",
+                "uri": "artifact://00000000-0000-4000-8000-000000000010",
+                "sha256": "6263e92b34dff26aca2e244dd80d41f186db0a4029124bba7e01fd683565ec18",
+                "summary": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000011",
+                "uri": "artifact://00000000-0000-4000-8000-000000000011",
+                "sha256": "47d894cd01ecefda10648644ce5afec575a500f5cf23f2efdda6fc1c8baf3d1c",
+                "summary": "Synthetic illustration of sunlight reaching panels, not a photograph of an actual installation."
+              }
+            ],
+            "claims": [
+              {
+                "id": "beat-0",
+                "aliases": [
+                  "Sunlight becomes electricity",
+                  "Panels turn sunlight into electricity. This synthetic example peaks at noon."
+                ],
+                "sourceIds": [
+                  "00000000-0000-4000-8000-000000000010",
+                  "00000000-0000-4000-8000-000000000011"
+                ]
+              }
+            ],
+            "independentReview": "pending"
+          }
+        },
+        {
+          "id": "chart:0",
+          "title": "Morning output",
+          "text": "Panels turn sunlight into electricity. This synthetic example peaks at noon. Wh: Morning 10; Noon 20; Evening 5",
+          "entity": "Solar energy example",
+          "year": 2026,
+          "status": "actual",
+          "family": "chart",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "source-backed",
+            "verification": "unknown",
+            "entity": "Solar energy example",
+            "timeframe": null,
+            "unit": "Wh",
+            "sources": [
+              {
+                "id": "00000000-0000-4000-8000-000000000010",
+                "uri": "artifact://00000000-0000-4000-8000-000000000010",
+                "sha256": "6263e92b34dff26aca2e244dd80d41f186db0a4029124bba7e01fd683565ec18",
+                "summary": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+              }
+            ],
+            "claims": [
+              {
+                "id": "beat-0",
+                "aliases": [
+                  "Sunlight becomes electricity",
+                  "Panels turn sunlight into electricity. This synthetic example peaks at noon.",
+                  "Morning output"
+                ],
+                "sourceIds": [
+                  "00000000-0000-4000-8000-000000000010"
+                ]
+              }
+            ],
+            "independentReview": "pending"
+          }
+        },
+        {
+          "id": "image:0",
+          "title": "Sunlight becomes electricity",
+          "text": "Synthetic solar panel illustration",
+          "entity": "Solar energy example",
+          "year": 2026,
+          "status": "actual",
+          "family": "image",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "source-backed",
+            "verification": "unknown",
+            "entity": "Solar energy example",
+            "timeframe": null,
+            "unit": null,
+            "sources": [
+              {
+                "id": "00000000-0000-4000-8000-000000000011",
+                "uri": "artifact://00000000-0000-4000-8000-000000000011",
+                "sha256": "47d894cd01ecefda10648644ce5afec575a500f5cf23f2efdda6fc1c8baf3d1c",
+                "summary": "Synthetic illustration of sunlight reaching panels, not a photograph of an actual installation."
+              }
+            ],
+            "claims": [
+              {
+                "id": "beat-0",
+                "aliases": [
+                  "Sunlight becomes electricity",
+                  "Panels turn sunlight into electricity. This synthetic example peaks at noon.",
+                  "Synthetic solar panel illustration"
+                ],
+                "sourceIds": [
+                  "00000000-0000-4000-8000-000000000011"
+                ]
+              }
+            ],
+            "independentReview": "pending"
+          }
+        },
+        {
+          "id": "statement:1",
+          "title": "A second view of the same example",
+          "text": "Use a curve to see the daily pattern.",
+          "entity": "Solar energy example",
+          "year": 2026,
+          "status": "actual",
+          "family": "statement",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "source-backed",
+            "verification": "unknown",
+            "entity": "Solar energy example",
+            "timeframe": null,
+            "unit": null,
+            "sources": [
+              {
+                "id": "00000000-0000-4000-8000-000000000010",
+                "uri": "artifact://00000000-0000-4000-8000-000000000010",
+                "sha256": "6263e92b34dff26aca2e244dd80d41f186db0a4029124bba7e01fd683565ec18",
+                "summary": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+              }
+            ],
+            "claims": [
+              {
+                "id": "component-statement-1",
+                "aliases": [
+                  "A second view of the same example"
+                ],
+                "sourceIds": [
+                  "00000000-0000-4000-8000-000000000010"
+                ]
+              }
+            ],
+            "independentReview": "pending"
+          }
+        },
+        {
+          "id": "chart:1",
+          "title": "Daily curve",
+          "text": "Use a curve to see the daily pattern. Wh: Morning 10; Noon 20; Evening 5",
+          "entity": "Solar energy example",
+          "year": 2026,
+          "status": "actual",
+          "family": "chart",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "source-backed",
+            "verification": "unknown",
+            "entity": "Solar energy example",
+            "timeframe": null,
+            "unit": "Wh",
+            "sources": [
+              {
+                "id": "00000000-0000-4000-8000-000000000010",
+                "uri": "artifact://00000000-0000-4000-8000-000000000010",
+                "sha256": "6263e92b34dff26aca2e244dd80d41f186db0a4029124bba7e01fd683565ec18",
+                "summary": "Synthetic example, not measured data. Morning,10; Noon,20; Evening,5. All figures in Wh."
+              }
+            ],
+            "claims": [
+              {
+                "id": "beat-0",
+                "aliases": [
+                  "Sunlight becomes electricity",
+                  "Panels turn sunlight into electricity. This synthetic example peaks at noon.",
+                  "Daily curve"
+                ],
+                "sourceIds": [
+                  "00000000-0000-4000-8000-000000000010"
+                ]
+              }
+            ],
+            "independentReview": "pending"
+          }
+        }
+      ],
+      "references": [
+        [
+          "statement:0",
+          {
+            "beat": 0,
+            "kind": "statement"
+          }
+        ],
+        [
+          "chart:0",
+          {
+            "beat": 0,
+            "kind": "visual"
+          }
+        ],
+        [
+          "image:0",
+          {
+            "beat": 0,
+            "kind": "image"
+          }
+        ],
+        [
+          "statement:1",
+          {
+            "beat": 1,
+            "kind": "statement"
+          }
+        ],
+        [
+          "chart:1",
+          {
+            "beat": 1,
+            "kind": "visual"
+          }
+        ]
+      ],
+      "bundles": [
+        {
+          "assetId": "statement:0",
+          "requests": [
+            "Sunlight becomes electricity",
+            "Panels turn sunlight into electricity. This synthetic example peaks at noon."
+          ]
+        },
+        {
+          "assetId": "chart:0",
+          "requests": [
+            "Morning output",
+            "Panels turn sunlight into electricity. This synthetic example peaks at noon. Wh: Morning 10; Noon 20; Evening 5"
+          ]
+        },
+        {
+          "assetId": "image:0",
+          "requests": [
+            "Sunlight becomes electricity",
+            "Synthetic solar panel illustration"
+          ]
+        },
+        {
+          "assetId": "statement:1",
+          "requests": [
+            "A second view of the same example",
+            "Use a curve to see the daily pattern."
+          ]
+        },
+        {
+          "assetId": "chart:1",
+          "requests": [
+            "Daily curve",
+            "Use a curve to see the daily pattern. Wh: Morning 10; Noon 20; Evening 5"
+          ]
+        }
+      ],
+      "covered": [
+        "statement:0",
+        "chart:0",
+        "image:0",
+        "statement:1",
+        "chart:1"
+      ]
+    },
+    "selected": "chart:0",
+    "frame": {
+      "transcript": "Morning output",
+      "revision": "synthesis-fixture",
+      "intent": {
+        "mode": "present",
+        "reason": "recognized-obligations",
+        "claims": [
+          "beat-0"
+        ],
+        "entities": [
+          "Solar energy example"
+        ],
+        "years": [],
+        "family": "chart",
+        "provenance": "source-backed",
+        "audited": false,
+        "unit": null,
+        "unknown": []
+      },
+      "inferred": {
+        "entity": "Solar energy example",
+        "provenance": "actual",
+        "family": "chart"
+      }
+    },
+    "current": {
+      "layout": "focus",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "visual",
+          "beat": 0,
+          "emphasis": "strong",
+          "reveal": null
+        }
+      ]
+    },
+    "requireIndependentReview": false
+  },
+  "passes": 3,
+  "arms": [
+    "focus",
+    "synthesis"
+  ],
+  "scope": "Authored full-request composition invariants; not independent model or natural-speech quality"
+}

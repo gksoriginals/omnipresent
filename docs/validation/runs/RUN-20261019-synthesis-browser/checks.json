@@ -1,0 +1,338 @@
+[
+  {
+    "engine": "openui",
+    "width": 1440,
+    "scroll": 1440,
+    "blocks": [
+      {
+        "slot": "primary",
+        "kind": "visual",
+        "x": 76,
+        "y": 150,
+        "width": 632,
+        "height": 248,
+        "top": 150,
+        "right": 708,
+        "bottom": 398,
+        "left": 76
+      },
+      {
+        "slot": "secondary",
+        "kind": "image",
+        "x": 732,
+        "y": 150,
+        "width": 632,
+        "height": 228,
+        "top": 150,
+        "right": 1364,
+        "bottom": 378,
+        "left": 732
+      },
+      {
+        "slot": "detail",
+        "kind": "statement",
+        "x": 76,
+        "y": 422,
+        "width": 632,
+        "height": 108.4375,
+        "top": 422,
+        "right": 708,
+        "bottom": 530.4375,
+        "left": 76
+      },
+      {
+        "slot": "context",
+        "kind": "visual",
+        "x": 732,
+        "y": 422,
+        "width": 632,
+        "height": 248,
+        "top": 422,
+        "right": 1364,
+        "bottom": 670,
+        "left": 732
+      }
+    ],
+    "charts": 2
+  },
+  {
+    "engine": "openui",
+    "width": 900,
+    "scroll": 900,
+    "blocks": [
+      {
+        "slot": "primary",
+        "kind": "visual",
+        "x": 67,
+        "y": 162,
+        "width": 371,
+        "height": 236,
+        "top": 162,
+        "right": 438,
+        "bottom": 398,
+        "left": 67
+      },
+      {
+        "slot": "secondary",
+        "kind": "image",
+        "x": 462,
+        "y": 162,
+        "width": 371,
+        "height": 202.9375,
+        "top": 162,
+        "right": 833,
+        "bottom": 364.9375,
+        "left": 462
+      },
+      {
+        "slot": "detail",
+        "kind": "statement",
+        "x": 67,
+        "y": 422,
+        "width": 371,
+        "height": 80.78125,
+        "top": 422,
+        "right": 438,
+        "bottom": 502.78125,
+        "left": 67
+      },
+      {
+        "slot": "context",
+        "kind": "visual",
+        "x": 462,
+        "y": 422,
+        "width": 371,
+        "height": 236,
+        "top": 422,
+        "right": 833,
+        "bottom": 658,
+        "left": 462
+      }
+    ],
+    "charts": 2
+  },
+  {
+    "engine": "openui",
+    "width": 600,
+    "scroll": 600,
+    "blocks": [
+      {
+        "slot": "primary",
+        "kind": "visual",
+        "x": 36.234375,
+        "y": 42,
+        "width": 527.53125,
+        "height": 238.390625,
+        "top": 42,
+        "right": 563.765625,
+        "bottom": 280.390625,
+        "left": 36.234375
+      },
+      {
+        "slot": "secondary",
+        "kind": "image",
+        "x": 36.234375,
+        "y": 304.390625,
+        "width": 527.53125,
+        "height": 218.390625,
+        "top": 304.390625,
+        "right": 563.765625,
+        "bottom": 522.78125,
+        "left": 36.234375
+      },
+      {
+        "slot": "detail",
+        "kind": "statement",
+        "x": 36.234375,
+        "y": 546.78125,
+        "width": 527.53125,
+        "height": 60.78125,
+        "top": 546.78125,
+        "right": 563.765625,
+        "bottom": 607.5625,
+        "left": 36.234375
+      },
+      {
+        "slot": "context",
+        "kind": "visual",
+        "x": 36.234375,
+        "y": 631.5625,
+        "width": 527.53125,
+        "height": 238.390625,
+        "top": 631.5625,
+        "right": 563.765625,
+        "bottom": 869.953125,
+        "left": 36.234375
+      }
+    ],
+    "charts": 2
+  },
+  {
+    "engine": "json-render",
+    "width": 1440,
+    "scroll": 1440,
+    "blocks": [
+      {
+        "slot": "primary",
+        "kind": "visual",
+        "x": 76,
+        "y": 150,
+        "width": 632,
+        "height": 248,
+        "top": 150,
+        "right": 708,
+        "bottom": 398,
+        "left": 76
+      },
+      {
+        "slot": "secondary",
+        "kind": "image",
+        "x": 732,
+        "y": 150,
+        "width": 632,
+        "height": 228,
+        "top": 150,
+        "right": 1364,
+        "bottom": 378,
+        "left": 732
+      },
+      {
+        "slot": "detail",
+        "kind": "statement",
+        "x": 76,
+        "y": 422,
+        "width": 632,
+        "height": 108.4375,
+        "top": 422,
+        "right": 708,
+        "bottom": 530.4375,
+        "left": 76
+      },
+      {
+        "slot": "context",
+        "kind": "visual",
+        "x": 732,
+        "y": 422,
+        "width": 632,
+        "height": 248,
+        "top": 422,
+        "right": 1364,
+        "bottom": 670,
+        "left": 732
+      }
+    ],
+    "charts": 2
+  },
+  {
+    "engine": "json-render",
+    "width": 900,
+    "scroll": 900,
+    "blocks": [
+      {
+        "slot": "primary",
+        "kind": "visual",
+        "x": 67,
+        "y": 162,
+        "width": 371,
+        "height": 236,
+        "top": 162,
+        "right": 438,
+        "bottom": 398,
+        "left": 67
+      },
+      {
+        "slot": "secondary",
+        "kind": "image",
+        "x": 462,
+        "y": 162,
+        "width": 371,
+        "height": 202.9375,
+        "top": 162,
+        "right": 833,
+        "bottom": 364.9375,
+        "left": 462
+      },
+      {
+        "slot": "detail",
+        "kind": "statement",
+        "x": 67,
+        "y": 422,
+        "width": 371,
+        "height": 80.78125,
+        "top": 422,
+        "right": 438,
+        "bottom": 502.78125,
+        "left": 67
+      },
+      {
+        "slot": "context",
+        "kind": "visual",
+        "x": 462,
+        "y": 422,
+        "width": 371,
+        "height": 236,
+        "top": 422,
+        "right": 833,
+        "bottom": 658,
+        "left": 462
+      }
+    ],
+    "charts": 2
+  },
+  {
+    "engine": "json-render",
+    "width": 600,
+    "scroll": 600,
+    "blocks": [
+      {
+        "slot": "primary",
+        "kind": "visual",
+        "x": 36,
+        "y": 42,
+        "width": 528,
+        "height": 238.390625,
+        "top": 42,
+        "right": 564,
+        "bottom": 280.390625,
+        "left": 36
+      },
+      {
+        "slot": "secondary",
+        "kind": "image",
+        "x": 36,
+        "y": 304.390625,
+        "width": 528,
+        "height": 218.390625,
+        "top": 304.390625,
+        "right": 564,
+        "bottom": 522.78125,
+        "left": 36
+      },
+      {
+        "slot": "detail",
+        "kind": "statement",
+        "x": 36,
+        "y": 546.78125,
+        "width": 528,
+        "height": 60.78125,
+        "top": 546.78125,
+        "right": 564,
+        "bottom": 607.5625,
+        "left": 36
+      },
+      {
+        "slot": "context",
+        "kind": "visual",
+        "x": 36,
+        "y": 631.5625,
+        "width": 528,
+        "height": 238.390625,
+        "top": 631.5625,
+        "right": 564,
+        "bottom": 869.953125,
+        "left": 36
+      }
+    ],
+    "charts": 2
+  }
+]

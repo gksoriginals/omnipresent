@@ -1,0 +1,2119 @@
+{
+  "recordedAt": "2026-10-17T14:50:32.450Z",
+  "scope": "Synthetic presentation decision screen, 12 labelled cases; 2 repeats for decision APIs, 1 for matched Qwen tool baseline. Same request across decision APIs, Qwen uses equivalent choice tool schema. Network latency for hosted APIs; local Laya CPU end-to-end latency. Labels are developer-authored, not independent human evaluation. No calibrated threshold claims.",
+  "spentUSD": 0.001186416,
+  "results": [
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "panels",
+      "speech": "Sunlight reaches photovoltaic cells and becomes electricity.",
+      "elapsedMs": 2481.45575,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_0",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 1,
+          "secondary": 0.7,
+          "mode": 0.45,
+          "layout": 0.96
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 171,
+          "cost": 0.000033306
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "storage",
+      "speech": "After sunset the battery releases the electricity it saved earlier.",
+      "elapsedMs": 551.1838750000002,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.96,
+          "secondary": 0.71,
+          "mode": 0.35,
+          "layout": 0.94
+        },
+        "usage": {
+          "input_tokens": 791,
+          "output_tokens": 171,
+          "cost": 0.000033222
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "pattern",
+      "speech": "Look at the daily energy chart. Noon produces twenty watt hours, morning ten, evening five.",
+      "elapsedMs": 508.88012500000013,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_1",
+        "secondary": "topic_1",
+        "mode": "mixed",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_1",
+          "secondary": "topic_1",
+          "mode": "mixed",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 0.99,
+          "secondary": 0.53,
+          "mode": 0.8,
+          "layout": 0.76
+        },
+        "usage": {
+          "input_tokens": 799,
+          "output_tokens": 173,
+          "cost": 0.000033558
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "compare",
+      "speech": "Compare the panels generating electricity with the battery storing it for later. Put these two ideas side by side.",
+      "elapsedMs": 490.86058300000013,
+      "valid": true,
+      "primaryCorrect": false,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "topic_2",
+        "mode": "text",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "hold",
+          "secondary": "topic_2",
+          "mode": "text",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 0.4,
+          "secondary": 0.91,
+          "mode": 0.42,
+          "layout": 1
+        },
+        "usage": {
+          "input_tokens": 801,
+          "output_tokens": 171,
+          "cost": 0.000033642
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "pattern-storage",
+      "speech": "Put the daily production pattern next to battery storage, connecting daytime production to evening use.",
+      "elapsedMs": 460.4227499999997,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "topic_2",
+        "mode": "mixed",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "topic_2",
+          "mode": "mixed",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 0.87,
+          "secondary": 0.74,
+          "mode": 0.75,
+          "layout": 1
+        },
+        "usage": {
+          "input_tokens": 797,
+          "output_tokens": 173,
+          "cost": 0.000033474
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "correction",
+      "speech": "Not the panels. I mean the battery storing energy after sunset.",
+      "elapsedMs": 485.47950000000037,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "topic_2",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "topic_2",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 1,
+          "secondary": 0.45,
+          "mode": 0.72,
+          "layout": 0.65
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 173,
+          "cost": 0.000033306
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "paraphrase",
+      "speech": "We save the electricity now so it can power devices when daylight is gone.",
+      "elapsedMs": 436.00495799999953,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "topic_2",
+        "mode": "text",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "topic_2",
+          "mode": "text",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.94,
+          "secondary": 0.58,
+          "mode": 0.53,
+          "layout": 0.43
+        },
+        "usage": {
+          "input_tokens": 795,
+          "output_tokens": 173,
+          "cost": 0.00003339
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "off-topic",
+      "speech": "My favourite lunch is pasta with tomatoes. I left my notebook in the kitchen.",
+      "elapsedMs": 432.33879200000047,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 1,
+          "secondary": 1,
+          "mode": 0.99,
+          "layout": 0.61
+        },
+        "usage": {
+          "input_tokens": 796,
+          "output_tokens": 169,
+          "cost": 0.000033432
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "vague",
+      "speech": "Um, that thing, you know, the one I mentioned.",
+      "elapsedMs": 440.5505410000005,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.97,
+          "secondary": 1,
+          "mode": 0.91,
+          "layout": 0.99
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 169,
+          "cost": 0.000033306
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "missing-evidence",
+      "speech": "Tell us the installation cost of our actual school system. We have not provided any cost data.",
+      "elapsedMs": 468.1345000000001,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.9,
+          "secondary": 1,
+          "mode": 0.73,
+          "layout": 0.96
+        },
+        "usage": {
+          "input_tokens": 799,
+          "output_tokens": 169,
+          "cost": 0.000033558
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "synthetic-qualification",
+      "speech": "Keep the daily energy chart visible. These numbers are a synthetic teaching example, not actual measurements.",
+      "elapsedMs": 472.48712499999965,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_1",
+        "secondary": "none",
+        "mode": "mixed",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_1",
+          "secondary": "none",
+          "mode": "mixed",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.52,
+          "secondary": 0.98,
+          "mode": 0.59,
+          "layout": 0.92
+        },
+        "usage": {
+          "input_tokens": 799,
+          "output_tokens": 171,
+          "cost": 0.000033558
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 0,
+      "id": "return",
+      "speech": "Return to the process of panels converting sunlight into electricity.",
+      "elapsedMs": 462.88829199999964,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_0",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.99,
+          "secondary": 0.98,
+          "mode": 0.59,
+          "layout": 0.96
+        },
+        "usage": {
+          "input_tokens": 791,
+          "output_tokens": 171,
+          "cost": 0.000033222
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "panels",
+      "speech": "Sunlight reaches photovoltaic cells and becomes electricity.",
+      "elapsedMs": 491.0326669999995,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_0",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 1,
+          "secondary": 0.69,
+          "mode": 0.41,
+          "layout": 0.96
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 171,
+          "cost": 0.000033306
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "storage",
+      "speech": "After sunset the battery releases the electricity it saved earlier.",
+      "elapsedMs": 481.81395800000064,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.92,
+          "secondary": 0.74,
+          "mode": 0.35,
+          "layout": 0.93
+        },
+        "usage": {
+          "input_tokens": 791,
+          "output_tokens": 171,
+          "cost": 0.000033222
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "pattern",
+      "speech": "Look at the daily energy chart. Noon produces twenty watt hours, morning ten, evening five.",
+      "elapsedMs": 441.7016249999997,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_1",
+        "secondary": "topic_1",
+        "mode": "mixed",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_1",
+          "secondary": "topic_1",
+          "mode": "mixed",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 0.98,
+          "secondary": 0.52,
+          "mode": 0.78,
+          "layout": 0.77
+        },
+        "usage": {
+          "input_tokens": 799,
+          "output_tokens": 173,
+          "cost": 0.000033558
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "compare",
+      "speech": "Compare the panels generating electricity with the battery storing it for later. Put these two ideas side by side.",
+      "elapsedMs": 440.96387499999946,
+      "valid": true,
+      "primaryCorrect": false,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "topic_2",
+        "mode": "mixed",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "hold",
+          "secondary": "topic_2",
+          "mode": "mixed",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 0.41,
+          "secondary": 0.89,
+          "mode": 0.37,
+          "layout": 1
+        },
+        "usage": {
+          "input_tokens": 801,
+          "output_tokens": 171,
+          "cost": 0.000033642
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "pattern-storage",
+      "speech": "Put the daily production pattern next to battery storage, connecting daytime production to evening use.",
+      "elapsedMs": 522.1418749999993,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "topic_2",
+        "mode": "mixed",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "topic_2",
+          "mode": "mixed",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 0.87,
+          "secondary": 0.7,
+          "mode": 0.75,
+          "layout": 1
+        },
+        "usage": {
+          "input_tokens": 797,
+          "output_tokens": 173,
+          "cost": 0.000033474
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "correction",
+      "speech": "Not the panels. I mean the battery storing energy after sunset.",
+      "elapsedMs": 457.694207999999,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "topic_2",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "topic_2",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 1,
+          "secondary": 0.45,
+          "mode": 0.68,
+          "layout": 0.66
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 173,
+          "cost": 0.000033306
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "paraphrase",
+      "speech": "We save the electricity now so it can power devices when daylight is gone.",
+      "elapsedMs": 437.416792,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "topic_2",
+        "mode": "text",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "topic_2",
+          "mode": "text",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.91,
+          "secondary": 0.52,
+          "mode": 0.58,
+          "layout": 0.39
+        },
+        "usage": {
+          "input_tokens": 795,
+          "output_tokens": 173,
+          "cost": 0.00003339
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "off-topic",
+      "speech": "My favourite lunch is pasta with tomatoes. I left my notebook in the kitchen.",
+      "elapsedMs": 482.56775000000016,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.99,
+          "secondary": 1,
+          "mode": 0.99,
+          "layout": 0.49
+        },
+        "usage": {
+          "input_tokens": 796,
+          "output_tokens": 169,
+          "cost": 0.000033432
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "vague",
+      "speech": "Um, that thing, you know, the one I mentioned.",
+      "elapsedMs": 439.15733400000136,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.98,
+          "secondary": 1,
+          "mode": 0.92,
+          "layout": 0.99
+        },
+        "usage": {
+          "input_tokens": 793,
+          "output_tokens": 169,
+          "cost": 0.000033306
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "missing-evidence",
+      "speech": "Tell us the installation cost of our actual school system. We have not provided any cost data.",
+      "elapsedMs": 527.1502089999994,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.86,
+          "secondary": 1,
+          "mode": 0.81,
+          "layout": 0.95
+        },
+        "usage": {
+          "input_tokens": 799,
+          "output_tokens": 169,
+          "cost": 0.000033558
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "synthetic-qualification",
+      "speech": "Keep the daily energy chart visible. These numbers are a synthetic teaching example, not actual measurements.",
+      "elapsedMs": 434.5936249999995,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_1",
+        "secondary": "none",
+        "mode": "mixed",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_1",
+          "secondary": "none",
+          "mode": "mixed",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.5,
+          "secondary": 0.97,
+          "mode": 0.6,
+          "layout": 0.92
+        },
+        "usage": {
+          "input_tokens": 799,
+          "output_tokens": 171,
+          "cost": 0.000033558
+        }
+      }
+    },
+    {
+      "provider": "jev",
+      "repeat": 1,
+      "id": "return",
+      "speech": "Return to the process of panels converting sunlight into electricity.",
+      "elapsedMs": 475.3792089999988,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "typesafe/jev-1.14-20261014",
+        "selections": {
+          "primary": "topic_0",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.99,
+          "secondary": 0.98,
+          "mode": 0.67,
+          "layout": 0.96
+        },
+        "usage": {
+          "input_tokens": 791,
+          "output_tokens": 171,
+          "cost": 0.000033222
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "panels",
+      "speech": "Sunlight reaches photovoltaic cells and becomes electricity.",
+      "elapsedMs": 1602.212125,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_0",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.9865565192530095,
+          "secondary": 0.9961647916515304,
+          "mode": 0.37575653614018895,
+          "layout": 0.8212432636819949
+        },
+        "usage": {
+          "input_tokens": 377,
+          "output_tokens": 4,
+          "cost": 0.000015834
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "storage",
+      "speech": "After sunset the battery releases the electricity it saved earlier.",
+      "elapsedMs": 1572.1877920000006,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.9955914070987189,
+          "secondary": 0.794514682889155,
+          "mode": 0.5685464148510541,
+          "layout": 0.6623058271168009
+        },
+        "usage": {
+          "input_tokens": 377,
+          "output_tokens": 4,
+          "cost": 0.000015834
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "pattern",
+      "speech": "Look at the daily energy chart. Noon produces twenty watt hours, morning ten, evening five.",
+      "elapsedMs": 743.598584000003,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_1",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_1",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.9976354062792333,
+          "secondary": 0.6200352707278988,
+          "mode": 0.6697381477754579,
+          "layout": 0.49810025031250627
+        },
+        "usage": {
+          "input_tokens": 385,
+          "output_tokens": 4,
+          "cost": 0.00001617
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "compare",
+      "speech": "Compare the panels generating electricity with the battery storing it for later. Put these two ideas side by side.",
+      "elapsedMs": 636.0681660000009,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "topic_2",
+        "mode": "mixed",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "topic_2",
+          "mode": "mixed",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 0.7815394832772457,
+          "secondary": 0.9951482654528607,
+          "mode": 0.7112690367981779,
+          "layout": 0.9905250825726414
+        },
+        "usage": {
+          "input_tokens": 387,
+          "output_tokens": 4,
+          "cost": 0.000016254
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "pattern-storage",
+      "speech": "Put the daily production pattern next to battery storage, connecting daytime production to evening use.",
+      "elapsedMs": 652.0972500000025,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "topic_2",
+        "mode": "mixed",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "topic_2",
+          "mode": "mixed",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 0.3688734908995028,
+          "secondary": 0.9842564407651677,
+          "mode": 0.582246150671904,
+          "layout": 0.9874217606764466
+        },
+        "usage": {
+          "input_tokens": 383,
+          "output_tokens": 4,
+          "cost": 0.000016086
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "correction",
+      "speech": "Not the panels. I mean the battery storing energy after sunset.",
+      "elapsedMs": 653.8754169999993,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "mixed",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "none",
+          "mode": "mixed",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.9956994522024645,
+          "secondary": 0.5282399591201701,
+          "mode": 0.4137596526310468,
+          "layout": 0.812882512574886
+        },
+        "usage": {
+          "input_tokens": 379,
+          "output_tokens": 4,
+          "cost": 0.000015918
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "paraphrase",
+      "speech": "We save the electricity now so it can power devices when daylight is gone.",
+      "elapsedMs": 745.0012080000015,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.9964266141099244,
+          "secondary": 0.8284828928570817,
+          "mode": 0.7759816707616581,
+          "layout": 0.7053845094579081
+        },
+        "usage": {
+          "input_tokens": 381,
+          "output_tokens": 4,
+          "cost": 0.000016002
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "off-topic",
+      "speech": "My favourite lunch is pasta with tomatoes. I left my notebook in the kitchen.",
+      "elapsedMs": 628.4019579999986,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.997842116037904,
+          "secondary": 0.9974154681337973,
+          "mode": 0.9723942813088315,
+          "layout": 0.6967778529340383
+        },
+        "usage": {
+          "input_tokens": 382,
+          "output_tokens": 4,
+          "cost": 0.000016044
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "vague",
+      "speech": "Um, that thing, you know, the one I mentioned.",
+      "elapsedMs": 723.3997090000012,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.9902585023931733,
+          "secondary": 0.9967635975265796,
+          "mode": 0.8279687452349909,
+          "layout": 0.8699959605155586
+        },
+        "usage": {
+          "input_tokens": 379,
+          "output_tokens": 4,
+          "cost": 0.000015918
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "missing-evidence",
+      "speech": "Tell us the installation cost of our actual school system. We have not provided any cost data.",
+      "elapsedMs": 569.8443330000009,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.989853999394904,
+          "secondary": 0.9974346919507171,
+          "mode": 0.9547419490115212,
+          "layout": 0.9598463776342334
+        },
+        "usage": {
+          "input_tokens": 385,
+          "output_tokens": 4,
+          "cost": 0.00001617
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "synthetic-qualification",
+      "speech": "Keep the daily energy chart visible. These numbers are a synthetic teaching example, not actual measurements.",
+      "elapsedMs": 584.6737499999981,
+      "valid": true,
+      "primaryCorrect": false,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.7240199012948262,
+          "secondary": 0.99274545362278,
+          "mode": 0.6509166592241121,
+          "layout": 0.9317017678701632
+        },
+        "usage": {
+          "input_tokens": 385,
+          "output_tokens": 4,
+          "cost": 0.00001617
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 0,
+      "id": "return",
+      "speech": "Return to the process of panels converting sunlight into electricity.",
+      "elapsedMs": 555.7436669999988,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_0",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.9914195036570214,
+          "secondary": 0.9976784055837207,
+          "mode": 0.5985885120946492,
+          "layout": 0.8741358124855825
+        },
+        "usage": {
+          "input_tokens": 377,
+          "output_tokens": 4,
+          "cost": 0.000015834
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "panels",
+      "speech": "Sunlight reaches photovoltaic cells and becomes electricity.",
+      "elapsedMs": 599.1880420000016,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_0",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.9861926575293831,
+          "secondary": 0.996229286935529,
+          "mode": 0.37575652215911126,
+          "layout": 0.8212432636819949
+        },
+        "usage": {
+          "input_tokens": 377,
+          "output_tokens": 4,
+          "cost": 0.000015834
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "storage",
+      "speech": "After sunset the battery releases the electricity it saved earlier.",
+      "elapsedMs": 577.6720000000023,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.9955526759165897,
+          "secondary": 0.7936827460192564,
+          "mode": 0.6170100906975968,
+          "layout": 0.6845123864236882
+        },
+        "usage": {
+          "input_tokens": 377,
+          "output_tokens": 4,
+          "cost": 0.000015834
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "pattern",
+      "speech": "Look at the daily energy chart. Noon produces twenty watt hours, morning ten, evening five.",
+      "elapsedMs": 564.1381250000013,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_1",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_1",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.9969658390675845,
+          "secondary": 0.5292471453552735,
+          "mode": 0.6942613509814825,
+          "layout": 0.5254471932223355
+        },
+        "usage": {
+          "input_tokens": 385,
+          "output_tokens": 4,
+          "cost": 0.00001617
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "compare",
+      "speech": "Compare the panels generating electricity with the battery storing it for later. Put these two ideas side by side.",
+      "elapsedMs": 593.135209,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "topic_2",
+        "mode": "mixed",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "topic_2",
+          "mode": "mixed",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 0.7815395001051204,
+          "secondary": 0.9925941183741143,
+          "mode": 0.6992754218789387,
+          "layout": 0.9914060946596696
+        },
+        "usage": {
+          "input_tokens": 387,
+          "output_tokens": 4,
+          "cost": 0.000016254
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "pattern-storage",
+      "speech": "Put the daily production pattern next to battery storage, connecting daytime production to evening use.",
+      "elapsedMs": 661.6921660000007,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": false,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "topic_2",
+        "mode": "mixed",
+        "layout": "split"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "topic_2",
+          "mode": "mixed",
+          "layout": "split"
+        },
+        "confidence": {
+          "primary": 0.39672043498534576,
+          "secondary": 0.987848170914583,
+          "mode": 0.49158936742964227,
+          "layout": 0.9845039876478859
+        },
+        "usage": {
+          "input_tokens": 383,
+          "output_tokens": 4,
+          "cost": 0.000016086
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "correction",
+      "speech": "Not the panels. I mean the battery storing energy after sunset.",
+      "elapsedMs": 653.3063750000001,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.9939089454305777,
+          "secondary": 0.5890514445848374,
+          "mode": 0.41360626789508365,
+          "layout": 0.8128825056861633
+        },
+        "usage": {
+          "input_tokens": 379,
+          "output_tokens": 4,
+          "cost": 0.000015918
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "paraphrase",
+      "speech": "We save the electricity now so it can power devices when daylight is gone.",
+      "elapsedMs": 608.7728749999987,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_2",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.996563234088925,
+          "secondary": 0.7715742491351241,
+          "mode": 0.7506115730267009,
+          "layout": 0.7516300672848817
+        },
+        "usage": {
+          "input_tokens": 381,
+          "output_tokens": 4,
+          "cost": 0.000016002
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "off-topic",
+      "speech": "My favourite lunch is pasta with tomatoes. I left my notebook in the kitchen.",
+      "elapsedMs": 551.3934999999983,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.9981783284215974,
+          "secondary": 0.997166364076273,
+          "mode": 0.9737408080230737,
+          "layout": 0.6145205040558137
+        },
+        "usage": {
+          "input_tokens": 382,
+          "output_tokens": 4,
+          "cost": 0.000016044
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "vague",
+      "speech": "Um, that thing, you know, the one I mentioned.",
+      "elapsedMs": 588.5099169999994,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.9897842378714163,
+          "secondary": 0.9972493467757813,
+          "mode": 0.8607219605232352,
+          "layout": 0.8656612462646679
+        },
+        "usage": {
+          "input_tokens": 379,
+          "output_tokens": 4,
+          "cost": 0.000015918
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "missing-evidence",
+      "speech": "Tell us the installation cost of our actual school system. We have not provided any cost data.",
+      "elapsedMs": 588.6790419999998,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "text",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.9912336459732554,
+          "secondary": 0.9972978334422844,
+          "mode": 0.9589450737149612,
+          "layout": 0.9598463805117298
+        },
+        "usage": {
+          "input_tokens": 385,
+          "output_tokens": 4,
+          "cost": 0.00001617
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "synthetic-qualification",
+      "speech": "Keep the daily energy chart visible. These numbers are a synthetic teaching example, not actual measurements.",
+      "elapsedMs": 677.9229590000032,
+      "valid": true,
+      "primaryCorrect": false,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "focus"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "hold",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "focus"
+        },
+        "confidence": {
+          "primary": 0.7641912951067106,
+          "secondary": 0.9935414191782859,
+          "mode": 0.694290550564501,
+          "layout": 0.9317017783005196
+        },
+        "usage": {
+          "input_tokens": 385,
+          "output_tokens": 4,
+          "cost": 0.00001617
+        }
+      }
+    },
+    {
+      "provider": "microsoft",
+      "repeat": 1,
+      "id": "return",
+      "speech": "Return to the process of panels converting sunlight into electricity.",
+      "elapsedMs": 614.4431250000016,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "sequence"
+      },
+      "metadata": {
+        "model": "microsoft/microsoft-decision-1-20261009",
+        "selections": {
+          "primary": "topic_0",
+          "secondary": "none",
+          "mode": "visual",
+          "layout": "sequence"
+        },
+        "confidence": {
+          "primary": 0.9918131799498704,
+          "secondary": 0.9980356984168873,
+          "mode": 0.6141465412035231,
+          "layout": 0.8879646720791502
+        },
+        "usage": {
+          "input_tokens": 377,
+          "output_tokens": 4,
+          "cost": 0.000015834
+        }
+      }
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "panels",
+      "elapsedMs": 0.6854999999995925,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "storage",
+      "elapsedMs": 0.30129200000010314,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "pattern",
+      "elapsedMs": 0.46304199999940465,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "compare",
+      "elapsedMs": 0.21700000000055297,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "pattern-storage",
+      "elapsedMs": 0.24012500000026193,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "correction",
+      "elapsedMs": 0.3792920000014419,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "paraphrase",
+      "elapsedMs": 0.28491699999722186,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "off-topic",
+      "elapsedMs": 0.28816700000243145,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "vague",
+      "elapsedMs": 0.19670800000312738,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "missing-evidence",
+      "elapsedMs": 0.1717499999977008,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "synthetic-qualification",
+      "elapsedMs": 0.14066599999932805,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 0,
+      "id": "return",
+      "elapsedMs": 0.11970799999835435,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "panels",
+      "elapsedMs": 0.1149169999989681,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "storage",
+      "elapsedMs": 0.31912499999816646,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "pattern",
+      "elapsedMs": 0.14270899999974063,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "compare",
+      "elapsedMs": 0.15195899999889662,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "pattern-storage",
+      "elapsedMs": 0.14099999999962165,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "correction",
+      "elapsedMs": 0.13666599999851314,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "paraphrase",
+      "elapsedMs": 0.1349579999987327,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "off-topic",
+      "elapsedMs": 0.13254199999937555,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "vague",
+      "elapsedMs": 0.1281249999992724,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "missing-evidence",
+      "elapsedMs": 0.1358330000002752,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "synthetic-qualification",
+      "elapsedMs": 0.12887500000215368,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "laya",
+      "repeat": 1,
+      "id": "return",
+      "elapsedMs": 0.11208299999998417,
+      "valid": false,
+      "error": "fetch failed"
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "panels",
+      "speech": "Sunlight reaches photovoltaic cells and becomes electricity.",
+      "elapsedMs": 4389.868666999999,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "focus"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "storage",
+      "speech": "After sunset the battery releases the electricity it saved earlier.",
+      "elapsedMs": 2167.3756249999933,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "pattern",
+      "speech": "Look at the daily energy chart. Noon produces twenty watt hours, morning ten, evening five.",
+      "elapsedMs": 2286.572165999998,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_1",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "focus"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "compare",
+      "speech": "Compare the panels generating electricity with the battery storing it for later. Put these two ideas side by side.",
+      "elapsedMs": 2241.2209159999984,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "topic_2",
+        "mode": "mixed",
+        "layout": "split"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "pattern-storage",
+      "speech": "Put the daily production pattern next to battery storage, connecting daytime production to evening use.",
+      "elapsedMs": 2213.2451660000006,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_1",
+        "secondary": "topic_2",
+        "mode": "mixed",
+        "layout": "split"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "correction",
+      "speech": "Not the panels. I mean the battery storing energy after sunset.",
+      "elapsedMs": 2158.4452909999964,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "paraphrase",
+      "speech": "We save the electricity now so it can power devices when daylight is gone.",
+      "elapsedMs": 2232.0630420000016,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_2",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "off-topic",
+      "speech": "My favourite lunch is pasta with tomatoes. I left my notebook in the kitchen.",
+      "elapsedMs": 2171.000583000001,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "vague",
+      "speech": "Um, that thing, you know, the one I mentioned.",
+      "elapsedMs": 2248.813291999999,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "missing-evidence",
+      "speech": "Tell us the installation cost of our actual school system. We have not provided any cost data.",
+      "elapsedMs": 2127.389959,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "hold",
+        "secondary": "none",
+        "mode": "text",
+        "layout": "focus"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "synthetic-qualification",
+      "speech": "Keep the daily energy chart visible. These numbers are a synthetic teaching example, not actual measurements.",
+      "elapsedMs": 2139.640625,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_1",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "focus"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "return",
+      "speech": "Return to the process of panels converting sunlight into electricity.",
+      "elapsedMs": 2296.3803340000013,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "primary": "topic_0",
+        "secondary": "none",
+        "mode": "visual",
+        "layout": "sequence"
+      }
+    }
+  ]
+}

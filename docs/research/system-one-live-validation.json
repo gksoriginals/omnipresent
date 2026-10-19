@@ -1,0 +1,3501 @@
+{
+  "recordedAt": "2026-10-17",
+  "scope": "Same Piper storage-first WAV streamed through actual Moonshine STT, same prepared story and OpenUI components. Decision provider changed between sequential runs. Not a physical microphone test. Inference timings exclude speech and endpointing.",
+  "summary": [
+    {
+      "provider": "jev",
+      "decisions": 9,
+      "changes": 4,
+      "holds": 5,
+      "medianMs": 466.5788750000065,
+      "p95Ms": 600.1951659999977,
+      "errors": []
+    },
+    {
+      "provider": "laya",
+      "decisions": 9,
+      "changes": 2,
+      "holds": 7,
+      "medianMs": 559.3823750000156,
+      "p95Ms": 761.3076250000158,
+      "errors": []
+    },
+    {
+      "provider": "microsoft",
+      "decisions": 9,
+      "changes": 6,
+      "holds": 3,
+      "medianMs": 576.6910830000124,
+      "p95Ms": 2301.432375000004,
+      "errors": []
+    }
+  ],
+  "runs": [
+    {
+      "provider": "jev",
+      "variant": "storage-first",
+      "events": [
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792248758608
+          },
+          "dispatchMs": 0.13695799999914016,
+          "at": 1792248758609
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Eh?",
+          "final": false,
+          "at": 1792248759743
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine.",
+          "final": false,
+          "at": 1792248760152
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after",
+          "final": false,
+          "at": 1792248760656
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset.",
+          "final": false,
+          "at": 1792248761144
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We sit",
+          "final": false,
+          "at": 1792248761645
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need to be careful.",
+          "final": false,
+          "at": 1792248762172
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity.",
+          "final": false,
+          "at": 1792248762667
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the",
+          "final": false,
+          "at": 1792248763679
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery.",
+          "final": false,
+          "at": 1792248764163
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage.",
+          "final": false,
+          "at": 1792248765204
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes everyone happy.",
+          "final": false,
+          "at": 1792248765692
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy.",
+          "final": false,
+          "at": 1792248766195
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available.",
+          "final": false,
+          "at": 1792248766682
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunset.",
+          "final": false,
+          "at": 1792248767212
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is available.",
+          "final": false,
+          "at": 1792248767692
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is gone.",
+          "final": false,
+          "at": 1792248768197
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465495",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is gone.",
+          "final": true,
+          "at": 1792248768199
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Storage After Sunset",
+            "composition": {
+              "title": "Storage After Sunset",
+              "body": "Batteries store excess electricity for use when the sun is not shining.",
+              "beat": 2,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "sequence",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 2,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792248768779
+          },
+          "dispatchMs": 0.014250000000174623,
+          "at": 1792248768780
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 581.114540999999,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "typesafe/jev-1.14-20261014",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "include",
+              "mode": "text",
+              "layout": "sequence",
+              "primary": "topic_2",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.99,
+              "include_topic_1": 0.8,
+              "include_topic_2": 1,
+              "mode": 0.6,
+              "layout": 0.62
+            },
+            "usage": {
+              "input_tokens": 909,
+              "output_tokens": 166,
+              "cost": 3.8178e-05
+            }
+          },
+          "at": 1792248768789
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465496",
+          "text": "you",
+          "final": false,
+          "at": 1792248771135
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465496",
+          "text": "We're did this",
+          "final": false,
+          "at": 1792248771660
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465496",
+          "text": "We did the stored electricity",
+          "final": false,
+          "at": 1792248772172
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465496",
+          "text": "We did distort electricity",
+          "final": false,
+          "at": 1792248772664
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465496",
+          "text": "Where did the stored electricity come from for",
+          "final": false,
+          "at": 1792248773205
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465496",
+          "text": "Where did the stored electricity come from compare",
+          "final": false,
+          "at": 1792248773654
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465496",
+          "text": "Where did the stored electricity come from compare the panels",
+          "final": false,
+          "at": 1792248774152
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465496",
+          "text": "Where did the stored electricity come from? Compare the panels.",
+          "final": false,
+          "at": 1792248774729
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465496",
+          "text": "Where did the stored electricity come from? Compare the panels.",
+          "final": true,
+          "at": 1792248774730
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Yeah.",
+          "final": false,
+          "at": 1792248774730
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generate",
+          "final": false,
+          "at": 1792248775143
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Storage After Sunset",
+            "composition": {
+              "title": "Storage After Sunset",
+              "body": "Batteries store excess electricity for use when the sun is not shining.",
+              "beat": 2,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "split",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 2,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "detail",
+                    "kind": "visual",
+                    "beat": 2,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 3,
+            "committedAt": 1792248775215
+          },
+          "dispatchMs": 0.00704099999711616,
+          "at": 1792248775218
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 486.708292000003,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "detail",
+                "kind": "visual",
+                "beat": 2,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "typesafe/jev-1.14-20261014",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "include",
+              "mode": "mixed",
+              "layout": "split",
+              "primary": "topic_2",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.8,
+              "include_topic_1": 0.97,
+              "include_topic_2": 0.51,
+              "mode": 0.49,
+              "layout": 0.96
+            },
+            "usage": {
+              "input_tokens": 896,
+              "output_tokens": 166,
+              "cost": 3.7632e-05
+            }
+          },
+          "at": 1792248775225
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generating electricity.",
+          "final": false,
+          "at": 1792248775646
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generating electricity with the",
+          "final": false,
+          "at": 1792248776141
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generating electricity with the battery",
+          "final": false,
+          "at": 1792248776648
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generating electricity with the battery seated",
+          "final": false,
+          "at": 1792248777153
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generating electricity with the battery saving it.",
+          "final": false,
+          "at": 1792248777676
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generating electricity with the battery saving it these are cute",
+          "final": false,
+          "at": 1792248778190
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generating electricity with the battery saving it. These are connected by",
+          "final": false,
+          "at": 1792248778700
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generating electricity with the battery saving it. These are connected but differently.",
+          "final": false,
+          "at": 1792248779176
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generating electricity with the battery saving it. These are connected but different jobs.",
+          "final": false,
+          "at": 1792248779694
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465497",
+          "text": "Generating electricity with the battery saving it. These are connected but different jobs.",
+          "final": true,
+          "at": 1792248780156
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Storage After Sunset",
+            "composition": {
+              "title": "Storage After Sunset",
+              "body": "Batteries store excess electricity for use when the sun is not shining.",
+              "beat": 2,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "split",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 2,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 4,
+            "committedAt": 1792248780755
+          },
+          "dispatchMs": 0.012541000003693625,
+          "at": 1792248780756
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 600.1951659999977,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "typesafe/jev-1.14-20261014",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "include",
+              "mode": "text",
+              "layout": "split",
+              "primary": "topic_2",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.96,
+              "include_topic_1": 0.99,
+              "include_topic_2": 0.52,
+              "mode": 0.64,
+              "layout": 0.99
+            },
+            "usage": {
+              "input_tokens": 905,
+              "output_tokens": 166,
+              "cost": 3.801e-05
+            }
+          },
+          "at": 1792248780759
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look.",
+          "final": false,
+          "at": 1792248783138
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look at the data.",
+          "final": false,
+          "at": 1792248783668
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look at the daily energy.",
+          "final": false,
+          "at": 1792248784149
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look at the daily energy chart.",
+          "final": false,
+          "at": 1792248784646
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look at the daily energy chart, the synthetic energy chart.",
+          "final": false,
+          "at": 1792248785716
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look at the daily energy chart. The synthetic example",
+          "final": false,
+          "at": 1792248786211
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look at the daily energy chart. The synthetic example as 20 degrees Celsius.",
+          "final": false,
+          "at": 1792248786737
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours.",
+          "final": false,
+          "at": 1792248787250
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt-hours at noon.",
+          "final": false,
+          "at": 1792248787790
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours at noon.",
+          "final": false,
+          "at": 1792248788223
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465498",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours at noon.",
+          "final": true,
+          "at": 1792248788225
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465499",
+          "text": "10.",
+          "final": false,
+          "at": 1792248788666
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 466.5788750000065,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "typesafe/jev-1.14-20261014",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "mixed",
+              "layout": "focus",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.99,
+              "include_topic_1": 0.55,
+              "include_topic_2": 1,
+              "mode": 0.77,
+              "layout": 0.9
+            },
+            "usage": {
+              "input_tokens": 903,
+              "output_tokens": 166,
+              "cost": 3.7926e-05
+            }
+          },
+          "at": 1792248788690
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465499",
+          "text": "10 in the morning.",
+          "final": false,
+          "at": 1792248789170
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465499",
+          "text": "Ten in the morning.",
+          "final": false,
+          "at": 1792248789708
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465499",
+          "text": "Ten in the morning.",
+          "final": true,
+          "at": 1792248789709
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465500",
+          "text": "Okay.",
+          "final": false,
+          "at": 1792248789710
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 437.20379200000025,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "typesafe/jev-1.14-20261014",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 1,
+              "include_topic_1": 1,
+              "include_topic_2": 1,
+              "mode": 0.6799999999999999,
+              "layout": 0.92
+            },
+            "usage": {
+              "input_tokens": 889,
+              "output_tokens": 166,
+              "cost": 3.7338e-05
+            }
+          },
+          "at": 1792248790146
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465500",
+          "text": "And five,",
+          "final": false,
+          "at": 1792248790163
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465500",
+          "text": "And five in the evening.",
+          "final": false,
+          "at": 1792248790691
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465500",
+          "text": "And five in the evening, noon and.",
+          "final": false,
+          "at": 1792248791168
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465500",
+          "text": "And five in the evening noon is high.",
+          "final": false,
+          "at": 1792248791703
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465500",
+          "text": "And five in the evening, noon is highest.",
+          "final": false,
+          "at": 1792248792191
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465500",
+          "text": "And five in the evening, noon is highest.",
+          "final": true,
+          "at": 1792248792192
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "split",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 5,
+            "committedAt": 1792248792630
+          },
+          "dispatchMs": 0.00920899999618996,
+          "at": 1792248792631
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 439.27679199999693,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "typesafe/jev-1.14-20261014",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "include",
+              "include_topic_2": "exclude",
+              "mode": "visual",
+              "layout": "split",
+              "primary": "topic_1",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.9,
+              "include_topic_1": 0.89,
+              "include_topic_2": 0.99,
+              "mode": 0.53,
+              "layout": 0.57
+            },
+            "usage": {
+              "input_tokens": 894,
+              "output_tokens": 166,
+              "cost": 3.7548e-05
+            }
+          },
+          "at": 1792248792641
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465501",
+          "text": "Repeat.",
+          "final": false,
+          "at": 1792248795161
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465501",
+          "text": "Return to the bathroom.",
+          "final": false,
+          "at": 1792248795680
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465501",
+          "text": "Return to the process tab",
+          "final": false,
+          "at": 1792248796165
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465501",
+          "text": "Return to the process diagram",
+          "final": false,
+          "at": 1792248796661
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465501",
+          "text": "Return to the process diagram.",
+          "final": false,
+          "at": 1792248797149
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465501",
+          "text": "Return to the process diagram. Start with the same diagram.",
+          "final": false,
+          "at": 1792248797686
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465501",
+          "text": "Return to the process diagram. Start with the sum of 1.",
+          "final": false,
+          "at": 1792248798189
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465501",
+          "text": "Return to the process diagram. Start with the sum alone.",
+          "final": false,
+          "at": 1792248798770
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465501",
+          "text": "Return to the process diagram. Start with the sum alone.",
+          "final": true,
+          "at": 1792248798770
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465502",
+          "text": "Okay.",
+          "final": false,
+          "at": 1792248798774
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 497.5729999999967,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "typesafe/jev-1.14-20261014",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "visual",
+              "layout": "sequence",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.99,
+              "include_topic_1": 1,
+              "include_topic_2": 1,
+              "mode": 0.7,
+              "layout": 0.65
+            },
+            "usage": {
+              "input_tokens": 896,
+              "output_tokens": 166,
+              "cost": 3.7632e-05
+            }
+          },
+          "at": 1792248799269
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465502",
+          "text": "Then review.",
+          "final": false,
+          "at": 1792248799432
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465502",
+          "text": "Then reveal the pattern.",
+          "final": false,
+          "at": 1792248799887
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465502",
+          "text": "Then reveal the panels.",
+          "final": false,
+          "at": 1792248800252
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465502",
+          "text": "Then reveal the panels. Finally, cut the panels.",
+          "final": false,
+          "at": 1792248801742
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465502",
+          "text": "Then reveal the panels. Finally, connect the panels to the panels",
+          "final": false,
+          "at": 1792248802048
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465502",
+          "text": "Then reveal the panels. Finally connect the panels to the battery",
+          "final": false,
+          "at": 1792248802716
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465502",
+          "text": "Then reveal the panels. Finally connect the panels to the battery",
+          "final": true,
+          "at": 1792248802720
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465503",
+          "text": "Showing",
+          "final": false,
+          "at": 1792248803054
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 463.8577499999956,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "typesafe/jev-1.14-20261014",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "visual",
+              "layout": "sequence",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.98,
+              "include_topic_1": 1,
+              "include_topic_2": 0.93,
+              "mode": 0.61,
+              "layout": 1
+            },
+            "usage": {
+              "input_tokens": 896,
+              "output_tokens": 166,
+              "cost": 3.7632e-05
+            }
+          },
+          "at": 1792248803180
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465503",
+          "text": "Showing the full form of the",
+          "final": false,
+          "at": 1792248803439
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465503",
+          "text": "Showing the full process",
+          "final": false,
+          "at": 1792248803918
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465503",
+          "text": "Showing the full process.",
+          "final": false,
+          "at": 1792248804382
+        },
+        {
+          "type": "transcript",
+          "segmentId": "15769733395645465503",
+          "text": "Showing the full process.",
+          "final": true,
+          "at": 1792248804385
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 434.2125410000008,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "typesafe/jev-1.14-20261014",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "visual",
+              "layout": "sequence",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.99,
+              "include_topic_1": 1,
+              "include_topic_2": 1,
+              "mode": 0.8,
+              "layout": 0.99
+            },
+            "usage": {
+              "input_tokens": 889,
+              "output_tokens": 166,
+              "cost": 3.7338e-05
+            }
+          },
+          "at": 1792248804816
+        }
+      ]
+    },
+    {
+      "provider": "laya",
+      "variant": "storage-first",
+      "events": [
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792248874098
+          },
+          "dispatchMs": 0.014374999998835847,
+          "at": 1792248874098
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Eh?",
+          "final": false,
+          "at": 1792248875095
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine.",
+          "final": false,
+          "at": 1792248875565
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after",
+          "final": false,
+          "at": 1792248876073
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset.",
+          "final": false,
+          "at": 1792248876573
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We sit",
+          "final": false,
+          "at": 1792248877067
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need to be careful.",
+          "final": false,
+          "at": 1792248877604
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity.",
+          "final": false,
+          "at": 1792248878095
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the",
+          "final": false,
+          "at": 1792248879093
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery.",
+          "final": false,
+          "at": 1792248879584
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage.",
+          "final": false,
+          "at": 1792248880598
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes everyone happy.",
+          "final": false,
+          "at": 1792248881105
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy.",
+          "final": false,
+          "at": 1792248881603
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available.",
+          "final": false,
+          "at": 1792248882082
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunset.",
+          "final": false,
+          "at": 1792248882633
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is available.",
+          "final": false,
+          "at": 1792248883116
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is gone.",
+          "final": false,
+          "at": 1792248883610
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467540",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is gone.",
+          "final": true,
+          "at": 1792248883610
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 704.8376670000143,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "convaiinnovations/laya",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.8126,
+              "include_topic_1": 0.8205,
+              "include_topic_2": 0.586,
+              "mode": 0.6781,
+              "layout": 0.5909
+            },
+            "usage": {
+              "input_tokens": 657,
+              "output_tokens": 0
+            }
+          },
+          "at": 1792248884315
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467541",
+          "text": "you",
+          "final": false,
+          "at": 1792248886548
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467541",
+          "text": "We're did this",
+          "final": false,
+          "at": 1792248887083
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467541",
+          "text": "We did the stored electricity",
+          "final": false,
+          "at": 1792248887589
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467541",
+          "text": "We did distort electricity",
+          "final": false,
+          "at": 1792248888090
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467541",
+          "text": "Where did the stored electricity come from for",
+          "final": false,
+          "at": 1792248888615
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467541",
+          "text": "Where did the stored electricity come from compare",
+          "final": false,
+          "at": 1792248889086
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467541",
+          "text": "Where did the stored electricity come from compare the panels",
+          "final": false,
+          "at": 1792248889583
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467541",
+          "text": "Where did the stored electricity come from? Compare the panels.",
+          "final": false,
+          "at": 1792248890146
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467541",
+          "text": "Where did the stored electricity come from? Compare the panels.",
+          "final": true,
+          "at": 1792248890147
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Yeah.",
+          "final": false,
+          "at": 1792248890148
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generate",
+          "final": false,
+          "at": 1792248890563
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 559.3823750000156,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "convaiinnovations/laya",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.64,
+              "include_topic_1": 0.7137,
+              "include_topic_2": 0.7956,
+              "mode": 0.6936,
+              "layout": 0.7177
+            },
+            "usage": {
+              "input_tokens": 592,
+              "output_tokens": 0
+            }
+          },
+          "at": 1792248890706
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generating electricity.",
+          "final": false,
+          "at": 1792248891083
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generating electricity with the",
+          "final": false,
+          "at": 1792248891581
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generating electricity with the battery",
+          "final": false,
+          "at": 1792248892066
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generating electricity with the battery seated",
+          "final": false,
+          "at": 1792248892579
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generating electricity with the battery saving it.",
+          "final": false,
+          "at": 1792248893094
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generating electricity with the battery saving it these are cute",
+          "final": false,
+          "at": 1792248893592
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generating electricity with the battery saving it. These are connected by",
+          "final": false,
+          "at": 1792248894226
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generating electricity with the battery saving it. These are connected but differently.",
+          "final": false,
+          "at": 1792248894616
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generating electricity with the battery saving it. These are connected but different jobs.",
+          "final": false,
+          "at": 1792248895103
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467542",
+          "text": "Generating electricity with the battery saving it. These are connected but different jobs.",
+          "final": true,
+          "at": 1792248895573
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 541.1270420000073,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "convaiinnovations/laya",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.8192,
+              "include_topic_1": 0.7325,
+              "include_topic_2": 0.7319,
+              "mode": 0.6682,
+              "layout": 0.7957
+            },
+            "usage": {
+              "input_tokens": 612,
+              "output_tokens": 0
+            }
+          },
+          "at": 1792248896114
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look.",
+          "final": false,
+          "at": 1792248898572
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look at the data.",
+          "final": false,
+          "at": 1792248899092
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look at the daily energy.",
+          "final": false,
+          "at": 1792248899591
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look at the daily energy chart.",
+          "final": false,
+          "at": 1792248900094
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look at the daily energy chart, the synthetic energy chart.",
+          "final": false,
+          "at": 1792248901120
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look at the daily energy chart. The synthetic example",
+          "final": false,
+          "at": 1792248901623
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look at the daily energy chart. The synthetic example as 20 degrees Celsius.",
+          "final": false,
+          "at": 1792248902142
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours.",
+          "final": false,
+          "at": 1792248902633
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt-hours at noon.",
+          "final": false,
+          "at": 1792248903141
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours at noon.",
+          "final": false,
+          "at": 1792248903669
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467543",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours at noon.",
+          "final": true,
+          "at": 1792248903670
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467544",
+          "text": "10.",
+          "final": false,
+          "at": 1792248904092
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 761.3076250000158,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "convaiinnovations/laya",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.8864,
+              "include_topic_1": 0.6356,
+              "include_topic_2": 0.8901,
+              "mode": 0.5501,
+              "layout": 0.5335
+            },
+            "usage": {
+              "input_tokens": 622,
+              "output_tokens": 0
+            }
+          },
+          "at": 1792248904431
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467544",
+          "text": "10 in the morning.",
+          "final": false,
+          "at": 1792248904617
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467544",
+          "text": "Ten in the morning.",
+          "final": false,
+          "at": 1792248905131
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467544",
+          "text": "Ten in the morning.",
+          "final": true,
+          "at": 1792248905132
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467545",
+          "text": "Okay.",
+          "final": false,
+          "at": 1792248905132
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467545",
+          "text": "And five,",
+          "final": false,
+          "at": 1792248905567
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 638.9477910000132,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "convaiinnovations/laya",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.664,
+              "include_topic_1": 0.8573,
+              "include_topic_2": 0.8329,
+              "mode": 0.6831,
+              "layout": 0.7134
+            },
+            "usage": {
+              "input_tokens": 557,
+              "output_tokens": 0
+            }
+          },
+          "at": 1792248905770
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467545",
+          "text": "And five in the evening.",
+          "final": false,
+          "at": 1792248906087
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467545",
+          "text": "And five in the evening, noon and.",
+          "final": false,
+          "at": 1792248906615
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467545",
+          "text": "And five in the evening noon is high.",
+          "final": false,
+          "at": 1792248907107
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467545",
+          "text": "And five in the evening, noon is highest.",
+          "final": false,
+          "at": 1792248907609
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467545",
+          "text": "And five in the evening, noon is highest.",
+          "final": true,
+          "at": 1792248907610
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792248908127
+          },
+          "dispatchMs": 0.00829100000555627,
+          "at": 1792248908127
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 517.7759169999918,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "convaiinnovations/laya",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "include",
+              "include_topic_2": "exclude",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "topic_1",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.8278,
+              "include_topic_1": 0.6247,
+              "include_topic_2": 0.8474,
+              "mode": 0.7699,
+              "layout": 0.7595
+            },
+            "usage": {
+              "input_tokens": 582,
+              "output_tokens": 0
+            }
+          },
+          "at": 1792248908129
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467546",
+          "text": "Repeat.",
+          "final": false,
+          "at": 1792248910617
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467546",
+          "text": "Return to the bathroom.",
+          "final": false,
+          "at": 1792248911160
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467546",
+          "text": "Return to the process tab",
+          "final": false,
+          "at": 1792248911603
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467546",
+          "text": "Return to the process diagram",
+          "final": false,
+          "at": 1792248912073
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467546",
+          "text": "Return to the process diagram.",
+          "final": false,
+          "at": 1792248912580
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467546",
+          "text": "Return to the process diagram. Start with the same diagram.",
+          "final": false,
+          "at": 1792248913116
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467546",
+          "text": "Return to the process diagram. Start with the sum of 1.",
+          "final": false,
+          "at": 1792248913631
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467546",
+          "text": "Return to the process diagram. Start with the sum alone.",
+          "final": false,
+          "at": 1792248914148
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467546",
+          "text": "Return to the process diagram. Start with the sum alone.",
+          "final": true,
+          "at": 1792248914149
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467547",
+          "text": "Okay.",
+          "final": false,
+          "at": 1792248914149
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467547",
+          "text": "Then review.",
+          "final": false,
+          "at": 1792248914583
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 3,
+            "committedAt": 1792248914810
+          },
+          "dispatchMs": 0.0105829999956768,
+          "at": 1792248914810
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 662.3192500000005,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "convaiinnovations/laya",
+            "selections": {
+              "include_topic_0": "include",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "topic_0",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.5012,
+              "include_topic_1": 0.5668,
+              "include_topic_2": 0.7159,
+              "mode": 0.4582,
+              "layout": 0.4771
+            },
+            "usage": {
+              "input_tokens": 592,
+              "output_tokens": 0
+            }
+          },
+          "at": 1792248914812
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467547",
+          "text": "Then reveal the pattern.",
+          "final": false,
+          "at": 1792248915087
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467547",
+          "text": "Then reveal the panels.",
+          "final": false,
+          "at": 1792248915604
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467547",
+          "text": "Then reveal the panels. Finally, cut the panels.",
+          "final": false,
+          "at": 1792248916114
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467547",
+          "text": "Then reveal the panels. Finally, connect the panel.",
+          "final": false,
+          "at": 1792248916612
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467547",
+          "text": "Then reveal the panels. Finally, connect the panels to the panel.",
+          "final": false,
+          "at": 1792248917136
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467547",
+          "text": "Then reveal the panels. Finally, connect the panels to the battery.",
+          "final": false,
+          "at": 1792248917619
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467547",
+          "text": "Then reveal the panels. Finally connect the panels to the battery",
+          "final": false,
+          "at": 1792248918152
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467547",
+          "text": "Then reveal the panels. Finally connect the panels to the battery",
+          "final": true,
+          "at": 1792248918152
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467548",
+          "text": "",
+          "final": false,
+          "at": 1792248918153
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467548",
+          "text": "Showing the",
+          "final": false,
+          "at": 1792248918568
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 444.9852920000267,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "convaiinnovations/laya",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.6455,
+              "include_topic_1": 0.8202,
+              "include_topic_2": 0.6774,
+              "mode": 0.7687,
+              "layout": 0.4861
+            },
+            "usage": {
+              "input_tokens": 597,
+              "output_tokens": 0
+            }
+          },
+          "at": 1792248918597
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467548",
+          "text": "Showing the full process",
+          "final": false,
+          "at": 1792248919064
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467548",
+          "text": "Showing the full process.",
+          "final": false,
+          "at": 1792248919568
+        },
+        {
+          "type": "transcript",
+          "segmentId": "3240132481419467548",
+          "text": "Showing the full process.",
+          "final": true,
+          "at": 1792248919569
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 428.9897920000076,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "convaiinnovations/laya",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "mixed",
+              "layout": "sequence",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.6655,
+              "include_topic_1": 0.7631,
+              "include_topic_2": 0.8677,
+              "mode": 0.3522,
+              "layout": 0.7394
+            },
+            "usage": {
+              "input_tokens": 562,
+              "output_tokens": 0
+            }
+          },
+          "at": 1792248919997
+        }
+      ]
+    },
+    {
+      "provider": "microsoft",
+      "variant": "storage-first",
+      "events": [
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792248939284
+          },
+          "dispatchMs": 0.015791999991051853,
+          "at": 1792248939285
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Eh?",
+          "final": false,
+          "at": 1792248940217
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine.",
+          "final": false,
+          "at": 1792248940665
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after",
+          "final": false,
+          "at": 1792248941194
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset.",
+          "final": false,
+          "at": 1792248941672
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We sit",
+          "final": false,
+          "at": 1792248942167
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need to be careful.",
+          "final": false,
+          "at": 1792248942710
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity.",
+          "final": false,
+          "at": 1792248943194
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the",
+          "final": false,
+          "at": 1792248944201
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery.",
+          "final": false,
+          "at": 1792248944690
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage.",
+          "final": false,
+          "at": 1792248945720
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes everyone happy.",
+          "final": false,
+          "at": 1792248946320
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy.",
+          "final": false,
+          "at": 1792248946716
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available.",
+          "final": false,
+          "at": 1792248947201
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunset.",
+          "final": false,
+          "at": 1792248947734
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is available.",
+          "final": false,
+          "at": 1792248948229
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is gone.",
+          "final": false,
+          "at": 1792248948713
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345387",
+          "text": "Imagine it is after sunset. We still need electricity. Start with the battery. Storage makes energy available when sunlight is gone.",
+          "final": true,
+          "at": 1792248948714
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Storage After Sunset",
+            "composition": {
+              "title": "Storage After Sunset",
+              "body": "Batteries store excess electricity for use when the sun is not shining.",
+              "beat": 2,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 2,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792248951015
+          },
+          "dispatchMs": 0.03016700001899153,
+          "at": 1792248951016
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2301.432375000004,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "microsoft/microsoft-decision-1-20261009",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "include",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "topic_2",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.9820137860570861,
+              "include_topic_1": 0.8807970811069351,
+              "include_topic_2": 0.9964063971751412,
+              "mode": 0.4749179021614616,
+              "layout": 0.8092671626785565
+            },
+            "usage": {
+              "input_tokens": 512,
+              "output_tokens": 5,
+              "cost": 2.1504e-05
+            }
+          },
+          "at": 1792248951020
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345388",
+          "text": "you",
+          "final": false,
+          "at": 1792248951658
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345388",
+          "text": "We're did this",
+          "final": false,
+          "at": 1792248952197
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345388",
+          "text": "We did the stored electricity",
+          "final": false,
+          "at": 1792248952693
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345388",
+          "text": "We did distort electricity",
+          "final": false,
+          "at": 1792248953183
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345388",
+          "text": "Where did the stored electricity come from for",
+          "final": false,
+          "at": 1792248953720
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345388",
+          "text": "Where did the stored electricity come from compare",
+          "final": false,
+          "at": 1792248954186
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345388",
+          "text": "Where did the stored electricity come from compare the panels",
+          "final": false,
+          "at": 1792248954682
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345388",
+          "text": "Where did the stored electricity come from? Compare the panels.",
+          "final": false,
+          "at": 1792248955245
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345388",
+          "text": "Where did the stored electricity come from? Compare the panels.",
+          "final": true,
+          "at": 1792248955246
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Yeah.",
+          "final": false,
+          "at": 1792248955246
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generate",
+          "final": false,
+          "at": 1792248955666
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generating electricity.",
+          "final": false,
+          "at": 1792248956188
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generating electricity with the",
+          "final": false,
+          "at": 1792248956684
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generating electricity with the battery",
+          "final": false,
+          "at": 1792248957160
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "How Panels Work",
+            "composition": {
+              "title": "How Panels Work",
+              "body": "Solar panels convert sunlight directly into electricity.",
+              "beat": 0,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "split",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "visual",
+                    "beat": 0,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "secondary",
+                    "kind": "visual",
+                    "beat": 2,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 3,
+            "committedAt": 1792248957392
+          },
+          "dispatchMs": 0.003792000003159046,
+          "at": 1792248957392
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2147.112792,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 0,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "secondary",
+                "kind": "visual",
+                "beat": 2,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "microsoft/microsoft-decision-1-20261009",
+            "selections": {
+              "include_topic_0": "include",
+              "include_topic_1": "exclude",
+              "include_topic_2": "include",
+              "mode": "mixed",
+              "layout": "split",
+              "primary": "topic_0",
+              "secondary": "topic_2"
+            },
+            "confidence": {
+              "include_topic_0": 0.7549149868676283,
+              "include_topic_1": 0.9399133536130196,
+              "include_topic_2": 0.7057850154599562,
+              "mode": 0.5740970075416044,
+              "layout": 0.9478260363364266
+            },
+            "usage": {
+              "input_tokens": 499,
+              "output_tokens": 5,
+              "cost": 2.0958e-05
+            }
+          },
+          "at": 1792248957395
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generating electricity with the battery seated",
+          "final": false,
+          "at": 1792248957677
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generating electricity with the battery saving it.",
+          "final": false,
+          "at": 1792248958205
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generating electricity with the battery saving it these are cute",
+          "final": false,
+          "at": 1792248958715
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generating electricity with the battery saving it. These are connected by",
+          "final": false,
+          "at": 1792248959214
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generating electricity with the battery saving it. These are connected but differently.",
+          "final": false,
+          "at": 1792248959728
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generating electricity with the battery saving it. These are connected but different jobs.",
+          "final": false,
+          "at": 1792248960206
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345389",
+          "text": "Generating electricity with the battery saving it. These are connected but different jobs.",
+          "final": true,
+          "at": 1792248960684
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Storage After Sunset",
+            "composition": {
+              "title": "Storage After Sunset",
+              "body": "Batteries store excess electricity for use when the sun is not shining.",
+              "beat": 2,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "split",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 2,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "detail",
+                    "kind": "visual",
+                    "beat": 2,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 4,
+            "committedAt": 1792248961261
+          },
+          "dispatchMs": 0.007959000009577721,
+          "at": 1792248961262
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 576.6910830000124,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "split",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "detail",
+                "kind": "visual",
+                "beat": 2,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "microsoft/microsoft-decision-1-20261009",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "include",
+              "mode": "mixed",
+              "layout": "split",
+              "primary": "topic_2",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.7772998663336158,
+              "include_topic_1": 0.966914021492119,
+              "include_topic_2": 0.880797076413356,
+              "mode": 0.4981002503125062,
+              "layout": 0.8330396584074641
+            },
+            "usage": {
+              "input_tokens": 506,
+              "output_tokens": 5,
+              "cost": 2.1252e-05
+            }
+          },
+          "at": 1792248961268
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look.",
+          "final": false,
+          "at": 1792248963666
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look at the data.",
+          "final": false,
+          "at": 1792248964189
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look at the daily energy.",
+          "final": false,
+          "at": 1792248964684
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look at the daily energy chart.",
+          "final": false,
+          "at": 1792248965189
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look at the daily energy chart, the synthetic energy chart.",
+          "final": false,
+          "at": 1792248966220
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look at the daily energy chart. The synthetic example",
+          "final": false,
+          "at": 1792248966724
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look at the daily energy chart. The synthetic example as 20 degrees Celsius.",
+          "final": false,
+          "at": 1792248967231
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours.",
+          "final": false,
+          "at": 1792248967767
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt-hours at noon.",
+          "final": false,
+          "at": 1792248968237
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours at noon.",
+          "final": false,
+          "at": 1792248968727
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345390",
+          "text": "Look at the daily energy chart. The synthetic example has 20 watt hours at noon.",
+          "final": true,
+          "at": 1792248968728
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345391",
+          "text": "10.",
+          "final": false,
+          "at": 1792248969183
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "detail",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 5,
+            "committedAt": 1792248969483
+          },
+          "dispatchMs": 0.006458999996539205,
+          "at": 1792248969484
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 756.4434159999946,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "detail",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "microsoft/microsoft-decision-1-20261009",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "include",
+              "include_topic_2": "exclude",
+              "mode": "mixed",
+              "layout": "focus",
+              "primary": "topic_1",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.9149009561531424,
+              "include_topic_1": 0.5926665999540697,
+              "include_topic_2": 0.9579122746376131,
+              "mode": 0.6123024728749151,
+              "layout": 0.8039331638830419
+            },
+            "usage": {
+              "input_tokens": 510,
+              "output_tokens": 5,
+              "cost": 2.142e-05
+            }
+          },
+          "at": 1792248969495
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345391",
+          "text": "10 in the morning.",
+          "final": false,
+          "at": 1792248969676
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345391",
+          "text": "Ten in the morning.",
+          "final": false,
+          "at": 1792248970223
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345391",
+          "text": "Ten in the morning.",
+          "final": true,
+          "at": 1792248970226
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345392",
+          "text": "Okay.",
+          "final": false,
+          "at": 1792248970226
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345392",
+          "text": "And five,",
+          "final": false,
+          "at": 1792248970689
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 543.7901249999995,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "detail",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "microsoft/microsoft-decision-1-20261009",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "text",
+              "layout": "focus",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.9875683507933022,
+              "include_topic_1": 0.9706877711565675,
+              "include_topic_2": 0.9902915241094861,
+              "mode": 0.8986080007634306,
+              "layout": 0.8021184035464075
+            },
+            "usage": {
+              "input_tokens": 496,
+              "output_tokens": 5,
+              "cost": 2.0832e-05
+            }
+          },
+          "at": 1792248970767
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345392",
+          "text": "And five in the evening.",
+          "final": false,
+          "at": 1792248971194
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345392",
+          "text": "And five in the evening, noon and.",
+          "final": false,
+          "at": 1792248971707
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345392",
+          "text": "And five in the evening noon is high.",
+          "final": false,
+          "at": 1792248972210
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345392",
+          "text": "And five in the evening, noon is highest.",
+          "final": false,
+          "at": 1792248972721
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345392",
+          "text": "And five in the evening, noon is highest.",
+          "final": true,
+          "at": 1792248972723
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Daily Energy Pattern",
+            "composition": {
+              "title": "Daily Energy Pattern",
+              "body": "Energy production peaks at noon, with lower output in the morning and evening.",
+              "beat": 1,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "sequence",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  },
+                  {
+                    "id": "detail",
+                    "kind": "visual",
+                    "beat": 1,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 6,
+            "committedAt": 1792248973285
+          },
+          "dispatchMs": 0.011292000010143965,
+          "at": 1792248973286
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 565.1061669999908,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "detail",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "microsoft/microsoft-decision-1-20261009",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "include",
+              "include_topic_2": "exclude",
+              "mode": "mixed",
+              "layout": "sequence",
+              "primary": "topic_1",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.9770226302990509,
+              "include_topic_1": 0.9740426445917874,
+              "include_topic_2": 0.9770226302990509,
+              "mode": 0.43017182742002014,
+              "layout": 0.57964087413144
+            },
+            "usage": {
+              "input_tokens": 501,
+              "output_tokens": 5,
+              "cost": 2.1042e-05
+            }
+          },
+          "at": 1792248973295
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345393",
+          "text": "Repeat.",
+          "final": false,
+          "at": 1792248975693
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345393",
+          "text": "Return to the bathroom.",
+          "final": false,
+          "at": 1792248976205
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345393",
+          "text": "Return to the process tab",
+          "final": false,
+          "at": 1792248976685
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345393",
+          "text": "Return to the process diagram",
+          "final": false,
+          "at": 1792248977182
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345393",
+          "text": "Return to the process diagram.",
+          "final": false,
+          "at": 1792248977683
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345393",
+          "text": "Return to the process diagram. Start with the same diagram.",
+          "final": false,
+          "at": 1792248978217
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345393",
+          "text": "Return to the process diagram. Start with the sum of 1.",
+          "final": false,
+          "at": 1792248978729
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345393",
+          "text": "Return to the process diagram. Start with the sum alone.",
+          "final": false,
+          "at": 1792248979249
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345393",
+          "text": "Return to the process diagram. Start with the sum alone.",
+          "final": true,
+          "at": 1792248979251
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345394",
+          "text": "Okay.",
+          "final": false,
+          "at": 1792248979253
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345394",
+          "text": "Then review.",
+          "final": false,
+          "at": 1792248979693
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345394",
+          "text": "Then reveal the pattern.",
+          "final": false,
+          "at": 1792248980208
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345394",
+          "text": "Then reveal the panels.",
+          "final": false,
+          "at": 1792248980695
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 1549.144082999992,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              },
+              {
+                "id": "detail",
+                "kind": "visual",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "microsoft/microsoft-decision-1-20261009",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "visual",
+              "layout": "sequence",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.9626731149315425,
+              "include_topic_1": 0.9770226302990509,
+              "include_topic_2": 0.9706877707325845,
+              "mode": 0.7152682717415991,
+              "layout": 0.8055124082893784
+            },
+            "usage": {
+              "input_tokens": 503,
+              "output_tokens": 5,
+              "cost": 2.1126e-05
+            }
+          },
+          "at": 1792248980798
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345394",
+          "text": "Then reveal the panels. Finally, cut the panels.",
+          "final": false,
+          "at": 1792248981212
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345394",
+          "text": "Then reveal the panels. Finally, connect the panel.",
+          "final": false,
+          "at": 1792248981715
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345394",
+          "text": "Then reveal the panels. Finally, connect the panels to the panel.",
+          "final": false,
+          "at": 1792248982230
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345394",
+          "text": "Then reveal the panels. Finally, connect the panels to the battery.",
+          "final": false,
+          "at": 1792248982704
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345394",
+          "text": "Then reveal the panels. Finally connect the panels to the battery",
+          "final": false,
+          "at": 1792248983254
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345394",
+          "text": "Then reveal the panels. Finally connect the panels to the battery",
+          "final": true,
+          "at": 1792248983256
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345395",
+          "text": "",
+          "final": false,
+          "at": 1792248983256
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345395",
+          "text": "Showing the",
+          "final": false,
+          "at": 1792248983682
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Storage After Sunset",
+            "composition": {
+              "title": "Storage After Sunset",
+              "body": "Batteries store excess electricity for use when the sun is not shining.",
+              "beat": 2,
+              "flowRevision": 3,
+              "adaptive": {
+                "layout": "sequence",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "visual",
+                    "beat": 2,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 7,
+            "committedAt": 1792248983789
+          },
+          "dispatchMs": 0.004499999980907887,
+          "at": 1792248983790
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 535.2002919999941,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "microsoft/microsoft-decision-1-20261009",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "include",
+              "mode": "visual",
+              "layout": "sequence",
+              "primary": "topic_2",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.8519528019683105,
+              "include_topic_1": 0.9706877711565675,
+              "include_topic_2": 0.5621765008857981,
+              "mode": 0.7362475461715102,
+              "layout": 0.9865944038683431
+            },
+            "usage": {
+              "input_tokens": 504,
+              "output_tokens": 5,
+              "cost": 2.1168e-05
+            }
+          },
+          "at": 1792248983794
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345395",
+          "text": "Showing the full process",
+          "final": false,
+          "at": 1792248984179
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345395",
+          "text": "Showing the full process.",
+          "final": false,
+          "at": 1792248984667
+        },
+        {
+          "type": "transcript",
+          "segmentId": "17446851452680345395",
+          "text": "Showing the full process.",
+          "final": true,
+          "at": 1792248984667
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 544.119458000001,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "sequence",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "visual",
+                "beat": 2,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "model": "microsoft/microsoft-decision-1-20261009",
+            "selections": {
+              "include_topic_0": "exclude",
+              "include_topic_1": "exclude",
+              "include_topic_2": "exclude",
+              "mode": "visual",
+              "layout": "sequence",
+              "primary": "hold",
+              "secondary": "none"
+            },
+            "confidence": {
+              "include_topic_0": 0.679178692681616,
+              "include_topic_1": 0.9465966641739773,
+              "include_topic_2": 0.9241418142333089,
+              "mode": 0.8534821885237793,
+              "layout": 0.9597325115275644
+            },
+            "usage": {
+              "input_tokens": 492,
+              "output_tokens": 5,
+              "cost": 2.0664e-05
+            }
+          },
+          "at": 1792248985211
+        }
+      ]
+    }
+  ]
+}

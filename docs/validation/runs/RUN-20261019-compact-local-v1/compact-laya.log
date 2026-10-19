@@ -1,0 +1,5 @@
+{"stage": "first-forward", "model": "laya-english-fp32", "elapsedMs": 398.6370830098167}
+{"stage": "pass", "model": "laya-english-fp32", "pass": 0, "correct": 12, "total": 24}
+{"stage": "pass", "model": "laya-english-fp32", "pass": 1, "correct": 25, "total": 48}
+{"stage": "pass", "model": "laya-english-fp32", "pass": 2, "correct": 34, "total": 72}
+{"profile": "laya-english-fp32", "summary": {"total": 72, "correct": 34, "errors": 0, "positiveCorrect": 26, "positiveTotal": 36, "negativeCorrect": 8, "negativeTotal": 36, "medianMs": 110.31579202972353, "p95Ms": 122.79733398463577, "orderStableCases": 10}, "eligibleForPrecisionExperiment": false}

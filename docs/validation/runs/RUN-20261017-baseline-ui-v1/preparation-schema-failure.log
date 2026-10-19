@@ -1,0 +1,6 @@
+{"type":"agent_status","status":"idle"}
+{"type":"agent_status","status":"working","role":"storyteller"}
+{"type":"agent_activity","role":"storyteller","label":"Preparing diagram"}
+{"type":"agent_error","message":"AI_InvalidToolInputError: Invalid input for tool proposeFlow: AI_TypeValidationError: Type validation failed: Value: {\"title\":\"Solar Energy: From Sun to Battery\",\"summary\":\"A simple two-beat story showing how sunlight becomes electricity and gets stored in batteries for evening use.\",\"beats\":[{\"artifactIds\":[],\"audienceText\":\"Sunlight hits solar panels, which convert the light into usable electricity.\",\"cueAliases\":[],\"evidence\":[{\"approved\":false,\"claims\":[{\"aliases\":[\"solar generation\"],\"id\":\"claim-001\",\"sourceIds\":[]}],\"entity\":\"Solar Panels\",\"independentReview\":\"pending\",\"provenance\":\"unkn","role":"storyteller"}
+{"type":"agent_status","status":"idle","role":"storyteller"}
+BEATS undefined

@@ -1,0 +1,1382 @@
+{
+  "id": "RUN-20261019-composition-planners-v1",
+  "startedAt": "2026-10-19T06:02:40.486Z",
+  "finishedAt": "2026-10-19T06:02:40.506Z",
+  "sourceFiles": [
+    {
+      "path": "scripts/composition-replay.ts",
+      "sha256": "5d83981f236fcf638dd4c863c6ac72ce7434053a280654dde7309c094a755502"
+    },
+    {
+      "path": "tests/fixtures/planner-context.ts",
+      "sha256": "22465e127339e432629b23fed2f108c422be141d64dc8f9c01c9e7e695fbd45c"
+    },
+    {
+      "path": "server/presentation/composition.ts",
+      "sha256": "81918f3f69163d5237211a98dfeee19f50bb0b805b0572a2c7051f343d01742e"
+    },
+    {
+      "path": "server/presentation/catalog.ts",
+      "sha256": "286c18a5f5a84c9ad7bbb9d0961da23225b70ed2856d14ed345c2ea2e81a0a42"
+    },
+    {
+      "path": "server/presentation/prepare-evidence.ts",
+      "sha256": "f796b1e0eb5ff4ceafbc54572314b193ff2b9d101a459f36194fe7e2e1599592"
+    },
+    {
+      "path": "server/presentation/request-frame.ts",
+      "sha256": "641cd6c08bab833b40f8ae317442d0db6d26e92d5e4b3e82f9914e7d2d2bb577"
+    },
+    {
+      "path": "server/controllers/evidence-contract.ts",
+      "sha256": "dfe7f810119dc915b57b62e153f707b89f1432f986df431971bdd908e7b345dd"
+    },
+    {
+      "path": "server/controllers/hybrid-components.ts",
+      "sha256": "649f4312a26d9862aad0e058367625f6fd0cdeec6c098daa9ce027c3cbb39e84"
+    },
+    {
+      "path": "server/controllers/semantic-retrieval.ts",
+      "sha256": "bbb0140b7edb3f36b138439b25f1c2673a34063cabe7e9411cb46a314f1f09dd"
+    },
+    {
+      "path": "server/controllers/library-search.ts",
+      "sha256": "05032576f35f30e7f8f292339c1bbc0eb8a0cf46ea514eacee034c08c2fd7aa9"
+    },
+    {
+      "path": "server/controllers/library-policy.ts",
+      "sha256": "b19281c9c41839d3283b9fff6379429cf3463253ca671f63442d1f87f1c745a2"
+    },
+    {
+      "path": "server/controllers/retrieval.ts",
+      "sha256": "6b572e816577acebfbcd089a919a27d792dce04e95c8f779c0a88abba5e9465c"
+    },
+    {
+      "path": "server/experiments/replay.ts",
+      "sha256": "b3c0e4811b43e1f24be67544d145482fcfa4e13dc4b6090680550adc06c27e51"
+    },
+    {
+      "path": "server/experiments/trace.ts",
+      "sha256": "c94643ec67f3a1e71eea69b1b061025e68a3c407a1a38ab81d3bc72aca4db246"
+    },
+    {
+      "path": "server/experiments/file-trace.ts",
+      "sha256": "3ec3c818b8fd2d85ae8b38e70b5eec217dffc8d377f8af9f71cc16f4b6e94175"
+    },
+    {
+      "path": "shared/preparation.ts",
+      "sha256": "d419b834fac59b5e73110dc9f0aba995241b5f874a97baeb38426589814cfd04"
+    },
+    {
+      "path": "shared/evidence.ts",
+      "sha256": "517e90ade1b825d080a224a230c7bf50b99d3815c248920a0cc36d06cd49fe62"
+    },
+    {
+      "path": "shared/adaptive.ts",
+      "sha256": "388f8842387547ae5595aec6ae819b91d56c11e0631f70981a36e886021e6f8a"
+    },
+    {
+      "path": "shared/visuals.ts",
+      "sha256": "c744c6a0b88bccd86518772c390fdc64d9bffcfab859a67f5a1024890af37aaf"
+    },
+    {
+      "path": "package.json",
+      "sha256": "3ea9299b1919515ba2d5666c8b53b59c0900c9bedbb75995ff428fac39ba929b"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "dc4aaeb499174d437404c1affbaecbf9c1fad0e6dc4a87e18397dfd42d333a8e"
+    }
+  ],
+  "inputHash": "7e3cfbd3346ae44d7d8955ed2ac839786e6d6fb2aa9b0277d5b8ab4b85f4c72c",
+  "rows": [
+    {
+      "pass": 0,
+      "arm": "focus",
+      "caseId": "retain-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.5783329999999864,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.12254099999998402,
+        "composition-validation": 0.12829100000001858,
+        "turn": 0.5288749999999993
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "stable",
+      "caseId": "retain-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.2697920000000238,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.10087500000000205,
+        "composition-validation": 0.044625000000024784,
+        "turn": 0.23537500000000477
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "stable",
+      "caseId": "wrong-current",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.2801250000000266,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.06850000000000023,
+        "composition-validation": 0.06654199999999832,
+        "turn": 0.24708299999997507
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "focus",
+      "caseId": "wrong-current",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.2575840000000085,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.04145800000000577,
+        "composition-validation": 0.08979099999999107,
+        "turn": 0.22800000000000864
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "focus",
+      "caseId": "invalid-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.33808299999998326,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.044749999999993406,
+        "composition-validation": 0.03766600000000153,
+        "turn": 0.3110839999999939
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "stable",
+      "caseId": "invalid-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.3545000000000016,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.10099999999999909,
+        "composition-validation": 0.0327920000000006,
+        "turn": 0.3273330000000101
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 0,
+      "arm": "stable",
+      "caseId": "duplicate-content",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.27591599999999517,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.05954199999999332,
+        "composition-validation": 0.038792000000000826,
+        "turn": 0.18958400000002484
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "focus",
+      "caseId": "duplicate-content",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.19795799999999986,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.051084000000003016,
+        "composition-validation": 0.03350000000000364,
+        "turn": 0.16045800000000554
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "focus",
+      "caseId": "missing-evidence",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.05454199999999787,
+      "result": {
+        "action": "context",
+        "selected": null
+      },
+      "stageMs": {
+        "turn": 0.02404100000001108
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 0,
+      "arm": "stable",
+      "caseId": "missing-evidence",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.05304100000000744,
+      "result": {
+        "action": "context",
+        "selected": null
+      },
+      "stageMs": {
+        "turn": 0.02574999999998795
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "focus",
+      "caseId": "retain-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.25583400000002143,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.03920800000000213,
+        "composition-validation": 0.04566599999998289,
+        "turn": 0.19787500000001046
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "stable",
+      "caseId": "retain-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.29675000000000296,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.09091600000002131,
+        "composition-validation": 0.04979099999999903,
+        "turn": 0.25787500000001273
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "stable",
+      "caseId": "wrong-current",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.3307079999999871,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.06954200000001265,
+        "composition-validation": 0.037499999999994316,
+        "turn": 0.30270799999999554
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "focus",
+      "caseId": "wrong-current",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1980000000000075,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.0448340000000087,
+        "composition-validation": 0.036875000000009095,
+        "turn": 0.17083299999998758
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "focus",
+      "caseId": "invalid-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.35879099999999653,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.05174999999999841,
+        "composition-validation": 0.036000000000001364,
+        "turn": 0.3361659999999915
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "stable",
+      "caseId": "invalid-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.2982499999999959,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.06141599999997993,
+        "composition-validation": 0.03150000000002251,
+        "turn": 0.2751660000000129
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 1,
+      "arm": "stable",
+      "caseId": "duplicate-content",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.17349999999999,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.05875000000000341,
+        "composition-validation": 0.029415999999997666,
+        "turn": 0.15333400000000097
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "focus",
+      "caseId": "duplicate-content",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.16062500000001023,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.03754100000000449,
+        "composition-validation": 0.0297079999999994,
+        "turn": 0.14145800000000008
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "focus",
+      "caseId": "missing-evidence",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.049625000000020236,
+      "result": {
+        "action": "context",
+        "selected": null
+      },
+      "stageMs": {
+        "turn": 0.01891700000001606
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 1,
+      "arm": "stable",
+      "caseId": "missing-evidence",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.03999999999999204,
+      "result": {
+        "action": "context",
+        "selected": null
+      },
+      "stageMs": {
+        "turn": 0.020709000000010747
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "focus",
+      "caseId": "retain-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1407920000000047,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.0347500000000025,
+        "composition-validation": 0.026542000000006283,
+        "turn": 0.1208340000000021
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "stable",
+      "caseId": "retain-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.17245900000000347,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.04883399999999938,
+        "composition-validation": 0.029749999999978627,
+        "turn": 0.1495830000000069
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "stable",
+      "caseId": "wrong-current",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.1764169999999865,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.050332999999994854,
+        "composition-validation": 0.035790999999989026,
+        "turn": 0.15183400000000802
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "focus",
+      "caseId": "wrong-current",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.15899999999999181,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.03641600000000267,
+        "composition-validation": 0.031582999999983485,
+        "turn": 0.1377080000000035
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "focus",
+      "caseId": "invalid-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.26362500000001887,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.0418329999999969,
+        "composition-validation": 0.027916000000004715,
+        "turn": 0.23533299999999713
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "stable",
+      "caseId": "invalid-reveal",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.3980420000000038,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.05779200000000628,
+        "composition-validation": 0.02975000000000705,
+        "turn": 0.3730410000000006
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": true
+    },
+    {
+      "pass": 2,
+      "arm": "stable",
+      "caseId": "duplicate-content",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.19804099999998925,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.06716700000001197,
+        "composition-validation": 0.03133300000001782,
+        "turn": 0.1707919999999774
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "focus",
+      "caseId": "duplicate-content",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.18933300000000486,
+      "result": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "stageMs": {
+        "composition-plan": 0.041707999999999856,
+        "composition-validation": 0.03691699999998832,
+        "turn": 0.1639589999999771
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "focus",
+      "caseId": "missing-evidence",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.04754099999999539,
+      "result": {
+        "action": "context",
+        "selected": null
+      },
+      "stageMs": {
+        "turn": 0.0227079999999944
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    },
+    {
+      "pass": 2,
+      "arm": "stable",
+      "caseId": "missing-evidence",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "valid": true,
+      "correct": true,
+      "elapsedMs": 0.05245800000000145,
+      "result": {
+        "action": "context",
+        "selected": null
+      },
+      "stageMs": {
+        "turn": 0.027084000000002106
+      },
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "refreshed": false
+    }
+  ],
+  "initialization": [
+    {
+      "pass": 0,
+      "arm": "focus",
+      "elapsedMs": 1.1387919999999951
+    },
+    {
+      "pass": 0,
+      "arm": "stable",
+      "elapsedMs": 0.6947089999999889
+    },
+    {
+      "pass": 1,
+      "arm": "focus",
+      "elapsedMs": 0.3017499999999984
+    },
+    {
+      "pass": 1,
+      "arm": "stable",
+      "elapsedMs": 0.2624580000000094
+    },
+    {
+      "pass": 2,
+      "arm": "focus",
+      "elapsedMs": 0.26070800000002237
+    },
+    {
+      "pass": 2,
+      "arm": "stable",
+      "elapsedMs": 0.24312499999999204
+    }
+  ],
+  "summary": [
+    {
+      "arm": "focus",
+      "total": 15,
+      "correct": 15,
+      "failures": 0,
+      "positiveCorrect": 12,
+      "negativeCorrect": 3,
+      "unsupportedShows": 0,
+      "refreshes": 3,
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "medianMs": 0.19795799999999986,
+      "p95Ms": 0.5783329999999864
+    },
+    {
+      "arm": "stable",
+      "total": 15,
+      "correct": 15,
+      "failures": 0,
+      "positiveCorrect": 12,
+      "negativeCorrect": 3,
+      "unsupportedShows": 0,
+      "refreshes": 3,
+      "groundingCalls": 0,
+      "fallbacks": 0,
+      "medianMs": 0.2697920000000238,
+      "p95Ms": 0.3980420000000038
+    }
+  ],
+  "passes": [
+    {
+      "pass": 0,
+      "arms": [
+        {
+          "arm": "focus",
+          "total": 5,
+          "correct": 5,
+          "failures": 0,
+          "positiveCorrect": 4,
+          "negativeCorrect": 1,
+          "unsupportedShows": 0,
+          "refreshes": 1,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 0.2575840000000085,
+          "p95Ms": 0.5783329999999864
+        },
+        {
+          "arm": "stable",
+          "total": 5,
+          "correct": 5,
+          "failures": 0,
+          "positiveCorrect": 4,
+          "negativeCorrect": 1,
+          "unsupportedShows": 0,
+          "refreshes": 1,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 0.27591599999999517,
+          "p95Ms": 0.3545000000000016
+        }
+      ]
+    },
+    {
+      "pass": 1,
+      "arms": [
+        {
+          "arm": "focus",
+          "total": 5,
+          "correct": 5,
+          "failures": 0,
+          "positiveCorrect": 4,
+          "negativeCorrect": 1,
+          "unsupportedShows": 0,
+          "refreshes": 1,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 0.1980000000000075,
+          "p95Ms": 0.35879099999999653
+        },
+        {
+          "arm": "stable",
+          "total": 5,
+          "correct": 5,
+          "failures": 0,
+          "positiveCorrect": 4,
+          "negativeCorrect": 1,
+          "unsupportedShows": 0,
+          "refreshes": 1,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 0.29675000000000296,
+          "p95Ms": 0.3307079999999871
+        }
+      ]
+    },
+    {
+      "pass": 2,
+      "arms": [
+        {
+          "arm": "focus",
+          "total": 5,
+          "correct": 5,
+          "failures": 0,
+          "positiveCorrect": 4,
+          "negativeCorrect": 1,
+          "unsupportedShows": 0,
+          "refreshes": 1,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 0.15899999999999181,
+          "p95Ms": 0.26362500000001887
+        },
+        {
+          "arm": "stable",
+          "total": 5,
+          "correct": 5,
+          "failures": 0,
+          "positiveCorrect": 4,
+          "negativeCorrect": 1,
+          "unsupportedShows": 0,
+          "refreshes": 1,
+          "groundingCalls": 0,
+          "fallbacks": 0,
+          "medianMs": 0.1764169999999865,
+          "p95Ms": 0.3980420000000038
+        }
+      ]
+    }
+  ],
+  "plans": [
+    {
+      "pass": 0,
+      "arm": "focus",
+      "caseId": "retain-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 0,
+      "arm": "stable",
+      "caseId": "retain-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": 2
+          }
+        ]
+      }
+    },
+    {
+      "pass": 0,
+      "arm": "stable",
+      "caseId": "wrong-current",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 0,
+      "arm": "focus",
+      "caseId": "wrong-current",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 0,
+      "arm": "focus",
+      "caseId": "invalid-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 0,
+      "arm": "stable",
+      "caseId": "invalid-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 0,
+      "arm": "stable",
+      "caseId": "duplicate-content",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 0,
+      "arm": "focus",
+      "caseId": "duplicate-content",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 1,
+      "arm": "focus",
+      "caseId": "retain-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 1,
+      "arm": "stable",
+      "caseId": "retain-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": 2
+          }
+        ]
+      }
+    },
+    {
+      "pass": 1,
+      "arm": "stable",
+      "caseId": "wrong-current",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 1,
+      "arm": "focus",
+      "caseId": "wrong-current",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 1,
+      "arm": "focus",
+      "caseId": "invalid-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 1,
+      "arm": "stable",
+      "caseId": "invalid-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 1,
+      "arm": "stable",
+      "caseId": "duplicate-content",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 1,
+      "arm": "focus",
+      "caseId": "duplicate-content",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 2,
+      "arm": "focus",
+      "caseId": "retain-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 2,
+      "arm": "stable",
+      "caseId": "retain-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": 2
+          }
+        ]
+      }
+    },
+    {
+      "pass": 2,
+      "arm": "stable",
+      "caseId": "wrong-current",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 2,
+      "arm": "focus",
+      "caseId": "wrong-current",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 2,
+      "arm": "focus",
+      "caseId": "invalid-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 2,
+      "arm": "stable",
+      "caseId": "invalid-reveal",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 2,
+      "arm": "stable",
+      "caseId": "duplicate-content",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    },
+    {
+      "pass": 2,
+      "arm": "focus",
+      "caseId": "duplicate-content",
+      "plan": {
+        "layout": "focus",
+        "blocks": [
+          {
+            "id": "primary",
+            "kind": "visual",
+            "beat": 0,
+            "emphasis": "strong",
+            "reveal": null
+          }
+        ]
+      }
+    }
+  ],
+  "productionAcceptance": false,
+  "limitations": [
+    "Synthetic planner behavior and host checks, not model quality or performance comparison",
+    "No new multi-component synthesis: beat-level contracts do not establish independent component coverage.",
+    "Missing-evidence case is a scripted controller outcome; host evidence violations are exercised in unit tests.",
+    "Initializations and refreshes here rebuild the small planner context, not embedding indexes."
+  ]
+}

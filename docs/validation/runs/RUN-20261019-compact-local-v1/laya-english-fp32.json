@@ -1,0 +1,3602 @@
+{
+  "model": "convaiinnovations/laya",
+  "revision": "7b928d828b7b0e022f929d9bd2e44165aa270148",
+  "precision": "fp32",
+  "loadMs": null,
+  "parameterBytes": null,
+  "parameters": null,
+  "weightsFileBytes": null,
+  "firstForward": {
+    "choice": "panels",
+    "raw": {
+      "model": "convaiinnovations/laya",
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "option_0",
+          "probabilities": {
+            "option_0": 0.6951,
+            "option_1": 0.0326,
+            "option_2": 0.0289,
+            "hold": 0.0986,
+            "context": 0.1448
+          },
+          "confidence": 0.3942,
+          "answer_confidence": 0.6951,
+          "action": {
+            "act_probability": 1.0
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 159,
+        "output_tokens": 0
+      },
+      "computeMs": 372.8141249739565
+    },
+    "elapsedMs": 398.6370830098167,
+    "optionOrder": [
+      "panels",
+      "storage",
+      "curve"
+    ],
+    "labelOrder": [
+      "option_0",
+      "option_1",
+      "option_2",
+      "hold",
+      "context"
+    ]
+  },
+  "rows": [
+    {
+      "id": "s1",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "exact",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.6951,
+              "option_1": 0.0326,
+              "option_2": 0.0289,
+              "hold": 0.0986,
+              "context": 0.1448
+            },
+            "confidence": 0.3942,
+            "answer_confidence": 0.6951,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 145.31470800284296
+      },
+      "elapsedMs": 146.6340419719927,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s2",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "paraphrase",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.5466,
+              "option_1": 0.0539,
+              "option_2": 0.0583,
+              "hold": 0.1219,
+              "context": 0.2193
+            },
+            "confidence": 0.228,
+            "answer_confidence": 0.5466,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 157,
+          "output_tokens": 0
+        },
+        "computeMs": 119.96616597753018
+      },
+      "elapsedMs": 121.1372499819845,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s3",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "exact",
+      "choice": "storage",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_0": 0.1186,
+              "option_1": 0.4645,
+              "option_2": 0.0356,
+              "hold": 0.2019,
+              "context": 0.1794
+            },
+            "confidence": 0.1555,
+            "answer_confidence": 0.4645,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 160,
+          "output_tokens": 0
+        },
+        "computeMs": 111.81754199787974
+      },
+      "elapsedMs": 112.89474996738136,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s4",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "paraphrase",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.37,
+              "option_1": 0.2533,
+              "option_2": 0.107,
+              "hold": 0.1342,
+              "context": 0.1355
+            },
+            "confidence": 0.071,
+            "answer_confidence": 0.37,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 120.45416602632031
+      },
+      "elapsedMs": 121.71158305136487,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "s5",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "curve",
+      "slice": "scope",
+      "choice": "curve",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_0": 0.0803,
+              "option_1": 0.1002,
+              "option_2": 0.5025,
+              "hold": 0.1297,
+              "context": 0.1873
+            },
+            "confidence": 0.1566,
+            "answer_confidence": 0.5025,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 160,
+          "output_tokens": 0
+        },
+        "computeMs": 110.6187499826774
+      },
+      "elapsedMs": 111.73562501790002,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s6",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "correction",
+      "choice": "storage",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_0": 0.2616,
+              "option_1": 0.2968,
+              "option_2": 0.1056,
+              "hold": 0.1625,
+              "context": 0.1735
+            },
+            "confidence": 0.0382,
+            "answer_confidence": 0.2968,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 158,
+          "output_tokens": 0
+        },
+        "computeMs": 111.19995801709592
+      },
+      "elapsedMs": 112.30783397331834,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "w1",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "evaporation",
+      "slice": "exact",
+      "choice": "evaporation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.4393,
+              "option_1": 0.2085,
+              "option_2": 0.0425,
+              "hold": 0.1045,
+              "context": 0.2053
+            },
+            "confidence": 0.1404,
+            "answer_confidence": 0.4393,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 151,
+          "output_tokens": 0
+        },
+        "computeMs": 115.07504200562835
+      },
+      "elapsedMs": 118.13862499548122,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w2",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "condensation",
+      "slice": "paraphrase",
+      "choice": "condensation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_0": 0.2458,
+              "option_1": 0.4875,
+              "option_2": 0.057,
+              "hold": 0.0857,
+              "context": 0.1241
+            },
+            "confidence": 0.175,
+            "answer_confidence": 0.4875,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 151,
+          "output_tokens": 0
+        },
+        "computeMs": 110.3374160011299
+      },
+      "elapsedMs": 111.49700003443286,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w3",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "rainfall",
+      "slice": "scope",
+      "choice": "rainfall",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_0": 0.1676,
+              "option_1": 0.1905,
+              "option_2": 0.4417,
+              "hold": 0.1175,
+              "context": 0.0827
+            },
+            "confidence": 0.1091,
+            "answer_confidence": 0.4417,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 153,
+          "output_tokens": 0
+        },
+        "computeMs": 108.68579096859321
+      },
+      "elapsedMs": 109.78608397999778,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e1",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "north25",
+      "slice": "date",
+      "choice": "north25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.5392,
+              "option_1": 0.149,
+              "option_2": 0.0356,
+              "hold": 0.1656,
+              "context": 0.1106
+            },
+            "confidence": 0.2068,
+            "answer_confidence": 0.5392,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 113.22604201268405
+      },
+      "elapsedMs": 114.33233297429979,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e2",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "north24",
+      "slice": "date",
+      "choice": "north24",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_0": 0.1282,
+              "option_1": 0.5942,
+              "option_2": 0.0222,
+              "hold": 0.1585,
+              "context": 0.0969
+            },
+            "confidence": 0.2698,
+            "answer_confidence": 0.5942,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 110.80737499287352
+      },
+      "elapsedMs": 111.84887500712648,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e3",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "south25",
+      "slice": "correction",
+      "choice": "south25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_0": 0.1953,
+              "option_1": 0.0662,
+              "option_2": 0.5289,
+              "hold": 0.1134,
+              "context": 0.0962
+            },
+            "confidence": 0.1875,
+            "answer_confidence": 0.5289,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 163,
+          "output_tokens": 0
+        },
+        "computeMs": 122.04737501451746
+      },
+      "elapsedMs": 123.05116601055488,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h1",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "incidental",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_0": 0.1045,
+              "option_1": 0.2414,
+              "option_2": 0.1505,
+              "hold": 0.3465,
+              "context": 0.157
+            },
+            "confidence": 0.0542,
+            "answer_confidence": 0.3465,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 154,
+          "output_tokens": 0
+        },
+        "computeMs": 108.31916698953137
+      },
+      "elapsedMs": 109.34012499637902,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h2",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "retention",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_0": 0.0896,
+              "option_1": 0.1125,
+              "option_2": 0.0567,
+              "hold": 0.6987,
+              "context": 0.0425
+            },
+            "confidence": 0.3728,
+            "answer_confidence": 0.6987,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 147,
+          "output_tokens": 0
+        },
+        "computeMs": 109.43741700612009
+      },
+      "elapsedMs": 110.42058398015797,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h3",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "negation",
+      "choice": "storage",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_0": 0.0711,
+              "option_1": 0.4513,
+              "option_2": 0.087,
+              "hold": 0.31,
+              "context": 0.0807
+            },
+            "confidence": 0.1764,
+            "answer_confidence": 0.4513,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 155,
+          "output_tokens": 0
+        },
+        "computeMs": 108.63949998747557
+      },
+      "elapsedMs": 109.69774995464832,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h4",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "quotation",
+      "choice": "evaporation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.6472,
+              "option_1": 0.0857,
+              "option_2": 0.0381,
+              "hold": 0.1275,
+              "context": 0.1015
+            },
+            "confidence": 0.3094,
+            "answer_confidence": 0.6472,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 155,
+          "output_tokens": 0
+        },
+        "computeMs": 111.24749999726191
+      },
+      "elapsedMs": 112.3171669896692,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h5",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "hypothetical",
+      "choice": "storage",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_0": 0.1269,
+              "option_1": 0.3397,
+              "option_2": 0.1072,
+              "hold": 0.28,
+              "context": 0.1462
+            },
+            "confidence": 0.0644,
+            "answer_confidence": 0.3397,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 165,
+          "output_tokens": 0
+        },
+        "computeMs": 124.86295797862113
+      },
+      "elapsedMs": 125.89158304035664,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h6",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "ambiguous",
+      "choice": "south25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_0": 0.1755,
+              "option_1": 0.2495,
+              "option_2": 0.2674,
+              "hold": 0.2126,
+              "context": 0.0951
+            },
+            "confidence": 0.0324,
+            "answer_confidence": 0.2674,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 154,
+          "output_tokens": 0
+        },
+        "computeMs": 110.31195899704471
+      },
+      "elapsedMs": 111.35387502145022,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m1",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "missing-claim",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.2994,
+              "option_1": 0.2757,
+              "option_2": 0.1259,
+              "hold": 0.1637,
+              "context": 0.1353
+            },
+            "confidence": 0.0406,
+            "answer_confidence": 0.2994,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 157,
+          "output_tokens": 0
+        },
+        "computeMs": 110.44058395782486
+      },
+      "elapsedMs": 111.5113339619711,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m2",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "audit",
+      "choice": "storage",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_0": 0.1047,
+              "option_1": 0.5103,
+              "option_2": 0.1432,
+              "hold": 0.1306,
+              "context": 0.1112
+            },
+            "confidence": 0.15,
+            "answer_confidence": 0.5103,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 156,
+          "output_tokens": 0
+        },
+        "computeMs": 110.72895798133686
+      },
+      "elapsedMs": 111.76737502682954,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m3",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "date",
+      "choice": "rainfall",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_0": 0.1326,
+              "option_1": 0.19,
+              "option_2": 0.314,
+              "hold": 0.2629,
+              "context": 0.1005
+            },
+            "confidence": 0.0498,
+            "answer_confidence": 0.314,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 150,
+          "output_tokens": 0
+        },
+        "computeMs": 107.4775829911232
+      },
+      "elapsedMs": 108.49133302690461,
+      "optionOrder": [
+        "evaporation",
+        "condensation",
+        "rainfall"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m4",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "entity",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_0": 0.2451,
+              "option_1": 0.2115,
+              "option_2": 0.1082,
+              "hold": 0.3062,
+              "context": 0.1291
+            },
+            "confidence": 0.0429,
+            "answer_confidence": 0.3062,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 158,
+          "output_tokens": 0
+        },
+        "computeMs": 110.40558299282566
+      },
+      "elapsedMs": 111.45708296680823,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m5",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "provenance",
+      "choice": "north25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.3817,
+              "option_1": 0.1868,
+              "option_2": 0.0363,
+              "hold": 0.2467,
+              "context": 0.1484
+            },
+            "confidence": 0.1116,
+            "answer_confidence": 0.3817,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 110.94354203669354
+      },
+      "elapsedMs": 112.01904097106308,
+      "optionOrder": [
+        "north25",
+        "north24",
+        "south25"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m6",
+      "pass": 0,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "extra-obligation",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.4855,
+              "option_1": 0.0988,
+              "option_2": 0.0777,
+              "hold": 0.1655,
+              "context": 0.1726
+            },
+            "confidence": 0.1433,
+            "answer_confidence": 0.4855,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 158,
+          "output_tokens": 0
+        },
+        "computeMs": 109.38458400778472
+      },
+      "elapsedMs": 110.50679202890024,
+      "optionOrder": [
+        "panels",
+        "storage",
+        "curve"
+      ],
+      "labelOrder": [
+        "option_0",
+        "option_1",
+        "option_2",
+        "hold",
+        "context"
+      ],
+      "correct": false
+    },
+    {
+      "id": "s1",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "exact",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.0291,
+              "option_2": 0.7244,
+              "hold": 0.1076,
+              "context": 0.11,
+              "option_0": 0.0289
+            },
+            "confidence": 0.4274,
+            "answer_confidence": 0.7244,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 109.20904099475592
+      },
+      "elapsedMs": 110.26545899221674,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s2",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "paraphrase",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.1169,
+              "option_2": 0.5541,
+              "hold": 0.0969,
+              "context": 0.1922,
+              "option_0": 0.0399
+            },
+            "confidence": 0.2235,
+            "answer_confidence": 0.5541,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 157,
+          "output_tokens": 0
+        },
+        "computeMs": 109.364541945979
+      },
+      "elapsedMs": 110.42895901482552,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s3",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "exact",
+      "choice": "storage",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_1": 0.0446,
+              "option_2": 0.0839,
+              "hold": 0.1008,
+              "context": 0.0501,
+              "option_0": 0.7206
+            },
+            "confidence": 0.401,
+            "answer_confidence": 0.7206,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 160,
+          "output_tokens": 0
+        },
+        "computeMs": 109.009874984622
+      },
+      "elapsedMs": 110.0864170002751,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s4",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "paraphrase",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.0952,
+              "option_2": 0.398,
+              "hold": 0.1309,
+              "context": 0.0975,
+              "option_0": 0.2784
+            },
+            "confidence": 0.1055,
+            "answer_confidence": 0.398,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 109.02762500336394
+      },
+      "elapsedMs": 110.11316603980958,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "s5",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "curve",
+      "slice": "scope",
+      "choice": "curve",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_1": 0.3258,
+              "option_2": 0.089,
+              "hold": 0.2672,
+              "context": 0.2516,
+              "option_0": 0.0664
+            },
+            "confidence": 0.0925,
+            "answer_confidence": 0.3258,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 160,
+          "output_tokens": 0
+        },
+        "computeMs": 109.09754200838506
+      },
+      "elapsedMs": 110.14733300544322,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s6",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "correction",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.0935,
+              "option_2": 0.4814,
+              "hold": 0.0946,
+              "context": 0.2425,
+              "option_0": 0.088
+            },
+            "confidence": 0.1587,
+            "answer_confidence": 0.4814,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 158,
+          "output_tokens": 0
+        },
+        "computeMs": 109.21725002117455
+      },
+      "elapsedMs": 110.28437502682209,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w1",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "evaporation",
+      "slice": "exact",
+      "choice": "evaporation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.063,
+              "option_2": 0.6319,
+              "hold": 0.059,
+              "context": 0.121,
+              "option_0": 0.1251
+            },
+            "confidence": 0.2874,
+            "answer_confidence": 0.6319,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 151,
+          "output_tokens": 0
+        },
+        "computeMs": 107.7521659899503
+      },
+      "elapsedMs": 108.77950000576675,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w2",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "condensation",
+      "slice": "paraphrase",
+      "choice": "evaporation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.0755,
+              "option_2": 0.672,
+              "hold": 0.0617,
+              "context": 0.1111,
+              "option_0": 0.0797
+            },
+            "confidence": 0.3291,
+            "answer_confidence": 0.672,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 151,
+          "output_tokens": 0
+        },
+        "computeMs": 110.56558298878372
+      },
+      "elapsedMs": 111.62345902994275,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "w3",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "rainfall",
+      "slice": "scope",
+      "choice": "condensation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_1": 0.2743,
+              "option_2": 0.2139,
+              "hold": 0.128,
+              "context": 0.087,
+              "option_0": 0.2968
+            },
+            "confidence": 0.0551,
+            "answer_confidence": 0.2968,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 153,
+          "output_tokens": 0
+        },
+        "computeMs": 108.81720803445205
+      },
+      "elapsedMs": 109.85245899064466,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "e1",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "north25",
+      "slice": "date",
+      "choice": "north25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.0926,
+              "option_2": 0.5247,
+              "hold": 0.1651,
+              "context": 0.1327,
+              "option_0": 0.0849
+            },
+            "confidence": 0.1715,
+            "answer_confidence": 0.5247,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 109.01433398248628
+      },
+      "elapsedMs": 110.04504101583734,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e2",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "north24",
+      "slice": "date",
+      "choice": "north24",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_1": 0.069,
+              "option_2": 0.1637,
+              "hold": 0.2137,
+              "context": 0.1623,
+              "option_0": 0.3913
+            },
+            "confidence": 0.0849,
+            "answer_confidence": 0.3913,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 110.14241701923311
+      },
+      "elapsedMs": 111.13420798210427,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e3",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "south25",
+      "slice": "correction",
+      "choice": "south25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_1": 0.4192,
+              "option_2": 0.2476,
+              "hold": 0.1151,
+              "context": 0.0974,
+              "option_0": 0.1207
+            },
+            "confidence": 0.1046,
+            "answer_confidence": 0.4192,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 163,
+          "output_tokens": 0
+        },
+        "computeMs": 121.29412504145876
+      },
+      "elapsedMs": 122.26170796202496,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h1",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "incidental",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.174,
+              "option_2": 0.3327,
+              "hold": 0.217,
+              "context": 0.1263,
+              "option_0": 0.15
+            },
+            "confidence": 0.0383,
+            "answer_confidence": 0.3327,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 154,
+          "output_tokens": 0
+        },
+        "computeMs": 110.04220903851092
+      },
+      "elapsedMs": 111.13775003468618,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h2",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "retention",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_1": 0.0704,
+              "option_2": 0.1673,
+              "hold": 0.614,
+              "context": 0.061,
+              "option_0": 0.0872
+            },
+            "confidence": 0.2737,
+            "answer_confidence": 0.614,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 147,
+          "output_tokens": 0
+        },
+        "computeMs": 108.7379579548724
+      },
+      "elapsedMs": 109.81483303476125,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h3",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "negation",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_1": 0.1359,
+              "option_2": 0.155,
+              "hold": 0.3707,
+              "context": 0.1191,
+              "option_0": 0.2193
+            },
+            "confidence": 0.0592,
+            "answer_confidence": 0.3707,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 155,
+          "output_tokens": 0
+        },
+        "computeMs": 110.35779200028628
+      },
+      "elapsedMs": 111.5642090444453,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h4",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "quotation",
+      "choice": "evaporation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.0521,
+              "option_2": 0.3954,
+              "hold": 0.3208,
+              "context": 0.1342,
+              "option_0": 0.0975
+            },
+            "confidence": 0.1413,
+            "answer_confidence": 0.3954,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 155,
+          "output_tokens": 0
+        },
+        "computeMs": 109.57512498134747
+      },
+      "elapsedMs": 110.64204102149233,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h5",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "hypothetical",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_1": 0.1681,
+              "option_2": 0.1889,
+              "hold": 0.3173,
+              "context": 0.1647,
+              "option_0": 0.1611
+            },
+            "confidence": 0.0245,
+            "answer_confidence": 0.3173,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 165,
+          "output_tokens": 0
+        },
+        "computeMs": 121.67216598754749
+      },
+      "elapsedMs": 122.79733398463577,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h6",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "ambiguous",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_1": 0.1033,
+              "option_2": 0.2414,
+              "hold": 0.2981,
+              "context": 0.1371,
+              "option_0": 0.2201
+            },
+            "confidence": 0.0407,
+            "answer_confidence": 0.2981,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 154,
+          "output_tokens": 0
+        },
+        "computeMs": 108.67845796747133
+      },
+      "elapsedMs": 109.73904200363904,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": true
+    },
+    {
+      "id": "m1",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "missing-claim",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.2106,
+              "option_2": 0.3462,
+              "hold": 0.2048,
+              "context": 0.1324,
+              "option_0": 0.106
+            },
+            "confidence": 0.052,
+            "answer_confidence": 0.3462,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 157,
+          "output_tokens": 0
+        },
+        "computeMs": 109.28133397828788
+      },
+      "elapsedMs": 110.31579202972353,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m2",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "audit",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.1876,
+              "option_2": 0.2675,
+              "hold": 0.162,
+              "context": 0.1873,
+              "option_0": 0.1955
+            },
+            "confidence": 0.0093,
+            "answer_confidence": 0.2675,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 156,
+          "output_tokens": 0
+        },
+        "computeMs": 109.8625420127064
+      },
+      "elapsedMs": 110.92425003880635,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m3",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "date",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_1": 0.1981,
+              "option_2": 0.2118,
+              "hold": 0.2761,
+              "context": 0.1089,
+              "option_0": 0.2052
+            },
+            "confidence": 0.0238,
+            "answer_confidence": 0.2761,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 150,
+          "output_tokens": 0
+        },
+        "computeMs": 108.25204197317362
+      },
+      "elapsedMs": 109.35604199767113,
+      "optionOrder": [
+        "condensation",
+        "rainfall",
+        "evaporation"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m4",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "entity",
+      "choice": "north24",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_1": 0.1274,
+              "option_2": 0.1701,
+              "hold": 0.2557,
+              "context": 0.1909,
+              "option_0": 0.2559
+            },
+            "confidence": 0.0199,
+            "answer_confidence": 0.2559,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 158,
+          "output_tokens": 0
+        },
+        "computeMs": 109.5822500064969
+      },
+      "elapsedMs": 110.61795899877325,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m5",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "provenance",
+      "choice": "north25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.0743,
+              "option_2": 0.5052,
+              "hold": 0.1824,
+              "context": 0.1415,
+              "option_0": 0.0965
+            },
+            "confidence": 0.1607,
+            "answer_confidence": 0.5052,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 109.89466699538752
+      },
+      "elapsedMs": 110.92391598504037,
+      "optionOrder": [
+        "north24",
+        "south25",
+        "north25"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m6",
+      "pass": 1,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "extra-obligation",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_1": 0.0586,
+              "option_2": 0.7047,
+              "hold": 0.1217,
+              "context": 0.0865,
+              "option_0": 0.0285
+            },
+            "confidence": 0.3897,
+            "answer_confidence": 0.7047,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 158,
+          "output_tokens": 0
+        },
+        "computeMs": 109.91900000954047
+      },
+      "elapsedMs": 110.93304102541879,
+      "optionOrder": [
+        "storage",
+        "curve",
+        "panels"
+      ],
+      "labelOrder": [
+        "option_1",
+        "option_2",
+        "hold",
+        "context",
+        "option_0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "s1",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "exact",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.0641,
+              "hold": 0.1181,
+              "context": 0.0283,
+              "option_0": 0.0323,
+              "option_1": 0.7573
+            },
+            "confidence": 0.4716,
+            "answer_confidence": 0.7573,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 109.1775830136612
+      },
+      "elapsedMs": 110.24220800027251,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s2",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "paraphrase",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.1261,
+              "hold": 0.0944,
+              "context": 0.1218,
+              "option_0": 0.0711,
+              "option_1": 0.5866
+            },
+            "confidence": 0.2288,
+            "answer_confidence": 0.5866,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 157,
+          "output_tokens": 0
+        },
+        "computeMs": 108.71154197957367
+      },
+      "elapsedMs": 109.74845802411437,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s3",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "exact",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_2": 0.2103,
+              "hold": 0.3446,
+              "context": 0.1859,
+              "option_0": 0.0713,
+              "option_1": 0.188
+            },
+            "confidence": 0.0616,
+            "answer_confidence": 0.3446,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 160,
+          "output_tokens": 0
+        },
+        "computeMs": 108.8379580178298
+      },
+      "elapsedMs": 109.86254102317616,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "s4",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "storage",
+      "slice": "paraphrase",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.2116,
+              "hold": 0.2126,
+              "context": 0.1159,
+              "option_0": 0.0863,
+              "option_1": 0.3735
+            },
+            "confidence": 0.0761,
+            "answer_confidence": 0.3735,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 108.80287498002872
+      },
+      "elapsedMs": 109.77850004564971,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "s5",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "curve",
+      "slice": "scope",
+      "choice": "curve",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_2": 0.0742,
+              "hold": 0.1764,
+              "context": 0.1428,
+              "option_0": 0.5328,
+              "option_1": 0.0738
+            },
+            "confidence": 0.1893,
+            "answer_confidence": 0.5328,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 160,
+          "output_tokens": 0
+        },
+        "computeMs": 109.24220801098272
+      },
+      "elapsedMs": 110.24937499314547,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": true
+    },
+    {
+      "id": "s6",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "panels",
+      "slice": "correction",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.1905,
+              "hold": 0.1312,
+              "context": 0.1776,
+              "option_0": 0.0633,
+              "option_1": 0.4374
+            },
+            "confidence": 0.1142,
+            "answer_confidence": 0.4374,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 158,
+          "output_tokens": 0
+        },
+        "computeMs": 109.11283304449171
+      },
+      "elapsedMs": 110.11395801324397,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w1",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "evaporation",
+      "slice": "exact",
+      "choice": "evaporation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.1764,
+              "hold": 0.0371,
+              "context": 0.0675,
+              "option_0": 0.0284,
+              "option_1": 0.6906
+            },
+            "confidence": 0.3992,
+            "answer_confidence": 0.6906,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 151,
+          "output_tokens": 0
+        },
+        "computeMs": 107.9452499980107
+      },
+      "elapsedMs": 108.89741696882993,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": true
+    },
+    {
+      "id": "w2",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "condensation",
+      "slice": "paraphrase",
+      "choice": "evaporation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.3539,
+              "hold": 0.0908,
+              "context": 0.106,
+              "option_0": 0.0481,
+              "option_1": 0.4012
+            },
+            "confidence": 0.1701,
+            "answer_confidence": 0.4012,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 151,
+          "output_tokens": 0
+        },
+        "computeMs": 107.97437495784834
+      },
+      "elapsedMs": 108.99733303813264,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "w3",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "rainfall",
+      "slice": "scope",
+      "choice": "rainfall",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_2": 0.0898,
+              "hold": 0.1103,
+              "context": 0.1208,
+              "option_0": 0.5748,
+              "option_1": 0.1044
+            },
+            "confidence": 0.2115,
+            "answer_confidence": 0.5748,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 153,
+          "output_tokens": 0
+        },
+        "computeMs": 108.1688340054825
+      },
+      "elapsedMs": 109.20458304462954,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e1",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "north25",
+      "slice": "date",
+      "choice": "north25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.1211,
+              "hold": 0.1502,
+              "context": 0.0731,
+              "option_0": 0.0507,
+              "option_1": 0.605
+            },
+            "confidence": 0.2626,
+            "answer_confidence": 0.605,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 109.26687502069399
+      },
+      "elapsedMs": 110.27950001880527,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": true
+    },
+    {
+      "id": "e2",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "north24",
+      "slice": "date",
+      "choice": "north25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.2342,
+              "hold": 0.2039,
+              "context": 0.0924,
+              "option_0": 0.0476,
+              "option_1": 0.4219
+            },
+            "confidence": 0.1343,
+            "answer_confidence": 0.4219,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 109.16879202704877
+      },
+      "elapsedMs": 110.12612498598173,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "e3",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "positive",
+      "expected": "south25",
+      "slice": "correction",
+      "choice": "north25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.1362,
+              "hold": 0.1503,
+              "context": 0.0847,
+              "option_0": 0.2924,
+              "option_1": 0.3364
+            },
+            "confidence": 0.0733,
+            "answer_confidence": 0.3364,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 163,
+          "output_tokens": 0
+        },
+        "computeMs": 120.9185830084607
+      },
+      "elapsedMs": 121.92137504462153,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h1",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "incidental",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.1576,
+              "hold": 0.1699,
+              "context": 0.1356,
+              "option_0": 0.2385,
+              "option_1": 0.2984
+            },
+            "confidence": 0.027,
+            "answer_confidence": 0.2984,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 154,
+          "output_tokens": 0
+        },
+        "computeMs": 109.69866695813835
+      },
+      "elapsedMs": 110.68895796779543,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h2",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "retention",
+      "choice": "condensation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_2": 0.3002,
+              "hold": 0.2582,
+              "context": 0.1109,
+              "option_0": 0.0924,
+              "option_1": 0.2384
+            },
+            "confidence": 0.0577,
+            "answer_confidence": 0.3002,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 147,
+          "output_tokens": 0
+        },
+        "computeMs": 108.43274998478591
+      },
+      "elapsedMs": 109.4339580158703,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h3",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "negation",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_2": 0.2288,
+              "hold": 0.3098,
+              "context": 0.1481,
+              "option_0": 0.0897,
+              "option_1": 0.2236
+            },
+            "confidence": 0.0465,
+            "answer_confidence": 0.3098,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 155,
+          "output_tokens": 0
+        },
+        "computeMs": 108.47795801237226
+      },
+      "elapsedMs": 109.5166250015609,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h4",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "quotation",
+      "choice": "evaporation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.0741,
+              "hold": 0.0523,
+              "context": 0.0551,
+              "option_0": 0.0221,
+              "option_1": 0.7964
+            },
+            "confidence": 0.5201,
+            "answer_confidence": 0.7964,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 155,
+          "output_tokens": 0
+        },
+        "computeMs": 108.68437500903383
+      },
+      "elapsedMs": 109.66600000392646,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "h5",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "hypothetical",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_2": 0.1695,
+              "hold": 0.343,
+              "context": 0.1659,
+              "option_0": 0.1065,
+              "option_1": 0.215
+            },
+            "confidence": 0.0463,
+            "answer_confidence": 0.343,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 165,
+          "output_tokens": 0
+        },
+        "computeMs": 121.28520797705278
+      },
+      "elapsedMs": 122.33183399075642,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": true
+    },
+    {
+      "id": "h6",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "hold",
+      "expected": "hold",
+      "slice": "ambiguous",
+      "choice": "north25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.2915,
+              "hold": 0.2145,
+              "context": 0.0824,
+              "option_0": 0.0613,
+              "option_1": 0.3504
+            },
+            "confidence": 0.1092,
+            "answer_confidence": 0.3504,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 154,
+          "output_tokens": 0
+        },
+        "computeMs": 108.05029101902619
+      },
+      "elapsedMs": 109.01499999454245,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m1",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "missing-claim",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.1621,
+              "hold": 0.2196,
+              "context": 0.1436,
+              "option_0": 0.1938,
+              "option_1": 0.281
+            },
+            "confidence": 0.0175,
+            "answer_confidence": 0.281,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 157,
+          "output_tokens": 0
+        },
+        "computeMs": 108.74491702998057
+      },
+      "elapsedMs": 109.7312499769032,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m2",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "audit",
+      "choice": "hold",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "hold",
+            "probabilities": {
+              "option_2": 0.1942,
+              "hold": 0.2364,
+              "context": 0.2136,
+              "option_0": 0.1469,
+              "option_1": 0.209
+            },
+            "confidence": 0.0072,
+            "answer_confidence": 0.2364,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 156,
+          "output_tokens": 0
+        },
+        "computeMs": 108.38416597107425
+      },
+      "elapsedMs": 109.34129200177267,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m3",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "date",
+      "choice": "evaporation",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.1601,
+              "hold": 0.188,
+              "context": 0.1314,
+              "option_0": 0.2203,
+              "option_1": 0.3002
+            },
+            "confidence": 0.0253,
+            "answer_confidence": 0.3002,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 150,
+          "output_tokens": 0
+        },
+        "computeMs": 107.34154202509671
+      },
+      "elapsedMs": 108.30737499054521,
+      "optionOrder": [
+        "rainfall",
+        "evaporation",
+        "condensation"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m4",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "entity",
+      "choice": "north24",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_2",
+            "probabilities": {
+              "option_2": 0.2597,
+              "hold": 0.1965,
+              "context": 0.16,
+              "option_0": 0.136,
+              "option_1": 0.2479
+            },
+            "confidence": 0.0182,
+            "answer_confidence": 0.2597,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 158,
+          "output_tokens": 0
+        },
+        "computeMs": 108.85533399414271
+      },
+      "elapsedMs": 109.80395902879536,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m5",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "provenance",
+      "choice": "north25",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.2522,
+              "hold": 0.1739,
+              "context": 0.1007,
+              "option_0": 0.0594,
+              "option_1": 0.4138
+            },
+            "confidence": 0.1204,
+            "answer_confidence": 0.4138,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 159,
+          "output_tokens": 0
+        },
+        "computeMs": 109.40750001464039
+      },
+      "elapsedMs": 110.40483298711479,
+      "optionOrder": [
+        "south25",
+        "north25",
+        "north24"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "m6",
+      "pass": 2,
+      "model": "laya-english-fp32",
+      "category": "missing",
+      "expected": "context",
+      "slice": "extra-obligation",
+      "choice": "panels",
+      "raw": {
+        "model": "convaiinnovations/laya",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_2": 0.15,
+              "hold": 0.1783,
+              "context": 0.1231,
+              "option_0": 0.0984,
+              "option_1": 0.4502
+            },
+            "confidence": 0.1069,
+            "answer_confidence": 0.4502,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 158,
+          "output_tokens": 0
+        },
+        "computeMs": 108.88212500140071
+      },
+      "elapsedMs": 109.903208038304,
+      "optionOrder": [
+        "curve",
+        "panels",
+        "storage"
+      ],
+      "labelOrder": [
+        "option_2",
+        "hold",
+        "context",
+        "option_0",
+        "option_1"
+      ],
+      "correct": false
+    }
+  ],
+  "profile": "laya-english-fp32",
+  "inputHash": "d6b96e767b21b09b89e36077bcea5b7777a3a4cb950d859db849b904a7d7eac6",
+  "peakRssBytes": 30900224,
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "python": "3.12.7 (main, Oct 16 2024, 07:12:08) [Clang 18.1.8 ]",
+  "threads": 4,
+  "scope": "Local CPU selection screen only; excludes retrieval, host guards, STT and paint.",
+  "summary": {
+    "total": 72,
+    "correct": 34,
+    "errors": 0,
+    "positiveCorrect": 26,
+    "positiveTotal": 36,
+    "negativeCorrect": 8,
+    "negativeTotal": 36,
+    "medianMs": 110.31579202972353,
+    "p95Ms": 122.79733398463577,
+    "orderStableCases": 10
+  },
+  "eligibleForPrecisionExperiment": false,
+  "productionAcceptance": false
+}

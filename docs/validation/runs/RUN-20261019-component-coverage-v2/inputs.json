@@ -1,0 +1,523 @@
+{
+  "cases": [
+    {
+      "id": "compatible-pair",
+      "speech": "Solar generation",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "refresh": true
+    },
+    {
+      "id": "explicit-form",
+      "speech": "Show illustrative Solar story solar generation diagram",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "refresh": false
+    },
+    {
+      "id": "undeclared-companion",
+      "speech": "Solar generation",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "refresh": false
+    },
+    {
+      "id": "incompatible-scope",
+      "speech": "Solar generation",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "refresh": true
+    },
+    {
+      "id": "withdrawn-companion",
+      "speech": "Solar generation",
+      "expected": {
+        "action": "show",
+        "selected": "diagram:0"
+      },
+      "refresh": false
+    },
+    {
+      "id": "changed-content",
+      "speech": "Solar generation",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "refresh": false
+    },
+    {
+      "id": "unsupported-claim",
+      "speech": "Show warranty",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "refresh": true
+    },
+    {
+      "id": "withdrawn-primary",
+      "speech": "Solar generation",
+      "expected": {
+        "action": "context",
+        "selected": null
+      },
+      "refresh": false
+    }
+  ],
+  "context": {
+    "state": {
+      "revision": 0,
+      "brief": null,
+      "flow": {
+        "title": "Solar story",
+        "summary": "Prepared process",
+        "openQuestions": [],
+        "beats": [
+          {
+            "title": "Solar generation",
+            "audienceText": "Panels convert sunlight to electricity.",
+            "speakerNotes": "PRIVATE",
+            "visualDirection": "diagram",
+            "visualId": "00000000-0000-4000-8000-000000000001",
+            "componentClaims": {
+              "visual": [
+                "beat"
+              ]
+            },
+            "artifactIds": [],
+            "evidence": {
+              "version": 1,
+              "approved": true,
+              "provenance": "illustrative",
+              "verification": "unknown",
+              "entity": "Solar story",
+              "timeframe": null,
+              "unit": null,
+              "sources": [
+                {
+                  "id": "narrative-0",
+                  "uri": "prepared://beat/0",
+                  "summary": "Panels convert sunlight to electricity.",
+                  "sha256": "50a923190a5f4c20e8a5d7f095c5f90c34155b6d5be471c5e7c95059296517fa"
+                }
+              ],
+              "claims": [
+                {
+                  "id": "beat-0",
+                  "aliases": [
+                    "Solar generation",
+                    "Panels convert sunlight to electricity."
+                  ],
+                  "sourceIds": [
+                    "narrative-0"
+                  ]
+                }
+              ],
+              "independentReview": "pending"
+            },
+            "componentEvidence": {
+              "statement": {
+                "contentHash": "22a3423478b3c5b753a2f81c7148c2e9d8af68794a9ec5d3b1147b56c2ccc000",
+                "evidence": {
+                  "version": 1,
+                  "approved": true,
+                  "provenance": "illustrative",
+                  "verification": "unknown",
+                  "entity": "Solar story",
+                  "timeframe": null,
+                  "unit": null,
+                  "sources": [
+                    {
+                      "id": "component-statement-0",
+                      "uri": "prepared://component/statement/0",
+                      "summary": "Panels convert sunlight to electricity.",
+                      "sha256": "50a923190a5f4c20e8a5d7f095c5f90c34155b6d5be471c5e7c95059296517fa"
+                    }
+                  ],
+                  "claims": [
+                    {
+                      "id": "beat-0",
+                      "aliases": [
+                        "Solar generation",
+                        "Panels convert sunlight to electricity."
+                      ],
+                      "sourceIds": [
+                        "component-statement-0"
+                      ]
+                    }
+                  ],
+                  "independentReview": "pending"
+                }
+              },
+              "visual": {
+                "contentHash": "8f689502b58f5ef919972e9e79172c881454d1d1b35a6696db753c9bc171846d",
+                "evidence": {
+                  "version": 1,
+                  "approved": true,
+                  "provenance": "illustrative",
+                  "verification": "unknown",
+                  "entity": "Solar story",
+                  "timeframe": null,
+                  "unit": null,
+                  "sources": [
+                    {
+                      "id": "component-visual-0",
+                      "uri": "prepared://component/visual/0",
+                      "summary": "Solar process",
+                      "sha256": "240ccade5be818081f21926ae20d44543dfab4128318216d0bd0c9203e483562"
+                    }
+                  ],
+                  "claims": [
+                    {
+                      "id": "beat-0",
+                      "aliases": [
+                        "Solar generation",
+                        "Panels convert sunlight to electricity.",
+                        "Solar process"
+                      ],
+                      "sourceIds": [
+                        "component-visual-0"
+                      ]
+                    }
+                  ],
+                  "independentReview": "pending"
+                }
+              }
+            }
+          },
+          {
+            "title": "Wind generation",
+            "audienceText": "Wind turns turbines.",
+            "speakerNotes": "PRIVATE",
+            "visualDirection": "statement",
+            "artifactIds": [],
+            "evidence": {
+              "version": 1,
+              "approved": true,
+              "provenance": "illustrative",
+              "verification": "unknown",
+              "entity": "Solar story",
+              "timeframe": null,
+              "unit": null,
+              "sources": [
+                {
+                  "id": "narrative-1",
+                  "uri": "prepared://beat/1",
+                  "summary": "Wind turns turbines.",
+                  "sha256": "9fabb303b80cc8f568e1d3fbc407cdc667ed199cdfd7ccd8c318846d7aebb1c3"
+                }
+              ],
+              "claims": [
+                {
+                  "id": "beat-1",
+                  "aliases": [
+                    "Wind generation",
+                    "Wind turns turbines."
+                  ],
+                  "sourceIds": [
+                    "narrative-1"
+                  ]
+                }
+              ],
+              "independentReview": "pending"
+            },
+            "componentEvidence": {
+              "statement": {
+                "contentHash": "084c213f733a6a5b0e097e1a1f0fb75f7faf810abc2bf9e1ff4c247b2d180a76",
+                "evidence": {
+                  "version": 1,
+                  "approved": true,
+                  "provenance": "illustrative",
+                  "verification": "unknown",
+                  "entity": "Solar story",
+                  "timeframe": null,
+                  "unit": null,
+                  "sources": [
+                    {
+                      "id": "component-statement-1",
+                      "uri": "prepared://component/statement/1",
+                      "summary": "Wind turns turbines.",
+                      "sha256": "9fabb303b80cc8f568e1d3fbc407cdc667ed199cdfd7ccd8c318846d7aebb1c3"
+                    }
+                  ],
+                  "claims": [
+                    {
+                      "id": "beat-1",
+                      "aliases": [
+                        "Wind generation",
+                        "Wind turns turbines."
+                      ],
+                      "sourceIds": [
+                        "component-statement-1"
+                      ]
+                    }
+                  ],
+                  "independentReview": "pending"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "flowBasedOnRevision": 0,
+      "approvedRevision": 0,
+      "artifacts": [],
+      "messages": {
+        "interview": [],
+        "storyteller": []
+      },
+      "events": [],
+      "visuals": [
+        {
+          "id": "00000000-0000-4000-8000-000000000001",
+          "spec": {
+            "kind": "diagram",
+            "title": "Solar process",
+            "nodes": [
+              "Sun",
+              "Panels",
+              "Battery"
+            ],
+            "edges": [
+              {
+                "from": 0,
+                "to": 1
+              },
+              {
+                "from": 1,
+                "to": 2
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "catalog": {
+      "assets": [
+        {
+          "id": "statement:0",
+          "title": "Solar generation",
+          "text": "Panels convert sunlight to electricity.",
+          "entity": "Solar story",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "statement",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "Solar story",
+            "timeframe": null,
+            "unit": null,
+            "sources": [
+              {
+                "id": "component-statement-0",
+                "uri": "prepared://component/statement/0",
+                "sha256": "50a923190a5f4c20e8a5d7f095c5f90c34155b6d5be471c5e7c95059296517fa",
+                "summary": "Panels convert sunlight to electricity."
+              }
+            ],
+            "claims": [
+              {
+                "id": "beat-0",
+                "aliases": [
+                  "Solar generation",
+                  "Panels convert sunlight to electricity."
+                ],
+                "sourceIds": [
+                  "component-statement-0"
+                ]
+              }
+            ],
+            "independentReview": "pending"
+          }
+        },
+        {
+          "id": "diagram:0",
+          "title": "Solar process",
+          "text": "Panels convert sunlight to electricity. Process: Sun; Panels; Battery",
+          "entity": "Solar story",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "diagram",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "Solar story",
+            "timeframe": null,
+            "unit": null,
+            "sources": [
+              {
+                "id": "component-visual-0",
+                "uri": "prepared://component/visual/0",
+                "sha256": "240ccade5be818081f21926ae20d44543dfab4128318216d0bd0c9203e483562",
+                "summary": "Solar process"
+              }
+            ],
+            "claims": [
+              {
+                "id": "beat-0",
+                "aliases": [
+                  "Solar generation",
+                  "Panels convert sunlight to electricity.",
+                  "Solar process"
+                ],
+                "sourceIds": [
+                  "component-visual-0"
+                ]
+              }
+            ],
+            "independentReview": "pending"
+          }
+        },
+        {
+          "id": "statement:1",
+          "title": "Wind generation",
+          "text": "Wind turns turbines.",
+          "entity": "Solar story",
+          "year": 2026,
+          "status": "illustrative",
+          "family": "statement",
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "illustrative",
+            "verification": "unknown",
+            "entity": "Solar story",
+            "timeframe": null,
+            "unit": null,
+            "sources": [
+              {
+                "id": "component-statement-1",
+                "uri": "prepared://component/statement/1",
+                "sha256": "9fabb303b80cc8f568e1d3fbc407cdc667ed199cdfd7ccd8c318846d7aebb1c3",
+                "summary": "Wind turns turbines."
+              }
+            ],
+            "claims": [
+              {
+                "id": "beat-1",
+                "aliases": [
+                  "Wind generation",
+                  "Wind turns turbines."
+                ],
+                "sourceIds": [
+                  "component-statement-1"
+                ]
+              }
+            ],
+            "independentReview": "pending"
+          }
+        }
+      ],
+      "references": [
+        [
+          "statement:0",
+          {
+            "beat": 0,
+            "kind": "statement"
+          }
+        ],
+        [
+          "diagram:0",
+          {
+            "beat": 0,
+            "kind": "visual"
+          }
+        ],
+        [
+          "statement:1",
+          {
+            "beat": 1,
+            "kind": "statement"
+          }
+        ]
+      ],
+      "bundles": [
+        {
+          "assetId": "statement:0",
+          "requests": [
+            "Solar generation",
+            "Panels convert sunlight to electricity."
+          ]
+        },
+        {
+          "assetId": "diagram:0",
+          "requests": [
+            "Solar process",
+            "Panels convert sunlight to electricity. Process: Sun; Panels; Battery"
+          ]
+        },
+        {
+          "assetId": "statement:1",
+          "requests": [
+            "Wind generation",
+            "Wind turns turbines."
+          ]
+        }
+      ],
+      "covered": [
+        "statement:0",
+        "diagram:0",
+        "statement:1"
+      ]
+    },
+    "selected": "diagram:0",
+    "frame": {
+      "transcript": "Solar generation",
+      "revision": "fixture-revision",
+      "intent": {
+        "mode": "present",
+        "reason": "recognized-obligations",
+        "claims": [
+          "beat-0"
+        ],
+        "entities": [
+          "Solar story"
+        ],
+        "years": [],
+        "family": "diagram",
+        "provenance": "illustrative",
+        "audited": false,
+        "unit": null,
+        "unknown": []
+      },
+      "inferred": {
+        "entity": "Solar story",
+        "provenance": "illustrative",
+        "family": "diagram"
+      }
+    },
+    "current": {
+      "layout": "focus",
+      "blocks": [
+        {
+          "id": "primary",
+          "kind": "visual",
+          "beat": 0,
+          "emphasis": "strong",
+          "reveal": 2
+        }
+      ]
+    },
+    "requireIndependentReview": false
+  },
+  "passes": 3,
+  "arms": [
+    "focus",
+    "paired"
+  ],
+  "scope": "Authored component coverage and composition invariants; no models or independent review"
+}

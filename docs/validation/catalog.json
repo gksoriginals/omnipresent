@@ -1,0 +1,4215 @@
+{
+  "schemaVersion": 1,
+  "latestSoftwareRun": "docs/validation/runs/RUN-20261019-public-source-audit-v1/run.json",
+  "assembledAt": "2026-10-19T08:46:56.340351+00:00",
+  "scope": "Retrospective evidence register. Paths and hashes identify available artifacts, not missing historic source snapshots. Not a certification or production-readiness claim.",
+  "experiments": [
+    {
+      "id": "EXP-001",
+      "title": "Runtime isolation and streaming audio",
+      "status": "executed",
+      "reproduceCurrentPath": "npm run probe:audio && npm run probe",
+      "limitations": "Actual upstream WAV; Moonshine worker and synthetic CPU stress. One-run timing, not LLM contention or physical-microphone evidence.",
+      "artifacts": [
+        {
+          "path": "docs/research/runtime-probe-results.json",
+          "sha256": "972aba3ae1eb29e91587da18cef9712cb15165f8088a5893ff55ccec8dfe5450",
+          "bytes": 1538,
+          "recordedAt": "2026-10-15T19:26:31.662Z",
+          "scope": "Actual Moonshine Small Streaming; realtime WAV replay, no live human microphone or LLM"
+        }
+      ]
+    },
+    {
+      "id": "EXP-002",
+      "title": "Agent SDK integration and unavailable-model recovery",
+      "status": "executed-with-provider-blocker",
+      "reproduceCurrentPath": "npm test",
+      "limitations": "Initial 9-test snapshot uses mocked model streams; live endpoint failed because weights were not available. Later experiments resolved availability.",
+      "artifacts": [
+        {
+          "path": "docs/research/agent-preparation-validation.json",
+          "sha256": "68f3655a27953698d4a90c3c6ff3fc55d61d49240c0a7057c4027d725b111c2a",
+          "bytes": 1342,
+          "recordedAt": "2026-10-16",
+          "scope": "First preparation slice; SDK and browser behavior, not live-model generation"
+        }
+      ]
+    },
+    {
+      "id": "EXP-003",
+      "title": "Real local interview, storyteller and scene director",
+      "status": "executed",
+      "reproduceCurrentPath": null,
+      "limitations": "Single scripted local-model trial; later audience-copy correction is a separate experiment.",
+      "artifacts": [
+        {
+          "path": "docs/research/agent-live-validation.json",
+          "sha256": "59ab1f42ec2c5eb82e32440c38945d827e733f22b0c0599cd9d0d41101c33a71",
+          "bytes": 7074,
+          "recordedAt": "2026-10-16T04:34:00.151Z",
+          "scope": "Actual local model, not mock"
+        }
+      ]
+    },
+    {
+      "id": "EXP-004",
+      "title": "Audience-facing copy and private-note separation",
+      "status": "executed",
+      "reproduceCurrentPath": null,
+      "limitations": "Local-model success with audience text. Current probe/source may differ from the exact historic run.",
+      "artifacts": [
+        {
+          "path": "docs/research/agent-audience-copy-validation.json",
+          "sha256": "48c465ee716f1892bfdbfc7f10b972e2357d7554eb3c91d65d346e035d04c28c",
+          "bytes": 7410,
+          "recordedAt": "2026-10-16T04:41:34.544Z",
+          "scope": "Actual local model, not mock"
+        }
+      ]
+    },
+    {
+      "id": "EXP-005",
+      "title": "Diagram/chart tool generation and source validation",
+      "status": "executed",
+      "reproduceCurrentPath": "npm run probe:visuals",
+      "limitations": "One successful local model run after tool-schema fixes; not a statistical factual-quality evaluation.",
+      "artifacts": [
+        {
+          "path": "docs/research/visual-agent-validation.json",
+          "sha256": "ea5a909c782c1c3c55334159a27b01e09f1e16ae9784720ea44100647ca65312",
+          "bytes": 6008,
+          "recordedAt": "2026-10-16T05:32:52.066Z",
+          "scope": "Actual local model visual-tool trial with synthetic CSV and fixture brief"
+        }
+      ]
+    },
+    {
+      "id": "EXP-006",
+      "title": "Speech, approved-scene decisions and exact-cache replay",
+      "status": "executed",
+      "reproduceCurrentPath": "npm run probe:speech-loop",
+      "limitations": "macOS say audio, actual STT/Qwen. Duplicate speech-loop-validation.json is the same run, not another replicate.",
+      "artifacts": [
+        {
+          "path": "docs/research/speech-loop-cache-validation.json",
+          "sha256": "69acffabd6a26d7adc8b28646dbac897aa5e93d3d11f4192e3b069ccfbf9687b",
+          "bytes": 2414,
+          "recordedAt": "2026-10-16T05:34:40.700Z",
+          "scope": "Local macOS synthesized WAV replay at realtime rate through websocket, actual Moonshine STT and Qwen director. Fixture story; no physical microphone or interview/story generation in this probe.",
+          "attempts": 5
+        }
+      ]
+    },
+    {
+      "id": "EXP-007",
+      "title": "File ingestion and preparation/canvas workflow",
+      "status": "executed-with-browser-attestation",
+      "reproduceCurrentPath": "npm test",
+      "limitations": "Actual fixture extraction plus documented browser checks. Historical source revision and full browser assertions were not archived.",
+      "artifacts": [
+        {
+          "path": "docs/research/workflow-redesign-validation.md",
+          "sha256": "4ff45def13759f5db883ff587dfdbaf4d0441351f3bf37b0674f313a5c5cc574",
+          "bytes": 4278
+        }
+      ]
+    },
+    {
+      "id": "EXP-008",
+      "title": "Projects, unsent drafts, saved-story isolation and persistence",
+      "status": "executed-with-browser-attestation",
+      "reproduceCurrentPath": "npm test",
+      "limitations": "Historic 27-test snapshot. Statements about no deletion are historical; later removal tests supersede them.",
+      "artifacts": [
+        {
+          "path": "docs/research/project-session-validation.json",
+          "sha256": "dbc960ea068f237a1eadffca8e259bafb0921b2bf1e2f448b7b670afbc6d2d4a",
+          "bytes": 1028,
+          "recordedAt": "2026-10-16",
+          "scope": "Browser-local project/session and story library implementation"
+        }
+      ]
+    },
+    {
+      "id": "EXP-009",
+      "title": "Responsive geometry, floating controls and wheel containment",
+      "status": "executed-with-browser-attestation",
+      "reproduceCurrentPath": null,
+      "limitations": "Initial emulated-viewport checks missed native-window clipping; later null-viewport/native-window and real wheel checks corrected the method. Not all browser code is retained.",
+      "artifacts": [
+        {
+          "path": "docs/projects_and_story_library.md",
+          "sha256": "751601dea41ae667cfa6b1be95ca2cdb77f62cbd95204dccfd1d3b99e6151282",
+          "bytes": 12618
+        }
+      ]
+    },
+    {
+      "id": "EXP-010",
+      "title": "Story upsert, duplicate consolidation and reversible removal",
+      "status": "executed-with-browser-attestation",
+      "reproduceCurrentPath": "npm test",
+      "limitations": "31-test milestone described in source report; current workspace tests recheck state invariants. Browser evidence remains local screenshots.",
+      "artifacts": [
+        {
+          "path": "docs/projects_and_story_library.md",
+          "sha256": "751601dea41ae667cfa6b1be95ca2cdb77f62cbd95204dccfd1d3b99e6151282",
+          "bytes": 12618
+        }
+      ]
+    },
+    {
+      "id": "EXP-011",
+      "title": "Piper adaptive narration baseline",
+      "status": "executed",
+      "reproduceCurrentPath": null,
+      "limitations": "Three actual audio replays; first prompt and preparation. Known topic bias; not directly comparable causally with follow-up preparation.",
+      "artifacts": [
+        {
+          "path": "docs/research/adaptive-baseline-validation.json",
+          "sha256": "f52ea4e1c6d61a58aa576cba44486cb84e77980f6a6fe7583861b4b55fb872bb",
+          "bytes": 86016,
+          "recordedAt": null,
+          "scope": "First trial before latest-speech prompt correction; synthetic Piper speech through actual streaming STT and local model; not production readiness"
+        }
+      ]
+    },
+    {
+      "id": "EXP-012",
+      "title": "Fresh browser preparation and adaptive narration follow-up",
+      "status": "executed",
+      "reproduceCurrentPath": "npm run trial:setup && npm run trial:prepare",
+      "limitations": "Three real audio replays, one preparation, two renderers. Replay interaction is manual; the full browser automation is not packaged as a script.",
+      "artifacts": [
+        {
+          "path": "docs/research/adaptive-followup-validation.json",
+          "sha256": "77f780c729c4c03a4247db83e506952d6092388fc276ab139e85254f926c9553",
+          "bytes": 189485,
+          "recordedAt": "2026-10-17",
+          "scope": "Actual browser replay: fresh local-model interview/storyteller, Piper PCM streamed to Moonshine STT and adaptive Qwen director. Same preparation across three narrations; two rendering libraries. Small exploratory sample, not a benchmark or physical-microphone test. Inference latency excludes speech duration, endpointing, rendering and queue time. Baseline uses earlier preparation and prompt; cannot isolate prompt effect causally.",
+          "summary": [
+            {
+              "variant": "generation-first",
+              "renderer": "openui",
+              "completed": true,
+              "decisions": 8,
+              "changes": 5,
+              "holds": 0,
+              "errors": [],
+              "inferenceP50Ms": 3331.9192080000066,
+              "inferenceP95Ms": 4079.1062920000113,
+              "layouts": [
+                "focus",
+                "sequence",
+                "split"
+              ],
+              "firstDecisionBeats": [
+                0
+              ]
+            },
+            {
+              "variant": "storage-first",
+              "renderer": "json-render",
+              "completed": true,
+              "decisions": 8,
+              "changes": 4,
+              "holds": 0,
+              "errors": [
+                "Composition failed; holding canvas"
+              ],
+              "inferenceP50Ms": 3314.042583000002,
+              "inferenceP95Ms": 3539.329625000013,
+              "layouts": [
+                "focus",
+                "split",
+                "sequence"
+              ],
+              "firstDecisionBeats": [
+                2
+              ]
+            },
+            {
+              "variant": "detour-and-return",
+              "renderer": "openui",
+              "completed": true,
+              "decisions": 6,
+              "changes": 5,
+              "holds": 0,
+              "errors": [],
+              "inferenceP50Ms": 3285.731958999997,
+              "inferenceP95Ms": 3429.2742920000164,
+              "layouts": [
+                "focus",
+                "sequence",
+                "split"
+              ],
+              "firstDecisionBeats": [
+                1
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EXP-013",
+      "title": "Native OpenUI/JSON generation baseline",
+      "status": "executed-negative-result",
+      "reproduceCurrentPath": "npm run probe:renderers",
+      "limitations": "Two requests per library; all four failed validation. Historic prompt/input hashes were not retained.",
+      "artifacts": [
+        {
+          "path": "docs/research/renderer-format-baseline.json",
+          "sha256": "d747a9fa522a6af0b8383b4d16c720a7862f69af85d70aed0dc0aa02abdec96a",
+          "bytes": 6361,
+          "recordedAt": "2026-10-17T14:44:04.257Z",
+          "scope": "Small native-format generation smoke test; two requests each, sequential, not a statistical benchmark. Both formats validate component contracts and domain references.",
+          "attempts": 4,
+          "valid": 0
+        }
+      ]
+    },
+    {
+      "id": "EXP-014",
+      "title": "Native OpenUI/JSON generation after prompt clarification",
+      "status": "executed-negative-result",
+      "reproduceCurrentPath": "npm run probe:renderers",
+      "limitations": "All four failed validation. This does not rank renderer quality; model/prompt/format were confounded.",
+      "artifacts": [
+        {
+          "path": "docs/research/renderer-format-validation.json",
+          "sha256": "c56ef9ba59d65beabd835152a78b16e56d859d9a069dccdbe446dc0b8387d31a",
+          "bytes": 8751,
+          "recordedAt": "2026-10-17T14:44:56.633Z",
+          "scope": "Small native-format generation smoke test; two requests each, sequential, not a statistical benchmark. Both formats validate component contracts and domain references.",
+          "attempts": 4,
+          "valid": 0
+        }
+      ]
+    },
+    {
+      "id": "EXP-015",
+      "title": "Independent primary/secondary System One screen",
+      "status": "executed-design-limitation",
+      "reproduceCurrentPath": null,
+      "limitations": "12 synthetic development cases, repeats and changing adapters. Local Laya startup failures must not count as model accuracy failures. Alias system-one-validation.json is identical.",
+      "artifacts": [
+        {
+          "path": "docs/research/system-one-initial-validation.json",
+          "sha256": "e6bbccc4a59a70e39f48a3dfb21a22be439a574c1dbf7b8bc0ef7d7dc1e31d45",
+          "bytes": 56673,
+          "recordedAt": "2026-10-17T14:50:32.450Z",
+          "scope": "Synthetic presentation decision screen, 12 labelled cases; 2 repeats for decision APIs, 1 for matched Qwen tool baseline. Same request across decision APIs, Qwen uses equivalent choice tool schema. Network latency for hosted APIs; local Laya CPU end-to-end latency. Labels are developer-authored, not independent human evaluation. No calibrated threshold claims.",
+          "attempts": 84,
+          "valid": 60
+        }
+      ]
+    },
+    {
+      "id": "EXP-016",
+      "title": "Laya CPU and hosted open-weight Kev screen",
+      "status": "executed",
+      "reproduceCurrentPath": "DECISION_PROVIDERS=laya,kev npm run probe:decisions",
+      "limitations": "Initial question design; hosted Kev is not a local Kev performance test. Present probe uses revised questions.",
+      "artifacts": [
+        {
+          "path": "docs/research/system-one-open-validation.json",
+          "sha256": "4ffccf92f8cc965cee0d5b3e4be3a2b6a791f404fe92f05bcf9d2d5b135b48c4",
+          "bytes": 45890,
+          "recordedAt": "2026-10-17T14:51:13.237Z",
+          "scope": "Synthetic presentation decision screen, 12 labelled cases; 2 repeats for decision APIs, 1 for matched Qwen tool baseline. Same request across decision APIs, Qwen uses equivalent choice tool schema. Network latency for hosted APIs; local Laya CPU end-to-end latency. Labels are developer-authored, not independent human evaluation. No calibrated threshold claims.",
+          "attempts": 48,
+          "valid": 48
+        }
+      ]
+    },
+    {
+      "id": "EXP-017",
+      "title": "Per-topic System One inclusion screen",
+      "status": "executed",
+      "reproduceCurrentPath": "npm run probe:decisions",
+      "limitations": "Development cases reused after policy changes; no untouched holdout. Five models, with malformed/no-decision Qwen responses counted in total attempts.",
+      "artifacts": [
+        {
+          "path": "docs/research/system-one-v2-validation.json",
+          "sha256": "9512bb7301dd7c17ba2d55d64acb28f8075dcea8642c52e2ac3eb6cf87a7525b",
+          "bytes": 123608,
+          "recordedAt": "2026-10-17T14:53:10.988Z",
+          "scope": "Synthetic presentation decision screen, 12 labelled cases; 2 repeats for decision APIs, 1 for matched Qwen tool baseline. Same request across decision APIs, Qwen uses equivalent choice tool schema. Network latency for hosted APIs; local Laya CPU end-to-end latency. Labels are developer-authored, not independent human evaluation. No calibrated threshold claims.",
+          "attempts": 108,
+          "valid": 100
+        }
+      ]
+    },
+    {
+      "id": "EXP-018",
+      "title": "Qwen required-tool retry screen",
+      "status": "executed-negative-result",
+      "reproduceCurrentPath": "DECISION_PROVIDERS=qwen npm run probe:decisions",
+      "limitations": "All 12 attempts recorded no decision. Detailed failed tool-call payloads are absent, so root cause remains unproven.",
+      "artifacts": [
+        {
+          "path": "docs/research/system-one-qwen-required-validation.json",
+          "sha256": "5e25f53b713c4df505e2adfa9237afecdff045182c91e516e6598f3e28591e1c",
+          "bytes": 4142,
+          "recordedAt": "2026-10-17T14:57:58.296Z",
+          "scope": "Synthetic presentation decision screen, 12 labelled cases; 2 repeats for decision APIs, 1 for matched Qwen tool baseline. Same request across decision APIs, Qwen uses equivalent choice tool schema. Network latency for hosted APIs; local Laya CPU end-to-end latency. Labels are developer-authored, not independent human evaluation. No calibrated threshold claims.",
+          "attempts": 12,
+          "valid": 4
+        }
+      ]
+    },
+    {
+      "id": "EXP-019",
+      "title": "Same-audio Jev/Laya/Microsoft live decision replay",
+      "status": "executed",
+      "reproduceCurrentPath": null,
+      "limitations": "Three sequential same-WAV replays; no runtime errors. Changes and holds are not semantic quality labels. No physical microphone.",
+      "artifacts": [
+        {
+          "path": "docs/research/system-one-live-validation.json",
+          "sha256": "eee4d78ad369672ac7f1a8623e9a9b9bfbe2d074954e4ce9383376a3ccbbfa3e",
+          "bytes": 108090,
+          "recordedAt": "2026-10-17",
+          "scope": "Same Piper storage-first WAV streamed through actual Moonshine STT, same prepared story and OpenUI components. Decision provider changed between sequential runs. Not a physical microphone test. Inference timings exclude speech and endpointing.",
+          "summary": [
+            {
+              "provider": "jev",
+              "decisions": 9,
+              "changes": 4,
+              "holds": 5,
+              "medianMs": 466.5788750000065,
+              "p95Ms": 600.1951659999977,
+              "errors": []
+            },
+            {
+              "provider": "laya",
+              "decisions": 9,
+              "changes": 2,
+              "holds": 7,
+              "medianMs": 559.3823750000156,
+              "p95Ms": 761.3076250000158,
+              "errors": []
+            },
+            {
+              "provider": "microsoft",
+              "decisions": 9,
+              "changes": 6,
+              "holds": 3,
+              "medianMs": 576.6910830000124,
+              "p95Ms": 2301.432375000004,
+              "errors": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EXP-020",
+      "title": "Audited software suite before controller comparison",
+      "status": "executed",
+      "reproduceCurrentPath": "node scripts/audit-validation.mjs <unique-run-id>",
+      "limitations": "Historical pre-controller 43-test source snapshot, environment, command exit codes and raw logs. Later software audit supersedes current-suite status.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-documentation-audit/run.json",
+          "sha256": "860c61de85ae3fe40160400182fee9374e83aa1f8c0f94a3b6f96f8e9aa657c8",
+          "bytes": 11007,
+          "recordedAt": "2026-10-17T15:03:44.751Z",
+          "scope": "Current automated software tests and production build only. No model API calls, audio replay, browser test, historical rerun or component benchmark implied."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-documentation-audit/unit-integration.log",
+          "sha256": "fb2eb833106301be3065d2cabe5e86756dd53e4a5145492568bf15307c18396c",
+          "bytes": 8942
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-documentation-audit/typecheck-build.log",
+          "sha256": "e0da98d358270baae58d5c23c321d56055f0ff02cc37299eb411b3bd5bace3a7",
+          "bytes": 9270
+        }
+      ]
+    },
+    {
+      "id": "EXP-021",
+      "title": "Console-only connection and diagnostic checks",
+      "status": "partial-evidence",
+      "reproduceCurrentPath": null,
+      "limitations": "Jev/Kev connection checks and simplified Qwen tool/grammar diagnostics were observed during work but lack dedicated retained result files. Do not use their console-only numbers as benchmark results.",
+      "artifacts": []
+    },
+    {
+      "id": "EXP-022",
+      "title": "Rules/FSM/behaviour-tree/hybrid offline replay comparison",
+      "status": "executed-development-screen",
+      "reproduceCurrentPath": "npm run benchmark:controllers -- <unique-run-id>",
+      "limitations": "21 synthetic regression scenarios, 48 decisions per controller, plus 9 lexical retrieval cases. No model calls, independent holdout or production migration. Earlier v1 result retained separately in its run directory.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-controller-comparison-v2/controller-benchmark.json",
+          "sha256": "db7b59d604e75f2e53190a8f5db180e59aea986bc178e502de4152f852f1bcc8",
+          "bytes": 99582,
+          "recordedAt": "2026-10-17T15:13:32.895Z",
+          "scope": "Developer-authored synthetic regression scenarios; labels fixed before first benchmark. Not independent or untouched holdout data. Candidate scores are injected test inputs, not calibrated model probabilities."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-controller-comparison-v1/controller-benchmark.json",
+          "sha256": "5b3706c7275becf97ed5ee8471abfafa7269d1bae0b445218d2da8edca714a22",
+          "bytes": 99483,
+          "scope": "Initial run before index fingerprint hardening and additional invariant tests; retained, not an independent dataset."
+        }
+      ]
+    },
+    {
+      "id": "EXP-023",
+      "title": "Software audit after controller prototypes",
+      "status": "executed",
+      "reproduceCurrentPath": "node scripts/audit-validation.mjs <unique-run-id>",
+      "limitations": "Current source hashes, tests and build logs; does not rerun historical browser, audio or hosted model experiments.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-controller-audit/run.json",
+          "sha256": "e0a8951573231c60d7a3d0eb6346b747aff39f49ac38ba1caaf9aad2576e98da",
+          "bytes": 12502,
+          "recordedAt": "2026-10-17T15:15:02.030Z",
+          "scope": "Current automated software tests and production build only. No model API calls, audio replay, browser test, historical rerun or component benchmark implied."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-controller-audit/unit-integration.log",
+          "sha256": "1dfe60685f21fcaa64969b94fe71f20b652724f97250345dc2631b66a9bda89d",
+          "bytes": 10684
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-controller-audit/typecheck-build.log",
+          "sha256": "798cfaa7e2baa388254e4389140c1bb01a8f6462b0712da1993a0e725e2aa299",
+          "bytes": 9270
+        }
+      ]
+    },
+    {
+      "id": "PLAN-001",
+      "title": "Independent labels and asynchronous controller/selector integration",
+      "status": "planned",
+      "reproduceCurrentPath": null,
+      "limitations": "Offline controllers and bounded model-assisted retrieval selection are measured in EXP-022/024/025. Independent human labels, missing-evidence policy and asynchronous FSM/selector/live integration remain unvalidated.",
+      "artifacts": []
+    },
+    {
+      "id": "EXP-024",
+      "title": "EmbeddingGemma 2 retrieval and bounded Jev/Laya selection",
+      "status": "executed-development-screen",
+      "reproduceCurrentPath": "npm run benchmark:retrieval -- <unique-run-id>",
+      "limitations": "18 prepared texts across 3 projects; 12 calibration queries and 24 synthetic evaluation queries. Oracle menus are label-informed diagnostics; not an independent holdout. No app migration.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-semantic-selection-v1/retrieval-selection.json",
+          "sha256": "be827659d15d5d2c125370a8cb5c5e2128a6aef791c2f7d1382a1abc226de572",
+          "bytes": 404285,
+          "recordedAt": "2026-10-17T15:23:04.958Z",
+          "scope": "Synthetic developer-authored dataset frozen before first retrieval/selection execution. 12 calibration cases and 24 evaluation cases across three projects. Evaluation split is not independently labelled and is not an untouched third-party holdout. Text only, no real uploads."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-semantic-selection-v1/retrieval.json",
+          "sha256": "d14761aae224fc5501beb6a6266c8bd83afbd6c23e7779f982661e94c34e1d4d",
+          "bytes": 64965
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-semantic-selection-v1/selection.jsonl",
+          "sha256": "499bb39a8d39b621a90c1f1d27123aba2d4223546ec367f9fda6bc06f0b15058",
+          "bytes": 262672
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-semantic-selection-v1/bootstrap-missing-pillow.log",
+          "sha256": "eab084523a3d7461903dc0032df8e8fb2fee2e8fe5f6ef8a33e772e6317e6909",
+          "bytes": 5125
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-semantic-selection-v1/bootstrap-missing-torchvision.log",
+          "sha256": "278b4dcaa1f06047c90ccfc803ed28f585787d128b5eea5b88870a4bd40dba19",
+          "bytes": 6337
+        }
+      ]
+    },
+    {
+      "id": "EXP-025",
+      "title": "Unfiltered semantic shortlist follow-up",
+      "status": "executed-development-follow-up",
+      "reproduceCurrentPath": "SHORTLIST_METHODS=semantic-raw npm run benchmark:retrieval -- <unique-run-id>",
+      "limitations": "Same evaluation cases reused after identifying gate false negatives. No independent confirmation; prompts and dataset unchanged.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-semantic-selection-raw-v2/retrieval-selection.json",
+          "sha256": "679a8806c1adbb718112f85b587e16b53147d7499221f6760719c41b80a7fc5b",
+          "bytes": 113989,
+          "recordedAt": "2026-10-17T15:24:54.118Z",
+          "scope": "Synthetic developer-authored dataset frozen before first retrieval/selection execution. 12 calibration cases and 24 evaluation cases across three projects. Evaluation split is not independently labelled and is not an untouched third-party holdout. Text only, no real uploads."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-semantic-selection-raw-v2/retrieval.json",
+          "sha256": "95eb0206c9f7e858dbaa9bdb3f5b334e4f935676149cbfce5d6d6f0eb06ab33e",
+          "bytes": 64935
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-semantic-selection-raw-v2/selection.jsonl",
+          "sha256": "8d2d793f2f073fe944924be20b42fc8a09bf9b71b0be6b7289c72dcb9d316b35",
+          "bytes": 71599
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-semantic-selection-raw-v2/start-manifest.json",
+          "sha256": "fe69c94dc4acba1fb02271662908b49ce8b069be0905b63c49edd9822cc6a005",
+          "bytes": 1394
+        }
+      ]
+    },
+    {
+      "id": "EXP-026",
+      "title": "Software audit after semantic retrieval",
+      "status": "executed",
+      "reproduceCurrentPath": "node scripts/audit-validation.mjs <unique-run-id>",
+      "limitations": "Current tests/build/source hashes; no automatic replay of paid models or audio/browser trials.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-retrieval-audit/run.json",
+          "sha256": "f7acf9b6ce083d0b3bb25296447face94a839b94072403511ad9de5d6e8927ff",
+          "bytes": 14019,
+          "recordedAt": "2026-10-17T15:27:47.225Z",
+          "scope": "Current automated software tests and production build only. No model API calls, audio replay, browser test, historical rerun or component benchmark implied."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-retrieval-audit/unit-integration.log",
+          "sha256": "af6ff581e010be970c45619bb36da58e3052609ce46da82d7ec3899b78fe9947",
+          "bytes": 12146
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-retrieval-audit/typecheck-build.log",
+          "sha256": "9c7a33015978b2ba004d11ad6d26eac850836a0f62b7926456fcc0fbf6b0dee9",
+          "bytes": 9270
+        }
+      ]
+    },
+    {
+      "id": "EXP-027",
+      "title": "Cloudflare Clef family connectivity and primary metadata",
+      "status": "executed-connectivity-only",
+      "reproduceCurrentPath": "npx tsx scripts/clef-connectivity-probe.ts <unique-run-id>",
+      "limitations": "One retained request per variant; not independent quality cases. Public repository metadata does not identify exact hosted checkpoint weights.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-connectivity/connectivity.json",
+          "sha256": "523473d47d6bad1e867d2060d200157ff5c5ecf2041b04a23826dfb4f6654041",
+          "bytes": 5951,
+          "recordedAt": "2026-10-17T15:30:15.174Z",
+          "scope": "Single-case connection check per Cloudflare variant using one retained benchmark request. Not a quality benchmark. Uses existing OpenRouter credential without recording it.",
+          "attempts": 3
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-connectivity/source-manifest.json",
+          "sha256": "9d7c705b59e5fab1cb08e88ed82802f44fa410c3a91edd87a9a9c3450788267c",
+          "bytes": 512
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-connectivity/model-metadata.json",
+          "sha256": "86d1d4ac5b067f9751cb74f296ad417130a1ce580d9a837730783a425fd19ad5",
+          "bytes": 1037
+        }
+      ]
+    },
+    {
+      "id": "EXP-028",
+      "title": "Cloudflare Clef and Clef-flash bounded selection",
+      "status": "executed-development-screen",
+      "reproduceCurrentPath": "SHORTLIST_PROVIDERS=clef,clef-flash SHORTLIST_METHODS=semantic,semantic-raw npm run benchmark:retrieval -- <unique-run-id>",
+      "limitations": "Same frozen synthetic evaluation set and menu, no tuning; gated/raw arms reuse cases. Hosted OpenRouter timing, not local or direct Workers AI performance.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-comparison-v1/retrieval-selection.json",
+          "sha256": "cd829eeb9db89689df94a189529daac3aefd9b7465c482194934f74b4f0b5165",
+          "bytes": 211553,
+          "recordedAt": "2026-10-17T15:30:48.960Z",
+          "scope": "Synthetic developer-authored dataset frozen before first retrieval/selection execution. 12 calibration cases and 24 evaluation cases across three projects. Evaluation split is not independently labelled and is not an untouched third-party holdout. Text only, no real uploads."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-comparison-v1/retrieval.json",
+          "sha256": "80cdf882de3f539aa9ff04b3fbe102225dede52759048fdcd049eda681b5fa43",
+          "bytes": 64941
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-comparison-v1/selection.jsonl",
+          "sha256": "7f7acb8db94d475fd2b34ec4ea560e0b7445796a6f6d73a5353fae7f694c6df6",
+          "bytes": 137497
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-comparison-v1/start-manifest.json",
+          "sha256": "d8d1d3af1025b80431817edd78ad381deb80298d4551fb56013a468d3a3f9102",
+          "bytes": 1394
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-comparison-v1/paired-summary.json",
+          "sha256": "1f479f9e219d82df53ee44e7b10f2ebd07ced40f199dbdf29a35495837c2bc2c",
+          "bytes": 9345
+        }
+      ]
+    },
+    {
+      "id": "EXP-029",
+      "title": "Cloudflare Clef-omni with fresh Jev reference",
+      "status": "executed-development-screen",
+      "reproduceCurrentPath": "SHORTLIST_PROVIDERS=clef-omni,jev SHORTLIST_METHODS=semantic,semantic-raw npm run benchmark:retrieval -- <unique-run-id>",
+      "limitations": "Sequential single-attempt arms; unchanged text corpus/menu. Does not evaluate audio, images, video, self-hosted weights or independent holdout.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-omni-jev-reference/retrieval-selection.json",
+          "sha256": "76b9cc774b7c5650bf303f6d01a4dab536d80b625450315d313b5afecec1f7cd",
+          "bytes": 210793,
+          "recordedAt": "2026-10-17T15:32:12.875Z",
+          "scope": "Synthetic developer-authored dataset frozen before first retrieval/selection execution. 12 calibration cases and 24 evaluation cases across three projects. Evaluation split is not independently labelled and is not an untouched third-party holdout. Text only, no real uploads."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-omni-jev-reference/retrieval.json",
+          "sha256": "f8dfe7762c59a0275194900a0458d0468ddd38964fd085a80adaf3cafe6c62f2",
+          "bytes": 64976
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-omni-jev-reference/selection.jsonl",
+          "sha256": "70cd9ca5a39d13778ea1267ef566493936177b909c9640796fec5daf4fb5c2ef",
+          "bytes": 136721
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-omni-jev-reference/start-manifest.json",
+          "sha256": "11dcc3efd2b1303552fa0fc364be892a877e54ad155096bb9bb1e62d0b70f25e",
+          "bytes": 1394
+        }
+      ]
+    },
+    {
+      "id": "EXP-030",
+      "title": "Software audit after Cloudflare adapter addition",
+      "status": "executed",
+      "reproduceCurrentPath": "node scripts/audit-validation.mjs <unique-run-id>",
+      "limitations": "Current tests/build/source hashes. No paid model, browser or voice experiment rerun implied.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-audit/run.json",
+          "sha256": "9ca66579ac1d112092d2b9e0cc96cdc800663e556a4d0e598e2abe340f120555",
+          "bytes": 14340,
+          "recordedAt": "2026-10-17T15:35:08.003Z",
+          "scope": "Current automated software tests and production build only. No model API calls, audio replay, browser test, historical rerun or component benchmark implied."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-audit/unit-integration.log",
+          "sha256": "a4e37253df79e79f7724dc4ba8ac33bd5a2c2c316f12d8f92d4c43e2e3a7cbce",
+          "bytes": 12592
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-clef-audit/typecheck-build.log",
+          "sha256": "084a6bb321b180ebf122d9a79ef11056692ad6995c6d56d1ced77809e42dd159",
+          "bytes": 9270
+        }
+      ]
+    },
+    {
+      "id": "EXP-031",
+      "title": "Prediction-first hybrid component retrieval and speculative prefetch",
+      "status": "executed-development-screen",
+      "reproduceCurrentPath": "npm run benchmark:prediction -- <unique-run-id>",
+      "limitations": "18 scripted steps, 9 components per project; 49 hosted Clef-omni requests. All search arms use BM25 plus dense RRF. Current-context routing, prior-only forecasts and final decisions use different metrics. Virtual lead timing is not live scheduling evidence. Local Clef setup was cancelled before weight download at user request.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-prediction-first-v1/prediction-first.json",
+          "sha256": "5be02dbeef3760eb0af1abe157eb87326c5f5eb57eccba45b2b176b78753efee",
+          "bytes": 273293,
+          "recordedAt": "2026-10-17T15:50:47.558Z",
+          "scope": "New synthetic scripted-context replay: 18 steps in three projects; 12 positive single-component labels plus 6 negative actions. Labels frozen before first execution. Author-labelled development cases, not independent holdout. Prior observed story positions are scripted and shared across arms, not generated by model rollouts.",
+          "summary": {
+            "steps": 18,
+            "valid": 18,
+            "baseline": {
+              "correct": 14,
+              "denominator": 18,
+              "positiveCandidateCovered": 12,
+              "positiveDenominator": 12,
+              "serialMedianMs": 730.0068329999976,
+              "serialP95Ms": 6475.930124999995
+            },
+            "queryEmbeddingMedianMs": 27.406291999999667,
+            "fullHybridRankMedianMs": 0.09033300000010058,
+            "routing": [
+              {
+                "topK": 1,
+                "correct": 12,
+                "denominator": 18,
+                "positiveCandidateCovered": 11,
+                "positiveDenominator": 12,
+                "dominantFamilyBrier": 0.12658487666666665,
+                "meanScoredFraction": 0.2654320987654321,
+                "serialMedianMs": 486.02129300000524,
+                "serialP95Ms": 1652.700291999994
+              },
+              {
+                "topK": 2,
+                "correct": 13,
+                "denominator": 18,
+                "positiveCandidateCovered": 12,
+                "positiveDenominator": 12,
+                "dominantFamilyBrier": 0.12658487666666665,
+                "meanScoredFraction": 0.5987654320987654,
+                "serialMedianMs": 485.95866800000294,
+                "serialP95Ms": 1652.6979999999967
+              }
+            ],
+            "prefetch": [
+              {
+                "topK": 1,
+                "positiveFamilyHit": 2,
+                "positiveCandidateCovered": 3,
+                "positiveDenominator": 12,
+                "exactPrefetchCandidateHits": 2,
+                "dominantFamilyBrier": 1.1801973616666668,
+                "readyBySpeech": 17,
+                "negativePrefetchQueries": 6,
+                "meanScoredFraction": 0.4320987654320988,
+                "retrievalReadyMedianMs": 27.600875000000087,
+                "authorization": "No show/context action; not scored as audience decision accuracy"
+              },
+              {
+                "topK": 2,
+                "positiveFamilyHit": 7,
+                "positiveCandidateCovered": 8,
+                "positiveDenominator": 12,
+                "exactPrefetchCandidateHits": 4,
+                "dominantFamilyBrier": 1.1801973616666668,
+                "readyBySpeech": 17,
+                "negativePrefetchQueries": 6,
+                "meanScoredFraction": 0.7407407407407409,
+                "retrievalReadyMedianMs": 27.563332999998238,
+                "authorization": "No show/context action; not scored as audience decision accuracy"
+              }
+            ],
+            "forecastCacheHits": 5
+          }
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-prediction-first-v1/start-manifest.json",
+          "sha256": "c38f9bba8ce427a76a677089198c86341c424e5c144a34f3db3afe3019ba762f",
+          "bytes": 1598
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-prediction-first-v1/steps.jsonl",
+          "sha256": "c7403baa0cc57a4c5d04beaaa3a6cf6f46dafcb38ae7089ae1c431ab5058d447",
+          "bytes": 73684
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-prediction-first-v1/model-requests.jsonl",
+          "sha256": "4b366ea80b8edb0c194b130dbe4550de60118d085377a833b7309598e481067a",
+          "bytes": 90946
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-prediction-first-v1/local-setup-note.json",
+          "sha256": "9e9f089f903b440cd447862ecd7161eef66850cbf227702a80c837db69d65a64",
+          "bytes": 855
+        }
+      ]
+    },
+    {
+      "id": "EXP-032",
+      "title": "Current software audit after prediction-first prototype",
+      "status": "executed",
+      "reproduceCurrentPath": "node scripts/audit-validation.mjs <unique-run-id>",
+      "limitations": "Current tests/build/source hashes; includes hybrid component facets, forecast scopes/epochs/TTL and malformed response guards. No implied repeat of paid, voice or browser experiments.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-prediction-first-audit/run.json",
+          "sha256": "26c45769628f53689748c965baf53730acb92cd904c31b6950cd874666c934da",
+          "bytes": 15406,
+          "recordedAt": "2026-10-17T15:56:07.951Z",
+          "scope": "Current automated software tests and production build only. No model API calls, audio replay, browser test, historical rerun or component benchmark implied."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-prediction-first-audit/unit-integration.log",
+          "sha256": "4c8176823c934c2ef3042bc496f259a13286c36ee91d1966ce457e918ac83535",
+          "bytes": 13631
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-prediction-first-audit/typecheck-build.log",
+          "sha256": "49695dc11410108ffc193f55cf26f8dbc772f54ad7500319dd9a12c0b30e3a98",
+          "bytes": 9270
+        }
+      ]
+    },
+    {
+      "id": "EXP-033",
+      "title": "Larger constructed library with identical final grounding",
+      "status": "executed-development-screen",
+      "reproduceCurrentPath": "node --import tsx scripts/large-library-benchmark.ts <unique-run-id>",
+      "limitations": "432 constructed assets, 16 development cases, three counterbalanced passes. Warm catalog refresh, query encoding, fallbacks and grounding included. No independent real-library holdout, content-changing refresh or visible-paint validation.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-large-library-v1/large-library.json",
+          "sha256": "5e3041a7949ed39c840529a40c33c92543f4072f97ad0e7bbc9a111da100f0a2",
+          "bytes": 56902,
+          "recordedAt": "2026-10-17T16:45:54.654Z",
+          "scope": null,
+          "summary": [
+            {
+              "pass": 0,
+              "arms": [
+                {
+                  "arm": "full",
+                  "total": 16,
+                  "valid": 16,
+                  "correct": 16,
+                  "positiveCorrect": 11,
+                  "negativeCorrect": 5,
+                  "unsupportedShows": 0,
+                  "medianMs": 477.0367499999993,
+                  "p95Ms": 1035.5445,
+                  "refreshes": 2,
+                  "fallbacks": 4,
+                  "groundingCalls": 20
+                },
+                {
+                  "arm": "scoped",
+                  "total": 16,
+                  "valid": 16,
+                  "correct": 16,
+                  "positiveCorrect": 11,
+                  "negativeCorrect": 5,
+                  "unsupportedShows": 0,
+                  "medianMs": 463.69358400000056,
+                  "p95Ms": 1144.940541,
+                  "refreshes": 2,
+                  "fallbacks": 5,
+                  "groundingCalls": 20
+                }
+              ]
+            },
+            {
+              "pass": 1,
+              "arms": [
+                {
+                  "arm": "full",
+                  "total": 16,
+                  "valid": 16,
+                  "correct": 16,
+                  "positiveCorrect": 11,
+                  "negativeCorrect": 5,
+                  "unsupportedShows": 0,
+                  "medianMs": 473.56483300000036,
+                  "p95Ms": 1159.9526669999977,
+                  "refreshes": 2,
+                  "fallbacks": 4,
+                  "groundingCalls": 20
+                },
+                {
+                  "arm": "scoped",
+                  "total": 16,
+                  "valid": 16,
+                  "correct": 16,
+                  "positiveCorrect": 11,
+                  "negativeCorrect": 5,
+                  "unsupportedShows": 0,
+                  "medianMs": 469.97212500000023,
+                  "p95Ms": 1130.7366249999977,
+                  "refreshes": 2,
+                  "fallbacks": 5,
+                  "groundingCalls": 20
+                }
+              ]
+            },
+            {
+              "pass": 2,
+              "arms": [
+                {
+                  "arm": "full",
+                  "total": 16,
+                  "valid": 16,
+                  "correct": 16,
+                  "positiveCorrect": 11,
+                  "negativeCorrect": 5,
+                  "unsupportedShows": 0,
+                  "medianMs": 471.2025829999984,
+                  "p95Ms": 1118.3265000000029,
+                  "refreshes": 2,
+                  "fallbacks": 4,
+                  "groundingCalls": 20
+                },
+                {
+                  "arm": "scoped",
+                  "total": 16,
+                  "valid": 16,
+                  "correct": 16,
+                  "positiveCorrect": 11,
+                  "negativeCorrect": 5,
+                  "unsupportedShows": 0,
+                  "medianMs": 442.6343749999942,
+                  "p95Ms": 1029.6244159999987,
+                  "refreshes": 2,
+                  "fallbacks": 5,
+                  "groundingCalls": 20
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EXP-034",
+      "title": "Software audit after library search prototype",
+      "status": "executed",
+      "reproduceCurrentPath": "node scripts/audit-validation.mjs <unique-run-id>",
+      "limitations": "Current source/tests/build only; does not repeat hosted model benchmark or establish live integration.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-library-policy-audit/run.json",
+          "sha256": "ecc897e370b9896be0e37354ed2e33506b3c2e062df2f53ab408651cdde6f64a",
+          "bytes": 16073,
+          "recordedAt": "2026-10-17T16:46:33.057Z",
+          "scope": "Current automated software tests and production build only. No model API calls, audio replay, browser test, historical rerun or component benchmark implied."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-library-policy-audit/unit-integration.log",
+          "sha256": "c1980c2e00e6d660edcad828d9867c823be3071322cbacb88f782647e47f5a72",
+          "bytes": 14015
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-library-policy-audit/typecheck-build.log",
+          "sha256": "828ae0ec8bf4ecd14fa390363a4adc549559b6bc70e10e58866632606b96f754",
+          "bytes": 9270
+        }
+      ]
+    },
+    {
+      "id": "EXP-035",
+      "title": "Grounded cue bypass and minimum-change decisions",
+      "status": "executed-development-screen",
+      "reproduceCurrentPath": "node --import tsx scripts/cue-policy-benchmark.ts <unique-run-id>",
+      "limitations": "432 constructed assets, 23 authored cases, three repeated passes. Exact whole-utterance prepared cues, independent arm caches, changed-document refresh, grounding fallbacks and retain operations. No real-library holdout, renderer or live-default validation.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-cue-policy-v1/cue-policy.json",
+          "sha256": "a86f8abfe16187d23ab0693dc5c23ffe2b1833879c15387d412b02291410806e",
+          "bytes": 91591,
+          "recordedAt": "2026-10-17T16:51:21.454Z",
+          "scope": null,
+          "summary": [
+            {
+              "pass": 0,
+              "arms": [
+                {
+                  "arm": "full",
+                  "total": 23,
+                  "valid": 23,
+                  "correct": 18,
+                  "positiveCorrect": 13,
+                  "negativeCorrect": 5,
+                  "unsupportedShows": 5,
+                  "cueDecisions": 0,
+                  "retains": 4,
+                  "medianMs": 531.5302079999965,
+                  "p95Ms": 1011.3417499999996,
+                  "refreshes": 3,
+                  "changedDocuments": 3,
+                  "groundingCalls": 27,
+                  "fallbacks": 4
+                },
+                {
+                  "arm": "cue",
+                  "total": 23,
+                  "valid": 23,
+                  "correct": 19,
+                  "positiveCorrect": 13,
+                  "negativeCorrect": 6,
+                  "unsupportedShows": 4,
+                  "cueDecisions": 11,
+                  "retains": 5,
+                  "medianMs": 91.54787500000384,
+                  "p95Ms": 935.4361660000031,
+                  "refreshes": 3,
+                  "changedDocuments": 3,
+                  "groundingCalls": 15,
+                  "fallbacks": 4
+                }
+              ]
+            },
+            {
+              "pass": 1,
+              "arms": [
+                {
+                  "arm": "full",
+                  "total": 23,
+                  "valid": 23,
+                  "correct": 18,
+                  "positiveCorrect": 13,
+                  "negativeCorrect": 5,
+                  "unsupportedShows": 5,
+                  "cueDecisions": 0,
+                  "retains": 4,
+                  "medianMs": 582.3299169999955,
+                  "p95Ms": 1841.2567920000001,
+                  "refreshes": 3,
+                  "changedDocuments": 3,
+                  "groundingCalls": 27,
+                  "fallbacks": 4
+                },
+                {
+                  "arm": "cue",
+                  "total": 23,
+                  "valid": 23,
+                  "correct": 19,
+                  "positiveCorrect": 13,
+                  "negativeCorrect": 6,
+                  "unsupportedShows": 4,
+                  "cueDecisions": 11,
+                  "retains": 5,
+                  "medianMs": 90.66804199999024,
+                  "p95Ms": 1030.9472499999974,
+                  "refreshes": 3,
+                  "changedDocuments": 3,
+                  "groundingCalls": 15,
+                  "fallbacks": 4
+                }
+              ]
+            },
+            {
+              "pass": 2,
+              "arms": [
+                {
+                  "arm": "full",
+                  "total": 23,
+                  "valid": 23,
+                  "correct": 18,
+                  "positiveCorrect": 13,
+                  "negativeCorrect": 5,
+                  "unsupportedShows": 5,
+                  "cueDecisions": 0,
+                  "retains": 4,
+                  "medianMs": 639.9155420000025,
+                  "p95Ms": 1085.0403750000114,
+                  "refreshes": 3,
+                  "changedDocuments": 3,
+                  "groundingCalls": 27,
+                  "fallbacks": 4
+                },
+                {
+                  "arm": "cue",
+                  "total": 23,
+                  "valid": 23,
+                  "correct": 19,
+                  "positiveCorrect": 13,
+                  "negativeCorrect": 6,
+                  "unsupportedShows": 4,
+                  "cueDecisions": 11,
+                  "retains": 5,
+                  "medianMs": 88.69170799999847,
+                  "p95Ms": 858.1364170000015,
+                  "refreshes": 3,
+                  "changedDocuments": 3,
+                  "groundingCalls": 15,
+                  "fallbacks": 4
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EXP-036",
+      "title": "Software audit after cue policy prototype",
+      "status": "executed",
+      "reproduceCurrentPath": "node scripts/audit-validation.mjs <unique-run-id>",
+      "limitations": "Current source/tests/build; does not rerun hosted models, speech or UI.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-cue-policy-final-audit/run.json",
+          "sha256": "1bd149b126d4f028c687a89787a8690820c5f8cff9a6b76562ffe5820f95b9a8",
+          "bytes": 16917,
+          "recordedAt": "2026-10-17T16:54:45.112Z",
+          "scope": "Current automated software tests and production build only. No model API calls, audio replay, browser test, historical rerun or component benchmark implied."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-cue-policy-final-audit/unit-integration.log",
+          "sha256": "795a4e735e4e6c678e478e77c379a2e423b3749e8c005d79c2360000c33180de",
+          "bytes": 15564
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-cue-policy-final-audit/typecheck-build.log",
+          "sha256": "35046eb6583dae21287865c52f83b47cd98ff69d854bc07c3f6ccd0c162552ad",
+          "bytes": 9270
+        }
+      ]
+    },
+    {
+      "id": "EXP-037",
+      "title": "Claim-level evidence and intent gate comparison",
+      "status": "executed-development-screen",
+      "reproduceCurrentPath": "node --import tsx scripts/evidence-gate-benchmark.ts <unique-run-id>",
+      "limitations": "432 constructed scope assets plus six source-backed EIA/USGS concept cards; 37 authored development cases, three passes. Changed-text refreshes, final guards and grounding fallbacks included. User selected the source starter; independent review, natural STT and real-media acceptance remain pending.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-evidence-gate-v1/evidence-gate.json",
+          "sha256": "56793bd7aacc9b097db59ac9bc1c859038e061006e270e8e3885b76707f9c2eb",
+          "bytes": 139977,
+          "recordedAt": "2026-10-17T16:59:44.041Z",
+          "scope": null,
+          "summary": [
+            {
+              "pass": 0,
+              "arms": [
+                {
+                  "arm": "prior",
+                  "total": 37,
+                  "valid": 37,
+                  "correct": 29,
+                  "positiveCorrect": 21,
+                  "negativeCorrect": 8,
+                  "unsupportedShows": 8,
+                  "guardDecisions": 0,
+                  "cueDecisions": 17,
+                  "retains": 11,
+                  "medianMs": 445.12216700000135,
+                  "p95Ms": 1126.437417000001,
+                  "refreshes": 5,
+                  "changedDocuments": 5,
+                  "groundingCalls": 27,
+                  "fallbacks": 8
+                },
+                {
+                  "arm": "gated",
+                  "total": 37,
+                  "valid": 37,
+                  "correct": 37,
+                  "positiveCorrect": 21,
+                  "negativeCorrect": 16,
+                  "unsupportedShows": 0,
+                  "guardDecisions": 16,
+                  "cueDecisions": 17,
+                  "retains": 12,
+                  "medianMs": 3.310417000000598,
+                  "p95Ms": 486.20866699999897,
+                  "refreshes": 5,
+                  "changedDocuments": 5,
+                  "groundingCalls": 4,
+                  "fallbacks": 0
+                }
+              ]
+            },
+            {
+              "pass": 1,
+              "arms": [
+                {
+                  "arm": "prior",
+                  "total": 37,
+                  "valid": 37,
+                  "correct": 29,
+                  "positiveCorrect": 21,
+                  "negativeCorrect": 8,
+                  "unsupportedShows": 8,
+                  "guardDecisions": 0,
+                  "cueDecisions": 17,
+                  "retains": 11,
+                  "medianMs": 436.9682909999974,
+                  "p95Ms": 1093.8548330000049,
+                  "refreshes": 5,
+                  "changedDocuments": 5,
+                  "groundingCalls": 27,
+                  "fallbacks": 8
+                },
+                {
+                  "arm": "gated",
+                  "total": 37,
+                  "valid": 37,
+                  "correct": 37,
+                  "positiveCorrect": 21,
+                  "negativeCorrect": 16,
+                  "unsupportedShows": 0,
+                  "guardDecisions": 16,
+                  "cueDecisions": 17,
+                  "retains": 12,
+                  "medianMs": 2.860707999992883,
+                  "p95Ms": 472.8832079999993,
+                  "refreshes": 5,
+                  "changedDocuments": 5,
+                  "groundingCalls": 4,
+                  "fallbacks": 0
+                }
+              ]
+            },
+            {
+              "pass": 2,
+              "arms": [
+                {
+                  "arm": "prior",
+                  "total": 37,
+                  "valid": 37,
+                  "correct": 30,
+                  "positiveCorrect": 21,
+                  "negativeCorrect": 9,
+                  "unsupportedShows": 7,
+                  "guardDecisions": 0,
+                  "cueDecisions": 17,
+                  "retains": 13,
+                  "medianMs": 429.8828749999957,
+                  "p95Ms": 1047.301666000014,
+                  "refreshes": 5,
+                  "changedDocuments": 5,
+                  "groundingCalls": 27,
+                  "fallbacks": 8
+                },
+                {
+                  "arm": "gated",
+                  "total": 37,
+                  "valid": 37,
+                  "correct": 37,
+                  "positiveCorrect": 21,
+                  "negativeCorrect": 16,
+                  "unsupportedShows": 0,
+                  "guardDecisions": 16,
+                  "cueDecisions": 17,
+                  "retains": 12,
+                  "medianMs": 2.7662920000002487,
+                  "p95Ms": 505.470708000008,
+                  "refreshes": 5,
+                  "changedDocuments": 5,
+                  "groundingCalls": 4,
+                  "fallbacks": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EXP-038",
+      "title": "Software audit after evidence contract implementation",
+      "status": "executed",
+      "reproduceCurrentPath": "node scripts/audit-validation.mjs <unique-run-id>",
+      "limitations": "Current source/tests/build only; no automatic rerun of hosted model, speech, browser or independent review.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-evidence-contract-final-audit/run.json",
+          "sha256": "8c9921ae219ecbbadaa3ed4537a0784a6374c752123f60cc7e27cfc3b9136d54",
+          "bytes": 17957,
+          "recordedAt": "2026-10-17T17:03:06.251Z",
+          "scope": "Current automated software tests and production build only. No model API calls, audio replay, browser test, historical rerun or component benchmark implied."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-evidence-contract-final-audit/unit-integration.log",
+          "sha256": "a2f120fd6388d4750b0ab2cbc127e8348f17adfe0a7c5cfafa0fb1cb3491b4e9",
+          "bytes": 18413
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-evidence-contract-final-audit/typecheck-build.log",
+          "sha256": "c24041b3680bdabb64d5d56f059613a879ce18375d17cc47c548fa13f7eda879",
+          "bytes": 9270
+        }
+      ]
+    },
+    {
+      "id": "PLAN-004",
+      "title": "Independent review and natural speech on selected source-backed starter",
+      "status": "planned",
+      "reproduceCurrentPath": null,
+      "limitations": "User selected prepared EIA/USGS cards. Source-backed development cases are not independent holdout evidence; review status remains pending.",
+      "artifacts": [
+        {
+          "path": "docs/research/source_backed_review.md",
+          "sha256": "f4ded8a2b7b1658b0c8774f631fc2d9ce21ca30a4e7f4f7e9155812e656b3ddd",
+          "bytes": 3549
+        }
+      ]
+    },
+    {
+      "id": "EXP-039",
+      "title": "Default evidence baseline live coordinator replay",
+      "status": "executed-integration",
+      "reproduceCurrentPath": "node --import tsx scripts/baseline-live-probe.ts <unique-run-id>",
+      "limitations": "Actual websocket, local EmbeddingGemma and hosted Clef-omni; supported selection, missing audit evidence and quoted intent. Scripted text only; no physical microphone, renderer paint or model-selection billing study.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261017-baseline-live-v3/live-baseline.json",
+          "sha256": "f6fcd3f76b63b1a14b664f1b74d8b8de8b431b051de8ca8b43bdff6dede3c401",
+          "bytes": 9152,
+          "recordedAt": "2026-10-17T17:35:09.473Z",
+          "scope": "Actual websocket coordinator, local EmbeddingGemma and hosted Clef-omni; scripted public-source text, no STT/microphone/browser paint"
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-baseline-live-v3/inputs.json",
+          "sha256": "726a171e58137a45e57db4bd9642d4b302768e3119878812f9de417ca3388597",
+          "bytes": 9781
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-baseline-live-v1/live-baseline.json",
+          "sha256": "db890ad6397be65b8ddd8f0a23a2be3bb675ca1f6c8171d30cbbca4ffbedf691",
+          "bytes": 7115,
+          "scope": "Earlier live integration replay, retained separately from the latest source snapshot."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-baseline-live-v2/live-baseline.json",
+          "sha256": "0a51298d0f62c72c78672cb26d4e4bae860bb5ae3f5e7523d37fa9a2704db35d",
+          "bytes": 9151,
+          "scope": "Earlier live integration replay, retained separately from the latest source snapshot."
+        }
+      ]
+    },
+    {
+      "id": "EXP-040",
+      "title": "Baseline product UI, preparation fixes and Mermaid browser review",
+      "status": "executed-with-browser-attestation",
+      "reproduceCurrentPath": null,
+      "limitations": "Actual local-model preparation and save/reload/library/preview; desktop/narrow geometry and wheel checks, four rendered Mermaid diagrams. Earlier failed preparation attempts preserved. No physical microphone or independent source review.",
+      "artifacts": [
+        {
+          "path": "docs/research/baseline_rollout.md",
+          "sha256": "32fb6ebdb6bfb608a1b1cf3e2861cf9322d32b723e7a07d05e4731eb25511363",
+          "bytes": 8172
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-baseline-ui-v1/preparation-reference-failure.log",
+          "sha256": "9c41c27d609c578ea73d8225f53b310392ccea72c58a7e77fbb1679873405f27",
+          "bytes": 432
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-baseline-ui-v1/preparation-schema-failure.log",
+          "sha256": "886fe0e1aa423ed3cd94ace7b1ba5df0ffd2c17cd277cab17f21249c69508660",
+          "bytes": 958
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261017-baseline-ui-v1/preparation-success.log",
+          "sha256": "07788bdb3410342a2521670f0237ebbb2522d43f93fcd604bb39f9aaa2e3426b",
+          "bytes": 4392
+        }
+      ]
+    },
+    {
+      "id": "EXP-041",
+      "title": "Software audit after modular baseline rollout",
+      "status": "executed",
+      "reproduceCurrentPath": "node scripts/audit-validation.mjs <unique-run-id>",
+      "limitations": "Current tests/typecheck/build/source hashes. Superseded director tests retired; baseline/model-boundary/no-migration tests added. Does not repeat model, browser or audio trials.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-public-source-audit-v1/run.json",
+          "sha256": "8c85ebbb0c7d54d2c8ef8f484f9da1e3c08f1981729c210cf9006615410d6e36",
+          "bytes": 31084,
+          "recordedAt": "2026-10-19T08:46:32.690Z",
+          "scope": "Current automated software tests and production build only. No model API calls, audio replay, browser test, historical rerun or component benchmark implied."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-public-source-audit-v1/unit-integration.log",
+          "sha256": "d140ccccdad6060a57761e151eaa8cb56547a1470db55c0a9f1468525dfe2378",
+          "bytes": 31016
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-public-source-audit-v1/typecheck-build.log",
+          "sha256": "23cd07d651c0b519ba43844d513167e9fae0ffa379768b94f0dbb95d758f865b",
+          "bytes": 9270
+        }
+      ]
+    },
+    {
+      "id": "EXP-042",
+      "title": "Shared replay runner hybrid wiring parity",
+      "status": "executed-synthetic-parity",
+      "reproduceCurrentPath": "npm run replay:baseline -- <unique-run-id>",
+      "limitations": "438 fixture assets, 37 authored cases, three passes per arm. Synthetic embeddings and deterministic evidence-derived grounding; validates wiring and accounting, not independent model quality or latency gains.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v4/replay.json",
+          "sha256": "89dbd5b2b27cc74a18291d5dd233c7a0a3d3b6a1fa2ee5d566eb6f08163681b4",
+          "bytes": 177964,
+          "recordedAt": "2026-10-19T05:51:47.926Z",
+          "scope": null,
+          "summary": [
+            {
+              "arm": "default",
+              "total": 111,
+              "correct": 111,
+              "failures": 0,
+              "positiveCorrect": 63,
+              "negativeCorrect": 48,
+              "unsupportedShows": 0,
+              "refreshes": 15,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 2.441708999999946,
+              "p95Ms": 11.202415999999971
+            },
+            {
+              "arm": "injected-hybrid",
+              "total": 111,
+              "correct": 111,
+              "failures": 0,
+              "positiveCorrect": 63,
+              "negativeCorrect": 48,
+              "unsupportedShows": 0,
+              "refreshes": 15,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 2.544125000000008,
+              "p95Ms": 10.89629100000002
+            }
+          ]
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v1/inputs.json",
+          "sha256": "4bc76eb9f25af124f4491756e6edd23edecc5250060b4086dc6faba42e5ec69a",
+          "bytes": 917616
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v1/replay.json",
+          "sha256": "f3bd4644490d5db9cb8cdb82d611c515def1213fbc0296ba117989980c4ef040",
+          "bytes": 118828
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v1/start-manifest.json",
+          "sha256": "3eacffd31bda981fb74e46aec229b478a4eae68a6576f91491829fea4667bc2c",
+          "bytes": 4188
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v1/steps.jsonl",
+          "sha256": "a65e5be006a27002500178c0a0f80f88542e8cae1eec49d6b013050d7c03b3dd",
+          "bytes": 77910
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v1/trace.jsonl",
+          "sha256": "46fd7116087463c7cd28eb86ded8f1631ade915f2ef6a4d314851af261dcaa89",
+          "bytes": 488817
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v2/inputs.json",
+          "sha256": "4bc76eb9f25af124f4491756e6edd23edecc5250060b4086dc6faba42e5ec69a",
+          "bytes": 917616
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v2/replay.json",
+          "sha256": "6c367a2f2b50f41d950f1a2ac594b7b199442903bd42f5a2e34378a8e034291b",
+          "bytes": 177971
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v2/start-manifest.json",
+          "sha256": "3e1a98f6f3c4440e3541b6f016944e3cc580a3645af19fef10d0f4c59f242f85",
+          "bytes": 4188
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v2/steps.jsonl",
+          "sha256": "dd139d958e8542a33bbcc2d641584b745289012b80425b192f2dfb2b914c13bd",
+          "bytes": 117587
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v2/trace.jsonl",
+          "sha256": "6f2478f40f5137a98c3ad8768ffde4ef3e9ab4d9dd9db468fcce199a22e9e425",
+          "bytes": 488956
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v3/inputs.json",
+          "sha256": "4bc76eb9f25af124f4491756e6edd23edecc5250060b4086dc6faba42e5ec69a",
+          "bytes": 917616
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v3/replay.json",
+          "sha256": "075d19e018bb4c43bb9023070614e22b9e2c7b58bd5e0f24be083f566207ea7e",
+          "bytes": 178004
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v3/start-manifest.json",
+          "sha256": "c69985db8eedee7b83f3920b75797383fb8ca4ca607c6c4413f76335ee08cfd5",
+          "bytes": 4188
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v3/steps.jsonl",
+          "sha256": "fda2fdacba9256da99aed32996bcf8e2c1e0e3a2669c65bff1566a4825fe8eeb",
+          "bytes": 117620
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v3/trace.jsonl",
+          "sha256": "9374a4d83bc7f1eea5b62f82dafc545d3641dfd6690e7dfbf09cc86af6da0c0a",
+          "bytes": 488944
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v4/inputs.json",
+          "sha256": "4bc76eb9f25af124f4491756e6edd23edecc5250060b4086dc6faba42e5ec69a",
+          "bytes": 917616
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v4/start-manifest.json",
+          "sha256": "bd2fb56c8b2bb3bdcf4fbd43fa7833b9c3b6b53c5d082ab8f46c34f55b083793",
+          "bytes": 4188
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v4/steps.jsonl",
+          "sha256": "b5041909f66103a323df4b02ca9a3a3e06a9e185b8cd00fa0bb3e0a25ed23318",
+          "bytes": 117590
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-replay-parity-v4/trace.jsonl",
+          "sha256": "f0165719ba5cbe578cf0d8060419ce31c10b47d6cbabe914e8733f92bcd47286",
+          "bytes": 488944
+        }
+      ]
+    },
+    {
+      "id": "EXP-043",
+      "title": "Frontend service extraction browser verification",
+      "status": "executed-synthetic-browser",
+      "reproduceCurrentPath": "npx tsx scripts/frontend-modularity-probe.ts",
+      "limitations": "Isolated seeded synthetic story. 1440/900/600 geometry, draft reload, session switching, sidebar persistence, independent scroll, library and ready view. No physical microphone or live interview/model trial.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-frontend-browser/browser.json",
+          "sha256": "04d095990c12259473afa1c42606ed07bca537475f5e2e544b2018967dee4bdf",
+          "bytes": 6628,
+          "recordedAt": "2026-10-19T05:52:34.095430+00:00",
+          "scope": "Synthetic frontend layout and persistence only; no model or microphone execution."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-frontend-browser/browser.log",
+          "sha256": "464417f91230850d4fc91d09505c9a6e74a9677580f162593f5b8d833fa1ebd5",
+          "bytes": 38613
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-frontend-browser/checks.json",
+          "sha256": "1d28ed390bc041b0b4a656799f2f75f195ea75d300811004cfd737d8dbbea216",
+          "bytes": 2262
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-frontend-browser/failure.txt",
+          "sha256": "b2e134e7e3c8443704f591f4682eb219195842f219e75be6dfd028c7d08b3822",
+          "bytes": 37351
+        }
+      ]
+    },
+    {
+      "id": "EXP-044",
+      "title": "Composition planner separation and guarded retention replay",
+      "status": "executed-synthetic-replay",
+      "reproduceCurrentPath": "npx tsx scripts/composition-replay.ts <unique-run-id>",
+      "limitations": "Five authored scenarios, three passes per planner. Real layout/reveal assertions, scripted selection/missing outcome. No model calls, independent labels, new multi-component synthesis or latency winner claim.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-composition-planners-v1/replay.json",
+          "sha256": "bdf69c48d543a9042d2f729a3b3032bc4f0f46cfb1487020690cf6053284cf00",
+          "bytes": 32343,
+          "recordedAt": "2026-10-19T06:02:40.486Z",
+          "scope": null,
+          "summary": [
+            {
+              "arm": "focus",
+              "total": 15,
+              "correct": 15,
+              "failures": 0,
+              "positiveCorrect": 12,
+              "negativeCorrect": 3,
+              "unsupportedShows": 0,
+              "refreshes": 3,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 0.19795799999999986,
+              "p95Ms": 0.5783329999999864
+            },
+            {
+              "arm": "stable",
+              "total": 15,
+              "correct": 15,
+              "failures": 0,
+              "positiveCorrect": 12,
+              "negativeCorrect": 3,
+              "unsupportedShows": 0,
+              "refreshes": 3,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 0.2697920000000238,
+              "p95Ms": 0.3980420000000038
+            }
+          ]
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-composition-planners-v1/inputs.json",
+          "sha256": "7e3cfbd3346ae44d7d8955ed2ac839786e6d6fb2aa9b0277d5b8ab4b85f4c72c",
+          "bytes": 10118
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-composition-planners-v1/start-manifest.json",
+          "sha256": "db457a7a4207cea42e888e48578ed9e3c59e695fe0fbf4a0ad6220583377a6f0",
+          "bytes": 3227
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-composition-planners-v1/steps.jsonl",
+          "sha256": "d7f63cabd7a21bdcd4843f765d863df8b7f843aa0b5a599ba29c6da47997e409",
+          "bytes": 11072
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-composition-planners-v1/trace.jsonl",
+          "sha256": "3c45298935b80e3f48636789f1e157d49b0dca682538179d05044501e7659bd9",
+          "bytes": 31552
+        }
+      ]
+    },
+    {
+      "id": "EXP-045",
+      "title": "Component evidence and optional paired composition replay",
+      "status": "executed-synthetic-replay",
+      "reproduceCurrentPath": "npx tsx scripts/component-coverage-replay.ts <unique-run-id>",
+      "limitations": "Eight authored scenarios, three passes per planner. Fixed selected component; tests coverage/compatibility/withdrawal invariants, not model, retrieval or natural-speech quality.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v3/replay.json",
+          "sha256": "fb7f0be4948bca95d6d806a9bf35e7e0c5c4c96615f8733a3a15573daef49f0f",
+          "bytes": 45724,
+          "recordedAt": "2026-10-19T06:56:25.878Z",
+          "scope": null,
+          "summary": [
+            {
+              "arm": "focus",
+              "total": 24,
+              "correct": 24,
+              "failures": 0,
+              "positiveCorrect": 15,
+              "negativeCorrect": 9,
+              "unsupportedShows": 0,
+              "refreshes": 9,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 0.3925830000000019,
+              "p95Ms": 0.6062499999999886
+            },
+            {
+              "arm": "paired",
+              "total": 24,
+              "correct": 24,
+              "failures": 0,
+              "positiveCorrect": 15,
+              "negativeCorrect": 9,
+              "unsupportedShows": 0,
+              "refreshes": 9,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 0.46454199999999446,
+              "p95Ms": 0.8780829999999753
+            }
+          ]
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v1/inputs.json",
+          "sha256": "0c0b10e60c669ed1e0d8fdec93d997faa7090dc1f637c6882d97aef9f496c96e",
+          "bytes": 14966
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v1/replay.json",
+          "sha256": "29f0a40bec12ef26db7f868601d980463f18a13a8f3e7c6f3f20ded3096014b9",
+          "bytes": 45728
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v1/start-manifest.json",
+          "sha256": "e3707a78d709d12d6ae13def2a991ed0e96feb29fb436d8abb1c3474bab054b3",
+          "bytes": 3529
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v1/steps.jsonl",
+          "sha256": "8e7f8123575ca04d08a7e2fbe1cd19c047ea753a086878ffabc432b4432049e1",
+          "bytes": 18002
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v1/trace.jsonl",
+          "sha256": "e2e1325088168d8e3b9428831a411a7ce7950cdd66add282623d4e3f26a566f8",
+          "bytes": 52091
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v2/inputs.json",
+          "sha256": "7d5c2cb8bb82f6ee2b6ddbaa6dab7ea6de2a52268450cf43b85d4f83b5eea61a",
+          "bytes": 15100
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v2/replay.json",
+          "sha256": "db4fb4d89bd0e381fa40f9f88440abfd1798ea1d92a5bde907712180673248a7",
+          "bytes": 45735
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v2/start-manifest.json",
+          "sha256": "40231bbda867c29cad5ea05c5da464eadddab563e79893574c8cd54ad39d742d",
+          "bytes": 3529
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v2/steps.jsonl",
+          "sha256": "3a5444599ff58f2d05ef407676517dfa831bb0149e2e814aebf84149ff5f2cd3",
+          "bytes": 18008
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v2/trace.jsonl",
+          "sha256": "6e68c3e17b561c24b54500d0e6ce85b274b046ca72323c5b60de4caebd60c823",
+          "bytes": 52106
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v3/inputs.json",
+          "sha256": "7d5c2cb8bb82f6ee2b6ddbaa6dab7ea6de2a52268450cf43b85d4f83b5eea61a",
+          "bytes": 15100
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v3/start-manifest.json",
+          "sha256": "a86605a934c2400db9e73bf435e06994ef76e05b829b69dab862b894b5562eba",
+          "bytes": 3529
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v3/steps.jsonl",
+          "sha256": "d7ed8ad13d886f48ad56ff1d8419df49c61c18eea2e81f489f3d58d6d1ad7796",
+          "bytes": 17999
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-v3/trace.jsonl",
+          "sha256": "c679076ecf8b2d364dfec0542895db1421196d752d198dd37aef589d3f9d6349",
+          "bytes": 52085
+        }
+      ]
+    },
+    {
+      "id": "EXP-046",
+      "title": "Component coverage disclosure browser and persistence checks",
+      "status": "executed-synthetic-browser",
+      "reproduceCurrentPath": "OMNIPRESENT_UI_PROBE_OUTPUT=output/playwright/component-coverage npx tsx scripts/frontend-modularity-probe.ts",
+      "limitations": "Actual local coordinator with seeded reviewed text/diagram story, coverage disclosure and 1440/900/600 geometry. Earlier invalid UUID/connection-limit failures retained. No microphone or new model generation.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-browser/browser.json",
+          "sha256": "023298260cfb5fbab89834aa2e74a63639865dd9b74acba95c9db7285bb42770",
+          "bytes": 7941,
+          "recordedAt": "2026-10-19T06:57:54.253071+00:00",
+          "scope": "Synthetic component coverage disclosure, layout and persistence; no physical microphone or model invocation."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-browser/browser.log",
+          "sha256": "5b897d4f6f63aa6439a25b5aa7a56de84a17b6b1c56b7c77caaecdc4e6fd9880",
+          "bytes": 66129
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-browser/checks.json",
+          "sha256": "b31e240602548ca7a15f53a5dffdb6b9317a803a218d8f60d7f874e17b13a3ed",
+          "bytes": 2297
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-browser/component-coverage-failure-1792392667303.txt",
+          "sha256": "3bd909aab66c9e4464519da9ef7bcbcdc872755c752fbf45a3860f610946980c",
+          "bytes": 64286
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-browser/component-coverage-v2-failure-1792392732577.txt",
+          "sha256": "274ace5177afd86131410fe2b811cce77daf2a06efcf8bacf578b5ccdd63f270",
+          "bytes": 64370
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-browser/component-coverage-v3-failure-1792392881257.txt",
+          "sha256": "c8095917ae4d87a719e92f5a1aa6935b58b052903c2078a581534c010e39390f",
+          "bytes": 64474
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-browser/component-coverage-v4-browser.log",
+          "sha256": "12b7aab74f521f6acdd2203254e3cfa5eba990e31814c9901ff60dfe394b9836",
+          "bytes": 65760
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-browser/component-coverage-v4-checks.json",
+          "sha256": "1d28ed390bc041b0b4a656799f2f75f195ea75d300811004cfd737d8dbbea216",
+          "bytes": 2262
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-component-coverage-browser/initial-focused-assertion-failures.log",
+          "sha256": "d14c1ef93cbd4337d82d7089360efa21c3b29b32afbd1e94d8bedb85c2d1dbfa",
+          "bytes": 10227
+        }
+      ]
+    },
+    {
+      "id": "EXP-047",
+      "title": "Bounded richer synthesis replay",
+      "status": "executed-synthetic-replay",
+      "reproduceCurrentPath": "npx tsx scripts/synthesis-replay.ts <unique-run-id>",
+      "limitations": "15 authored scenarios, three passes per arm; actual composition counts/slot checks, fixed primary selections. No new model, speech or independent semantic benchmark.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-v2/replay.json",
+          "sha256": "b7b50d7abf2929f4dbe99c6ea7c48f94c30aa84f75f964f6cf2cdd5ea07f763c",
+          "bytes": 93913,
+          "recordedAt": "2026-10-19T07:06:39.328Z",
+          "scope": null,
+          "summary": [
+            {
+              "arm": "focus",
+              "total": 45,
+              "correct": 45,
+              "failures": 0,
+              "positiveCorrect": 36,
+              "negativeCorrect": 9,
+              "unsupportedShows": 0,
+              "refreshes": 12,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 0.5505410000000097,
+              "p95Ms": 1.0037920000000042
+            },
+            {
+              "arm": "synthesis",
+              "total": 45,
+              "correct": 45,
+              "failures": 0,
+              "positiveCorrect": 36,
+              "negativeCorrect": 9,
+              "unsupportedShows": 0,
+              "refreshes": 12,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 0.7731670000000008,
+              "p95Ms": 1.4869589999999846
+            }
+          ]
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-v1/inputs.json",
+          "sha256": "9a0a2a85ed962227dbfe2584477214a0500d4e60cd5f4cac694e2d0af83a126d",
+          "bytes": 28374
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-v1/replay.json",
+          "sha256": "c665a005fa280fd6053770daee476bac6e719470a259f41f63c59e9fefafb979",
+          "bytes": 93906
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-v1/start-manifest.json",
+          "sha256": "4951d896335f32682f2cb26410775dfb367af325f22f72a777f8080a86abb0d2",
+          "bytes": 3659
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-v1/steps.jsonl",
+          "sha256": "99adb56e31b90f55b163051e0e84f95cad20b35081e11b3807543c20bce439a7",
+          "bytes": 33283
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-v1/trace.jsonl",
+          "sha256": "b2025eeef36621f27ff13ca24cf80e86fe5d431ab8ba41f450aa5f7d2b1a92d4",
+          "bytes": 89582
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-v2/inputs.json",
+          "sha256": "9a0a2a85ed962227dbfe2584477214a0500d4e60cd5f4cac694e2d0af83a126d",
+          "bytes": 28374
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-v2/start-manifest.json",
+          "sha256": "8b32e5be7eb8f675e821a5e921b7073427321228b4b41a916c034229e959c998",
+          "bytes": 3659
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-v2/steps.jsonl",
+          "sha256": "d5cdf64ba24d57af9484c9568e1bfeb187d9772dee54c89f3353af50781ef73c",
+          "bytes": 33292
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-v2/trace.jsonl",
+          "sha256": "929850ac783b98bcffc90ed6b4b16b1d67598fa72e0c2e6eb290130ad5e52eb1",
+          "bytes": 89588
+        }
+      ]
+    },
+    {
+      "id": "EXP-048",
+      "title": "Four-component OpenUI and JSON-render browser checks",
+      "status": "executed-synthetic-browser",
+      "reproduceCurrentPath": "npx tsx scripts/synthesis-browser-probe.ts",
+      "limitations": "Four components, two real chart SVGs and synthetic PNG, both renderer packages at 1440/900/600. Temporary harness removed after probe; no microphone or full product acceptance.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/browser.json",
+          "sha256": "bb0cd1c2ac2bd92debf8bf958c1adb489f1c35b90984b62f105cc223ff5f70c9",
+          "bytes": 12822,
+          "recordedAt": "2026-10-19T07:07:53.951236+00:00",
+          "scope": "Actual OpenUI/JSON-render, Recharts and synthetic PNG at three widths; no model or microphone."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/browser.log",
+          "sha256": "09cf6ed17939ea5b87a6fd55209044ef11452375320bed6c8c7b5ff7c9446c54",
+          "bytes": 5183
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/checks.json",
+          "sha256": "8aa3a34e79dbeaa24fd4496cef49942aa4fdd2f70cac764c8e5b2dcecde493ed",
+          "bytes": 6663
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/json-render-1440.png",
+          "sha256": "dfd7df609035f32dde0fb8f5c9ebbfe2b6e78b7aa18afc3803023b789518f207",
+          "bytes": 51594
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/json-render-600.png",
+          "sha256": "99b6000d6cdf7dd15b5a8bc29647df8ca308c1dfe6419d752b4e8a5b2223aa3a",
+          "bytes": 39954
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/json-render-900.png",
+          "sha256": "a32284a72e6214324cedbb0ab04d68cd0d609f442a8f7c06ea4381078228355f",
+          "bytes": 42578
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/openui-1440.png",
+          "sha256": "dfd7df609035f32dde0fb8f5c9ebbfe2b6e78b7aa18afc3803023b789518f207",
+          "bytes": 51594
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/openui-600.png",
+          "sha256": "7a42938eb41080781bb7fe28da560fffc8ec7f5ef927bed57628456a5427741c",
+          "bytes": 40018
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/openui-900.png",
+          "sha256": "a32284a72e6214324cedbb0ab04d68cd0d609f442a8f7c06ea4381078228355f",
+          "bytes": 42578
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/panel.png",
+          "sha256": "94d43eba5fae18b405f36bab168d4056061f3a849face6b28ec214154daa62f7",
+          "bytes": 1425
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-synthesis-browser/review.html",
+          "sha256": "52d64c6cb0c0130fe738af8be8817470415ed05c7c594b047eb0dd626c8d3bb6",
+          "bytes": 9116
+        }
+      ]
+    },
+    {
+      "id": "EXP-049",
+      "title": "Reviewed local preparation and actual Chrome spoken rich demo",
+      "status": "executed-with-disclosed-intervention",
+      "reproduceCurrentPath": null,
+      "limitations": "Actual Qwen preparation, presenter reference/coverage correction, Piper audio to Moonshine to synthesis in Chrome. Tuned synthetic headings; failed preparation/recognition attempts retained. 4/2/4 and 2/4/2 observed, not untouched speech acceptance.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/demo.json",
+          "sha256": "6c340ddee19c2855b8b203fdd1af6c260fb1c44a19fbe4e8adf24053ce21b7f2",
+          "bytes": 14820,
+          "recordedAt": "2026-10-19T07:23:24.931357+00:00",
+          "scope": "Fresh actual local interviewer/storyteller with disclosed presenter review; Chrome audible Piper PCM to Moonshine STT to synthesis.",
+          "summary": {
+            "generation-first": {
+              "transitions": [
+                4,
+                2,
+                4
+              ],
+              "decisions": 7,
+              "changes": 4,
+              "finalTranscripts": [
+                "daily curve.",
+                "Solar panels turn sunlight.",
+                "Into electricity",
+                "Storage reserves",
+                "Batteries store electricity for later use",
+                "Daily curve",
+                "Checking the microphone"
+              ],
+              "groundedModelPaths": 0
+            },
+            "storage-first": {
+              "transitions": [
+                2,
+                4,
+                2
+              ],
+              "decisions": 6,
+              "changes": 4,
+              "finalTranscripts": [
+                "Storage reserves",
+                "Batteries store electricity for later use.",
+                "Daily curve",
+                "Solar panels turn sunlight.",
+                "Into electricity",
+                "Storage reserves"
+              ],
+              "groundedModelPaths": 0
+            }
+          }
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/chrome-generation-complete.png",
+          "sha256": "79cb29866f4f9d0a395c68186d16c624e09b40ea39f739eba974f92d85f19c38",
+          "bytes": 69972
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/chrome-rich-complete.png",
+          "sha256": "52b01f6d657ac7a27bc65b8a043ac5c60c98c399eb0138a86274f6b9dc1f29fa",
+          "bytes": 69987
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/chrome-storage-complete.png",
+          "sha256": "5ffbf7cc6b26dfa39d7b3dfd37f75e7d3610ddb7b00eb3193242ecf14e196ea0",
+          "bytes": 58364
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/coverage-correction.json",
+          "sha256": "fded79250d5754a2c7cb8d4460c679999df25696c36efd51956278c6cec1f640",
+          "bytes": 5279414
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/detour-and-return.wav",
+          "sha256": "4afd7867c3e2943ed7524760e99b6a8ec15b02f2fae79efb6f80f8cbd743e730",
+          "bytes": 526706
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/first-replay.json",
+          "sha256": "a12e608b43e0f28db431e0c29231e566d3258d5558f22b381d2c4b23099289b3",
+          "bytes": 11869
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/generation-first-replay.json",
+          "sha256": "7a83e379326f00d1faeaa626e774f217c312061c385dbc0ebcc48f31b625bc0f",
+          "bytes": 17128
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/generation-first.wav",
+          "sha256": "3414b8c90a6bdd9a841402bda63d487074d0ca41d7dc18edf69e03060226dfa5",
+          "bytes": 921554
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/interview.json",
+          "sha256": "aeb577be396ff5da028fb74706dd78eeaa24bbca5fc5a0e844f1b0eccebb06bd",
+          "bytes": 37298
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/manifest.json",
+          "sha256": "53fb5c679a8e8b05d8a65444441931d1f07580b37ff82232a6d3013b44cba77f",
+          "bytes": 132163
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/preparation.json",
+          "sha256": "0bddfa26a59b778a57d29c1c40fc3a660cab41150adf8e3c0dec9b493f8b14de",
+          "bytes": 70211
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/presenter-review.log",
+          "sha256": "f8b8bfd80b2ff651967e322a69c721c78829b422f9a5c0a0891dd7dc39527dba",
+          "bytes": 2118
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/second-replay.json",
+          "sha256": "1c8c476508d64f3828a19d00c381bf840be7816e695453688679c986b25c40b1",
+          "bytes": 14972
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/storage-first-replay.json",
+          "sha256": "406f76c0d72c7916a8619cc54bdda7c4370063f82628dc286fa8ab6ae8ce06a8",
+          "bytes": 15115
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-full-spoken-demo/storage-first.wav",
+          "sha256": "56e3189b62393bfe4342a14a1e628dbd9ea28e9f311f11b3ce28596a9d3b7ba0",
+          "bytes": 808094
+        }
+      ]
+    },
+    {
+      "id": "EXP-050",
+      "title": "Compiled snapshots, exact vector cache and preparation readiness",
+      "status": "executed-local-embedding-parity",
+      "reproduceCurrentPath": "node --import tsx scripts/optimization-replay.ts <unique-run-id>",
+      "limitations": "Real local EmbeddingGemma, 12 synthetic-story requests repeated three times per arm, two metadata refreshes per pass, deterministic selection stub. Exact outcomes compared with archived presenter. Includes startup and final checks; not independent quality, hosted cost, STT or paint acceptance.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v5/replay.json",
+          "sha256": "89342889ece37852bd57ad71113ea84d09b7aeb08d88cab52c09ac3b4e1f4286",
+          "bytes": 45664,
+          "recordedAt": null,
+          "scope": null,
+          "summary": [
+            {
+              "arm": "prior",
+              "turns": 36,
+              "errors": 0,
+              "medianMs": 0.839999999999975,
+              "p95Ms": 100.25600000000009,
+              "startupMs": [
+                0.002375000000000682,
+                0.0007080000000314612,
+                0.00029200000017226557
+              ],
+              "totalSessionMsByPass": [
+                385.1715009999999,
+                369.7402490000002,
+                359.5684170000004
+              ],
+              "counters": [
+                {
+                  "pass": 0,
+                  "arm": "prior",
+                  "documentTexts": 21,
+                  "queryTexts": 3,
+                  "calls": 3
+                },
+                {
+                  "pass": 1,
+                  "arm": "prior",
+                  "documentTexts": 21,
+                  "queryTexts": 3,
+                  "calls": 3
+                },
+                {
+                  "pass": 2,
+                  "arm": "prior",
+                  "documentTexts": 21,
+                  "queryTexts": 3,
+                  "calls": 3
+                }
+              ]
+            },
+            {
+              "arm": "optimized",
+              "turns": 36,
+              "errors": 0,
+              "medianMs": 0.2760409999999638,
+              "p95Ms": 27.176750000000027,
+              "startupMs": [
+                189.740875,
+                94.84520799999996,
+                93.8649170000001
+              ],
+              "totalSessionMsByPass": [
+                247.03154099999992,
+                149.55133399999988,
+                146.01487699999984
+              ],
+              "counters": [
+                {
+                  "pass": 0,
+                  "arm": "optimized",
+                  "documentTexts": 7,
+                  "queryTexts": 2,
+                  "calls": 3
+                },
+                {
+                  "pass": 1,
+                  "arm": "optimized",
+                  "documentTexts": 7,
+                  "queryTexts": 2,
+                  "calls": 3
+                },
+                {
+                  "pass": 2,
+                  "arm": "optimized",
+                  "documentTexts": 7,
+                  "queryTexts": 2,
+                  "calls": 3
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v1/inputs.json",
+          "sha256": "4f7f2346e33997121257946bb440a97c454b57abb9e651a7849a741b76784216",
+          "bytes": 24545
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v1/replay.json",
+          "sha256": "2c90ec7baae3fbf45fa4896f1591def193d8a01c3f45c09e4e916253dea1c276",
+          "bytes": 42446
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v1/trace.jsonl",
+          "sha256": "4f4752748d787520325be6b9f2ff84be5d1407ad3f12300d9a1509cf4dbfaac8",
+          "bytes": 164039
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v2/inputs.json",
+          "sha256": "4f7f2346e33997121257946bb440a97c454b57abb9e651a7849a741b76784216",
+          "bytes": 24545
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v2/replay.json",
+          "sha256": "991d06d5909002cddeb4920f0e256dfa0845ac3011ed1198c67d0e8498a65c78",
+          "bytes": 42446
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v2/trace.jsonl",
+          "sha256": "541382ce82cbe1a9006d43a016c34d260648c80e5cb5b5375028adef1f2ae87a",
+          "bytes": 164183
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v3/inputs.json",
+          "sha256": "4f7f2346e33997121257946bb440a97c454b57abb9e651a7849a741b76784216",
+          "bytes": 24545
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v3/replay.json",
+          "sha256": "0e77118dd48dd40c3e47054b070858c2935271c613d1e673bae48337d1a53db6",
+          "bytes": 45409
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v3/trace.jsonl",
+          "sha256": "6424ea3f745b53867a46970282bf338762f6abf0b22dd8ec20a97fc34af47bec",
+          "bytes": 163938
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v4/inputs.json",
+          "sha256": "4f7f2346e33997121257946bb440a97c454b57abb9e651a7849a741b76784216",
+          "bytes": 24545
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v4/live.json",
+          "sha256": "d723e382c688cbb8264310a332d55277d4d252728e5d3c7eada6623f6d907198",
+          "bytes": 11025
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v4/replay.json",
+          "sha256": "dcdad0ac0228b833448149afec892c3d25a3c3c5f56497b1b651f9591cfb82c4",
+          "bytes": 45712
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v4/trace.jsonl",
+          "sha256": "c4879c6045e485ba3ac5ea029b3c3fc0c2b62e31f957c9680520c18bb513e00b",
+          "bytes": 163920
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v5/inputs.json",
+          "sha256": "4f7f2346e33997121257946bb440a97c454b57abb9e651a7849a741b76784216",
+          "bytes": 24545
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v5/live.json",
+          "sha256": "a843584630d5f335d7e7adb6cebe4bf8d6bcc9443df180f7c215fcb06f9c4365",
+          "bytes": 11060
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compiled-cache-v5/trace.jsonl",
+          "sha256": "3f18fcf687cab1e64b170c6d4ddf75fd244ef040a526ecb4b97f8aa0042ce4f6",
+          "bytes": 164005
+        }
+      ]
+    },
+    {
+      "id": "EXP-051",
+      "title": "Small local decision input feasibility",
+      "status": "executed-negative-development-probe",
+      "reproduceCurrentPath": "node --import tsx scripts/local-decision-feasibility.ts <unique-run-id>",
+      "limitations": "Pinned local Laya, six synthetic cases repeated twice. Full requests rejected on token budget; compact requests valid but 4/12 correct. Direct model probe without live guards, no quantization or hosted calls.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-decision-feasibility/local.json",
+          "sha256": "47c50a118ad0e693b0f29bfbcf2921e9992077bd4d6d150110601c8859805857",
+          "bytes": 17262,
+          "recordedAt": "2026-10-19T07:43:36.475Z",
+          "scope": null,
+          "summary": [
+            {
+              "format": "current",
+              "attempts": 12,
+              "valid": 0,
+              "correct": 0,
+              "medianMs": 1.6826249999994616,
+              "p95Ms": 63.155167000000006
+            },
+            {
+              "format": "compact",
+              "attempts": 12,
+              "valid": 12,
+              "correct": 4,
+              "medianMs": 173.94391600000017,
+              "p95Ms": 4389.316625
+            }
+          ]
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-decision-feasibility/inputs.json",
+          "sha256": "d599406b0a5bb5a0d52d67e4438b5928b2038269627bacc5c6cc86ee9c59233c",
+          "bytes": 29256
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-decision-feasibility/model-metadata.json",
+          "sha256": "e883f834785100844f100e86855cfc8b75af3504ecc42e7fb9f0fe1b307d5002",
+          "bytes": 2629
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-decision-feasibility/requests.json",
+          "sha256": "156f345530f3b5e782ebe6c37a9b48b0048164db7835bd2ead2369281707b190",
+          "bytes": 91366
+        }
+      ]
+    },
+    {
+      "id": "EXP-052",
+      "title": "Native compact local classifiers and host evidence overlay",
+      "status": "executed-negative-development-screen",
+      "reproduceCurrentPath": "node --import tsx scripts/prepare-compact-local.ts <unique-run-id>",
+      "limitations": "24 authored cases under three option orders; local Laya and native GLiNER English/multilingual. Direct quality and actual guard overlay reported separately. No candidate passed the frozen precision gate; no quantization or default change.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/replay.json",
+          "sha256": "815462158ddbe6e087eaee2cd33f488b758457ca49c5f504b7ab88fc347e54c3",
+          "bytes": 256389,
+          "recordedAt": "2026-10-19T08:04:29.620Z",
+          "scope": "Pinned CPU small-model screen; native precision then reduced precision only if the frozen research gate passes."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/compact-gliner-english.log",
+          "sha256": "8894ed71ccaf1a7ab68b34619aa405b1297516cf0506779d50f5f8aa9c4c033d",
+          "bytes": 1959
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/compact-gliner-multi.log",
+          "sha256": "aebc240f3d57425de0aa4b4ccadd480ebb4d0fd1538f6b87ec06b6edf60580b6",
+          "bytes": 1946
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/compact-laya.log",
+          "sha256": "40c7e0bd10b2d620d5beb2aa903798aa6697e7ae2c73b1f133f36e5317acb37d",
+          "bytes": 650
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/download-notes.json",
+          "sha256": "1cff46eafd662d177e1ae8551669d3efacaed7640a0dc6bd5fea9d6cb89a390b",
+          "bytes": 559
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/gliner-english-fp32.json",
+          "sha256": "8c1871ff99cfea4a3285b4d19d1eac720aa419d5e9d5f84c7795b201fe06e054",
+          "bytes": 44551
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/gliner-english-fp32.jsonl",
+          "sha256": "5577a7fffac87f76947b6736bacf01e930b882285d8f6ec4313730b1700fd99a",
+          "bytes": 28133
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/gliner-multi-fp32.json",
+          "sha256": "731fefab3da82dcc909c7a68820aadadfec2713d90b308703de438541d0e8f13",
+          "bytes": 44157
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/gliner-multi-fp32.jsonl",
+          "sha256": "5a0b0fd29a9c2f146902da9d4547fe9216a7bb8e29ae93c43135dcaeaa09a002",
+          "bytes": 27741
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/inputs.json",
+          "sha256": "d6b96e767b21b09b89e36077bcea5b7777a3a4cb950d859db849b904a7d7eac6",
+          "bytes": 16086
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/laya-english-fp32.json",
+          "sha256": "1e90915b545c0227247aab0625634f5507acc7f97c564c7600b18ec26000a308",
+          "bytes": 85067
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/laya-english-fp32.jsonl",
+          "sha256": "cae2522016549396729a72f90a2c2d4b3beca9019138f6193072f7cabc6a8b13",
+          "bytes": 50887
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-v1/start-manifest.json",
+          "sha256": "b4810d3c05c3855bd0541529e374f4d319e686d56a3bf91a97cb5d9c313afc6f",
+          "bytes": 938
+        }
+      ]
+    },
+    {
+      "id": "EXP-053",
+      "title": "Semantic label codec development follow-up",
+      "status": "executed-negative-development-followup",
+      "reproduceCurrentPath": "runtime/compact_local_benchmark.py --codec semantic",
+      "limitations": "Same frozen 24 cases after observed failures; only label IDs change. Two local GLiNER variants, no independent holdout, retrieval, STT or live UI acceptance.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-semantic-v1/replay.json",
+          "sha256": "781a7e6d1ffd3ca5bfcad567dd4d65d86fffd786ddac955248d6d0287de8f759",
+          "bytes": 141888,
+          "recordedAt": "2026-10-19T08:04:29.483Z",
+          "scope": "Pinned CPU small-model screen; native precision then reduced precision only if the frozen research gate passes."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-semantic-v1/compact-gliner-english-semantic.log",
+          "sha256": "32d0bf0a743a68185e7234d1beacbc22d41d272ab42ba33795e5666813404cfc",
+          "bytes": 2013
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-semantic-v1/compact-gliner-multi-semantic.log",
+          "sha256": "e92d5cd8d0cba67e61fbf7d07011f19786a3db2394c6a76a10473708eb1dceae",
+          "bytes": 2001
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-semantic-v1/gliner-english-fp32-semantic.json",
+          "sha256": "2ae7f69760e86d44242e7a534deb39c72144d991d1021156449e59359e895df4",
+          "bytes": 44976
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-semantic-v1/gliner-english-fp32-semantic.jsonl",
+          "sha256": "92ab76fcb046c4b52f54011741bff43ef7227beb6c098fc61d095c212c7c73d0",
+          "bytes": 28533
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-semantic-v1/gliner-multi-fp32-semantic.json",
+          "sha256": "c9839569b5a76cfafa0dd698a312022756d975d2732e095f8c52b054ccaf75a8",
+          "bytes": 44776
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-semantic-v1/gliner-multi-fp32-semantic.jsonl",
+          "sha256": "dd639e4e9e6b417e6838be087310b40bb04e27433dbcfa75371dbfa217b511d6",
+          "bytes": 28333
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-semantic-v1/inputs.json",
+          "sha256": "d6b96e767b21b09b89e36077bcea5b7777a3a4cb950d859db849b904a7d7eac6",
+          "bytes": 16086
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-compact-local-semantic-v1/start-manifest.json",
+          "sha256": "9ee5d41001b7ba8845bccb6927c0c14c1e2a4816bf908cbdb63702743371c6e7",
+          "bytes": 947
+        }
+      ]
+    },
+    {
+      "id": "EXP-054",
+      "title": "Local-only role assignment: host eligibility, hybrid ranking and classifier preference",
+      "status": "executed-development-role-replay",
+      "reproduceCurrentPath": "node --import tsx scripts/local-role-replay.ts <unique-run-id>",
+      "limitations": "438 authored/source-backed cards plus a declared alternate; 42 cases repeated three times per arm. Real local embeddings/native classifier, isolated caches and scheduled refresh/withdrawal. All arms 126/126; no hosted calls or independent natural-speech acceptance.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-roles-v2/replay.json",
+          "sha256": "6ed96d2f69981ff1170380e08cb9413e4be7b611e1eb38cda539997bf125511d",
+          "bytes": 307304,
+          "recordedAt": "2026-10-19T08:11:56.025Z",
+          "scope": null,
+          "summary": [
+            {
+              "arm": "eligibility-first",
+              "total": 126,
+              "correct": 126,
+              "failures": 0,
+              "positiveCorrect": 72,
+              "negativeCorrect": 54,
+              "unsupportedShows": 0,
+              "refreshes": 24,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 1.6941249999945285,
+              "p95Ms": 68.8131249999933
+            },
+            {
+              "arm": "hybrid-ranking",
+              "total": 126,
+              "correct": 126,
+              "failures": 0,
+              "positiveCorrect": 72,
+              "negativeCorrect": 54,
+              "unsupportedShows": 0,
+              "refreshes": 24,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 1.323540999997931,
+              "p95Ms": 92.79491699999926
+            },
+            {
+              "arm": "classifier-preference",
+              "total": 126,
+              "correct": 126,
+              "failures": 0,
+              "positiveCorrect": 72,
+              "negativeCorrect": 54,
+              "unsupportedShows": 0,
+              "refreshes": 24,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 1.6999999999970896,
+              "p95Ms": 163.4270419999957
+            }
+          ]
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-roles-v1/bootstrap-failure.json",
+          "sha256": "b45f8a66daa9d98343d7aa932210d4d9d5ad8a6a95fbd663e572edde79ba1384",
+          "bytes": 158
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-roles-v2/inputs.json",
+          "sha256": "ae7170702c484acaae26b20dd52f9aea35fac9e6c9ebd18946f88040fa652443",
+          "bytes": 734292
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-roles-v2/start-manifest.json",
+          "sha256": "0e90bafdd5b9dcd868ebbaed0a1510d0e3b26ddfc96c36c156c0acd7a28c7be9",
+          "bytes": 8152
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-roles-v2/steps.jsonl",
+          "sha256": "7c92302e07536febf4d94e80324500525c39cca2255218e561d4155c4bf10db6",
+          "bytes": 201775
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-roles-v2/trace.jsonl",
+          "sha256": "1a5a4faac688e4399cfb11b45129392593b32d81307f5fd6bb24cb5a0109964f",
+          "bytes": 817258
+        }
+      ]
+    },
+    {
+      "id": "EXP-055",
+      "title": "Normal local profile coordinator integration",
+      "status": "executed-local-text-integration",
+      "reproduceCurrentPath": "node --import tsx scripts/local-only-live-probe.ts output/<unique-name>",
+      "limitations": "Actual coordinator and embedding runtime: omitted profile selects local hybrid, four-component synthesis, missing-evidence hold, zero provider attempts. Text protocol only; no audio, STT or browser paint claim.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-roles-live/local.json",
+          "sha256": "21b1f5c333f1427a4eacb348b16fa3431927d4e27b8a29daac09a15d89250620",
+          "bytes": 15376,
+          "recordedAt": null,
+          "scope": "Actual local coordinator and embedding service, default local profile; text events, no STT, audio or browser paint.",
+          "summary": {
+            "default": "local-hybrid",
+            "blocks": 4,
+            "inferenceMs": 32.21995799999968,
+            "missingHeld": true,
+            "providerAttempts": 0,
+            "scope": "Actual local coordinator and embedding service; text speech events, not STT or browser paint."
+          }
+        }
+      ]
+    },
+    {
+      "id": "EXP-056",
+      "title": "Bounded local preference runtime and feedback loop",
+      "status": "executed-local-text-integration",
+      "reproduceCurrentPath": "node --import tsx scripts/local-preference-live-probe.ts output/<unique-name>",
+      "limitations": "Real coordinator, embeddings and native worker readiness; 300 ms deadline triggered local fallback; four-component synthesis, missing evidence retention and project/story feedback; no audio or browser acceptance.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-preference-loop-v1/local.json",
+          "sha256": "81c0601b5f82d0e423aa746203dac3d1853318beabecca3acbc8862ed8601d5d",
+          "bytes": 15686,
+          "recordedAt": null,
+          "scope": null,
+          "summary": {
+            "default": "local-classifier",
+            "blocks": 4,
+            "inferenceMs": 343.1586669999997,
+            "missingHeld": true,
+            "feedbackRouted": true,
+            "preference": {
+              "choices": 0,
+              "fallbacks": 1
+            },
+            "providerAttempts": 0,
+            "scope": "Actual local coordinator and embedding service; text speech events, not STT or browser paint."
+          }
+        }
+      ]
+    },
+    {
+      "id": "EXP-057",
+      "title": "Runtime preference repeated large-library replay",
+      "status": "executed-local-model",
+      "reproduceCurrentPath": "node --import tsx scripts/local-role-replay.ts RUN-unique-id",
+      "limitations": "42 authored cases, three passes, three arms, real local embeddings/native classifier. No new preference-quality holdout; same acceptable alternatives as EXP-054. Separate live warm probe overlapped near end; not isolated timing.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-preference-runtime-v1/replay.json",
+          "sha256": "424213eef6abd1b7c5184eb16622eccc06b5faaf11c3e213a33b902997385131",
+          "bytes": 307658,
+          "recordedAt": "2026-10-19T08:22:31.793Z",
+          "scope": null,
+          "summary": [
+            {
+              "arm": "eligibility-first",
+              "total": 126,
+              "correct": 126,
+              "failures": 0,
+              "positiveCorrect": 72,
+              "negativeCorrect": 54,
+              "unsupportedShows": 0,
+              "refreshes": 24,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 1.7299579999962589,
+              "p95Ms": 68.5066669999942
+            },
+            {
+              "arm": "hybrid-ranking",
+              "total": 126,
+              "correct": 126,
+              "failures": 0,
+              "positiveCorrect": 72,
+              "negativeCorrect": 54,
+              "unsupportedShows": 0,
+              "refreshes": 24,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 1.5655419999966398,
+              "p95Ms": 92.29950000000099
+            },
+            {
+              "arm": "classifier-preference",
+              "total": 126,
+              "correct": 126,
+              "failures": 0,
+              "positiveCorrect": 72,
+              "negativeCorrect": 54,
+              "unsupportedShows": 0,
+              "refreshes": 24,
+              "groundingCalls": 0,
+              "fallbacks": 0,
+              "medianMs": 1.7102920000033919,
+              "p95Ms": 171.4160830000037
+            }
+          ]
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-preference-runtime-v1/inputs.json",
+          "sha256": "ae7170702c484acaae26b20dd52f9aea35fac9e6c9ebd18946f88040fa652443",
+          "bytes": 734292
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-preference-runtime-v1/start-manifest.json",
+          "sha256": "26667bf270e88757fb45ff0c7f3b5c2bd4dcf8ef145bea935dbfff0c7f30f3b7",
+          "bytes": 8456
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-preference-runtime-v1/steps.jsonl",
+          "sha256": "e55d89a48e576c179398a014784003c6a28f6b73b83463baa29d3d3822f71a45",
+          "bytes": 201823
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-preference-runtime-v1/trace.jsonl",
+          "sha256": "f092073ac0f197160d143a5c3078dc77c497f779a2f85a3be09337220d6c3484",
+          "bytes": 857020
+        }
+      ]
+    },
+    {
+      "id": "EXP-058",
+      "title": "Warm native preference coordinator loop",
+      "status": "executed-local-text-integration",
+      "reproduceCurrentPath": "node --import tsx scripts/local-preference-live-probe.ts output/<unique-name>",
+      "limitations": "One native choice, one deadline fallback, one retained turn; missing feedback and zero provider attempts. Same-machine replay contention; text protocol only.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-local-preference-loop-v2/local.json",
+          "sha256": "a54bb9dd50362abda56e490ada6feccd6f6b3636c4a403c1bb3ebb75c0f87749",
+          "bytes": 27711,
+          "recordedAt": null,
+          "scope": null,
+          "summary": {
+            "default": "local-classifier",
+            "blocks": 4,
+            "inferenceMs": 352.5722919999971,
+            "missingHeld": true,
+            "feedbackRouted": true,
+            "preference": {
+              "choices": 0,
+              "fallbacks": 1
+            },
+            "warm": [
+              {
+                "inferenceMs": 239.69999999998254,
+                "preference": {
+                  "choices": 1,
+                  "fallbacks": 1
+                },
+                "held": false
+              },
+              {
+                "inferenceMs": 0.3987909999850672,
+                "preference": {
+                  "choices": 1,
+                  "fallbacks": 1
+                },
+                "held": true
+              }
+            ],
+            "providerAttempts": 0,
+            "scope": "Actual local coordinator and embedding service; text speech events, not STT or browser paint."
+          }
+        }
+      ]
+    },
+    {
+      "id": "EXP-059",
+      "title": "Distinct eligible-asset preference quality and small reranker",
+      "status": "executed-development-quality-screen",
+      "reproduceCurrentPath": "node --import tsx scripts/preference-quality-replay.ts RUN-unique-id",
+      "limitations": "32 authored exact-preference cases, three passes, 458-entry library, real local embeddings and two native workers. Oracle intent isolates preference; actual interpreter rejects all 32. GLiNER misses budget; MiniLM is fast but no accuracy gain. Not independent speech acceptance.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-quality-v1/replay.json",
+          "sha256": "958a62940325b998e181522bc94b9f37cce53e174709fbc74aa491b52dd71faf",
+          "bytes": 216839,
+          "recordedAt": "2026-10-19T08:29:51.718Z",
+          "scope": "32 authored preference requests, exact single expected asset, three rotated option orders. Role-only oracle intent; actual host interpretation measured separately. Development set, not independent acceptance.",
+          "summary": [
+            {
+              "arm": "hybrid",
+              "total": 96,
+              "correct": 84,
+              "accuracy": 0.875,
+              "fallbacks": 0,
+              "medianMs": 0.5908330000002024,
+              "p95Ms": 1.4523329999992711,
+              "selectionP95Ms": 0.05474999999933061,
+              "firstTurnMs": 3.1632079999999405,
+              "byPreference": {
+                "trend": {
+                  "correct": 24,
+                  "total": 24
+                },
+                "comparison": {
+                  "correct": 12,
+                  "total": 24
+                },
+                "process": {
+                  "correct": 24,
+                  "total": 24
+                },
+                "overview": {
+                  "correct": 12,
+                  "total": 12
+                },
+                "illustration": {
+                  "correct": 12,
+                  "total": 12
+                }
+              },
+              "rawOrderAccuracy": null,
+              "orderStableCases": null
+            },
+            {
+              "arm": "gliner",
+              "total": 96,
+              "correct": 84,
+              "accuracy": 0.875,
+              "fallbacks": 96,
+              "medianMs": 302.1343749999942,
+              "p95Ms": 302.4547080000011,
+              "selectionP95Ms": 301.5265420000069,
+              "firstTurnMs": 303.74716700000135,
+              "byPreference": {
+                "trend": {
+                  "correct": 24,
+                  "total": 24
+                },
+                "comparison": {
+                  "correct": 12,
+                  "total": 24
+                },
+                "process": {
+                  "correct": 24,
+                  "total": 24
+                },
+                "overview": {
+                  "correct": 12,
+                  "total": 12
+                },
+                "illustration": {
+                  "correct": 12,
+                  "total": 12
+                }
+              },
+              "rawOrderAccuracy": 1,
+              "orderStableCases": 32
+            },
+            {
+              "arm": "minilm",
+              "total": 96,
+              "correct": 84,
+              "accuracy": 0.875,
+              "fallbacks": 0,
+              "medianMs": 12.68545799999265,
+              "p95Ms": 14.055166999998619,
+              "selectionP95Ms": 13.37225000000035,
+              "firstTurnMs": 67.23491600000125,
+              "byPreference": {
+                "trend": {
+                  "correct": 24,
+                  "total": 24
+                },
+                "comparison": {
+                  "correct": 24,
+                  "total": 24
+                },
+                "process": {
+                  "correct": 12,
+                  "total": 24
+                },
+                "overview": {
+                  "correct": 12,
+                  "total": 12
+                },
+                "illustration": {
+                  "correct": 12,
+                  "total": 12
+                }
+              },
+              "rawOrderAccuracy": 0.875,
+              "orderStableCases": 32
+            }
+          ]
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-quality-v1/inputs.json",
+          "sha256": "94db90807fb3c40625167df523ce2e528cbd04da9485e2ee5935ea7b83e51e11",
+          "bytes": 41325
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-quality-v1/start-manifest.json",
+          "sha256": "6fb6eff8ac2cea9b1cb38cf6bdaea7b498f64bf749532449b40d986a1fc334ed",
+          "bytes": 8547
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-quality-v1/steps.jsonl",
+          "sha256": "212fff47db41e01aecda4da84ce4e5c49eb3370a115bfa675c99c015dfe0331f",
+          "bytes": 87731
+        }
+      ]
+    },
+    {
+      "id": "EXP-060",
+      "title": "Piper to Moonshine to presenter commit preference acceptance",
+      "status": "executed-negative-audio-integration",
+      "reproduceCurrentPath": "node --import tsx scripts/preference-audio-loop.ts RUN-unique-id",
+      "limitations": "Three authored TTS utterances per arm; real paced PCM/STT/controller and no transcript injection. Explanatory utterance splits and is held; missing/retain behavior passes. No browser paint or physical microphone. Earlier v1 selected first completed segment; preserved with full event stream.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-audio-v2/local.json",
+          "sha256": "dd2487f114ba8351ad3219108b281c6b0b278f96190a4c6af1eb4576a58163b8",
+          "bytes": 65463,
+          "recordedAt": "2026-10-19T08:35:42.792Z",
+          "scope": "Actual paced Piper PCM, Moonshine streaming STT, presenter and AdaptiveController commit; excludes browser rendering and microphone capture."
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-audio-v1/explain.pcm",
+          "sha256": "03cd8cc987c4a0a8010bac6535daed7e3023ee89294a66984d788976ab2a5761",
+          "bytes": 221202
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-audio-v1/inputs.json",
+          "sha256": "c38afb96cad5f3c17b210327c88e1c98ee5d562d0f3c9ac3a3d517c3c5a97136",
+          "bytes": 25156
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-audio-v1/local.json",
+          "sha256": "c2ccfab7548da3e66160433c35ab2a92519786fbcf3f43f175a36ff25e11e1f3",
+          "bytes": 63404
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-audio-v1/missing.pcm",
+          "sha256": "61bec8cce386068c98e2b23ebcb4d6d2a74546d445fbbd9f57d6c71b79740f91",
+          "bytes": 162130
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-audio-v1/retain.pcm",
+          "sha256": "3795b7a9b2315054abe931f9fdfe3abe43ebc020a755d6dba3f3ad6198e72265",
+          "bytes": 127950
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-audio-v2/explain.pcm",
+          "sha256": "03cd8cc987c4a0a8010bac6535daed7e3023ee89294a66984d788976ab2a5761",
+          "bytes": 221202
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-audio-v2/inputs.json",
+          "sha256": "c38afb96cad5f3c17b210327c88e1c98ee5d562d0f3c9ac3a3d517c3c5a97136",
+          "bytes": 25156
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-audio-v2/missing.pcm",
+          "sha256": "61bec8cce386068c98e2b23ebcb4d6d2a74546d445fbbd9f57d6c71b79740f91",
+          "bytes": 162130
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-audio-v2/retain.pcm",
+          "sha256": "3795b7a9b2315054abe931f9fdfe3abe43ebc020a755d6dba3f3ad6198e72265",
+          "bytes": 127950
+        }
+      ]
+    },
+    {
+      "id": "EXP-061",
+      "title": "Dynamic INT8 narrow preference diagnostic",
+      "status": "executed-negative-precision-screen",
+      "reproduceCurrentPath": "node --import tsx scripts/preference-precision-replay.ts RUN-unique-id",
+      "limitations": "Same frozen 32 role cases, three rotated menus. INT8 Linear/qnnpack is slower, 89/96 unrestricted versus 96/96 FP32; all timed calls fall back. Rotated fallback menu is not hybrid-ranked, so its timed accuracy is not comparable to EXP-059. Checkpoint storage unchanged; peak includes conversion.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-int8-v1/replay.json",
+          "sha256": "6b3c00b5573fafd2c27856084216a87de90c1d95afb7facc8114714f543259ed",
+          "bytes": 36996,
+          "recordedAt": null,
+          "scope": "INT8 diagnostic on frozen narrow preference set; rotated eligible menu only, excludes retrieval, STT and paint. Distinct from earlier failed full-action precision gate.",
+          "summary": {
+            "total": 96,
+            "correct": 24,
+            "fallbacks": 96,
+            "rawCorrect": 89,
+            "rawTotal": 96,
+            "medianMs": 301.4017920000042,
+            "p95Ms": 301.74887500000114
+          }
+        },
+        {
+          "path": "docs/validation/runs/RUN-20261019-preference-int8-v1/inputs.json",
+          "sha256": "94db90807fb3c40625167df523ce2e528cbd04da9485e2ee5935ea7b83e51e11",
+          "bytes": 41325
+        }
+      ]
+    },
+    {
+      "id": "EXP-062",
+      "title": "Public snapshot local defaults and synthesis integration",
+      "status": "executed-local-text-integration",
+      "reproduceCurrentPath": "node --import tsx scripts/local-only-live-probe.ts output/unique-name",
+      "limitations": "Restarted normal dev command without planner override; local hybrid plus default synthesis makes four supported components and holds missing evidence. No provider attempts; text protocol only, not audio or browser acceptance.",
+      "artifacts": [
+        {
+          "path": "docs/validation/runs/RUN-20261019-public-defaults-live/local.json",
+          "sha256": "2225c79ce52b613ded0842231f8c71880b69f50d3e14d9c17ac9e11cbe8abd6b",
+          "bytes": 15048,
+          "recordedAt": null,
+          "scope": null,
+          "summary": {
+            "default": "local-hybrid",
+            "blocks": 4,
+            "inferenceMs": 29.41300000000001,
+            "missingHeld": true,
+            "providerAttempts": 0,
+            "scope": "Actual local coordinator and embedding service; text speech events, not STT or browser paint."
+          }
+        }
+      ]
+    },
+    {
+      "id": "PLAN-002",
+      "title": "Media retrieval, dimensions and semantic answer cache comparison",
+      "status": "planned",
+      "reproduceCurrentPath": null,
+      "limitations": "Text-only embedding retrieval and exact query caching are measured in EXP-024/025. Multimodal encoders, smaller dimensions and semantic answer reuse remain unvalidated.",
+      "artifacts": [
+        {
+          "path": "docs/embeddinggemma_use_cases.md",
+          "sha256": "1c988ae2c7bca70d7884915e4aa08bb8dacb1f34d016eab6383b1491f98d74d4",
+          "bytes": 12069
+        }
+      ]
+    },
+    {
+      "id": "PLAN-003",
+      "title": "Alternative STT, Groq, orchestration and desktop comparisons",
+      "status": "research-only",
+      "reproduceCurrentPath": null,
+      "limitations": "Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frameworks and Electron were not benchmarked as winners.",
+      "artifacts": [
+        {
+          "path": "docs/baseline_technology_research.md",
+          "sha256": "ab3deabb6685f72affacbfbee5d87091750bd7dec4fdd2f6cbf167852eebb709",
+          "bytes": 13355
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "canonical": "docs/research/speech-loop-cache-validation.json",
+      "alias": "docs/research/speech-loop-validation.json",
+      "byteIdentical": true
+    },
+    {
+      "canonical": "docs/research/system-one-initial-validation.json",
+      "alias": "docs/research/system-one-validation.json",
+      "byteIdentical": true
+    }
+  ],
+  "testCases": [
+    {
+      "id": "TEST-ADAPTIVE-01",
+      "name": "adaptive host validates and commits injected baseline decisions",
+      "source": "tests/adaptive.test.ts",
+      "line": 8,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-ADAPTIVE-02",
+      "name": "stopping cancels a late baseline decision",
+      "source": "tests/adaptive.test.ts",
+      "line": 9,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-ADAPTIVE-03",
+      "name": "invalid model references hold current content and expose a bounded error",
+      "source": "tests/adaptive.test.ts",
+      "line": 10,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-AGENTS-01",
+      "name": "real SDK interviewer tool loop gathers a brief without producing a story",
+      "source": "tests/agents.test.ts",
+      "line": 68,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-AGENTS-02",
+      "name": "storyteller returns a structured flow, correction invalidates review",
+      "source": "tests/agents.test.ts",
+      "line": 80,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-AGENTS-03",
+      "name": "missing context travels back to interviewer without autonomous runaway loops",
+      "source": "tests/agents.test.ts",
+      "line": 98,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-AGENTS-04",
+      "name": "unknown artifact references reject the entire draft",
+      "source": "tests/agents.test.ts",
+      "line": 114,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-AGENTS-05",
+      "name": "cancelled old response cannot overwrite a newer presenter correction",
+      "source": "tests/agents.test.ts",
+      "line": 131,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-AGENTS-06",
+      "name": "finishing the interview hands a committed brief to the separate storyteller",
+      "source": "tests/agents.test.ts",
+      "line": 144,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-AGENTS-07",
+      "name": "incomplete interview does not launch a storyteller",
+      "source": "tests/agents.test.ts",
+      "line": 151,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-AGENTS-08",
+      "name": "preparation with no materials exposes no readArtifact tool",
+      "source": "tests/agents.test.ts",
+      "line": 156,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-AGENTS-09",
+      "name": "storyteller tool schema excludes host-owned evidence contracts",
+      "source": "tests/agents.test.ts",
+      "line": 160,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-BASELINE-01",
+      "name": "historical model registry retains Clef-omni and useful tested comparison models",
+      "source": "tests/baseline.test.ts",
+      "line": 11,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-BASELINE-02",
+      "name": "catalog rejects legacy stories and does not silently invent contracts",
+      "source": "tests/baseline.test.ts",
+      "line": 12,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-BASELINE-03",
+      "name": "default pipeline selects grounded prepared content without a model on exact supported cues",
+      "source": "tests/baseline.test.ts",
+      "line": 13,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-BASELINE-04",
+      "name": "new stories record explicit evidence status and speaker notes are excluded",
+      "source": "tests/baseline.test.ts",
+      "line": 14,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-BASELINE-05",
+      "name": "baseline trace metadata correlates final validation and decisions without transcripts",
+      "source": "tests/baseline.test.ts",
+      "line": 15,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPACT-LOCAL-FIXTURE-01",
+      "name": "compact local screen freezes balanced positives and negatives with valid full evidence outside model inputs",
+      "source": "tests/compact-local-fixture.test.ts",
+      "line": 5,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPONENT-EVIDENCE-01",
+      "name": "paired composition requires explicit same-claim component coverage",
+      "source": "tests/component-evidence.test.ts",
+      "line": 10,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPONENT-EVIDENCE-02",
+      "name": "explicit visual requests remain focused and legacy beat coverage cannot form pairs",
+      "source": "tests/component-evidence.test.ts",
+      "line": 19,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPONENT-EVIDENCE-03",
+      "name": "changing rendered content or withdrawing a contract invalidates planned pairs",
+      "source": "tests/component-evidence.test.ts",
+      "line": 26,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPONENT-EVIDENCE-04",
+      "name": "component source withdrawal and stale reviews fail before approval",
+      "source": "tests/component-evidence.test.ts",
+      "line": 34,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPONENT-EVIDENCE-05",
+      "name": "preparation does not infer audit status and content hashes survive schema whitespace normalization",
+      "source": "tests/component-evidence.test.ts",
+      "line": 40,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPONENT-EVIDENCE-06",
+      "name": "live presenter can form an approved pair on a unique cue without a model call",
+      "source": "tests/component-evidence.test.ts",
+      "line": 44,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPONENT-EVIDENCE-07",
+      "name": "declared coverage cannot silently omit its chart or image binding",
+      "source": "tests/component-evidence.test.ts",
+      "line": 49,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPOSITION-PLANNER-01",
+      "name": "focus reproduces bound focus behavior while stable preserves an eligible reveal",
+      "source": "tests/composition-planner.test.ts",
+      "line": 11,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPOSITION-PLANNER-02",
+      "name": "host rejects omitted selections, unsupported extra claims, duplicates and invalid reveal",
+      "source": "tests/composition-planner.test.ts",
+      "line": 16,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPOSITION-PLANNER-03",
+      "name": "cancelled planners cannot return proposals",
+      "source": "tests/composition-planner.test.ts",
+      "line": 22,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-COMPOSITION-PLANNER-04",
+      "name": "injected planner cannot rewrite evidence or bypass final composition checks",
+      "source": "tests/composition-planner.test.ts",
+      "line": 23,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-CONTROLLER-INVARIANTS-01",
+      "name": "seeded event stress preserves grounding, dwell, lifecycle and epoch guards across all strategies",
+      "source": "tests/controller-invariants.test.ts",
+      "line": 6,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-CONTROLLER-INVARIANTS-02",
+      "name": "confirmation cannot survive an unrelated or invalid observation",
+      "source": "tests/controller-invariants.test.ts",
+      "line": 23,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-CONTROLLERS-01",
+      "name": "temporal controllers satisfy every fixed replay including interruptions, comparisons and stale inputs",
+      "source": "tests/controllers.test.ts",
+      "line": 7,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-CONTROLLERS-02",
+      "name": "priority rules baseline exposes one-window noise rather than silently granting confirmation memory",
+      "source": "tests/controllers.test.ts",
+      "line": 12,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-CONTROLLERS-03",
+      "name": "all strategies reject malformed confidence and preserve immutable prepared state",
+      "source": "tests/controllers.test.ts",
+      "line": 16,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-CONTROLLERS-04",
+      "name": "prepared shortlist is bounded, grounded, revision-scoped and excludes private notes",
+      "source": "tests/controllers.test.ts",
+      "line": 25,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-CONTROLLERS-05",
+      "name": "lexical retrieval regression retains paraphrase and missing-evidence failures as explicit gaps",
+      "source": "tests/controllers.test.ts",
+      "line": 33,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-CREDENTIALS-01",
+      "name": "hosted comparisons require explicit credentials instead of discovering other app auth",
+      "source": "tests/credentials.test.ts",
+      "line": 4,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-01",
+      "name": "claim contracts validate references, hashes and identity without inventing audit status",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 9,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-02",
+      "name": "complete request obligations require matching claim, scope, form, units and provenance",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 10,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-03",
+      "name": "quoted, hypothetical, negated and incidental mentions do not become show requests",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 11,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-04",
+      "name": "additional facts, unsupported provenance and missing time never inherit arbitrary evidence",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 12,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-05",
+      "name": "explicit correction resolves the active clause without keeping the negated entity",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 13,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-06",
+      "name": "incomplete evidence is blocked even when cue or model proposes a valid catalog ID",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 14,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-07",
+      "name": "uncontracted or unreviewed sources fail closed when independent review is required",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 15,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-08",
+      "name": "unsupported requested claims cannot be concealed by a broad topic alias",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 16,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-09",
+      "name": "independent review is required by default and approving a snapshot is not an audit",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 17,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-10",
+      "name": "a wrongly bound prepared cue cannot override evidence obligations",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 18,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-11",
+      "name": "public-source obligations have useful positive coverage and reject unsupported conjunctions",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 19,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-EVIDENCE-CONTRACT-12",
+      "name": "single-quoted requests cannot become active intent while contractions remain ordinary text",
+      "source": "tests/evidence-contract.test.ts",
+      "line": 21,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-FRONTEND-SERVICES-01",
+      "name": "audio queue sends one chunk until acknowledged and clears on overflow",
+      "source": "tests/frontend-services.test.ts",
+      "line": 6,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-FRONTEND-SERVICES-02",
+      "name": "workspace store retains in-tab changes after persistence failure and protects unreadable storage",
+      "source": "tests/frontend-services.test.ts",
+      "line": 12,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-FRONTEND-SERVICES-03",
+      "name": "session client ignores unknown telemetry and detached socket callbacks",
+      "source": "tests/frontend-services.test.ts",
+      "line": 20,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-FRONTEND-SERVICES-04",
+      "name": "cancelled microphone acquisition stops tracks before constructing audio resources",
+      "source": "tests/frontend-services.test.ts",
+      "line": 27,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-GROUNDING-01",
+      "name": "live grounding does not characterize real source evidence as simulated",
+      "source": "tests/library-grounding.test.ts",
+      "line": 5,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-GROUNDING-02",
+      "name": "grounding does not silently choose a hosted comparison provider",
+      "source": "tests/library-grounding.test.ts",
+      "line": 14,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-POLICY-01",
+      "name": "prepared whole-utterance cues bypass inference and preserve unchanged asset identity",
+      "source": "tests/library-policy.test.ts",
+      "line": 9,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-POLICY-02",
+      "name": "quotes, negation, unknown qualifiers and extra requested facts cannot match cues",
+      "source": "tests/library-policy.test.ts",
+      "line": 10,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-POLICY-03",
+      "name": "ambiguous prepared cue collisions escape rather than picking an arbitrary asset",
+      "source": "tests/library-policy.test.ts",
+      "line": 11,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-POLICY-04",
+      "name": "content-changing refresh invalidates removed cues and resets current composition",
+      "source": "tests/library-policy.test.ts",
+      "line": 12,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-POLICY-05",
+      "name": "refresh prevents late grounded decisions from committing old evidence",
+      "source": "tests/library-policy.test.ts",
+      "line": 13,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-POLICY-06",
+      "name": "unknown grounding references and cancelled decisions cannot change the canvas",
+      "source": "tests/library-policy.test.ts",
+      "line": 14,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-POLICY-07",
+      "name": "a newer exact cue supersedes a slow grounded decision",
+      "source": "tests/library-policy.test.ts",
+      "line": 15,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-POLICY-08",
+      "name": "injected retrieval owns ranking while final reference validation remains mandatory",
+      "source": "tests/library-policy.test.ts",
+      "line": 16,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-POLICY-09",
+      "name": "committed canvas synchronization overrides a previous uncommitted selection",
+      "source": "tests/library-policy.test.ts",
+      "line": 23,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-SEARCH-01",
+      "name": "scope cues abstain on ambiguity, negation and corrections",
+      "source": "tests/library-search.test.ts",
+      "line": 5,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LIBRARY-SEARCH-02",
+      "name": "library index preserves semantic-only candidates and stable ties",
+      "source": "tests/library-search.test.ts",
+      "line": 6,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LOCAL-SELECTION-01",
+      "name": "local selector proposes only complete eligible evidence and never broadens missing scope",
+      "source": "tests/local-selection.test.ts",
+      "line": 11,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LOCAL-SELECTION-02",
+      "name": "classifier preference cannot see ineligible components or return unbound IDs",
+      "source": "tests/local-selection.test.ts",
+      "line": 17,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LOCAL-SELECTION-03",
+      "name": "local selection overrides a provider and preserves synthesis and missing-evidence guards without provider calls",
+      "source": "tests/local-selection.test.ts",
+      "line": 23,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LOCAL-SELECTION-04",
+      "name": "presentation factory defaults local even with a provider environment default; hosted comparisons require an explicit profile",
+      "source": "tests/local-selection.test.ts",
+      "line": 29,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LOCAL-SELECTION-05",
+      "name": "preference deadline falls back locally; parent cancellation never commits a fallback",
+      "source": "tests/local-selection.test.ts",
+      "line": 35,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LOCAL-SELECTION-06",
+      "name": "preference has one preparation lifecycle and closes its resources",
+      "source": "tests/local-selection.test.ts",
+      "line": 41,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LOCAL-SELECTION-07",
+      "name": "classifier selects an eligible alternative rather than simply returning the first rank",
+      "source": "tests/local-selection.test.ts",
+      "line": 45,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-LOCAL-SELECTION-08",
+      "name": "product factory defaults to validated synthesis and keeps small reranker explicit",
+      "source": "tests/local-selection.test.ts",
+      "line": 51,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-MATERIALS-01",
+      "name": "local upload extraction handles PDF, Office and images; rejects unsupported files and origins",
+      "source": "tests/materials.test.ts",
+      "line": 7,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PREDICTIVE-COMPONENTS-01",
+      "name": "hybrid component facets restrict both lexical and vector scoring to prepared families",
+      "source": "tests/predictive-components.test.ts",
+      "line": 9,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PREDICTIVE-COMPONENTS-02",
+      "name": "hybrid search rejects cross-project, changed source and embedding-space cache reuse",
+      "source": "tests/predictive-components.test.ts",
+      "line": 17,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PREDICTIVE-COMPONENTS-03",
+      "name": "forecast context excludes future speech and private notes and invalidates on epoch, revision and expiry",
+      "source": "tests/predictive-components.test.ts",
+      "line": 24,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PREDICTIVE-COMPONENTS-04",
+      "name": "malformed family distributions fail closed and retrieval never creates unsupported component references",
+      "source": "tests/predictive-components.test.ts",
+      "line": 34,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PREFERENCE-QUALITY-01",
+      "name": "preference fixture has a single declared target among five fully eligible alternatives",
+      "source": "tests/preference-quality.test.ts",
+      "line": 5,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PRESENTATION-OPTIMIZATION-01",
+      "name": "exact vector cache separates modes, deduplicates batches, isolates returned values and evicts",
+      "source": "tests/presentation-optimization.test.ts",
+      "line": 15,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PRESENTATION-OPTIMIZATION-02",
+      "name": "cancelled and malformed vectors cannot poison cache; instances do not share private inputs",
+      "source": "tests/presentation-optimization.test.ts",
+      "line": 22,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PRESENTATION-OPTIMIZATION-03",
+      "name": "compiled snapshots reuse only host-owned immutable input and detect unversioned evidence changes",
+      "source": "tests/presentation-optimization.test.ts",
+      "line": 29,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PRESENTATION-OPTIMIZATION-04",
+      "name": "prepared presenter builds before speech and interprets each turn once without changing supported or missing outcomes",
+      "source": "tests/presentation-optimization.test.ts",
+      "line": 35,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PRESENTATION-OPTIMIZATION-05",
+      "name": "controller waits for preparation and stop prevents queued speech from committing",
+      "source": "tests/presentation-optimization.test.ts",
+      "line": 43,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PRESENTATION-OPTIMIZATION-06",
+      "name": "a reviewed content edit only re-encodes changed documents and source withdrawal still fails",
+      "source": "tests/presentation-optimization.test.ts",
+      "line": 51,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PRESENTATION-OPTIMIZATION-07",
+      "name": "concurrent cache calls have independent cancellation and failed work is not retained",
+      "source": "tests/presentation-optimization.test.ts",
+      "line": 58,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-PRESENTATION-OPTIMIZATION-08",
+      "name": "readiness acknowledgements retain attempt identity and reject malformed IDs",
+      "source": "tests/presentation-optimization.test.ts",
+      "line": 64,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-RENDERERS-01",
+      "name": "both real renderer packages display equivalent grounded content",
+      "source": "tests/renderers.test.tsx",
+      "line": 8,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-RENDERERS-02",
+      "name": "OpenUI accepts split compositions and numeric reveal boundaries",
+      "source": "tests/renderers.test.tsx",
+      "line": 14,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-RENDERERS-03",
+      "name": "both renderer adapters display validated paired component references",
+      "source": "tests/renderers.test.tsx",
+      "line": 19,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-RENDERERS-04",
+      "name": "both adapters accept four-component cross-beat synthesis with stable slots",
+      "source": "tests/renderers.test.tsx",
+      "line": 24,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-REPLAY-01",
+      "name": "paired replay includes refresh, fallback and grounding in total time and retains failed rows",
+      "source": "tests/replay.test.ts",
+      "line": 5,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-REPLAY-02",
+      "name": "initialization failure cannot silently disappear from replay denominators",
+      "source": "tests/replay.test.ts",
+      "line": 13,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-REPLAY-03",
+      "name": "replay attributes model fallbacks to their turn and protects frozen expectations",
+      "source": "tests/replay.test.ts",
+      "line": 17,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-REPLAY-04",
+      "name": "profile construction errors count as initialization and case failures",
+      "source": "tests/replay.test.ts",
+      "line": 21,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-REPLAY-05",
+      "name": "replay preserves actual alternate selections and freezes acceptable reference sets",
+      "source": "tests/replay.test.ts",
+      "line": 26,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-REQUEST-FRAME-01",
+      "name": "request frames preserve speech and record inferred scope without inventing time",
+      "source": "tests/request-frame.test.ts",
+      "line": 6,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-REQUEST-FRAME-02",
+      "name": "request frames preserve explicit scope, unknown obligations and quoted speech",
+      "source": "tests/request-frame.test.ts",
+      "line": 13,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SEMANTIC-RETRIEVAL-01",
+      "name": "semantic index ranks normalized vectors and scopes exact query cache to prepared project content",
+      "source": "tests/semantic-retrieval.test.ts",
+      "line": 8,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SEMANTIC-RETRIEVAL-02",
+      "name": "semantic index rejects malformed vectors and cancelled query never enters cache",
+      "source": "tests/semantic-retrieval.test.ts",
+      "line": 18,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SEMANTIC-RETRIEVAL-03",
+      "name": "bounded selection exposes only prepared choices and separates hold from missing context",
+      "source": "tests/semantic-retrieval.test.ts",
+      "line": 25,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SEMANTIC-RETRIEVAL-04",
+      "name": "choice menu cannot invent references and fusion ranks deterministically without treating scores as confidence",
+      "source": "tests/semantic-retrieval.test.ts",
+      "line": 35,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SEMANTIC-RETRIEVAL-05",
+      "name": "a story edit during embedding rejects the result without caching it",
+      "source": "tests/semantic-retrieval.test.ts",
+      "line": 42,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SEMANTIC-RETRIEVAL-06",
+      "name": "semantic query cache evicts old entries instead of growing without bound",
+      "source": "tests/semantic-retrieval.test.ts",
+      "line": 47,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SERVER-01",
+      "name": "local transport isolates sessions, rejects bad messages and foreign origins",
+      "source": "tests/server.test.ts",
+      "line": 6,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SESSION-01",
+      "name": "new intent prevents a delayed old intent overwriting the canvas",
+      "source": "tests/session.test.ts",
+      "line": 5,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SESSION-02",
+      "name": "pause invalidates pending work and resume does not replay a backlog",
+      "source": "tests/session.test.ts",
+      "line": 14,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SESSION-03",
+      "name": "cancel prevents a pending commit",
+      "source": "tests/session.test.ts",
+      "line": 26,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYNTHESIS-01",
+      "name": "synthesis composes four supported references across beats with distinct stable slots",
+      "source": "tests/synthesis.test.ts",
+      "line": 11,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYNTHESIS-02",
+      "name": "synthesis excludes incompatible, withdrawn and undeclared companions and respects explicit form",
+      "source": "tests/synthesis.test.ts",
+      "line": 16,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYNTHESIS-03",
+      "name": "cross-beat declarations reject invalid references and deduplicate equivalent references",
+      "source": "tests/synthesis.test.ts",
+      "line": 26,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYNTHESIS-04",
+      "name": "rendered duplicates cannot sneak through different beat references",
+      "source": "tests/synthesis.test.ts",
+      "line": 30,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYNTHESIS-05",
+      "name": "synthesis holds invalid primary evidence and enforces cancellation and layout limits",
+      "source": "tests/synthesis.test.ts",
+      "line": 35,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYNTHESIS-06",
+      "name": "live presenter synthesizes the exact cue without a model call",
+      "source": "tests/synthesis.test.ts",
+      "line": 40,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYNTHESIS-07",
+      "name": "surviving components retain slots when another component disappears or the primary changes",
+      "source": "tests/synthesis.test.ts",
+      "line": 45,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYNTHESIS-08",
+      "name": "oversized companions and unsupported extra claims cannot fill the canvas",
+      "source": "tests/synthesis.test.ts",
+      "line": 52,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYNTHESIS-09",
+      "name": "inferred form does not reject a natural spoken statement in synthesis mode",
+      "source": "tests/synthesis.test.ts",
+      "line": 57,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYSTEM-ONE-01",
+      "name": "decision request shares topic descriptions without private notes",
+      "source": "tests/system-one.test.ts",
+      "line": 8,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYSTEM-ONE-02",
+      "name": "typed decisions produce grounded multi-topic composition",
+      "source": "tests/system-one.test.ts",
+      "line": 9,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYSTEM-ONE-03",
+      "name": "hold never constructs a composition and invalid choices/probabilities fail closed",
+      "source": "tests/system-one.test.ts",
+      "line": 10,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYSTEM-ONE-04",
+      "name": "Cloudflare variants use the existing authenticated decision endpoint without changing typed requests",
+      "source": "tests/system-one.test.ts",
+      "line": 12,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-SYSTEM-ONE-05",
+      "name": "unsupported decision providers fail before any transport call",
+      "source": "tests/system-one.test.ts",
+      "line": 27,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-VISUALS-01",
+      "name": "diagram tool prepares a reusable visual; malformed edges are rejected",
+      "source": "tests/visuals.test.ts",
+      "line": 21,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-VISUALS-02",
+      "name": "chart tool requires known source labels and numbers",
+      "source": "tests/visuals.test.ts",
+      "line": 28,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-VISUALS-03",
+      "name": "flow references must point to existing prepared visuals",
+      "source": "tests/visuals.test.ts",
+      "line": 35,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-WORKSPACE-01",
+      "name": "legacy stories are not imported into the evidence baseline",
+      "source": "tests/workspace.test.ts",
+      "line": 13,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-WORKSPACE-02",
+      "name": "incompatible saved stories are removed rather than migrated",
+      "source": "tests/workspace.test.ts",
+      "line": 17,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-WORKSPACE-03",
+      "name": "project chats, materials and composer drafts remain isolated across serialization",
+      "source": "tests/workspace.test.ts",
+      "line": 22,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-WORKSPACE-04",
+      "name": "repeated identical saves update one immutable project-linked snapshot",
+      "source": "tests/workspace.test.ts",
+      "line": 32,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-WORKSPACE-05",
+      "name": "unreadable project data is preserved instead of replaced by an empty workspace",
+      "source": "tests/workspace.test.ts",
+      "line": 41,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-WORKSPACE-06",
+      "name": "presentation context requests return only to the originating project",
+      "source": "tests/workspace.test.ts",
+      "line": 46,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-WORKSPACE-07",
+      "name": "saving updates a stable story id and retains changed snapshots",
+      "source": "tests/workspace.test.ts",
+      "line": 56,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-WORKSPACE-08",
+      "name": "story removal preserves chat and can be restored after reload",
+      "source": "tests/workspace.test.ts",
+      "line": 66,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-WORKSPACE-09",
+      "name": "removing active and last sessions preserves stories and valid active project",
+      "source": "tests/workspace.test.ts",
+      "line": 72,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    },
+    {
+      "id": "TEST-WORKSPACE-10",
+      "name": "restoring a removed story preserves its replacement in history",
+      "source": "tests/workspace.test.ts",
+      "line": 80,
+      "evidenceRun": "RUN-20261019-public-source-audit-v1"
+    }
+  ],
+  "selectedScreenshots": [
+    {
+      "path": "docs/validation/evidence/prepare-scroll-locked.png",
+      "originalPath": "output/playwright/prepare-scroll-locked.png",
+      "sha256": "7b5cb9a7af1a6613dbc6bc36651600e46bc35c091bd4e862c314741a7ed9670a",
+      "bytes": 118394,
+      "scope": "Synthetic fixture/demo screenshot; not a timed decision trace or independent semantic judgement."
+    },
+    {
+      "path": "docs/validation/evidence/story-removal.png",
+      "originalPath": "output/playwright/story-removal.png",
+      "sha256": "67c474bc6d74f6dcc1d0ef1eaaaeac87df05c1bc8e41259e18a641c03137d94d",
+      "bytes": 110119,
+      "scope": "Synthetic fixture/demo screenshot; not a timed decision trace or independent semantic judgement."
+    },
+    {
+      "path": "docs/validation/evidence/adaptive-chart-fixed.png",
+      "originalPath": "output/playwright/adaptive-chart-fixed.png",
+      "sha256": "4b32e355514ecf5e87a05918c97bee9b5872626655ed565236e5465725cb7ae8",
+      "bytes": 142378,
+      "scope": "Synthetic fixture/demo screenshot; not a timed decision trace or independent semantic judgement."
+    },
+    {
+      "path": "docs/validation/evidence/adaptive-followup-generation-first.png",
+      "originalPath": "output/playwright/adaptive-followup-generation-first.png",
+      "sha256": "1805b7beb5eb13e78089b46e670bee47c24c272b713ad607537d943f2fcbec12",
+      "bytes": 165615,
+      "scope": "Synthetic fixture/demo screenshot; not a timed decision trace or independent semantic judgement."
+    },
+    {
+      "path": "docs/validation/evidence/jev-live-complete.png",
+      "originalPath": "output/playwright/jev-live-complete.png",
+      "sha256": "35833720044b907736e11e961beae8c6943abdaa527e214dd88b2425de2bf3bf",
+      "bytes": 125256,
+      "scope": "Synthetic fixture/demo screenshot; not a timed decision trace or independent semantic judgement."
+    },
+    {
+      "path": "docs/validation/evidence/laya-live-complete.png",
+      "originalPath": "output/playwright/laya-live-complete.png",
+      "sha256": "b962c5b92dd34d22c78fb60d92c40e52a5c1f0f851348173b144fd2c0a870c5b",
+      "bytes": 126541,
+      "scope": "Synthetic fixture/demo screenshot; not a timed decision trace or independent semantic judgement."
+    },
+    {
+      "path": "docs/validation/evidence/microsoft-decision-live-complete.png",
+      "originalPath": "output/playwright/microsoft-decision-live-complete.png",
+      "sha256": "3ea11ecfb827a44f70a1a6d05967d9e1c39cbfc0aa5e2e8cae54e952c13e7763",
+      "bytes": 126225,
+      "scope": "Synthetic fixture/demo screenshot; not a timed decision trace or independent semantic judgement."
+    },
+    {
+      "path": "docs/validation/evidence/baseline-library.png",
+      "originalPath": "output/baseline-review/library.png",
+      "sha256": "47403d719473624f0b210ffcdccbfdd8c6c3caa5296bbc9e7f4f115b4966c8f7",
+      "bytes": 30110,
+      "scope": "Observed synthetic demonstration in the current baseline UI; not a semantic quality or latency measurement."
+    },
+    {
+      "path": "docs/validation/evidence/baseline-prepare-600.png",
+      "originalPath": "output/baseline-review/prepare-600.png",
+      "sha256": "f183b97ffc246e4e2431cc338fb6daa9f88fa5fe8532c6331eea94c4c58b3d3e",
+      "bytes": 65304,
+      "scope": "Observed synthetic demonstration in the current baseline UI; not a semantic quality or latency measurement."
+    },
+    {
+      "path": "docs/validation/evidence/baseline-prepare-900.png",
+      "originalPath": "output/baseline-review/prepare-900.png",
+      "sha256": "536131b1e3837462ac7c4941192a7119c4fc98c5a012b4b426ee1275e41509da",
+      "bytes": 65114,
+      "scope": "Observed synthetic demonstration in the current baseline UI; not a semantic quality or latency measurement."
+    },
+    {
+      "path": "docs/validation/evidence/baseline-prepare-desktop.png",
+      "originalPath": "output/baseline-review/prepare-desktop.png",
+      "sha256": "9bd7e6ca83b80a64abddfcdc39e800c94a11e35051e9face36ad43581359a5b2",
+      "bytes": 103308,
+      "scope": "Observed synthetic demonstration in the current baseline UI; not a semantic quality or latency measurement."
+    },
+    {
+      "path": "docs/validation/evidence/baseline-presentation-ready.png",
+      "originalPath": "output/baseline-review/presentation-ready.png",
+      "sha256": "85ae4ddbdf43bd1a74a8bcc33a46459755eb83e4e8cf1b3a93280e04476ac444",
+      "bytes": 61627,
+      "scope": "Observed synthetic demonstration in the current baseline UI; not a semantic quality or latency measurement."
+    },
+    {
+      "path": "docs/validation/evidence/frontend-modularity-library.png",
+      "originalPath": "output/playwright/frontend-modularity/library.png",
+      "sha256": "af6a7c8538824c51786d45a3a8c6c44cc1197abaf757cc6c327ab6a3fa871705",
+      "bytes": 41666,
+      "scope": "Synthetic frontend extraction fixture; layout and persistence evidence only."
+    },
+    {
+      "path": "docs/validation/evidence/frontend-modularity-prepare-1440.png",
+      "originalPath": "output/playwright/frontend-modularity/prepare-1440.png",
+      "sha256": "1858ca5a0e0af221ef170cb5efb3448c637953aa08873599eafc0cd7691a80ba",
+      "bytes": 166437,
+      "scope": "Synthetic frontend extraction fixture; layout and persistence evidence only."
+    },
+    {
+      "path": "docs/validation/evidence/frontend-modularity-prepare-600.png",
+      "originalPath": "output/playwright/frontend-modularity/prepare-600.png",
+      "sha256": "40a0620de9f3178c6065a61c5633e127ecfe3d21f91113a1f83b4a348c2559fe",
+      "bytes": 108348,
+      "scope": "Synthetic frontend extraction fixture; layout and persistence evidence only."
+    },
+    {
+      "path": "docs/validation/evidence/frontend-modularity-prepare-900.png",
+      "originalPath": "output/playwright/frontend-modularity/prepare-900.png",
+      "sha256": "dff63512f1fc75aa1d0ed50cc4d550b4ebfa495e4b2e2dbcda081868a502452f",
+      "bytes": 125738,
+      "scope": "Synthetic frontend extraction fixture; layout and persistence evidence only."
+    },
+    {
+      "path": "docs/validation/evidence/frontend-modularity-ready.png",
+      "originalPath": "output/playwright/frontend-modularity/ready.png",
+      "sha256": "225e9032909c39231680be2286b62e3f69cf99551148247db4dd91993b01a554",
+      "bytes": 120007,
+      "scope": "Synthetic frontend extraction fixture; layout and persistence evidence only."
+    },
+    {
+      "path": "docs/validation/evidence/component-coverage-coverage-review.png",
+      "originalPath": "output/playwright/component-coverage-v5/coverage-review.png",
+      "sha256": "97f9b6e330859deb3d34881b6ea7ea1d2256df9484b4ca99f53610c470b0a141",
+      "bytes": 94000,
+      "scope": "Synthetic component contract review and layout; not real model or microphone evidence."
+    },
+    {
+      "path": "docs/validation/evidence/component-coverage-library.png",
+      "originalPath": "output/playwright/component-coverage-v5/library.png",
+      "sha256": "39d97bcdb986cc103ebbf01fe6aa27c9555cea062b15c2e3cb6dea7891f244d2",
+      "bytes": 41733,
+      "scope": "Synthetic component contract review and layout; not real model or microphone evidence."
+    },
+    {
+      "path": "docs/validation/evidence/component-coverage-prepare-1440.png",
+      "originalPath": "output/playwright/component-coverage-v5/prepare-1440.png",
+      "sha256": "c16877a330c93a81d8b39b07538286e940594fbea5ed9f4611429aab173aa57d",
+      "bytes": 158997,
+      "scope": "Synthetic component contract review and layout; not real model or microphone evidence."
+    },
+    {
+      "path": "docs/validation/evidence/component-coverage-prepare-600.png",
+      "originalPath": "output/playwright/component-coverage-v5/prepare-600.png",
+      "sha256": "d791824c1725c9876a32d2f525b96c2e14bd2179875619eb8e55d051efd0fd54",
+      "bytes": 110815,
+      "scope": "Synthetic component contract review and layout; not real model or microphone evidence."
+    },
+    {
+      "path": "docs/validation/evidence/component-coverage-prepare-900.png",
+      "originalPath": "output/playwright/component-coverage-v5/prepare-900.png",
+      "sha256": "a0442b0b6b681d55427ddcea49a8368e4163fd0e99585004f84b040ceb28b470",
+      "bytes": 129450,
+      "scope": "Synthetic component contract review and layout; not real model or microphone evidence."
+    },
+    {
+      "path": "docs/validation/evidence/component-coverage-ready.png",
+      "originalPath": "output/playwright/component-coverage-v5/ready.png",
+      "sha256": "56dbc949477d0551fe304b0b68fb69ce116f98126260506f547a2b875f29afa9",
+      "bytes": 121010,
+      "scope": "Synthetic component contract review and layout; not real model or microphone evidence."
+    },
+    {
+      "path": "docs/validation/evidence/synthesis-json-render-1440.png",
+      "originalPath": "docs/validation/runs/RUN-20261019-synthesis-browser/json-render-1440.png",
+      "sha256": "dfd7df609035f32dde0fb8f5c9ebbfe2b6e78b7aa18afc3803023b789518f207",
+      "bytes": 51594,
+      "scope": "Actual renderer geometry on authored synthetic synthesis fixture; not live model/STT evidence."
+    },
+    {
+      "path": "docs/validation/evidence/synthesis-json-render-600.png",
+      "originalPath": "docs/validation/runs/RUN-20261019-synthesis-browser/json-render-600.png",
+      "sha256": "99b6000d6cdf7dd15b5a8bc29647df8ca308c1dfe6419d752b4e8a5b2223aa3a",
+      "bytes": 39954,
+      "scope": "Actual renderer geometry on authored synthetic synthesis fixture; not live model/STT evidence."
+    },
+    {
+      "path": "docs/validation/evidence/synthesis-json-render-900.png",
+      "originalPath": "docs/validation/runs/RUN-20261019-synthesis-browser/json-render-900.png",
+      "sha256": "a32284a72e6214324cedbb0ab04d68cd0d609f442a8f7c06ea4381078228355f",
+      "bytes": 42578,
+      "scope": "Actual renderer geometry on authored synthetic synthesis fixture; not live model/STT evidence."
+    },
+    {
+      "path": "docs/validation/evidence/synthesis-openui-1440.png",
+      "originalPath": "docs/validation/runs/RUN-20261019-synthesis-browser/openui-1440.png",
+      "sha256": "dfd7df609035f32dde0fb8f5c9ebbfe2b6e78b7aa18afc3803023b789518f207",
+      "bytes": 51594,
+      "scope": "Actual renderer geometry on authored synthetic synthesis fixture; not live model/STT evidence."
+    },
+    {
+      "path": "docs/validation/evidence/synthesis-openui-600.png",
+      "originalPath": "docs/validation/runs/RUN-20261019-synthesis-browser/openui-600.png",
+      "sha256": "7a42938eb41080781bb7fe28da560fffc8ec7f5ef927bed57628456a5427741c",
+      "bytes": 40018,
+      "scope": "Actual renderer geometry on authored synthetic synthesis fixture; not live model/STT evidence."
+    },
+    {
+      "path": "docs/validation/evidence/synthesis-openui-900.png",
+      "originalPath": "docs/validation/runs/RUN-20261019-synthesis-browser/openui-900.png",
+      "sha256": "a32284a72e6214324cedbb0ab04d68cd0d609f442a8f7c06ea4381078228355f",
+      "bytes": 42578,
+      "scope": "Actual renderer geometry on authored synthetic synthesis fixture; not live model/STT evidence."
+    },
+    {
+      "path": "docs/validation/evidence/synthesis-panel.png",
+      "originalPath": "docs/validation/runs/RUN-20261019-synthesis-browser/panel.png",
+      "sha256": "94d43eba5fae18b405f36bab168d4056061f3a849face6b28ec214154daa62f7",
+      "bytes": 1425,
+      "scope": "Actual renderer geometry on authored synthetic synthesis fixture; not live model/STT evidence."
+    },
+    {
+      "path": "docs/validation/evidence/full-spoken-demo-chrome-generation-complete.png",
+      "originalPath": "docs/validation/runs/RUN-20261019-full-spoken-demo/chrome-generation-complete.png",
+      "sha256": "79cb29866f4f9d0a395c68186d16c624e09b40ea39f739eba974f92d85f19c38",
+      "bytes": 69972,
+      "scope": "Actual Chrome audio replay after disclosed presenter edits on synthetic story."
+    },
+    {
+      "path": "docs/validation/evidence/full-spoken-demo-chrome-rich-complete.png",
+      "originalPath": "docs/validation/runs/RUN-20261019-full-spoken-demo/chrome-rich-complete.png",
+      "sha256": "52b01f6d657ac7a27bc65b8a043ac5c60c98c399eb0138a86274f6b9dc1f29fa",
+      "bytes": 69987,
+      "scope": "Actual Chrome audio replay after disclosed presenter edits on synthetic story."
+    },
+    {
+      "path": "docs/validation/evidence/full-spoken-demo-chrome-storage-complete.png",
+      "originalPath": "docs/validation/runs/RUN-20261019-full-spoken-demo/chrome-storage-complete.png",
+      "sha256": "5ffbf7cc6b26dfa39d7b3dfd37f75e7d3610ddb7b00eb3193242ecf14e196ea0",
+      "bytes": 58364,
+      "scope": "Actual Chrome audio replay after disclosed presenter edits on synthetic story."
+    }
+  ]
+}

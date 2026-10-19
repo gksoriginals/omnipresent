@@ -1,0 +1,147 @@
+{
+  "recordedAt": "2026-10-17T14:57:58.296Z",
+  "scope": "Synthetic presentation decision screen, 12 labelled cases; 2 repeats for decision APIs, 1 for matched Qwen tool baseline. Same request across decision APIs, Qwen uses equivalent choice tool schema. Network latency for hosted APIs; local Laya CPU end-to-end latency. Labels are developer-authored, not independent human evaluation. No calibrated threshold claims.",
+  "spentUSD": 0,
+  "results": [
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "panels",
+      "elapsedMs": 4834.869583,
+      "valid": false,
+      "error": "Qwen returned no decision"
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "storage",
+      "elapsedMs": 3310.061458,
+      "valid": false,
+      "error": "Qwen returned no decision"
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "pattern",
+      "elapsedMs": 2528.685709000001,
+      "valid": false,
+      "error": "Qwen returned no decision"
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "compare",
+      "elapsedMs": 4417.827417,
+      "valid": false,
+      "error": "Qwen returned no decision"
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "pattern-storage",
+      "speech": "Put the daily production pattern next to battery storage, connecting daytime production to evening use.",
+      "elapsedMs": 2666.9119170000013,
+      "valid": true,
+      "primaryCorrect": false,
+      "secondaryCorrect": true,
+      "selections": {
+        "include_topic_0": "include",
+        "include_topic_1": "include",
+        "include_topic_2": "exclude",
+        "mode": "mixed",
+        "layout": "split",
+        "primary": "topic_0",
+        "secondary": "topic_1"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "correction",
+      "speech": "Not the panels. I mean the battery storing energy after sunset.",
+      "elapsedMs": 2624.4192909999983,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "include_topic_0": "exclude",
+        "include_topic_1": "exclude",
+        "include_topic_2": "include",
+        "mode": "text",
+        "layout": "focus",
+        "primary": "topic_2",
+        "secondary": "none"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "paraphrase",
+      "elapsedMs": 1973.0064160000002,
+      "valid": false,
+      "error": "Qwen returned no decision"
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "off-topic",
+      "elapsedMs": 2131.1504160000004,
+      "valid": false,
+      "error": "Qwen returned no decision"
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "vague",
+      "speech": "Um, that thing, you know, the one I mentioned.",
+      "elapsedMs": 3221.2127080000027,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "include_topic_0": "exclude",
+        "include_topic_1": "exclude",
+        "include_topic_2": "exclude",
+        "mode": "text",
+        "layout": "focus",
+        "primary": "hold",
+        "secondary": "none"
+      }
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "missing-evidence",
+      "elapsedMs": 1981.0098749999997,
+      "valid": false,
+      "error": "Qwen returned no decision"
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "synthetic-qualification",
+      "elapsedMs": 5042.538166999999,
+      "valid": false,
+      "error": "Qwen returned no decision"
+    },
+    {
+      "provider": "qwen",
+      "repeat": 0,
+      "id": "return",
+      "speech": "Return to the process of panels converting sunlight into electricity.",
+      "elapsedMs": 5177.9702499999985,
+      "valid": true,
+      "primaryCorrect": true,
+      "secondaryCorrect": true,
+      "selections": {
+        "include_topic_0": "include",
+        "include_topic_1": "exclude",
+        "include_topic_2": "exclude",
+        "mode": "visual",
+        "layout": "focus",
+        "primary": "topic_0",
+        "secondary": "none"
+      }
+    }
+  ]
+}
