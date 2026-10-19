@@ -1,6 +1,6 @@
 # Working on Omnipresent
 
-Read README.md, docs/architecture/current.md, CONTRIBUTING.md and the latest evidence register before changing defaults. Historical research snapshots are not current runtime guidance.
+Read README.md, docs/architecture/current.md, .github/CONTRIBUTING.md and the latest evidence register before changing defaults. Historical research snapshots are not current runtime guidance.
 
 ## Commands
 
@@ -20,6 +20,6 @@ Use existing model/selector/planner interfaces for focused experiments. Do not w
 
 ## Evidence
 
-Do not edit historical inputs, reports or source snapshots in docs/validation/runs. New changes need a uniquely named audit and refreshed generated catalog; see CONTRIBUTING.md. Preserve failed experiments and report what checks actually ran. Paid comparisons need explicit authorization and a bounded budget.
+Do not edit historical inputs, reports or source snapshots in docs/validation/runs. New changes need a uniquely named audit and refreshed generated catalog; see .github/CONTRIBUTING.md. Preserve failed experiments and report what checks actually ran. Paid comparisons need explicit authorization and a bounded budget.
 
 Keep credentials, private materials, browser storage, model files, environments and generated build/output directories out of Git. Explicit provider credentials come from environment configuration only. Do not inspect another application's auth files.

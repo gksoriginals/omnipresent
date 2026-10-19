@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="112" viewBox="0 0 112 112" role="img" aria-labelledby="title desc">
+  <title id="title">Omnipresent</title>
+  <desc id="desc">Two overlapping presentation canvases with a chart and text composition.</desc>
+  <rect x="12" y="15" width="67" height="55" rx="9" fill="#f5f6f0" stroke="#355f4c" stroke-width="6"/>
+  <rect x="32" y="39" width="67" height="55" rx="9" fill="#355f4c"/>
+  <rect x="43" y="51" width="15" height="30" rx="2" fill="#f5f6f0"/>
+  <rect x="65" y="51" width="22" height="9" rx="2" fill="#e8c65a"/>
+  <rect x="65" y="67" width="22" height="14" rx="2" fill="#f5f6f0"/>
+</svg>

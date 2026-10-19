@@ -1,80 +1,77 @@
-# Omnipresent
+<p align="center">
+  <img src="docs/assets/logo.svg" width="112" height="112" alt="Omnipresent logo">
+</p>
+<h1 align="center">Omnipresent</h1>
+<p align="center"><strong>Prepare your story. Let the canvas follow your explanation.</strong></p>
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-355f4c" alt="License: Apache-2.0"></a>
+  <a href="https://github.com/gksoriginals/omnipresent/actions/workflows/ci.yml"><img src="https://github.com/gksoriginals/omnipresent/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="docs/roadmap.md"><img src="https://img.shields.io/badge/status-early_prototype-e8c65a" alt="Status: early prototype"></a>
+</p>
+<p align="center">
+  <a href="#demo">Demo</a> ·
+  <a href="#get-started">Get started</a> ·
+  <a href="docs/README.md">Documentation</a> ·
+  <a href=".github/CONTRIBUTING.md">Contributing</a>
+</p>
 
-**Prepare your story through conversation. Present it on a canvas that follows your explanation.**
+Omnipresent helps you turn an idea and your materials into a visual presentation. Talk through your audience and goals, refine the story with an agent, then present on a canvas that brings up relevant text, charts, diagrams and images as you speak.
 
-Omnipresent helps you turn an idea, your notes and supporting materials into a visual presentation. You talk with an interview agent about your audience and what you want to communicate. A storyteller then helps shape the flow, and you refine it through chat.
+## Demo
 
-When you present, Omnipresent uses your speech and the prepared story to decide which text, charts, diagrams and images to show together. The aim is to let you concentrate on explaining your ideas while the canvas brings up the right visual support.
+![A solar-energy presentation combining a statement, two charts and an illustration during the local spoken replay](docs/images/live-presentation.png)
 
-For example, a teacher preparing a short lesson on solar energy can bring a spreadsheet, shape a story about generation and storage, then explain it with a canvas that combines the relevant charts and illustrations.
+*A real capture from the local spoken replay, using a synthetic solar-energy teaching example.*
 
-**Status: early prototype, developed in public.** You can prepare and review stories, save separate projects, and try the presentation canvas. Natural-speech understanding still needs work; see [what works today and what needs improvement](#what-works-today).
+<details>
+<summary>See the preparation workspace</summary>
 
-## From an idea to a presentation
+Chat and review the story side by side. Attach materials and ask for changes in the same conversation.
 
-1. **Talk it through.** Describe your topic, audience and goal. Add documents, images, spreadsheets or notes in the same conversation.
-2. **Shape the story.** Review the suggested flow beside your chat. Ask for changes, review the supporting materials, and save the story when you are ready.
-3. **Start presenting.** Choose a saved story from Canvas and start. Omnipresent uses the prepared content to compose visuals as you speak. When it cannot support a request, it keeps the current canvas and asks for more context in Prepare.
+![Prepare workspace showing a presentation conversation beside the story, chart and illustration](docs/images/prepare-story.png)
 
-### Prepare and refine your story
+The conversation shown is an authored demonstration. [Screenshot details](docs/images/README.md).
 
-Keep the conversation and story side by side, with materials attached inside the chat.
+</details>
 
-![Omnipresent Prepare: a presentation conversation beside a story preview with a chart and illustration](docs/images/prepare-story.png)
+## How it works
 
-### Present with visual support
+1. **Talk it through.** Describe your topic, audience and goal. Add notes, documents, images or spreadsheets.
+2. **Shape the story.** Review the suggested flow beside your chat, ask for changes, and save it.
+3. **Present.** Choose your story in Canvas and start. Omnipresent composes the prepared visuals around your explanation and asks for more context when something is unsupported.
 
-The canvas can bring a statement, an illustration and multiple charts together for the current explanation.
+## Features
 
-![Omnipresent presentation canvas showing a solar-energy explanation with two charts, a statement and an illustration](docs/images/live-presentation.png)
+| | |
+| --- | --- |
+| **Conversational preparation** | Separate interview and storytelling roles help gather context and shape the presentation. |
+| **Your materials** | Upload documents, images and data; prepare charts and diagrams for the story. |
+| **Adaptive canvas** | Combine relevant text and visuals for the current explanation. |
+| **Multiple projects** | Keep separate preparation chats and saved stories. |
+| **Local-first runtime** | Local speech recognition and presentation selection; no paid decision-model API required for the normal live path. |
 
-*Screenshots from the running app using a public solar-energy teaching example with synthetic data. The Prepare conversation is an authored demonstration; the presentation screenshot was captured during the actual local spoken replay. [Capture details](docs/images/README.md).*
+**Early prototype.** Preparation and visual composition work, but spontaneous-speech understanding remains experimental. Some supported explanations are still rejected when speech is split or misrecognized. [Known limitations and test results](docs/research/preference-quality.md).
 
-## What works today
+## Get started
 
-- Separate preparation chats for multiple presentations, with saved stories in Canvas.
-- Material uploads, conversational story editing, and prepared charts and diagrams.
-- A presentation canvas that combines supported components and retains the current view when evidence is missing.
-- Local speech recognition, retrieval and presentation selection. The normal live path does not require a paid decision-model API.
-
-The live experience remains experimental. In the latest dedicated audio check, speech recognition split a supported explanation into fragments and the presenter held the canvas. The pictured replay demonstrates an example that composes successfully; it does not establish reliable handling of spontaneous speech. [Read the tests and known limitations](docs/research/preference-quality.md).
-
-## Try it locally
-
-Requirements: Node.js **22.12+**, npm, [uv](https://docs.astral.sh/uv/), Python **3.12** managed by uv, and a local model server for preparation. Development has been exercised on macOS/Apple Silicon; CI checks portable software behavior on Linux. Other platforms' model runtimes remain unverified.
+Requires Node.js **22.12+**, npm, [uv](https://docs.astral.sh/uv/) and [Ollama](https://ollama.com/). Python 3.12 is used for local speech and retrieval. macOS/Apple Silicon is the exercised model-runtime platform; software CI also runs on Linux.
 
 ```sh
 git clone https://github.com/gksoriginals/omnipresent.git
 cd omnipresent
 npm ci
 npm run setup:env
-```
-
-For local preparation, install [Ollama](https://ollama.com/), start its service and download the configured model:
-
-```sh
 ollama pull qwen3.5:4b
-```
-
-Install speech and retrieval runtimes separately; these download packages and model weights and require additional disk/RAM:
-
-```sh
 npm run setup:speech
 npm run retrieval:setup
 npm run dev
 ```
 
-Open **http://127.0.0.1:5173**. The coordinator listens on loopback port 4317 and the embedding service on 4332. `npm run dev` starts retrieval when installed; model initialization may take time. The speech model loads when presentation starts. Some Hugging Face models may require accepting upstream terms and local authentication; do not put tokens in source control. Read [third-party and model notices](THIRD_PARTY_NOTICES.md) before downloading or redistributing runtimes.
+Start the Ollama service before preparing a story, then open **http://127.0.0.1:5173**. Runtime setup downloads packages and model weights.
 
-The UI can start without model environments; preparation, retrieval and voice features need their respective running dependencies. There is no fake-model success fallback. Use Prepare to chat and attach materials, finish the interview, review the generated story, and save it. Canvas lists saved stories; select one and start. Projects and stories persist in this browser; uploaded material files are stored under ignored `output/materials/`. This is a single-user local app, not a hosted multi-user service.
+[Full setup guide](docs/getting-started.md) · [Environment configuration](docs/configuration.md)
 
-Configuration, optional keys, loading precedence and ignored files: [environment setup](docs/configuration.md).
-
-## For developers
-
-The product uses TypeScript/React, a Node coordinator and isolated Python workers. Preparation defaults to local Qwen, speech recognition to Moonshine, and retrieval to BM25 plus EmbeddingGemma. Application code checks evidence and validates a composition before changing the canvas. Experimental preference models are opt-in; there is no automatic paid fallback.
-
-See the [current architecture and model defaults](docs/architecture/current.md), [configuration guide](docs/configuration.md), and [documentation index](docs/README.md) for technical details.
+## Development
 
 ```sh
 npm test
@@ -82,16 +79,16 @@ npm run build
 npm run validate:evidence
 ```
 
-Core software checks need no model credentials or weight downloads. The optional extraction test needs its Python environment; CI installs it. Model, audio and browser experiments are separate: [testing guidance](docs/testing.md).
+Core checks need no model credentials or weight downloads. The optional extraction test needs its Python environment; CI installs it. Model, audio and browser experiments are separate.
 
-## Build with us
+[Architecture and model defaults](docs/architecture/current.md) · [Testing](docs/testing.md) · [Roadmap](docs/roadmap.md)
 
-We are continuing development in public. The next priority is helping supported natural speech reach the right presentation decision consistently. We welcome reproducible bug reports, usability feedback and focused contributions.
+## Contributing
 
-Start with [CONTRIBUTING](CONTRIBUTING.md), the [roadmap](ROADMAP.md), [product requirements](docs/PRD.md), and the [test and experiment register](docs/validation/test-register.md). Report vulnerabilities privately through [SECURITY](SECURITY.md). Community participation follows our [code of conduct](CODE_OF_CONDUCT.md).
+We are building in public. Reproducible bug reports, usability feedback and focused contributions are welcome. Start with the [contribution guide](.github/CONTRIBUTING.md) and [product requirements](docs/PRD.md).
 
-No model weights, environments, credentials or personal presentation uploads are distributed in this repository. Dependencies, models and public research fixtures retain their [upstream terms](THIRD_PARTY_NOTICES.md).
+[Support](.github/SUPPORT.md) · [Code of conduct](.github/CODE_OF_CONDUCT.md) · [Security reporting](.github/SECURITY.md) · [Governance](docs/governance.md)
 
 ## License
 
-Original Omnipresent source is licensed under [Apache-2.0](LICENSE).
+[Apache-2.0](LICENSE). Dependencies, models and research fixtures retain their [upstream terms](docs/third-party-notices.md). No model weights, credentials or personal presentation uploads are distributed in this repository.

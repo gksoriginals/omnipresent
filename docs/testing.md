@@ -8,7 +8,7 @@ The test suite uses explicit fixtures and adapters. It does not establish model 
 
 ## New source changes
 
-Record a uniquely named software audit, regenerate the catalog and verify it. See CONTRIBUTING.md. Do not overwrite historical runs or their snapshots. The generated catalog verifies hashes and current test mappings; it is not a certification.
+Record a uniquely named software audit, regenerate the catalog and verify it. See `.github/CONTRIBUTING.md`. Do not overwrite historical runs or their snapshots. The generated catalog verifies hashes and current test mappings; it is not a certification.
 
 ## Optional inference experiments
 

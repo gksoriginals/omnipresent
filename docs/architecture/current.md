@@ -42,4 +42,4 @@ The latest real audio experiment failed its supported positive explanation. Moon
 
 Do not describe this architecture as solved speech understanding. Next work is bounded completed-speech context and a local intent/purpose proposal layer, evaluated against missing evidence, negation, corrections and stale work before default adoption. Those improvements are a roadmap item, not a hidden new inference step in this snapshot.
 
-See [latest experiments](../research/preference-quality.md), [local selection lifecycle](local-selection.md), [historical baseline](baseline.md), and [roadmap](../../ROADMAP.md). The historical baseline's hosted defaults are superseded by this document.
+See [latest experiments](../research/preference-quality.md), [local selection lifecycle](local-selection.md), [historical baseline](baseline.md), and [roadmap](../roadmap.md). The historical baseline's hosted defaults are superseded by this document.
