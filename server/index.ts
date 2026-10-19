@@ -106,25 +106,7 @@ server.on("upgrade", (req, socket, head) => {
 const lag = monitorEventLoopDelay({ resolution: 10 });
 lag.enable();
 
-interface SpeechRuntime {worker?: ChildProcessWithoutNullStreams;speechStatus:string;pendingAudio:boolean;audioSequence:number}
-interface LivePresentationSession {
-  disposed?:boolean;
-  started:boolean;
-  speech:SpeechRuntime;
-  sessionId: string;
-  storyOrigin?: { projectId: string; storyId: string };
-  story: ReturnType<typeof preparationSchema.parse>;
-  session: Session;
-  adaptive: AdaptiveController;
-  activePresenter: ReturnType<typeof createPresenter>;
-  presenterSocket: WebSocket | null;
-  audienceSockets: Set<WebSocket>;
-  graceTimer: NodeJS.Timeout | null;
-  lastStage: any;
-  lastSnapshot: any;
-  lastTranscript?: string;
-  presentationEpoch: number;
-}
+import {LivePresentationSession,type SpeechRuntime} from "./presentation/live-session.js";
 
 const liveSessions = new Map<string, LivePresentationSession>();
 const pendingAudienceSockets = new Map<string, Set<WebSocket>>();
@@ -132,22 +114,7 @@ const pendingAudienceSockets = new Map<string, Set<WebSocket>>();
 function teardownLiveSession(sessionId: string) {
   const ls = liveSessions.get(sessionId);
   if (!ls) return;
-  if (ls.graceTimer) {
-    clearTimeout(ls.graceTimer);
-    ls.graceTimer = null;
-  }
-  ls.disposed=true;
-  ls.adaptive.stop();
-  ls.session.cancel();
-  ls.activePresenter.presenter.close();
-  ls.speech.worker?.kill();
-  const stopMsg = JSON.stringify({ type: "presentation_stopped" });
-  for (const audWs of ls.audienceSockets) {
-    if (audWs.readyState === WebSocket.OPEN) {
-      try { audWs.send(stopMsg); } catch {}
-    }
-  }
-  ls.audienceSockets.clear();
+  ls.dispose();
   liveSessions.delete(sessionId);
 }
 
@@ -245,6 +212,7 @@ wss.on("connection", (ws, req: any) => {
   const write = (data: Record<string, unknown>) =>
     speech.worker?.stdin.write(JSON.stringify(data) + "\n");
   function closeSpeech() {
+    adaptive.resetTranscripts();
     speech.pendingAudio = false;
     speech.worker?.kill();
     speech.worker = undefined;
@@ -282,8 +250,8 @@ wss.on("connection", (ws, req: any) => {
         broadcastPresentation(event);
         if (event.type === "transcript" && event.final && event.text?.trim()) {
           if (activeLiveSession) activeLiveSession.lastTranscript = event.text;
-          void adaptive.accept(event.text);
         }
+        if(event.type==="transcript"||event.type==="speech_activity")adaptive.acceptTranscript(event);
       } catch {
         send({ type: "error", message: "Invalid response from speech worker" });
       }
@@ -380,10 +348,7 @@ wss.on("connection", (ws, req: any) => {
 
           if (sid && liveSessions.has(sid)) {
             const existing = liveSessions.get(sid)!;
-            if (existing.graceTimer) {
-              clearTimeout(existing.graceTimer);
-              existing.graceTimer = null;
-            }
+            existing.cancelExpiry();
             const previousSocket=existing.presenterSocket;
             existing.presenterSocket=ws;
             if (previousSocket && previousSocket !== ws && previousSocket.readyState === WebSocket.OPEN) {
@@ -398,6 +363,7 @@ wss.on("connection", (ws, req: any) => {
             if(speech!==existing.speech)speech.worker?.kill();
             session = existing.session;
             adaptive = existing.adaptive;
+            adaptive.resetTranscripts();
             activePresenter = existing.activePresenter;
             speech = existing.speech;
 
@@ -437,9 +403,8 @@ wss.on("connection", (ws, req: any) => {
               }
               pendingAudienceSockets.delete(sid);
             }
-            activeLiveSession = {
+            activeLiveSession = new LivePresentationSession({
               sessionId: sid,
-              started:false,
               storyOrigin: loadedStoryOrigin,
               story,
               session,
@@ -448,11 +413,8 @@ wss.on("connection", (ws, req: any) => {
               speech,
               presenterSocket: ws,
               audienceSockets: audienceSet,
-              graceTimer: null,
-              lastStage: null,
-              lastSnapshot: null,
               presentationEpoch,
-            };
+            });
             liveSessions.set(sid, activeLiveSession);
           }
 
@@ -463,10 +425,10 @@ wss.on("connection", (ws, req: any) => {
           if(event.requestId!==undefined&&(typeof event.requestId!=="string"||event.requestId.length>160))throw Error("Invalid presentation request ID");
           presentationCatalog(loadedStory ?? preparation.state);
           const generation=++presentationEpoch;
-          if(activeLiveSession)activeLiveSession.started=true;
+          if(activeLiveSession)activeLiveSession.begin();
           if (activeLiveSession) activeLiveSession.presentationEpoch = generation;
           broadcastPresentation({type:"presentation_status",status:"preparing"});
-          void adaptive.start(loadedStory ?? preparation.state).then(()=>{if(generation===(activeLiveSession?.presentationEpoch??presentationEpoch))broadcastPresentation({type:"presentation_ready",requestId:event.requestId});}).catch(error=>{if(generation===(activeLiveSession?.presentationEpoch??presentationEpoch)){if(activeLiveSession)activeLiveSession.started=false;adaptive.stop();broadcastPresentation({type:"agent_error",message:error.message});}});
+          void adaptive.start(loadedStory ?? preparation.state).then(()=>{if(generation===(activeLiveSession?.presentationEpoch??presentationEpoch)){activeLiveSession?.ready();broadcastPresentation({type:"presentation_ready",requestId:event.requestId});}}).catch(error=>{if(generation===(activeLiveSession?.presentationEpoch??presentationEpoch)){if(activeLiveSession)activeLiveSession.failed();adaptive.stop();broadcastPresentation({type:"agent_error",message:error.message});}});
           break;
         }
         case "presentation_stop":
@@ -491,7 +453,7 @@ wss.on("connection", (ws, req: any) => {
           if (typeof event.text !== "string" || event.text.length > 6000) throw Error("Invalid speech text");
           if (activeLiveSession) activeLiveSession.lastTranscript = event.text;
           broadcastPresentation({ type: "transcript", text: event.text, final: true });
-          void adaptive.accept(event.text);
+
           break;
         case "finish_interview":
           void preparation.finishInterview().catch(error => send({type: "agent_error", message: error.message}));
@@ -562,6 +524,7 @@ wss.on("connection", (ws, req: any) => {
           }
           break;
         case "speech_start":
+          adaptive.resetTranscripts();
           if (speech.speechStatus !== "ready")
             throw Error("Speech model is not ready");
           write({ type: "start" });
@@ -631,22 +594,14 @@ wss.on("connection", (ws, req: any) => {
     if (activeLiveSession && (activeLiveSession.disposed || activeLiveSession.presenterSocket !== ws)) return;
     if (activeLiveSession && activeLiveSession.presenterSocket === ws) {
       activeLiveSession.presenterSocket = null;
-      if (!activeLiveSession.graceTimer) {
-        const sid = activeLiveSession.sessionId;
-        activeLiveSession.graceTimer = setTimeout(() => {
-          teardownLiveSession(sid);
-        }, 30000);
-      }
-      clearInterval(metrics);
+      const sid=activeLiveSession.sessionId;
+      activeLiveSession.scheduleExpiry(()=>teardownLiveSession(sid));
       return;
     }
     activePresenter.presenter.close();
-    clearInterval(metrics);
     presentationEpoch++;adaptive.stop();
     session.cancel();
-    preparation.cancel();
     speech.worker?.kill();
-    load?.kill();
   });
 });
 server.listen(port, "127.0.0.1", () =>

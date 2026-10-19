@@ -62,3 +62,7 @@ test("failed server saves retain the newest snapshot for an explicit retry",asyn
   fail=false;await store.flush();assert.equal(saved.length,1);assert.equal(store.syncError,"");
  }finally{globalThis.fetch=original;}
 });
+test("session events expose assembled speech separately from interim transcript updates",()=>{
+ const event=parseSessionEvent(JSON.stringify({type:"presentation_utterance",text:"Solar panels turn sunlight. Into electricity."}));
+ assert.equal(event?.type,"presentation_utterance");assert.throws(()=>parseSessionEvent(JSON.stringify({type:"presentation_utterance",text:"a".repeat(6001)})));
+});

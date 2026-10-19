@@ -8,7 +8,7 @@ import {sourceBackedLibrary} from './source-backed-evidence-fixture.js';
 import {LibrarySearch} from '../server/controllers/library-search.js';
 import {CachedEmbedder} from '../server/models/cached-embeddings.js';
 import {EmbeddingGemmaModel} from '../server/models/embeddings.js';
-import {LocalHybridSelector,ClassifierPreferenceSelector,eligibleAssets,type SelectionContext,type AssetSelector} from '../server/presentation/selection.js';
+import {LocalHybridSelector,ClassifierPreferenceSelector,type SelectionContext,type AssetSelector} from '../server/presentation/selection.js';
 import {LocalClassifierPreference} from '../server/models/local-preference.js';
 import {supportsEvidence,interpretEvidence} from '../server/controllers/evidence-contract.js';
 const id=process.argv[2];if(!id||!/^RUN-[\w-]+$/.test(id))throw Error('Unique run ID required');

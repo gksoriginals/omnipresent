@@ -70,6 +70,8 @@ records=[
 ('EXP-061','Dynamic INT8 narrow preference diagnostic','executed-negative-precision-screen','docs/validation/runs/RUN-20261019-preference-int8-v1/replay.json','node --import tsx scripts/preference-precision-replay.ts RUN-unique-id','Same frozen 32 role cases, three rotated menus. INT8 Linear/qnnpack is slower, 89/96 unrestricted versus 96/96 FP32; all timed calls fall back. Rotated fallback menu is not hybrid-ranked, so its timed accuracy is not comparable to EXP-059. Checkpoint storage unchanged; peak includes conversion.'),
 ('EXP-062','Public snapshot local defaults and synthesis integration','executed-local-text-integration','docs/validation/runs/RUN-20261019-public-defaults-live/local.json','node --import tsx scripts/local-only-live-probe.ts output/unique-name','Restarted normal dev command without planner override; local hybrid plus default synthesis makes four supported components and holds missing evidence. No provider attempts; text protocol only, not audio or browser acceptance.'),
 ('EXP-063','Alpha release browser speech and lifecycle acceptance','executed-mixed-browser-audio','docs/validation/runs/RUN-20261019-release-live-v1/browser.json',None,'Real local interview and fourth-attempt story after brief refinement; Piper virtual microphone, Moonshine, embeddings, audience projection, reconnect and fresh-session recovery. Battery selection and missing evidence pass; panel STT split fails. No physical microphone or independent speech acceptance.'),
+('EXP-064','Transcript assembly versus a separate story-signal index','executed-local-audio-ablation','docs/validation/runs/RUN-20261019-transcript-ablation-v2/local.json','node --import tsx scripts/speech-assembly-replay.ts RUN-unique-id','Four authored Piper recordings shared across per-final, temporal and signal-assisted arms. v1 overlap bug retained; v2 temporal and extra index both 4/4 versus per-final 3/4. Removed index has no incremental demonstrated benefit. Current command runs only the retained arms; historical three-arm source is frozen.'),
+('EXP-065','Minimal transcript assembly after signal-index removal','executed-local-audio-development','docs/validation/runs/RUN-20261019-transcript-minimal-v3/local.json','node --import tsx scripts/speech-assembly-replay.ts RUN-unique-id','Same four recordings, one pass per case. Panel starts on battery view and must change canvas. Minimal assembly 4/4 versus per-final 3/4; unknown costs and retain preserved. Adds quiet-window latency; not independent microphone, semantic-quality or p95 acceptance.'),
 ('PLAN-002','Media retrieval, dimensions and semantic answer cache comparison','planned','docs/embeddinggemma_use_cases.md',None,'Text-only embedding retrieval and exact query caching are measured in EXP-024/025. Multimodal encoders, smaller dimensions and semantic answer reuse remain unvalidated.'),
 ('PLAN-003','Alternative STT, Groq, orchestration and desktop comparisons','research-only','docs/baseline_technology_research.md',None,'Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frameworks and Electron were not benchmarked as winners.'),
 ]
@@ -116,7 +118,12 @@ for id,title,status,path,command,notes in records:
    for extra in sorted(folder.glob('*')):
     if extra.is_file() and str(extra)!=path:
      data=extra.read_bytes();e['artifacts'].append({'path':str(extra),'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data)})
- if id in ['EXP-063','EXP-062','EXP-061','EXP-059','EXP-058','EXP-057','EXP-056','EXP-055','EXP-052','EXP-053']:
+ if id=='EXP-064':
+  for folder in sorted(Path('docs/validation/runs').glob('RUN-20261019-transcript-ablation-v*')):
+   for extra in sorted(folder.glob('*')):
+    if extra.is_file() and str(extra)!=path:
+     data=extra.read_bytes();e['artifacts'].append({'path':str(extra),'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data)})
+ if id in ['EXP-065','EXP-063','EXP-062','EXP-061','EXP-059','EXP-058','EXP-057','EXP-056','EXP-055','EXP-052','EXP-053']:
   for extra in sorted(Path(path).parent.glob('*')):
    if extra.is_file() and str(extra)!=path:
     data=extra.read_bytes();e['artifacts'].append({'path':str(extra),'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data)})

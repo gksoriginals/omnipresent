@@ -27,3 +27,15 @@ Latest distinct-preference and real-audio commands and scope are documented in `
 [Release live evidence](validation/runs/RUN-20261019-release-live-v1/browser.json) records the actual local Qwen interview, material upload, reviewed story save/reload, virtual-microphone Piper audio, Moonshine transcription, local hybrid selection, browser rendering and audience window. Microphone recapture on refresh and fresh-session startup after a coordinator restart passed. The battery explanation selected its content; the unsupported cost request held and requested evidence. The panel explanation split into separate STT finals and failed selection. Three initial storyteller attempts failed tool validation; explicit brief refinement preceded the successful fourth UI attempt. This is mixed integration evidence, not general speech acceptance.
 
 Automated regressions separately cover active presenter replacement, audience payload privacy/read-only commands, interrupted-load recovery, concurrent startup edits and ordered saves, retained failed saves, evidence eligibility/cancellation for manual cues, and portable image transfer with tamper rejection. The coordinator test explicitly preloads deterministic embedding vectors; it does not call or score a real model. Real model services are used only in the optional live check.
+
+
+## Transcript assembly comparison
+
+[Assembly ablation](research/speech-assembly.md) compares per-final processing, temporal assembly and an additional story-signal index on identical real Moonshine events. The extra index was removed after it showed no incremental outcome benefit. Current optional replay:
+
+```sh
+# Requires cached local STT/embedding runtimes; start retrieval explicitly first.
+node --import tsx scripts/speech-assembly-replay.ts RUN-YYYYMMDD-unique-speech-id
+```
+
+The replay uses committed authored audio, runs no hosted inference, and is never an implicit software-test dependency. It measures actual STT-to-host behavior, excluding browser painting and physical microphone capture. Current model-free tests also check 100 seeded interval configurations for preservation of every finalized word.

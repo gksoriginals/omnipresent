@@ -1,7 +1,7 @@
 import {test} from "node:test";
 import assert from "node:assert/strict";
 import {SemanticIndex,scopeKey,validateVectors,fusedRank,preparedDocuments,type Embedder} from "../server/controllers/semantic-retrieval.js";
-import {buildDecisionMenu,decodeShortlistedDecision,chooseShortlisted} from "../server/controllers/shortlisted-decision.js";
+import {buildDecisionMenu,decodeShortlistedDecision} from "../server/controllers/shortlisted-decision.js";
 import {fixtureState} from "../scripts/controller-fixtures.js";
 const space={model:"fixture",revision:"fixed",dimensions:3};
 function mock(){let calls=0;const embedder:Embedder={space,async encode(texts,kind){calls++;return texts.map((_,i)=>kind==="query"?[0,0,1]:[Number(i===0),Number(i===1),Number(i===2)]);}};return {embedder,calls:()=>calls};}

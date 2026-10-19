@@ -5,7 +5,8 @@ This is an evidence-driven sequence, not a delivery schedule.
 ## Next: supported speech reaches selection
 
 - Reproduce split final transcripts, corrections and timing boundaries with frozen audio fixtures.
-- Introduce bounded speech-context handling and a local request/purpose proposal boundary without weakening evidence eligibility.
+- Temporal assembly now recovers the authored split case; expand acceptance beyond the four-recording development replay. The separate signal-index ablation gave no gain and was removed.
+- Evaluate a local request/purpose proposal boundary only if the existing interpreter demonstrably needs it, without weakening evidence eligibility.
 - Preserve missing facts, negation, hypothetical speech, source withdrawal and stale-turn behavior.
 - Repeat real audio-to-commit tests, then measure browser paint and actual microphone behavior.
 

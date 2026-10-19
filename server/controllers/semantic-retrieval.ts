@@ -19,7 +19,7 @@ export class SemanticIndex {
  private cachedQueries=new Map<string,number[]>();
  private key:string;
  private documents:PreparedDocument[];
- constructor(private projectId:string,state:Preparation,private embedder:Embedder){this.documents=preparedDocuments(state);this.key=scopeKey(projectId,state,embedder.space);}
+ constructor(projectId:string,state:Preparation,private embedder:Embedder){this.documents=preparedDocuments(state);this.key=scopeKey(projectId,state,embedder.space);}
  async build(signal:AbortSignal){
   signal.throwIfAborted();
   const result=await this.embedder.encode(this.documents.map(d=>`title: ${d.title} | text: ${d.text}`),"document",signal);

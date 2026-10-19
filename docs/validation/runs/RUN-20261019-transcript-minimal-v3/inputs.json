@@ -1,0 +1,355 @@
+{
+  "state": {
+    "revision": 4,
+    "brief": {
+      "topic": "Solar Energy Introduction",
+      "audience": "Teachers",
+      "goal": "Understand how solar panels convert sunlight into electricity and how batteries store that energy for later use.",
+      "durationMinutes": 3,
+      "keyPoints": [
+        "Solar panels (photovoltaic cells) capture sunlight and convert it directly into electricity.",
+        "Batteries act as storage units, holding the generated electricity to be used when the sun isn't shining."
+      ],
+      "constraints": [
+        "Create exactly TWO text-only beats.",
+        "Beat 1 Title: Solar panels turn sunlight into electricity; Beat 1 Audience text: Solar panels turn sunlight into electricity.",
+        "Beat 2 Title: Batteries store electricity for later use; Beat 2 Audience text: Batteries store electricity for later use.",
+        "No diagrams allowed.",
+        "No extra claims beyond the key points.",
+        "Do not guarantee continuous power supply."
+      ],
+      "openQuestions": []
+    },
+    "flow": {
+      "title": "Solar Energy Introduction",
+      "summary": "This three-minute presentation introduces solar energy for teachers, explaining how solar panels convert sunlight into electricity and how batteries store that energy for later use. The flow uses a simple conceptual diagram to illustrate the process without making claims about cost, efficiency, or continuous power supply.",
+      "beats": [
+        {
+          "title": "Solar panels turn sunlight into electricity",
+          "audienceText": "Solar panels turn sunlight into electricity.",
+          "speakerNotes": "Explain that solar panels, made of photovoltaic cells, capture sunlight and convert it directly into usable electricity. This is the first step in the solar energy process.",
+          "visualDirection": "Show the conceptual diagram illustrating how sunlight enters the solar panel and becomes electricity.",
+          "visualId": "39e36677-8ffe-440e-9b3e-98fb1f21395e",
+          "artifactIds": [
+            "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7"
+          ],
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "source-backed",
+            "verification": "unknown",
+            "entity": "Solar Energy Introduction",
+            "timeframe": null,
+            "unit": null,
+            "sources": [
+              {
+                "id": "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7",
+                "uri": "artifact://0687a0b6-bae0-4ae8-8dfc-031ae271b9b7",
+                "sha256": "818efa133f88f84a3613b8c55b6afd3eba8b3f53a896e7e468a1e5b6a10385ec",
+                "summary": "Authored conceptual teaching example, not installation measurements.\nSolar panels turn sunlight into electricity.\nBatteries store electricity for later use after sunset.\nNo cost, efficiency or audited-performance figures are supplied.\n"
+              }
+            ],
+            "claims": [
+              {
+                "id": "beat-0",
+                "aliases": [
+                  "Solar panels turn sunlight into electricity",
+                  "Solar panels turn sunlight into electricity."
+                ],
+                "sourceIds": [
+                  "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7"
+                ]
+              }
+            ],
+            "independentReview": "pending"
+          },
+          "componentEvidence": {
+            "statement": {
+              "contentHash": "04cab7c063e2e3f3236ac146b1aeb2b9c1723ab4f3cfeaca5543bc95721eddad",
+              "evidence": {
+                "version": 1,
+                "approved": true,
+                "provenance": "source-backed",
+                "verification": "unknown",
+                "entity": "Solar Energy Introduction",
+                "timeframe": null,
+                "unit": null,
+                "sources": [
+                  {
+                    "id": "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7",
+                    "uri": "artifact://0687a0b6-bae0-4ae8-8dfc-031ae271b9b7",
+                    "sha256": "818efa133f88f84a3613b8c55b6afd3eba8b3f53a896e7e468a1e5b6a10385ec",
+                    "summary": "Authored conceptual teaching example, not installation measurements.\nSolar panels turn sunlight into electricity.\nBatteries store electricity for later use after sunset.\nNo cost, efficiency or audited-performance figures are supplied.\n"
+                  }
+                ],
+                "claims": [
+                  {
+                    "id": "beat-0",
+                    "aliases": [
+                      "Solar panels turn sunlight into electricity",
+                      "Solar panels turn sunlight into electricity."
+                    ],
+                    "sourceIds": [
+                      "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7"
+                    ]
+                  }
+                ],
+                "independentReview": "pending"
+              }
+            },
+            "visual": {
+              "contentHash": "2504931b75385a2eb869548bb26721fec2984cdfc6128b19613eaee60b4c3479",
+              "evidence": {
+                "version": 1,
+                "approved": true,
+                "provenance": "illustrative",
+                "verification": "unknown",
+                "entity": "Solar Energy Introduction",
+                "timeframe": null,
+                "unit": null,
+                "sources": [
+                  {
+                    "id": "component-visual-0",
+                    "uri": "prepared://component/visual/0",
+                    "sha256": "e32e8437af7a5b873e2bded499afa0f79ce95aa310b0b70ec4eb73791ad6ce9d",
+                    "summary": "Solar Energy to Battery Storage Flow"
+                  }
+                ],
+                "claims": [
+                  {
+                    "id": "component-visual-0",
+                    "aliases": [
+                      "Solar Energy to Battery Storage Flow"
+                    ],
+                    "sourceIds": [
+                      "component-visual-0"
+                    ]
+                  }
+                ],
+                "independentReview": "pending"
+              }
+            }
+          }
+        },
+        {
+          "title": "Batteries store electricity for later use",
+          "audienceText": "Batteries store electricity for later use.",
+          "speakerNotes": "Explain that batteries act as storage units, holding the generated electricity to be used when the sun isn't shining. This allows energy to be available at night or during cloudy days.",
+          "visualDirection": "Show the diagram highlighting how electricity is stored in the battery and then released as stored electricity.",
+          "artifactIds": [
+            "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7"
+          ],
+          "evidence": {
+            "version": 1,
+            "approved": true,
+            "provenance": "source-backed",
+            "verification": "unknown",
+            "entity": "Solar Energy Introduction",
+            "timeframe": null,
+            "unit": null,
+            "sources": [
+              {
+                "id": "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7",
+                "uri": "artifact://0687a0b6-bae0-4ae8-8dfc-031ae271b9b7",
+                "sha256": "818efa133f88f84a3613b8c55b6afd3eba8b3f53a896e7e468a1e5b6a10385ec",
+                "summary": "Authored conceptual teaching example, not installation measurements.\nSolar panels turn sunlight into electricity.\nBatteries store electricity for later use after sunset.\nNo cost, efficiency or audited-performance figures are supplied.\n"
+              }
+            ],
+            "claims": [
+              {
+                "id": "beat-1",
+                "aliases": [
+                  "Batteries store electricity for later use",
+                  "Batteries store electricity for later use."
+                ],
+                "sourceIds": [
+                  "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7"
+                ]
+              }
+            ],
+            "independentReview": "pending"
+          },
+          "componentEvidence": {
+            "statement": {
+              "contentHash": "2db2ceb2dc193eeec06209d65951d7300d282782fe73e9c7ca9814f971359ceb",
+              "evidence": {
+                "version": 1,
+                "approved": true,
+                "provenance": "source-backed",
+                "verification": "unknown",
+                "entity": "Solar Energy Introduction",
+                "timeframe": null,
+                "unit": null,
+                "sources": [
+                  {
+                    "id": "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7",
+                    "uri": "artifact://0687a0b6-bae0-4ae8-8dfc-031ae271b9b7",
+                    "sha256": "818efa133f88f84a3613b8c55b6afd3eba8b3f53a896e7e468a1e5b6a10385ec",
+                    "summary": "Authored conceptual teaching example, not installation measurements.\nSolar panels turn sunlight into electricity.\nBatteries store electricity for later use after sunset.\nNo cost, efficiency or audited-performance figures are supplied.\n"
+                  }
+                ],
+                "claims": [
+                  {
+                    "id": "beat-1",
+                    "aliases": [
+                      "Batteries store electricity for later use",
+                      "Batteries store electricity for later use."
+                    ],
+                    "sourceIds": [
+                      "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7"
+                    ]
+                  }
+                ],
+                "independentReview": "pending"
+              }
+            }
+          }
+        }
+      ],
+      "openQuestions": [
+        "How should I explain the photovoltaic effect simply for teachers?"
+      ]
+    },
+    "flowBasedOnRevision": 4,
+    "approvedRevision": 4,
+    "visuals": [
+      {
+        "id": "39e36677-8ffe-440e-9b3e-98fb1f21395e",
+        "spec": {
+          "kind": "diagram",
+          "title": "Solar Energy to Battery Storage Flow",
+          "nodes": [
+            "Sunlight",
+            "Solar Panel",
+            "Electricity",
+            "Battery",
+            "Stored Electricity"
+          ],
+          "edges": [
+            {
+              "from": 0,
+              "to": 1
+            },
+            {
+              "from": 1,
+              "to": 2
+            },
+            {
+              "from": 2,
+              "to": 3
+            },
+            {
+              "from": 3,
+              "to": 4
+            }
+          ]
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "0687a0b6-bae0-4ae8-8dfc-031ae271b9b7",
+        "name": "solar-notes.txt",
+        "content": "Authored conceptual teaching example, not installation measurements.\nSolar panels turn sunlight into electricity.\nBatteries store electricity for later use after sunset.\nNo cost, efficiency or audited-performance figures are supplied.\n"
+      }
+    ],
+    "messages": {
+      "interview": [
+        {
+          "role": "user",
+          "content": "I am preparing a three-minute solar energy introduction for teachers. Goal: understand panels and battery storage. Key points: panels turn sunlight into electricity; batteries store electricity for later. This is a conceptual example, no measurements or installation cost claims. Call updateBrief now with this context and no open questions."
+        },
+        {
+          "role": "assistant",
+          "content": "The brief has been saved. I have recorded the topic (Solar Energy Introduction), audience (Teachers), goal (understand panels and battery storage), duration (3 minutes), key points, and constraints. No open questions were requested as per your instruction. The presentation is ready for the storyteller to develop the flow."
+        },
+        {
+          "role": "user",
+          "content": "Update the brief constraints: create exactly TWO text-only beats. Title the first Solar panels turn sunlight into electricity, audience text Solar panels turn sunlight into electricity. Title the second Batteries store electricity for later use, audience text Batteries store electricity for later use. No diagrams, no extra claims, no continuous power guarantee. Call updateBrief to save these constraints."
+        },
+        {
+          "role": "assistant",
+          "content": "The brief has been updated with your new constraints. The presentation will now consist of exactly two text-only beats, each with the specified titles and audience text, without diagrams or extra claims. No open questions remain."
+        }
+      ],
+      "storyteller": [
+        {
+          "role": "user",
+          "content": "Create my story from our brief and materials. Use simple conceptual diagrams where useful. Keep missing facts explicit."
+        },
+        {
+          "role": "assistant",
+          "content": "Your story is ready to review. Tell me what you would like to change."
+        }
+      ]
+    },
+    "events": [
+      {
+        "id": "7e8134de-4f68-4492-951c-d99335c035be",
+        "from": "interview",
+        "to": "storyteller",
+        "kind": "brief.updated",
+        "revision": 1,
+        "summary": "Interview brief updated; prior flow needs review."
+      },
+      {
+        "id": "ef8af100-dbfe-4988-b785-21f33d5b3801",
+        "from": "interview",
+        "to": "storyteller",
+        "kind": "brief.updated",
+        "revision": 3,
+        "summary": "Interview brief updated; prior flow needs review."
+      },
+      {
+        "id": "ecc151ff-a5f9-45ac-b139-1bc1d21f9a99",
+        "from": "storyteller",
+        "to": "presenter",
+        "kind": "flow.proposed",
+        "revision": 4,
+        "summary": "Storyteller proposed a flow for review."
+      }
+    ]
+  },
+  "policy": {
+    "quietMs": 350,
+    "joinGapMs": 1250,
+    "maxWindowMs": 15000,
+    "maxChars": 6000,
+    "maxSegments": 8
+  },
+  "arms": [
+    "per-final",
+    "temporal"
+  ],
+  "cases": [
+    {
+      "id": "panels",
+      "path": "docs/validation/runs/RUN-20261019-release-live-v1/speech-0.wav",
+      "expected": "show",
+      "expectedBeat": 0,
+      "sha256": "06f62f6d4e429f9a7b688b71af9bd9835ac689a0c70d89ce9407981ccabd20e5"
+    },
+    {
+      "id": "battery",
+      "path": "docs/validation/runs/RUN-20261019-release-live-v1/speech-1.wav",
+      "expected": "show",
+      "expectedBeat": 1,
+      "sha256": "9c2aba9a3ec73fa050291e567aad27c579b68321a39c75c590e6468a6c5e1016"
+    },
+    {
+      "id": "missing",
+      "path": "docs/validation/runs/RUN-20261019-release-live-v1/speech-2.wav",
+      "expected": "context",
+      "expectedBeat": null,
+      "sha256": "21074cad839687d6f20f4ce29be3ea81f99586f394a96cd29319545dac25a1c2"
+    },
+    {
+      "id": "retain",
+      "path": "output/preference-audio/retain.pcm",
+      "expected": "hold",
+      "expectedBeat": null,
+      "sha256": "3795b7a9b2315054abe931f9fdfe3abe43ebc020a755d6dba3f3ad6198e72265"
+    }
+  ],
+  "scope": "Four authored Piper recordings; identical actual paced Moonshine events shared across all arms. No browser, physical microphone, independent holdout or hosted inference."
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { Visual } from "./Visual";
 import { AdaptiveCanvas } from "./AdaptiveCanvas";
 import { Icon } from "./Icon";

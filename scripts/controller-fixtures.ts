@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { emptyPreparation } from "../shared/preparation.js";
-import { openingComposition, type AdaptiveComposition } from "../shared/adaptive.js";
+import { type AdaptiveComposition } from "../shared/adaptive.js";
 import { PresentationPolicy, type PolicyEvent, type Strategy } from "../server/controllers/presentation-policy.js";
 export type Step = {at:number;type?:"pause"|"resume"|"stop";topics?:[number,number][];comparison?:number[];expect:string;epoch?:number;revision?:number;sequence?:number;missingEvidence?:boolean};
 export const fixtures=JSON.parse(readFileSync(new URL("../tests/fixtures/controller-replays.json",import.meta.url),"utf8")) as {version:number;scope:string;scenarios:{id:string;steps:Step[]}[];retrieval:{id:string;speech:string;expectedBeats:number[];domain?:string}[]};

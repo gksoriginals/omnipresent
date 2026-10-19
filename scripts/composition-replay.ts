@@ -1,4 +1,4 @@
-import {mkdir,readFile,writeFile,appendFile} from "node:fs/promises";
+import {mkdir,readFile,writeFile} from "node:fs/promises";
 import {createHash} from "node:crypto";
 import assert from "node:assert/strict";
 import {plannerContext} from "../tests/fixtures/planner-context.js";

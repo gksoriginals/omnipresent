@@ -72,7 +72,7 @@ export function usePresentation(socket:React.RefObject<SessionClient|null>,setEr
    if(event.status==="ready"||event.status==="listening")ready.current?.resolve();
 
   }
-  if(event.type==="transcript"&&event.text){
+  if((event.type==="transcript"||event.type==="presentation_utterance")&&event.text){
    setLastTranscript(event.text);
   }
   if(event.type==="audio_ack")queue.current!.acknowledge();

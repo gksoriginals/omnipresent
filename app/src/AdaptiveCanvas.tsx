@@ -1,4 +1,3 @@
-import React from "react";
 import type {AdaptiveComposition} from "../../shared/adaptive";
 import type {Preparation} from "../../shared/preparation";
 import {Assets} from "./renderers/PresentationBlock";

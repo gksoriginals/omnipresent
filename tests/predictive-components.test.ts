@@ -1,7 +1,7 @@
 import {test} from "node:test";
 import assert from "node:assert/strict";
 import {predictionStates} from "../scripts/predictive-fixtures.js";
-import {HybridComponentIndex,preparedComponents,catalogKey,type ComponentFamily} from "../server/controllers/hybrid-components.js";
+import {HybridComponentIndex,preparedComponents,catalogKey} from "../server/controllers/hybrid-components.js";
 import {componentForecastRequest,decodeFamilyForecast,allowedForecastFamilies} from "../server/controllers/component-forecast.js";
 import type {Embedder} from "../server/controllers/semantic-retrieval.js";
 const signal=()=>AbortSignal.timeout(1000);

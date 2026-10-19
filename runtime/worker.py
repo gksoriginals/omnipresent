@@ -16,6 +16,7 @@ def emit(**event):
 def main():
     transcriber = None
     active = False
+    stream_id = 0
     try:
         for raw in sys.stdin:
             command = json.loads(raw)
@@ -33,7 +34,12 @@ def main():
                     class Listener(TranscriptEventListener):
                         def send(self, event, final):
                             emit(type='transcript', segmentId=str(event.line.line_id),
-                                 text=event.line.text, final=final)
+                                 text=event.line.text, final=final, streamId=str(stream_id),
+                                 startMs=event.line.start_time * 1000,
+                                 endMs=(event.line.start_time + event.line.duration) * 1000)
+                        def on_line_started(self, event):
+                            emit(type='speech_activity', segmentId=str(event.line.line_id),
+                                 streamId=str(stream_id), startMs=event.line.start_time * 1000)
                         def on_line_text_changed(self, event):
                             self.send(event, False)
                         def on_line_completed(self, event):
@@ -45,6 +51,7 @@ def main():
             elif kind == 'start':
                 if transcriber is None:
                     raise ValueError('Load the speech model before starting audio')
+                stream_id += 1
                 transcriber.start()
                 active = True
                 emit(type='worker_status', status='listening')

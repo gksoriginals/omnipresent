@@ -33,7 +33,7 @@ export class HybridComponentIndex {
  private lengths:number[];
  private average:number;
  private queries=new Map<string,number[]>();
- constructor(private project:string,state:Preparation,private embedder:Embedder){
+ constructor(project:string,state:Preparation,private embedder:Embedder){
   this.catalog=preparedComponents(state);this.spaceKey=JSON.stringify(embedder.space);this.key=catalogKey(project,state);
   this.frequencies=this.catalog.map(c=>{const counts=new Map<string,number>();for(const t of terms(`${c.title} ${c.text}`))counts.set(t,(counts.get(t)??0)+1);for(const t of counts.keys())this.df.set(t,(this.df.get(t)??0)+1);return counts;});
   this.lengths=this.frequencies.map(f=>[...f.values()].reduce((a,b)=>a+b,0));this.average=this.lengths.reduce((a,b)=>a+b,0)/(this.catalog.length||1);

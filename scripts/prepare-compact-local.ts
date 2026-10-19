@@ -1,4 +1,4 @@
-import {mkdir,writeFile,readFile,readdir} from 'node:fs/promises';
+import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {compactAssets,localCases,precisionScreen} from './compact-local-fixture.js';
 const id=process.argv[2];if(!id||!/^RUN-[\w-]+$/.test(id))throw Error('Unique run ID required');const root=`docs/validation/runs/${id}`;await mkdir(root);

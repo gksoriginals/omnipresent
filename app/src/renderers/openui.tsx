@@ -1,4 +1,3 @@
-import React from "react";
 import {Renderer,createLibrary,defineComponent} from "@openuidev/react-lang";
 import {z} from "zod";
 import {adaptiveSchema,type AdaptiveComposition} from "../../../shared/adaptive";

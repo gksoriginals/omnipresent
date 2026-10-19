@@ -11,7 +11,7 @@ const topics=[
 ] as const;
 export function largeLibrary():LibraryAsset[]{return topics.flatMap(([topic,title,text,unit,data,process])=>["Harbor School","River Hospital","Cedar Campus"].flatMap(entity=>[2023,2024,2025].flatMap(year=>(["actual","illustrative"] as const).flatMap(status=>(["statement","chart","diagram"] as const).map(family=>({id:`${topic}/${entity}/${year}/${status}/${family}`,title:`${entity}: ${title}, ${year} (${status})`,text:`${text} ${family==="chart"?`Chart in ${unit}: ${data}.`:family==="diagram"?`Process: ${process}.`:"Overview of the topic."} Evidence scope: ${entity}, ${year}, ${status}. All assets are constructed benchmark material; actual is a simulated provenance label, not real institutional data.`,entity,year,status,family}))))));}
 export const largeCases=[
- ...topics.map(([topic,title],i)=>({id:`positive-${topic}`,speech:`Show the actual 2025 Harbor School ${title.toLowerCase()} chart and its measured breakdown.`,expected:`${topic}/Harbor School/2025/actual/chart`,action:"show"})),
+ ...topics.map(([topic,title])=>({id:`positive-${topic}`,speech:`Show the actual 2025 Harbor School ${title.toLowerCase()} chart and its measured breakdown.`,expected:`${topic}/Harbor School/2025/actual/chart`,action:"show"})),
  {id:"paraphrase-storage",speech:"For Harbor School in 2024, show the actual diagram explaining how surplus electricity is saved for after sunset.",expected:"storage/Harbor School/2024/actual/diagram",action:"show"},
  {id:"illustrative",speech:"Use the illustrative 2023 Cedar Campus water consumption chart.",expected:"water/Cedar Campus/2023/illustrative/chart",action:"show"},
  {id:"missing-year",speech:"Show actual 2026 Harbor School installation expenditure figures.",expected:null,action:"context"},

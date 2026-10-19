@@ -1,6 +1,6 @@
 # Test and experiment register
 
-Current source test mapping: RUN-20261019-alpha-release-audit-v1. Historical experiments retain their own versions and counts. See [evidence rules](README.md).
+Current source test mapping: RUN-20261019-runtime-cleanup-audit-v1. Historical experiments retain their own versions and counts. See [evidence rules](README.md).
 
 ## Experiments and plans
 
@@ -490,11 +490,11 @@ Actual local-model preparation and save/reload/library/preview; desktop/narrow g
 
 Status: **executed**.
 
-Evidence: [run.json](../../docs/validation/runs/RUN-20261019-alpha-release-audit-v1/run.json). Hash retained in catalog.
+Evidence: [run.json](../../docs/validation/runs/RUN-20261019-runtime-cleanup-audit-v1/run.json). Hash retained in catalog.
 
-Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261019-alpha-release-audit-v1/unit-integration.log). Hash retained in catalog.
+Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261019-runtime-cleanup-audit-v1/unit-integration.log). Hash retained in catalog.
 
-Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261019-alpha-release-audit-v1/typecheck-build.log). Hash retained in catalog.
+Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261019-runtime-cleanup-audit-v1/typecheck-build.log). Hash retained in catalog.
 
 Current tests/typecheck/build/source hashes. Superseded director tests retired; baseline/model-boundary/no-migration tests added. Does not repeat model, browser or audio trials.
 
@@ -1024,6 +1024,34 @@ Evidence: [synthesize.py](../../docs/validation/runs/RUN-20261019-release-live-v
 
 Real local interview and fourth-attempt story after brief refinement; Piper virtual microphone, Moonshine, embeddings, audience projection, reconnect and fresh-session recovery. Battery selection and missing evidence pass; panel STT split fails. No physical microphone or independent speech acceptance.
 
+### EXP-064 — Transcript assembly versus a separate story-signal index
+
+Status: **executed-local-audio-ablation**.
+
+Evidence: [local.json](../../docs/validation/runs/RUN-20261019-transcript-ablation-v2/local.json). Hash retained in catalog.
+
+Evidence: [inputs.json](../../docs/validation/runs/RUN-20261019-transcript-ablation-v1/inputs.json). Hash retained in catalog.
+
+Evidence: [local.json](../../docs/validation/runs/RUN-20261019-transcript-ablation-v1/local.json). Hash retained in catalog.
+
+Evidence: [inputs.json](../../docs/validation/runs/RUN-20261019-transcript-ablation-v2/inputs.json). Hash retained in catalog.
+
+Four authored Piper recordings shared across per-final, temporal and signal-assisted arms. v1 overlap bug retained; v2 temporal and extra index both 4/4 versus per-final 3/4. Removed index has no incremental demonstrated benefit. Current command runs only the retained arms; historical three-arm source is frozen.
+
+Current reproduction entry point: `node --import tsx scripts/speech-assembly-replay.ts RUN-unique-id`. Inspect prerequisites/output paths before running; model probes may incur costs.
+
+### EXP-065 — Minimal transcript assembly after signal-index removal
+
+Status: **executed-local-audio-development**.
+
+Evidence: [local.json](../../docs/validation/runs/RUN-20261019-transcript-minimal-v3/local.json). Hash retained in catalog.
+
+Evidence: [inputs.json](../../docs/validation/runs/RUN-20261019-transcript-minimal-v3/inputs.json). Hash retained in catalog.
+
+Same four recordings, one pass per case. Panel starts on battery view and must change canvas. Minimal assembly 4/4 versus per-final 3/4; unknown costs and retain preserved. Adds quiet-window latency; not independent microphone, semantic-quality or p95 acceptance.
+
+Current reproduction entry point: `node --import tsx scripts/speech-assembly-replay.ts RUN-unique-id`. Inspect prerequisites/output paths before running; model probes may incur costs.
+
 ### PLAN-002 — Media retrieval, dimensions and semantic answer cache comparison
 
 Status: **planned**.
@@ -1042,13 +1070,13 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 
 ## Current individual software cases
 
-146/146 passed in RUN-20261019-alpha-release-audit-v1, 0 failed, 0 skipped.
+167/167 passed in RUN-20261019-runtime-cleanup-audit-v1, 0 failed, 0 skipped.
 
 | ID | Case | Source |
 |---|---|---|
-| TEST-ADAPTIVE-01 | adaptive host validates and commits injected baseline decisions | [tests/adaptive.test.ts:8](../../tests/adaptive.test.ts#L8) |
-| TEST-ADAPTIVE-02 | stopping cancels a late baseline decision | [tests/adaptive.test.ts:9](../../tests/adaptive.test.ts#L9) |
-| TEST-ADAPTIVE-03 | invalid model references hold current content and expose a bounded error | [tests/adaptive.test.ts:10](../../tests/adaptive.test.ts#L10) |
+| TEST-ADAPTIVE-01 | adaptive host validates and commits injected baseline decisions | [tests/adaptive.test.ts:9](../../tests/adaptive.test.ts#L9) |
+| TEST-ADAPTIVE-02 | stopping cancels a late baseline decision | [tests/adaptive.test.ts:10](../../tests/adaptive.test.ts#L10) |
+| TEST-ADAPTIVE-03 | invalid model references hold current content and expose a bounded error | [tests/adaptive.test.ts:11](../../tests/adaptive.test.ts#L11) |
 | TEST-AGENTS-01 | real SDK interviewer tool loop gathers a brief without producing a story | [tests/agents.test.ts:68](../../tests/agents.test.ts#L68) |
 | TEST-AGENTS-02 | storyteller returns a structured flow, correction invalidates review | [tests/agents.test.ts:80](../../tests/agents.test.ts#L80) |
 | TEST-AGENTS-03 | missing context travels back to interviewer without autonomous runaway loops | [tests/agents.test.ts:98](../../tests/agents.test.ts#L98) |
@@ -1072,10 +1100,10 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-COMPONENT-EVIDENCE-05 | preparation does not infer audit status and content hashes survive schema whitespace normalization | [tests/component-evidence.test.ts:40](../../tests/component-evidence.test.ts#L40) |
 | TEST-COMPONENT-EVIDENCE-06 | live presenter can form an approved pair on a unique cue without a model call | [tests/component-evidence.test.ts:44](../../tests/component-evidence.test.ts#L44) |
 | TEST-COMPONENT-EVIDENCE-07 | declared coverage cannot silently omit its chart or image binding | [tests/component-evidence.test.ts:49](../../tests/component-evidence.test.ts#L49) |
-| TEST-COMPOSITION-PLANNER-01 | focus reproduces bound focus behavior while stable preserves an eligible reveal | [tests/composition-planner.test.ts:11](../../tests/composition-planner.test.ts#L11) |
-| TEST-COMPOSITION-PLANNER-02 | host rejects omitted selections, unsupported extra claims, duplicates and invalid reveal | [tests/composition-planner.test.ts:16](../../tests/composition-planner.test.ts#L16) |
-| TEST-COMPOSITION-PLANNER-03 | cancelled planners cannot return proposals | [tests/composition-planner.test.ts:22](../../tests/composition-planner.test.ts#L22) |
-| TEST-COMPOSITION-PLANNER-04 | injected planner cannot rewrite evidence or bypass final composition checks | [tests/composition-planner.test.ts:23](../../tests/composition-planner.test.ts#L23) |
+| TEST-COMPOSITION-PLANNER-01 | focus reproduces bound focus behavior while stable preserves an eligible reveal | [tests/composition-planner.test.ts:7](../../tests/composition-planner.test.ts#L7) |
+| TEST-COMPOSITION-PLANNER-02 | host rejects omitted selections, unsupported extra claims, duplicates and invalid reveal | [tests/composition-planner.test.ts:12](../../tests/composition-planner.test.ts#L12) |
+| TEST-COMPOSITION-PLANNER-03 | cancelled planners cannot return proposals | [tests/composition-planner.test.ts:18](../../tests/composition-planner.test.ts#L18) |
+| TEST-COMPOSITION-PLANNER-04 | injected planner cannot rewrite evidence or bypass final composition checks | [tests/composition-planner.test.ts:19](../../tests/composition-planner.test.ts#L19) |
 | TEST-CONTROLLER-INVARIANTS-01 | seeded event stress preserves grounding, dwell, lifecycle and epoch guards across all strategies | [tests/controller-invariants.test.ts:6](../../tests/controller-invariants.test.ts#L6) |
 | TEST-CONTROLLER-INVARIANTS-02 | confirmation cannot survive an unrelated or invalid observation | [tests/controller-invariants.test.ts:23](../../tests/controller-invariants.test.ts#L23) |
 | TEST-CONTROLLERS-01 | temporal controllers satisfy every fixed replay including interruptions, comparisons and stale inputs | [tests/controllers.test.ts:7](../../tests/controllers.test.ts#L7) |
@@ -1103,6 +1131,7 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-FRONTEND-SERVICES-04 | cancelled microphone acquisition stops tracks before constructing audio resources | [tests/frontend-services.test.ts:27](../../tests/frontend-services.test.ts#L27) |
 | TEST-FRONTEND-SERVICES-05 | workspace hydration preserves concurrent drafts and serializes subsequent saves | [tests/frontend-services.test.ts:33](../../tests/frontend-services.test.ts#L33) |
 | TEST-FRONTEND-SERVICES-06 | failed server saves retain the newest snapshot for an explicit retry | [tests/frontend-services.test.ts:56](../../tests/frontend-services.test.ts#L56) |
+| TEST-FRONTEND-SERVICES-07 | session events expose assembled speech separately from interim transcript updates | [tests/frontend-services.test.ts:65](../../tests/frontend-services.test.ts#L65) |
 | TEST-LIBRARY-GROUNDING-01 | live grounding does not characterize real source evidence as simulated | [tests/library-grounding.test.ts:5](../../tests/library-grounding.test.ts#L5) |
 | TEST-LIBRARY-GROUNDING-02 | grounding does not silently choose a hosted comparison provider | [tests/library-grounding.test.ts:14](../../tests/library-grounding.test.ts#L14) |
 | TEST-LIBRARY-POLICY-01 | prepared whole-utterance cues bypass inference and preserve unchanged asset identity | [tests/library-policy.test.ts:9](../../tests/library-policy.test.ts#L9) |
@@ -1116,6 +1145,9 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-LIBRARY-POLICY-09 | committed canvas synchronization overrides a previous uncommitted selection | [tests/library-policy.test.ts:23](../../tests/library-policy.test.ts#L23) |
 | TEST-LIBRARY-SEARCH-01 | scope cues abstain on ambiguity, negation and corrections | [tests/library-search.test.ts:5](../../tests/library-search.test.ts#L5) |
 | TEST-LIBRARY-SEARCH-02 | library index preserves semantic-only candidates and stable ties | [tests/library-search.test.ts:6](../../tests/library-search.test.ts#L6) |
+| TEST-LIVE-SESSION-01 | presentation owner disposes resources once and invalidates readiness | [tests/live-session.test.ts:10](../../tests/live-session.test.ts#L10) |
+| TEST-LIVE-SESSION-02 | presentation expiry is cancelled on reconnect and disposal | [tests/live-session.test.ts:15](../../tests/live-session.test.ts#L15) |
+| TEST-LIVE-SESSION-03 | presentation expiry runs once and failed startup returns to loaded | [tests/live-session.test.ts:21](../../tests/live-session.test.ts#L21) |
 | TEST-LOCAL-SELECTION-01 | local selector proposes only complete eligible evidence and never broadens missing scope | [tests/local-selection.test.ts:11](../../tests/local-selection.test.ts#L11) |
 | TEST-LOCAL-SELECTION-02 | classifier preference cannot see ineligible components or return unbound IDs | [tests/local-selection.test.ts:17](../../tests/local-selection.test.ts#L17) |
 | TEST-LOCAL-SELECTION-03 | local selection overrides a provider and preserves synthesis and missing-evidence guards without provider calls | [tests/local-selection.test.ts:23](../../tests/local-selection.test.ts#L23) |
@@ -1140,6 +1172,11 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-PRESENTATION-OPTIMIZATION-08 | readiness acknowledgements retain attempt identity and reject malformed IDs | [tests/presentation-optimization.test.ts:64](../../tests/presentation-optimization.test.ts#L64) |
 | TEST-PRESENTER-SAFETY-01 | manual cues hold unsupported evidence and invalidate pending automatic decisions | [tests/presenter-safety.test.ts:7](../../tests/presenter-safety.test.ts#L7) |
 | TEST-PRESENTER-SAFETY-02 | manual cues respect independent review policy | [tests/presenter-safety.test.ts:23](../../tests/presenter-safety.test.ts#L23) |
+| TEST-PRESENTER-SAFETY-03 | assembled utterances and speech-routing traces stay out of audience events | [tests/presenter-safety.test.ts:32](../../tests/presenter-safety.test.ts#L32) |
+| TEST-PRESENTER-SAFETY-04 | strict review blocks factual opening and leaves a fact-free standby | [tests/presenter-safety.test.ts:38](../../tests/presenter-safety.test.ts#L38) |
+| TEST-PRESENTER-SAFETY-05 | final host authorization rejects unsupported and malformed experimental proposals | [tests/presenter-safety.test.ts:51](../../tests/presenter-safety.test.ts#L51) |
+| TEST-PRESENTER-SAFETY-06 | final host authorization allows a supported experimental proposal | [tests/presenter-safety.test.ts:65](../../tests/presenter-safety.test.ts#L65) |
+| TEST-PRESENTER-SAFETY-07 | unchanged manual views still reauthorize without duplicate canvas commits | [tests/presenter-safety.test.ts:70](../../tests/presenter-safety.test.ts#L70) |
 | TEST-RENDERERS-01 | both real renderer packages display equivalent grounded content | [tests/renderers.test.tsx:8](../../tests/renderers.test.tsx#L8) |
 | TEST-RENDERERS-02 | OpenUI accepts split compositions and numeric reveal boundaries | [tests/renderers.test.tsx:14](../../tests/renderers.test.tsx#L14) |
 | TEST-RENDERERS-03 | both renderer adapters display validated paired component references | [tests/renderers.test.tsx:19](../../tests/renderers.test.tsx#L19) |
@@ -1161,10 +1198,10 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-SESSION-01 | new intent prevents a delayed old intent overwriting the canvas | [tests/session.test.ts:5](../../tests/session.test.ts#L5) |
 | TEST-SESSION-02 | pause invalidates pending work and resume does not replay a backlog | [tests/session.test.ts:14](../../tests/session.test.ts#L14) |
 | TEST-SESSION-03 | cancel prevents a pending commit | [tests/session.test.ts:26](../../tests/session.test.ts#L26) |
-| TEST-SQLITE-WORKSPACE-01 | sqlite workspace store initializes, writes and reads workspace atomically | [tests/sqlite-workspace.test.ts:41](../../tests/sqlite-workspace.test.ts#L41) |
-| TEST-SQLITE-WORKSPACE-02 | exporting and importing an omnipresent bundle preserves story integrity | [tests/sqlite-workspace.test.ts:79](../../tests/sqlite-workspace.test.ts#L79) |
-| TEST-SQLITE-WORKSPACE-03 | workspace HTTP handler serves GET, PUT, export and import endpoints | [tests/sqlite-workspace.test.ts:118](../../tests/sqlite-workspace.test.ts#L118) |
-| TEST-SQLITE-WORKSPACE-04 | story bundle transfers media to a separate material store and rejects tampering | [tests/sqlite-workspace.test.ts:229](../../tests/sqlite-workspace.test.ts#L229) |
+| TEST-SQLITE-WORKSPACE-01 | sqlite workspace store initializes, writes and reads workspace atomically | [tests/sqlite-workspace.test.ts:39](../../tests/sqlite-workspace.test.ts#L39) |
+| TEST-SQLITE-WORKSPACE-02 | exporting and importing an omnipresent bundle preserves story integrity | [tests/sqlite-workspace.test.ts:77](../../tests/sqlite-workspace.test.ts#L77) |
+| TEST-SQLITE-WORKSPACE-03 | workspace HTTP handler serves GET, PUT, export and import endpoints | [tests/sqlite-workspace.test.ts:116](../../tests/sqlite-workspace.test.ts#L116) |
+| TEST-SQLITE-WORKSPACE-04 | story bundle transfers media to a separate material store and rejects tampering | [tests/sqlite-workspace.test.ts:227](../../tests/sqlite-workspace.test.ts#L227) |
 | TEST-SYNTHESIS-01 | synthesis composes four supported references across beats with distinct stable slots | [tests/synthesis.test.ts:11](../../tests/synthesis.test.ts#L11) |
 | TEST-SYNTHESIS-02 | synthesis excludes incompatible, withdrawn and undeclared companions and respects explicit form | [tests/synthesis.test.ts:16](../../tests/synthesis.test.ts#L16) |
 | TEST-SYNTHESIS-03 | cross-beat declarations reject invalid references and deduplicate equivalent references | [tests/synthesis.test.ts:26](../../tests/synthesis.test.ts#L26) |
@@ -1179,6 +1216,18 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-SYSTEM-ONE-03 | hold never constructs a composition and invalid choices/probabilities fail closed | [tests/system-one.test.ts:10](../../tests/system-one.test.ts#L10) |
 | TEST-SYSTEM-ONE-04 | Cloudflare variants use the existing authenticated decision endpoint without changing typed requests | [tests/system-one.test.ts:12](../../tests/system-one.test.ts#L12) |
 | TEST-SYSTEM-ONE-05 | unsupported decision providers fail before any transport call | [tests/system-one.test.ts:27](../../tests/system-one.test.ts#L27) |
+| TEST-TRANSCRIPT-INTEGRATION-01 | assembled split speech reaches the unchanged evidence host and unknown extra claims still abstain | [tests/transcript-integration.test.ts:14](../../tests/transcript-integration.test.ts#L14) |
+| TEST-TRANSCRIPT-INTEGRATION-02 | manual cues and pause cancel assembled windows before they can enter the host | [tests/transcript-integration.test.ts:29](../../tests/transcript-integration.test.ts#L29) |
+| TEST-TRANSCRIPT-INTEGRATION-03 | full assembled obligations survive routing into negation and missing-evidence guards | [tests/transcript-integration.test.ts:36](../../tests/transcript-integration.test.ts#L36) |
+| TEST-TRANSCRIPTS-01 | partial revisions replace a segment and never enter decision processing | [tests/transcripts.test.ts:7](../../tests/transcripts.test.ts#L7) |
+| TEST-TRANSCRIPTS-02 | split finals wait for an active continuation and retain the exact transcript | [tests/transcripts.test.ts:15](../../tests/transcripts.test.ts#L15) |
+| TEST-TRANSCRIPTS-03 | default routing preserves current-view remarks, extra facts, negation and corrections | [tests/transcripts.test.ts:23](../../tests/transcripts.test.ts#L23) |
+| TEST-TRANSCRIPTS-04 | joined corrections and missing obligations are not stripped to a supported alias | [tests/transcripts.test.ts:29](../../tests/transcripts.test.ts#L29) |
+| TEST-TRANSCRIPTS-05 | lifecycle resets and retired streams cannot replay stale text | [tests/transcripts.test.ts:36](../../tests/transcripts.test.ts#L36) |
+| TEST-TRANSCRIPTS-06 | overflow and amended finals hold without truncating into an apparently valid request | [tests/transcripts.test.ts:42](../../tests/transcripts.test.ts#L42) |
+| TEST-TRANSCRIPTS-07 | overlapping ASR intervals merge while a genuine silence gap separates complete requests | [tests/transcripts.test.ts:49](../../tests/transcripts.test.ts#L49) |
+| TEST-TRANSCRIPTS-08 | bounded interval assembly conserves every finalized word across varied overlaps and gaps | [tests/transcripts.test.ts:58](../../tests/transcripts.test.ts#L58) |
+| TEST-TRANSCRIPTS-09 | scheduling thresholds are parameters and empty finals cannot trigger detection | [tests/transcripts.test.ts:71](../../tests/transcripts.test.ts#L71) |
 | TEST-VISUALS-01 | diagram tool prepares a reusable visual; malformed edges are rejected | [tests/visuals.test.ts:21](../../tests/visuals.test.ts#L21) |
 | TEST-VISUALS-02 | chart tool requires known source labels and numbers | [tests/visuals.test.ts:28](../../tests/visuals.test.ts#L28) |
 | TEST-VISUALS-03 | flow references must point to existing prepared visuals | [tests/visuals.test.ts:35](../../tests/visuals.test.ts#L35) |

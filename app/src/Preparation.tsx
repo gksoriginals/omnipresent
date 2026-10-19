@@ -3,8 +3,8 @@ import {MessageText} from "./MessageText";
 import { useEffect, useRef, useState } from "react";
 import type { Preparation as State, AgentRole } from "../../shared/preparation";
 import { Visual } from "./Visual";
-type Props = { send: (e: Record<string, unknown>) => void; state: State; busy: boolean; response: string; activity: string; connected: boolean; input: string; onInput: (value: string) => void; onSave: () => void };
-export function Preparation({ send, state, busy, response, activity, connected, input, onInput: setInput, onSave }: Props) {
+type Props = { send: (e: Record<string, unknown>) => void; state: State; busy: boolean; activity: string; connected: boolean; input: string; onInput: (value: string) => void; onSave: () => void };
+export function Preparation({ send, state, busy, activity, connected, input, onInput: setInput, onSave }: Props) {
   const [uploading, setUploading] = useState(false), [error, setError] = useState("");
   const file = useRef<HTMLInputElement>(null);
   const role: AgentRole = state.flow ? "storyteller" : "interview";

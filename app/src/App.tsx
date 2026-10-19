@@ -1,5 +1,5 @@
 import {Icon} from "./Icon";
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 import { Preparation } from "./Preparation";
 import { StoryLibrary } from "./StoryLibrary";
 import { newProject, updateProject, saveStory, addPresentationFeedback, removeProject, removeStory, restoreRemoved, type Workspace } from "../../shared/workspace";
@@ -32,7 +32,7 @@ export default function App() {
     if (id === workspaceRef.current.activeProjectId) { setMode("prepare"); return; }
     endPresentation(); pendingSave.current = null;
     socket.current?.close(); socket.current = null;
-    setBusy(false); setResponse(""); setActivity(""); setNotice(""); setConnected(false);
+    setBusy(false); setActivity(""); setNotice(""); setConnected(false);
     commit({...workspaceRef.current, activeProjectId:id}); setMode("prepare");
   }
   function removeItem(kind: "story" | "project", id: string) {
@@ -42,7 +42,7 @@ export default function App() {
     if (kind === "project" && id === current.activeProjectId) {
       endPresentation(); pendingSave.current = null;
       socket.current?.close(); socket.current = null;
-      setBusy(false); setResponse(""); setActivity(""); setConnected(false);
+      setBusy(false); setActivity(""); setConnected(false);
     }
     commit(kind === "project" ? removeProject(current,id) : removeStory(current,id));
     setUndo({kind,id,label});
@@ -58,7 +58,7 @@ export default function App() {
     activateProject(next.id);
   }
   const [connected, setConnected] = useState(false), [busy, setBusy] = useState(false);
-  const [response, setResponse] = useState(""), [activity, setActivity] = useState("");
+  const [activity, setActivity] = useState("");
   const [error, setError] = useState(store.error), [notice, setNotice] = useState("");
   const socket=useRef<SessionClient|null>(null),pendingSave=useRef<string|null>(null);
   const presentation=usePresentation(socket,setError);
@@ -93,7 +93,7 @@ export default function App() {
         presentationRef.current.event(event);
         if (event.type === "preparation") {
           const state = event.state;
-          setResponse("");
+
           let next = updateProject(workspaceRef.current, projectId, state);
           let storySaved = false;
           if (pendingSave.current === projectId && state.flow && state.approvedRevision === state.revision) {
@@ -107,16 +107,15 @@ export default function App() {
         if (event.type === "presentation_feedback" && typeof event.projectId === "string" && typeof event.question === "string") {
           commit(addPresentationFeedback(workspaceRef.current,event.projectId,event.question));
         }
-        if (event.type === "agent_status") { setBusy(event.status === "working"); if (event.status === "working") { setResponse(""); setActivity(""); setNotice(""); } }
+        if (event.type === "agent_status") { setBusy(event.status === "working"); if (event.status === "working") { setActivity(""); setNotice(""); } }
         if (event.type === "agent_activity") setActivity(event.label);
-        if (event.type === "agent_delta") setResponse(event.text);
         if (event.type === "error" || event.type === "worker_error" || event.type === "agent_error") {
           setError(event.message); pendingSave.current = null;
-          if (event.type === "agent_error") { setBusy(false); setResponse(""); }
+          if (event.type === "agent_error") { setBusy(false); }
           else { presentationRef.current.endPresentation(); }
         }
       },
-      close(){setConnected(false);setBusy(false);setResponse("");presentationRef.current.disconnected();},
+      close(){setConnected(false);setBusy(false);presentationRef.current.disconnected();},
       error(message){setError(message);}
     });
     socket.current=client;client.connect();
@@ -149,7 +148,7 @@ export default function App() {
         </aside>
         <div className="prepare-body">
           <div id="mobile-project-sessions" className="mobile-projects"><label className="sr-only" htmlFor="project-select">Project</label><select id="project-select" value={project.id} onChange={e => activateProject(e.target.value)}>{workspace.projects.map(p=><option key={p.id} value={p.id}>{p.title}</option>)}</select><button onClick={createProject}>New project</button><button aria-label={`Remove session ${project.title}`} onClick={() => removeItem("project",project.id)}>×</button></div>
-          <Preparation key={project.id} send={event => { if (workspaceRef.current.activeProjectId === project.id) send(event); }} state={preparation} busy={busy} response={response} activity={activity} connected={connected} input={project.composer} onInput={value => commit({...workspaceRef.current,projects:workspaceRef.current.projects.map(p=>p.id === project.id ? {...p,composer:value} : p)})} onSave={() => { pendingSave.current = project.id; send({type: "flow_approve"}); }} />
+          <Preparation key={project.id} send={event => { if (workspaceRef.current.activeProjectId === project.id) send(event); }} state={preparation} busy={busy} activity={activity} connected={connected} input={project.composer} onInput={value => commit({...workspaceRef.current,projects:workspaceRef.current.projects.map(p=>p.id === project.id ? {...p,composer:value} : p)})} onSave={() => { pendingSave.current = project.id; send({type: "flow_approve"}); }} />
         </div>
       </div> : !selectedStory ? <StoryLibrary
         stories={stories}

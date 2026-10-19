@@ -1,0 +1,2723 @@
+{
+  "id": "RUN-20261019-transcript-ablation-v1",
+  "startedAt": "2026-10-19T15:14:32.919Z",
+  "finishedAt": "2026-10-19T15:15:12.115Z",
+  "scope": "Four authored Piper recordings; identical actual paced Moonshine events shared across all arms. No browser, physical microphone, independent holdout or hosted inference.",
+  "inputHash": "b82bb81d09cba59e37624ed40deda08d834ca45a28f45bbbd4c373a8fba68b17",
+  "sourceFiles": [
+    {
+      "path": "scripts/speech-assembly-replay.ts",
+      "sha256": "3411cdc3b80293ccf85438ee223638243c8cce25af9d581f12543c89746945bd"
+    },
+    {
+      "path": "server/speech/signals.ts",
+      "sha256": "1ec36c3c8f2af5d39ff1d7fffb88c0357c0a0a3c633056080b892fc7e1b058ec"
+    },
+    {
+      "path": "server/speech/transcripts.ts",
+      "sha256": "d0a37418167b9779afd40936cd1b48c98c73d24cf23fc937212390ce96ce97a0"
+    },
+    {
+      "path": "server/agents/adaptive.ts",
+      "sha256": "f1b616f27a5d2b325beaafa00a64a6d9a4fc3259a8a32bc15f0d5326aed0241c"
+    },
+    {
+      "path": "server/presentation/baseline.ts",
+      "sha256": "7a04d7d8adf95b0bb2ca11d9bd9345822c0097b4d165a229808bff1fb38c3ba7"
+    },
+    {
+      "path": "server/presentation/request-frame.ts",
+      "sha256": "641cd6c08bab833b40f8ae317442d0db6d26e92d5e4b3e82f9914e7d2d2bb577"
+    },
+    {
+      "path": "runtime/worker.py",
+      "sha256": "1eacdaa519fd6ba8b96fa589a254a0733413fdaed7b93104cdcafd4c698ebc89"
+    },
+    {
+      "path": "runtime/requirements.lock",
+      "sha256": "be3b0e9c8d64d8099d114081c2e13986a3a94d198005c286021f3608f6abab37"
+    },
+    {
+      "path": "runtime/retrieval-model.json",
+      "sha256": "d13e58d2e3c51df87eb02de94031ddcf12a90bc18050cf5ca3fe94b6b3fd76b6"
+    }
+  ],
+  "rows": [
+    {
+      "case": "panels",
+      "arm": "per-final",
+      "expected": "show",
+      "expectedBeat": 0,
+      "action": "hold",
+      "beat": 0,
+      "correct": false,
+      "hostCalls": 2,
+      "finalToDirectionMs": 0.4125420000000304,
+      "utterances": [],
+      "feedback": [],
+      "routes": []
+    },
+    {
+      "case": "panels",
+      "arm": "temporal",
+      "expected": "show",
+      "expectedBeat": 0,
+      "action": "none",
+      "beat": 0,
+      "correct": false,
+      "hostCalls": 0,
+      "finalToDirectionMs": null,
+      "utterances": [],
+      "feedback": [
+        "Speech context could not be safely assembled. Pause and resume the presentation, then repeat the complete explanation."
+      ],
+      "routes": [
+        {
+          "action": "hold",
+          "reason": "unsafe-or-oversized-window",
+          "segments": 0,
+          "waitMs": 2020.2644170000003,
+          "gate": "none",
+          "signals": 0,
+          "currentCandidate": false
+        }
+      ]
+    },
+    {
+      "case": "panels",
+      "arm": "signals",
+      "expected": "show",
+      "expectedBeat": 0,
+      "action": "none",
+      "beat": 0,
+      "correct": false,
+      "hostCalls": 0,
+      "finalToDirectionMs": null,
+      "utterances": [],
+      "feedback": [
+        "Speech context could not be safely assembled. Pause and resume the presentation, then repeat the complete explanation."
+      ],
+      "routes": [
+        {
+          "action": "hold",
+          "reason": "unsafe-or-oversized-window",
+          "segments": 0,
+          "waitMs": 2020.174,
+          "gate": "none",
+          "signals": 0,
+          "currentCandidate": false
+        }
+      ]
+    },
+    {
+      "case": "battery",
+      "arm": "per-final",
+      "expected": "show",
+      "expectedBeat": 1,
+      "action": "show",
+      "beat": 1,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 2.0151670000013837,
+      "utterances": [],
+      "feedback": [],
+      "routes": []
+    },
+    {
+      "case": "battery",
+      "arm": "temporal",
+      "expected": "show",
+      "expectedBeat": 1,
+      "action": "show",
+      "beat": 1,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 403.7595000000001,
+      "utterances": [
+        "Batteries store electricity for later use."
+      ],
+      "feedback": [],
+      "routes": [
+        {
+          "action": "process",
+          "reason": "completed-window",
+          "segments": 1,
+          "waitMs": 401.0215420000022,
+          "gate": "unresolved",
+          "signals": 0,
+          "currentCandidate": false
+        }
+      ]
+    },
+    {
+      "case": "battery",
+      "arm": "signals",
+      "expected": "show",
+      "expectedBeat": 1,
+      "action": "show",
+      "beat": 1,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 364.90979199999856,
+      "utterances": [
+        "Batteries store electricity for later use."
+      ],
+      "feedback": [],
+      "routes": [
+        {
+          "action": "process",
+          "reason": "completed-window",
+          "segments": 1,
+          "waitMs": 362.7426659999983,
+          "gate": "matched",
+          "signals": 2,
+          "currentCandidate": false
+        }
+      ]
+    },
+    {
+      "case": "missing",
+      "arm": "per-final",
+      "expected": "context",
+      "expectedBeat": null,
+      "action": "context",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 0.5984590000007302,
+      "utterances": [],
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ],
+      "routes": []
+    },
+    {
+      "case": "missing",
+      "arm": "temporal",
+      "expected": "context",
+      "expectedBeat": null,
+      "action": "context",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 381.86562499999854,
+      "utterances": [
+        "Show the installation cost."
+      ],
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ],
+      "routes": [
+        {
+          "action": "process",
+          "reason": "completed-window",
+          "segments": 1,
+          "waitMs": 380.6548750000002,
+          "gate": "unresolved",
+          "signals": 0,
+          "currentCandidate": false
+        }
+      ]
+    },
+    {
+      "case": "missing",
+      "arm": "signals",
+      "expected": "context",
+      "expectedBeat": null,
+      "action": "context",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 394.5263339999983,
+      "utterances": [
+        "Show the installation cost."
+      ],
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ],
+      "routes": [
+        {
+          "action": "process",
+          "reason": "completed-window",
+          "segments": 1,
+          "waitMs": 393.97008300000016,
+          "gate": "unresolved",
+          "signals": 0,
+          "currentCandidate": false
+        }
+      ]
+    },
+    {
+      "case": "retain",
+      "arm": "per-final",
+      "expected": "hold",
+      "expectedBeat": null,
+      "action": "hold",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 0.5274580000041169,
+      "utterances": [],
+      "feedback": [],
+      "routes": []
+    },
+    {
+      "case": "retain",
+      "arm": "temporal",
+      "expected": "hold",
+      "expectedBeat": null,
+      "action": "hold",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 364.0115829999995,
+      "utterances": [
+        "Keep this visual."
+      ],
+      "feedback": [],
+      "routes": [
+        {
+          "action": "process",
+          "reason": "completed-window",
+          "segments": 1,
+          "waitMs": 363.39695799999754,
+          "gate": "unresolved",
+          "signals": 0,
+          "currentCandidate": false
+        }
+      ]
+    },
+    {
+      "case": "retain",
+      "arm": "signals",
+      "expected": "hold",
+      "expectedBeat": null,
+      "action": "hold",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 385.5807910000003,
+      "utterances": [
+        "Keep this visual."
+      ],
+      "feedback": [],
+      "routes": [
+        {
+          "action": "process",
+          "reason": "completed-window",
+          "segments": 1,
+          "waitMs": 385.11954200000037,
+          "gate": "unresolved",
+          "signals": 0,
+          "currentCandidate": false
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "type": "worker_status",
+      "status": "loading",
+      "at": 183.049584
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "loadMs": 474.67470896663144,
+      "at": 657.269084
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 1026.720625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 0.24495803518220782,
+      "at": 1076.356375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 5.046250007580966,
+      "at": 1291.854709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 1.4021249953657389,
+      "at": 1539.237209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 6.703375023789704,
+      "at": 1794.46925
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 1.4210420195013285,
+      "at": 2040.61025
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 6.40800001565367,
+      "at": 2294.092417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 1.1244579800404608,
+      "at": 2539.607
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 7.21941702067852,
+      "at": 2795.05225
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 1.4734999858774245,
+      "at": 3039.249542
+    },
+    {
+      "type": "speech_activity",
+      "segmentId": "14647488397632523095",
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "at": 3368.749667
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523095",
+      "text": "Ｐ?",
+      "final": false,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 2496.000051498413,
+      "at": 3368.919334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 80.22658398840576,
+      "at": 3368.972584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 2.0427079871296883,
+      "at": 3539.764084
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523095",
+      "text": "Solar panels",
+      "final": false,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 2976.0000705718994,
+      "at": 3860.467709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 71.76945899846032,
+      "at": 3860.567792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 3.5419159685261548,
+      "at": 4041.991042
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523095",
+      "text": "Solar panels turn",
+      "final": false,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 3487.99991607666,
+      "at": 4340.945959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 53.61395800719038,
+      "at": 4341.005292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 5.366291967220604,
+      "at": 4544.006459
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523095",
+      "text": "Solar panels turn some light.",
+      "final": false,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 4000,
+      "at": 4866.408459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 78.72833299916238,
+      "at": 4866.591042
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 4.171583976130933,
+      "at": 5042.265625
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523095",
+      "text": "Solar panels turn sunlight.",
+      "final": false,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 4191.999912261963,
+      "at": 5387.328834
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523095",
+      "text": "Solar panels turn sunlight.",
+      "final": true,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 4191.999912261963,
+      "at": 5387.356167
+    },
+    {
+      "type": "speech_activity",
+      "segmentId": "14647488397632523096",
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "at": 5389.046292
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523096",
+      "text": "",
+      "final": false,
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "endMs": 4480.000019073486,
+      "at": 5389.08875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 98.84745901217684,
+      "at": 5389.092459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 2.920375030953437,
+      "at": 5540.488417
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523096",
+      "text": "Into my",
+      "final": false,
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "endMs": 4992.000102996826,
+      "at": 5851.6265
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 63.46441700588912,
+      "at": 5851.8135
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 21,
+      "processingMs": 9.17983299586922,
+      "at": 6047.666792
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523096",
+      "text": "And took electricity.",
+      "final": false,
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "endMs": 5472.0001220703125,
+      "at": 6372.8555
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 22,
+      "processingMs": 84.61358299246058,
+      "at": 6373.032542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 23,
+      "processingMs": 6.521500006783754,
+      "at": 6543.888875
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523096",
+      "text": "Into electricity",
+      "final": false,
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "endMs": 5599.999904632568,
+      "at": 6870.961292
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523096",
+      "text": "Into electricity",
+      "final": true,
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "endMs": 5599.999904632568,
+      "at": 6870.975
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 24,
+      "processingMs": 82.57687505101785,
+      "at": 6871.413292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 25,
+      "processingMs": 7.583459024317563,
+      "at": 7045.341209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 26,
+      "processingMs": 13.629416993353516,
+      "at": 7302.071959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 27,
+      "processingMs": 10.588958044536412,
+      "at": 7549.436084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 28,
+      "processingMs": 13.249708979856223,
+      "at": 7801.311459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 29,
+      "processingMs": 9.35212499462068,
+      "at": 8047.357709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 30,
+      "processingMs": 14.451625000219792,
+      "at": 8301.647875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 31,
+      "processingMs": 9.713749983347952,
+      "at": 8546.744709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 32,
+      "processingMs": 12.746957945637405,
+      "at": 8800.116417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 33,
+      "processingMs": 8.244332973845303,
+      "at": 9047.538
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 34,
+      "processingMs": 13.112915970850736,
+      "at": 9301.429917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 35,
+      "processingMs": 9.474500024225563,
+      "at": 9548.873167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 36,
+      "processingMs": 13.72929202625528,
+      "at": 9802.389
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 37,
+      "processingMs": 9.303500002715737,
+      "at": 10047.57175
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 38,
+      "processingMs": 0.7367089856415987,
+      "at": 10288.937209
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 10310.226709
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 12548.363792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 0.20516698714345694,
+      "at": 12559.984334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 6.873207981698215,
+      "at": 12817.5905
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 0.8015829953365028,
+      "at": 13061.102084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 7.2641660226508975,
+      "at": 13318.173
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 0.6162080098874867,
+      "at": 13560.73125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 7.191000040620565,
+      "at": 13818.103209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 1.524167018942535,
+      "at": 14062.875875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 7.036666036583483,
+      "at": 14318.013084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 1.5123750199563801,
+      "at": 14561.419667
+    },
+    {
+      "type": "speech_activity",
+      "segmentId": "14647488397632523097",
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "at": 14877.5545
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523097",
+      "text": "That's it.",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 2496.000051498413,
+      "at": 14877.607209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 66.41608302015811,
+      "at": 14877.653084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 4.876667051576078,
+      "at": 15066.007459
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523097",
+      "text": "Batteries",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 2976.0000705718994,
+      "at": 15380.016459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 70.40349999442697,
+      "at": 15380.078667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 6.085416011046618,
+      "at": 15567.409084
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523097",
+      "text": "Batteries store open",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 3487.99991607666,
+      "at": 15879.332
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 68.81016597617418,
+      "at": 15879.425625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 6.148291984573007,
+      "at": 16067.240584
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523097",
+      "text": "Batteries store electricity",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 4000,
+      "at": 16392.35675
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 82.06683403113857,
+      "at": 16392.462084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 4.335374978836626,
+      "at": 16564.422584
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523097",
+      "text": "Batteries store electricity for later",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 4480.000019073486,
+      "at": 16878.452
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 69.12558298790827,
+      "at": 16878.571875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 3.8516249624080956,
+      "at": 17065.047875
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523097",
+      "text": "Batteries store electricity for later use.",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 4992.000102996826,
+      "at": 17395.595292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 85.01587499631569,
+      "at": 17395.748792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 21,
+      "processingMs": 6.145125022158027,
+      "at": 17566.023167
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523097",
+      "text": "Batteries store electricity for later use.",
+      "final": true,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 5151.999950408936,
+      "at": 17871.228292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 22,
+      "processingMs": 60.10637496365234,
+      "at": 17873.272625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 23,
+      "processingMs": 8.468499989248812,
+      "at": 18067.711875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 24,
+      "processingMs": 13.088874984532595,
+      "at": 18324.487042
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 25,
+      "processingMs": 9.217415994498879,
+      "at": 18569.790917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 26,
+      "processingMs": 13.344415987376124,
+      "at": 18823.868375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 27,
+      "processingMs": 6.570792000275105,
+      "at": 19066.449459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 28,
+      "processingMs": 12.554707995150238,
+      "at": 19323.526667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 29,
+      "processingMs": 8.114333031699061,
+      "at": 19567.397125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 30,
+      "processingMs": 13.078458025120199,
+      "at": 19822.865959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 31,
+      "processingMs": 7.454874983523041,
+      "at": 20067.733584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 32,
+      "processingMs": 5.149417032953352,
+      "at": 20315.003667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 33,
+      "processingMs": 2.0249589579179883,
+      "at": 20562.516792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 34,
+      "processingMs": 7.426625001244247,
+      "at": 20817.383709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 35,
+      "processingMs": 8.90729099046439,
+      "at": 21068.526375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 36,
+      "processingMs": 0.7175410282798111,
+      "at": 21311.131084
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 21334.748875
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 23563.066792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 0.1992079778574407,
+      "at": 23575.034584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 4.227459023240954,
+      "at": 23829.57425
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 0.2120420103892684,
+      "at": 24076.056917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 4.881999979261309,
+      "at": 24331.207625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 0.2056660014204681,
+      "at": 24575.72125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 4.085708991624415,
+      "at": 24828.763
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 0.5819160141982138,
+      "at": 25076.066334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 5.350916995666921,
+      "at": 25330.90675
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 1.3507500407285988,
+      "at": 25577.027584
+    },
+    {
+      "type": "speech_activity",
+      "segmentId": "14647488397632523098",
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "at": 25873.734875
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523098",
+      "text": "",
+      "final": false,
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "endMs": 2496.000051498413,
+      "at": 25873.766667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 47.818958992138505,
+      "at": 25873.834125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 3.2379580079577863,
+      "at": 26079.806042
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523098",
+      "text": "Show the",
+      "final": false,
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "endMs": 2976.0000705718994,
+      "at": 26377.90575
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 52.904625015798956,
+      "at": 26378.029959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 2.8372500091791153,
+      "at": 26578.864167
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523098",
+      "text": "Show the installation.",
+      "final": false,
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "endMs": 3487.99991607666,
+      "at": 26885.131709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 60.72258297353983,
+      "at": 26885.197834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 3.394707979168743,
+      "at": 27078.393375
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523098",
+      "text": "Show the installation cost.",
+      "final": false,
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "endMs": 4000,
+      "at": 27419.728875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 94.10991601180285,
+      "at": 27419.964417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 2.0561249693855643,
+      "at": 27577.772959
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523098",
+      "text": "Show the installation cost.",
+      "final": true,
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "endMs": 4223.999977111816,
+      "at": 27885.105625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 60.44695799937472,
+      "at": 27885.740625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 4.787708981893957,
+      "at": 28080.476834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 9.215124999172986,
+      "at": 28335.798459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 21,
+      "processingMs": 5.777083046268672,
+      "at": 28581.598625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 22,
+      "processingMs": 7.336082984693348,
+      "at": 28831.941417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 23,
+      "processingMs": 5.134249979164451,
+      "at": 29080.96875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 24,
+      "processingMs": 10.751666035503149,
+      "at": 29336.061292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 25,
+      "processingMs": 5.06399996811524,
+      "at": 29580.716334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 26,
+      "processingMs": 9.005750005599111,
+      "at": 29834.233584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 27,
+      "processingMs": 6.264499970711768,
+      "at": 30081.767375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 28,
+      "processingMs": 11.048833024688065,
+      "at": 30336.71975
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 29,
+      "processingMs": 5.3159999661147594,
+      "at": 30580.651042
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 30,
+      "processingMs": 10.712499963119626,
+      "at": 30836.176959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 31,
+      "processingMs": 7.8592500067316,
+      "at": 31082.593667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 32,
+      "processingMs": 1.4995410456322134,
+      "at": 31327.164334
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 31346.486292
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 33567.222917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 0.20058301743119955,
+      "at": 33581.433334
+    },
+    {
+      "type": "speech_activity",
+      "segmentId": "14647488397632523099",
+      "streamId": "4",
+      "startMs": 0,
+      "at": 33876.837917
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523099",
+      "text": "Keep",
+      "final": false,
+      "streamId": "4",
+      "startMs": 0,
+      "endMs": 479.99998927116394,
+      "at": 33876.861834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 45.28125002980232,
+      "at": 33876.91025
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 2.526708005461842,
+      "at": 34084.115209
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523099",
+      "text": "Keep this video",
+      "final": false,
+      "streamId": "4",
+      "startMs": 0,
+      "endMs": 991.9999837875366,
+      "at": 34380.709209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 48.931999946944416,
+      "at": 34380.777084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 4.526500008068979,
+      "at": 34587.260917
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523099",
+      "text": "Keep this visual.",
+      "final": false,
+      "streamId": "4",
+      "startMs": 0,
+      "endMs": 1279.9999713897705,
+      "at": 34901.415084
+    },
+    {
+      "type": "transcript",
+      "segmentId": "14647488397632523099",
+      "text": "Keep this visual.",
+      "final": true,
+      "streamId": "4",
+      "startMs": 0,
+      "endMs": 1279.9999713897705,
+      "at": 34901.438459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 68.8712089904584,
+      "at": 34901.997625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 10.52641699789092,
+      "at": 35092.58025
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 8.952166012022644,
+      "at": 35340.65625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 5.404166993685067,
+      "at": 35588.124709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 10.452791000716388,
+      "at": 35843.476292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 4.974999988917261,
+      "at": 36086.342959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 9.739500004798174,
+      "at": 36342.130709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 2.8690830222330987,
+      "at": 36584.667084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 7.423750008456409,
+      "at": 36839.257584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 4.822541959583759,
+      "at": 37086.924709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 1.5988750383257866,
+      "at": 37333.560625
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 37351.376167
+    }
+  ],
+  "routes": [
+    {
+      "case": "panels",
+      "arm": "per-final",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422873428
+          },
+          "paused": false,
+          "at": 668.331375
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422873429
+          },
+          "dispatchMs": 0.013916999999992186,
+          "at": 668.377125
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 5387.532042
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 1.4683750000003783,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "f301ef22-94ef-41fd-a4d0-769107d0a8e5",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "hold",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 5389.000625
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 5389.017792
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 6871.00775
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 0.3837920000005397,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "bed9ca79-7d65-4fa6-ac0c-9cb171cd2ac9",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "hold",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 6871.387542
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 6871.393667
+        }
+      ]
+    },
+    {
+      "case": "panels",
+      "arm": "temporal",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422873641
+          },
+          "paused": false,
+          "at": 881.146875
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422873641
+          },
+          "dispatchMs": 0.002499999999940883,
+          "at": 881.152667
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 5389.064292,
+          "details": {
+            "action": "hold",
+            "reason": "unsafe-or-oversized-window",
+            "segments": 0,
+            "waitMs": 2020.2644170000003,
+            "gate": "none",
+            "signals": 0,
+            "currentCandidate": false
+          },
+          "at": 5389.072375
+        },
+        {
+          "type": "feedback",
+          "question": "Speech context could not be safely assembled. Pause and resume the presentation, then repeat the complete explanation.",
+          "at": 5389.0785
+        }
+      ]
+    },
+    {
+      "case": "panels",
+      "arm": "signals",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422873723
+          },
+          "paused": false,
+          "at": 963.184375
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422873723
+          },
+          "dispatchMs": 0.0024580000000469227,
+          "at": 963.189542
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 5389.083125,
+          "details": {
+            "action": "hold",
+            "reason": "unsafe-or-oversized-window",
+            "segments": 0,
+            "waitMs": 2020.174,
+            "gate": "none",
+            "signals": 0,
+            "currentCandidate": false
+          },
+          "at": 5389.086084
+        },
+        {
+          "type": "feedback",
+          "question": "Speech context could not be safely assembled. Pause and resume the presentation, then repeat the complete explanation.",
+          "at": 5389.086625
+        }
+      ]
+    },
+    {
+      "case": "battery",
+      "arm": "per-final",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422885083
+          },
+          "paused": false,
+          "at": 12323.457125
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422885084
+          },
+          "dispatchMs": 0.008750000000873115,
+          "at": 12323.482459
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 17871.262875
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Batteries store electricity for later use",
+            "composition": {
+              "title": "Batteries store electricity for later use",
+              "body": "Batteries store electricity for later use.",
+              "beat": 1,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792422890633
+          },
+          "dispatchMs": 0.005208999999013031,
+          "at": 17873.228959
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "commit",
+          "phase": "complete",
+          "atMs": 17873.233334,
+          "requestId": "3fdbf0a7-d28b-4f7b-b783-3443de87b3b7",
+          "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4",
+          "details": {
+            "changed": true
+          },
+          "at": 17873.2375
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 1.9858750000021246,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "3fdbf0a7-d28b-4f7b-b783-3443de87b3b7",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "show",
+            "operation": "replace",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 17873.243459
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 17873.24975
+        }
+      ]
+    },
+    {
+      "case": "battery",
+      "arm": "temporal",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422885180
+          },
+          "paused": false,
+          "at": 12419.877459
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422885180
+          },
+          "dispatchMs": 0.0027090000003227033,
+          "at": 12419.885
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 18272.354667,
+          "details": {
+            "action": "process",
+            "reason": "completed-window",
+            "segments": 1,
+            "waitMs": 401.0215420000022,
+            "gate": "unresolved",
+            "signals": 0,
+            "currentCandidate": false
+          },
+          "at": 18272.367084
+        },
+        {
+          "type": "presentation_utterance",
+          "text": "Batteries store electricity for later use.",
+          "at": 18272.375375
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 18272.433334
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Batteries store electricity for later use",
+            "composition": {
+              "title": "Batteries store electricity for later use",
+              "body": "Batteries store electricity for later use.",
+              "beat": 1,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792422891035
+          },
+          "dispatchMs": 0.01466699999946286,
+          "at": 18274.81575
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "commit",
+          "phase": "complete",
+          "atMs": 18274.976584,
+          "requestId": "31f10cb2-3785-46cf-b6d6-0554c87678ba",
+          "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4",
+          "details": {
+            "changed": true
+          },
+          "at": 18274.979625
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2.555333000000246,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "31f10cb2-3785-46cf-b6d6-0554c87678ba",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "show",
+            "operation": "replace",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 18274.987792
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 18275.002667
+        }
+      ]
+    },
+    {
+      "case": "battery",
+      "arm": "signals",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422885246
+          },
+          "paused": false,
+          "at": 12485.720917
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422885246
+          },
+          "dispatchMs": 0.002500000000509317,
+          "at": 12485.72675
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 18234.161292,
+          "details": {
+            "action": "process",
+            "reason": "completed-window",
+            "segments": 1,
+            "waitMs": 362.7426659999983,
+            "gate": "matched",
+            "signals": 2,
+            "currentCandidate": false
+          },
+          "at": 18234.176625
+        },
+        {
+          "type": "presentation_utterance",
+          "text": "Batteries store electricity for later use.",
+          "at": 18234.186125
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 18234.232125
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Batteries store electricity for later use",
+            "composition": {
+              "title": "Batteries store electricity for later use",
+              "body": "Batteries store electricity for later use.",
+              "beat": 1,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792422890996
+          },
+          "dispatchMs": 0.01304099999833852,
+          "at": 18236.12225
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "commit",
+          "phase": "complete",
+          "atMs": 18236.1305,
+          "requestId": "f7d069c2-fa48-4526-8717-528e870f192e",
+          "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4",
+          "details": {
+            "changed": true
+          },
+          "at": 18236.131959
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 1.9062919999996666,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "f7d069c2-fa48-4526-8717-528e870f192e",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "show",
+            "operation": "replace",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 18236.138084
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 18236.154959
+        }
+      ]
+    },
+    {
+      "case": "missing",
+      "arm": "per-final",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422896104
+          },
+          "paused": false,
+          "at": 23343.9135
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422896104
+          },
+          "dispatchMs": 0.012167000000772532,
+          "at": 23343.941375
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 27885.147
+        },
+        {
+          "type": "feedback",
+          "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+          "at": 27885.69625
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 0.5610840000008466,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "88361eef-00a8-43e6-bbab-8ddc1e245d84",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "context",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 27885.704084
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 27885.710334
+        }
+      ]
+    },
+    {
+      "case": "missing",
+      "arm": "temporal",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422896191
+          },
+          "paused": false,
+          "at": 23431.273584
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422896191
+          },
+          "dispatchMs": 0.0026250000009895302,
+          "at": 23431.278834
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 28265.834542,
+          "details": {
+            "action": "process",
+            "reason": "completed-window",
+            "segments": 1,
+            "waitMs": 380.6548750000002,
+            "gate": "unresolved",
+            "signals": 0,
+            "currentCandidate": false
+          },
+          "at": 28265.844417
+        },
+        {
+          "type": "presentation_utterance",
+          "text": "Show the installation cost.",
+          "at": 28265.851334
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 28265.908334
+        },
+        {
+          "type": "feedback",
+          "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+          "at": 28266.946709
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 1.0713340000002063,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "91b5f594-caf9-4cff-bbd3-c06cbd601674",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "context",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 28266.97125
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 28266.987375
+        }
+      ]
+    },
+    {
+      "case": "missing",
+      "arm": "signals",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422896258
+          },
+          "paused": false,
+          "at": 23497.756209
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422896258
+          },
+          "dispatchMs": 0.0015419999981531873,
+          "at": 23497.759917
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 28279.214417,
+          "details": {
+            "action": "process",
+            "reason": "completed-window",
+            "segments": 1,
+            "waitMs": 393.97008300000016,
+            "gate": "unresolved",
+            "signals": 0,
+            "currentCandidate": false
+          },
+          "at": 28279.220292
+        },
+        {
+          "type": "presentation_utterance",
+          "text": "Show the installation cost.",
+          "at": 28279.223709
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 28279.253125
+        },
+        {
+          "type": "feedback",
+          "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+          "at": 28279.626542
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 0.37845799999922747,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "a0c24e28-d26c-49d2-8776-242a9d966b7c",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "context",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 28279.631959
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 28279.638834
+        }
+      ]
+    },
+    {
+      "case": "retain",
+      "arm": "per-final",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422906110
+          },
+          "paused": false,
+          "at": 33349.695917
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422906110
+          },
+          "dispatchMs": 0.007375000001047738,
+          "at": 33349.714292
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 34901.461
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 0.5086249999949359,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "90eac8a3-a5e4-4a64-bd60-453244ff7f37",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "hold",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 34901.965917
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 34901.971209
+        }
+      ]
+    },
+    {
+      "case": "retain",
+      "arm": "temporal",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422906200
+          },
+          "paused": false,
+          "at": 33439.883375
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422906200
+          },
+          "dispatchMs": 0.0021249999990686774,
+          "at": 33439.887584
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 35264.889584,
+          "details": {
+            "action": "process",
+            "reason": "completed-window",
+            "segments": 1,
+            "waitMs": 363.39695799999754,
+            "gate": "unresolved",
+            "signals": 0,
+            "currentCandidate": false
+          },
+          "at": 35264.903875
+        },
+        {
+          "type": "presentation_utterance",
+          "text": "Keep this visual.",
+          "at": 35264.91125
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 35264.958709
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 0.48979200000030687,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "b82d5f17-c674-41ca-b2c0-ac2ed28ea965",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "hold",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 35265.450042
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 35265.461584
+        }
+      ]
+    },
+    {
+      "case": "retain",
+      "arm": "signals",
+      "events": [
+        {
+          "type": "snapshot",
+          "stage": {
+            "text": "",
+            "revision": 0,
+            "source": "manual",
+            "committedAt": 1792422906265
+          },
+          "paused": false,
+          "at": 33505.202209
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "normal",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 1,
+            "committedAt": 1792422906265
+          },
+          "dispatchMs": 0.0010000000038417056,
+          "at": 33505.204667
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 35286.63625,
+          "details": {
+            "action": "process",
+            "reason": "completed-window",
+            "segments": 1,
+            "waitMs": 385.11954200000037,
+            "gate": "unresolved",
+            "signals": 0,
+            "currentCandidate": false
+          },
+          "at": 35286.644459
+        },
+        {
+          "type": "presentation_utterance",
+          "text": "Keep this visual.",
+          "at": 35286.649584
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 35286.692084
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 0.3245420000021113,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "db63791c-4492-41d3-8a00-cf14d16bf044",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "hold",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 35287.01925
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 35287.031084
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Four authored TTS recordings, one pass each, same events per arm; not independent speech acceptance or statistical latency evidence.",
+    "Gate-assisted prefix waiting is configurable policy, not a general semantic-completion model.",
+    "No new VAD model was installed or benchmarked."
+  ]
+}

@@ -1,0 +1,1914 @@
+{
+  "id": "RUN-20261019-transcript-minimal-v3",
+  "startedAt": "2026-10-19T15:17:35.227Z",
+  "finishedAt": "2026-10-19T15:18:14.219Z",
+  "scope": "Four authored Piper recordings; identical actual paced Moonshine events shared across all arms. No browser, physical microphone, independent holdout or hosted inference.",
+  "inputHash": "b859318a6d107ae143edee67399c3fa440428933d1d0c6c811caa573ada263aa",
+  "sourceFiles": [
+    {
+      "path": "scripts/speech-assembly-replay.ts",
+      "sha256": "27993f7b571de12935ceacf69b4a011f3a3369a1b9eb0640951fba8e0124acb7"
+    },
+    {
+      "path": "server/speech/transcripts.ts",
+      "sha256": "5d4ec37623d27b52c8596a4fed0b98073eaecacabc1115081e327ba3797e47f7"
+    },
+    {
+      "path": "server/agents/adaptive.ts",
+      "sha256": "5c1b7839ac3bcef062f261f470333a06c3f30ca901edfdd309aa7af542c2cca4"
+    },
+    {
+      "path": "server/presentation/baseline.ts",
+      "sha256": "7a04d7d8adf95b0bb2ca11d9bd9345822c0097b4d165a229808bff1fb38c3ba7"
+    },
+    {
+      "path": "server/presentation/request-frame.ts",
+      "sha256": "641cd6c08bab833b40f8ae317442d0db6d26e92d5e4b3e82f9914e7d2d2bb577"
+    },
+    {
+      "path": "runtime/worker.py",
+      "sha256": "1eacdaa519fd6ba8b96fa589a254a0733413fdaed7b93104cdcafd4c698ebc89"
+    },
+    {
+      "path": "runtime/requirements.lock",
+      "sha256": "be3b0e9c8d64d8099d114081c2e13986a3a94d198005c286021f3608f6abab37"
+    },
+    {
+      "path": "runtime/retrieval-model.json",
+      "sha256": "d13e58d2e3c51df87eb02de94031ddcf12a90bc18050cf5ca3fe94b6b3fd76b6"
+    }
+  ],
+  "rows": [
+    {
+      "case": "panels",
+      "arm": "per-final",
+      "expected": "show",
+      "expectedBeat": 0,
+      "action": "hold",
+      "beat": 1,
+      "correct": false,
+      "hostCalls": 2,
+      "finalToDirectionMs": 0.5019590000001699,
+      "utterances": [],
+      "feedback": [],
+      "routes": []
+    },
+    {
+      "case": "panels",
+      "arm": "temporal",
+      "expected": "show",
+      "expectedBeat": 0,
+      "action": "show",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 385.37266700000055,
+      "utterances": [
+        "Solar panels turn sunlight. Into electricity"
+      ],
+      "feedback": [],
+      "routes": [
+        {
+          "action": "process",
+          "reason": "completed-window",
+          "segments": 2,
+          "waitMs": 380.33100000000013
+        }
+      ]
+    },
+    {
+      "case": "battery",
+      "arm": "per-final",
+      "expected": "show",
+      "expectedBeat": 1,
+      "action": "show",
+      "beat": 1,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 1.7004170000000158,
+      "utterances": [],
+      "feedback": [],
+      "routes": []
+    },
+    {
+      "case": "battery",
+      "arm": "temporal",
+      "expected": "show",
+      "expectedBeat": 1,
+      "action": "show",
+      "beat": 1,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 402.5408749999988,
+      "utterances": [
+        "Batteries store electricity for later use."
+      ],
+      "feedback": [],
+      "routes": [
+        {
+          "action": "process",
+          "reason": "completed-window",
+          "segments": 1,
+          "waitMs": 399.58812500000204
+        }
+      ]
+    },
+    {
+      "case": "missing",
+      "arm": "per-final",
+      "expected": "context",
+      "expectedBeat": null,
+      "action": "context",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 0.46875,
+      "utterances": [],
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ],
+      "routes": []
+    },
+    {
+      "case": "missing",
+      "arm": "temporal",
+      "expected": "context",
+      "expectedBeat": null,
+      "action": "context",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 354.21408299999894,
+      "utterances": [
+        "Show the installation cost."
+      ],
+      "feedback": [
+        "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      ],
+      "routes": [
+        {
+          "action": "process",
+          "reason": "completed-window",
+          "segments": 1,
+          "waitMs": 352.22279199999684
+        }
+      ]
+    },
+    {
+      "case": "retain",
+      "arm": "per-final",
+      "expected": "hold",
+      "expectedBeat": null,
+      "action": "hold",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 0.14466600000014296,
+      "utterances": [],
+      "feedback": [],
+      "routes": []
+    },
+    {
+      "case": "retain",
+      "arm": "temporal",
+      "expected": "hold",
+      "expectedBeat": null,
+      "action": "hold",
+      "beat": 0,
+      "correct": true,
+      "hostCalls": 1,
+      "finalToDirectionMs": 376.51783299999806,
+      "utterances": [
+        "Keep this visual."
+      ],
+      "feedback": [],
+      "routes": [
+        {
+          "action": "process",
+          "reason": "completed-window",
+          "segments": 1,
+          "waitMs": 375.5689580000035
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "type": "worker_status",
+      "status": "loading",
+      "at": 145.964459
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "loadMs": 481.7896250169724,
+      "at": 627.705084
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 891.672042
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 0.317084020934999,
+      "at": 946.028917
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 2.9151670169085264,
+      "at": 1154.996875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 0.45312498696148396,
+      "at": 1404.955375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 6.918542028870434,
+      "at": 1661.113792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 0.9225840331055224,
+      "at": 1904.771292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 7.020084012765437,
+      "at": 2160.763709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 0.9899159776978195,
+      "at": 2404.624542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 7.158584019634873,
+      "at": 2661.600292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 0.8565000025555491,
+      "at": 2905.623334
+    },
+    {
+      "type": "speech_activity",
+      "segmentId": "6985614221924466615",
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "at": 3283.127
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466615",
+      "text": "Ｐ?",
+      "final": false,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 2496.000051498413,
+      "at": 3283.329334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 129.67016699258238,
+      "at": 3283.3435
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 1.003083016257733,
+      "at": 3404.257792
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466615",
+      "text": "Solar panels",
+      "final": false,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 2976.0000705718994,
+      "at": 3738.720542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 82.64708303613588,
+      "at": 3738.813334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 1.4063749695196748,
+      "at": 3905.34875
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466615",
+      "text": "Solar panels turn",
+      "final": false,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 3487.99991607666,
+      "at": 4220.63725
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 67.05916696228087,
+      "at": 4220.841542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 3.0776250059716403,
+      "at": 4407.482667
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466615",
+      "text": "Solar panels turn some light.",
+      "final": false,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 4000,
+      "at": 4733.555875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 80.42054099496454,
+      "at": 4733.666125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 4.393042006995529,
+      "at": 4908.220584
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466615",
+      "text": "Solar panels turn sunlight.",
+      "final": false,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 4191.999912261963,
+      "at": 5260.361
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466615",
+      "text": "Solar panels turn sunlight.",
+      "final": true,
+      "streamId": "1",
+      "startMs": 1855.9999465942383,
+      "endMs": 4191.999912261963,
+      "at": 5260.411542
+    },
+    {
+      "type": "speech_activity",
+      "segmentId": "6985614221924466616",
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "at": 5260.553667
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466616",
+      "text": "",
+      "final": false,
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "endMs": 4480.000019073486,
+      "at": 5260.561125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 105.67495797295123,
+      "at": 5261.973334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 2.598542021587491,
+      "at": 5406.71275
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466616",
+      "text": "Into my",
+      "final": false,
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "endMs": 4992.000102996826,
+      "at": 5718.986834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 64.86183300148696,
+      "at": 5719.153292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 21,
+      "processingMs": 6.7729169968515635,
+      "at": 5910.660667
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466616",
+      "text": "And took electricity.",
+      "final": false,
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "endMs": 5472.0001220703125,
+      "at": 6241.514542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 22,
+      "processingMs": 87.53683301620185,
+      "at": 6241.689334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 23,
+      "processingMs": 6.709833978675306,
+      "at": 6410.158667
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466616",
+      "text": "Into electricity",
+      "final": false,
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "endMs": 5599.999904632568,
+      "at": 6735.80225
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466616",
+      "text": "Into electricity",
+      "final": true,
+      "streamId": "1",
+      "startMs": 3967.9999351501465,
+      "endMs": 5599.999904632568,
+      "at": 6735.815
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 24,
+      "processingMs": 81.78320800652727,
+      "at": 6736.341084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 25,
+      "processingMs": 7.783667009789497,
+      "at": 6912.542542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 26,
+      "processingMs": 15.075374976731837,
+      "at": 7169.175875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 27,
+      "processingMs": 10.018165980000049,
+      "at": 7414.412334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 28,
+      "processingMs": 13.952875044196844,
+      "at": 7668.004792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 29,
+      "processingMs": 10.156334028579295,
+      "at": 7915.213625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 30,
+      "processingMs": 12.554750021081418,
+      "at": 8166.48375
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 31,
+      "processingMs": 10.055583028588444,
+      "at": 8414.512125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 32,
+      "processingMs": 4.60891705006361,
+      "at": 8658.701459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 33,
+      "processingMs": 2.4992499966174364,
+      "at": 8909.631334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 34,
+      "processingMs": 4.136083007324487,
+      "at": 9157.366959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 35,
+      "processingMs": 4.597999970428646,
+      "at": 9408.439667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 36,
+      "processingMs": 4.578875028528273,
+      "at": 9658.277792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 37,
+      "processingMs": 2.888792019803077,
+      "at": 9906.72475
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 38,
+      "processingMs": 0.24158298037946224,
+      "at": 10154.139875
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 10173.649542
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 12387.084625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 0.2204999909736216,
+      "at": 12399.254209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 6.01712497882545,
+      "at": 12655.312709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 1.2937079882249236,
+      "at": 12900.509834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 6.521750008687377,
+      "at": 13156.625542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 0.5991249927319586,
+      "at": 13399.0855
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 5.191791977267712,
+      "at": 13655.105167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 0.7380840252153575,
+      "at": 13900.1105
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 5.501874955371022,
+      "at": 14155.005667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 0.5994169623591006,
+      "at": 14399.424709
+    },
+    {
+      "type": "speech_activity",
+      "segmentId": "6985614221924466617",
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "at": 14703.408125
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466617",
+      "text": "That's it.",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 2496.000051498413,
+      "at": 14703.521584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 53.13375004334375,
+      "at": 14703.53125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 2.729875035583973,
+      "at": 14902.641375
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466617",
+      "text": "Batteries",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 2976.0000705718994,
+      "at": 15225.126709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 74.78104101028293,
+      "at": 15225.177542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 2.5724159786477685,
+      "at": 15402.784667
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466617",
+      "text": "Batteries store open",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 3487.99991607666,
+      "at": 15730.408
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 81.79283299250528,
+      "at": 15730.504875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 4.861208028160036,
+      "at": 15904.25125
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466617",
+      "text": "Batteries store electricity",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 4000,
+      "at": 16230.12875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 81.94362500216812,
+      "at": 16230.228209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 4.174915957264602,
+      "at": 16404.105625
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466617",
+      "text": "Batteries store electricity for later",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 4480.000019073486,
+      "at": 16722.474667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 74.07779200002551,
+      "at": 16722.598834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 4.939124977681786,
+      "at": 16905.263042
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466617",
+      "text": "Batteries store electricity for later use.",
+      "final": false,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 4992.000102996826,
+      "at": 17232.507125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 84.36124998843297,
+      "at": 17232.650667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 21,
+      "processingMs": 4.468791012186557,
+      "at": 17403.1485
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466617",
+      "text": "Batteries store electricity for later use.",
+      "final": true,
+      "streamId": "2",
+      "startMs": 1791.9998168945312,
+      "endMs": 5151.999950408936,
+      "at": 17715.26075
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 22,
+      "processingMs": 65.45462500071153,
+      "at": 17716.986167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 23,
+      "processingMs": 7.954834029078484,
+      "at": 17907.050084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 24,
+      "processingMs": 12.932707963045686,
+      "at": 18163.827709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 25,
+      "processingMs": 9.021834004670382,
+      "at": 18408.754292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 26,
+      "processingMs": 11.381457967218012,
+      "at": 18660.361334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 27,
+      "processingMs": 8.869500015862286,
+      "at": 18908.705959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 28,
+      "processingMs": 11.363875004462898,
+      "at": 19160.077834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 29,
+      "processingMs": 8.358084014616907,
+      "at": 19406.876584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 30,
+      "processingMs": 12.615750019904226,
+      "at": 19661.311334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 31,
+      "processingMs": 8.963333966676146,
+      "at": 19908.9685
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 32,
+      "processingMs": 12.941834051162004,
+      "at": 20161.917584
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 33,
+      "processingMs": 9.364624973386526,
+      "at": 20408.455417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 34,
+      "processingMs": 12.70645804470405,
+      "at": 20663.437542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 35,
+      "processingMs": 8.70245898840949,
+      "at": 20907.497167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 36,
+      "processingMs": 1.042374991811812,
+      "at": 21151.151
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 21169.861334
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 23352.320625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 0.2019170206040144,
+      "at": 23364.23225
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 5.480541964061558,
+      "at": 23620.04275
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 0.9447910124436021,
+      "at": 23866.479875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 6.892499979585409,
+      "at": 24122.581542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 0.8237499860115349,
+      "at": 24365.687875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 6.031624972820282,
+      "at": 24621.468625
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 1.3469579862430692,
+      "at": 24866.180959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 6.833540974184871,
+      "at": 25121.550125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 1.0079999919980764,
+      "at": 25364.921084
+    },
+    {
+      "type": "speech_activity",
+      "segmentId": "6985614221924466618",
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "at": 25657.056209
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466618",
+      "text": "",
+      "final": false,
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "endMs": 2496.000051498413,
+      "at": 25657.092084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 43.1754169985652,
+      "at": 25657.158834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 3.58008302282542,
+      "at": 25868.271167
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466618",
+      "text": "Show the",
+      "final": false,
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "endMs": 2976.0000705718994,
+      "at": 26171.990084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 56.18537496775389,
+      "at": 26172.083
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 3.9348750142380595,
+      "at": 26370.029417
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466618",
+      "text": "Show the installation.",
+      "final": false,
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "endMs": 3487.99991607666,
+      "at": 26679.397209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 65.72025001514703,
+      "at": 26679.505667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 5.520958045963198,
+      "at": 26871.229292
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466618",
+      "text": "Show the installation cost.",
+      "final": false,
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "endMs": 4000,
+      "at": 27192.060542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 78.25887500075623,
+      "at": 27192.177209
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 17,
+      "processingMs": 4.267500014975667,
+      "at": 27369.926875
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466618",
+      "text": "Show the installation cost.",
+      "final": true,
+      "streamId": "3",
+      "startMs": 1888.0000114440918,
+      "endMs": 4223.999977111816,
+      "at": 27654.670709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 18,
+      "processingMs": 40.249125042464584,
+      "at": 27655.164792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 19,
+      "processingMs": 7.330708031076938,
+      "at": 27872.2865
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 20,
+      "processingMs": 10.901374975219369,
+      "at": 28126.246542
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 21,
+      "processingMs": 6.713832961395383,
+      "at": 28370.878459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 22,
+      "processingMs": 10.864917014259845,
+      "at": 28625.991792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 23,
+      "processingMs": 6.541834038216621,
+      "at": 28871.111875
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 24,
+      "processingMs": 11.52345899026841,
+      "at": 29126.614334
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 25,
+      "processingMs": 5.316332972142845,
+      "at": 29370.532292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 26,
+      "processingMs": 11.598667013458908,
+      "at": 29626.023417
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 27,
+      "processingMs": 7.737374980933964,
+      "at": 29873.126709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 28,
+      "processingMs": 10.24841598700732,
+      "at": 30126.219834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 29,
+      "processingMs": 6.871667050290853,
+      "at": 30371.965834
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 30,
+      "processingMs": 11.077917006332427,
+      "at": 30626.61475
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 31,
+      "processingMs": 7.946792000439018,
+      "at": 30873.049792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 32,
+      "processingMs": 1.4851659652777016,
+      "at": 31116.720584
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 31137.616959
+    },
+    {
+      "type": "worker_status",
+      "status": "listening",
+      "at": 33323.777959
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 1,
+      "processingMs": 0.20266597857698798,
+      "at": 33335.894792
+    },
+    {
+      "type": "speech_activity",
+      "segmentId": "6985614221924466619",
+      "streamId": "4",
+      "startMs": 0,
+      "at": 33635.3445
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466619",
+      "text": "Keep",
+      "final": false,
+      "streamId": "4",
+      "startMs": 0,
+      "endMs": 479.99998927116394,
+      "at": 33635.38075
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 2,
+      "processingMs": 49.91608398267999,
+      "at": 33635.449459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 3,
+      "processingMs": 2.4347080034203827,
+      "at": 33838.325417
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466619",
+      "text": "Keep this video",
+      "final": false,
+      "streamId": "4",
+      "startMs": 0,
+      "endMs": 991.9999837875366,
+      "at": 34140.392084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 4,
+      "processingMs": 54.608458012808114,
+      "at": 34140.509084
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 5,
+      "processingMs": 2.133042027708143,
+      "at": 34338.396334
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466619",
+      "text": "Keep this visual.",
+      "final": false,
+      "streamId": "4",
+      "startMs": 0,
+      "endMs": 1279.9999713897705,
+      "at": 34659.831042
+    },
+    {
+      "type": "transcript",
+      "segmentId": "6985614221924466619",
+      "text": "Keep this visual.",
+      "final": true,
+      "streamId": "4",
+      "startMs": 0,
+      "endMs": 1279.9999713897705,
+      "at": 34659.844459
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 6,
+      "processingMs": 73.24412500020117,
+      "at": 34660.006167
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 7,
+      "processingMs": 3.954624990001321,
+      "at": 34839.831792
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 8,
+      "processingMs": 8.66300001507625,
+      "at": 35094.691
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 9,
+      "processingMs": 2.9700840241275728,
+      "at": 35338.392125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 10,
+      "processingMs": 8.138249977491796,
+      "at": 35595.865042
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 11,
+      "processingMs": 3.60904197441414,
+      "at": 35840.891292
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 12,
+      "processingMs": 8.317334053572267,
+      "at": 36094.7175
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 13,
+      "processingMs": 4.811708990018815,
+      "at": 36340.934667
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 14,
+      "processingMs": 9.419584006536752,
+      "at": 36595.582709
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 15,
+      "processingMs": 5.878375028260052,
+      "at": 36842.444125
+    },
+    {
+      "type": "audio_ack",
+      "sequence": 16,
+      "processingMs": 1.3220419641584158,
+      "at": 37088.265084
+    },
+    {
+      "type": "worker_status",
+      "status": "ready",
+      "at": 37106.54375
+    }
+  ],
+  "routes": [
+    {
+      "case": "panels",
+      "arm": "per-final",
+      "events": [
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 5260.529875
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 1.4123749999998836,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "e15ba366-bc67-42a5-a2c4-29e1b76acbfd",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "hold",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 5261.938042
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 5261.956959
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 6735.839459
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 0.47983300000032614,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "83d01d71-d81b-4536-b1c5-5d37a55a8da5",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "hold",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 6736.316959
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 6736.323
+        }
+      ]
+    },
+    {
+      "case": "panels",
+      "arm": "temporal",
+      "events": [
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 7116.39425,
+          "details": {
+            "action": "process",
+            "reason": "completed-window",
+            "segments": 2,
+            "waitMs": 380.33100000000013
+          },
+          "at": 7116.425334
+        },
+        {
+          "type": "presentation_utterance",
+          "text": "Solar panels turn sunlight. Into electricity",
+          "at": 7116.445542
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 7116.524084
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Solar panels turn sunlight into electricity",
+            "composition": {
+              "title": "Solar panels turn sunlight into electricity",
+              "body": "Solar panels turn sunlight into electricity.",
+              "beat": 0,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 0,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 3,
+            "committedAt": 1792423062230
+          },
+          "dispatchMs": 0.026625000000422006,
+          "at": 7121.147584
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "commit",
+          "phase": "complete",
+          "atMs": 7121.173042,
+          "requestId": "18904f46-7d60-4450-a8dc-c43bba804290",
+          "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4",
+          "details": {
+            "changed": true
+          },
+          "at": 7121.175459
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 4.6655000000000655,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "18904f46-7d60-4450-a8dc-c43bba804290",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "show",
+            "operation": "replace",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 7121.187667
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 7121.207084
+        }
+      ]
+    },
+    {
+      "case": "battery",
+      "arm": "per-final",
+      "events": [
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 17715.281959
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Batteries store electricity for later use",
+            "composition": {
+              "title": "Batteries store electricity for later use",
+              "body": "Batteries store electricity for later use.",
+              "beat": 1,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792423072826
+          },
+          "dispatchMs": 0.005084000000351807,
+          "at": 17716.954417
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "commit",
+          "phase": "complete",
+          "atMs": 17716.957,
+          "requestId": "32450c33-d26a-4c6e-b904-3733d1e12220",
+          "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4",
+          "details": {
+            "changed": true
+          },
+          "at": 17716.957792
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 1.6824579999993148,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "32450c33-d26a-4c6e-b904-3733d1e12220",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "show",
+            "operation": "replace",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 17716.961167
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 17716.966417
+        }
+      ]
+    },
+    {
+      "case": "battery",
+      "arm": "temporal",
+      "events": [
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 18114.948375,
+          "details": {
+            "action": "process",
+            "reason": "completed-window",
+            "segments": 1,
+            "waitMs": 399.58812500000204
+          },
+          "at": 18114.967667
+        },
+        {
+          "type": "presentation_utterance",
+          "text": "Batteries store electricity for later use.",
+          "at": 18114.977209
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 18115.029
+        },
+        {
+          "type": "stage",
+          "stage": {
+            "text": "Batteries store electricity for later use",
+            "composition": {
+              "title": "Batteries store electricity for later use",
+              "body": "Batteries store electricity for later use.",
+              "beat": 1,
+              "flowRevision": 4,
+              "adaptive": {
+                "layout": "focus",
+                "blocks": [
+                  {
+                    "id": "primary",
+                    "kind": "statement",
+                    "beat": 1,
+                    "emphasis": "strong",
+                    "reveal": null
+                  }
+                ]
+              }
+            },
+            "source": "agent",
+            "revision": 2,
+            "committedAt": 1792423073227
+          },
+          "dispatchMs": 0.019874999998137355,
+          "at": 18117.577125
+        },
+        {
+          "type": "presentation_trace",
+          "stage": "commit",
+          "phase": "complete",
+          "atMs": 18117.788875,
+          "requestId": "b83e1b30-0921-49ee-8f1f-16fa0eeafa28",
+          "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4",
+          "details": {
+            "changed": true
+          },
+          "at": 18117.792042
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 2.7735410000022966,
+          "changed": true,
+          "held": false,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 1,
+                "emphasis": "strong",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "b83e1b30-0921-49ee-8f1f-16fa0eeafa28",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "show",
+            "operation": "replace",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 18117.801625
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 18117.82425
+        }
+      ]
+    },
+    {
+      "case": "missing",
+      "arm": "per-final",
+      "events": [
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 27654.705584
+        },
+        {
+          "type": "feedback",
+          "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+          "at": 27655.132167
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 0.43637500000113505,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "01061c4c-2705-40a1-83e3-7f9eb38d33ad",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "context",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 27655.139459
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 27655.146375
+        }
+      ]
+    },
+    {
+      "case": "missing",
+      "arm": "temporal",
+      "events": [
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 28007.006,
+          "details": {
+            "action": "process",
+            "reason": "completed-window",
+            "segments": 1,
+            "waitMs": 352.22279199999684
+          },
+          "at": 28007.01575
+        },
+        {
+          "type": "presentation_utterance",
+          "text": "Show the installation cost.",
+          "at": 28007.022917
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 28007.09575
+        },
+        {
+          "type": "feedback",
+          "question": "The requested evidence is not available in this story. Add or clarify it in Prepare.",
+          "at": 28008.850792
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 1.7964580000007118,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "d3eb2e1b-2b95-44ab-8a4e-81c099f11f69",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "context",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 28008.884792
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 28008.910667
+        }
+      ]
+    },
+    {
+      "case": "retain",
+      "arm": "per-final",
+      "events": [
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 34659.86225
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 0.12833300000056624,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "72ed4d3d-88d1-4373-97e3-fc4f7f77265f",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "hold",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 34659.989125
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 34659.992209
+        }
+      ]
+    },
+    {
+      "case": "retain",
+      "arm": "temporal",
+      "events": [
+        {
+          "type": "presentation_trace",
+          "stage": "speech-routing",
+          "phase": "complete",
+          "atMs": 35035.460792,
+          "details": {
+            "action": "process",
+            "reason": "completed-window",
+            "segments": 1,
+            "waitMs": 375.5689580000035
+          },
+          "at": 35035.468292
+        },
+        {
+          "type": "presentation_utterance",
+          "text": "Keep this visual.",
+          "at": 35035.475167
+        },
+        {
+          "type": "presentation_status",
+          "status": "composing",
+          "at": 35035.516625
+        },
+        {
+          "type": "direction_completed",
+          "engine": "adaptive",
+          "inferenceMs": 0.8439170000056038,
+          "changed": false,
+          "held": true,
+          "composition": {
+            "layout": "focus",
+            "blocks": [
+              {
+                "id": "primary",
+                "kind": "statement",
+                "beat": 0,
+                "emphasis": "normal",
+                "reveal": null
+              }
+            ]
+          },
+          "decision": {
+            "requestId": "4e630a53-5b65-4242-930b-51b163f25edc",
+            "planner": "synthesis",
+            "baseline": "evidence-v1",
+            "model": "local-hybrid",
+            "selection": "local-hybrid",
+            "path": "guard",
+            "action": "hold",
+            "operation": "retain",
+            "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+          },
+          "at": 35036.362292
+        },
+        {
+          "type": "presentation_status",
+          "status": "ready",
+          "at": 35036.372292
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Four authored TTS recordings, one pass each, same events per arm; not independent speech acceptance or statistical latency evidence.",
+    "The initial panel view is the battery beat, so successful detection must change the canvas.",
+    "No new VAD model was installed or benchmarked."
+  ]
+}

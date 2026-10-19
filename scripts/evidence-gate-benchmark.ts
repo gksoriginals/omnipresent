@@ -5,7 +5,6 @@ import os from "node:os";
 import {contractedLibrary} from "./evidence-fixtures.js";
 import {sourceBackedLibrary,sourceBackedCases} from "./source-backed-evidence-fixture.js";
 import {evidenceGate,sourceDigest,type EvidenceAsset} from "../server/controllers/evidence-contract.js";
-import {largeLibrary} from "./large-library-fixture.js";
 import {cueBundles,policyCases} from "./cue-policy-fixture.js";
 import {LibraryPolicy} from "../server/controllers/library-policy.js";
 import {groundLibrary} from "../server/controllers/library-grounding.js";

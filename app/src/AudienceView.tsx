@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { AdaptiveCanvas } from "./AdaptiveCanvas";
 import { Visual } from "./Visual";
 import { SessionClient } from "./services/session-client";

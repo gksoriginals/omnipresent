@@ -1,6 +1,6 @@
 import {createHash} from "node:crypto";
 import type {LibraryAsset} from "./library-search.js";
-import type {DecisionGate,LibraryDecision} from "./library-policy.js";
+import type {DecisionGate} from "./library-policy.js";
 export {evidenceSchema,type EvidenceContract} from "../../shared/evidence.js";
 import {evidenceSchema,type EvidenceContract} from "../../shared/evidence.js";
 export type EvidenceAsset=LibraryAsset & {evidence:EvidenceContract};

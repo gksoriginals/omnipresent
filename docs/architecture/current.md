@@ -19,7 +19,8 @@ flowchart TD
   I[Interview agent] --> S[Storyteller and prepared assets]
   S --> R[Presenter review and source declarations]
   R --> P[Immutable prepared snapshot and cached hybrid index]
-  Audio[Streaming local STT final segments] --> Frame[Bounded request interpretation]
+  Audio[Streaming local STT events] --> Assemble[Bounded revision-aware temporal assembly]
+  Assemble --> Frame[Existing bounded request interpretation]
   Frame --> Gate[Host complete-evidence eligibility and abstention]
   P --> Gate
   Gate -->|Missing or unclear| Feedback[Keep canvas and ask in Prepare]
@@ -42,8 +43,16 @@ Story bundles include referenced image bytes under their content hashes. Import 
 
 ## Unresolved language boundary
 
-The latest real audio experiment failed its supported positive explanation. Moonshine split it into two final segments and altered wording; the bounded interpreter requested context and held instead of reaching selection. On 32 distinct natural preference utterances, the strict parser also produced no present intents. The role-only preference screen therefore used explicitly declared intents and reports that limitation.
+The alpha real-audio experiment failed its supported panel explanation when Moonshine split it into two final segments. A subsequent temporal-assembly experiment recovered that authored case: 4/4 recordings passed versus 3/4 for per-final processing. Adding a separate compiled story-signal index gave the same results and was removed. The existing reviewed vocabulary and evidence interpreter remain authoritative; there is no new keyword filter or additional VAD. See [assembly ablation and limits](../research/speech-assembly.md). On 32 distinct natural preference utterances, the strict parser also produced no present intents. The role-only preference screen therefore used explicitly declared intents and reports that limitation.
 
-Do not describe this architecture as solved speech understanding. Next work is bounded completed-speech context and a local intent/purpose proposal layer, evaluated against missing evidence, negation, corrections and stale work before default adoption. Those improvements are a roadmap item, not a hidden new inference step in this snapshot.
+Do not describe this architecture as solved speech understanding. Bounded completed-speech assembly is now implemented: partials remain display-only, source intervals and line revisions preserve complete text, and a 350 ms quiet window precedes host processing. It adds roughly 350–400 ms after the final event in the small development replay. Unknown obligations are not removed. Real microphones, delayed continuations and a local intent/purpose proposal layer still require evaluation against missing evidence, negation, corrections and stale work; general speech understanding remains unresolved.
 
 See [latest experiments](../research/preference-quality.md), [local selection lifecycle](local-selection.md), [historical baseline](baseline.md), and [roadmap](../roadmap.md). The historical baseline's hosted defaults are superseded by this document.
+
+## Common commit authority and resumable ownership
+
+The opening, manual cues and automatic proposals now pass `server/presentation/authorization.ts` at the controller commit boundary. It reconstructs the request from host-owned story evidence or the full utterance and reuses the complete composition validator: evidence eligibility, independent review policy, explicit requested form, component coverage, layout and final grounding. A model cannot bypass this by returning a structurally valid composition. Inferred form remains a preference; spoken constraints remain binding. A blocked opening displays a fact-free “Ready to present” standby and sends feedback to Prepare. Invalid or stale later proposals preserve the canvas.
+
+`server/presentation/live-session.ts` owns resumable resources and idempotent disposal: controller, canvas session, presenter, speech worker, audience attachments and reconnect expiry. Its lifecycle distinguishes loaded, preparing, ready and disposed. The WebSocket connection borrows these resources; replacing it cancels expiry, while final expiry or stop releases them once. Wire messages and saved story formats are unchanged. Speech transport and command routing still live in `server/index.ts`; frontend pause/microphone state is not yet unified into this lifecycle.
+
+These are incremental implementations of stages 1 and 2 of the domain review. Stable component identities, narrower audience contracts and shared preparation commands remain separate work. The software audit verifies model-free authorization, cleanup, reconnect and privacy regressions; it does not establish a latency gain or general speech acceptance.

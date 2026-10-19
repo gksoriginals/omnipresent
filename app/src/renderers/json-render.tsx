@@ -1,4 +1,3 @@
-import React from "react";
 import {Renderer,JSONUIProvider,defineRegistry} from "@json-render/react";
 import {schema} from "@json-render/react/schema";
 import {defineCatalog} from "@json-render/core";
