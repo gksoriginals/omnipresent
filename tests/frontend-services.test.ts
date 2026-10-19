@@ -30,3 +30,35 @@ test("cancelled microphone acquisition stops tracks before constructing audio re
  try{assert.equal(await captureMicrophone(()=>assert.fail("Unexpected chunk"),()=>false),null);assert.equal(stopped,1);}
  finally{if(descriptor)Object.defineProperty(globalThis,"navigator",descriptor);else Reflect.deleteProperty(globalThis,"navigator");}
 });
+test("workspace hydration preserves concurrent drafts and serializes subsequent saves",async()=>{
+ const original=globalThis.fetch;
+ let resolveGet!:(value:Response)=>void,releasePut!:(value:Response)=>void;
+ const writes:any[]=[];
+ globalThis.fetch=(async (_url,init)=>{
+  if(!init?.method)return new Promise<Response>(resolve=>{resolveGet=resolve;});
+  writes.push(JSON.parse(String(init.body)));
+  if(writes.length===1)return new Promise<Response>(resolve=>{releasePut=resolve;});
+  return Response.json({ok:true});
+ }) as typeof fetch;
+ try{
+  const store=new WorkspaceStore({getItem:()=>null,setItem(){}}),saved=structuredClone(store.current);
+  const hydration=store.syncFromServer();
+  store.commit({...store.current,projects:store.current.projects.map(p=>({...p,composer:"new draft"}))});
+  resolveGet(Response.json({workspace:saved}));
+  await hydration;
+  assert.equal(store.current.projects[0].composer,"new draft");
+  store.commit({...store.current,projects:store.current.projects.map(p=>({...p,composer:"latest draft"}))});
+  assert.equal(writes.length,1);
+  releasePut(Response.json({ok:true}));await store.flush();
+  assert.equal(writes.length,2);assert.equal(writes[1].projects[0].composer,"latest draft");
+ }finally{globalThis.fetch=original;}
+});
+test("failed server saves retain the newest snapshot for an explicit retry",async()=>{
+ const original=globalThis.fetch;let fail=true;const saved:any[]=[];
+ globalThis.fetch=(async (_url,init)=>{if(fail)return new Response("unavailable",{status:503});saved.push(JSON.parse(String(init?.body)));return Response.json({ok:true});}) as typeof fetch;
+ try{
+  const store=new WorkspaceStore({getItem:()=>null,setItem(){}});
+  store.commit(store.current);await assert.rejects(store.flush());assert.ok(store.syncError);
+  fail=false;await store.flush();assert.equal(saved.length,1);assert.equal(store.syncError,"");
+ }finally{globalThis.fetch=original;}
+});

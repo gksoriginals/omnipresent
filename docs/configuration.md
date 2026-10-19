@@ -34,6 +34,8 @@ For a direct Python tool, export only the variables it needs in your shell, or u
 | `OMNIPRESENT_COMPOSITION_PLANNER` | `synthesis` | Validated composition; comparisons: `focus`, `paired`, `stable`. |
 | `OMNIPRESENT_REQUIRE_INDEPENDENT_REVIEW` | `false` | Only exact `true` enables stricter review eligibility. Saving a story is not independent review. |
 | `PORT` | `4317` | Coordinator loopback port. If changed, also update the Vite proxy; UI remains at 5173. |
+| `OMNIPRESENT_DB_PATH` | `output/omnipresent.db` | Local SQLite workspace, including private preparation context. `:memory:` is for isolated tests. |
+| `OMNIPRESENT_MATERIALS_PATH` | `output/materials` | Uploaded image storage and portable bundle media. Back up with the database. |
 | `OMNIPRESENT_PYTHON` | `.venv/bin/python` | Speech/material-processing Python executable. |
 | `OMNIPRESENT_RETRIEVAL_PYTHON` | `output/retrieval-venv/bin/python` | Retrieval worker Python executable used by the dev launcher. |
 | `OPENROUTER_API_KEY` | Empty | Explicit hosted comparison profiles only; may incur cost. No automatic hosted fallback. |

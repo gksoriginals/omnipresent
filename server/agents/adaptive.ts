@@ -1,3 +1,5 @@
+import {presentationCatalog} from "../presentation/catalog.js";
+import {supportsEvidence,type EvidenceIntent} from "../controllers/evidence-contract.js";
 import {immutablePreparation} from "../presentation/prepared.js";
 import { openingComposition, validateComposition, type AdaptiveComposition } from "../../shared/adaptive.js";
 import type { Preparation } from "../../shared/preparation.js";
@@ -25,6 +27,36 @@ export class AdaptiveController {
   this.current=composition;
   const first=this.state!.flow!.beats[composition.blocks[0].beat];
   this.session.propose(first.title,"agent",0,{title:first.title,body:first.audienceText??"",beat:composition.blocks[0].beat,flowRevision:this.state!.revision,adaptive:composition});
+ }
+ cue(beatIndex:number){
+  if(!this.state||!this.state.flow||this.paused)return;
+  const beat=this.state.flow.beats[beatIndex];
+  if(!beat)return;
+  // Manual navigation cancels older automatic proposals and obeys the same host gate.
+  this.epoch++;this.abort?.abort();this.running=false;this.pending="";
+  const catalog=presentationCatalog(this.state);
+  const evidence=beat.evidence!;
+  const intent:EvidenceIntent={mode:"present",reason:"manual-cue",claims:evidence.claims.map(c=>c.id),entities:[evidence.entity],years:evidence.timeframe?[evidence.timeframe]:[],family:null,provenance:null,audited:false,unit:null,unknown:[]};
+  const kind=(["visual","image","statement"] as const).find(kind=>catalog.assets.some(asset=>{
+   const ref=catalog.references.get(asset.id)!;
+   return ref.beat===beatIndex&&ref.kind===kind&&supportsEvidence(asset,intent,process.env.OMNIPRESENT_REQUIRE_INDEPENDENT_REVIEW==="true");
+  }));
+  if(!kind){
+   this.feedback("More evidence is needed for this story beat before it can be shown.");
+   this.emit({type:"direction_completed",engine:"adaptive",inferenceMs:0,changed:false,held:true,composition:this.current,decision:{cue:beatIndex,manual:true}});
+   return;
+  }
+  const comp:AdaptiveComposition={
+   layout:"focus",
+   blocks:[{id:"primary",kind,beat:beatIndex,emphasis:"normal",reveal:null}],
+  };
+  const validated=validateComposition(comp,this.state);
+  const changed=JSON.stringify(validated)!==JSON.stringify(this.current);
+  if(changed){
+   this.commit(validated);
+   this.emit({type:"presentation_trace",stage:"commit",phase:"complete",atMs:performance.now(),requestId:`cue-${beatIndex}`,revision:String(this.state.revision),details:{changed:true,manual:true}});
+  }
+  this.emit({type:"direction_completed",engine:"adaptive",inferenceMs:0,changed,held:false,composition:this.current,decision:{cue:beatIndex,manual:true}});
  }
  async accept(text:string){
   if(!this.state||this.paused||!text.trim())return;

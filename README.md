@@ -54,7 +54,7 @@ The conversation shown is an authored demonstration. [Screenshot details](docs/i
 
 ## Get started
 
-Requires Node.js **22.12+**, npm, [uv](https://docs.astral.sh/uv/) and [Ollama](https://ollama.com/). Python 3.12 is used for local speech and retrieval. macOS/Apple Silicon is the exercised model-runtime platform; software CI also runs on Linux.
+Requires Node.js **22.13+**, npm, [uv](https://docs.astral.sh/uv/) and [Ollama](https://ollama.com/). Python 3.12 is used for local speech and retrieval. macOS/Apple Silicon is the exercised model-runtime platform; software CI also runs on Linux.
 
 ```sh
 git clone https://github.com/gksoriginals/omnipresent.git

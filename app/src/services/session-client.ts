@@ -5,6 +5,9 @@ import {visualSchema,mediaSchema} from "../../../shared/visuals";
 const stage=z.object({text:z.string(),revision:z.number().int().nonnegative(),source:z.enum(["manual","speech","agent"]),committedAt:z.number(),composition:z.object({adaptive:adaptiveSchema.optional(),title:z.string(),body:z.string(),beat:z.number().int().min(0),flowRevision:z.number().int(),visual:visualSchema.optional(),image:mediaSchema.optional()}).optional()});
 const eventSchema=z.discriminatedUnion("type",[
  z.object({type:z.literal("presentation_ready"),requestId:z.string().max(160).optional()}),
+ z.object({type:z.literal("presentation_loaded"),title:z.string().optional(),baseline:z.string().optional(),decision:z.string().optional(),resumed:z.boolean().optional(),sessionId:z.string().optional(),state:preparationSchema.optional()}),
+ z.object({type:z.literal("presentation_stopped")}),
+ z.object({type:z.literal("transcript"),text:z.string(),final:z.boolean().optional()}),
  z.object({type:z.literal("preparation"),state:preparationSchema}),
  z.object({type:z.literal("presentation_feedback"),projectId:z.string(),question:z.string()}),
  z.object({type:z.literal("agent_status"),status:z.string()}),
@@ -18,7 +21,7 @@ export type SessionEvent=z.infer<typeof eventSchema>;
 export function parseSessionEvent(data:string):SessionEvent|null{
  const value=JSON.parse(data);if(!value||typeof value.type!=="string")throw Error("Invalid session event");
  // Server telemetry and optional capabilities do not affect the UI state machine.
- if(!["presentation_ready","preparation","presentation_feedback","agent_status","agent_activity","agent_delta","stage","snapshot","worker_status","audio_ack","error","worker_error","agent_error"].includes(value.type))return null;
+ if(!["presentation_ready","presentation_loaded","presentation_stopped","transcript","preparation","presentation_feedback","agent_status","agent_activity","agent_delta","stage","snapshot","worker_status","audio_ack","error","worker_error","agent_error"].includes(value.type))return null;
  return eventSchema.parse(value);
 }
 export class SessionClient {

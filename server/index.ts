@@ -1,3 +1,4 @@
+import {audienceState,audienceEvent} from "./presentation/audience.js";
 import {runtimeDefaults} from './config/defaults.js';
 import {compositionPlanner} from "./presentation/composition.js";
 import {MoonshineSmallStreamingModel} from "./models/speech.js";
@@ -22,12 +23,16 @@ import {
 } from "./agents/preparation.js";
 import { localModel, modelConfiguration } from "./agents/model.js";
 import { emptyPreparation, preparationSchema } from "../shared/preparation.js";
+import { SqliteWorkspaceStore } from "./storage/sqlite-workspace.js";
+import { workspaceHandler } from "./storage/workspace-handler.js";
 const port = Number(process.env.PORT ?? 4317);
 const production = process.argv.includes("--production");
 const python = process.env.OMNIPRESENT_PYTHON ?? resolve(".venv/bin/python");
 const allowedOrigins = new Set([`http://127.0.0.1:${port}`, `http://localhost:${port}`, "http://127.0.0.1:5173", "http://localhost:5173"]);
+const workspaceStore = new SqliteWorkspaceStore();
 const server = createServer(async (req, res) => {
   if (await materials(req, res, python, allowedOrigins)) return;
+  if (await workspaceHandler(req, res, allowedOrigins, workspaceStore)) return;
   if (req.url?.startsWith("/api/trial/")) {
     const name=req.url.slice("/api/trial/".length);
     if(!["manifest.json","generation-first.wav","storage-first.wav","detour-and-return.wav"].includes(name)){res.writeHead(404);res.end();return;}
@@ -86,10 +91,11 @@ server.on("upgrade", (req, socket, head) => {
     "http://127.0.0.1:5173",
     "http://localhost:5173",
   ]);
+  const reqPath = req.url ? new URL(req.url, "http://localhost").pathname : "";
   if (
-    req.url !== "/session" ||
+    reqPath !== "/session" ||
     (origin && !allowed.has(origin)) ||
-    wss.clients.size >= 3
+    wss.clients.size >= 16
   ) {
     socket.write("HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n");
     socket.destroy();
@@ -99,13 +105,91 @@ server.on("upgrade", (req, socket, head) => {
 });
 const lag = monitorEventLoopDelay({ resolution: 10 });
 lag.enable();
-wss.on("connection", (ws) => {
-  let worker: ChildProcessWithoutNullStreams | undefined;
+
+interface SpeechRuntime {worker?: ChildProcessWithoutNullStreams;speechStatus:string;pendingAudio:boolean;audioSequence:number}
+interface LivePresentationSession {
+  disposed?:boolean;
+  started:boolean;
+  speech:SpeechRuntime;
+  sessionId: string;
+  storyOrigin?: { projectId: string; storyId: string };
+  story: ReturnType<typeof preparationSchema.parse>;
+  session: Session;
+  adaptive: AdaptiveController;
+  activePresenter: ReturnType<typeof createPresenter>;
+  presenterSocket: WebSocket | null;
+  audienceSockets: Set<WebSocket>;
+  graceTimer: NodeJS.Timeout | null;
+  lastStage: any;
+  lastSnapshot: any;
+  lastTranscript?: string;
+  presentationEpoch: number;
+}
+
+const liveSessions = new Map<string, LivePresentationSession>();
+const pendingAudienceSockets = new Map<string, Set<WebSocket>>();
+
+function teardownLiveSession(sessionId: string) {
+  const ls = liveSessions.get(sessionId);
+  if (!ls) return;
+  if (ls.graceTimer) {
+    clearTimeout(ls.graceTimer);
+    ls.graceTimer = null;
+  }
+  ls.disposed=true;
+  ls.adaptive.stop();
+  ls.session.cancel();
+  ls.activePresenter.presenter.close();
+  ls.speech.worker?.kill();
+  const stopMsg = JSON.stringify({ type: "presentation_stopped" });
+  for (const audWs of ls.audienceSockets) {
+    if (audWs.readyState === WebSocket.OPEN) {
+      try { audWs.send(stopMsg); } catch {}
+    }
+  }
+  ls.audienceSockets.clear();
+  liveSessions.delete(sessionId);
+}
+
+function attachAudienceSocket(ws: WebSocket, sid: string) {
+  const existing = liveSessions.get(sid);
+  if (existing) {
+    existing.audienceSockets.add(ws);
+    if (ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify({
+        type: "presentation_loaded",
+        title: existing.story.flow!.title,
+        state: audienceState(existing.story),
+        sessionId: sid,
+      }));
+      if (existing.lastSnapshot) ws.send(JSON.stringify(existing.lastSnapshot));
+      if (existing.lastStage) ws.send(JSON.stringify({ type: "stage", stage: existing.lastStage }));
+    }
+  } else {
+    if (!pendingAudienceSockets.has(sid)) pendingAudienceSockets.set(sid, new Set());
+    pendingAudienceSockets.get(sid)!.add(ws);
+    if (ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify({ type: "waiting_for_presentation", sessionId: sid }));
+    }
+  }
+}
+
+wss.on("connection", (ws, req: any) => {
+  let activeLiveSession: LivePresentationSession | undefined;
+  let attachedAudienceSessionId: string | undefined;
+
+  const reqUrl = req?.url ? new URL(req.url, "http://localhost") : null;
+  const initialRole = reqUrl?.searchParams.get("role");
+  const initialSessionId = reqUrl?.searchParams.get("sessionId");
+  if (initialRole === "audience" && initialSessionId) {
+    attachedAudienceSessionId = initialSessionId;
+    attachAudienceSocket(ws, initialSessionId);
+  }
+
+  let speech:SpeechRuntime={speechStatus:"unloaded",pendingAudio:false,audioSequence:0};
   let load: ChildProcessWithoutNullStreams | undefined;
-  let speechStatus = "unloaded";
-  let pendingAudio = false;
-  let audioSequence = 0;
   const send = (event: Record<string, unknown>) => {
+    if((initialRole==="audience"||attachedAudienceSessionId)&&!["error","pong","waiting_for_presentation"].includes(String(event.type)))return;
     if (ws.readyState === WebSocket.OPEN) {
       if (ws.bufferedAmount > 1_000_000) {
         ws.close(1013, "Client too slow");
@@ -114,10 +198,31 @@ wss.on("connection", (ws) => {
       ws.send(JSON.stringify(event));
     }
   };
+  const broadcastPresentation = (event: Record<string, unknown>) => {
+    if (activeLiveSession?.disposed) return;
+    if (activeLiveSession) {
+      if (event.type === "stage") activeLiveSession.lastStage = event.stage;
+      if (event.type === "snapshot") activeLiveSession.lastSnapshot = event;
+      const str = JSON.stringify(event);
+      const publicEvent=audienceEvent(event);
+      if (activeLiveSession.presenterSocket && activeLiveSession.presenterSocket.readyState === WebSocket.OPEN) {
+        if (activeLiveSession.presenterSocket.bufferedAmount <= 1_000_000) {
+          activeLiveSession.presenterSocket.send(str);
+        }
+      }
+      for (const aud of activeLiveSession.audienceSockets) {
+        if (publicEvent && aud.readyState === WebSocket.OPEN && aud.bufferedAmount <= 1_000_000) {
+          try { aud.send(JSON.stringify(publicEvent)); } catch {}
+        }
+      }
+    } else {
+      send(event);
+    }
+  };
   let presentationEpoch=0;
   let loadedStoryOrigin: {projectId:string;storyId:string} | undefined;
   let loadedStory: ReturnType<typeof preparationSchema.parse> | undefined;
-  const session = new Session(send);
+  let session = new Session(broadcastPresentation);
   const preparation = new PreparationController(
     emptyPreparation(),
     send,
@@ -125,7 +230,7 @@ wss.on("connection", (ws) => {
   );
   const feedback = (question:string) => {
     if (loadedStoryOrigin) {
-      send({type:"presentation_feedback", ...loadedStoryOrigin, question});
+      broadcastPresentation({type:"presentation_feedback", ...loadedStoryOrigin, question});
       return;
     }
     if (preparation.state.events.some(e => e.kind === "context.requested" && e.summary === question)) return;
@@ -133,30 +238,30 @@ wss.on("connection", (ws) => {
     preparation.state.events = preparation.state.events.slice(-60);
     preparation.snapshot();
   };
-  let activePresenter=createPresenter(undefined,new EmbeddingGemmaModel(),{write:event=>send({type:"presentation_trace",...event})},compositionPlanner(process.env.OMNIPRESENT_COMPOSITION_PLANNER??runtimeDefaults.presentation.planner));
-  let adaptive = new AdaptiveController(session,send,feedback,activePresenter.presenter.decide);
+  let activePresenter=createPresenter(undefined,new EmbeddingGemmaModel(),{write:event=>broadcastPresentation({type:"presentation_trace",...event})},compositionPlanner(process.env.OMNIPRESENT_COMPOSITION_PLANNER??runtimeDefaults.presentation.planner));
+  let adaptive = new AdaptiveController(session,broadcastPresentation,feedback,activePresenter.presenter.decide);
   send(session.snapshot());
-  send({ type: "worker_status", status: speechStatus });
+  send({ type: "worker_status", status: speech.speechStatus });
   const write = (data: Record<string, unknown>) =>
-    worker?.stdin.write(JSON.stringify(data) + "\n");
+    speech.worker?.stdin.write(JSON.stringify(data) + "\n");
   function closeSpeech() {
-    pendingAudio = false;
-    worker?.kill();
-    worker = undefined;
-    speechStatus = "unloaded";
-    send({ type: "worker_status", status: speechStatus });
+    speech.pendingAudio = false;
+    speech.worker?.kill();
+    speech.worker = undefined;
+    speech.speechStatus = "unloaded";
+    send({ type: "worker_status", status: speech.speechStatus });
   }
   function ensureWorker() {
-    if (worker) return;
+    if (speech.worker) return;
     const child = new MoonshineSmallStreamingModel().spawnWorker(python);
-    worker = child;
+    speech.worker = child;
     // Library progress/logs contain no audio payload. Keep bounded, don't echo source data.
     let diagnostic = "";
     child.stderr.on("data", (chunk) => {
       diagnostic = (diagnostic + chunk.toString()).slice(-1500);
     });
     child.on("error", () => {
-      if (worker !== child) return;
+      if (speech.worker !== child) return;
       send({
         type: "error",
         message: "Speech worker could not start. Run the local Python setup.",
@@ -166,24 +271,30 @@ wss.on("connection", (ws) => {
     child.stdin.on("error", () => {});
     const lines = createInterface({ input: child.stdout });
     lines.on("line", (line) => {
-      if (worker !== child) return;
+      if (speech.worker !== child) return;
       try {
         const event = JSON.parse(line);
-        if (event.type === "worker_status") speechStatus = event.status;
-        if (event.type === "audio_ack") pendingAudio = false;
-        send(event);
-        if (event.type === "transcript" && event.final && event.text?.trim())
+        if (event.type === "worker_status") {
+          speech.speechStatus = event.status;
+
+        }
+        if (event.type === "audio_ack") speech.pendingAudio = false;
+        broadcastPresentation(event);
+        if (event.type === "transcript" && event.final && event.text?.trim()) {
+          if (activeLiveSession) activeLiveSession.lastTranscript = event.text;
           void adaptive.accept(event.text);
+        }
       } catch {
         send({ type: "error", message: "Invalid response from speech worker" });
       }
     });
     child.on("exit", (code) => {
-      if (worker !== child) return;
-      worker = undefined;
-      pendingAudio = false;
-      speechStatus = "unloaded";
-      send({ type: "worker_status", status: speechStatus });
+      if (speech.worker !== child) return;
+      speech.worker = undefined;
+      speech.pendingAudio = false;
+      speech.speechStatus = "unloaded";
+
+      broadcastPresentation({ type: "worker_status", status: speech.speechStatus });
       if (code)
         send({
           type: "error",
@@ -202,22 +313,36 @@ wss.on("connection", (ws) => {
   }
   ws.on("message", (raw, isBinary) => {
     try {
+      if (activeLiveSession && (activeLiveSession.disposed || activeLiveSession.presenterSocket !== ws)) throw Error("Presenter connection was replaced");
+      if (initialRole === "audience" || attachedAudienceSessionId) {
+        if (isBinary) throw Error("Audience connections are read-only");
+        const message=JSON.parse(raw.toString());
+        if(message.type==="ping"){send({type:"pong",id:message.id});return;}
+        if(message.type==="session_attach"&&message.role==="audience"&&typeof message.sessionId==="string"&&message.sessionId.length<=160){
+          if(attachedAudienceSessionId!==message.sessionId){
+            if(attachedAudienceSessionId){liveSessions.get(attachedAudienceSessionId)?.audienceSockets.delete(ws);pendingAudienceSockets.get(attachedAudienceSessionId)?.delete(ws);}
+            attachedAudienceSessionId=message.sessionId;attachAudienceSocket(ws,message.sessionId);
+          }
+          return;
+        }
+        throw Error("Audience connections are read-only");
+      }
       if (isBinary) {
-        if (speechStatus !== "listening")
+        if (speech.speechStatus !== "listening")
           throw Error("Start listening before sending audio");
         const audio = Array.isArray(raw)
           ? Buffer.concat(raw)
           : Buffer.from(raw as ArrayBuffer);
         if (audio.length > 32000 || audio.length % 2)
           throw Error("Invalid PCM frame");
-        if (pendingAudio)
+        if (speech.pendingAudio)
           throw Error("Audio worker is busy; wait for acknowledgement");
-        pendingAudio = true;
+        speech.pendingAudio = true;
         write({
           type: "audio",
           pcm: audio.toString("base64"),
           sampleRate: 16000,
-          sequence: ++audioSequence,
+          sequence: ++speech.audioSequence,
         });
         return;
       }
@@ -247,30 +372,125 @@ wss.on("connection", (ws) => {
           validateReferences(story.flow, story);
           presentationCatalog(story);
           if (event.projectId !== undefined && (typeof event.projectId !== "string" || event.projectId.length > 160 || typeof event.storyId !== "string" || event.storyId.length > 160)) throw Error("Invalid story origin");
+          const sid = typeof event.sessionId === "string" && event.sessionId.length <= 160
+            ? event.sessionId
+            : (event.projectId && event.storyId ? `${event.projectId}:${event.storyId}` : undefined);
+
+          if(activeLiveSession&&activeLiveSession.sessionId!==sid){teardownLiveSession(activeLiveSession.sessionId);activeLiveSession=undefined;}
+
+          if (sid && liveSessions.has(sid)) {
+            const existing = liveSessions.get(sid)!;
+            if (existing.graceTimer) {
+              clearTimeout(existing.graceTimer);
+              existing.graceTimer = null;
+            }
+            const previousSocket=existing.presenterSocket;
+            existing.presenterSocket=ws;
+            if (previousSocket && previousSocket !== ws && previousSocket.readyState === WebSocket.OPEN) {
+              try { previousSocket.close(1000, "Replaced by new presenter connection"); } catch {}
+            }
+            existing.presenterSocket = ws;
+            activeLiveSession = existing;
+            loadedStory = existing.story;
+            loadedStoryOrigin = existing.storyOrigin;
+            presentationEpoch = existing.presentationEpoch;
+            if(activePresenter!==existing.activePresenter)activePresenter.presenter.close();
+            if(speech!==existing.speech)speech.worker?.kill();
+            session = existing.session;
+            adaptive = existing.adaptive;
+            activePresenter = existing.activePresenter;
+            speech = existing.speech;
+
+            send({
+              type: "presentation_loaded",
+              title: existing.story.flow!.title,
+              baseline: "evidence-v1",
+              decision: existing.activePresenter.id,
+              resumed: existing.started,
+              sessionId: sid,
+              state: existing.story,
+            });
+            if (existing.lastSnapshot) send(existing.lastSnapshot);
+            if (existing.lastStage) send({ type: "stage", stage: existing.lastStage });
+            send({ type: "worker_status", status: existing.speech.speechStatus });
+            if (existing.lastTranscript) send({ type: "transcript", text: existing.lastTranscript, final: true });
+            break;
+          }
+
           loadedStoryOrigin = typeof event.projectId === "string" ? {projectId:event.projectId,storyId:event.storyId} : undefined;
           loadedStory = story;
           presentationEpoch++;adaptive.stop();
           if(event.decision!==undefined&&event.decision!=="baseline"&&event.decision!=="local-hybrid"&&event.decision!=="local-classifier"&&event.decision!=="local-reranker"&&!decisionRegistry.list().some(m=>m.id===event.decision))throw Error("Unknown decision provider");
-          const selected=createPresenter(event.decision,new EmbeddingGemmaModel(),{write:event=>send({type:"presentation_trace",...event})},compositionPlanner(process.env.OMNIPRESENT_COMPOSITION_PLANNER??runtimeDefaults.presentation.planner));
+          const selected=createPresenter(event.decision,new EmbeddingGemmaModel(),{write:event=>broadcastPresentation({type:"presentation_trace",...event})},compositionPlanner(process.env.OMNIPRESENT_COMPOSITION_PLANNER??runtimeDefaults.presentation.planner));
           activePresenter.presenter.close();activePresenter=selected;
-          adaptive=new AdaptiveController(session,send,feedback,selected.presenter.decide);
+          adaptive=new AdaptiveController(session,broadcastPresentation,feedback,selected.presenter.decide);
           adaptive.stop();
-          send({ type: "presentation_loaded", title: story.flow.title,baseline:"evidence-v1",decision:selected.id });
+
+          if (sid) {
+            if (liveSessions.has(sid)) {
+              teardownLiveSession(sid);
+            }
+            const audienceSet = new Set<WebSocket>();
+            if (pendingAudienceSockets.has(sid)) {
+              for (const audWs of pendingAudienceSockets.get(sid)!) {
+                if (audWs.readyState === WebSocket.OPEN) audienceSet.add(audWs);
+              }
+              pendingAudienceSockets.delete(sid);
+            }
+            activeLiveSession = {
+              sessionId: sid,
+              started:false,
+              storyOrigin: loadedStoryOrigin,
+              story,
+              session,
+              adaptive,
+              activePresenter,
+              speech,
+              presenterSocket: ws,
+              audienceSockets: audienceSet,
+              graceTimer: null,
+              lastStage: null,
+              lastSnapshot: null,
+              presentationEpoch,
+            };
+            liveSessions.set(sid, activeLiveSession);
+          }
+
+          broadcastPresentation({ type: "presentation_loaded", title: story.flow.title,baseline:"evidence-v1",decision:selected.id,sessionId:sid,state:story });
           break;
         }
         case "presentation_start": {
           if(event.requestId!==undefined&&(typeof event.requestId!=="string"||event.requestId.length>160))throw Error("Invalid presentation request ID");
           presentationCatalog(loadedStory ?? preparation.state);
           const generation=++presentationEpoch;
-          send({type:"presentation_status",status:"preparing"});
-          void adaptive.start(loadedStory ?? preparation.state).then(()=>{if(generation===presentationEpoch)send({type:"presentation_ready",requestId:event.requestId});}).catch(error=>{if(generation===presentationEpoch){adaptive.stop();send({type:"agent_error",message:error.message});}});
+          if(activeLiveSession)activeLiveSession.started=true;
+          if (activeLiveSession) activeLiveSession.presentationEpoch = generation;
+          broadcastPresentation({type:"presentation_status",status:"preparing"});
+          void adaptive.start(loadedStory ?? preparation.state).then(()=>{if(generation===(activeLiveSession?.presentationEpoch??presentationEpoch))broadcastPresentation({type:"presentation_ready",requestId:event.requestId});}).catch(error=>{if(generation===(activeLiveSession?.presentationEpoch??presentationEpoch)){if(activeLiveSession)activeLiveSession.started=false;adaptive.stop();broadcastPresentation({type:"agent_error",message:error.message});}});
           break;
         }
         case "presentation_stop":
           presentationEpoch++;adaptive.stop();
+          if (activeLiveSession) {
+            teardownLiveSession(activeLiveSession.sessionId);
+            activeLiveSession = undefined;
+          }
+          break;
+        case "presentation_cue":
+          if (typeof event.beatIndex !== "number" || event.beatIndex < 0) throw Error("Invalid beat index");
+          adaptive.cue(event.beatIndex);
+          break;
+        case "session_attach":
+          if (typeof event.sessionId !== "string" || event.sessionId.length > 160) throw Error("Invalid sessionId");
+          if (event.role === "audience") {
+            attachedAudienceSessionId = event.sessionId;
+            attachAudienceSocket(ws, event.sessionId);
+          }
           break;
         case "presentation_speech":
           if (typeof event.text !== "string" || event.text.length > 6000) throw Error("Invalid speech text");
+          if (activeLiveSession) activeLiveSession.lastTranscript = event.text;
+          broadcastPresentation({ type: "transcript", text: event.text, final: true });
           void adaptive.accept(event.text);
           break;
         case "finish_interview":
@@ -334,20 +554,20 @@ wss.on("connection", (ws) => {
           send({ type: "cancelled" });
           break;
         case "speech_load":
-          if (speechStatus === "unloaded") {
-            speechStatus = "loading";
+          if (speech.speechStatus === "unloaded") {
+            speech.speechStatus = "loading";
             send({ type: "worker_status", status: "loading" });
             ensureWorker();
             write({ type: "load" });
           }
           break;
         case "speech_start":
-          if (speechStatus !== "ready")
+          if (speech.speechStatus !== "ready")
             throw Error("Speech model is not ready");
           write({ type: "start" });
           break;
         case "speech_stop":
-          if (speechStatus === "listening") write({ type: "stop" });
+          if (speech.speechStatus === "listening") write({ type: "stop" });
           break;
         case "speech_unload":
           closeSpeech();
@@ -397,12 +617,35 @@ wss.on("connection", (ws) => {
     1000,
   );
   ws.on("close", () => {
+    if (attachedAudienceSessionId) {
+      liveSessions.get(attachedAudienceSessionId)?.audienceSockets.delete(ws);
+      pendingAudienceSockets.get(attachedAudienceSessionId)?.delete(ws);
+    }
+    for (const [, ls] of liveSessions) {
+      ls.audienceSockets.delete(ws);
+    }
+    for (const [, set] of pendingAudienceSockets) {
+      set.delete(ws);
+    }
+    preparation.cancel();load?.kill();clearInterval(metrics);
+    if (activeLiveSession && (activeLiveSession.disposed || activeLiveSession.presenterSocket !== ws)) return;
+    if (activeLiveSession && activeLiveSession.presenterSocket === ws) {
+      activeLiveSession.presenterSocket = null;
+      if (!activeLiveSession.graceTimer) {
+        const sid = activeLiveSession.sessionId;
+        activeLiveSession.graceTimer = setTimeout(() => {
+          teardownLiveSession(sid);
+        }, 30000);
+      }
+      clearInterval(metrics);
+      return;
+    }
     activePresenter.presenter.close();
     clearInterval(metrics);
     presentationEpoch++;adaptive.stop();
     session.cancel();
     preparation.cancel();
-    worker?.kill();
+    speech.worker?.kill();
     load?.kill();
   });
 });
@@ -410,10 +653,14 @@ server.listen(port, "127.0.0.1", () =>
   console.log(`Omnipresent session server http://127.0.0.1:${port}`),
 );
 function shutdown() {
+  for (const [sid] of liveSessions) {
+    teardownLiveSession(sid);
+  }
   for (const client of wss.clients) client.terminate();
   lag.disable();
   wss.close();
   server.close();
+  workspaceStore.close();
 }
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);

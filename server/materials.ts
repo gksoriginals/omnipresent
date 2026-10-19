@@ -5,7 +5,7 @@ import { resolve, extname } from "node:path";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 const execute = promisify(execFile);
-const root = resolve("output/materials");
+const root = resolve(process.env.OMNIPRESENT_MATERIALS_PATH ?? "output/materials");
 let extracting = false;
 export async function materials(req: IncomingMessage, res: ServerResponse, python: string, allowedOrigins: Set<string>) {
   if (!req.url?.startsWith("/api/materials")) return false;

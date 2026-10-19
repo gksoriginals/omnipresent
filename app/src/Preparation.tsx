@@ -35,7 +35,7 @@ export function Preparation({ send, state, busy, response, activity, connected, 
     finally { setUploading(false); }
   }
   return <div className={`preparation ${state.flow ? "with-story" : ""}`}>
-    <div className="conversation-heading"><div><h2>{state.flow ? "Refine your story" : "Prepare your presentation"}</h2><p>{state.flow ? "Make changes through the conversation." : "A conversation to shape what comes next."}</p></div><span className="agent-state">{busy ? activity || "Working…" : state.flow ? "Storyteller" : "Interview"}</span></div>
+    <div className="conversation-heading"><div><h2>{state.flow ? "Refine your story" : "Prepare your presentation"}</h2><p>{state.flow ? "Make changes through the conversation." : "A conversation to shape what comes next."}</p></div><span className="agent-state">{busy ? activity || "Working…" : state.flow ? "Storyteller" : "Discovery"}</span></div>
     <section className="interview" aria-label="Presentation conversation">
       <div className="conversation" ref={conversation} onScroll={e=>{const node=e.currentTarget;followConversation.current=node.scrollHeight-node.scrollTop-node.clientHeight<80;}}>
         {!messages.length && !busy && <div className="prep-intro"><h1>What’s your story?</h1><p>Tell me what you want to present, who it’s for, and what you want them to take away.</p></div>}
@@ -48,7 +48,7 @@ export function Preparation({ send, state, busy, response, activity, connected, 
       {state.artifacts.length > 0 && <ul className="attachments" aria-label="Attached material">{state.artifacts.map(a => <li key={a.id}>{a.name}</li>)}</ul>}
       {error && <p role="alert" className="inline-error">{error}</p>}
       <form className="prep-composer" onSubmit={e => { e.preventDefault(); if (!input.trim() || busy || uploading) return; pendingInput.current = input; followConversation.current=true; send({type: "agent_turn", role, text: input}); }}>
-        <label className="sr-only" htmlFor="agent-input">{state.flow ? "Request story changes" : "Message interviewer"}</label>
+        <label className="sr-only" htmlFor="agent-input">{state.flow ? "Request story changes" : "Message assistant"}</label>
         <textarea id="agent-input" name="message" value={input} maxLength={6000} onChange={e => setInput(e.target.value)} rows={2} placeholder={state.flow ? "What would you like to change…" : "Share an idea or add your material…"} />
         <div className="composer-actions">
           <input ref={file} hidden type="file" aria-label="Material files" accept=".txt,.md,.csv,.json,.pdf,.docx,.pptx,.xlsx,.png,.jpg,.jpeg,.webp" multiple disabled={busy || uploading || !connected} onChange={e => { void upload(e.target.files); e.target.value = ""; }} />
@@ -56,7 +56,7 @@ export function Preparation({ send, state, busy, response, activity, connected, 
           {busy ? <button type="button" onClick={() => send({type: "agent_cancel"})}>Stop</button> : <button className="primary" disabled={!connected || uploading || !input.trim()} aria-label="Send message">Send <Icon name="send"/></button>}
         </div>
       </form>
-      {!state.flow && messages.length > 0 && <div className="finish-interview"><button disabled={busy || uploading || !connected} onClick={() => send({ type: "finish_interview" })}>Finish interview & create story</button></div>}
+      {!state.flow && messages.length > 0 && <div className="finish-interview"><button disabled={busy || uploading || !connected} onClick={() => send({ type: "finish_interview" })}>Create story from conversation</button></div>}
     </div>
     {!state.flow && <section className="story-placeholder" aria-label="Story preview"><Icon name="spark"/><h2>Your story takes shape here</h2><p>Start with a conversation. Add your material, then create a story when the brief feels right.</p></section>}
     {state.flow && <section className="story-pane" aria-label="Story preview">

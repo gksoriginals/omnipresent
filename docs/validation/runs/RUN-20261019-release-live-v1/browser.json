@@ -1,0 +1,716 @@
+{
+  "id": "RUN-20261019-release-live-v1",
+  "recordedAt": "2026-10-19T15:01:49.978229+00:00",
+  "scope": "Actual local Qwen interview/storyteller in Chrome, text-file upload, reviewed story save/reload, Piper WAV through virtual browser microphone to AudioWorklet/WebSocket/Moonshine/EmbeddingGemma/local-hybrid presenter, audience window and session lifecycle. Mixed outcome; not general natural-speech acceptance.",
+  "sourceFiles": [
+    {
+      "path": "server/index.ts",
+      "sha256": "8dd131bd830998abced954aae1cb4712aa380d1d08cc2c13c82fe3410c5e77a9"
+    },
+    {
+      "path": "server/agents/adaptive.ts",
+      "sha256": "794e0ae3aad00ce199da7f1af2a3410e4e407f0bb5da9d0bc84b9e727ce6fc53"
+    },
+    {
+      "path": "server/presentation/audience.ts",
+      "sha256": "fac23ea134a2f852a6bd2bd5306e7822357fa8d9adb1edae52ca61067b8ca711"
+    },
+    {
+      "path": "server/storage/bundle-media.ts",
+      "sha256": "c468a3937c8ecb990d63003dbe644ab5a98a6102c05db5868f9f625aa396c124"
+    },
+    {
+      "path": "server/storage/sqlite-workspace.ts",
+      "sha256": "1d31eea208fd43b48771132ead537fc0f29601db5e3b393770e2639c7c67be4d"
+    },
+    {
+      "path": "server/storage/workspace-handler.ts",
+      "sha256": "5632a2b55552aa534c23eaabfd54552b264c0e79f9fff40210ab4016bd7f4388"
+    },
+    {
+      "path": "app/src/hooks/usePresentation.ts",
+      "sha256": "06c85c8b949fb242a3c655097b28bcf083039892c661921efdf63247c5e35054"
+    },
+    {
+      "path": "app/src/services/workspace-store.ts",
+      "sha256": "d2c84be3d8031c55aeae091be5e713e7b1c7a90e01b6bd8bbe0d8610acea77cc"
+    },
+    {
+      "path": "app/src/App.tsx",
+      "sha256": "dd608718a6dc310d1051b34b1defb0de35c51ff9abee9d3d66f35e6b03401837"
+    },
+    {
+      "path": "app/src/style.css",
+      "sha256": "f92ccb1939cfc18bdf215eeb3eb45dcaa2459e51061be6d960325132c580249e"
+    },
+    {
+      "path": "runtime/worker.py",
+      "sha256": "f5f19bc83c83bb1cbe6199a67c215414be2d776abad89fe0118da120ef5ad6c1"
+    },
+    {
+      "path": "runtime/retrieval-model.json",
+      "sha256": "d13e58d2e3c51df87eb02de94031ddcf12a90bc18050cf5ca3fe94b6b3fd76b6"
+    },
+    {
+      "path": "package.json",
+      "sha256": "e40e667ecda59de083b70630123408263fa0aeb8a5b0b72cb1924de29abc387c"
+    }
+  ],
+  "preparation": {
+    "initialStoryFailures": 3,
+    "intervention": "Refined the brief through interview chat to request two exact conceptual beats and remove continuous-power claims. Fourth UI story attempt succeeded; a separate direct buildAgent diagnostic also generated a draft but was not used as the saved product story.",
+    "savedAndReloaded": true,
+    "material": "solar-notes.txt; authored conceptual statements, no measured performance"
+  },
+  "initial": {
+    "frames": 136,
+    "captures": 1,
+    "events": [
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792421789975
+        },
+        "paused": false
+      },
+      {
+        "type": "worker_status",
+        "status": "unloaded"
+      },
+      {
+        "type": "worker_status",
+        "status": "unloaded"
+      },
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792421796563
+        },
+        "paused": false
+      },
+      {
+        "type": "worker_status",
+        "status": "unloaded"
+      },
+      {
+        "type": "presentation_loaded",
+        "title": "Solar Energy Introduction",
+        "baseline": "evidence-v1",
+        "decision": "local-hybrid",
+        "sessionId": "dbce1704-98c5-404a-8247-6f558551e079:80a5b4af-5a55-410c-bf6e-fc8519c40cb5"
+      },
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792421796563
+        },
+        "paused": false
+      },
+      {
+        "type": "stage",
+        "stage": {
+          "text": "Solar panels turn sunlight into electricity",
+          "composition": {
+            "title": "Solar panels turn sunlight into electricity",
+            "body": "Solar panels turn sunlight into electricity.",
+            "beat": 0,
+            "flowRevision": 4,
+            "adaptive": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 0,
+                  "emphasis": "normal",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          "source": "agent",
+          "revision": 1,
+          "committedAt": 1792421806553
+        },
+        "dispatchMs": 0.017791000000215718
+      },
+      {
+        "type": "presentation_ready",
+        "requestId": "presentation-6"
+      },
+      {
+        "type": "worker_status",
+        "status": "loading"
+      },
+      {
+        "type": "worker_status",
+        "status": "loading"
+      },
+      {
+        "type": "worker_status",
+        "status": "ready",
+        "loadMs": 544.4261660450138
+      },
+      {
+        "type": "worker_status",
+        "status": "listening"
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071524",
+        "text": "Thank you.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071524",
+        "text": "Batteries,",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071524",
+        "text": "Batteries store open.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071524",
+        "text": "Batteries store electricity.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071524",
+        "text": "Batteries store electricity for late-night",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071524",
+        "text": "Batteries store electricity for later use.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071524",
+        "text": "Batteries store electricity for later use.",
+        "final": true
+      },
+      {
+        "type": "stage",
+        "stage": {
+          "text": "Batteries store electricity for later use",
+          "composition": {
+            "title": "Batteries store electricity for later use",
+            "body": "Batteries store electricity for later use.",
+            "beat": 1,
+            "flowRevision": 4,
+            "adaptive": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 1,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          "source": "agent",
+          "revision": 2,
+          "committedAt": 1792421813499
+        },
+        "dispatchMs": 0.005667000001267297
+      },
+      {
+        "type": "direction_completed",
+        "engine": "adaptive",
+        "inferenceMs": 3.705500000000029,
+        "changed": true,
+        "held": false,
+        "composition": {
+          "layout": "focus",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "statement",
+              "beat": 1,
+              "emphasis": "strong",
+              "reveal": null
+            }
+          ]
+        },
+        "decision": {
+          "requestId": "1bc4066c-626e-43a9-bb4d-ef442eb84cb9",
+          "planner": "synthesis",
+          "baseline": "evidence-v1",
+          "model": "local-hybrid",
+          "selection": "local-hybrid",
+          "path": "guard",
+          "action": "show",
+          "operation": "replace",
+          "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+        }
+      }
+    ]
+  },
+  "resumed": {
+    "frames": 35,
+    "captures": 1,
+    "events": [
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792421887216
+        },
+        "paused": false
+      },
+      {
+        "type": "worker_status",
+        "status": "unloaded"
+      },
+      {
+        "type": "presentation_loaded",
+        "title": "Solar Energy Introduction",
+        "baseline": "evidence-v1",
+        "decision": "local-hybrid",
+        "resumed": true,
+        "sessionId": "dbce1704-98c5-404a-8247-6f558551e079:80a5b4af-5a55-410c-bf6e-fc8519c40cb5"
+      },
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792421796563
+        },
+        "paused": false
+      },
+      {
+        "type": "stage",
+        "stage": {
+          "text": "Solar panels turn sunlight into electricity",
+          "composition": {
+            "title": "Solar panels turn sunlight into electricity",
+            "body": "Solar panels turn sunlight into electricity.",
+            "beat": 0,
+            "flowRevision": 4,
+            "adaptive": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 0,
+                  "emphasis": "normal",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          "source": "agent",
+          "revision": 3,
+          "committedAt": 1792421887110
+        }
+      },
+      {
+        "type": "worker_status",
+        "status": "listening"
+      },
+      {
+        "type": "transcript",
+        "text": "Batteries store electricity for later use.",
+        "final": true
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071525",
+        "text": "Thank you.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071525",
+        "text": "Batteries",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071525",
+        "text": "Batteries store open.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071525",
+        "text": "Batteries store electricity.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071525",
+        "text": "Batteries store electricity for later.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071525",
+        "text": "Batteries store electricity for later use.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071525",
+        "text": "Batteries store electricity for later use.",
+        "final": true
+      },
+      {
+        "type": "stage",
+        "stage": {
+          "text": "Batteries store electricity for later use",
+          "composition": {
+            "title": "Batteries store electricity for later use",
+            "body": "Batteries store electricity for later use.",
+            "beat": 1,
+            "flowRevision": 4,
+            "adaptive": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 1,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          "source": "agent",
+          "revision": 4,
+          "committedAt": 1792421892869
+        },
+        "dispatchMs": 0.0059160000091651455
+      },
+      {
+        "type": "direction_completed",
+        "engine": "adaptive",
+        "inferenceMs": 4.722290999998222,
+        "changed": true,
+        "held": false,
+        "composition": {
+          "layout": "focus",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "statement",
+              "beat": 1,
+              "emphasis": "strong",
+              "reveal": null
+            }
+          ]
+        },
+        "decision": {
+          "requestId": "a40fe228-f029-4c5d-995f-2baf5a5ab63f",
+          "planner": "synthesis",
+          "baseline": "evidence-v1",
+          "model": "local-hybrid",
+          "selection": "local-hybrid",
+          "path": "guard",
+          "action": "show",
+          "operation": "replace",
+          "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+        }
+      }
+    ]
+  },
+  "audiencePrivacy": true,
+  "manualCueTakeover": "Automated coordinator fixture regression, not claimed as a separate browser/model quality result.",
+  "panelsNegative": {
+    "expected": "show panels",
+    "actual": "hold previous canvas",
+    "finalSegments": [
+      "Solar panels turn sunlight.",
+      "Into electricity."
+    ],
+    "reason": "Real STT split loses the full prepared alias. A wait-for-show assertion timed out; retained panels-audio.log."
+  },
+  "missing": {
+    "frames": 57,
+    "captures": 1,
+    "events": [
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792421944695
+        },
+        "paused": false
+      },
+      {
+        "type": "worker_status",
+        "status": "unloaded"
+      },
+      {
+        "type": "presentation_loaded",
+        "title": "Solar Energy Introduction",
+        "baseline": "evidence-v1",
+        "decision": "local-hybrid",
+        "resumed": true,
+        "sessionId": "dbce1704-98c5-404a-8247-6f558551e079:80a5b4af-5a55-410c-bf6e-fc8519c40cb5"
+      },
+      {
+        "type": "snapshot",
+        "stage": {
+          "text": "",
+          "revision": 0,
+          "source": "manual",
+          "committedAt": 1792421796563
+        },
+        "paused": false
+      },
+      {
+        "type": "stage",
+        "stage": {
+          "text": "Batteries store electricity for later use",
+          "composition": {
+            "title": "Batteries store electricity for later use",
+            "body": "Batteries store electricity for later use.",
+            "beat": 1,
+            "flowRevision": 4,
+            "adaptive": {
+              "layout": "focus",
+              "blocks": [
+                {
+                  "id": "primary",
+                  "kind": "statement",
+                  "beat": 1,
+                  "emphasis": "strong",
+                  "reveal": null
+                }
+              ]
+            }
+          },
+          "source": "agent",
+          "revision": 4,
+          "committedAt": 1792421892869
+        }
+      },
+      {
+        "type": "worker_status",
+        "status": "listening"
+      },
+      {
+        "type": "transcript",
+        "text": "Into electricity.",
+        "final": true
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071528",
+        "text": "",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071528",
+        "text": "Show the.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071528",
+        "text": "Show the installation.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071528",
+        "text": "Show the installation cost.",
+        "final": false
+      },
+      {
+        "type": "transcript",
+        "segmentId": "7103610054850071528",
+        "text": "Show the installation cost.",
+        "final": true
+      },
+      {
+        "type": "presentation_feedback",
+        "projectId": "dbce1704-98c5-404a-8247-6f558551e079",
+        "storyId": "80a5b4af-5a55-410c-bf6e-fc8519c40cb5",
+        "question": "The requested evidence is not available in this story. Add or clarify it in Prepare."
+      },
+      {
+        "type": "direction_completed",
+        "engine": "adaptive",
+        "inferenceMs": 1.0682079999824055,
+        "changed": false,
+        "held": true,
+        "composition": {
+          "layout": "focus",
+          "blocks": [
+            {
+              "id": "primary",
+              "kind": "statement",
+              "beat": 1,
+              "emphasis": "strong",
+              "reveal": null
+            }
+          ]
+        },
+        "decision": {
+          "requestId": "291d6833-188f-4f2d-8eb0-1382d4790f92",
+          "planner": "synthesis",
+          "baseline": "evidence-v1",
+          "model": "local-hybrid",
+          "selection": "local-hybrid",
+          "path": "guard",
+          "action": "context",
+          "operation": "retain",
+          "revision": "91b039d4cbfa4c52c12316e2a1a9548714a483d242ba95c6ade8470e1ae280a4"
+        }
+      }
+    ]
+  },
+  "freshSessionAfterRestart": {
+    "resumed": false,
+    "ready": true,
+    "captures": 1,
+    "frames": 3,
+    "speech": [
+      {
+        "type": "worker_status",
+        "status": "unloaded"
+      },
+      {
+        "type": "worker_status",
+        "status": "loading"
+      },
+      {
+        "type": "worker_status",
+        "status": "loading"
+      },
+      {
+        "type": "worker_status",
+        "status": "ready",
+        "loadMs": 101.3462080154568
+      },
+      {
+        "type": "worker_status",
+        "status": "listening"
+      }
+    ]
+  },
+  "geometry": {
+    "ended": true,
+    "audienceNotified": true,
+    "checks": [
+      {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "height": 900,
+        "scrollHeight": 900,
+        "chat": {
+          "x": 30,
+          "y": 155.796875,
+          "width": 675,
+          "height": 551.203125,
+          "top": 155.796875,
+          "right": 705,
+          "bottom": 707,
+          "left": 30
+        },
+        "story": {
+          "x": 735,
+          "y": 92,
+          "width": 675,
+          "height": 788,
+          "top": 92,
+          "right": 1410,
+          "bottom": 880,
+          "left": 735
+        }
+      },
+      {
+        "width": 900,
+        "scrollWidth": 900,
+        "height": 900,
+        "scrollHeight": 900,
+        "chat": {
+          "x": 20,
+          "y": 151.796875,
+          "width": 420,
+          "height": 555.203125,
+          "top": 151.796875,
+          "right": 440,
+          "bottom": 707,
+          "left": 20
+        },
+        "story": {
+          "x": 460,
+          "y": 88,
+          "width": 420,
+          "height": 792,
+          "top": 88,
+          "right": 880,
+          "bottom": 880,
+          "left": 460
+        }
+      },
+      {
+        "width": 600,
+        "scrollWidth": 600,
+        "height": 900,
+        "scrollHeight": 900,
+        "chat": {
+          "x": 12,
+          "y": 119,
+          "width": 282,
+          "height": 606,
+          "top": 119,
+          "right": 294,
+          "bottom": 725,
+          "left": 12
+        },
+        "story": {
+          "x": 306,
+          "y": 74,
+          "width": 282,
+          "height": 814,
+          "top": 74,
+          "right": 588,
+          "bottom": 888,
+          "left": 306
+        }
+      }
+    ]
+  },
+  "overall": "partial acceptance: lifecycle and selected spoken path pass; general speech acceptance remains failed",
+  "limitations": [
+    "Three initial UI storyteller attempts failed tool validation; success followed explicit brief refinement.",
+    "Virtual microphone plays authored Piper recordings, not a physical microphone or spontaneous speaker.",
+    "One presentation and one run per narration; no independent factual entailment review or latency benchmark.",
+    "Model-free regressions separately check media transfer, active-owner takeover and evidence cancellation.",
+    "During testing, rebuilding assets under an open old page caused module-load errors; a fresh reload rendered the diagram. Deliberate server restarts caused expected transient connection errors."
+  ],
+  "hostedInferenceCalls": 0
+}

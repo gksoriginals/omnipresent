@@ -161,3 +161,12 @@ test("storyteller tool schema excludes host-owned evidence contracts",()=>{
  const s=emptyPreparation();s.brief=brief;const agent=buildAgent("storyteller",mock(),s,new AbortController().signal,()=>{});
  const schema=(agent.tools as any).proposeFlow.inputSchema;assert.equal(Object.hasOwn(schema.shape.beats.element.shape,"evidence"),false);assert.equal(Object.hasOwn(schema.shape.beats.element.shape,"componentEvidence"),false);
 });
+test("interviewer exposes searchWeb tool which safely executes queries and saves research artifacts", async () => {
+ const s = emptyPreparation();
+ const agent = buildAgent("interview", mock(), s, new AbortController().signal, () => {});
+ assert.equal(Object.hasOwn(agent.tools, "searchWeb"), true);
+ const tool = (agent.tools as any).searchWeb;
+ const result = await tool.execute({ query: "renewable energy trends" });
+ assert.equal(result.query, "renewable energy trends");
+ assert.ok(Array.isArray(result.results));
+});

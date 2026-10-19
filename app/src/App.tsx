@@ -14,6 +14,13 @@ export default function App() {
   const [store] = useState(() => new WorkspaceStore(()=>localStorage));
   const [workspace,setWorkspace]=useState(store.current);
   const workspaceRef=store;
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    void store.syncFromServer().then(synced => {
+      if (synced) setWorkspace(synced);
+      setHydrated(true);
+    });
+  }, []);
   const project = workspace.projects.find(p => p.id === workspace.activeProjectId)!;
   const preparation = project.state, stories = workspace.stories;
   const [showRemoved, setShowRemoved] = useState(false);
@@ -59,9 +66,29 @@ export default function App() {
   const presentationRef=useRef(presentation);presentationRef.current=presentation;
   const send=(event:Record<string,unknown>)=>socket.current?.send(event);
   useEffect(() => {
+    if (!hydrated) return;
     const projectId = workspace.activeProjectId;
     const client=new SessionClient(`${location.protocol === "https:" ? "wss" : "ws"}://${location.host}/session`,{
-      open(){setConnected(true);send({type:"preparation_open",state:workspaceRef.current.projects.find(p=>p.id===projectId)!.state});},
+      open(){
+        setConnected(true);
+        let resumed = false;
+        try {
+          const stored = sessionStorage.getItem("omnipresent_active_session");
+          if (stored) {
+            const parsed = JSON.parse(stored);
+            const story = workspaceRef.current.stories.find(s => s.id === parsed.storyId);
+            if (story) {
+              setSelected(story.id);
+              setMode("canvas");
+              void presentationRef.current.resumePresentation(story, parsed.sessionId);
+              resumed = true;
+            }
+          }
+        } catch {}
+        if (!resumed) {
+          send({type:"preparation_open",state:workspaceRef.current.projects.find(p=>p.id===projectId)!.state});
+        }
+      },
       event(event){
         presentationRef.current.event(event);
         if (event.type === "preparation") {
@@ -94,7 +121,7 @@ export default function App() {
     });
     socket.current=client;client.connect();
     return ()=>{presentationRef.current.stopCapture();client.close();if(socket.current===client)socket.current=null;};
-  }, [workspace.activeProjectId]);
+  }, [workspace.activeProjectId, hydrated]);
   return <main>
     <a className="skip-link" href="#workspace">Skip to workspace</a>
     <header className={active ? "presenting-header" : ""}>
@@ -124,8 +151,38 @@ export default function App() {
           <div id="mobile-project-sessions" className="mobile-projects"><label className="sr-only" htmlFor="project-select">Project</label><select id="project-select" value={project.id} onChange={e => activateProject(e.target.value)}>{workspace.projects.map(p=><option key={p.id} value={p.id}>{p.title}</option>)}</select><button onClick={createProject}>New project</button><button aria-label={`Remove session ${project.title}`} onClick={() => removeItem("project",project.id)}>×</button></div>
           <Preparation key={project.id} send={event => { if (workspaceRef.current.activeProjectId === project.id) send(event); }} state={preparation} busy={busy} response={response} activity={activity} connected={connected} input={project.composer} onInput={value => commit({...workspaceRef.current,projects:workspaceRef.current.projects.map(p=>p.id === project.id ? {...p,composer:value} : p)})} onSave={() => { pendingSave.current = project.id; send({type: "flow_approve"}); }} />
         </div>
-      </div> : !selectedStory ? <StoryLibrary stories={stories} projects={[...workspace.projects,...(workspace.removedProjects ?? [])]} onRemove={id => removeItem("story",id)} onSelect={setSelected} onCreate={createProject} /> :
-        <PresentationRoom selectedStory={selectedStory} active={active} stage={stage} paused={paused} starting={starting} connected={connected} endPresentation={endPresentation} onBack={()=>setSelected("")} onStart={()=>void presentation.startPresentation(selectedStory,connected)}/>}
+      </div> : !selectedStory ? <StoryLibrary
+        stories={stories}
+        projects={[...workspace.projects,...(workspace.removedProjects ?? [])]}
+        onRemove={id => removeItem("story",id)}
+        onSelect={setSelected}
+        onCreate={createProject}
+        onExport={id => {void store.exportStory(id).catch(error=>setError(error.message));}}
+        onImport={async file => {
+          try {
+            const { storyId } = await store.importStoryFile(file);
+            setWorkspace(store.current);
+            setNotice("Story imported successfully.");
+            setSelected(storyId);
+          } catch (err) {
+            setError(err instanceof Error ? err.message : "Failed to import story");
+          }
+        }}
+      /> :
+        <PresentationRoom
+          selectedStory={selectedStory}
+          active={active}
+          stage={stage}
+          paused={paused}
+          starting={starting}
+          connected={connected}
+          endPresentation={endPresentation}
+          onBack={()=>setSelected("")}
+          onStart={()=>void presentation.startPresentation(selectedStory,connected)}
+          sessionId={presentation.sessionId}
+          lastTranscript={presentation.lastTranscript}
+          cueBeat={presentation.cueBeat}
+        />}
     </div>
   </main>;
 }

@@ -5,11 +5,19 @@ const projectSchema = z.object({
   id: z.string().min(1), title: z.string().max(160), createdAt: z.number(), updatedAt: z.number(),
   state: preparationSchema, composer: z.string().max(6000),
 });
-const storySchema = z.object({ id: z.string().min(1), projectId: z.string().min(1), savedAt: z.number(), state: preparationSchema });
-const workspaceSchema = z.object({ version: z.literal(1), activeProjectId: z.string(), projects: z.array(projectSchema).min(1), stories: z.array(storySchema), storyHistory: z.array(storySchema).optional(), removedStories: z.array(storySchema).optional(), removedProjects: z.array(projectSchema).optional() });
+export const storySchema = z.object({ id: z.string().min(1), projectId: z.string().min(1), savedAt: z.number(), state: preparationSchema });
+export const workspaceSchema = z.object({ version: z.literal(1), activeProjectId: z.string(), projects: z.array(projectSchema).min(1), stories: z.array(storySchema), storyHistory: z.array(storySchema).optional(), removedStories: z.array(storySchema).optional(), removedProjects: z.array(projectSchema).optional() });
+export const bundleSchema = z.object({
+  format: z.literal("omnipresent-bundle-v1"),
+  exportedAt: z.number(),
+  story: storySchema,
+  projectTitle: z.string().max(160).optional(),
+  files: z.array(z.object({url:z.string().regex(/^\/api\/materials\/[a-f0-9]{64}\.(png|jpg|jpeg|webp)$/),base64:z.string().max(10_666_668)})).max(8).optional(),
+});
 export type Project = z.infer<typeof projectSchema>;
 export type SavedStory = z.infer<typeof storySchema>;
 export type Workspace = z.infer<typeof workspaceSchema>;
+export type OmnipresentBundle = z.infer<typeof bundleSchema>;
 export interface StorageLike { getItem(key: string): string | null; setItem(key: string, value: string): void }
 export function newProject(id: string = crypto.randomUUID(), now = Date.now()): Project {
   return { id, title: "New presentation", createdAt: now, updatedAt: now, state: emptyPreparation(), composer: "" };
@@ -102,4 +110,46 @@ export function restoreRemoved(workspace: Workspace, kind: "story" | "project", 
     stories:[...workspace.stories.filter(s => s.projectId !== story.projectId),story],
     storyHistory:workspace.stories.some(s => s.projectId === story.projectId) ? [...(workspace.storyHistory ?? []),...workspace.stories.filter(s => s.projectId === story.projectId)] : workspace.storyHistory,
     removedStories:workspace.removedStories!.filter(s => s.id !== id)} : workspace;
+}
+
+export function createStoryBundle(workspace: Workspace, storyId: string): OmnipresentBundle {
+  const story = workspace.stories.find(s => s.id === storyId);
+  if (!story) throw Error("Story not found");
+  const project = workspace.projects.find(p => p.id === story.projectId)
+    ?? workspace.removedProjects?.find(p => p.id === story.projectId);
+  return {
+    format: "omnipresent-bundle-v1",
+    exportedAt: Date.now(),
+    story: structuredClone(story),
+    projectTitle: project?.title ?? story.state.flow?.title ?? "Imported Presentation",
+  };
+}
+
+export function importStoryBundle(workspace: Workspace, raw: unknown): { workspace: Workspace; storyId: string } {
+  const bundle = bundleSchema.parse(raw);
+  const story = bundle.story;
+  let current = structuredClone(workspace);
+  let project = current.projects.find(p => p.id === story.projectId);
+  if (!project) {
+    project = {
+      id: story.projectId,
+      title: bundle.projectTitle ?? story.state.flow?.title ?? "Imported Presentation",
+      createdAt: story.savedAt,
+      updatedAt: story.savedAt,
+      state: structuredClone(story.state),
+      composer: "",
+    };
+    const isUntouchedDefault = current.projects.length === 1 &&
+      current.stories.length === 0 &&
+      current.projects[0].state.revision === 0 &&
+      current.projects[0].state.messages.interview.length === 0;
+    if (isUntouchedDefault) {
+      current.projects = [project];
+      current.activeProjectId = project.id;
+    } else {
+      current.projects.push(project);
+    }
+  }
+  const updated = saveStory(current, story.projectId, story.state, story.id, story.savedAt);
+  return { workspace: updated, storyId: updated.stories.find(s=>s.projectId===story.projectId)!.id };
 }

@@ -34,7 +34,11 @@ flowchart TD
 
 Models propose references. Host code owns evidence eligibility, abstention, lifecycle, final validation and commit. A story is a narrative prior, not a voice-controlled slide deck. Unknown facts are never approved because a candidate is semantically close. Missing evidence is routed back to preparation with the story/project identity.
 
-Preparation, voice, retrieval and preference are separate roles. The TypeScript coordinator, React canvas and isolated Python workers form a modular local application; no new service framework or database was introduced. Projects/stories are browser-local, uploaded artifacts live under ignored output directories, and model downloads remain outside tracked source.
+Preparation, voice, retrieval and preference are separate roles. The TypeScript coordinator, React canvas and isolated Python workers form a modular local application; no new service framework was introduced. Projects and stories are cached in browser storage and persisted in local SQLite. Startup hydration is guarded against concurrent edits, and tab-local writes are serialized/coalesced. Concurrent editing from multiple tabs is not supported. Uploaded artifacts live under ignored output directories, and model downloads remain outside tracked source.
+
+Live presentation sessions own their controller and speech runtime independently of the presenter socket. Reconnection within 30 seconds preserves the canvas and reacquires microphone capture; an expired session starts afresh with normal indexing readiness. Explicit stop disposes the session. Audience sockets are read-only and receive a rendering projection plus canvas/status events, without interview messages, source text, private notes, transcripts or traces. This role boundary is for the local app, not a multi-user authentication system. Manual cues cancel older proposals and use host evidence eligibility, including strict independent-review mode.
+
+Story bundles include referenced image bytes under their content hashes. Import validates media before workspace mutation, with an 8 MB per-image and 24 MB total media limit. Existing bundles without embedded media require those files to already exist locally. Full preparation context remains in the bundle; audience projection is applied only when presenting.
 
 ## Unresolved language boundary
 
