@@ -1,6 +1,6 @@
 # Test and experiment register
 
-Current source test mapping: RUN-20261019-public-source-audit-v1. Historical experiments retain their own versions and counts. See [evidence rules](README.md).
+Current source test mapping: RUN-20261019-public-apache-audit-v1. Historical experiments retain their own versions and counts. See [evidence rules](README.md).
 
 ## Experiments and plans
 
@@ -490,11 +490,11 @@ Actual local-model preparation and save/reload/library/preview; desktop/narrow g
 
 Status: **executed**.
 
-Evidence: [run.json](../../docs/validation/runs/RUN-20261019-public-source-audit-v1/run.json). Hash retained in catalog.
+Evidence: [run.json](../../docs/validation/runs/RUN-20261019-public-apache-audit-v1/run.json). Hash retained in catalog.
 
-Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261019-public-source-audit-v1/unit-integration.log). Hash retained in catalog.
+Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261019-public-apache-audit-v1/unit-integration.log). Hash retained in catalog.
 
-Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261019-public-source-audit-v1/typecheck-build.log). Hash retained in catalog.
+Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261019-public-apache-audit-v1/typecheck-build.log). Hash retained in catalog.
 
 Current tests/typecheck/build/source hashes. Superseded director tests retired; baseline/model-boundary/no-migration tests added. Does not repeat model, browser or audio trials.
 
@@ -1012,7 +1012,7 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 
 ## Current individual software cases
 
-136/136 passed in RUN-20261019-public-source-audit-v1, 0 failed, 0 skipped.
+136/136 passed in RUN-20261019-public-apache-audit-v1, 0 failed, 0 skipped.
 
 | ID | Case | Source |
 |---|---|---|

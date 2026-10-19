@@ -40,3 +40,7 @@ There is no stable release, npm publication, binary bundle, hosted service, tele
 - Live coordinator after normal restart: local hybrid default, four-component synthesis, missing-evidence retention and zero provider attempts. Actual audio acceptance remains failed as previously recorded.
 - Git initialized on main; private GitHub repository created. No public publication or remote CI success is claimed at this checkpoint.
 - Publication check correctly blocks on the absent owner-selected LICENSE and package license metadata. Apply the selected license, refresh the package lock/audit/catalog, rerun checks and publish only after that decision.
+
+## License decision
+
+The project owner selected Apache-2.0 on 19 October 2026. LICENSE and npm package metadata now record that decision. The earlier pre-publication checkpoint above remains a historical record.

@@ -83,3 +83,7 @@ Start with [CONTRIBUTING](CONTRIBUTING.md), [architecture](docs/architecture/cur
 Report reproducible bugs and propose experiments through GitHub issues. Report vulnerabilities privately through [SECURITY](SECURITY.md). Community participation follows our [code of conduct](CODE_OF_CONDUCT.md). There is no stable public API or compatibility guarantee yet.
 
 No model weights, Python environments, credentials, personal presentation uploads or build outputs are distributed in this repository. Committed validation fixtures include authored synthetic stories, public-source evidence excerpts and synthetic Piper speech; see [third-party notices](THIRD_PARTY_NOTICES.md).
+
+## License
+
+Original Omnipresent source is licensed under [Apache-2.0](LICENSE). Dependencies, models and fixtures retain their [upstream terms](THIRD_PARTY_NOTICES.md).
