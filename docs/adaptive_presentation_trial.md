@@ -1,5 +1,7 @@
 # Adaptive presentation and spoken narrative trial
 
+> **Archived browser-prototype record.** This preserves the earlier trial and its results. Standalone browser launch is retired; the supported product is the native SwiftUI macOS app. Do not use the old web URL or setup commands as current instructions.
+
 17 October 2026
 
 ## Experience and implementation

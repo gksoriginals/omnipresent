@@ -4,12 +4,14 @@
 
 - [Root README](../README.md): setup, defaults and honest product status.
 - [Getting started](getting-started.md): complete local setup and runtime requirements.
+- [Native macOS app](desktop-macos-alpha.md): SwiftUI runtime, model settings, local data paths and packaging limits.
+- [Product images](images/README.md): identifies the archived browser-era captures in the demo.
 - [Presentation harness](architecture/presentation-harness.md): responsibility map, first built-in story procedure and workflow diagram.
 - [Current architecture](architecture/current.md): implemented boundaries and model decisions.
 - [Product requirements](PRD.md): experience and product intent.
 - [Roadmap](roadmap.md): next bounded work.
 - [Environment configuration](configuration.md): `.env` setup, keys, precedence and ignored files.
-- [Testing](testing.md): software versus model/audio/browser evidence.
+- [Testing](testing.md): software versus model, speech and native-app evidence.
 
 ## Latest findings
 
@@ -22,7 +24,7 @@
 
 ## Historical design and research
 
-Other files in this directory retain earlier proposals, experiments and decisions. Dated claims describe that version, not necessarily today's defaults. Source snapshots under validation runs are immutable research evidence and may contain superseded adapters or machine-specific paths. Follow the current architecture and model defaults before using historical setup commands.
+Other files in this directory retain earlier proposals, experiments and decisions. Dated claims describe that version, not necessarily today's defaults. Historical browser, React, Electron and Moonshine records are evidence only and do not describe the active app. Source snapshots under validation runs are immutable research evidence and may contain superseded adapters or machine-specific paths. Follow the current SwiftUI architecture and model defaults before using historical setup commands.
 
 ## Project information
 

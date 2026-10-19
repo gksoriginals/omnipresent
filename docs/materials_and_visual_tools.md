@@ -1,5 +1,7 @@
 # Materials and prepared visual tools
 
+> **Historical implementation note.** This document records an earlier web prototype. The current product uses TypeScript OfficeParser extraction and stores data under macOS Application Support. Old Python extraction and browser-storage notes below are not current runtime behavior.
+
 Implemented prototype changes, 16 October 2026.
 
 ## The user experience

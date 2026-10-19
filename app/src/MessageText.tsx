@@ -1,3 +1,0 @@
-import {Fragment} from "react";
-const inline=(text:string)=>text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).map((part,i)=>part.startsWith("**")?<strong key={i}>{part.slice(2,-2)}</strong>:part.startsWith("`")?<code key={i}>{part.slice(1,-1)}</code>:part);
-export function MessageText({text}:{text:string}){return <div className="message-content">{text.split(/\n\s*\n/).map((part,i)=>/^\s*[-*] /m.test(part)?<ul key={i}>{part.split("\n").map((line,j)=><li key={j}>{inline(line.replace(/^\s*[-*] /,""))}</li>)}</ul>:<p key={i}>{part.split("\n").map((line,j)=><Fragment key={j}>{j>0&&<br/>}{inline(line)}</Fragment>)}</p>)}</div>;}

@@ -1,5 +1,7 @@
 # Public development readiness
 
+> **Historical readiness record** from the initial public snapshot. The current product uses native SwiftUI on macOS; use the root README and [macOS app guide](desktop-macos-alpha.md) for supported setup. Readiness checks recorded below describe the earlier web/Python prototype.
+
 Prepared 19 October 2026. Repository: `gksoriginals/omnipresent`.
 
 ## Scope

@@ -1,3 +1,5 @@
+> **Historical plan.** This browser-era plan is retained for context; the product now uses native SwiftUI on macOS. For active setup and architecture, use the [macOS guide](desktop-macos-alpha.md), [current architecture](architecture/current.md) and [roadmap](roadmap.md).
+
 > Latest testing direction: [preference quality and real speech failures](research/preference-quality.md). Small reranker latency is viable, preference quality does not improve, and split final transcripts/intent recognition block the positive audio path. Keep hybrid default; address that boundary before promotion or browser latency acceptance.
 
 > Current local selection runtime: [host eligibility and bounded local preference](architecture/local-selection.md). Default remains local hybrid; native classifier preference is an explicit, deadline-bounded experiment with local fallback and feedback to Prepare.

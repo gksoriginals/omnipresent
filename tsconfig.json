@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": ["ES2022", "DOM"],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noEmit": true,
     "types": ["node"]
   },
-  "include": ["app", "server", "scripts", "tests", "vite.config.ts"]
+  "include": ["server", "scripts", "tests", "shared"]
 }

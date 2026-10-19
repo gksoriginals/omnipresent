@@ -1,5 +1,7 @@
 # Potential Technical PRDs
 
+> **Historical exploration map.** The active product is a native SwiftUI macOS app with a TypeScript/Node coordinator. Questions below record earlier exploration; architecture defaults and current implementation are documented in [current architecture](architecture/current.md).
+
 16 October 2026 · Exploration map; no architecture or stack selected
 
 The [product PRD](PRD.md) defines the desired experience. This document identifies technical questions that may deserve their own PRDs as we build. It replaces the earlier prescribed architecture, wire contracts, persistence choices, and renderer-first implementation sequence.

@@ -1,5 +1,7 @@
 # Runtime probe
 
+> **Archived prototype record.** This first runtime probe used a standalone browser UI and optional Python workers. It is retained for historical measurements only; the active product is now a SwiftUI macOS app with a TypeScript coordinator. The old launch commands and Moonshine WASM measurements below are not current setup instructions or speech acceptance.
+
 16 October 2026 · First working implementation, not the complete product
 
 ## Implemented

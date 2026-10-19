@@ -9,7 +9,7 @@ The harness coordinates preparation context, specialized roles, tools and host r
 | Harness component | Existing implementation and this increment | Boundary |
 | --- | --- | --- |
 | System prompts | `server/preparation/prompts.ts`: extracted interview, storyteller and shared policy, with an explicit version | Prompts guide; code enforces authority. |
-| Memory | `Preparation` brief/materials/messages/events; workspace SQLite and browser cache; immutable prepared snapshots; ephemeral live sessions | Project context, reviewed story and live state have different lifetimes. No new universal memory store. |
+| Memory | `Preparation` brief/materials/messages/events; workspace SQLite; immutable prepared snapshots; ephemeral live sessions | Project context, reviewed story and live state have different lifetimes. No new universal memory store. |
 | Tools | `buildAgent` exposes role-specific tools for material reading, research, chart/diagram generation and draft updates | Tool schemas and domain validation constrain model proposals. |
 | Skills | `server/preparation/story-skill.ts`: built-in `evidence-backed-story` v1.0.0, procedural instructions plus shared draft operation | Product workflow, not an editor SKILL.md, dynamic script or plugin loader. |
 | Guardrails | Reference validation, evidence construction, explicit presenter review, live eligibility, cancellation and final authorization | A skill cannot self-approve evidence or publish to the audience. |

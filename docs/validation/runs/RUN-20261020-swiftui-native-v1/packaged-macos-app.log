@@ -1,0 +1,8 @@
+
+> omnipresent@0.1.0-alpha.1 macos:pack
+> node scripts/build-macos-app.mjs
+
+
+added 88 packages in 2s
+Packaged coordinator health and settings endpoints passed.
+Built /Users/gopikrishnansasikumar/projects/omnipresent/output/macos/Omnipresent.app

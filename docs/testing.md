@@ -2,40 +2,26 @@
 
 ## Model-free checks
 
-Run `npm ci`, `npm test`, `npm run build`, and `npm run validate:evidence`. These are CI checks, with no model credentials or weight downloads required. CI installs the locked Python package environment to exercise document extraction; without that environment, the optional material-extraction test explicitly skips. Build includes TypeScript checking. Python files can be syntax-checked with `python3 -m compileall -q runtime scripts`.
+Run `npm ci`, `npm test`, `npm run build`, `npm run macos:pack`, `npm run validate:evidence` and `npm run check:publication`. Tests use fixtures and do not call a hosted model or download model weights. The material extraction tests use the TypeScript OfficeParser adapter. Native packaging compiles the SwiftUI app and downloads a pinned Node runtime when it is not cached; it does not download model weights.
 
-The test suite uses explicit fixtures and adapters. It does not establish model quality, physical-microphone performance or browser paint latency. The committed validation catalog ties historical experiments and current cases to source hashes and reports.
+These checks do not establish model quality, native microphone behavior, speech recognition accuracy or end-to-end visual acceptance. The validation catalog ties current software tests and historical experiments to source hashes and reports.
 
-## New source changes
+## Source changes and native checks
 
-Record a uniquely named software audit, regenerate the catalog and verify it. See `.github/CONTRIBUTING.md`. Do not overwrite historical runs or their snapshots. The generated catalog verifies hashes and current test mappings; it is not a certification.
+Record a uniquely named software audit, regenerate the catalog and verify it. See `.github/CONTRIBUTING.md`. Do not overwrite historical runs or source snapshots. A successful `.app` build confirms compilation and packaging only; open the app and exercise the changed path for interaction-level evidence.
 
-## Optional inference experiments
+The current speech framework is Apple's on-device Speech framework when supported by the Mac. Older Moonshine/WASM and browser trials remain research history. A new microphone trial must record device/OS, permissions, recognizer on-device availability, inputs, transcript events, coordinator decisions, canvas changes and failures. Do not imply that scripted transcript tests validate acoustic recognition.
 
-Model and audio tests require separate environments, pinned model files and sufficient resources. Default setup needs speech and retrieval runtimes, plus a preparation endpoint. Optional classifier comparisons use `scripts/setup-compact-local.mjs`; the small reranker has a pinned downloader at `scripts/setup-preference-reranker.py`. These references are opt-in and not installed by CI.
+## Optional model experiments
 
-Read each experiment's protocol before running it. Some historical scripts deliberately call paid providers when configured; do not run the entire scripts folder as a test suite. `OPENROUTER_API_KEY` is used only for explicit hosted comparisons. No new live benchmark should quietly spend a contributor's credentials.
+Read each experiment protocol before running it. Some historical scripts can call paid providers when credentials are configured; they are not included in the default test suite. `OPENROUTER_API_KEY` is for explicit comparisons only. Do not make hosted calls a silent test dependency.
 
-Latest distinct-preference and real-audio commands and scope are documented in `research/preference-quality.md`. TTS tests use generated Piper recordings, not physical microphone input. Browser rendering needs an independent check once the positive speech-to-composition path succeeds.
+The app's optional EmbeddingGemma download happens after a presentation needs retrieval, not during installation or core tests. See [current architecture](architecture/current.md) and [speech assembly findings](research/speech-assembly.md) for evidence boundaries.
 
 ## Publication checks
 
-`npm run check:publication` checks tracked content for forbidden local artifacts, oversized files, credential-discovery regressions and required project files. Use Gitleaks on staged/full Git history with redacted reports before pushing. Neither a scanner nor this script proves absence of all sensitive content; review the actual file list and uploaded fixtures.
+`npm run check:publication` checks tracked content for forbidden local artifacts, oversized files, credential-discovery regressions and required project files. Review staged files and use Gitleaks on staged/full Git history with redacted reports before publishing. These checks do not prove that every sensitive item has been found.
 
-## 0.1.0-alpha.1 release check
+## Historical alpha trial
 
-[Release live evidence](validation/runs/RUN-20261019-release-live-v1/browser.json) records the actual local Qwen interview, material upload, reviewed story save/reload, virtual-microphone Piper audio, Moonshine transcription, local hybrid selection, browser rendering and audience window. Microphone recapture on refresh and fresh-session startup after a coordinator restart passed. The battery explanation selected its content; the unsupported cost request held and requested evidence. The panel explanation split into separate STT finals and failed selection. Three initial storyteller attempts failed tool validation; explicit brief refinement preceded the successful fourth UI attempt. This is mixed integration evidence, not general speech acceptance.
-
-Automated regressions separately cover active presenter replacement, audience payload privacy/read-only commands, interrupted-load recovery, concurrent startup edits and ordered saves, retained failed saves, evidence eligibility/cancellation for manual cues, and portable image transfer with tamper rejection. The coordinator test explicitly preloads deterministic embedding vectors; it does not call or score a real model. Real model services are used only in the optional live check.
-
-
-## Transcript assembly comparison
-
-[Assembly ablation](research/speech-assembly.md) compares per-final processing, temporal assembly and an additional story-signal index on identical real Moonshine events. The extra index was removed after it showed no incremental outcome benefit. Current optional replay:
-
-```sh
-# Requires cached local STT/embedding runtimes; start retrieval explicitly first.
-node --import tsx scripts/speech-assembly-replay.ts RUN-YYYYMMDD-unique-speech-id
-```
-
-The replay uses committed authored audio, runs no hosted inference, and is never an implicit software-test dependency. It measures actual STT-to-host behavior, excluding browser painting and physical microphone capture. Current model-free tests also check 100 seeded interval configurations for preservation of every finalized word.
+[Browser-era release evidence](validation/runs/RUN-20261019-release-live-v1/browser.json) records the former React/Moonshine experience. Battery selection, missing-evidence retention, refresh and reconnect were observed; one spoken panel explanation split and failed selection. This predates the native SwiftUI app and is not current native speech acceptance. The automated coordinator regressions still cover evidence eligibility, cancellation, session ownership, audience payload privacy, persistence and portable image transfer.

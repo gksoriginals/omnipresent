@@ -8,6 +8,8 @@ Version 0.5 · 16 October 2026 · Living product direction
 
 Omnipresent is a presentation canvas that understands the intent of a person communicating and generates or curates visual material in real time to help them explain it.
 
+The product is a native SwiftUI macOS application. Its canvas and preparation workspace are built with native macOS UI; Electron, React renderer and standalone browser delivery are out of scope.
+
 A speaker should be able to develop an idea, follow an unexpected question, compare alternatives, or demonstrate something without continually translating that intent into manual presentation operations. The canvas should feel like a capable visual co-presenter: attentive to the explanation, useful at the right moment, and easy to direct.
 
 “Modern presentation” is an ambition for the quality of communication, visual craft, and interaction. We will discover its specific expression through design and use. The product is free to combine prepared material, generated explanations, visualizations, media, and live experiences.

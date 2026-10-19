@@ -9,7 +9,6 @@ import {AdaptiveController} from "../server/agents/adaptive.js";
 import {prepareEvidence} from "../server/presentation/prepare-evidence.js";
 import {approvePreparedEvidence} from "../server/presentation/component-evidence.js";
 import {Session} from "../server/session.js";
-import {parseSessionEvent} from "../app/src/services/session-client.js";
 const signal=()=>new AbortController().signal;
 const model={id:"fixture",model:"fixture",async decide(){throw Error("Unexpected model");}};
 test("exact vector cache separates modes, deduplicates batches, isolates returned values and evicts",async()=>{
@@ -45,7 +44,6 @@ test("controller waits for preparation and stop prevents queued speech from comm
  const decider=Object.assign(async()=>{calls++;return {composition:null};},{prepare:async()=>ready});
  const controller=new AdaptiveController(new Session(e=>events.push(e)),e=>events.push(e),()=>{},decider);
  const state=synthesisContext().state;void controller.start(state);const waiting=controller.accept("Morning output");assert.equal(calls,0);controller.stop();release();await waiting;assert.equal(calls,0);assert.ok(!events.some(e=>e.type==="direction_completed"));
- assert.deepEqual(parseSessionEvent('{"type":"presentation_ready"}'),{type:"presentation_ready"});
 });
 
 test("a reviewed content edit only re-encodes changed documents and source withdrawal still fails",async()=>{
@@ -59,9 +57,4 @@ test("concurrent cache calls have independent cancellation and failed work is no
  const releases:Array<()=>void>=[];let calls=0;
  const source={space:{model:"fake",revision:"r1",dimensions:2},async encode(texts:string[]){calls++;await new Promise<void>(r=>releases.push(r));return texts.map(()=>[1,0]);}};
  const cache=new CachedEmbedder(source),abort=new AbortController();const cancelled=cache.encode(["a"],"query",abort.signal);const valid=cache.encode(["a"],"query",signal());abort.abort();releases.forEach(release=>release());await assert.rejects(cancelled);assert.deepEqual(await valid,[[1,0]]);await cache.encode(["a"],"query",signal());assert.equal(calls,2);
-});
-
-test("readiness acknowledgements retain attempt identity and reject malformed IDs",()=>{
- assert.deepEqual(parseSessionEvent('{"type":"presentation_ready","requestId":"attempt-2"}'),{type:"presentation_ready",requestId:"attempt-2"});
- assert.throws(()=>parseSessionEvent('{"type":"presentation_ready","requestId":2}'));
 });

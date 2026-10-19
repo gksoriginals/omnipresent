@@ -21,7 +21,7 @@ body:
     id: environment
     attributes:
       label: Environment and model profiles
-      description: OS/architecture, Node/Python versions, model IDs and whether the endpoint is local. No keys.
+      description: macOS version, Mac architecture, Node version, model IDs and whether the endpoint is local. No keys.
     validations:
       required: true
   - type: textarea

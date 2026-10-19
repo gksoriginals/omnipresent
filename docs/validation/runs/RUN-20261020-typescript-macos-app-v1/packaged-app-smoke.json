@@ -1,0 +1,25 @@
+{
+  "kind": "supplemental-manual-smoke",
+  "verifiedAt": "2026-10-19T21:34:18.778Z",
+  "appBundle": "output/desktop/mac-arm64/Omnipresent.app",
+  "bundleIdentifier": "com.omnipresent.app",
+  "runtime": "packaged Electron app with bundled TypeScript coordinator and React renderer",
+  "renderer": "http://127.0.0.1:51350/",
+  "health": {
+    "path": "/api/health",
+    "status": "ok",
+    "pid": 22473
+  },
+  "uiObserved": [
+    "Prepare and Canvas navigation",
+    "session sidebar toggle",
+    "material attachment inside composer",
+    "chat and story preview side by side"
+  ],
+  "pythonProductRuntime": false,
+  "notCovered": [
+    "speech model download or acoustic quality",
+    "EmbeddingGemma download or retrieval quality",
+    "fresh install and first-run download flow"
+  ]
+}

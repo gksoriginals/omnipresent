@@ -46,11 +46,11 @@ The official Laya ONNX path is worth testing, but no export, SDK upgrade or quan
 
 The compact experiment changes both payload and question wording, so it diagnoses feasibility and input shape, not a causal model/quantization improvement. Labels and prompts are authored development data; they do not justify default adoption.
 
-Reproduce with the existing optional runner and synthetic manifest:
+This optional Python runner is retained only for reproducing the historical model comparison; it is not included in or required by the TypeScript desktop app. Reproduce it with the archived research runner and synthetic manifest:
 
 ```sh
 # Existing dependency lock and pinned runner; do not replace with latest implicitly.
-npm run decision:serve
+npm run research:decision:serve
 node --import tsx scripts/local-decision-feasibility.ts RUN-unique-local-probe
 ```
 

@@ -12,7 +12,7 @@ test("dual-screen presenter view and session resumption", async () => {
   const child = spawn(
     process.execPath,
     ["--import", "tsx", "--import", "./tests/helpers/local-embedding-preload.mjs", "server/index.ts"],
-    { env: { ...process.env, PORT: "4329", OMNIPRESENT_DB_PATH: ":memory:" }, stdio: "pipe" },
+    { env: { ...process.env, PORT: "4329", OMNIPRESENT_DB_PATH: ":memory:", OMNIPRESENT_TEST_EMBEDDINGS:"1" }, stdio: "pipe" },
   );
   const clients: WebSocket[] = [];
 

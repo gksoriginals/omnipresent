@@ -1,5 +1,7 @@
 # Frontend boundaries
 
+> **Historical browser-prototype validation.** The module notes and Playwright procedure below document checks against the retired React renderer. The active macOS interface is SwiftUI; the TypeScript coordinator and shared domain modules remain active.
+
 19 October 2026 · Implemented modularization, preserving the existing product layout.
 
 `App.tsx` remains the application composition view. It connects the services below and coordinates preparation updates, project selection, saving and removal. It no longer implements microphone acquisition, PCM buffering, WebSocket reconnection or renderer serialization.
@@ -21,8 +23,8 @@ No state-management dependency, storage migration, API replacement or new UI set
 
 Service tests cover draft persistence and storage failures, one-in-flight audio and overflow, cancelled microphone acquisition, typed event rejection and detached socket callbacks. Existing real-package renderer tests cover OpenUI/JSON-render parity.
 
-Run the development server, then `npx tsx scripts/frontend-modularity-probe.ts` to launch the isolated `modularity-review` Playwright CLI session. It uses a seeded synthetic story; it replaces only that browser session's local workspace, never an attached user browser. The script checks 1440/900/600-pixel widths, independent story scrolling, visible composer/save controls, draft reload, session switching, sidebar persistence, library and ready view. It does not start a physical microphone or invoke preparation models. The wrapper requires the installed Playwright CLI skill and available browser.
+The former Playwright probe used a seeded synthetic story to check 1440/900/600-pixel widths, independent story scrolling, composer/save controls, draft reload, session switching and sidebar persistence. Its source and outputs are retained under the historical validation records; its standalone browser launch script has been removed. Current UI changes are run and reviewed in Electron.
 
-Browser evidence is copied to `docs/validation/evidence/frontend-modularity-*`; diagnostic logs and intermediate failed fixture setup attempts remain in `output/playwright/frontend-modularity/`. A browser fixture is layout/persistence evidence, not an interview-to-live-model acceptance test.
+The retained renderer evidence is under `docs/validation/evidence/frontend-modularity-*`; intermediate failed fixture setup attempts remain in the original validation record. These fixtures are layout/persistence evidence, not an interview-to-live-model acceptance test.
 
 Final software validation: [92/92 tests and successful TypeScript/production build](../validation/runs/RUN-20261019-frontend-replay-final-audit/run.json). [Browser report and frozen source manifest](../validation/runs/RUN-20261019-frontend-browser/browser.json).

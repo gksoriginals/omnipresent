@@ -1,5 +1,7 @@
 # Agent framework, communication, and LiveKit assessment
 
+> **Historical design and prototype record.** Later implementation notes and screenshots below describe the earlier browser product. Omnipresent now uses a native SwiftUI interface; use the [current architecture](architecture/current.md) and [macOS guide](desktop-macos-alpha.md) for active behavior and setup.
+
 16 October 2026 · Provisional implementation decision; separate agent roles remain product requirements
 
 ## Decision for the current slice

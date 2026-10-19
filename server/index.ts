@@ -1,14 +1,9 @@
 import {audienceState,audienceEvent} from "./presentation/audience.js";
 import {runtimeDefaults} from './config/defaults.js';
 import {compositionPlanner} from "./presentation/composition.js";
-import {MoonshineSmallStreamingModel} from "./models/speech.js";
 import {presentationCatalog} from "./presentation/catalog.js";
 import { materials } from "./materials.js";
 import { createServer } from "node:http";
-import { readFile, stat } from "node:fs/promises";
-import { resolve, extname } from "node:path";
-import { spawn, type ChildProcessWithoutNullStreams } from "node:child_process";
-import { createInterface } from "node:readline";
 import { monitorEventLoopDelay } from "node:perf_hooks";
 import { WebSocketServer, WebSocket } from "ws";
 import {createPresenter} from "./presentation/factory.js";
@@ -25,62 +20,21 @@ import { localModel, modelConfiguration } from "./agents/model.js";
 import { emptyPreparation, preparationSchema } from "../shared/preparation.js";
 import { SqliteWorkspaceStore } from "./storage/sqlite-workspace.js";
 import { workspaceHandler } from "./storage/workspace-handler.js";
+import {handleModelSettings} from "./config/model-settings.js";
 const port = Number(process.env.PORT ?? 4317);
-const production = process.argv.includes("--production");
-const python = process.env.OMNIPRESENT_PYTHON ?? resolve(".venv/bin/python");
-const allowedOrigins = new Set([`http://127.0.0.1:${port}`, `http://localhost:${port}`, "http://127.0.0.1:5173", "http://localhost:5173"]);
+const allowedOrigins = new Set<string>();
 const workspaceStore = new SqliteWorkspaceStore();
 const server = createServer(async (req, res) => {
-  if (await materials(req, res, python, allowedOrigins)) return;
+  if (await handleModelSettings(req,res,allowedOrigins)) return;
+  if (await materials(req, res, allowedOrigins)) return;
   if (await workspaceHandler(req, res, allowedOrigins, workspaceStore)) return;
-  if (req.url?.startsWith("/api/trial/")) {
-    const name=req.url.slice("/api/trial/".length);
-    if(!["manifest.json","generation-first.wav","storage-first.wav","detour-and-return.wav"].includes(name)){res.writeHead(404);res.end();return;}
-    try{const content=await readFile(resolve("output/adaptive-trial",name));res.setHeader("Content-Type",name.endsWith(".json")?"application/json":"audio/wav");res.setHeader("Cache-Control","no-store");res.end(content);}catch{res.writeHead(404);res.end("Trial materials have not been generated");}return;
-  }
   if (req.url === "/api/health") {
     res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify({ ok: true, pid: process.pid }));
     return;
   }
-  if (!production) {
-    res.writeHead(404);
-    res.end();
-    return;
-  }
-  try {
-    const requested = decodeURIComponent(
-      new URL(req.url ?? "/", "http://localhost").pathname,
-    );
-    const base = resolve("dist");
-    let path = resolve(base, "." + requested);
-    if (path !== base && !path.startsWith(base + "/")) {
-      res.writeHead(403);
-      res.end();
-      return;
-    }
-    try {
-      if (!(await stat(path)).isFile()) path = resolve(base, "index.html");
-    } catch {
-      path = resolve(base, "index.html");
-    }
-    const content = await readFile(path);
-    res.setHeader(
-      "Content-Type",
-      (
-        {
-          ".html": "text/html",
-          ".js": "text/javascript",
-          ".css": "text/css",
-          ".png": "image/png",
-        } as Record<string, string>
-      )[extname(path)] ?? "application/octet-stream",
-    );
-    res.end(content);
-  } catch {
-    res.writeHead(500);
-    res.end("Unable to serve application");
-  }
+  res.writeHead(404,{"Content-Type":"application/json"});
+  res.end(JSON.stringify({error:"Not found"}));
 });
 const wss = new WebSocketServer({ noServer: true, maxPayload: 1048576 });
 server.on("upgrade", (req, socket, head) => {
@@ -88,8 +42,6 @@ server.on("upgrade", (req, socket, head) => {
   const allowed = new Set([
     `http://127.0.0.1:${port}`,
     `http://localhost:${port}`,
-    "http://127.0.0.1:5173",
-    "http://localhost:5173",
   ]);
   const reqPath = req.url ? new URL(req.url, "http://localhost").pathname : "";
   if (
@@ -106,7 +58,7 @@ server.on("upgrade", (req, socket, head) => {
 const lag = monitorEventLoopDelay({ resolution: 10 });
 lag.enable();
 
-import {LivePresentationSession,type SpeechRuntime} from "./presentation/live-session.js";
+import {LivePresentationSession} from "./presentation/live-session.js";
 
 const liveSessions = new Map<string, LivePresentationSession>();
 const pendingAudienceSockets = new Map<string, Set<WebSocket>>();
@@ -153,8 +105,6 @@ wss.on("connection", (ws, req: any) => {
     attachAudienceSocket(ws, initialSessionId);
   }
 
-  let speech:SpeechRuntime={speechStatus:"unloaded",pendingAudio:false,audioSequence:0};
-  let load: ChildProcessWithoutNullStreams | undefined;
   const send = (event: Record<string, unknown>) => {
     if((initialRole==="audience"||attachedAudienceSessionId)&&!["error","pong","waiting_for_presentation"].includes(String(event.type)))return;
     if (ws.readyState === WebSocket.OPEN) {
@@ -208,77 +158,6 @@ wss.on("connection", (ws, req: any) => {
   let activePresenter=createPresenter(undefined,new EmbeddingGemmaModel(),{write:event=>broadcastPresentation({type:"presentation_trace",...event})},compositionPlanner(process.env.OMNIPRESENT_COMPOSITION_PLANNER??runtimeDefaults.presentation.planner));
   let adaptive = new AdaptiveController(session,broadcastPresentation,feedback,activePresenter.presenter.decide);
   send(session.snapshot());
-  send({ type: "worker_status", status: speech.speechStatus });
-  const write = (data: Record<string, unknown>) =>
-    speech.worker?.stdin.write(JSON.stringify(data) + "\n");
-  function closeSpeech() {
-    adaptive.resetTranscripts();
-    speech.pendingAudio = false;
-    speech.worker?.kill();
-    speech.worker = undefined;
-    speech.speechStatus = "unloaded";
-    send({ type: "worker_status", status: speech.speechStatus });
-  }
-  function ensureWorker() {
-    if (speech.worker) return;
-    const child = new MoonshineSmallStreamingModel().spawnWorker(python);
-    speech.worker = child;
-    // Library progress/logs contain no audio payload. Keep bounded, don't echo source data.
-    let diagnostic = "";
-    child.stderr.on("data", (chunk) => {
-      diagnostic = (diagnostic + chunk.toString()).slice(-1500);
-    });
-    child.on("error", () => {
-      if (speech.worker !== child) return;
-      send({
-        type: "error",
-        message: "Speech worker could not start. Run the local Python setup.",
-      });
-      closeSpeech();
-    });
-    child.stdin.on("error", () => {});
-    const lines = createInterface({ input: child.stdout });
-    lines.on("line", (line) => {
-      if (speech.worker !== child) return;
-      try {
-        const event = JSON.parse(line);
-        if (event.type === "worker_status") {
-          speech.speechStatus = event.status;
-
-        }
-        if (event.type === "audio_ack") speech.pendingAudio = false;
-        broadcastPresentation(event);
-        if (event.type === "transcript" && event.final && event.text?.trim()) {
-          if (activeLiveSession) activeLiveSession.lastTranscript = event.text;
-        }
-        if(event.type==="transcript"||event.type==="speech_activity")adaptive.acceptTranscript(event);
-      } catch {
-        send({ type: "error", message: "Invalid response from speech worker" });
-      }
-    });
-    child.on("exit", (code) => {
-      if (speech.worker !== child) return;
-      speech.worker = undefined;
-      speech.pendingAudio = false;
-      speech.speechStatus = "unloaded";
-
-      broadcastPresentation({ type: "worker_status", status: speech.speechStatus });
-      if (code)
-        send({
-          type: "error",
-          message:
-            "Speech worker exited. Retry loading the model; details: " +
-            diagnostic.slice(-300),
-        });
-    });
-  }
-  function cancelLoad() {
-    if (load) {
-      load.kill();
-      load = undefined;
-      send({ type: "load_status", status: "cancelled" });
-    }
-  }
   ws.on("message", (raw, isBinary) => {
     try {
       if (activeLiveSession && (activeLiveSession.disposed || activeLiveSession.presenterSocket !== ws)) throw Error("Presenter connection was replaced");
@@ -295,25 +174,7 @@ wss.on("connection", (ws, req: any) => {
         }
         throw Error("Audience connections are read-only");
       }
-      if (isBinary) {
-        if (speech.speechStatus !== "listening")
-          throw Error("Start listening before sending audio");
-        const audio = Array.isArray(raw)
-          ? Buffer.concat(raw)
-          : Buffer.from(raw as ArrayBuffer);
-        if (audio.length > 32000 || audio.length % 2)
-          throw Error("Invalid PCM frame");
-        if (speech.pendingAudio)
-          throw Error("Audio worker is busy; wait for acknowledgement");
-        speech.pendingAudio = true;
-        write({
-          type: "audio",
-          pcm: audio.toString("base64"),
-          sampleRate: 16000,
-          sequence: ++speech.audioSequence,
-        });
-        return;
-      }
+      if (isBinary) throw Error("Audio is transcribed locally before being sent to the presentation session");
       const event = JSON.parse(raw.toString());
       switch (event.type) {
         case "preparation_open": {
@@ -360,12 +221,10 @@ wss.on("connection", (ws, req: any) => {
             loadedStoryOrigin = existing.storyOrigin;
             presentationEpoch = existing.presentationEpoch;
             if(activePresenter!==existing.activePresenter)activePresenter.presenter.close();
-            if(speech!==existing.speech)speech.worker?.kill();
             session = existing.session;
             adaptive = existing.adaptive;
             adaptive.resetTranscripts();
             activePresenter = existing.activePresenter;
-            speech = existing.speech;
 
             send({
               type: "presentation_loaded",
@@ -378,7 +237,6 @@ wss.on("connection", (ws, req: any) => {
             });
             if (existing.lastSnapshot) send(existing.lastSnapshot);
             if (existing.lastStage) send({ type: "stage", stage: existing.lastStage });
-            send({ type: "worker_status", status: existing.speech.speechStatus });
             if (existing.lastTranscript) send({ type: "transcript", text: existing.lastTranscript, final: true });
             break;
           }
@@ -386,7 +244,7 @@ wss.on("connection", (ws, req: any) => {
           loadedStoryOrigin = typeof event.projectId === "string" ? {projectId:event.projectId,storyId:event.storyId} : undefined;
           loadedStory = story;
           presentationEpoch++;adaptive.stop();
-          if(event.decision!==undefined&&event.decision!=="baseline"&&event.decision!=="local-hybrid"&&event.decision!=="local-classifier"&&event.decision!=="local-reranker"&&!decisionRegistry.list().some(m=>m.id===event.decision))throw Error("Unknown decision provider");
+          if(event.decision!==undefined&&event.decision!=="baseline"&&event.decision!=="local-hybrid"&&!decisionRegistry.list().some(m=>m.id===event.decision))throw Error("Unknown decision provider");
           const selected=createPresenter(event.decision,new EmbeddingGemmaModel(),{write:event=>broadcastPresentation({type:"presentation_trace",...event})},compositionPlanner(process.env.OMNIPRESENT_COMPOSITION_PLANNER??runtimeDefaults.presentation.planner));
           activePresenter.presenter.close();activePresenter=selected;
           adaptive=new AdaptiveController(session,broadcastPresentation,feedback,selected.presenter.decide);
@@ -410,7 +268,6 @@ wss.on("connection", (ws, req: any) => {
               session,
               adaptive,
               activePresenter,
-              speech,
               presenterSocket: ws,
               audienceSockets: audienceSet,
               presentationEpoch,
@@ -451,8 +308,14 @@ wss.on("connection", (ws, req: any) => {
           break;
         case "presentation_speech":
           if (typeof event.text !== "string" || event.text.length > 6000) throw Error("Invalid speech text");
+          if (event.final === false) break;
+          if(event.segmentId!==undefined&&(typeof event.segmentId!=="string"||event.segmentId.length>160))throw Error("Invalid speech segment ID");
+          if(event.streamId!==undefined&&(typeof event.streamId!=="string"||event.streamId.length>160))throw Error("Invalid speech stream ID");
+          if(event.startMs!==undefined&&(!Number.isFinite(event.startMs)||event.startMs<0))throw Error("Invalid speech start time");
+          if(event.endMs!==undefined&&(!Number.isFinite(event.endMs)||event.endMs<0))throw Error("Invalid speech end time");
           if (activeLiveSession) activeLiveSession.lastTranscript = event.text;
           broadcastPresentation({ type: "transcript", text: event.text, final: true });
+          adaptive.acceptTranscript({type:"transcript",segmentId:event.segmentId??randomUUID(),streamId:event.streamId,startMs:event.startMs,endMs:event.endMs,text:event.text,final:true});
 
           break;
         case "finish_interview":
@@ -512,54 +375,8 @@ wss.on("connection", (ws, req: any) => {
         case "cancel":
           adaptive.pause(true);
           session.cancel();
-          cancelLoad();
           send({ type: "cancelled" });
           break;
-        case "speech_load":
-          if (speech.speechStatus === "unloaded") {
-            speech.speechStatus = "loading";
-            send({ type: "worker_status", status: "loading" });
-            ensureWorker();
-            write({ type: "load" });
-          }
-          break;
-        case "speech_start":
-          adaptive.resetTranscripts();
-          if (speech.speechStatus !== "ready")
-            throw Error("Speech model is not ready");
-          write({ type: "start" });
-          break;
-        case "speech_stop":
-          if (speech.speechStatus === "listening") write({ type: "stop" });
-          break;
-        case "speech_unload":
-          closeSpeech();
-          break;
-        case "load_start": {
-          cancelLoad();
-          const child = spawn(python, ["-u", resolve("runtime/stress.py")]);
-          load = child;
-          send({ type: "load_status", status: "running" });
-          child.on("error", () => {
-            if (load === child) {
-              load = undefined;
-              send({
-                type: "error",
-                message: "Synthetic worker failed to start",
-              });
-            }
-          });
-          child.on("exit", (code) => {
-            if (load === child) {
-              load = undefined;
-              send({
-                type: "load_status",
-                status: code === 0 ? "completed" : "failed",
-              });
-            }
-          });
-          break;
-        }
         default:
           throw Error("Unknown session action");
       }
@@ -590,7 +407,7 @@ wss.on("connection", (ws, req: any) => {
     for (const [, set] of pendingAudienceSockets) {
       set.delete(ws);
     }
-    preparation.cancel();load?.kill();clearInterval(metrics);
+    preparation.cancel();clearInterval(metrics);
     if (activeLiveSession && (activeLiveSession.disposed || activeLiveSession.presenterSocket !== ws)) return;
     if (activeLiveSession && activeLiveSession.presenterSocket === ws) {
       activeLiveSession.presenterSocket = null;
@@ -601,7 +418,6 @@ wss.on("connection", (ws, req: any) => {
     activePresenter.presenter.close();
     presentationEpoch++;adaptive.stop();
     session.cancel();
-    speech.worker?.kill();
   });
 });
 server.listen(port, "127.0.0.1", () =>

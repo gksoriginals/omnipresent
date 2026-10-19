@@ -1,5 +1,7 @@
 # Project chats and the story library
 
+> **Historical implementation and UX record.** This document retains the evolution of project sessions and story-library behavior. The supported product is now the native macOS app, with workspace data under Application Support; browser captures and browser-local persistence below refer to earlier prototype validation.
+
 Implemented 16 October 2026.
 
 ## Prepare

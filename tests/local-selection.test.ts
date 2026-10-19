@@ -48,9 +48,9 @@ test("classifier selects an eligible alternative rather than simply returning th
  const selector=new ClassifierPreferenceSelector({id:'preference',async choose(){return wanted;}});
  assert.equal((await selector.select(c,signal())).selected,wanted);assert.equal(selector.stats.choices,1);
 });
-test("product factory defaults to validated synthesis and keeps small reranker explicit",async()=>{
+test("product factory defaults to validated synthesis and excludes Python-only classifiers",async()=>{
  const c=synthesisContext(),active=createPresenter(undefined,embedding);
  const result=await active.presenter.decide(c.state,c.current,'Explain Panels turn sunlight into electricity. This synthetic example peaks at noon.',signal());
  assert.equal(result.metadata?.planner,'synthesis');assert.equal(result.composition?.blocks.length,4);
- const experiment=createPresenter('local-reranker',embedding);assert.equal(experiment.id,'local-reranker');experiment.presenter.close();active.presenter.close();
+ assert.throws(()=>createPresenter('local-reranker',embedding),/Unknown presentation decision profile/);active.presenter.close();
 });

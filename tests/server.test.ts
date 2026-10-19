@@ -7,7 +7,7 @@ test("local transport isolates sessions, rejects bad messages and foreign origin
   const child = spawn(
     process.execPath,
     ["--import", "tsx", "server/index.ts"],
-    { env: { ...process.env, PORT: "4328" }, stdio: "pipe" },
+    { env: { ...process.env, PORT: "4328", OMNIPRESENT_TEST_EMBEDDINGS:"1" }, stdio: "pipe" },
   );
   const clients: WebSocket[] = [];
   try {
@@ -49,6 +49,12 @@ test("local transport isolates sessions, rejects bad messages and foreign origin
       b.events.some((e) => e.type === "stage"),
       false,
     );
+    const transcriptMark=a.events.length;
+    a.ws.send(JSON.stringify({type:"presentation_speech",text:"solar panels",final:false}));
+    await wait(40);assert.equal(a.events.slice(transcriptMark).some(e=>e.type==="transcript"),false,"interim speech must not enter the live presentation pipeline");
+    a.ws.send(JSON.stringify({type:"presentation_speech",text:"Solar panels turn sunlight into electricity.",final:true}));
+    const transcript=await until(a.events,e=>e.type==="transcript"&&e.text==="Solar panels turn sunlight into electricity.");
+    assert.equal(transcript.final,true);
     const pauseMark = a.events.length;
     a.ws.send(JSON.stringify({ type: "pause", value: true }));
     await until(a.events, e => e.type === "snapshot" && e.paused === true);

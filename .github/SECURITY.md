@@ -12,6 +12,6 @@ Uploaded documents, generated diagram specifications, model responses and transc
 
 ## Secrets and data
 
-Use local `.env` configuration. Never commit keys, model authentication files, browser storage exports or personal uploads. Hosted comparison inference is explicit and may transmit the bounded request/menu to the selected provider. Default live selection uses local retrieval. Configuring a remote preparation endpoint sends preparation context there.
+Use local `.env` configuration. Never commit keys, model authentication files, app-data exports or personal uploads. Hosted comparison inference is explicit and may transmit the bounded request/menu to the selected provider. Default live selection uses local retrieval. Configuring a remote preparation endpoint sends preparation context there.
 
 The repository ignores environments, downloaded weights, generated output and uploads. Historical validation artifacts contain synthetic/public-source fixtures and machine metadata; do not add private client data to future public traces. If a credential is exposed, revoke it first, then notify the maintainers privately.

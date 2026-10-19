@@ -26,11 +26,11 @@ Report the extra model requests and retained run separately. Do not count reused
 npm run retrieval:setup
 npm run retrieval:serve
 # Separate terminal; requires the existing local Laya runner and optional hosted credentials:
-npm run decision:serve
+npm run research:decision:serve
 npm run benchmark:retrieval -- RUN-unique-primary
 SHORTLIST_METHODS=semantic-raw npm run benchmark:retrieval -- RUN-unique-followup
 ```
 
-The isolated Python runner uses CPU float32, four threads, 768 dimensions, pinned model revision and explicit retrieval query/document prompts. Its processor currently requires Pillow/torchvision even with vision/audio encoders disabled. Lock files capture those dependencies; this does not validate media embeddings. The earlier failed bootstrap logs must be retained with the experiment.
+The archived isolated Python runner uses CPU float32, four threads, 768 dimensions, pinned model revision and explicit retrieval query/document prompts. It is retained for historical research reproduction and is not included in or required by the TypeScript desktop app. Its processor currently requires Pillow/torchvision even with vision/audio encoders disabled. Lock files capture those dependencies; this does not validate media embeddings. The earlier failed bootstrap logs must be retained with the experiment.
 
 Primary implementation references: [Google text inference and task prompts](https://ai.google.dev/gemma/docs/embeddinggemma/inference-embeddinggemma-with-sentence-transformers), [Sentence Transformers semantic search](https://www.sbert.net/examples/sentence_transformer/applications/semantic-search/README.html). No LangChain, vector database or new hosted infrastructure is introduced.

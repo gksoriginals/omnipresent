@@ -17,7 +17,7 @@ const hash=(v:string|Buffer)=>createHash('sha256').update(v).digest('hex');
 const sourceFiles:{path:string;sha256:string}[]=[];
 async function snapshot(path:string){const bytes=await readFile(path),target=`${directory}/source-snapshot/${path}`;await mkdir(target.slice(0,target.lastIndexOf('/')),{recursive:true});await writeFile(target,bytes);sourceFiles.push({path,sha256:hash(bytes)});}
 async function walk(path:string){for(const file of await readdir(path,{withFileTypes:true})){const p=`${path}/${file.name}`;if(file.isDirectory())await walk(p);else if(/\.(ts|tsx|css|json)$/.test(p))await snapshot(p);}}
-for(const folder of ['server','shared','app/src'])await walk(folder);
+for(const folder of ['server','shared'])await walk(folder);
 for(const path of ['scripts/optimization-replay.ts','scripts/optimization-live-probe.ts','tests/presentation-optimization.test.ts','runtime/retrieval-model.json','package.json','package-lock.json'])await snapshot(path);
 const speech=['Daily curve','Solar panels turn sunlight into electricity.','explain Solar panels turn sunlight into electricity','Storage reserves','Batteries store electricity for later use.','explain Batteries store electricity for later use','Checking the microphone','Show the payback period','Daily curve','Storage reserves','Daily curve','explain Solar panels turn sunlight into electricity'];
 await writeFile(`${directory}/inputs.json`,JSON.stringify({state,speech,refreshAt:[4,9],passes:3},null,2));

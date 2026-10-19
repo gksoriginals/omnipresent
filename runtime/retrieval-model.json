@@ -1,12 +1,12 @@
 {
-  "model": "google/embeddinggemma-2",
-  "revision": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+  "provider": "transformers.js",
+  "model": "onnx-community/embeddinggemma-2-ONNX",
+  "revision": "daa72c51243991dfcaf9f9137d2c573d8f7790c0",
   "device": "cpu",
-  "dtype": "float32",
-  "threads": 4,
+  "dtype": "q8",
   "dimensions": 768,
   "encoders": "text only; vision_config=null, audio_config=null",
   "queryPrompt": "task: search result | query: ",
   "documentPrompt": "title: {title} | text: {text}",
-  "source": "https://ai.google.dev/gemma/docs/embeddinggemma/inference-embeddinggemma-with-sentence-transformers"
+  "source": "https://huggingface.co/onnx-community/embeddinggemma-2-ONNX"
 }

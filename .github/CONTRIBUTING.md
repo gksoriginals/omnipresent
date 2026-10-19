@@ -5,9 +5,9 @@ Omnipresent is an early research prototype developed in public. Small, evidence-
 ## Local workflow
 
 1. Fork and clone the repository; create a focused branch.
-2. Run `npm ci`. Model-free tests/build do not require the optional Python/model setup.
+2. Run `npm ci`. Product tests/build need no Python environment or model-weight download. `npm run dev` builds and opens the native SwiftUI app; no browser renderer is part of the product.
 3. Make a focused change and add meaningful regression coverage for changed behavior.
-4. Run `npm test`, `npm run build`, and `npm run validate:evidence`.
+4. Run `npm test`, `npm run build`, `npm run macos:pack`, and `npm run validate:evidence`.
 5. Open a PR explaining the problem, resulting behavior, validation and remaining limits.
 
 Discuss major architecture changes, new external services, paid dependencies, changes to evidence authority or data formats before implementing them. Preserve local-first operation and explicit experimental opt-in. Keep credentials and private presentations out of issues, fixtures and traces.
@@ -35,7 +35,7 @@ npm run validate:evidence
 
 This is a software audit, not permission to run paid or large model benchmarks. Note unrun optional checks in your PR. CI runs software checks only.
 
-Use existing TypeScript/React and Python conventions. `npm run build` includes TypeScript checking; there is no separate formatter/linter mandate today. Keep lockfiles in sync and justify new dependencies. Write docs for user-visible or architecture changes. Commit only scoped work and never include environments, downloads or uploads.
+Use SwiftUI for macOS interface code and TypeScript for coordinator and model/material modules. Historical research scripts may retain their original runtime. `npm run build` type-checks the coordinator; `npm run macos:pack` compiles the native app. There is no separate formatter/linter mandate today. Keep lockfiles in sync and justify new dependencies. Write docs for user-visible or architecture changes. Commit only scoped work and never include environments, downloads or uploads.
 
 ## Contribution terms
 

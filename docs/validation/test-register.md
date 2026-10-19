@@ -1,6 +1,6 @@
 # Test and experiment register
 
-Current source test mapping: RUN-20261020-preparation-harness-audit-v1. Historical experiments retain their own versions and counts. See [evidence rules](README.md).
+Current source test mapping: RUN-20261020-swiftui-native-v2. Historical experiments retain their own versions and counts. See [evidence rules](README.md).
 
 ## Experiments and plans
 
@@ -112,9 +112,7 @@ Status: **executed**.
 
 Evidence: [adaptive-followup-validation.json](../../docs/research/adaptive-followup-validation.json). Hash retained in catalog.
 
-Three real audio replays, one preparation, two renderers. Replay interaction is manual; the full browser automation is not packaged as a script.
-
-Current reproduction entry point: `npm run trial:setup && npm run trial:prepare`. Inspect prerequisites/output paths before running; model probes may incur costs.
+Historical standalone-browser trial with three real audio replays, one preparation and two renderers. Its launch path has been retired with the browser prototype; evidence is retained.
 
 ### EXP-013 — Native OpenUI/JSON generation baseline
 
@@ -490,11 +488,15 @@ Actual local-model preparation and save/reload/library/preview; desktop/narrow g
 
 Status: **executed**.
 
-Evidence: [run.json](../../docs/validation/runs/RUN-20261020-preparation-harness-audit-v1/run.json). Hash retained in catalog.
+Evidence: [run.json](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/run.json). Hash retained in catalog.
 
-Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261020-preparation-harness-audit-v1/unit-integration.log). Hash retained in catalog.
+Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/unit-integration.log). Hash retained in catalog.
 
-Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261020-preparation-harness-audit-v1/typecheck-build.log). Hash retained in catalog.
+Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/typecheck-build.log). Hash retained in catalog.
+
+Evidence: [packaged-macos-app.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/packaged-macos-app.log). Hash retained in catalog.
+
+Evidence: [publication-check.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/publication-check.log). Hash retained in catalog.
 
 Current tests/typecheck/build/source hashes. Superseded director tests retired; baseline/model-boundary/no-migration tests added. Does not repeat model, browser or audio trials.
 
@@ -560,9 +562,7 @@ Evidence: [checks.json](../../docs/validation/runs/RUN-20261019-frontend-browser
 
 Evidence: [failure.txt](../../docs/validation/runs/RUN-20261019-frontend-browser/failure.txt). Hash retained in catalog.
 
-Isolated seeded synthetic story. 1440/900/600 geometry, draft reload, session switching, sidebar persistence, independent scroll, library and ready view. No physical microphone or live interview/model trial.
-
-Current reproduction entry point: `npx tsx scripts/frontend-modularity-probe.ts`. Inspect prerequisites/output paths before running; model probes may incur costs.
+Historical standalone-browser check using a seeded synthetic story. 1440/900/600 geometry, draft reload, session switching, sidebar persistence, independent scroll, library and ready view. Launch script is retired; no physical microphone or live interview/model trial.
 
 ### EXP-044 — Composition planner separation and guarded retention replay
 
@@ -642,9 +642,7 @@ Evidence: [component-coverage-v4-checks.json](../../docs/validation/runs/RUN-202
 
 Evidence: [initial-focused-assertion-failures.log](../../docs/validation/runs/RUN-20261019-component-coverage-browser/initial-focused-assertion-failures.log). Hash retained in catalog.
 
-Actual local coordinator with seeded reviewed text/diagram story, coverage disclosure and 1440/900/600 geometry. Earlier invalid UUID/connection-limit failures retained. No microphone or new model generation.
-
-Current reproduction entry point: `OMNIPRESENT_UI_PROBE_OUTPUT=output/playwright/component-coverage npx tsx scripts/frontend-modularity-probe.ts`. Inspect prerequisites/output paths before running; model probes may incur costs.
+Historical standalone-browser check with seeded reviewed text/diagram story, coverage disclosure and 1440/900/600 geometry. Launch script is retired; earlier invalid UUID/connection-limit failures retained. No microphone or new model generation.
 
 ### EXP-047 — Bounded richer synthesis replay
 
@@ -700,9 +698,7 @@ Evidence: [panel.png](../../docs/validation/runs/RUN-20261019-synthesis-browser/
 
 Evidence: [review.html](../../docs/validation/runs/RUN-20261019-synthesis-browser/review.html). Hash retained in catalog.
 
-Four components, two real chart SVGs and synthetic PNG, both renderer packages at 1440/900/600. Temporary harness removed after probe; no microphone or full product acceptance.
-
-Current reproduction entry point: `npx tsx scripts/synthesis-browser-probe.ts`. Inspect prerequisites/output paths before running; model probes may incur costs.
+Historical standalone-browser renderer comparison: four components, two real chart SVGs and synthetic PNG, both renderer packages at 1440/900/600. Temporary harness and launch path are retired; no microphone or full product acceptance.
 
 ### EXP-049 — Reviewed local preparation and actual Chrome spoken rich demo
 
@@ -1052,6 +1048,42 @@ Same four recordings, one pass per case. Panel starts on battery view and must c
 
 Current reproduction entry point: `node --import tsx scripts/speech-assembly-replay.ts RUN-unique-id`. Inspect prerequisites/output paths before running; model probes may incur costs.
 
+### EXP-066 — Native SwiftUI app shell, model settings and packaged coordinator
+
+Status: **executed-local-software-and-package-check**.
+
+Evidence: [run.json](../../docs/validation/runs/RUN-20261020-swiftui-native-v1/run.json). Hash retained in catalog.
+
+Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v1/unit-integration.log). Hash retained in catalog.
+
+Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v1/typecheck-build.log). Hash retained in catalog.
+
+Evidence: [packaged-macos-app.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v1/packaged-macos-app.log). Hash retained in catalog.
+
+Evidence: [publication-check.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v1/publication-check.log). Hash retained in catalog.
+
+Native SwiftUI interface, credential-safe model settings, owner-only persistence, bundled TypeScript coordinator and official standalone Node runtime. Includes coordinator HTTP health/settings smoke and app compilation. No model inference, real microphone, speech-quality or interactive UI acceptance.
+
+Current reproduction entry point: `node scripts/audit-validation.mjs RUN-20261020-swiftui-native-v1`. Inspect prerequisites/output paths before running; model probes may incur costs.
+
+### EXP-067 — SwiftUI package runtime imports and refreshed source evidence
+
+Status: **executed-local-software-and-package-check**.
+
+Evidence: [run.json](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/run.json). Hash retained in catalog.
+
+Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/unit-integration.log). Hash retained in catalog.
+
+Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/typecheck-build.log). Hash retained in catalog.
+
+Evidence: [packaged-macos-app.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/packaged-macos-app.log). Hash retained in catalog.
+
+Evidence: [publication-check.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/publication-check.log). Hash retained in catalog.
+
+Rechecks current documentation/source hashes and loads the bundled Transformers.js plus native ONNX runtime before the packaged coordinator HTTP smoke. No model weights, inference, real microphone or interactive native UI trial.
+
+Current reproduction entry point: `node scripts/audit-validation.mjs RUN-20261020-swiftui-native-v2`. Inspect prerequisites/output paths before running; model probes may incur costs.
+
 ### PLAN-002 — Media retrieval, dimensions and semantic answer cache comparison
 
 Status: **planned**.
@@ -1070,7 +1102,7 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 
 ## Current individual software cases
 
-170/170 passed in RUN-20261020-preparation-harness-audit-v1, 0 failed, 0 skipped.
+159/159 passed in RUN-20261020-swiftui-native-v2, 0 failed, 0 skipped.
 
 | ID | Case | Source |
 |---|---|---|
@@ -1125,13 +1157,6 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-EVIDENCE-CONTRACT-10 | a wrongly bound prepared cue cannot override evidence obligations | [tests/evidence-contract.test.ts:18](../../tests/evidence-contract.test.ts#L18) |
 | TEST-EVIDENCE-CONTRACT-11 | public-source obligations have useful positive coverage and reject unsupported conjunctions | [tests/evidence-contract.test.ts:19](../../tests/evidence-contract.test.ts#L19) |
 | TEST-EVIDENCE-CONTRACT-12 | single-quoted requests cannot become active intent while contractions remain ordinary text | [tests/evidence-contract.test.ts:21](../../tests/evidence-contract.test.ts#L21) |
-| TEST-FRONTEND-SERVICES-01 | audio queue sends one chunk until acknowledged and clears on overflow | [tests/frontend-services.test.ts:6](../../tests/frontend-services.test.ts#L6) |
-| TEST-FRONTEND-SERVICES-02 | workspace store retains in-tab changes after persistence failure and protects unreadable storage | [tests/frontend-services.test.ts:12](../../tests/frontend-services.test.ts#L12) |
-| TEST-FRONTEND-SERVICES-03 | session client ignores unknown telemetry and detached socket callbacks | [tests/frontend-services.test.ts:20](../../tests/frontend-services.test.ts#L20) |
-| TEST-FRONTEND-SERVICES-04 | cancelled microphone acquisition stops tracks before constructing audio resources | [tests/frontend-services.test.ts:27](../../tests/frontend-services.test.ts#L27) |
-| TEST-FRONTEND-SERVICES-05 | workspace hydration preserves concurrent drafts and serializes subsequent saves | [tests/frontend-services.test.ts:33](../../tests/frontend-services.test.ts#L33) |
-| TEST-FRONTEND-SERVICES-06 | failed server saves retain the newest snapshot for an explicit retry | [tests/frontend-services.test.ts:56](../../tests/frontend-services.test.ts#L56) |
-| TEST-FRONTEND-SERVICES-07 | session events expose assembled speech separately from interim transcript updates | [tests/frontend-services.test.ts:65](../../tests/frontend-services.test.ts#L65) |
 | TEST-LIBRARY-GROUNDING-01 | live grounding does not characterize real source evidence as simulated | [tests/library-grounding.test.ts:5](../../tests/library-grounding.test.ts#L5) |
 | TEST-LIBRARY-GROUNDING-02 | grounding does not silently choose a hosted comparison provider | [tests/library-grounding.test.ts:14](../../tests/library-grounding.test.ts#L14) |
 | TEST-LIBRARY-POLICY-01 | prepared whole-utterance cues bypass inference and preserve unchanged asset identity | [tests/library-policy.test.ts:9](../../tests/library-policy.test.ts#L9) |
@@ -1155,8 +1180,9 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-LOCAL-SELECTION-05 | preference deadline falls back locally; parent cancellation never commits a fallback | [tests/local-selection.test.ts:35](../../tests/local-selection.test.ts#L35) |
 | TEST-LOCAL-SELECTION-06 | preference has one preparation lifecycle and closes its resources | [tests/local-selection.test.ts:41](../../tests/local-selection.test.ts#L41) |
 | TEST-LOCAL-SELECTION-07 | classifier selects an eligible alternative rather than simply returning the first rank | [tests/local-selection.test.ts:45](../../tests/local-selection.test.ts#L45) |
-| TEST-LOCAL-SELECTION-08 | product factory defaults to validated synthesis and keeps small reranker explicit | [tests/local-selection.test.ts:51](../../tests/local-selection.test.ts#L51) |
-| TEST-MATERIALS-01 | local upload extraction handles PDF, Office and images; rejects unsupported files and origins | [tests/materials.test.ts:7](../../tests/materials.test.ts#L7) |
+| TEST-LOCAL-SELECTION-08 | product factory defaults to validated synthesis and excludes Python-only classifiers | [tests/local-selection.test.ts:51](../../tests/local-selection.test.ts#L51) |
+| TEST-MATERIALS-01 | TypeScript material extraction handles text, DOCX and images; rejects unsupported files and origins | [tests/materials.test.ts:12](../../tests/materials.test.ts#L12) |
+| TEST-MODEL-SETTINGS-01 | model settings can be tested and saved without returning the API key | [tests/model-settings.test.ts:10](../../tests/model-settings.test.ts#L10) |
 | TEST-PREDICTIVE-COMPONENTS-01 | hybrid component facets restrict both lexical and vector scoring to prepared families | [tests/predictive-components.test.ts:9](../../tests/predictive-components.test.ts#L9) |
 | TEST-PREDICTIVE-COMPONENTS-02 | hybrid search rejects cross-project, changed source and embedding-space cache reuse | [tests/predictive-components.test.ts:17](../../tests/predictive-components.test.ts#L17) |
 | TEST-PREDICTIVE-COMPONENTS-03 | forecast context excludes future speech and private notes and invalidates on epoch, revision and expiry | [tests/predictive-components.test.ts:24](../../tests/predictive-components.test.ts#L24) |
@@ -1165,14 +1191,13 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-PREPARATION-HARNESS-01 | preparation skill traverses material, chart, draft and explicit review through the SDK | [tests/preparation-harness.test.ts:12](../../tests/preparation-harness.test.ts#L12) |
 | TEST-PREPARATION-HARNESS-02 | preparation skill rejects missing references and cancellation without partial draft mutation | [tests/preparation-harness.test.ts:30](../../tests/preparation-harness.test.ts#L30) |
 | TEST-PREPARATION-HARNESS-03 | preparation skill reconstructs host evidence instead of trusting supplied approval | [tests/preparation-harness.test.ts:36](../../tests/preparation-harness.test.ts#L36) |
-| TEST-PRESENTATION-OPTIMIZATION-01 | exact vector cache separates modes, deduplicates batches, isolates returned values and evicts | [tests/presentation-optimization.test.ts:15](../../tests/presentation-optimization.test.ts#L15) |
-| TEST-PRESENTATION-OPTIMIZATION-02 | cancelled and malformed vectors cannot poison cache; instances do not share private inputs | [tests/presentation-optimization.test.ts:22](../../tests/presentation-optimization.test.ts#L22) |
-| TEST-PRESENTATION-OPTIMIZATION-03 | compiled snapshots reuse only host-owned immutable input and detect unversioned evidence changes | [tests/presentation-optimization.test.ts:29](../../tests/presentation-optimization.test.ts#L29) |
-| TEST-PRESENTATION-OPTIMIZATION-04 | prepared presenter builds before speech and interprets each turn once without changing supported or missing outcomes | [tests/presentation-optimization.test.ts:35](../../tests/presentation-optimization.test.ts#L35) |
-| TEST-PRESENTATION-OPTIMIZATION-05 | controller waits for preparation and stop prevents queued speech from committing | [tests/presentation-optimization.test.ts:43](../../tests/presentation-optimization.test.ts#L43) |
-| TEST-PRESENTATION-OPTIMIZATION-06 | a reviewed content edit only re-encodes changed documents and source withdrawal still fails | [tests/presentation-optimization.test.ts:51](../../tests/presentation-optimization.test.ts#L51) |
-| TEST-PRESENTATION-OPTIMIZATION-07 | concurrent cache calls have independent cancellation and failed work is not retained | [tests/presentation-optimization.test.ts:58](../../tests/presentation-optimization.test.ts#L58) |
-| TEST-PRESENTATION-OPTIMIZATION-08 | readiness acknowledgements retain attempt identity and reject malformed IDs | [tests/presentation-optimization.test.ts:64](../../tests/presentation-optimization.test.ts#L64) |
+| TEST-PRESENTATION-OPTIMIZATION-01 | exact vector cache separates modes, deduplicates batches, isolates returned values and evicts | [tests/presentation-optimization.test.ts:14](../../tests/presentation-optimization.test.ts#L14) |
+| TEST-PRESENTATION-OPTIMIZATION-02 | cancelled and malformed vectors cannot poison cache; instances do not share private inputs | [tests/presentation-optimization.test.ts:21](../../tests/presentation-optimization.test.ts#L21) |
+| TEST-PRESENTATION-OPTIMIZATION-03 | compiled snapshots reuse only host-owned immutable input and detect unversioned evidence changes | [tests/presentation-optimization.test.ts:28](../../tests/presentation-optimization.test.ts#L28) |
+| TEST-PRESENTATION-OPTIMIZATION-04 | prepared presenter builds before speech and interprets each turn once without changing supported or missing outcomes | [tests/presentation-optimization.test.ts:34](../../tests/presentation-optimization.test.ts#L34) |
+| TEST-PRESENTATION-OPTIMIZATION-05 | controller waits for preparation and stop prevents queued speech from committing | [tests/presentation-optimization.test.ts:42](../../tests/presentation-optimization.test.ts#L42) |
+| TEST-PRESENTATION-OPTIMIZATION-06 | a reviewed content edit only re-encodes changed documents and source withdrawal still fails | [tests/presentation-optimization.test.ts:49](../../tests/presentation-optimization.test.ts#L49) |
+| TEST-PRESENTATION-OPTIMIZATION-07 | concurrent cache calls have independent cancellation and failed work is not retained | [tests/presentation-optimization.test.ts:56](../../tests/presentation-optimization.test.ts#L56) |
 | TEST-PRESENTER-SAFETY-01 | manual cues hold unsupported evidence and invalidate pending automatic decisions | [tests/presenter-safety.test.ts:7](../../tests/presenter-safety.test.ts#L7) |
 | TEST-PRESENTER-SAFETY-02 | manual cues respect independent review policy | [tests/presenter-safety.test.ts:23](../../tests/presenter-safety.test.ts#L23) |
 | TEST-PRESENTER-SAFETY-03 | assembled utterances and speech-routing traces stay out of audience events | [tests/presenter-safety.test.ts:32](../../tests/presenter-safety.test.ts#L32) |
@@ -1180,10 +1205,6 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-PRESENTER-SAFETY-05 | final host authorization rejects unsupported and malformed experimental proposals | [tests/presenter-safety.test.ts:51](../../tests/presenter-safety.test.ts#L51) |
 | TEST-PRESENTER-SAFETY-06 | final host authorization allows a supported experimental proposal | [tests/presenter-safety.test.ts:65](../../tests/presenter-safety.test.ts#L65) |
 | TEST-PRESENTER-SAFETY-07 | unchanged manual views still reauthorize without duplicate canvas commits | [tests/presenter-safety.test.ts:70](../../tests/presenter-safety.test.ts#L70) |
-| TEST-RENDERERS-01 | both real renderer packages display equivalent grounded content | [tests/renderers.test.tsx:8](../../tests/renderers.test.tsx#L8) |
-| TEST-RENDERERS-02 | OpenUI accepts split compositions and numeric reveal boundaries | [tests/renderers.test.tsx:14](../../tests/renderers.test.tsx#L14) |
-| TEST-RENDERERS-03 | both renderer adapters display validated paired component references | [tests/renderers.test.tsx:19](../../tests/renderers.test.tsx#L19) |
-| TEST-RENDERERS-04 | both adapters accept four-component cross-beat synthesis with stable slots | [tests/renderers.test.tsx:24](../../tests/renderers.test.tsx#L24) |
 | TEST-REPLAY-01 | paired replay includes refresh, fallback and grounding in total time and retains failed rows | [tests/replay.test.ts:5](../../tests/replay.test.ts#L5) |
 | TEST-REPLAY-02 | initialization failure cannot silently disappear from replay denominators | [tests/replay.test.ts:13](../../tests/replay.test.ts#L13) |
 | TEST-REPLAY-03 | replay attributes model fallbacks to their turn and protects frozen expectations | [tests/replay.test.ts:17](../../tests/replay.test.ts#L17) |

@@ -1,5 +1,7 @@
 > Current public-development architecture: [implemented defaults and boundaries](current.md). This dated document is historical; hosted selection and earlier composition defaults below are superseded.
 
+> The earlier isolated Python speech worker and Moonshine renderer are superseded. The native SwiftUI app uses Apple's on-device Speech framework; see the [current macOS runtime](../desktop-macos-alpha.md).
+
 > Live selection update: [local-only selection and optional classifier preference](local-selection.md) defines current defaults, lifecycle, fallback and the closed feedback loop.
 
 > 19 October 2026: [local-only selection baseline](local-selection.md) now supersedes the hosted ambiguous-decision default described below. Normal live presentation uses host eligibility and local hybrid ranking, with no provider model or automatic paid fallback. Historical evidence and explicit comparison adapters remain.

@@ -1,0 +1,169 @@
+
+> omnipresent@0.1.0-alpha.1 desktop:pack
+> npm run desktop:build && electron-builder --dir
+
+
+> omnipresent@0.1.0-alpha.1 desktop:build
+> npm run build && node scripts/build-desktop-server.mjs
+
+
+> omnipresent@0.1.0-alpha.1 build
+> tsc --noEmit && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 2570 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                            0.87 kB │ gzip:     0.46 kB
+dist/assets/stt-worker-rJFro2Y8.js                         7.57 kB
+dist/assets/moonshine--7Zs2PVp.mjs                       156.45 kB
+dist/assets/moonshine-BVXNa59I.wasm                   13,155.93 kB │ gzip: 6,467.19 kB
+dist/assets/index-Df-O38e4.css                            24.31 kB │ gzip:     5.68 kB
+dist/assets/pie-XZMESJXO-Dot5dfKq.js                       0.10 kB │ gzip:     0.11 kB
+dist/assets/info-OHQRW6UA-vNA4W1BY.js                      0.10 kB │ gzip:     0.11 kB
+dist/assets/radar-ABXABTNO-B-JNDxsg.js                     0.10 kB │ gzip:     0.11 kB
+dist/assets/packet-JDAUHWVQ-B8hYuedA.js                    0.10 kB │ gzip:     0.11 kB
+dist/assets/cynefin-EF2NZ3EQ-B22Il0Q0.js                   0.10 kB │ gzip:     0.11 kB
+dist/assets/treemap-SAJKECNS-BtKhU7nu.js                   0.10 kB │ gzip:     0.11 kB
+dist/assets/wardley-7MLQ67FV-zgQ1s-nD.js                   0.10 kB │ gzip:     0.11 kB
+dist/assets/array-BifhSqXX.js                              0.10 kB │ gzip:     0.11 kB
+dist/assets/gitGraph-VSP46ZUC-TdWHDRg-.js                  0.10 kB │ gzip:     0.11 kB
+dist/assets/railroad-I3PHUGI6-CZyDVcgN.js                  0.10 kB │ gzip:     0.11 kB
+dist/assets/treeView-D4JQ5SDB-C4nFWZ36.js                  0.10 kB │ gzip:     0.11 kB
+dist/assets/railroad-peg-JR7BVNR7-Cx8B3Fw_.js              0.11 kB │ gzip:     0.11 kB
+dist/assets/architecture-WOLXFQ4H-O--ui1FL.js              0.11 kB │ gzip:     0.11 kB
+dist/assets/railroad-abnf-LNEFI6M7-Vj_R5cg2.js             0.11 kB │ gzip:     0.11 kB
+dist/assets/railroad-ebnf-DWYD2UWJ-CUdwkvqU.js             0.11 kB │ gzip:     0.11 kB
+dist/assets/eventmodeling-K75KTNOO-CXHQFMgp.js             0.11 kB │ gzip:     0.12 kB
+dist/assets/channel-BRbPd6NV.js                            0.11 kB │ gzip:     0.12 kB
+dist/assets/chunk-Y2CYZVJY-DsF7k-Jl.js                     0.15 kB │ gzip:     0.14 kB
+dist/assets/chunk-2Q5K7J3B-C1jixKkw.js                     0.19 kB │ gzip:     0.16 kB
+dist/assets/chunk-JWPE2WC7-DVXcaiue.js                     0.22 kB │ gzip:     0.17 kB
+dist/assets/chunk-XXDRQBXY-0nC1nFlS.js                     0.26 kB │ gzip:     0.22 kB
+dist/assets/chunk-OYAV6JZA-DfqSL6P_.js                     0.32 kB │ gzip:     0.25 kB
+dist/assets/init-ZlXS9mIS.js                               0.35 kB │ gzip:     0.17 kB
+dist/assets/chunk-5VM5RSS4-ZNzvKenW.js                     0.36 kB │ gzip:     0.27 kB
+dist/assets/chunk-OD3NTWWA-tWtUB_cI.js                     0.45 kB │ gzip:     0.31 kB
+dist/assets/chunk-VTWWFHGB-CErZyUMc.js                     0.45 kB │ gzip:     0.31 kB
+dist/assets/chunk-3M4EKCLJ-DOMgvaXT.js                     0.46 kB │ gzip:     0.31 kB
+dist/assets/chunk-VZTHESGH-BsQ8KQ39.js                     0.46 kB │ gzip:     0.31 kB
+dist/assets/chunk-VPELOWWC-Dw8jWE1Y.js                     0.46 kB │ gzip:     0.31 kB
+dist/assets/chunk-53FOQ5SW-f76P46nL.js                     0.50 kB │ gzip:     0.35 kB
+dist/assets/chunk-VQ5W62QI-YEpI15gg.js                     0.57 kB │ gzip:     0.40 kB
+dist/assets/flowDiagram-IUGLLWBU-Biet4EHA.js               0.59 kB │ gzip:     0.32 kB
+dist/assets/chunk-QNH66VMT-BbxTKInC.js                     0.60 kB │ gzip:     0.39 kB
+dist/assets/chunk-J5ZVWO5B-oDCd-gWO.js                     0.63 kB │ gzip:     0.43 kB
+dist/assets/infoDiagram-MVDRKAX5-BmVkP6ww.js               0.65 kB │ gzip:     0.42 kB
+dist/assets/chunk-YK26KJH5-CFTvfUrJ.js                     0.83 kB │ gzip:     0.46 kB
+dist/assets/swimlanesDiagram-AYQRV4AK-CyaS_Vo1.js          0.86 kB │ gzip:     0.49 kB
+dist/assets/sizeCapture-INFHLROL-3uHXrFqA.js               0.87 kB │ gzip:     0.51 kB
+dist/assets/chunk-DUW6YSOI-Dgx8z5s3.js                     0.89 kB │ gzip:     0.46 kB
+dist/assets/chunk-24IY7LWP-BnbC-kCW.js                     0.90 kB │ gzip:     0.48 kB
+dist/assets/chunk-KPI5JJXK-CYaUTtMz.js                     0.92 kB │ gzip:     0.49 kB
+dist/assets/line-ZA5xHuWB.js                               0.95 kB │ gzip:     0.46 kB
+dist/assets/chunk-ZO67DCNQ-DQMJSBMv.js                     1.04 kB │ gzip:     0.58 kB
+dist/assets/chunk-BP2KR52E-CwyHPMMJ.js                     1.05 kB │ gzip:     0.59 kB
+dist/assets/rolldown-runtime-COiEfhsA.js                   1.11 kB │ gzip:     0.62 kB
+dist/assets/chunk-F6S3BTY2-CZGFqKcE.js                     1.12 kB │ gzip:     0.61 kB
+dist/assets/ordinal-CPleeUAT.js                            1.18 kB │ gzip:     0.57 kB
+dist/assets/chunk-ZAUX2LTX-Dz_wCL3G.js                     1.41 kB │ gzip:     0.79 kB
+dist/assets/chunk-4S7OKTRW-Bg7nzAWG.js                     1.46 kB │ gzip:     0.78 kB
+dist/assets/preload-helper-BLdHbfdN.js                     1.51 kB │ gzip:     0.79 kB
+dist/assets/band-DZ4Jagyz.js                               1.53 kB │ gzip:     0.66 kB
+dist/assets/chunk-TPMEZKFX-mvOucSjo.js                     1.67 kB │ gzip:     0.74 kB
+dist/assets/railroadDiagram-Y72NRBL7-FbV7Op3k.js           1.70 kB │ gzip:     0.79 kB
+dist/assets/abnfDiagram-WEYOIA3C-D-szdxuL.js               1.89 kB │ gzip:     0.91 kB
+dist/assets/chunk-UHW7PFBP-CFgr-fqm.js                     1.95 kB │ gzip:     0.95 kB
+dist/assets/chunk-55XCU76K-CFWJWMef.js                     1.96 kB │ gzip:     0.88 kB
+dist/assets/pegDiagram-ECIUJNBX-Dw4kYabU.js                2.05 kB │ gzip:     0.96 kB
+dist/assets/ebnfDiagram-V4P3TTPT-LUzEOzTZ.js               2.10 kB │ gzip:     0.91 kB
+dist/assets/dist-CumnGVmJ.js                               2.17 kB │ gzip:     0.97 kB
+dist/assets/path-CZufQBSX.js                               2.27 kB │ gzip:     0.98 kB
+dist/assets/chunk-EJLWFMJV-CXExVdMV.js                     3.40 kB │ gzip:     1.48 kB
+dist/assets/arc-Z1ws1xLI.js                                3.47 kB │ gzip:     1.46 kB
+dist/assets/diagram-I5XIIV2D-hJGzNMsT.js                   4.34 kB │ gzip:     1.89 kB
+dist/assets/defaultLocale-BFoDCU3G.js                      4.63 kB │ gzip:     2.12 kB
+dist/assets/chunk-4EMNKR2T-BErmZwUP.js                     5.43 kB │ gzip:     2.50 kB
+dist/assets/linear-DqlDL6nI.js                             5.74 kB │ gzip:     2.37 kB
+dist/assets/chunk-YZO67HFG-BBCgXzXk.js                     5.83 kB │ gzip:     2.68 kB
+dist/assets/diagram-RJA3I4VV-DzTSWY_O.js                   6.07 kB │ gzip:     2.56 kB
+dist/assets/pieDiagram-GNMPY74T-mmiOAW9D.js                6.21 kB │ gzip:     2.59 kB
+dist/assets/mermaid-parser.core-BHOBNwvf.js                6.57 kB │ gzip:     1.86 kB
+dist/assets/diagram-ODIL2UCW-DLN5bXes.js                   8.12 kB │ gzip:     3.65 kB
+dist/assets/string-f6JzSHaO.js                             8.40 kB │ gzip:     3.60 kB
+dist/assets/noop-DMPW1R3Q.js                               9.17 kB │ gzip:     2.27 kB
+dist/assets/cynefinDiagram-WF24UDRP-U5KtQxv4.js            9.94 kB │ gzip:     3.51 kB
+dist/assets/chunk-ZCHMQSOR-D8i-oLc2.js                    10.39 kB │ gzip:     4.32 kB
+dist/assets/diagram-PFBEJUXE-5BsQ3BW3.js                  10.92 kB │ gzip:     4.25 kB
+dist/assets/jsx-runtime-D4VsZU6P.js                       12.04 kB │ gzip:     4.19 kB
+dist/assets/chunk-HNE4Q36P-r-g2vLR_.js                    14.83 kB │ gzip:     4.23 kB
+dist/assets/time-BuatF_c4.js                              14.92 kB │ gzip:     4.81 kB
+dist/assets/chunk-2E7WHVMD-BIybqpjT.js                    15.64 kB │ gzip:     4.36 kB
+dist/assets/diagram-CBK3MWTC-DesDv5o7.js                  15.75 kB │ gzip:     5.52 kB
+dist/assets/ishikawaDiagram-HPEHV2GE-CCI7HGd5.js          17.30 kB │ gzip:     6.52 kB
+dist/assets/kanban-definition-FNSA4HC5-D8a20n0Q.js        20.30 kB │ gzip:     7.17 kB
+dist/assets/chunk-7S6XSTFO-B57mnkQd.js                    22.03 kB │ gzip:     6.96 kB
+dist/assets/sankeyDiagram-SY24JHO5-ECL4n0fc.js            22.78 kB │ gzip:     8.25 kB
+dist/assets/journeyDiagram-BOSHW7O7-ZyFxGRmG.js           23.15 kB │ gzip:     8.16 kB
+dist/assets/mindmap-definition-6OY57UG3-CPUVEeCk.js       23.66 kB │ gzip:     8.04 kB
+dist/assets/graphlib-DS17s2tU.js                          23.90 kB │ gzip:     8.31 kB
+dist/assets/wardleyDiagram-IVAIDKWA-Djha5FRu.js           25.20 kB │ gzip:     6.55 kB
+dist/assets/rough.esm-Dy-Kn_BL.js                         27.10 kB │ gzip:     8.85 kB
+dist/assets/gitGraphDiagram-PDYL7XHY-DiAAJBo8.js          29.01 kB │ gzip:     8.54 kB
+dist/assets/timeline-definition-JXYKGLGB-DD-maCP7.js      30.46 kB │ gzip:    10.01 kB
+dist/assets/erDiagram-KYQIGQAA-C9HGnmwV.js                30.65 kB │ gzip:    10.57 kB
+dist/assets/requirementDiagram-EQYSW5RA-BtDOtoYz.js       31.07 kB │ gzip:     9.82 kB
+dist/assets/quadrantDiagram-D57K4MC3-hQibb245.js          33.51 kB │ gzip:     9.74 kB
+dist/assets/src-DVwbrubC.js                               37.17 kB │ gzip:    12.41 kB
+dist/assets/mermaid.core-Aex2i_ys.js                      37.62 kB │ gzip:    12.79 kB
+dist/assets/chunk-WQQL4CDK-CAfFexT6.js                    37.90 kB │ gzip:     8.18 kB
+dist/assets/vennDiagram-Q3Y3IDCW-DHwZVx-r.js              41.17 kB │ gzip:    15.10 kB
+dist/assets/stateDiagram-v2-A6IESKWZ-0i92CE_z.js          41.54 kB │ gzip:    13.88 kB
+dist/assets/blockDiagram-RJAE7QA3-BQHdVgYb.js             42.49 kB │ gzip:    13.87 kB
+dist/assets/xychartDiagram-4URNHDU4-25D1M1I7.js           43.24 kB │ gzip:    11.89 kB
+dist/assets/chunk-LNGE3PJU-Cz3NAIRA.js                    46.36 kB │ gzip:    15.52 kB
+dist/assets/dagre-NK4GIZVX-V0rcHwC3.js                    47.83 kB │ gzip:    17.11 kB
+dist/assets/classDiagram-v2-4MYWR3UA-B0L6GrnC.js          49.70 kB │ gzip:    16.14 kB
+dist/assets/chunk-AQDTSKZB-CUXTIPnO.js                    51.23 kB │ gzip:    16.62 kB
+dist/assets/ganttDiagram-R7GPNTJY-TNVyb7oB.js             55.31 kB │ gzip:    18.62 kB
+dist/assets/chunk-NQOKRVIF-BH3OSW52.js                    62.84 kB │ gzip:    20.42 kB
+dist/assets/c4Diagram-XDPPPE54-DHg_2Mld.js                65.08 kB │ gzip:    18.63 kB
+dist/assets/diagram-TYUNFSNR-r1Q2jzHa.js                  80.50 kB │ gzip:    25.19 kB
+dist/assets/cose-bilkent-JH36ORCC-DHyChngA.js             81.22 kB │ gzip:    21.52 kB
+dist/assets/swimlanes-B3ENRKFQ-7Kvg9xca.js               106.44 kB │ gzip:    36.23 kB
+dist/assets/chunk-HAGFOTED-B8P9YMzk.js                   115.56 kB │ gzip:    29.08 kB
+dist/assets/sequenceDiagram-BLEHNHQU-CMaTsPCg.js         117.69 kB │ gzip:    31.34 kB
+dist/assets/architectureDiagram-ZHVYKT53--vd7xZV9.js     148.89 kB │ gzip:    41.13 kB
+dist/assets/usecaseDiagram-WPOLBNNX-iVP6w65a.js          187.90 kB │ gzip:    49.26 kB
+dist/assets/chunk-DSNLSHJZ-TmPXgPQK.js                   241.37 kB │ gzip:    40.34 kB
+dist/assets/katex-B_JcIwqj.js                            258.80 kB │ gzip:    77.65 kB
+dist/assets/Chart-CclGXQeg.js                            295.62 kB │ gzip:    83.29 kB
+dist/assets/cytoscape.esm-BegBNzOV.js                    434.75 kB │ gzip:   137.75 kB
+dist/assets/index-DSnJo7U4.js                            518.41 kB │ gzip:   161.23 kB
+dist/assets/chunk-NGNAAXSQ-C2Wy9Xmz.js                   629.04 kB │ gzip:   127.32 kB
+dist/assets/elk-QONTBCTQ-Czma_JH4.js                   1,462.93 kB │ gzip:   455.90 kB
+
+✓ built in 515ms
+  • electron-builder  version=26.15.3 os=27.0.0
+  • loaded configuration  file=package.json ("build" field)
+  • author is missed in the package.json  appPackageFile=/Users/gopikrishnansasikumar/projects/omnipresent/package.json
+  • executing @electron/rebuild  electronVersion=44.9.0 arch=arm64 buildFromSource=false workspaceRoot=/Users/gopikrishnansasikumar/projects/omnipresent projectDir=./ appDir=./
+  • installing native dependencies  arch=arm64
+  • completed installing native dependencies
+  • packaging       platform=darwin arch=arm64 electron=44.9.0 appOutDir=output/desktop/mac-arm64
+  • downloaded      label=electron progress=100%
+  • downloaded electron zip extracted successfully  output=/Users/gopikrishnansasikumar/projects/omnipresent/output/desktop/mac-arm64
+  • searching for node modules  pm=npm searchDir=/Users/gopikrishnansasikumar/projects/omnipresent
+  • duplicate dependency references  dependencies=["@ai-sdk/provider@4.0.28","@emnapi/runtime@1.11.3","@json-render/core@0.21.1","@openuidev/react-lang@1.0.1","react-dom@19.3.1","react-dom@19.3.1","@ai-sdk/provider-utils@5.0.61","@ai-sdk/provider@4.0.28","@ai-sdk/provider-utils@5.0.61","@ai-sdk/provider@4.0.28","@types/d3-interpolate@3.0.4","d3-interpolate@3.0.1","@chevrotain/gast@13.2.0","d3-drag@3.0.0","d3-interpolate@3.0.1","d3-transition@3.0.1","d3-array@3.2.4","d3-dsv@3.0.1","d3-array@3.2.4","d3-interpolate@3.0.1","d3-array@3.2.4","d3-interpolate@3.0.1","d3-time-format@4.1.0","d3-time@3.1.0","d3-time@3.1.0","d3-array@3.2.4","d3-transition@3.0.1","d3-drag@3.0.0","d3-interpolate@3.0.1","d3-transition@3.0.1","d3@7.9.0","token-types@6.1.2","react-redux@9.3.0","react-dom@19.3.1","@types/d3-interpolate@3.0.4","@types/d3-scale@4.0.9","@types/d3-shape@3.2.0","d3-array@3.2.4","d3-interpolate@3.0.1","d3-scale@4.0.2","d3-shape@3.2.0","d3-time@3.1.0"]
+  • default Electron icon is used  reason=application icon is not set
+  • skipped macOS code signing  reason=identity explicitly is set to null
+[plugin rolldown:vite-resolve] Module "module" has been externalized for browser compatibility, imported by "/Users/gopikrishnansasikumar/projects/omnipresent/node_modules/@moonshine-ai/moonshine-wasm/dist/moonshine.mjs". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin rolldown:vite-resolve] Module "worker_threads" has been externalized for browser compatibility, imported by "/Users/gopikrishnansasikumar/projects/omnipresent/node_modules/@moonshine-ai/moonshine-wasm/dist/moonshine.mjs". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin rolldown:vite-resolve] Module "module" has been externalized for browser compatibility, imported by "/Users/gopikrishnansasikumar/projects/omnipresent/node_modules/@moonshine-ai/moonshine-wasm/dist/moonshine.mjs". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin rolldown:vite-resolve] Module "worker_threads" has been externalized for browser compatibility, imported by "/Users/gopikrishnansasikumar/projects/omnipresent/node_modules/@moonshine-ai/moonshine-wasm/dist/moonshine.mjs". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

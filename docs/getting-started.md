@@ -1,35 +1,52 @@
 # Getting started
 
-Requirements: Node.js **22.13+**, npm, [uv](https://docs.astral.sh/uv/), Python **3.12** managed by uv, and a local model server for preparation. Development has been exercised on macOS/Apple Silicon; CI checks portable software behavior on Linux. Other platforms' model runtimes remain unverified.
+Omnipresent is a native macOS presentation app. SwiftUI provides the interface; the app launches a local TypeScript coordinator for interview, story preparation, material extraction, retrieval and live presentation decisions.
+
+## Requirements
+
+- macOS 14 or later
+- Xcode Command Line Tools (Swift compiler and macOS SDK)
+- Node.js 22.13+ and npm
+- [Ollama](https://ollama.com/) for local interview and storyteller inference
+
+Install dependencies and prepare a local model:
 
 ```sh
 git clone https://github.com/gksoriginals/omnipresent.git
 cd omnipresent
 npm ci
 npm run setup:env
-```
-
-For local preparation, install [Ollama](https://ollama.com/), start its service and download the configured model:
-
-```sh
 ollama pull qwen3.5:4b
 ```
 
-Install speech and retrieval runtimes separately; these download packages and model weights and require additional disk/RAM:
+Start the Ollama service, then launch the app:
 
 ```sh
-npm run setup:speech
-npm run retrieval:setup
 npm run dev
 ```
 
-Open **http://127.0.0.1:5173**. The coordinator listens on loopback port 4317 and the embedding service on 4332. `npm run dev` starts retrieval when installed; model initialization may take time. The speech model loads when presentation starts. Some Hugging Face models may require accepting upstream terms and local authentication; do not put tokens in source control. Read [third-party and model notices](third-party-notices.md) before downloading or redistributing runtimes.
+This type-checks the TypeScript coordinator, builds the native macOS app bundle and opens it. Source changes require a rebuild and relaunch; there is no React renderer or browser UI.
 
-The UI can start without model environments; preparation, retrieval and voice features need their respective running dependencies. There is no fake-model success fallback. Use Prepare to chat and attach materials, finish the interview, review the generated story, and save it. Canvas lists saved stories; select one and start. Projects and stories are cached in this browser and saved to local SQLite; uploaded material files are stored under ignored `output/materials/`. This is a single-user local app, not a hosted multi-user service.
+## Configure a model
 
-Configuration, optional keys, loading precedence and ignored files: [environment setup](configuration.md).
+Open **Omnipresent → Settings…** or click the sliders control in the main window. Enter an OpenAI-compatible base URL and model identifier; Ollama defaults to `http://127.0.0.1:11434/v1` and `qwen3.5:4b`. Add an API key only when the endpoint requires one. **Save & test connection** checks the endpoint's model list. The key is stored in a user-only settings file and never returned to the interface. New preparation turns use saved settings.
 
+Live presentation selection remains local: hybrid retrieval, host evidence checks and deterministic composition. It does not call a paid decision model. Speech capture requests macOS permissions and requires Apple's English recognizer to report on-device support; the app does not silently send microphone audio to a network service.
 
-## Storage and scope
+## Use the app
 
-Projects and stories are cached in browser storage and saved to `output/omnipresent.db`. Startup restores the server workspace before opening the preparation session. Saves from one tab are ordered; simultaneous editing from multiple tabs is not supported. Export a story from Canvas to transfer its reviewed snapshot and referenced image files to another installation. Bundles contain private preparation context as well as audience content, so share them deliberately. Uploaded files are stored under ignored `output/materials/`. The app is a single-user local prototype; it is not a hosted multi-user service. See [configuration](configuration.md), [security policy](../.github/SECURITY.md), and [current architecture](architecture/current.md).
+In Prepare, talk with the interview agent, attach relevant files from the composer and use the adjacent story panel to review the storyteller's flow. Ask for revisions in chat, then save the reviewed story. In Canvas, select a saved story and start presenting. An optional audience display opens in a second macOS window.
+
+The SQLite workspace, settings, uploaded image assets and Hugging Face cache live under `~/Library/Application Support/Omnipresent`. The app does not import old browser-local drafts automatically. Exported story bundles include private preparation context, so share them deliberately.
+
+## Build without launching
+
+```sh
+npm run build
+npm run macos:pack
+open output/macos/Omnipresent.app
+```
+
+The bundle currently targets Apple Silicon and macOS 14+. It is ad-hoc signed for local testing. Public distribution requires a universal or Intel build strategy, Developer ID signing and notarization. First use may fetch the pinned EmbeddingGemma ONNX model; that download is not part of dependency installation or tests.
+
+See [model and environment configuration](configuration.md), [architecture](architecture/current.md), [testing](testing.md) and [third-party notices](third-party-notices.md).

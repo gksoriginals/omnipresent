@@ -1,5 +1,7 @@
 # Bounded multi-component synthesis
 
+> **Renderer experiment record.** The archived geometry comparison used a standalone React/browser harness. Keep its results as historical renderer evidence; the active product interface is now native SwiftUI.
+
 19 October 2026 · Opt-in experiment; default focus baseline retained.
 
 `OMNIPRESENT_COMPOSITION_PLANNER=synthesis` selects a deterministic planner that can assemble one to four prepared components, including references from different beats. It uses the existing model-selected or cue-selected primary component; synthesis itself makes no model calls. The example combines a bar chart, image, explanatory text and a cross-beat line chart.
@@ -28,17 +30,11 @@ The synthesis arm performs more validation work than focus; these diagnostic tim
 
 [Browser renderer evidence](../validation/runs/RUN-20261019-synthesis-browser/browser.json) uses both actual rendering packages, real Recharts SVGs and a generated synthetic PNG, at 1440, 900 and 600 pixels. All four references render, two chart SVGs and the image load, no horizontal overflow occurs, and desktop content stays within the test canvas. The temporary review page is removed after the probe; no debug route is added to the product. This renderer harness is not microphone or interview-to-live acceptance evidence.
 
-## Reproduce
+## Retained renderer evidence
 
-```sh
-npx tsx scripts/synthesis-replay.ts RUN-your-unique-id
-# With npm run dev already serving the application:
-npx tsx scripts/synthesis-browser-probe.ts
-# To experiment in the product, restart the coordinator with:
-OMNIPRESENT_COMPOSITION_PLANNER=synthesis npm run dev
-```
+The historical browser renderer comparison is retained at [the validation record](../validation/runs/RUN-20261019-synthesis-browser/browser.json). Its standalone review page and launch script have been removed. Reproduce the domain replay with `npx tsx scripts/synthesis-replay.ts RUN-your-unique-id`; to compare the planner inside the Electron development app, set `OMNIPRESENT_COMPOSITION_PLANNER=synthesis` in the local `.env` before running `npm run dev`.
 
-The replay captures frozen inputs/source hashes, JSONL stage traces, rows and per-pass summaries. The browser probe needs the installed Playwright CLI skill and the existing Python/Pillow environment. It creates synthetic artwork in output/, uses its own browser session and closes it on completion.
+The replay captures frozen inputs/source hashes, JSONL stage traces, rows and per-pass summaries. Synthetic artwork used by the retired renderer probe remains in its original validation record; no standalone browser app is supported.
 
 Next acceptance work: independently review cross-beat coverage, prepare real stories with component declarations, replay natural speech, and evaluate narrative usefulness/change cost. Complementary-claim union reasoning, inferred relations, viewport-driven selection and node-level reveal coverage remain outside this experiment.
 
