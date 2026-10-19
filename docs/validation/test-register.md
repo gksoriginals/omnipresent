@@ -1,6 +1,6 @@
 # Test and experiment register
 
-Current source test mapping: RUN-20261019-runtime-cleanup-audit-v1. Historical experiments retain their own versions and counts. See [evidence rules](README.md).
+Current source test mapping: RUN-20261020-preparation-harness-audit-v1. Historical experiments retain their own versions and counts. See [evidence rules](README.md).
 
 ## Experiments and plans
 
@@ -490,11 +490,11 @@ Actual local-model preparation and save/reload/library/preview; desktop/narrow g
 
 Status: **executed**.
 
-Evidence: [run.json](../../docs/validation/runs/RUN-20261019-runtime-cleanup-audit-v1/run.json). Hash retained in catalog.
+Evidence: [run.json](../../docs/validation/runs/RUN-20261020-preparation-harness-audit-v1/run.json). Hash retained in catalog.
 
-Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261019-runtime-cleanup-audit-v1/unit-integration.log). Hash retained in catalog.
+Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261020-preparation-harness-audit-v1/unit-integration.log). Hash retained in catalog.
 
-Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261019-runtime-cleanup-audit-v1/typecheck-build.log). Hash retained in catalog.
+Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261020-preparation-harness-audit-v1/typecheck-build.log). Hash retained in catalog.
 
 Current tests/typecheck/build/source hashes. Superseded director tests retired; baseline/model-boundary/no-migration tests added. Does not repeat model, browser or audio trials.
 
@@ -1070,7 +1070,7 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 
 ## Current individual software cases
 
-167/167 passed in RUN-20261019-runtime-cleanup-audit-v1, 0 failed, 0 skipped.
+170/170 passed in RUN-20261020-preparation-harness-audit-v1, 0 failed, 0 skipped.
 
 | ID | Case | Source |
 |---|---|---|
@@ -1162,6 +1162,9 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-PREDICTIVE-COMPONENTS-03 | forecast context excludes future speech and private notes and invalidates on epoch, revision and expiry | [tests/predictive-components.test.ts:24](../../tests/predictive-components.test.ts#L24) |
 | TEST-PREDICTIVE-COMPONENTS-04 | malformed family distributions fail closed and retrieval never creates unsupported component references | [tests/predictive-components.test.ts:34](../../tests/predictive-components.test.ts#L34) |
 | TEST-PREFERENCE-QUALITY-01 | preference fixture has a single declared target among five fully eligible alternatives | [tests/preference-quality.test.ts:5](../../tests/preference-quality.test.ts#L5) |
+| TEST-PREPARATION-HARNESS-01 | preparation skill traverses material, chart, draft and explicit review through the SDK | [tests/preparation-harness.test.ts:12](../../tests/preparation-harness.test.ts#L12) |
+| TEST-PREPARATION-HARNESS-02 | preparation skill rejects missing references and cancellation without partial draft mutation | [tests/preparation-harness.test.ts:30](../../tests/preparation-harness.test.ts#L30) |
+| TEST-PREPARATION-HARNESS-03 | preparation skill reconstructs host evidence instead of trusting supplied approval | [tests/preparation-harness.test.ts:36](../../tests/preparation-harness.test.ts#L36) |
 | TEST-PRESENTATION-OPTIMIZATION-01 | exact vector cache separates modes, deduplicates batches, isolates returned values and evicts | [tests/presentation-optimization.test.ts:15](../../tests/presentation-optimization.test.ts#L15) |
 | TEST-PRESENTATION-OPTIMIZATION-02 | cancelled and malformed vectors cannot poison cache; instances do not share private inputs | [tests/presentation-optimization.test.ts:22](../../tests/presentation-optimization.test.ts#L22) |
 | TEST-PRESENTATION-OPTIMIZATION-03 | compiled snapshots reuse only host-owned immutable input and detect unversioned evidence changes | [tests/presentation-optimization.test.ts:29](../../tests/presentation-optimization.test.ts#L29) |

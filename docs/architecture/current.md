@@ -1,6 +1,6 @@
 # Current architecture and defaults
 
-19 October 2026. Implemented local development architecture; spontaneous-speech acceptance remains failed.
+20 October 2026. Implemented local development architecture; spontaneous-speech acceptance remains failed.
 
 ## Findings adopted in code
 
@@ -97,3 +97,7 @@ flowchart TD
 The owner tracks loaded, preparing, ready and disposed states. Socket replacement retains the existing resources and cancels expiry. Disposal cancels decisions, releases the presenter and speech worker, and notifies audiences. Transport callbacks and frontend microphone/pause coordination remain outside this ownership extraction.
 
 Latest cleanup software evidence: [RUN-20261019-runtime-cleanup-audit-v1](../validation/runs/RUN-20261019-runtime-cleanup-audit-v1/run.json), with 167 passing tests and a successful production build. This is distinct from the small authored audio replay and does not establish general microphone acceptance.
+
+## Preparation harness foundation
+
+The interview/storyteller prompts are versioned in `server/preparation/prompts.ts`. The storyteller uses the built-in evidence-backed-story procedure and shared host-validated draft operation. See [presentation harness, source map and workflow diagram](presentation-harness.md) for implemented boundaries, tests and deferred extensions. This does not change the local live decision path or confer approval/commit authority on agents.

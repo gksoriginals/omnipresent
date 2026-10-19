@@ -4,6 +4,7 @@
 
 - [Root README](../README.md): setup, defaults and honest product status.
 - [Getting started](getting-started.md): complete local setup and runtime requirements.
+- [Presentation harness](architecture/presentation-harness.md): responsibility map, first built-in story procedure and workflow diagram.
 - [Current architecture](architecture/current.md): implemented boundaries and model decisions.
 - [Product requirements](PRD.md): experience and product intent.
 - [Roadmap](roadmap.md): next bounded work.

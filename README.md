@@ -56,7 +56,7 @@ The conversation shown is an authored demonstration. [Screenshot details](docs/i
 
 Prepare a story with the interview and storytelling agents, then let the canvas follow your explanation. Local speech recognition assembles completed speech before the presenter selects and composes relevant prepared content. The host checks supporting evidence before showing any proposed view; missing evidence keeps the current canvas and sends a request back to Prepare.
 
-[Architecture diagrams and runtime boundaries](docs/architecture/current.md) · [Speech assembly findings](docs/research/speech-assembly.md)
+[Architecture diagrams and runtime boundaries](docs/architecture/current.md) · [Preparation harness](docs/architecture/presentation-harness.md) · [Speech assembly findings](docs/research/speech-assembly.md)
 
 ## Get started
 
