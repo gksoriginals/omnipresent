@@ -1,0 +1,5 @@
+
+> omnipresent@0.1.0-alpha.1 check:publication
+> node scripts/check-publication.mjs
+
+Publication checks passed for 1860 tracked files. Run Gitleaks separately; this is not a complete secret/privacy audit.

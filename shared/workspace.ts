@@ -4,6 +4,11 @@ export const WORKSPACE_KEY = "omnipresent-workspace-v1";
 const projectSchema = z.object({
   id: z.string().min(1), title: z.string().max(160), createdAt: z.number(), updatedAt: z.number(),
   state: preparationSchema, composer: z.string().max(6000),
+  pendingPreparation: z.object({
+    kind: z.enum(["message", "finishInterview"]), text: z.string().max(6000),
+    role: z.enum(["interview", "storyteller"]), status: z.enum(["working", "interrupted", "failed"]),
+    baseRevision: z.number().int().nonnegative(), startedAt: z.number(),
+  }).optional(),
 });
 export const storySchema = z.object({ id: z.string().min(1), projectId: z.string().min(1), savedAt: z.number(), state: preparationSchema });
 export const workspaceSchema = z.object({ version: z.literal(1), activeProjectId: z.string(), projects: z.array(projectSchema).min(1), stories: z.array(storySchema), storyHistory: z.array(storySchema).optional(), removedStories: z.array(storySchema).optional(), removedProjects: z.array(projectSchema).optional() });

@@ -1,0 +1,190 @@
+{
+  "runId": "RUN-20261023-foundation-model-feasibility",
+  "recordedAt": "2026-10-23T14:00:11.750Z",
+  "scope": "Two frozen synthetic preparation cases; one call per provider and case; on-device Foundation Models versus installed local Ollama Qwen; no hosted inference.",
+  "environment": {
+    "hardware": "Apple M5, arm64",
+    "macOS": "27.0.1 (26A434)",
+    "xcode": "27.1 (27A9275)",
+    "swift": "6.4"
+  },
+  "foundationModels": {
+    "framework": "Apple FoundationModels",
+    "model": "SystemLanguageModel.default",
+    "availability": "available",
+    "contextSize": 8192
+  },
+  "ollama": {
+    "model": "qwen3.5:4b",
+    "modelDigest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+    "quantization": "Q4_K_M",
+    "runtimeVersion": "0.40.9",
+    "endpoint": "127.0.0.1:11434"
+  },
+  "results": [
+    {
+      "caseId": "supported-transit-story",
+      "foundationModels": {
+        "elapsedMs": 7376.456584,
+        "contextSize": 8192,
+        "validJSON": true,
+        "validShape": true,
+        "unknownSourceIDs": [
+          "source route-a",
+          "source route-b",
+          "source survey-c"
+        ],
+        "usedRequiredSourceIDs": [],
+        "missingEvidence": [
+          "details on pilot duration and service areas",
+          "criteria for evaluating pilot success",
+          "feedback from other routes not included"
+        ],
+        "response": {
+          "title": "Evening Service Pilot: Route Changes and Stakeholder Support",
+          "beats": [
+            {
+              "title": "Revised Schedule for Route 12",
+              "claim": "Route 12 will receive two additional evening departures on weekdays beginning in September, as outlined in the pilot initiative.",
+              "sourceIDs": [
+                "source route-a"
+              ]
+            },
+            {
+              "title": "Extended Departure for Route 18",
+              "claim": "Route 18's last weekday departure moves from 9:10 pm to 9:40 pm, reflecting adjusted timing for the pilot.",
+              "sourceIDs": [
+                "source route-b"
+              ]
+            },
+            {
+              "title": "Public Support for Later Service",
+              "claim": "64% of 120 survey respondents support later weekday service, indicating strong backing for the pilot changes.",
+              "sourceIDs": [
+                "source survey-c"
+              ]
+            }
+          ],
+          "missingEvidence": [
+            "details on pilot duration and service areas",
+            "criteria for evaluating pilot success",
+            "feedback from other routes not included"
+          ],
+          "questionForPresenter": "What criteria will the committee use to assess the effectiveness of the pilot changes across all routes?"
+        }
+      },
+      "ollama": {
+        "model": "qwen3.5:4b",
+        "elapsedMs": 116897.315875,
+        "validJSON": false,
+        "validShape": false,
+        "unknownSourceIDs": null,
+        "usedRequiredSourceIDs": []
+      }
+    },
+    {
+      "caseId": "missing-ridership-evidence",
+      "foundationModels": {
+        "elapsedMs": 7022.479082999998,
+        "contextSize": 8192,
+        "validJSON": true,
+        "validShape": true,
+        "unknownSourceIDs": [],
+        "usedRequiredSourceIDs": [
+          "pilot-description"
+        ],
+        "missingEvidence": [
+          "Actual ridership numbers during the pilot period",
+          "Comparison data for ridership before and after the pilot",
+          "Cost breakdown and financial outcomes from the pilot"
+        ],
+        "response": {
+          "title": "Evening Service Pilot: Impact and Next Steps",
+          "beats": [
+            {
+              "title": "Pilot Scope and Duration",
+              "claim": "The weekday evening service was extended on Routes 12 and 18 for a six-week pilot period.",
+              "sourceIDs": [
+                "pilot-description"
+              ]
+            },
+            {
+              "title": "Ridership and Performance Data",
+              "claim": "No ridership counts, comparison period, or cost data are provided to assess impact.",
+              "sourceIDs": [
+                "pilot-description"
+              ]
+            },
+            {
+              "title": "Decision and Continuation Considerations",
+              "claim": "The committee seeks ridership metrics, cost analysis, and post-pilot evaluation criteria before recommending continuation.",
+              "sourceIDs": [
+                "pilot-description"
+              ]
+            }
+          ],
+          "missingEvidence": [
+            "Actual ridership numbers during the pilot period",
+            "Comparison data for ridership before and after the pilot",
+            "Cost breakdown and financial outcomes from the pilot"
+          ],
+          "questionForPresenter": "What specific ridership metrics and cost outcomes from the pilot can be provided to evaluate continuation?"
+        }
+      },
+      "ollama": {
+        "model": "qwen3.5:4b",
+        "elapsedMs": 60545.19187499999,
+        "validJSON": true,
+        "validShape": true,
+        "unknownSourceIDs": [],
+        "usedRequiredSourceIDs": [
+          "pilot-description"
+        ],
+        "missingEvidence": [
+          "ridership counts",
+          "comparison period data",
+          "costs",
+          "post-pilot decision criteria"
+        ],
+        "response": {
+          "title": "Evening Service Pilot Status Report",
+          "beats": [
+            {
+              "title": "Pilot Scope and Duration",
+              "claim": "Weekday evening service was extended on Routes 12 and 18 for a six-week pilot.",
+              "sourceIDs": [
+                "pilot-description"
+              ]
+            },
+            {
+              "title": "Ridership Impact Data",
+              "claim": "No ridership counts or comparison period data were supplied in the provided evidence.",
+              "sourceIDs": [
+                "pilot-description"
+              ]
+            },
+            {
+              "title": "Continuation Recommendation Criteria",
+              "claim": "Post-pilot decision criteria and cost information are not available to support a recommendation to continue.",
+              "sourceIDs": [
+                "pilot-description"
+              ]
+            }
+          ],
+          "missingEvidence": [
+            "ridership counts",
+            "comparison period data",
+            "costs",
+            "post-pilot decision criteria"
+          ],
+          "questionForPresenter": "What specific ridership growth metrics and cost-benefit thresholds are required to justify continuing the pilot?"
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Two authored feasibility cases are not an independent benchmark.",
+    "Semantic factual support and abstention were reviewed only against these authored examples. The invalid first Qwen response was not retained verbatim; its parse failure is recorded.",
+    "The probe tests guided single-response generation only, not AI SDK tool-loop, long-source, cancellation, app lifecycle, latency under load, or production behavior."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "instructions": "You are a presentation preparation assistant. Use only the supplied evidence. Every factual beat must cite one or more exact supplied source IDs. Never invent measurements, causes, dates, or outcomes. If requested context is missing, list it in missingEvidence and ask one concise question. Return exactly three beats in the requested JSON shape.",
+  "cases": [
+    {
+      "id": "supported-transit-story",
+      "allowedSourceIDs": ["route-a", "route-b", "survey-c"],
+      "requiredSourceIDs": ["route-a", "route-b", "survey-c"],
+      "prompt": "Prepare a 5-minute story for a city transit committee about the proposed evening service pilot. Return JSON with title, beats (exactly 3 items, each with title, claim, sourceIDs), missingEvidence (array), and questionForPresenter (string). Brief: Explain what the pilot changes and what the committee should decide. Evidence: source route-a says Route 12 will receive two additional evening departures on weekdays beginning in September. source route-b says Route 18's last weekday departure moves from 9:10 pm to 9:40 pm. source survey-c says 64% of 120 survey respondents support later weekday service. Do not infer ridership, costs, or causal effects."
+    },
+    {
+      "id": "missing-ridership-evidence",
+      "allowedSourceIDs": ["pilot-description"],
+      "requiredSourceIDs": ["pilot-description"],
+      "prompt": "Prepare a 5-minute story for a city transit committee about the proposed evening service pilot. Return JSON with title, beats (exactly 3 items, each with title, claim, sourceIDs), missingEvidence (array), and questionForPresenter (string). Brief: The committee asks whether the pilot increased ridership and by how much, and wants a recommendation to continue it. Evidence: source pilot-description says only that weekday evening service was extended on Routes 12 and 18 for a six-week pilot. No ridership counts, comparison period, costs, or post-pilot decision criteria are supplied. Do not invent results or recommend continuation without support. Identify the missing evidence and ask for the most useful next information."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Test and experiment register
 
-Current source test mapping: RUN-20261020-swiftui-native-v2. Historical experiments retain their own versions and counts. See [evidence rules](README.md).
+Current source test mapping: RUN-20261023-foundation-model-audit-v3. Historical experiments retain their own versions and counts. See [evidence rules](README.md).
 
 ## Experiments and plans
 
@@ -488,15 +488,15 @@ Actual local-model preparation and save/reload/library/preview; desktop/narrow g
 
 Status: **executed**.
 
-Evidence: [run.json](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/run.json). Hash retained in catalog.
+Evidence: [run.json](../../docs/validation/runs/RUN-20261023-foundation-model-audit-v3/run.json). Hash retained in catalog.
 
-Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/unit-integration.log). Hash retained in catalog.
+Evidence: [unit-integration.log](../../docs/validation/runs/RUN-20261023-foundation-model-audit-v3/unit-integration.log). Hash retained in catalog.
 
-Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/typecheck-build.log). Hash retained in catalog.
+Evidence: [typecheck-build.log](../../docs/validation/runs/RUN-20261023-foundation-model-audit-v3/typecheck-build.log). Hash retained in catalog.
 
-Evidence: [packaged-macos-app.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/packaged-macos-app.log). Hash retained in catalog.
+Evidence: [packaged-macos-app.log](../../docs/validation/runs/RUN-20261023-foundation-model-audit-v3/packaged-macos-app.log). Hash retained in catalog.
 
-Evidence: [publication-check.log](../../docs/validation/runs/RUN-20261020-swiftui-native-v2/publication-check.log). Hash retained in catalog.
+Evidence: [publication-check.log](../../docs/validation/runs/RUN-20261023-foundation-model-audit-v3/publication-check.log). Hash retained in catalog.
 
 Current tests/typecheck/build/source hashes. Superseded director tests retired; baseline/model-boundary/no-migration tests added. Does not repeat model, browser or audio trials.
 
@@ -1084,6 +1084,22 @@ Rechecks current documentation/source hashes and loads the bundled Transformers.
 
 Current reproduction entry point: `node scripts/audit-validation.mjs RUN-20261020-swiftui-native-v2`. Inspect prerequisites/output paths before running; model probes may incur costs.
 
+### EXP-068 — Apple Foundation Models preparation feasibility
+
+Status: **executed-negative-reference-contract**.
+
+Evidence: [comparison.json](../../docs/validation/runs/RUN-20261023-foundation-model-feasibility/comparison.json). Hash retained in catalog.
+
+Evidence: [protocol.md](../../docs/validation/runs/RUN-20261023-foundation-model-feasibility/protocol.md). Hash retained in catalog.
+
+Evidence: [cases.json](../../docs/validation/runs/RUN-20261023-foundation-model-feasibility/cases.json). Hash retained in catalog.
+
+Evidence: [foundation-model-probe.swift](../../scripts/foundation-model-probe.swift). Hash retained in catalog.
+
+Evidence: [foundation-model-comparison.mjs](../../scripts/foundation-model-comparison.mjs). Hash retained in catalog.
+
+Two frozen synthetic one-shot cases on macOS 27.0.1/M5, one attempt per case/provider. Foundation Models was available with 8,192-token context and produced valid structure in about 7 seconds, but altered all supported-case source IDs so host exact-reference validation would reject it; missing-evidence case passed. Installed Qwen took about 61/117 seconds, passed only the missing-evidence shape/reference checks. Not an independent benchmark; semantic judgement is limited to retained authored outputs; no tool-loop, long-source, cancellation or application integration.
+
 ### PLAN-002 — Media retrieval, dimensions and semantic answer cache comparison
 
 Status: **planned**.
@@ -1102,7 +1118,7 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 
 ## Current individual software cases
 
-159/159 passed in RUN-20261020-swiftui-native-v2, 0 failed, 0 skipped.
+160/160 passed in RUN-20261023-foundation-model-audit-v3, 0 failed, 0 skipped.
 
 | ID | Case | Source |
 |---|---|---|
@@ -1258,10 +1274,11 @@ Moonshine Medium/sherpa, Groq/other local sizes, alternative orchestration frame
 | TEST-WORKSPACE-01 | legacy stories are not imported into the evidence baseline | [tests/workspace.test.ts:13](../../tests/workspace.test.ts#L13) |
 | TEST-WORKSPACE-02 | incompatible saved stories are removed rather than migrated | [tests/workspace.test.ts:17](../../tests/workspace.test.ts#L17) |
 | TEST-WORKSPACE-03 | project chats, materials and composer drafts remain isolated across serialization | [tests/workspace.test.ts:22](../../tests/workspace.test.ts#L22) |
-| TEST-WORKSPACE-04 | repeated identical saves update one immutable project-linked snapshot | [tests/workspace.test.ts:32](../../tests/workspace.test.ts#L32) |
-| TEST-WORKSPACE-05 | unreadable project data is preserved instead of replaced by an empty workspace | [tests/workspace.test.ts:41](../../tests/workspace.test.ts#L41) |
-| TEST-WORKSPACE-06 | presentation context requests return only to the originating project | [tests/workspace.test.ts:46](../../tests/workspace.test.ts#L46) |
-| TEST-WORKSPACE-07 | saving updates a stable story id and retains changed snapshots | [tests/workspace.test.ts:56](../../tests/workspace.test.ts#L56) |
-| TEST-WORKSPACE-08 | story removal preserves chat and can be restored after reload | [tests/workspace.test.ts:66](../../tests/workspace.test.ts#L66) |
-| TEST-WORKSPACE-09 | removing active and last sessions preserves stories and valid active project | [tests/workspace.test.ts:72](../../tests/workspace.test.ts#L72) |
-| TEST-WORKSPACE-10 | restoring a removed story preserves its replacement in history | [tests/workspace.test.ts:80](../../tests/workspace.test.ts#L80) |
+| TEST-WORKSPACE-04 | interrupted preparation requests survive workspace validation and reload | [tests/workspace.test.ts:32](../../tests/workspace.test.ts#L32) |
+| TEST-WORKSPACE-05 | repeated identical saves update one immutable project-linked snapshot | [tests/workspace.test.ts:39](../../tests/workspace.test.ts#L39) |
+| TEST-WORKSPACE-06 | unreadable project data is preserved instead of replaced by an empty workspace | [tests/workspace.test.ts:48](../../tests/workspace.test.ts#L48) |
+| TEST-WORKSPACE-07 | presentation context requests return only to the originating project | [tests/workspace.test.ts:53](../../tests/workspace.test.ts#L53) |
+| TEST-WORKSPACE-08 | saving updates a stable story id and retains changed snapshots | [tests/workspace.test.ts:63](../../tests/workspace.test.ts#L63) |
+| TEST-WORKSPACE-09 | story removal preserves chat and can be restored after reload | [tests/workspace.test.ts:73](../../tests/workspace.test.ts#L73) |
+| TEST-WORKSPACE-10 | removing active and last sessions preserves stories and valid active project | [tests/workspace.test.ts:79](../../tests/workspace.test.ts#L79) |
+| TEST-WORKSPACE-11 | restoring a removed story preserves its replacement in history | [tests/workspace.test.ts:87](../../tests/workspace.test.ts#L87) |

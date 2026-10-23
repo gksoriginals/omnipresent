@@ -2,6 +2,7 @@
 
 ## Unreleased — native macOS app direction
 
+- Added an opt-in Apple Foundation Models feasibility probe and a frozen, synthetic comparison with the installed local Qwen model. The result does not change the active model path.
 - Replaced the active Electron and React product UI with a native SwiftUI macOS workspace and audience display.
 - Added an in-app OpenAI-compatible model settings form with connection test and owner-only credential storage.
 - Kept the TypeScript coordinator, host-owned evidence authority, local hybrid selection and SQLite persistence inside the app bundle.

@@ -20,7 +20,7 @@ struct RootView: View {
                     HStack {
                         Text("SESSIONS").font(.system(size: 10, weight: .semibold)).tracking(0.8).foregroundStyle(.secondary)
                         Spacer()
-                        Button { model.createProject() } label: { Image(systemName: "plus").font(.system(size: 12, weight: .medium)) }.buttonStyle(.plain).help("New session")
+                        Button { model.createProject() } label: { Image(systemName: "plus").font(.system(size: 12, weight: .medium)) }.buttonStyle(.plain).help("New session").disabled(model.busy || model.pendingPreparation?["status"]?.string == "working")
                     }.padding(.horizontal, 14).padding(.top, 14)
                     ScrollView {
                         VStack(spacing: 3) {
@@ -34,7 +34,7 @@ struct RootView: View {
                                         Spacer(minLength: 0)
                                     }.font(.system(size: 12)).padding(.vertical, 8).padding(.horizontal, 10)
                                         .background(model.workspace["activeProjectId"]?.string == id ? Color(red: 0.30, green: 0.55, blue: 0.39).opacity(0.18) : .clear, in: RoundedRectangle(cornerRadius: 6))
-                                }.buttonStyle(.plain).contextMenu { Button("Remove session", role: .destructive) { model.removeProject(id) } }
+                                }.buttonStyle(.plain).disabled(model.busy || model.pendingPreparation?["status"]?.string == "working").contextMenu { Button("Remove session", role: .destructive) { model.removeProject(id) } }
                             }
                         }.padding(.horizontal, 8)
                     }
@@ -91,12 +91,15 @@ private struct PrepareWorkspace: View {
     var body: some View {
         HStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 0) {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(model.state["flow"] == .null ? "Let's prepare your presentation" : "Refine the story")
-                        .font(.system(size: 20, weight: .semibold, design: .rounded))
-                    Text(model.state["flow"] == .null ? "Talk through the audience, purpose, and material." : "Chat with the storyteller. Your flow stays beside the conversation.")
-                        .font(.system(size: 12)).foregroundStyle(.secondary)
-                }.padding(.bottom, 18)
+                VStack(alignment: .leading, spacing: 12) {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(model.state["flow"] == .null ? "Let's prepare your presentation" : "Refine the story")
+                            .font(.system(size: 20, weight: .semibold, design: .rounded))
+                        Text(model.state["flow"] == .null ? "Talk through the audience, purpose, and material." : "Chat with the storyteller. Your flow stays beside the conversation.")
+                            .font(.system(size: 12)).foregroundStyle(.secondary)
+                    }
+                    PreparationProgress(model: model)
+                }.padding(.bottom, 14)
                 Divider()
                 ScrollViewReader { proxy in
                     ScrollView {
@@ -132,7 +135,7 @@ private struct PrepareWorkspace: View {
                         TextField(model.flow == nil || model.flow == .null ? "Describe the presentation you have in mind…" : "What should change in the story?", text: $model.input, axis: .vertical)
                             .lineLimit(2...5).font(.system(size: 13)).textFieldStyle(.plain).onSubmit { Task { await model.sendChat() } }
                         HStack {
-                            Button { chooseMaterial() } label: { Image(systemName: "paperclip") }.buttonStyle(.plain).help("Attach a file")
+                            Button { chooseMaterial() } label: { Image(systemName: "paperclip") }.buttonStyle(.plain).help("Attach a file").disabled(model.busy || model.pendingPreparation?["status"]?.string == "working")
                             Spacer()
                             if model.busy { Button("Stop") { Task { await model.cancelAgent() } }.buttonStyle(.bordered) }
                             else { Button { Task { await model.sendChat() } } label: { Label("Send", systemImage: "arrow.up") }.buttonStyle(.borderedProminent).tint(Color(red: 0.22, green: 0.39, blue: 0.29)).disabled(!model.connected || model.input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || uploadBusy) }
@@ -152,6 +155,83 @@ private struct PrepareWorkspace: View {
         let panel = NSOpenPanel(); panel.allowsMultipleSelection = true; panel.canChooseDirectories = false; panel.allowedContentTypes = [.pdf, .plainText, .commaSeparatedText, .image, .spreadsheet, .presentation, .data]
         guard panel.runModal() == .OK else { return }
         Task { for file in panel.urls { await model.attachMaterial(file) } }
+    }
+}
+
+private struct PreparationProgress: View {
+    private struct Step: Identifiable {
+        let name: String
+        let complete: Bool
+        var id: String { name }
+    }
+
+    @ObservedObject var model: AppModel
+
+    private var stages: [Step] {
+        let state = model.state
+        let reviewed = state["approvedRevision"] != nil
+            && state["approvedRevision"] == state["revision"]
+            && state["approvedRevision"] != .null
+        return [
+            Step(name: "Sources", complete: !(state["artifacts"]?.array ?? []).isEmpty),
+            Step(name: "Brief", complete: state["brief"] != nil && state["brief"] != .null),
+            Step(name: "Story", complete: state["flow"] != nil && state["flow"] != .null),
+            Step(name: "Review", complete: reviewed),
+        ]
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 0) {
+                ForEach(stages) { step in
+                    HStack(spacing: 5) {
+                        Image(systemName: step.complete ? "checkmark.circle.fill" : "circle")
+                            .font(.system(size: 10))
+                            .foregroundStyle(step.complete ? Color(red: 0.22, green: 0.45, blue: 0.31) : Color.secondary)
+                        Text(step.name).font(.system(size: 10, weight: step.complete ? .medium : .regular))
+                            .foregroundStyle(step.complete ? Color.primary : Color.secondary)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("\(step.name), \(step.complete ? "complete" : "not complete")")
+                }
+            }
+
+            if let pending = model.pendingPreparation {
+                let status = pending["status"]?.string ?? "interrupted"
+                if status == "working" {
+                    HStack(spacing: 7) {
+                        ProgressView().controlSize(.small)
+                        Text(model.activity.isEmpty ? "Working on your preparation…" : model.activity)
+                            .font(.system(size: 11)).foregroundStyle(.secondary).lineLimit(1)
+                    }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("Preparation in progress. \(model.activity)")
+                } else {
+                    HStack(alignment: .center, spacing: 10) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            let storyAction = pending["kind"]?.string == "finishInterview"
+                            Text(status == "failed"
+                                 ? (storyAction ? "Story creation did not finish." : "The last preparation attempt did not finish.")
+                                 : (storyAction ? "Story creation was interrupted." : "Preparation was interrupted."))
+                                .font(.system(size: 11, weight: .medium))
+                            Text(storyAction
+                                 ? "Your brief and materials are intact. Retry to create the story."
+                                 : "Your earlier conversation and materials are intact. Retry the saved request.")
+                                .font(.system(size: 10)).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                        }
+                        Spacer(minLength: 4)
+                        Button("Retry") { Task { await model.retryPendingPreparation() } }
+                            .buttonStyle(.bordered).controlSize(.small).disabled(!model.connected || model.busy)
+                        Button { model.dismissPendingPreparation() } label: { Image(systemName: "xmark") }
+                            .buttonStyle(.plain).help("Dismiss saved request").accessibilityLabel("Dismiss saved request")
+                    }
+                }
+            }
+        }
+        .padding(10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(nsColor: .controlBackgroundColor).opacity(0.55), in: RoundedRectangle(cornerRadius: 7))
     }
 }
 

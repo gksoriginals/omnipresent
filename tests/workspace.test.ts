@@ -29,6 +29,13 @@ test("project chats, materials and composer drafts remain isolated across serial
  assert.equal(restored.projects[1].state.artifacts.length,0); assert.equal(restored.projects[1].state.messages.interview.length,0);
  assert.equal(restored.projects[0].composer,"Unsent solar question"); assert.equal(workspace.projects[0].state.artifacts.length,0);
 });
+test("interrupted preparation requests survive workspace validation and reload", () => {
+ const p=newProject("resume-project");
+ p.pendingPreparation={kind:"message",text:"Explain the audience and goal",role:"interview",status:"interrupted",baseRevision:2,startedAt:123};
+ const s=storage();s.setItem(WORKSPACE_KEY,JSON.stringify({version:1,activeProjectId:p.id,projects:[p],stories:[]}));
+ const restored=readWorkspace(s);
+ assert.deepEqual(restored.projects[0].pendingPreparation,p.pendingPreparation);
+});
 test("repeated identical saves update one immutable project-linked snapshot", () => {
  let w = readWorkspace(storage()); const id = w.activeProjectId, state = reviewed();
  for(let i=0;i<15;i++) w=saveStory(w,id,state,`story-${i}`);

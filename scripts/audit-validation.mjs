@@ -35,6 +35,7 @@ async function walk(path){
   }
 }
 for(const path of ['shared','server','scripts','tests','runtime','macos'])await walk(path);
+await walk(outputDirectory);
 const keyFiles=['package.json','package-lock.json','tsconfig.json','.env.example','README.md','docs/README.md','docs/PRD.md','docs/architecture/current.md','docs/architecture/presentation-harness.md','docs/configuration.md','docs/getting-started.md','docs/testing.md','docs/desktop-macos-alpha.md','docs/changelog.md','docs/roadmap.md','docs/images/README.md','docs/third-party-notices.md','.github/CONTRIBUTING.md','.github/SECURITY.md','.github/workflows/ci.yml'];
 for(const path of keyFiles){const bytes=await readFile(path);files.push({path,sha256:sha256(bytes),bytes:bytes.length});}
 const git=spawnSync('git',['rev-parse','HEAD'],{encoding:'utf8'});

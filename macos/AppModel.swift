@@ -77,6 +77,7 @@ final class AppModel: ObservableObject {
     private var pendingStorySave = false
     private var speech: LocalSpeechCapture?
     private var workspaceGeneration = 0
+    private var workspaceSaveTask: Task<Void, Never>?
 
     var projects: [JSONValue] { workspace["projects"]?.array ?? [] }
     var stories: [JSONValue] { workspace["stories"]?.array ?? [] }
@@ -90,6 +91,7 @@ final class AppModel: ObservableObject {
     var selectedStory: JSONValue? { stories.first(where: { $0["id"]?.string == selectedStoryID }) }
     var selectedState: JSONValue? { selectedStory?["state"] }
     var selectedFlow: JSONValue? { selectedState?["flow"] }
+    var pendingPreparation: JSONValue? { activeProject["pendingPreparation"] }
 
     func start() async {
         guard process == nil else { return }
@@ -175,13 +177,18 @@ final class AppModel: ObservableObject {
             guard (response as? HTTPURLResponse)?.statusCode == 200, let value = try decode(data)["workspace"] else { throw NSError(domain: "Omnipresent", code: 4, userInfo: [NSLocalizedDescriptionKey: "Could not load the local workspace."]) }
             workspace = value
             if activeProject.object.isEmpty { createProject() }
+            if pendingPreparation?["status"]?.string == "working" {
+                updatePendingPreparation(status: "interrupted")
+            }
         } catch { self.error = error.localizedDescription }
     }
 
     func saveWorkspace() {
         workspaceGeneration += 1; let generation = workspaceGeneration
         guard let data = try? JSONEncoder().encode(workspace) else { error = "Workspace could not be encoded."; return }
-        Task { [weak self] in
+        let previous = workspaceSaveTask
+        workspaceSaveTask = Task { [weak self] in
+            await previous?.value
             guard let self else { return }
             do { let (_, response) = try await URLSession.shared.data(for: self.request("/api/workspace", method: "PUT", body: data)); guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw NSError(domain: "Omnipresent", code: 5, userInfo: [NSLocalizedDescriptionKey: "Workspace save failed."]) }; if generation == self.workspaceGeneration { self.error = "" } }
             catch { if generation == self.workspaceGeneration { self.error = error.localizedDescription } }
@@ -216,12 +223,63 @@ final class AppModel: ObservableObject {
     func sendChat() async {
         let text = input.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty, !busy else { return }
+        let role = flow == nil || flow == .null ? "interview" : "storyteller"
         input = ""; busy = true
-        await send(["type": .text("agent_turn"), "role": .text(flow == nil || flow == .null ? "interview" : "storyteller"), "text": .text(text)])
+        beginPendingPreparation(kind: "message", text: text, role: role)
+        await workspaceSaveTask?.value
+        await send(["type": .text("agent_turn"), "role": .text(role), "text": .text(text)])
     }
 
-    func finishInterview() async { busy = true; await send(["type": .text("finish_interview")]) }
-    func cancelAgent() async { await send(["type": .text("agent_cancel")]); busy = false }
+    func finishInterview() async {
+        guard !busy else { return }
+        busy = true
+        beginPendingPreparation(kind: "finishInterview", text: "", role: "interview")
+        await workspaceSaveTask?.value
+        await send(["type": .text("finish_interview")])
+    }
+    func cancelAgent() async {
+        await send(["type": .text("agent_cancel")]); busy = false
+        updatePendingPreparation(status: "interrupted")
+    }
+    func retryPendingPreparation() async {
+        guard let pending = pendingPreparation else { return }
+        let kind = pending["kind"]?.string ?? "message"
+        let text = pending["text"]?.string ?? ""
+        let role = pending["role"]?.string ?? "interview"
+        busy = true; error = ""
+        updatePendingPreparation(status: "working")
+        await workspaceSaveTask?.value
+        if kind == "finishInterview" {
+            await send(["type": .text("finish_interview")])
+        } else {
+            await send(["type": .text("agent_turn"), "role": .text(role), "text": .text(text)])
+        }
+    }
+    func dismissPendingPreparation() { updatePendingPreparation(status: nil) }
+
+    private func beginPendingPreparation(kind: String, text: String, role: String) {
+        let pending: JSONValue = .object([
+            "kind": .text(kind), "text": .text(text), "role": .text(role),
+            "status": .text("working"), "baseRevision": state["revision"] ?? .num(0),
+            "startedAt": .num(Int(Date().timeIntervalSince1970 * 1000)),
+        ])
+        updatePendingPreparation(value: pending)
+    }
+
+    private func updatePendingPreparation(status: String?) {
+        guard var pending = pendingPreparation else { return }
+        if let status { pending["status"] = .text(status); updatePendingPreparation(value: pending) }
+        else { updatePendingPreparation(value: nil) }
+    }
+
+    private func updatePendingPreparation(value: JSONValue?) {
+        var all = projects
+        guard let index = all.firstIndex(where: { $0["id"]?.string == workspace["activeProjectId"]?.string }) else { return }
+        all[index]["pendingPreparation"] = value
+        workspace["projects"] = .list(all)
+        saveWorkspace()
+    }
+
     func approveStory() async { pendingStorySave = true; await send(["type": .text("flow_approve")]) }
 
     private func storePreparation(_ newState: JSONValue) {
@@ -229,6 +287,12 @@ final class AppModel: ObservableObject {
         guard let index = all.firstIndex(where: { $0["id"]?.string == workspace["activeProjectId"]?.string }) else { return }
         all[index]["state"] = newState
         all[index]["updatedAt"] = .num(Int(Date().timeIntervalSince1970 * 1000))
+        if let pending = all[index]["pendingPreparation"], pending["status"]?.string == "working" {
+            let finished = pending["kind"]?.string == "finishInterview"
+                ? newState["flow"] != .null
+                : (newState["revision"]?.int ?? 0) > (pending["baseRevision"]?.int ?? 0)
+            if finished { all[index]["pendingPreparation"] = nil }
+        }
         if let title = newState["flow"]?["title"]?.string { all[index]["title"] = .text(title) }
         workspace["projects"] = .list(all)
         if pendingStorySave, newState["flow"] != .null, newState["approvedRevision"] == newState["revision"] {
@@ -307,7 +371,11 @@ final class AppModel: ObservableObject {
                 switch message { case .data(let value): data = value; case .string(let value): data = Data(value.utf8); @unknown default: continue }
                 let event = try JSONDecoder().decode(JSONValue.self, from: data)
                 await handle(event)
-            } catch { connected = false; busy = false; try? await Task.sleep(for: .seconds(1)); break }
+            } catch {
+                connected = false; busy = false
+                if pendingPreparation?["status"]?.string == "working" { updatePendingPreparation(status: "interrupted") }
+                try? await Task.sleep(for: .seconds(1)); break
+            }
         }
         if !Task.isCancelled { await connect() }
     }
@@ -317,10 +385,29 @@ final class AppModel: ObservableObject {
     }
     private func handle(_ event: JSONValue) async {
         switch event["type"]?.string {
-        case "preparation": if let state = event["state"] { storePreparation(state); busy = false; activity = "" }
-        case "agent_status": busy = event["status"]?.string == "working"; if !busy { activity = "" }
+        case "preparation":
+            if let state = event["state"] {
+                storePreparation(state)
+                let finishingInterview = pendingPreparation?["kind"]?.string == "finishInterview"
+                    && pendingPreparation?["status"]?.string == "working"
+                    && state["flow"] == .null
+                if !finishingInterview { busy = false; activity = "" }
+            }
+        case "agent_status":
+            let finishingInterview = pendingPreparation?["kind"]?.string == "finishInterview"
+                && pendingPreparation?["status"]?.string == "working"
+                && (state["flow"] == nil || state["flow"] == .null)
+            if event["status"]?.string == "working",
+               pendingPreparation != nil,
+               pendingPreparation?["status"]?.string != "working" {
+                updatePendingPreparation(status: "working")
+            }
+            busy = event["status"]?.string == "working" || finishingInterview
+            if event["status"]?.string != "working" {
+                activity = ""
+            }
         case "agent_activity": activity = event["label"]?.string ?? "Working…"
-        case "agent_error", "error", "worker_error": error = event["message"]?.string ?? "The local service returned an error."; busy = false; starting = false
+        case "agent_error", "error", "worker_error": error = event["message"]?.string ?? "The local service returned an error."; busy = false; starting = false; updatePendingPreparation(status: "failed")
         case "presentation_loaded": if let title = event["title"]?.string { notice = "Loaded \(title)" }; await send(["type": .text("presentation_start"), "requestId": .text("native-\(UUID().uuidString)")])
         case "presentation_ready": starting = false; do { speech = try await LocalSpeechCapture.start(onTranscript: { [weak self] text, final in Task { @MainActor in guard let self else { return }; self.transcript = text; await self.send(["type": .text("presentation_speech"), "text": .text(text), "final": .bool(final)]) } }); presenting = true } catch { self.error = error.localizedDescription; starting = false }
         case "stage": stage = event["stage"]
