@@ -27,7 +27,7 @@
     "setup:env": "node scripts/setup-env.mjs"
   },
   "dependencies": {
-    "@ai-sdk/openai-compatible": "3.0.70",
+    "@ai-sdk/openai-compatible": "3.0.77",
     "@huggingface/transformers": "^4.3.1",
     "ai": "7.0.142",
     "officeparser": "^8.1.1",
